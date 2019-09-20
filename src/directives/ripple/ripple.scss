@@ -1,0 +1,40 @@
+:root {
+  --ripple-opacity: 0.3;
+}
+
+.mz-ripple-wrapper {
+  border-radius: inherit;
+  bottom: 0;
+  display: block;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transform: translate3d(0, 0, 0);
+  .mz-ripple {
+    position: absolute;
+    left: 0;
+    border-radius: 50%;
+    background-color: currentColor;
+    opacity: 0;
+    pointer-events: none;
+    will-change: height, width, transform, opacity;
+
+    &--enter {
+      transition: none;
+    }
+
+    &--in {
+      transition: transform 0.4s cubic-bezier(0, 0.4, 0.82, 0.75),
+        opacity 0.1s linear;
+      opacity: var(--ripple-opacity, 0.15);
+    }
+
+    &--out {
+      transition: transform 0.4s linear, opacity 0.3s linear;
+    }
+  }
+}

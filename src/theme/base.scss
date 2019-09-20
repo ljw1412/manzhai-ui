@@ -1,0 +1,29 @@
+$colors: (
+  white: #ffffff,
+  black: #000000,
+  primary: #c20c0c,
+  success: #46c37b,
+  warning: #f5a623,
+  danger: #f56c6c,
+  info: #909399,
+  text-primary: #303133,
+  text-regular: #606266,
+  text-secondary: #909399,
+  text-placeholder: #c0c4cc,
+  border-base: rgba(0, 0, 0, 0.12),
+  border-light: #e4e7ed,
+  border-lighter: #ebeef5,
+  border-extra-light: #f2f6fc,
+  body-background: #ffffff,
+  hover-background-b: rgba(0, 0, 0, 0.25),
+  hover-background-w: rgba(255, 255, 255, 0.25),
+  shadow-rgb: '0,0,0',
+  transiton:
+    'background-color 0.3s linear, color 0.3s linear, fill 0.3s linear, box-shadow 0.3s linear'
+);
+
+:root {
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
