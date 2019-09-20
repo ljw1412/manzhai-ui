@@ -1,4 +1,4 @@
-export * from './mzui'
+export * from './manzhai-ui'
 
-import * as MzUI from './mzui'
-export default MzUI
+import * as manzhaiUI from './manzhai-ui'
+export default manzhaiUI

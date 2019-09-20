@@ -4,11 +4,11 @@
   "license": "MIT",
   "author": "ljw1412",
   "bugs": {
-    "url": "https://github.com/ljw1412/mzui/issues"
+    "url": "https://github.com/ljw1412/manzhai-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ljw1412/mzui.git"
+    "url": "git@github.com:ljw1412/manzhai-ui.git"
   },
   "main": "lib/manzhai-ui.common.js",
   "typings": "types/index.d.ts",

@@ -1,4 +1,4 @@
-# mzui
+# manzhai-ui
 
 ## Project setup
 ```
