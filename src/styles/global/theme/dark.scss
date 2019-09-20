@@ -1,0 +1,50 @@
+$colors: (
+  'white': #ffffff,
+  'black': #000000,
+  primary: #424242,
+  success: #46c37b,
+  warning: #f5a623,
+  danger: #f56c6c,
+  info: #909399,
+  text-primary: #ffffff,
+  text-regular: #c0c4cc,
+  text-secondary: #909399,
+  text-placeholder: #606266,
+  border-base: rgba(255, 255, 255, 0.12),
+  border-light: #e4e7ed,
+  border-lighter: #ebeef5,
+  border-extra-light: #f2f6fc,
+  body-background: #303030,
+  hover-background-b: rgba(0, 0, 0, 0.25),
+  hover-background-w: rgba(255, 255, 255, 0.25),
+  shadow-rgb: '0, 0, 0'
+);
+
+:root[data-theme='dark'] {
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+  // ActionBar
+  --actionbar__background-color: #{getColor(primary)};
+  --actionbar__font-color: #ffffff;
+  --actionbar-menu__icon-color: #ffffff;
+  --actionbar-menu__icon-color--hover: #86e186;
+  --actionbar-menu__icon-color--active: #0cc20c;
+  // SideBar
+  --sidebar__box-shadow: -5px 0 10px #{getColor(primary)};
+  --sidebar__background-color: #{getColor(primary)};
+  --sidebar__header-icon-color: #ffffff;
+  --sidebar-menu__color: #909399;
+  --sidebar-menu__color--hover: #86e186;
+  --sidebar-menu__color--active: #ffffff;
+  // MZButton
+  --mz-button__background-color: transparent;
+  --mz-button__background-color--disabled: rgba(255, 255, 255, 0.12);
+  --mz-button__box-shadow: 0 1px 2px 0 rgba(192, 196, 204, 0.3),
+    0 3px 6px 2px rgba(192, 196, 204, 0.15);
+  // MZCellGroup
+  --mz-cell-group__list-background-color: #424242;
+  --mz-cell-group__list-box-shadow: 0 1px 2px 0
+      rgba(#{getColor(shadow-rgb)}, 0.3),
+    0 3px 6px 2px rgba(#{getColor(shadow-rgb)}, 0.15);
+}

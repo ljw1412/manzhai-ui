@@ -80,7 +80,7 @@ export default class MzSwitch extends Vue {
 </script>
 
 <style lang="scss" >
-@import '@/styles/index.scss';
+@import '@/styles/common/index.scss';
 :root {
   --mz-switch__bar-width: 40.5px;
   --mz-switch__bar-height: 18px;

@@ -41,7 +41,7 @@ export default class MzButton extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/index.scss';
+@import '@/styles/common/index.scss';
 :root {
   --mz-button__background-color: transparent;
   --mz-button__background-color--disabled: rgba(0, 0, 0, 0.12);
@@ -92,8 +92,8 @@ export default class MzButton extends Vue {
 
   @each $type in (primary, success, warning, danger, info) {
     &--#{$type} {
-      color: getColor('white');
-      fill: getColor('white');
+      color: #ffffff;
+      fill: #ffffff;
       background-color: getColor(#{$type});
     }
   }

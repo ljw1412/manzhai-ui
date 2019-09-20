@@ -1,4 +1,4 @@
-import './theme/base.scss'
+import './styles/global/index.scss'
 import { VueConstructor } from 'vue'
 import { changeTheme } from './utils/theme'
 import * as directives from './directives'

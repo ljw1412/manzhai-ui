@@ -1,0 +1,56 @@
+@import './theme/base.scss';
+
+.is-pointer {
+  cursor: pointer !important;
+}
+
+.is-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.not-user-select {
+  user-select: none !important;
+}
+
+.is-circle {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.color-transition {
+  transition: background-color 0.3s linear, color 0.3s linear, fill 0.3s linear,
+    box-shadow 0.3s linear;
+}
+
+.flex-center-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-double-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.absolute-vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.absolute-horizontal-center {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
