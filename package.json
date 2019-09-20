@@ -12,6 +12,12 @@
   },
   "main": "lib/manzhai-ui.common.js",
   "typings": "types/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "packages",
+    "types"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
