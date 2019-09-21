@@ -19,7 +19,7 @@
     "types"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve ./src/index.ts",
+    "serve": "vue-cli-service serve ./example/main.ts",
     "build": "vue-cli-service build --target lib --dest lib ./src/index.ts",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
@@ -50,6 +50,7 @@
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "typescript": "^3.4.3",
+    "vue-router": "^3.0.1",
     "vue-template-compiler": "^2.6.10"
   }
 }
