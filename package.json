@@ -19,7 +19,7 @@
     "types"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve ./example/main.ts",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --dest lib ./src/index.ts",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
