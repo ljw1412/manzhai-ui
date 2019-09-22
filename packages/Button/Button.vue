@@ -73,6 +73,11 @@ export default class MzButton extends Vue {
   overflow: hidden;
   vertical-align: middle;
 
+  &__content {
+    position: relative;
+    z-index: 50;
+  }
+
   &:not(.mz-button--disabled) {
     @include bgHover;
     will-change: box-shadow;

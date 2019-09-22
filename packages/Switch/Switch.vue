@@ -96,7 +96,7 @@ export default class MzSwitch extends Vue {
   display: inline-block;
   vertical-align: middle;
   padding: 1px;
-  z-index: 100;
+  z-index: 50;
   &__input {
     position: absolute;
     width: 0;

@@ -1,5 +1,6 @@
 <template>
   <div class="mz-dropdown">
+    <slot></slot>
   </div>
 </template>
 
@@ -9,5 +10,5 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class MzDropdown extends Vue {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>
