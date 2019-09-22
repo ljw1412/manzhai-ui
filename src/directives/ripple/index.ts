@@ -34,15 +34,17 @@ function calculate(
   const { width, height } = el.getBoundingClientRect()
 
   let scale = 0.15
-  const radius = options.center
-    ? width / 2
-    : Math.sqrt(
-        (Math.abs(width / 2 - offsetX) + width / 2) ** 2 +
-          (Math.abs(height / 2 - offsetY) + height / 2) ** 2
-      )
+  // 鼠标点击的offsetX位置距离元素中心点的距离
+  const xToCenter = options.center ? 0 : Math.abs(width / 2 - offsetX)
+  // 鼠标点击的offsetY位置距离元素中心点的距离
+  const yToCenter = options.center ? 0 : Math.abs(height / 2 - offsetY)
+  // 半径计算 (点击位置到元素最远点的距离)
+  const radius = Math.sqrt(
+    (xToCenter + width / 2) ** 2 + (yToCenter + height / 2) ** 2
+  )
 
-  const centerX = options.center ? '0' : `${offsetX - radius}px`
-  const centerY = options.center ? '0' : `${offsetY - radius}px`
+  const centerX = `${(options.center ? width / 2 : offsetX) - radius}px`
+  const centerY = `${(options.center ? height / 2 : offsetY) - radius}px`
 
   return { radius, scale, centerX, centerY }
 }
