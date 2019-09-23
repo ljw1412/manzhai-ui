@@ -5,9 +5,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop } from 'vue-property-decorator'
 @Component
-export default class MzDropdown extends Vue {}
+export default class MzDropdown extends Vue {
+  @Prop({ default: () => [] })
+  readonly list!: Record<string, any>
+  @Prop()
+  readonly value!: any
+}
 </script>
 
 <style lang="scss">
