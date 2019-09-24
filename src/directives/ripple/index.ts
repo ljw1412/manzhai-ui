@@ -30,21 +30,23 @@ function calculate(
   el: HTMLElement,
   options: RippleOptions = {}
 ) {
-  const { offsetX, offsetY } = e
-  const { width, height } = el.getBoundingClientRect()
+  const { clientX, clientY } = e
+  const { width, height, left, top } = el.getBoundingClientRect()
+  const tapX = clientX - left
+  const tapY = clientY - top
 
-  let scale = 0.15
-  // 鼠标点击的offsetX位置距离元素中心点的距离
-  const xToCenter = options.center ? 0 : Math.abs(width / 2 - offsetX)
-  // 鼠标点击的offsetY位置距离元素中心点的距离
-  const yToCenter = options.center ? 0 : Math.abs(height / 2 - offsetY)
+  let scale = options.circle ? 0 : 0.15
+  // 触击的X位置距离元素中心点的距离
+  const xToCenter = options.center ? 0 : Math.abs(width / 2 - tapX)
+  // 触击的Y位置距离元素中心点的距离
+  const yToCenter = options.center ? 0 : Math.abs(height / 2 - tapY)
   // 半径计算 (点击位置到元素最远点的距离)
   const radius = Math.sqrt(
     (xToCenter + width / 2) ** 2 + (yToCenter + height / 2) ** 2
   )
 
-  const centerX = `${(options.center ? width / 2 : offsetX) - radius}px`
-  const centerY = `${(options.center ? height / 2 : offsetY) - radius}px`
+  const centerX = `${(options.center ? width / 2 : tapX) - radius}px`
+  const centerY = `${(options.center ? height / 2 : tapY) - radius}px`
 
   return { radius, scale, centerX, centerY }
 }
@@ -114,6 +116,7 @@ function showRipple(e: MouseEvent) {
   if (!element || !element._ripple) return
 
   options.center = element._ripple.centered
+  options.circle = element._ripple.circle
   if (element._ripple.class) options.class = element._ripple.class
   ripple.create(e, element, options)
 }
