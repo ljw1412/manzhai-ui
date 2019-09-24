@@ -8,8 +8,19 @@ import Cell from '../packages/Cell/index'
 import CellGroup from '../packages/CellGroup/index'
 import Switch from '../packages/Switch/index'
 import Dropdown from '../packages/Dropdown/index'
+import { List, ListItem, ListGroup } from '../packages/List/index'
 
-const components = [Icon, Button, Cell, CellGroup, Switch, Dropdown]
+const components = [
+  Icon,
+  Button,
+  Cell,
+  CellGroup,
+  Switch,
+  Dropdown,
+  List,
+  ListItem,
+  ListGroup
+]
 
 /**
  * 绑定自定义指令
@@ -37,4 +48,15 @@ const install = function(Vue: VueConstructor, options = {}) {
   bindComponents(Vue)
 }
 
-export default { install, Icon, Button, Cell, CellGroup, Switch, Dropdown }
+export default {
+  install,
+  Icon,
+  Button,
+  Cell,
+  CellGroup,
+  Switch,
+  Dropdown,
+  List,
+  ListItem,
+  ListGroup
+}
