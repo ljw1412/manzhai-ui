@@ -23,12 +23,15 @@ export default class MzButton extends Vue {
   readonly icon!: string | boolean
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
-  @Prop([Boolean])
+  @Prop(Boolean)
   readonly circle!: boolean
+  @Prop(Boolean)
+  readonly round!: boolean
 
   get buttonClasses() {
     const types = ['primary', 'success', 'warning', 'danger', 'info']
     const classes: any[] = [
+      { 'mz-button--round': this.round },
       { 'is-circle': this.circle },
       { 'mz-button--icon': this.icon },
       { 'mz-button--disabled': this.disabled }
@@ -78,12 +81,23 @@ export default class MzButton extends Vue {
     z-index: 50;
   }
 
+  &.is-circle::before {
+    border-radius: 50%;
+  }
+
   &:not(.mz-button--disabled) {
     @include bgHover;
     will-change: box-shadow;
     &:active {
       border-color: transparent;
       box-shadow: getVar(mz-button, box-shadow);
+    }
+  }
+
+  &--round {
+    border-radius: 100px;
+    &::before {
+      border-radius: 100px;
     }
   }
 
