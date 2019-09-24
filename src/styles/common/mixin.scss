@@ -11,7 +11,7 @@
 }
 
 @mixin bgHover {
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -23,7 +23,7 @@
     transition: opacity 0.1s;
   }
 
-  &:hover::after {
+  &:hover::before {
     content: '';
     position: absolute;
     top: 0;
@@ -34,7 +34,7 @@
     opacity: 0.12;
   }
 
-  &:active::after {
+  &:active::before {
     opacity: 0.3;
   }
 }
