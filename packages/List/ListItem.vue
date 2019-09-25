@@ -1,6 +1,6 @@
 <template>
   <div class="mz-list-item"
-    @click="onItemClick">
+    @click="onClick">
     <div>{{ label || value }}</div>
   </div>
 </template>
@@ -16,11 +16,11 @@ export default class MzListItem extends Vue {
   readonly label!: string
   @Prop({ required: true })
   readonly value!: string
-  @Inject({ from: 'mzList', default: {} })
+  @Inject({ from: 'mzList', default: null })
   readonly mzList!: any
 
-  onItemClick() {
-    this.$emit('item-click', this.data || this.value)
+  onClick() {
+    this.$emit('click', this.value, this.data)
     if (this.mzList) {
       this.mzList.setValue(this.value, this.data)
     }
@@ -28,5 +28,5 @@ export default class MzListItem extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>
