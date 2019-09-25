@@ -1,7 +1,10 @@
 <template>
-  <div class="mz-list-item"
+  <div v-ripple="ripple"
+    class="mz-list-item"
     @click="onClick">
-    <div>{{ label || value }}</div>
+    <div class="mz-list-item__content">
+      <div class="mz-list-item__title">{{ label || value }}</div>
+    </div>
   </div>
 </template>
 
@@ -16,6 +19,8 @@ export default class MzListItem extends Vue {
   readonly label!: string
   @Prop({ required: true })
   readonly value!: string
+  @Prop([Boolean, Object])
+  readonly ripple!: boolean | object
   @Inject({ from: 'mzList', default: null })
   readonly mzList!: any
 
@@ -29,4 +34,10 @@ export default class MzListItem extends Vue {
 </script>
 
 <style lang="scss">
+.mz-list-item {
+  padding: 0 16px;
+  &__content {
+    padding: 12px 0;
+  }
+}
 </style>

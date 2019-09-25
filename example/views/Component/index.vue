@@ -7,6 +7,7 @@
     <mz-list v-model="value"
       @change="onChange">
       <mz-list-item v-for="item of list"
+        :ripple="{center:true}"
         :key="item.value"
         :label="item.label"
         :value="item.value"
