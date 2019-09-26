@@ -10,7 +10,7 @@
   overflow: hidden;
 }
 
-@mixin bgHover {
+@mixin before-background {
   &::before {
     content: '';
     position: absolute;
@@ -24,17 +24,16 @@
   }
 
   &:hover::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: currentColor;
     opacity: 0.12;
   }
 
   &:active::before {
+    opacity: 0.3;
+  }
+}
+
+@mixin before-background-active {
+  &::before {
     opacity: 0.3;
   }
 }

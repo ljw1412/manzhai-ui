@@ -86,7 +86,7 @@ export default class MzButton extends Vue {
   }
 
   &:not(.mz-button--disabled) {
-    @include bgHover;
+    @include before-background;
     will-change: box-shadow;
     &:active {
       border-color: transparent;
