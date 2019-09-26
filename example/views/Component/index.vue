@@ -2,19 +2,25 @@
   <div class="page-component">
     <mz-dropdown></mz-dropdown>
     <mz-button type="primary"
+      round
       :ripple="{circle:true,circle:true}"
-      round>a</mz-button>
-    <mz-list v-model="value"
-      @change="onChange">
-      <mz-list-item v-for="item of list"
-        :ripple="{center:true}"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :data="item"></mz-list-item>
-    </mz-list>
+      @click="onButtonClick">a</mz-button>
+    <div style="width:200px;border:1px solid #ccc;">
+      <mz-list v-model="value"
+        @change="onChange">
+        <mz-list-item v-for="item of list"
+          ripple
+          text="文本"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+          :data="item"></mz-list-item>
+      </mz-list>
+    </div>
     <mz-list @change="onChange">
-      <mz-list-item v-for="item of list"
+      <mz-list-item v-for="(item,index) of list"
+        :disabled="index===0"
+        text="文本"
         :key="item.value"
         :value="item.value"
         @click="onItemClick"></mz-list-item>
@@ -39,6 +45,10 @@ export default class PageComponent extends Vue {
   ]
 
   value = ''
+
+  onButtonClick() {
+    this.list.pop()
+  }
 
   onChange(value: any, data: any) {
     console.log('onChange', value, data)
