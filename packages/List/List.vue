@@ -1,5 +1,6 @@
 <template>
-  <div class="mz-list">
+  <div class="mz-list"
+    :class="{'mz-list--disabled':disabled}">
     <slot></slot>
   </div>
 </template>
@@ -15,6 +16,10 @@ import ListItem from './ListItem.vue'
 export default class MzList extends Vue {
   @Prop()
   readonly value!: any
+  @Prop(String)
+  readonly gutter!: string
+  @Prop(Boolean)
+  readonly disabled!: boolean
 
   itemList: ListItem[] = []
 
@@ -30,6 +35,9 @@ export default class MzList extends Vue {
   addItem(vm: ListItem) {
     if (vm instanceof ListItem) {
       this.itemList.push(vm)
+      if (vm.value === this.value) {
+        vm.active = true
+      }
     }
   }
 
@@ -43,4 +51,17 @@ export default class MzList extends Vue {
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
+
+// .mz-list {
+//   &--disabled {
+//     .mz-list-item {
+//       pointer-events: none;
+//       &:not(.mz-list-item--active) {
+//         font-weight: bold;
+//         color: getColor(text-secondary);
+//       }
+//     }
+//   }
+// }
 </style>

@@ -44,7 +44,7 @@ export default class PageComponent extends Vue {
     { label: '测试 3', value: '3' }
   ]
 
-  value = ''
+  value = '1'
 
   onButtonClick() {
     this.list.pop()

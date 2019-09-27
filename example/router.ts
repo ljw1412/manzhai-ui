@@ -28,6 +28,10 @@ export default new Router({
       path: '/theme',
       name: 'pageTheme',
       component: Theme
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 })

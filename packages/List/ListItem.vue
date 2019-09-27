@@ -1,5 +1,5 @@
 <template>
-  <div v-ripple="!disabled && ripple"
+  <div v-ripple="!itemDisabled && ripple"
     class="mz-list-item"
     :class="wrapperClasses"
     @click="onClick">
@@ -40,16 +40,21 @@ export default class MzListItem extends Vue {
 
   active = false
 
+  get itemDisabled() {
+    if (this.mzList && this.mzList.disabled) return true
+    return this.disabled
+  }
+
   get wrapperClasses() {
     return {
-      'mz-list-item--disabled': this.disabled,
+      'mz-list-item--disabled': this.itemDisabled,
       'mz-list-item--active': this.active,
       'mz-list-item--link': this.link || this.ripple
     }
   }
 
   onClick() {
-    if (this.disabled) return
+    if (this.itemDisabled) return
     this.$emit('click', this.value, this.data)
     if (this.mzList) {
       this.mzList.setValue(this.value, this.data, this)
@@ -95,11 +100,15 @@ export default class MzListItem extends Vue {
   }
 
   &--disabled {
+    cursor: not-allowed;
     .mz-list-item {
       &__title,
       &__text {
         font-weight: bold;
         color: getColor(text-secondary);
+      }
+      &:not(.mz-list-item--active) {
+        @include before-background-disabled;
       }
     }
   }
