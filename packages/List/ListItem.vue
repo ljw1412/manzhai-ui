@@ -3,6 +3,9 @@
     class="mz-list-item"
     :class="wrapperClasses"
     @click="onClick">
+    <div class="mz-list-item__prefix">
+      <slot name="prefix"></slot>
+    </div>
     <div class="mz-list-item__content">
       <slot name="content">
         <div class="mz-list-item__title">
@@ -12,6 +15,9 @@
           <slot name="text">{{ text }}</slot>
         </div>
       </slot>
+    </div>
+    <div class="mz-list-item__suffix">
+      <slot name="suffix"></slot>
     </div>
   </div>
 </template>
