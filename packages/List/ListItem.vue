@@ -39,6 +39,8 @@ export default class MzListItem extends Vue {
   readonly disabled!: boolean
   @Prop(Boolean)
   readonly link!: boolean
+  @Prop([Boolean, String])
+  readonly round!: boolean | String
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
   @Inject({ from: 'mzList', default: null })
@@ -52,11 +54,26 @@ export default class MzListItem extends Vue {
   }
 
   get wrapperClasses() {
-    return {
-      'mz-list-item--disabled': this.itemDisabled,
-      'mz-list-item--active': this.active,
-      'mz-list-item--link': this.link || this.ripple
+    const classes = []
+    if (
+      typeof this.round === 'string' &&
+      ['left', 'right'].includes(this.round)
+    ) {
+      classes.push(`mz-list-item--${this.round}-round`)
     }
+    return [
+      classes,
+      {
+        'mz-list-item--disabled': this.itemDisabled,
+        'mz-list-item--active': this.active,
+        'mz-list-item--link': this.link || this.ripple,
+        'mz-list-item--round': typeof this.round === 'boolean' && this.round
+      }
+    ]
+    // {
+
+    //   'mz-list-item--round': this.round
+    // }
   }
 
   onClick() {
@@ -103,6 +120,18 @@ export default class MzListItem extends Vue {
   &--link {
     cursor: pointer;
     @include before-background;
+  }
+
+  @each $type, $radius in ('', 100px), ('left-', 100px 0 0 100px),
+    ('right-', 0 100px 100px 0)
+  {
+    &--#{$type}round {
+      overflow: hidden;
+      border-radius: $radius;
+      &::before {
+        border-radius: $radius;
+      }
+    }
   }
 
   &--disabled {
