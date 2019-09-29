@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Model } from 'vue-property-decorator'
+import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
 import ListItem from './ListItem.vue'
 @Component({
   provide() {
@@ -23,13 +23,17 @@ export default class MzList extends Vue {
 
   itemList: ListItem[] = []
 
-  setValue(value: any, data: any, vm: ListItem) {
-    this.$emit('input', value)
-    this.$emit('change', value, data)
+  selectItem(vm: ListItem) {
     this.itemList.forEach(item => {
       item.active = false
     })
     vm.active = true
+  }
+
+  setValue(value: any, data: any, vm: ListItem) {
+    this.$emit('input', value)
+    this.$emit('change', value, data)
+    this.selectItem(vm)
   }
 
   addItem(vm: ListItem) {
@@ -46,6 +50,12 @@ export default class MzList extends Vue {
     if (index != -1) {
       this.itemList.splice(index, 1)
     }
+  }
+
+  @Watch('value')
+  onValueChange(value: any) {
+    const vm = this.itemList.find(item => item.value === value)
+    if (vm) this.selectItem(vm)
   }
 }
 </script>
