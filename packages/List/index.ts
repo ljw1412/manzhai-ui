@@ -12,4 +12,11 @@ MzList.install = (Vue: VueConstructor) => {
 
 // export default { List: MzList, ListItem: MzListItem, ListGroup: MzListGroup }
 
-export { MzList as List, MzListItem as ListItem, MzListGroup as ListGroup }
+export {
+  MzList,
+  MzListItem,
+  MzListGroup,
+  MzList as List,
+  MzListItem as ListItem,
+  MzListGroup as ListGroup
+}
