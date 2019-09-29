@@ -7,6 +7,7 @@ import Button from '../packages/Button/index'
 import Cell from '../packages/Cell/index'
 import CellGroup from '../packages/CellGroup/index'
 import Switch from '../packages/Switch/index'
+import Card from '../packages/Card/index'
 import Dropdown from '../packages/Dropdown/index'
 import { List, ListItem, ListGroup } from '../packages/List/index'
 
@@ -16,6 +17,7 @@ const components = [
   Cell,
   CellGroup,
   Switch,
+  Card,
   Dropdown,
   List,
   ListItem,
