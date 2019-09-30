@@ -14,10 +14,10 @@ export default class MzCard extends Vue {
   @Prop({ type: [String, Number], default: 3 })
   readonly elevation!: string | number
   @Prop(Boolean)
-  readonly outline!: boolean
+  readonly outlined!: boolean
 
   get classes() {
-    return [{ 'mz-card--outline': this.outline }]
+    return [{ 'mz-card--outlined': this.outlined }]
   }
 }
 </script>
@@ -25,7 +25,7 @@ export default class MzCard extends Vue {
 <style lang="scss">
 @import '@/styles/common/index.scss';
 .mz-card {
-  &--outline {
+  &--outlined {
     border: 1px solid getColor(border-base);
   }
 }
