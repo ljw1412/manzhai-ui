@@ -1,5 +1,5 @@
 @for $z from 0 through 24 {
-  .elevation-#{$z} {
+  .mz-elevation-#{$z} {
     @include elevation($z, $important: true);
   }
 }
