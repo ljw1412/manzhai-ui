@@ -5,7 +5,10 @@ const config = {
     index: { entry: 'example/main.ts', template: 'example/index.html' }
   },
   publicPath: isDevelopment ? '/' : '',
-  productionSourceMap: false
+  productionSourceMap: false,
+  devServer: {
+    port: 10086
+  }
 }
 
 module.exports = config
