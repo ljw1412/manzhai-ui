@@ -2,6 +2,8 @@ import Vue, { VNode } from 'vue'
 
 declare global {
   interface HTMLElement {
+    _elevation?: number | string
+
     _ripple?: {
       enabled?: boolean
       centered?: boolean
