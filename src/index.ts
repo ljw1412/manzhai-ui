@@ -1,6 +1,6 @@
 import './styles/global/index.scss'
 import { VueConstructor } from 'vue'
-import { changeTheme } from './utils/theme'
+import { changeTheme, getCurrentTheme } from './utils/theme'
 import * as directives from './directives'
 import Icon from '../packages/Icon/index'
 import Button from '../packages/Button/index'
@@ -46,6 +46,7 @@ function bindComponents(Vue: VueConstructor) {
 
 const install = function(Vue: VueConstructor, options = {}) {
   Vue.prototype.$changeTheme = changeTheme
+  Vue.prototype.$getCurrentTheme = getCurrentTheme
   bindDirectives(Vue)
   bindComponents(Vue)
 }

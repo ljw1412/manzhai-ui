@@ -6,3 +6,8 @@ export function changeTheme(name: string) {
   const rootDataset = document.documentElement.dataset
   rootDataset.theme = name
 }
+
+export function getCurrentTheme() {
+  const rootDataset = document.documentElement.dataset
+  return rootDataset.theme
+}
