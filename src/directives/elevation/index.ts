@@ -4,21 +4,16 @@ function elevation(z: string | number) {
   return `mz-elevation-${z}`
 }
 
-export const Elevation = {
-  bind: (el: HTMLElement, binding: VNodeDirective, node: VNode) => {
-    if (binding.value) {
-      el.classList.add(elevation(binding.value))
-      el._elevation = binding.value
-    }
-  },
-  unbind: (el: HTMLElement) => {},
-  update: (el: HTMLElement, binding: VNodeDirective) => {
-    if (binding.value) {
-      if (el._elevation) el.classList.remove(elevation(el._elevation))
-      el.classList.add(elevation(binding.value))
-      el._elevation = binding.value
-    }
+function modifyElevation(el: HTMLElement, z: string | number) {
+  if (z || z === 0) {
+    if (el._elevation) el.classList.remove(elevation(el._elevation))
+    el.classList.add(elevation(z))
+    el._elevation = z
   }
+}
+
+export const Elevation = (el: HTMLElement, binding: VNodeDirective) => {
+  modifyElevation(el, binding.value)
 }
 
 export default Elevation
