@@ -3,7 +3,8 @@
     <mz-button style="margin-bottom:10px"
       @click="onChangeThemeClick">切换主题</mz-button>
 
-    <mz-card v-elevation="elevation"
+    <mz-card :elevation="elevation"
+      outline
       style="margin:10px">
       <span @click="elevation = (elevation + 1) % 25">测试</span>
     </mz-card>
@@ -67,7 +68,7 @@ export default class PageComponent extends Vue {
     { label: '测试 2', value: '2' },
     { label: '测试 3', value: '3' }
   ]
-  elevation = 1
+  elevation = 0
   value = '1'
 
   onChangeThemeClick() {

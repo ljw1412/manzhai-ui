@@ -55,7 +55,6 @@ export default class MzButton extends Vue {
   -webkit-appearance: none;
   box-sizing: border-box;
   border: none;
-  // border: 1px solid getColor(border-base);
   border-radius: 4px;
   background-color: getVar(mz-button, background-color);
   color: getColor(text-regular);
