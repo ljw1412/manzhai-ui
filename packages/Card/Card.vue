@@ -1,5 +1,6 @@
 <template>
   <div class="mz-card">
+    <slot></slot>
   </div>
 </template>
 

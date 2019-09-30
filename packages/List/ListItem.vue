@@ -70,10 +70,6 @@ export default class MzListItem extends Vue {
         'mz-list-item--round': typeof this.round === 'boolean' && this.round
       }
     ]
-    // {
-
-    //   'mz-list-item--round': this.round
-    // }
   }
 
   onClick() {
@@ -97,10 +93,14 @@ export default class MzListItem extends Vue {
 <style lang="scss">
 @import '@/styles/common/index.scss';
 
+:root {
+  --mz-list-item__font-color--active: #{getColor(primary)};
+}
+
 .mz-list-item {
   position: relative;
   padding: 0 16px;
-  color: getColor(text-primary);
+  color: getColor(text-regular);
   &__content {
     position: relative;
     padding: 12px 0;
@@ -113,7 +113,7 @@ export default class MzListItem extends Vue {
 
   &__text {
     font-size: 14px;
-    color: getColor(text-regular);
+    color: getColor(text-secondary);
     margin-top: 3px;
   }
 
@@ -140,7 +140,7 @@ export default class MzListItem extends Vue {
       &__title,
       &__text {
         font-weight: bold;
-        color: getColor(text-secondary);
+        color: getColor(text-placeholder);
       }
       &:not(.mz-list-item--active) {
         @include before-background-disabled;
@@ -150,7 +150,7 @@ export default class MzListItem extends Vue {
 
   &--active.mz-list-item--link {
     @include before-background-active;
-    color: getColor(primary);
+    color: getVar(mz-list-item, font-color, active);
   }
 }
 </style>

@@ -1,5 +1,12 @@
 <template>
   <div class="page-component">
+    <mz-button style="margin-bottom:10px"
+      @click="onChangeThemeClick">切换主题</mz-button>
+
+    <mz-card>
+      测试
+    </mz-card>
+
     <mz-dropdown v-model="value"
       :list="list">
       <mz-button slot-scope="{changeVisiable}"
@@ -22,8 +29,8 @@
       <mz-list v-model="value"
         @change="onChange">
         <mz-list-item v-for="item of list"
-          ripple
           text="文本"
+          link
           round
           :key="item.value"
           :label="item.label"
@@ -61,6 +68,10 @@ export default class PageComponent extends Vue {
   ]
 
   value = '1'
+
+  onChangeThemeClick() {
+    this.$changeTheme(this.$getCurrentTheme() === 'dark' ? '' : 'dark')
+  }
 
   onButtonClick() {
     this.list.pop()
