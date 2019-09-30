@@ -26,18 +26,21 @@ export default class MzButton extends Vue {
   @Prop(Boolean)
   readonly circle!: boolean
   @Prop(Boolean)
+  readonly outlined!: boolean
+  @Prop(Boolean)
   readonly round!: boolean
 
   get buttonClasses() {
     const types = ['primary', 'success', 'warning', 'danger', 'info']
+    const type = types.includes(this.type) ? this.type : 'default'
     const classes: any[] = [
-      { 'mz-button--round': this.round },
       { 'is-circle': this.circle },
       { 'mz-button--icon': this.icon },
+      { 'mz-button--round': this.round },
+      { 'mz-button--outlined': this.outlined },
       { 'mz-button--disabled': this.disabled }
     ]
-    if (types.includes(this.type)) classes.push(`mz-button--${this.type}`)
-
+    classes.push(`mz-button--${type}`)
     return classes
   }
 }
@@ -84,11 +87,15 @@ export default class MzButton extends Vue {
     border-radius: 50%;
   }
 
+  $outlined: & + --outlined;
+  $disabled: & + --disabled;
+  $round: & + --round;
+  $icon: & + --icon;
+
   &:not(.mz-button--disabled) {
     @include before-background;
     will-change: box-shadow;
     &:active {
-      border-color: transparent;
       box-shadow: getVar(mz-button, box-shadow);
     }
   }
@@ -108,20 +115,34 @@ export default class MzButton extends Vue {
     }
   }
 
-  @each $type in (primary, success, warning, danger, info) {
-    &--#{$type} {
-      color: #ffffff;
-      fill: #ffffff;
-      background-color: getColor(#{$type});
-    }
-  }
+  // (状态名称,文字颜色,outlined时文字颜色,背景颜色,outlined时边框颜色)
+  // prettier-ignore
+  $typeColorMap:
+(default,null,var(--color-text-regular),transparent,var(--color-text-regular)),
+    (primary, #ffffff, null, null, null),
+    (success, #ffffff, null, null, null),
+    (warning, #ffffff, null, null, null),
+    (danger, #ffffff, null, null, null),
+    (info, #ffffff, null, null, null),
+    (disabled,var(--color-text-placeholder),var(--color-text-placeholder),var(--mz-button__background-color--disabled),var(--color-text-placeholder));
 
-  &--disabled {
-    cursor: not-allowed;
-    // pointer-events: none;
-    fill: getColor(text-secondary);
-    color: getColor(text-secondary);
-    background-color: getVar(mz-button, background-color, disabled);
+  @each $type, $color, $outlinedColor, $background,
+    $outlinedBorder in $typeColorMap
+  {
+    &--#{$type} {
+      @if ($type == disabled) {
+        cursor: not-allowed;
+      }
+      color: $color;
+      fill: $color;
+      background-color: var(--color-#{$type}, $background);
+    }
+    &--#{$type}#{$outlined} {
+      color: var(--color-#{$type}, $outlinedColor);
+      fill: var(--color-#{$type}, $outlinedColor);
+      border: 1px solid var(--color-#{$type}, $outlinedBorder);
+      background-color: transparent;
+    }
   }
 }
 </style>

@@ -20,11 +20,15 @@
       :ripple="{circle:true,circle:true}"
       @click="onButtonClick">a</mz-button> -->
 
+    <mz-switch v-model="outlined"
+      style="margin-right:20px"></mz-switch>
     <mz-button v-for="type of colorTypeList"
+      :outlined="outlined"
       :key="type"
       :type="type"
       ripple>测试按钮</mz-button>
     <mz-button disabled
+      :outlined="outlined"
       ripple>禁用按钮</mz-button>
 
     <div style="width:200px;border:1px solid #ccc;margin-top:10px">
@@ -69,6 +73,7 @@ export default class PageComponent extends Vue {
     { label: '测试 3', value: '3' }
   ]
   elevation = 0
+  outlined = false
   value = '1'
 
   onChangeThemeClick() {
