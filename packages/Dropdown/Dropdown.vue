@@ -1,7 +1,8 @@
 <template>
   <div class="mz-dropdown">
     <slot :changeVisiable="changeVisiable"></slot>
-    <mz-card :style="cardStyles">
+    <mz-card class="mz-dropdown__card"
+      :style="cardStyles">
       <mz-list :value="value"
         v-show="mVisiable"
         @change="onValueChange">
@@ -42,8 +43,8 @@ export default class MzDropdown extends Vue {
 
   get cardStyles() {
     return {
-      maxWidth:this.maxWidth,
-      maxHeight:this.maxHeight
+      maxWidth: this.maxWidth,
+      maxHeight: this.maxHeight
     }
   }
 
@@ -59,4 +60,10 @@ export default class MzDropdown extends Vue {
 </script>
 
 <style lang="scss">
+.mz-dropdown {
+  &__card {
+    position: absolute;
+    z-index: 1000;
+  }
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <button v-ripple="ripple"
-    class="mz-button color-transition"
+    class="mz-button"
     v-on="$listeners"
     :class="buttonClasses"
     :disabled="disabled">
@@ -74,7 +74,7 @@ export default class MzButton extends Vue {
   text-transform: none;
   user-select: none;
   white-space: nowrap;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), var(--color-transition);
   overflow: hidden;
   vertical-align: middle;
 
@@ -138,6 +138,7 @@ export default class MzButton extends Vue {
       background-color: var(--color-#{$type}, $background);
     }
     &--#{$type}#{$outlined} {
+      padding: 7px 15px;
       color: var(--color-#{$type}, $outlinedColor);
       fill: var(--color-#{$type}, $outlinedColor);
       border: 1px solid var(--color-#{$type}, $outlinedBorder);
