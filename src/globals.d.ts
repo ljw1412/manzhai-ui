@@ -2,6 +2,8 @@ import Vue, { VNode } from 'vue'
 
 declare global {
   interface HTMLElement {
+    _clickOutside?: EventListenerOrEventListenerObject
+
     _elevation?: number | string
 
     _ripple?: {
