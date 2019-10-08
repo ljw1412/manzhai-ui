@@ -5,8 +5,9 @@ function elevation(z: string | number) {
 }
 
 function modifyElevation(el: HTMLElement, z: string | number) {
+  if (!el._elevation) el._elevation = 0
   if (z || z === 0) {
-    if (el._elevation) el.classList.remove(elevation(el._elevation))
+    el.classList.remove(elevation(el._elevation))
     el.classList.add(elevation(z))
     el._elevation = z
   }
