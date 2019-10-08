@@ -1,7 +1,10 @@
 <template>
   <div class="mz-dropdown">
-    <slot :changeVisiable="changeVisiable"></slot>
-    <mz-card class="mz-dropdown__card"
+    <span ref="reference">
+      <slot :changeVisiable="changeVisiable"></slot>
+    </span>
+    <mz-card ref="popperCard"
+      class="mz-dropdown__card"
       :style="cardStyles">
       <mz-list :value="value"
         v-show="mVisiable"
@@ -18,9 +21,10 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, PropSync } from 'vue-property-decorator'
+import { Component, Vue, Prop, PropSync, Ref } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
+import Popper from 'popper.js'
 
 @Component({
   components: { MzCard, MzList, MzListItem, MzListGroup }
@@ -38,8 +42,13 @@ export default class MzDropdown extends Vue {
   readonly maxWidth!: string
   @Prop({ default: '400px' })
   readonly maxHeight!: string
+  @Ref('reference')
+  readonly reference!: HTMLElement
+  @Ref('popperCard')
+  readonly popperCard!: Vue
 
   mVisiable = false
+  popper?: Popper
 
   get cardStyles() {
     return {
@@ -56,14 +65,21 @@ export default class MzDropdown extends Vue {
   changeVisiable() {
     this.mVisiable = !this.mVisiable
   }
+
+  mounted() {
+    console.log('slots', this.$slots)
+
+    this.popper = new Popper(this.reference, this.popperCard.$el)
+  }
 }
 </script>
 
 <style lang="scss">
-.mz-dropdown {
-  &__card {
-    position: absolute;
-    z-index: 1000;
-  }
-}
+@import '@/styles/common/index.scss';
+// .mz-dropdown {
+//   &__card {
+//     position: absolute;
+//     z-index: 1000;
+//   }
+// }
 </style>
