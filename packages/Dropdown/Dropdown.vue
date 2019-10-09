@@ -3,11 +3,11 @@
     <span ref="reference">
       <slot :changeVisiable="changeVisiable"></slot>
     </span>
-    <mz-card ref="popperCard"
+    <mz-card v-show="mVisiable"
+      ref="popperCard"
       class="mz-dropdown__card"
       :style="cardStyles">
       <mz-list :value="value"
-        v-show="mVisiable"
         @change="onValueChange">
         <mz-list-item v-for="item of list"
           ripple
@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, PropSync, Ref } from 'vue-property-decorator'
+import getZIndex from '@/utils/zindex'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
 import Popper from 'popper.js'
@@ -42,6 +43,8 @@ export default class MzDropdown extends Vue {
   readonly maxWidth!: string
   @Prop({ default: '400px' })
   readonly maxHeight!: string
+  @Prop([Number, String])
+  readonly zIndex!: number | string
   @Ref('reference')
   readonly reference!: HTMLElement
   @Ref('popperCard')
@@ -53,7 +56,8 @@ export default class MzDropdown extends Vue {
   get cardStyles() {
     return {
       maxWidth: this.maxWidth,
-      maxHeight: this.maxHeight
+      maxHeight: this.maxHeight,
+      zIndex: this.zIndex || getZIndex()
     }
   }
 
@@ -64,12 +68,16 @@ export default class MzDropdown extends Vue {
 
   changeVisiable() {
     this.mVisiable = !this.mVisiable
+    if (this.popper) this.popper.update()
   }
 
   mounted() {
-    console.log('slots', this.$slots)
+    console.log('slots', this.$scopedSlots.default)
 
-    this.popper = new Popper(this.reference, this.popperCard.$el)
+    this.popper = new Popper(this.reference, this.popperCard.$el, {
+      placement: 'bottom'
+    })
+    document.body.appendChild(this.popperCard.$el)
   }
 }
 </script>

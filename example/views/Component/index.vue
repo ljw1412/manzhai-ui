@@ -30,7 +30,7 @@
     <mz-button disabled
       :outlined="outlined"
       ripple>禁用按钮</mz-button>
-
+    <!--
     <div style="width:200px;border:1px solid #ccc;margin-top:10px">
       <mz-list v-model="value"
         @change="onChange">
@@ -56,7 +56,7 @@
     <mz-list-item v-for="item of list"
       :key="item.value"
       :value="item.value"
-      @click="onItemClick"></mz-list-item>
+      @click="onItemClick"></mz-list-item> -->
   </div>
 </template>
 
