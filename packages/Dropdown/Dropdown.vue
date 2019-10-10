@@ -1,27 +1,29 @@
 <template>
-  <div class="mz-dropdown">
+  <div v-clickoutside="close"
+    class="mz-dropdown">
     <slot></slot>
-    <mz-card v-show="mVisiable"
-      ref="popper"
-      class="mz-dropdown__card"
-      :style="cardStyles">
-      <mz-list :value="value"
-        @change="onValueChange">
-        <mz-list-item v-for="item of list"
-          ripple
-          :data="item"
-          :key="item[valueName]"
-          :value="item[valueName]"
-          :label="item[labelName] || item[valueName]"></mz-list-item>
-      </mz-list>
-    </mz-card>
+    <transition name="mz-fade">
+      <mz-card v-show="mVisiable"
+        ref="popper"
+        class="mz-dropdown__card"
+        :style="cardStyles">
+        <mz-list :value="value"
+          @change="onValueChange">
+          <mz-list-item v-for="item of list"
+            ripple
+            :data="item"
+            :key="item[valueName]"
+            :value="item[valueName]"
+            :label="item[labelName] || item[valueName]"></mz-list-item>
+        </mz-list>
+      </mz-card>
+    </transition>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, PropSync, Ref } from 'vue-property-decorator'
 import getZIndex from '@/utils/zindex'
-import { on, off } from '@/utils/dom'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
 import Popper from 'popper.js'
@@ -79,6 +81,10 @@ export default class MzDropdown extends Vue {
     if (this.mPopper) this.mPopper.update()
   }
 
+  close(e: Event) {
+    if (!this.popper.$el.contains(e.target as Node)) this.mVisiable = false
+  }
+
   mounted() {
     // 请使用 不要使用 v-slot，会导致elm为 undefined
     if (this.$slots.default) {
@@ -88,14 +94,14 @@ export default class MzDropdown extends Vue {
       this.mPopper = new Popper(this.reference, this.popper.$el, {
         placement: 'bottom'
       })
-      on(this.reference, 'click', this.changeVisiable)
+      this.reference.addEventListener('click', this.changeVisiable, false)
     }
     document.body.appendChild(this.popper.$el)
   }
 
   beforeDestroy() {
     if (this.reference) {
-      off(this.reference, 'click', this.changeVisiable)
+      this.reference.removeEventListener('click', this.changeVisiable, false)
     }
   }
 }
