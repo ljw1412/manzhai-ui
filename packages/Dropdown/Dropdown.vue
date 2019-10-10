@@ -133,6 +133,14 @@ export default class MzDropdown extends Vue {
     }
   }
 
+  @Watch('placement')
+  onPlacementChange(val: string) {
+    if (this.mPopper) {
+      this.destroyPopper()
+      this.$nextTick(this.bindPopper)
+    }
+  }
+
   mounted() {
     this.bindPopper()
   }
