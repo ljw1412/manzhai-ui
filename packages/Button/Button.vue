@@ -87,11 +87,6 @@ export default class MzButton extends Vue {
     border-radius: 50%;
   }
 
-  $outlined: & + --outlined;
-  $disabled: & + --disabled;
-  $round: & + --round;
-  $icon: & + --icon;
-
   &:not(.mz-button--disabled) {
     @include before-background;
     will-change: box-shadow;
@@ -115,35 +110,43 @@ export default class MzButton extends Vue {
     }
   }
 
-  // (状态名称,文字颜色,outlined时文字颜色,背景颜色,outlined时边框颜色)
-  // prettier-ignore
-  $typeColorMap:
-(default,null,var(--color-text-regular),transparent,var(--color-text-regular)),
-    (primary, #ffffff, null, null, null),
-    (success, #ffffff, null, null, null),
-    (warning, #ffffff, null, null, null),
-    (danger, #ffffff, null, null, null),
-    (info, #ffffff, null, null, null),
-    (disabled,var(--color-text-placeholder),var(--color-text-placeholder),var(--mz-button__background-color--disabled),var(--color-text-placeholder));
+  &--outlined {
+    padding: 7px 15px;
+    background-color: transparent !important;
+  }
 
-  @each $type, $color, $outlinedColor, $background,
-    $outlinedBorder in $typeColorMap
-  {
+  @each $type in (primary, success, warning, danger, info) {
     &--#{$type} {
-      @if ($type == disabled) {
-        cursor: not-allowed;
-      }
-      color: $color;
-      fill: $color;
-      background-color: var(--color-#{$type}, $background);
+      color: #ffffff;
+      fill: #ffffff;
+      background-color: var(--color-#{$type});
     }
-    &--#{$type}#{$outlined} {
-      padding: 7px 15px;
-      color: var(--color-#{$type}, $outlinedColor);
-      fill: var(--color-#{$type}, $outlinedColor);
-      border: 1px solid var(--color-#{$type}, $outlinedBorder);
-      background-color: transparent;
+    &--#{$type}.mz-button--outlined {
+      color: var(--color-#{$type});
+      fill: var(--color-#{$type});
+      border: 1px solid var(--color-#{$type});
     }
+  }
+
+  &--default {
+    background-color: transparent;
+  }
+  &--default.mz-button--outlined {
+    color: var(--color-text-regular);
+    fill: var(--color-text-regular);
+    border: 1px solid var(--color-text-regular);
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    color: var(--color-text-placeholder);
+    fill: var(--color-text-placeholder);
+    background-color: var(--mz-button__background-color--disabled);
+  }
+  &--disabled.mz-button--outlined {
+    color: var(--color-text-placeholder);
+    fill: var(--color-text-placeholder);
+    border: 1px solid var(--color-text-placeholder);
   }
 }
 </style>
