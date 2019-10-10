@@ -1,10 +1,8 @@
 <template>
   <div class="mz-dropdown">
-    <span ref="reference">
-      <slot :changeVisiable="changeVisiable"></slot>
-    </span>
+    <slot></slot>
     <mz-card v-show="mVisiable"
-      ref="popperCard"
+      ref="popper"
       class="mz-dropdown__card"
       :style="cardStyles">
       <mz-list :value="value"
@@ -23,6 +21,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, PropSync, Ref } from 'vue-property-decorator'
 import getZIndex from '@/utils/zindex'
+import { on, off } from '@/utils/dom'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
 import Popper from 'popper.js'
@@ -39,25 +38,33 @@ export default class MzDropdown extends Vue {
   readonly valueName!: string
   @Prop({ default: 'label' })
   readonly labelName!: string
+  @Prop(String)
+  readonly minWidth!: string
+  @Prop(String)
+  readonly minHeight!: string
   @Prop({ default: '300px' })
   readonly maxWidth!: string
-  @Prop({ default: '400px' })
+  @Prop(String)
   readonly maxHeight!: string
   @Prop([Number, String])
   readonly zIndex!: number | string
-  @Ref('reference')
-  readonly reference!: HTMLElement
-  @Ref('popperCard')
-  readonly popperCard!: Vue
+  // @Ref('reference')
+  // readonly reference!: HTMLElement
+  @Ref('popper')
+  readonly popper!: Vue
 
   mVisiable = false
-  popper?: Popper
+  mZIndex = getZIndex()
+  mPopper?: Popper
+  reference?: HTMLElement
 
   get cardStyles() {
     return {
       maxWidth: this.maxWidth,
       maxHeight: this.maxHeight,
-      zIndex: this.zIndex || getZIndex()
+      minWidth: this.minWidth,
+      minHeight: this.minHeight,
+      zIndex: this.zIndex || this.mZIndex
     }
   }
 
@@ -68,26 +75,35 @@ export default class MzDropdown extends Vue {
 
   changeVisiable() {
     this.mVisiable = !this.mVisiable
-    if (this.popper) this.popper.update()
+    if (this.mVisiable) this.mZIndex = getZIndex()
+    if (this.mPopper) this.mPopper.update()
   }
 
   mounted() {
-    console.log('slots', this.$scopedSlots.default)
+    // 请使用 不要使用 v-slot，会导致elm为 undefined
+    if (this.$slots.default) {
+      this.reference = this.$slots.default[0].elm as HTMLElement
+    }
+    if (this.reference) {
+      this.mPopper = new Popper(this.reference, this.popper.$el, {
+        placement: 'bottom'
+      })
+      on(this.reference, 'click', this.changeVisiable)
+    }
+    document.body.appendChild(this.popper.$el)
+  }
 
-    this.popper = new Popper(this.reference, this.popperCard.$el, {
-      placement: 'bottom'
-    })
-    document.body.appendChild(this.popperCard.$el)
+  beforeDestroy() {
+    if (this.reference) {
+      off(this.reference, 'click', this.changeVisiable)
+    }
   }
 }
 </script>
 
 <style lang="scss">
 @import '@/styles/common/index.scss';
-// .mz-dropdown {
-//   &__card {
-//     position: absolute;
-//     z-index: 1000;
-//   }
-// }
+.mz-dropdown {
+  display: inline-block;
+}
 </style>

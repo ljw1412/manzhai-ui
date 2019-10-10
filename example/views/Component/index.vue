@@ -11,9 +11,11 @@
 
     <mz-dropdown v-model="value"
       :list="list">
-      <mz-button slot-scope="{changeVisiable}"
-        type="primary"
-        @click="changeVisiable">下拉选择:{{value}}</mz-button>
+      <mz-button type="primary">下拉选择:{{value}}</mz-button>
+    </mz-dropdown>
+    <mz-dropdown v-model="value"
+      :list="list">
+      <mz-button type="primary">下拉选择:{{value}}</mz-button>
     </mz-dropdown>
     <!-- <mz-button type="primary"
       round
