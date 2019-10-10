@@ -22,7 +22,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, PropSync, Ref } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  Prop,
+  PropSync,
+  Ref,
+  Watch
+} from 'vue-property-decorator'
 import getZIndex from '@/utils/zindex'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
@@ -40,6 +47,10 @@ export default class MzDropdown extends Vue {
   readonly valueName!: string
   @Prop({ default: 'label' })
   readonly labelName!: string
+  @Prop({ default: 'bottom' })
+  readonly placement!: Popper.Placement
+  @Prop(Boolean)
+  readonly disabled!: boolean
   @Prop(String)
   readonly minWidth!: string
   @Prop(String)
@@ -55,6 +66,7 @@ export default class MzDropdown extends Vue {
   @Ref('popper')
   readonly popper!: Vue
 
+  isAddBody = false
   mVisiable = false
   mZIndex = getZIndex()
   mPopper?: Popper
@@ -76,6 +88,7 @@ export default class MzDropdown extends Vue {
   }
 
   changeVisiable() {
+    if (this.disabled) return
     this.mVisiable = !this.mVisiable
     if (this.mVisiable) this.mZIndex = getZIndex()
     if (this.mPopper) this.mPopper.update()
@@ -85,18 +98,43 @@ export default class MzDropdown extends Vue {
     if (!this.popper.$el.contains(e.target as Node)) this.mVisiable = false
   }
 
-  mounted() {
+  bindPopper() {
     // 请使用 不要使用 v-slot，会导致elm为 undefined
     if (this.$slots.default) {
       this.reference = this.$slots.default[0].elm as HTMLElement
     }
     if (this.reference) {
       this.mPopper = new Popper(this.reference, this.popper.$el, {
-        placement: 'bottom'
+        placement: this.placement
       })
       this.reference.addEventListener('click', this.changeVisiable, false)
     }
-    document.body.appendChild(this.popper.$el)
+    if (!this.isAddBody) {
+      document.body.appendChild(this.popper.$el)
+      this.isAddBody = true
+    }
+  }
+
+  destroyPopper() {
+    if (this.mPopper) {
+      const popperElm = this.popper.$el as HTMLElement
+      const styles = popperElm.getAttribute('style')
+      // console.dir(popperElm.getAttribute('style'))
+
+      this.mPopper.destroy()
+      if (styles) popperElm.setAttribute('style', styles)
+    }
+  }
+
+  @Watch('mVisiable')
+  onVisiableChange(val: boolean) {
+    if (this.mPopper) {
+      val ? this.bindPopper() : this.destroyPopper()
+    }
+  }
+
+  mounted() {
+    this.bindPopper()
   }
 
   beforeDestroy() {
@@ -111,5 +149,8 @@ export default class MzDropdown extends Vue {
 @import '@/styles/common/index.scss';
 .mz-dropdown {
   display: inline-block;
+  &__card {
+    position: absolute;
+  }
 }
 </style>
