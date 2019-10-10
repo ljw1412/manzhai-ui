@@ -10,12 +10,15 @@
     </mz-card>
 
     <mz-dropdown v-model="value"
-      :list="list">
+      :list="list"
+      :placement="placement">
       <mz-button type="primary">下拉选择:{{value}}</mz-button>
     </mz-dropdown>
     <mz-dropdown v-model="value"
-      :list="list">
-      <mz-button type="primary">下拉选择:{{value}}</mz-button>
+      :list="list"
+      :disabled="true">
+      <mz-button type="primary"
+        :disabled="true">下拉选择:{{value}}</mz-button>
     </mz-dropdown>
     <!-- <mz-button type="primary"
       round
@@ -77,9 +80,11 @@ export default class PageComponent extends Vue {
   elevation = 0
   outlined = false
   value = '1'
+  placement = 'bottom'
 
   onChangeThemeClick() {
     this.$changeTheme(this.$getCurrentTheme() === 'dark' ? '' : 'dark')
+    this.placement = 'right'
   }
 
   onButtonClick() {
