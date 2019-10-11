@@ -8,8 +8,9 @@ import Cell from '../packages/Cell/index'
 import CellGroup from '../packages/CellGroup/index'
 import Switch from '../packages/Switch/index'
 import Card from '../packages/Card/index'
-import Dropdown from '../packages/Dropdown/index'
 import { List, ListItem, ListGroup } from '../packages/List/index'
+import Dropdown from '../packages/Dropdown/index'
+import Navigation from '../packages/Navigation/index'
 
 const components = [
   Icon,
@@ -18,10 +19,11 @@ const components = [
   CellGroup,
   Switch,
   Card,
-  Dropdown,
   List,
   ListItem,
-  ListGroup
+  ListGroup,
+  Dropdown,
+  Navigation
 ]
 
 /**
@@ -58,8 +60,9 @@ export default {
   Cell,
   CellGroup,
   Switch,
-  Dropdown,
   List,
   ListItem,
-  ListGroup
+  ListGroup,
+  Dropdown,
+  Navigation
 }
