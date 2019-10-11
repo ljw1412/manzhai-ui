@@ -5,9 +5,9 @@
 export function changeTheme(name: string) {
   const rootDataset = document.documentElement.dataset
   rootDataset.theme = name
+  localStorage.setItem('mz-theme', name)
 }
 
 export function getCurrentTheme() {
-  const rootDataset = document.documentElement.dataset
-  return rootDataset.theme
+  return localStorage.getItem('mz-theme') || ''
 }
