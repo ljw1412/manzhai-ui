@@ -20,6 +20,8 @@ export default class MzList extends Vue {
   readonly gutter!: string
   @Prop(Boolean)
   readonly disabled!: boolean
+  @Prop(String)
+  readonly size!: string
 
   itemList: ListItem[] = []
 

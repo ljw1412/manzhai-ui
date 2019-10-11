@@ -11,7 +11,8 @@
         <div class="mz-list-item__title">
           <slot name="title">{{ label || value }}</slot>
         </div>
-        <div class="mz-list-item__text">
+        <div v-if="text || $slots.text"
+          class="mz-list-item__text">
           <slot name="text">{{ text }}</slot>
         </div>
       </slot>
@@ -43,6 +44,8 @@ export default class MzListItem extends Vue {
   readonly round!: boolean | String
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
+  @Prop(String)
+  readonly size!: string
   @Inject({ from: 'mzList', default: null })
   readonly mzList!: any
 
@@ -53,6 +56,11 @@ export default class MzListItem extends Vue {
     return this.disabled
   }
 
+  get itemSize() {
+    if (this.mzList && this.mzList.size) return this.mzList.size
+    return this.size
+  }
+
   get wrapperClasses() {
     const classes = []
     if (
@@ -60,6 +68,9 @@ export default class MzListItem extends Vue {
       ['left', 'right'].includes(this.round)
     ) {
       classes.push(`mz-list-item--${this.round}-round`)
+    }
+    if (['large', 'small'].includes(this.itemSize)) {
+      classes.push(`mz-list-item--${this.itemSize}`)
     }
     return [
       classes,
@@ -151,6 +162,36 @@ export default class MzListItem extends Vue {
   &--active.mz-list-item--link {
     @include before-background-active;
     color: getVar(mz-list-item, font-color, active);
+  }
+
+  &--large {
+    padding: 0 20px;
+    .mz-list-item {
+      &__content {
+        padding: 16px 0;
+      }
+      &__title {
+        font-size: 18px;
+      }
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--small {
+    padding: 0 12px;
+    .mz-list-item {
+      &__content {
+        padding: 8px 0;
+      }
+      &__title {
+        font-size: 14px;
+      }
+      &__text {
+        font-size: 12px;
+      }
+    }
   }
 }
 </style>

@@ -1,13 +1,14 @@
 <template>
   <div v-clickoutside="close"
     class="mz-dropdown">
-    <slot></slot>
+    <slot change-display="changeDisplay"></slot>
     <transition name="mz-fade">
       <mz-card v-show="mVisiable"
         ref="popper"
         class="mz-dropdown__card"
         :style="cardStyles">
         <mz-list :value="value"
+          :size="size"
           @change="onValueChange">
           <mz-list-item v-for="item of list"
             ripple
@@ -49,6 +50,8 @@ export default class MzDropdown extends Vue {
   readonly labelName!: string
   @Prop({ default: 'bottom' })
   readonly placement!: Popper.Placement
+  @Prop({ default: 'small' })
+  readonly size!: string
   @Prop(Boolean)
   readonly disabled!: boolean
   @Prop(String)
