@@ -9,17 +9,15 @@
       <span @click="elevation = (elevation + 1) % 25">测试</span>
     </mz-card>
 
-    <mz-dropdown v-model="value"
-      :list="list"
-      :placement="placement">
-      <mz-button type="primary">下拉选择:{{value}}</mz-button>
-    </mz-dropdown>
-    <mz-dropdown v-model="value"
-      :list="list"
-      :disabled="true">
-      <mz-button type="primary"
-        :disabled="true">下拉选择:{{value}}</mz-button>
-    </mz-dropdown>
+    <div style="margin:50px 100px">
+      <mz-dropdown v-model="placement"
+        :list="placementList"
+        :placement="placement">
+        <mz-button type="primary"
+          style="width: 100px;">{{placement}}</mz-button>
+      </mz-dropdown>
+    </div>
+
     <!-- <mz-button type="primary"
       round
       :ripple="{circle:true,circle:true}"
@@ -77,14 +75,20 @@ export default class PageComponent extends Vue {
     { label: '测试 2', value: '2' },
     { label: '测试 3', value: '3' }
   ]
+
+  placementList = [
+    { value: 'left' },
+    { value: 'right' },
+    { value: 'top' },
+    { value: 'bottom' }
+  ]
+  placement = 'bottom'
   elevation = 0
   outlined = false
   value = '1'
-  placement = 'bottom'
 
   onChangeThemeClick() {
     this.$changeTheme(this.$getCurrentTheme() === 'dark' ? '' : 'dark')
-    this.placement = 'right'
   }
 
   onButtonClick() {
