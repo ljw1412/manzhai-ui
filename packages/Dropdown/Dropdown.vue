@@ -1,7 +1,7 @@
 <template>
   <div v-clickoutside="close"
     class="mz-dropdown">
-    <slot change-display="changeDisplay"></slot>
+    <slot></slot>
     <transition name="mz-fade">
       <mz-card v-show="mVisiable"
         ref="popper"
