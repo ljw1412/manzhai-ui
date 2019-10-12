@@ -1,13 +1,17 @@
-<template>
-  <div class="mz-navigation">
-  </div>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue } from 'vue-property-decorator'
+import { MzList, MzListItem, MzListGroup } from '../List/index'
+import { CreateElement } from 'vue'
 
-@Component
-export default class MzNavigation extends Vue {}
+@Component({
+  components: { MzList, MzListItem, MzListGroup }
+})
+export default class MzNavigation extends Vue {
+  render(h: CreateElement) {
+    const listWrap = <mz-list></mz-list>
+    return <div class="mz-navigation">{listWrap}</div>
+  }
+}
 </script>
 
 <style lang="scss">
