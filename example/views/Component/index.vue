@@ -3,6 +3,8 @@
     <mz-button style="margin-bottom:10px"
       @click="onChangeThemeClick">切换主题</mz-button>
 
+    <mz-navigation></mz-navigation>
+
     <mz-card :elevation="elevation"
       outline
       style="margin:10px">
@@ -60,6 +62,7 @@
       :key="item.value"
       :value="item.value"
       @click="onItemClick"></mz-list-item> -->
+    <router-view></router-view>
   </div>
 </template>
 

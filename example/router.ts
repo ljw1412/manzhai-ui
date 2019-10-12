@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
+import ComponentNavigation from './views/Component/Navigation.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -17,7 +18,14 @@ export default new Router({
     {
       path: '/component',
       name: 'pageComponent',
-      component: Component
+      component: Component,
+      children: [
+        {
+          path: 'navigation',
+          name: 'ComponentNavigation',
+          component: ComponentNavigation
+        }
+      ]
     },
     {
       path: '/guide',
