@@ -3,9 +3,7 @@
     <mz-button style="margin-bottom:10px"
       @click="onChangeThemeClick">切换主题</mz-button>
 
-    <mz-navigation></mz-navigation>
-
-    <mz-card :elevation="elevation"
+    <!-- <mz-card :elevation="elevation"
       outline
       style="margin:10px">
       <span @click="elevation = (elevation + 1) % 25">测试</span>
@@ -18,14 +16,14 @@
         <mz-button type="primary"
           style="width: 100px;">{{placement}}</mz-button>
       </mz-dropdown>
-    </div>
+    </div> -->
 
     <!-- <mz-button type="primary"
       round
       :ripple="{circle:true,circle:true}"
       @click="onButtonClick">a</mz-button> -->
 
-    <mz-switch v-model="outlined"
+    <!-- <mz-switch v-model="outlined"
       style="margin-right:20px"></mz-switch>
     <mz-button v-for="type of colorTypeList"
       :outlined="outlined"
@@ -34,7 +32,7 @@
       ripple>测试按钮</mz-button>
     <mz-button disabled
       :outlined="outlined"
-      ripple>禁用按钮</mz-button>
+      ripple>禁用按钮</mz-button> -->
     <!--
     <div style="width:200px;border:1px solid #ccc;margin-top:10px">
       <mz-list v-model="value"
