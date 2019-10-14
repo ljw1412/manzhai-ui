@@ -4,26 +4,28 @@ import { changeTheme, getCurrentTheme } from './utils/theme'
 import * as directives from './directives'
 import Icon from '../packages/Icon/index'
 import Button from '../packages/Button/index'
+import Card from '../packages/Card/index'
 import Cell from '../packages/Cell/index'
 import CellGroup from '../packages/CellGroup/index'
-import Switch from '../packages/Switch/index'
-import Card from '../packages/Card/index'
-import { List, ListItem, ListGroup } from '../packages/List/index'
 import Dropdown from '../packages/Dropdown/index'
+import { List, ListItem, ListGroup } from '../packages/List/index'
 import Navigation from '../packages/Navigation/index'
+import SubHeader from '../packages/SubHeader/index'
+import Switch from '../packages/Switch/index'
 
 const components = [
   Icon,
   Button,
+  Card,
   Cell,
   CellGroup,
-  Switch,
-  Card,
+  Dropdown,
   List,
   ListItem,
   ListGroup,
-  Dropdown,
-  Navigation
+  Navigation,
+  SubHeader,
+  Switch
 ]
 
 /**
@@ -46,23 +48,31 @@ function bindComponents(Vue: VueConstructor) {
   })
 }
 
+function init() {
+  changeTheme(getCurrentTheme())
+}
+
 const install = function(Vue: VueConstructor, options = {}) {
   Vue.prototype.$changeTheme = changeTheme
   Vue.prototype.$getCurrentTheme = getCurrentTheme
   bindDirectives(Vue)
   bindComponents(Vue)
+
+  init()
 }
 
 export default {
   install,
   Icon,
   Button,
+  Card,
   Cell,
   CellGroup,
-  Switch,
+  Dropdown,
   List,
   ListItem,
   ListGroup,
-  Dropdown,
-  Navigation
+  Navigation,
+  SubHeader,
+  Switch
 }
