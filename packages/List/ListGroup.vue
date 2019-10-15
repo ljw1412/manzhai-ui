@@ -1,6 +1,6 @@
 <template>
   <div class="mz-list-group">
-    <mz-sub-header>{{label}}</mz-sub-header>
+    <mz-sub-header v-if="label">{{label}}</mz-sub-header>
     <slot></slot>
   </div>
 </template>
@@ -15,7 +15,4 @@ export default class MzListGroup extends Vue {
 </script>
 
 <style lang="scss">
-.mz-list-group {
-  padding: 0 16px;
-}
 </style>
