@@ -10,6 +10,7 @@ interface NavigationItem {
   label?: string
   value: any
   route?: RawLocation
+  isCollapsed?: boolean
   children?: NavigationItem[]
 }
 
@@ -38,16 +39,34 @@ export default class MzNavigation extends Vue {
 
   renderGroup(data: NavigationGroup[]) {
     return data.map(item => {
-      const listItems = item.list.map(item => {
-        return (
-          <mz-list-item label={item.label} value={item.value}></mz-list-item>
-        )
-      })
+      const listItems = this.renderItem(item.list)
       return (
         <mz-list-group label={item.label}>
           <mz-list>{listItems}</mz-list>
         </mz-list-group>
       )
+    })
+  }
+
+  renderItem(data: NavigationItem[]): any {
+    return data.map(item => {
+      if (item.isCollapsed === undefined) this.$set(item, 'isCollapsed', false)
+      if (item.children) {
+        const childrenItem = this.renderItem(item.children)
+        return (
+          <mz-list-group>
+            <mz-list-item
+              label={item.label}
+              value={item.value}
+              on-click={() => (item.isCollapsed = !item.isCollapsed)}
+            ></mz-list-item>
+            <div style="padding:0 5px" v-show={!item.isCollapsed}>
+              {childrenItem}
+            </div>
+          </mz-list-group>
+        )
+      }
+      return <mz-list-item label={item.label} value={item.value}></mz-list-item>
     })
   }
 }
