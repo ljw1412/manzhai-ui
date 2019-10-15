@@ -12,6 +12,7 @@ import { List, ListItem, ListGroup } from '../packages/List/index'
 import Navigation from '../packages/Navigation/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
+import { InstallationOptions } from '../types/index'
 
 const components = [
   Icon,
@@ -48,17 +49,28 @@ function bindComponents(Vue: VueConstructor) {
   })
 }
 
-function init() {
+function registerIcon() {
+  const svgs = require.context('@/icons', false, /\.svg$/)
+  const requireAll = (requireContext: __WebpackModuleApi.RequireContext) =>
+    requireContext.keys().map(requireContext)
+  requireAll(svgs)
+}
+
+function init(options: InstallationOptions) {
+  registerIcon()
   changeTheme(getCurrentTheme())
 }
 
-const install = function(Vue: VueConstructor, options = {}) {
+const install = function(
+  Vue: VueConstructor,
+  options: InstallationOptions = {}
+) {
   Vue.prototype.$changeTheme = changeTheme
   Vue.prototype.$getCurrentTheme = getCurrentTheme
   bindDirectives(Vue)
   bindComponents(Vue)
 
-  init()
+  init(options)
 }
 
 export default {
