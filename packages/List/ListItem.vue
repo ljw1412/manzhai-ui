@@ -1,7 +1,7 @@
 <template>
   <div v-ripple="!itemDisabled && ripple"
     class="mz-list-item"
-    :class="wrapperClasses"
+    :class="itemClasses"
     @click="onClick">
     <div class="mz-list-item__prefix">
       <slot name="prefix"></slot>
@@ -61,7 +61,7 @@ export default class MzListItem extends Vue {
     return this.size
   }
 
-  get wrapperClasses() {
+  get itemClasses() {
     const classes = []
     if (
       typeof this.round === 'string' &&
