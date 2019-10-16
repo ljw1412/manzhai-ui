@@ -1,14 +1,6 @@
-<template>
-  <svg class="mz-icon"
-    aria-hidden="true"
-    v-on="$listeners"
-    :style="svgStyles">
-    <use :xlink:href="iconName" />
-  </svg>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
+import { CreateElement } from 'vue'
 
 @Component
 export default class MzIcon extends Vue {
@@ -31,6 +23,22 @@ export default class MzIcon extends Vue {
       height: this.size + 'px',
       fill: this.color
     }
+  }
+
+  render(h: CreateElement) {
+    let content = null
+    if (this.iconName) {
+      content = <use {...{ attrs: { 'xlink:href': this.iconName } }} />
+    }
+
+    const iconProps = {
+      class: 'mz-icon',
+      style: this.svgStyles,
+      'aria-hidden': true,
+      on: this.$listeners
+    }
+
+    return <svg {...iconProps}>{content}</svg>
   }
 }
 </script>
