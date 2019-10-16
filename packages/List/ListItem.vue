@@ -28,6 +28,8 @@ import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
 
 @Component
 export default class MzListItem extends Vue {
+  @Inject({ from: 'mzList', default: null })
+  readonly mzList!: any
   @Prop()
   readonly data!: any
   @Prop(String)
@@ -46,8 +48,6 @@ export default class MzListItem extends Vue {
   readonly ripple!: boolean | object
   @Prop(String)
   readonly size!: string
-  @Inject({ from: 'mzList', default: null })
-  readonly mzList!: any
 
   active = false
 

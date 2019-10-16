@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { MzList, MzListItem, MzListGroup } from '../List/index'
+import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
 import { CreateElement } from 'vue'
 import { RawLocation } from 'vue-router'
 import { typeOf } from '../../src/utils/assist'
@@ -34,39 +34,29 @@ export default class MzNavigation extends Vue {
 
     const groups = this.renderGroup(data as NavigationGroup[])
 
-    return <div class="mz-navigation">{groups}</div>
+    return (
+      <div class="mz-navigation">
+        <mz-list>{groups}</mz-list>
+      </div>
+    )
   }
 
   renderGroup(data: NavigationGroup[]) {
     return data.map(item => {
       const listItems = this.renderItem(item.list)
-      return (
-        <mz-list-group label={item.label}>
-          <mz-list>{listItems}</mz-list>
-        </mz-list-group>
-      )
+      return <mz-list-group label={item.label}>{listItems}</mz-list-group>
     })
   }
 
   renderItem(data: NavigationItem[]): any {
     return data.map(item => {
-      if (item.isCollapsed === undefined) this.$set(item, 'isCollapsed', false)
       if (item.children) {
         const childrenItem = this.renderItem(item.children)
         return (
-          <mz-list-group>
-            <mz-list-item
-              label={item.label}
-              value={item.value}
-              on-click={() => (item.isCollapsed = !item.isCollapsed)}
-            ></mz-list-item>
-            <div style="padding:0 5px" v-show={!item.isCollapsed}>
-              {childrenItem}
-            </div>
-          </mz-list-group>
+          <mz-list-item-group props={item}>{childrenItem}</mz-list-item-group>
         )
       }
-      return <mz-list-item label={item.label} value={item.value}></mz-list-item>
+      return <mz-list-item props={item} link></mz-list-item>
     })
   }
 }
