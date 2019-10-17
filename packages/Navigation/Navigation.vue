@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
 import { CreateElement } from 'vue'
 import { RawLocation } from 'vue-router'
@@ -13,7 +13,7 @@ interface NavigationItem {
   icon?: string
   label?: string
   text?: string
-  route?: RawLocation
+  to?: RawLocation
   isCollapsed?: boolean
   children?: NavigationItem[]
 }
@@ -29,6 +29,42 @@ export default class MzNavigation extends Vue {
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
 
+  value = ''
+
+  @Watch('data', { immediate: true })
+  onDataChange(data: NavigationItem | NavigationItem[]) {
+    this.$nextTick(() => {
+      const list = typeOf(data) === 'object' ? [this.data] : this.data
+      this.findCurrent(list as NavigationItem[])
+    })
+  }
+
+  findCurrent(data: NavigationItem[]) {
+    const found = false
+    data.forEach(item => {
+      if (item.to) {
+        const { name, path } = this.$router.resolve(item.to).resolved
+        if (this.$route.name === name || this.$route.path === path) {
+          this.value = item.value || item.label
+        }
+      }
+      if (item.children && !found) {
+        this.findCurrent(item.children)
+      }
+    })
+  }
+
+  go(item: NavigationItem) {
+    return () => {
+      if (item.to) {
+        const { name, path } = this.$router.resolve(item.to).resolved
+        if (this.$route.name !== name && this.$route.path !== path) {
+          this.$router.push(item.to)
+        }
+      }
+    }
+  }
+
   render(h: CreateElement) {
     if (!['object', 'array'].includes(typeOf(this.data)))
       throw new TypeError('请传入正确的导航栏格式!')
@@ -39,18 +75,27 @@ export default class MzNavigation extends Vue {
 
     return (
       <div class="mz-navigation">
-        <mz-list gutter="5px">{navItems}</mz-list>
+        <mz-list v-model={this.value} gutter="5px">
+          {navItems}
+        </mz-list>
       </div>
     )
   }
 
   renderItem(data: NavigationItem[]): any {
     return data.map(item => {
-      if (!item.value) item.value = item.label
+      if (!item.value && !item.group) item.value = item.label
       const baseProps = {
-        props: { ...item, round: this.round, link: true, ripple: this.ripple }
+        props: {
+          ...item,
+          round: this.round,
+          link: true,
+          ripple: this.ripple
+        },
+        on: {
+          click: this.go(item)
+        }
       }
-
       // 但凡有 group 字段的都认为是列表组模式
       if (item.group) {
         const groupItems = this.renderItem(item.children || [])

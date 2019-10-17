@@ -17,15 +17,43 @@ export default class Sidebar extends Vue {
         {
           label: 'Button',
           text: '按钮',
-          children: [{ label: '子1' }]
+          to: { name: 'ComponentButton' }
         },
-        { label: 'Card', text: '卡片' },
-        { label: 'Cell', text: '单元' },
-        { label: 'Dropdown', text: '下拉菜单' },
-        { label: 'Icon', text: '图标' },
-        { label: 'List', text: '列表' },
-        { label: 'Navigation', text: '导航' },
-        { label: 'Switch', text: '开关' }
+        {
+          label: 'Card',
+          text: '卡片',
+          to: { name: 'ComponentCard' }
+        },
+        {
+          label: 'Cell',
+          text: '单元',
+          to: { name: 'ComponentCell' }
+        },
+        {
+          label: 'Dropdown',
+          text: '下拉菜单',
+          to: '/component/dropdown'
+        },
+        {
+          label: 'Icon',
+          text: '图标',
+          to: { name: 'ComponentIcon' }
+        },
+        {
+          label: 'List',
+          text: '列表',
+          to: { name: 'ComponentList' }
+        },
+        {
+          label: 'Navigation',
+          text: '导航',
+          to: { name: 'ComponentNavigation' }
+        },
+        {
+          label: 'Switch',
+          text: '开关',
+          to: { name: 'ComponentSwitch' }
+        }
       ]
     }
   ]
@@ -34,7 +62,8 @@ export default class Sidebar extends Vue {
 
 <style lang="scss">
 #sidebar {
-  width: 200px;
   box-sizing: border-box;
+  width: 216px;
+  padding: 0 8px;
 }
 </style>
