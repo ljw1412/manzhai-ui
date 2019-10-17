@@ -11,20 +11,20 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class ComponentNavigation extends Vue {
   data = [
     {
-      label: '组1',
-      list: [
+      group: '组1',
+      children: [
         {
           label: '随随便便的1',
           value: '1',
           children: [
             {
               label: '子菜单1',
-              value: 'subnav',
+              value: 'subnav1',
               children: [
                 {
                   label: '子菜单1',
-                  value: 'subnav',
-                  children: [{ label: '子菜单1', value: 'subnav' }]
+                  value: 'subnav2',
+                  children: [{ label: '子菜单1', value: 'subnav3' }]
                 }
               ]
             }
@@ -37,11 +37,11 @@ export default class ComponentNavigation extends Vue {
       ]
     },
     {
-      label: '组2',
-      list: [
+      group: '组2',
+      children: [
         {
           label: '迷迷糊糊的1',
-          value: '1'
+          value: '3'
         }
       ]
     }
