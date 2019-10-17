@@ -2,8 +2,10 @@
   <div v-ripple="!itemDisabled && ripple"
     class="mz-list-item"
     :class="itemClasses"
+    :style="itemStyles"
     @click="onClick">
-    <div class="mz-list-item__prefix">
+    <div v-if="$slots.prefix"
+      class="mz-list-item__prefix">
       <slot name="prefix"></slot>
     </div>
     <div class="mz-list-item__content">
@@ -17,14 +19,15 @@
         </div>
       </slot>
     </div>
-    <div class="mz-list-item__suffix">
+    <div v-if="$slots.suffix"
+      class="mz-list-item__suffix">
       <slot name="suffix"></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
+import { Component, Vue, Prop, Inject, Watch } from 'vue-property-decorator'
 
 @Component
 export default class MzListItem extends Vue {
@@ -41,15 +44,19 @@ export default class MzListItem extends Vue {
   @Prop(Boolean)
   readonly disabled!: boolean
   @Prop(Boolean)
+  readonly active?: boolean
+  @Prop(Boolean)
   readonly link!: boolean
+  @Prop(Boolean)
+  readonly notAllowSelected!: boolean
   @Prop([Boolean, String])
-  readonly round!: boolean | String
+  readonly round!: boolean | 'left' | 'right' | 'mini'
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
   @Prop(String)
   readonly size!: string
 
-  active = false
+  mActive = false
 
   get itemDisabled() {
     if (this.mzList && this.mzList.disabled) return true
@@ -61,11 +68,24 @@ export default class MzListItem extends Vue {
     return this.size
   }
 
+  get gutter() {
+    if (this.mzList && this.mzList.gutter) return this.mzList.gutter
+    return undefined
+  }
+
+  get itemActive() {
+    return this.active || this.mActive
+  }
+
+  get itemStyles() {
+    return { marginTop: this.gutter }
+  }
+
   get itemClasses() {
     const classes = []
     if (
       typeof this.round === 'string' &&
-      ['left', 'right'].includes(this.round)
+      ['left', 'right', 'mini'].includes(this.round)
     ) {
       classes.push(`mz-list-item--${this.round}-round`)
     }
@@ -76,17 +96,22 @@ export default class MzListItem extends Vue {
       classes,
       {
         'mz-list-item--disabled': this.itemDisabled,
-        'mz-list-item--active': this.active,
+        'mz-list-item--active': this.itemActive,
         'mz-list-item--link': this.link || this.ripple,
         'mz-list-item--round': typeof this.round === 'boolean' && this.round
       }
     ]
   }
 
+  @Watch('active', { immediate: true })
+  onActiveChange(active: boolean) {
+    this.mActive = !!active
+  }
+
   onClick() {
     if (this.itemDisabled) return
     this.$emit('click', this.value, this.data)
-    if (this.mzList) {
+    if (this.mzList && !this.notAllowSelected) {
       this.mzList.setValue(this.value, this.data, this)
     }
   }
@@ -110,9 +135,12 @@ export default class MzListItem extends Vue {
 
 .mz-list-item {
   position: relative;
+  display: flex;
   padding: 0 16px;
   color: getColor(text-regular);
+  fill: getColor(text-regular);
   &__content {
+    flex-grow: 1;
     position: relative;
     padding: 12px 0;
     z-index: 50;
@@ -125,7 +153,14 @@ export default class MzListItem extends Vue {
   &__text {
     font-size: 14px;
     color: getColor(text-secondary);
+    fill: getColor(text-secondary);
     margin-top: 3px;
+  }
+
+  &__prefix,
+  &__suffix {
+    flex-shrink: 0;
+    margin: auto;
   }
 
   &--link {
@@ -134,7 +169,7 @@ export default class MzListItem extends Vue {
   }
 
   @each $type, $radius in ('', 100px), ('left-', 100px 0 0 100px),
-    ('right-', 0 100px 100px 0)
+    ('right-', 0 100px 100px 0), ('mini-', 5px)
   {
     &--#{$type}round {
       overflow: hidden;
@@ -152,6 +187,7 @@ export default class MzListItem extends Vue {
       &__text {
         font-weight: bold;
         color: getColor(text-placeholder);
+        fill: getColor(text-placeholder);
       }
       &:not(.mz-list-item--active) {
         @include before-background-disabled;
@@ -162,6 +198,7 @@ export default class MzListItem extends Vue {
   &--active.mz-list-item--link {
     @include before-background-active;
     color: getVar(mz-list-item, font-color, active);
+    fill: getVar(mz-list-item, font-color, active);
   }
 
   &--large {

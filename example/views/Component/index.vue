@@ -33,15 +33,22 @@
     <mz-button disabled
       :outlined="outlined"
       ripple>禁用按钮</mz-button> -->
-
-    <router-view></router-view>
+    <sidebar></sidebar>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Sidebar from './components/Sidebar.vue'
 
-@Component
+@Component({
+  components: {
+    Sidebar
+  }
+})
 export default class PageComponent extends Vue {
   colorTypeList = ['', 'primary', 'success', 'warning', 'danger', 'info']
 

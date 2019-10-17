@@ -5,18 +5,17 @@ import { CreateElement } from 'vue'
 import { RawLocation } from 'vue-router'
 import { typeOf } from '../../src/utils/assist'
 
+let tempValue = 0
+
 interface NavigationItem {
+  value: any
+  group?: string
   icon?: string
   label?: string
-  value: any
+  text?: string
   route?: RawLocation
   isCollapsed?: boolean
   children?: NavigationItem[]
-}
-
-interface NavigationGroup {
-  label?: string
-  list: NavigationItem[]
 }
 
 @Component({
@@ -24,39 +23,50 @@ interface NavigationGroup {
 })
 export default class MzNavigation extends Vue {
   @Prop({ default: () => [] })
-  readonly data!: NavigationGroup | NavigationGroup[]
+  readonly data!: NavigationItem | NavigationItem[]
+  @Prop([Boolean, String])
+  readonly round!: boolean | 'left' | 'right' | 'mini'
+  @Prop([Boolean, Object])
+  readonly ripple!: boolean | object
 
   render(h: CreateElement) {
     if (!['object', 'array'].includes(typeOf(this.data)))
       throw new TypeError('请传入正确的导航栏格式!')
-    let data = this.data
-    if (typeOf(this.data) === 'object') data = [this.data as NavigationGroup]
 
-    const groups = this.renderGroup(data as NavigationGroup[])
+    const data = typeOf(this.data) === 'object' ? [this.data] : this.data
+
+    const navItems = this.renderItem(data as NavigationItem[])
 
     return (
       <div class="mz-navigation">
-        <mz-list>{groups}</mz-list>
+        <mz-list gutter="5px">{navItems}</mz-list>
       </div>
     )
   }
 
-  renderGroup(data: NavigationGroup[]) {
-    return data.map(item => {
-      const listItems = this.renderItem(item.list)
-      return <mz-list-group label={item.label}>{listItems}</mz-list-group>
-    })
-  }
-
   renderItem(data: NavigationItem[]): any {
     return data.map(item => {
+      if (!item.value) item.value = item.label
+      const baseProps = {
+        props: { ...item, round: this.round, link: true, ripple: this.ripple }
+      }
+
+      // 但凡有 group 字段的都认为是列表组模式
+      if (item.group) {
+        const groupItems = this.renderItem(item.children || [])
+        return <mz-list-group label={item.group}>{groupItems}</mz-list-group>
+      }
+
+      // 没有 group 有 children 的认为是列表元素组模式(即可展开组模式)
       if (item.children) {
         const childrenItem = this.renderItem(item.children)
         return (
-          <mz-list-item-group props={item}>{childrenItem}</mz-list-item-group>
+          <mz-list-item-group {...baseProps}>{childrenItem}</mz-list-item-group>
         )
       }
-      return <mz-list-item props={item} link></mz-list-item>
+
+      // 都没有的为普通列表元素
+      return <mz-list-item {...baseProps}></mz-list-item>
     })
   }
 }

@@ -27,9 +27,9 @@ export default class MzList extends Vue {
 
   selectItem(vm: ListItem) {
     this.itemList.forEach(item => {
-      item.active = false
+      item.mActive = false
     })
-    vm.active = true
+    vm.mActive = true
   }
 
   setValue(value: any, data: any, vm: ListItem) {
@@ -44,7 +44,7 @@ export default class MzList extends Vue {
     if (vm instanceof ListItem) {
       this.itemList.push(vm)
       if (vm.value === this.value) {
-        vm.active = true
+        vm.mActive = true
       }
     }
   }
