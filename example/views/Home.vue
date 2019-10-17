@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <router-link :to="{name:'pageComponent'}">组件</router-link>
+    <router-view />
   </div>
 </template>
 
