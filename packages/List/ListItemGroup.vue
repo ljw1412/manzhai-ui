@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
+import { Component, Vue, Prop, Inject, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzListItem from './ListItem.vue'
 import MzIcon from '../Icon/index'
@@ -26,6 +26,8 @@ export default class MzListItemGroup extends Vue {
   readonly notAllowSelected!: boolean
   @Prop(Boolean)
   readonly hasActiveStyle!: boolean
+  @Ref('children')
+  readonly childrenRef!: HTMLDivElement
 
   isOpen = false
 
@@ -43,6 +45,9 @@ export default class MzListItemGroup extends Vue {
       on: {
         click: () => {
           this.isOpen = !this.isOpen
+          if (this.childrenRef) {
+            console.log(this.childrenRef.getBoundingClientRect())
+          }
         }
       }
     }
@@ -53,11 +58,16 @@ export default class MzListItemGroup extends Vue {
           <mz-icon
             slot="suffix"
             name="md-arrow-dropdown"
-            style={{ transform: `rotate(${this.arrowRotate})` }}
+            class="mz-list-item-group__arrow"
+            style={{ transform: `rotateZ(${this.arrowRotate})` }}
           ></mz-icon>
         </mz-list-item>
         {this.$slots.default && (
-          <div v-show={this.isOpen} class="mz-list-item-group__children">
+          <div
+            v-show={this.isOpen}
+            ref="children"
+            class="mz-list-item-group__children"
+          >
             {this.$slots.default}
           </div>
         )}
@@ -68,4 +78,15 @@ export default class MzListItemGroup extends Vue {
 </script>
 
 <style lang="scss">
+.mz-list-item-group {
+  & > &__children {
+    margin-left: 10px;
+  }
+
+  &__arrow {
+    transform-origin: center;
+    transition: transform 0.3s;
+    margin: auto;
+  }
+}
 </style>

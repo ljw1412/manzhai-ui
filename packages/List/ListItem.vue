@@ -20,7 +20,7 @@
       </slot>
     </div>
     <div v-if="$slots.suffix"
-      class="mz-list-item__suffix">
+      class="mz-list-item__suffix flex-double-center">
       <slot name="suffix"></slot>
     </div>
   </div>
@@ -159,6 +159,7 @@ export default class MzListItem extends Vue {
 
   &__prefix,
   &__suffix {
+    position: relative;
     flex-shrink: 0;
     margin: auto;
   }
