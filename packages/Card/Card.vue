@@ -1,5 +1,5 @@
 <template>
-  <div v-elevation="elevation"
+  <div v-elevation="outlined? 0 : elevation"
     class="mz-card"
     :class="classes">
     <slot></slot>
