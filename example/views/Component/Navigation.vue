@@ -1,6 +1,7 @@
 <template>
   <div class="component-navigation">
-    <mz-navigation :data="data"></mz-navigation>
+    <mz-navigation :data="data"
+      style="width:250px"></mz-navigation>
   </div>
 </template>
 
@@ -18,13 +19,18 @@ export default class ComponentNavigation extends Vue {
           value: '1',
           children: [
             {
-              label: '子菜单1',
+              label: '随随便便的1-子菜单',
               value: 'subnav1',
               children: [
                 {
-                  label: '子菜单1',
+                  label: '随随便便的1-子菜单-子菜单',
                   value: 'subnav2',
-                  children: [{ label: '子菜单1', value: 'subnav3' }]
+                  children: [
+                    {
+                      label: '随随便便的1-子菜单-子菜单-子菜单1',
+                      value: 'subnav3'
+                    }
+                  ]
                 }
               ]
             }
