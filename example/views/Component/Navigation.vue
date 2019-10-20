@@ -47,7 +47,39 @@ export default class ComponentNavigation extends Vue {
       children: [
         {
           label: '迷迷糊糊的1',
-          value: '3'
+          value: '3',
+          children: [
+            {
+              group: '组2的group',
+              children: [
+                {
+                  label: 'item1',
+                  children: [
+                    {
+                      group: '组2的group-item-group',
+                      children: [
+                        {
+                          label: 'item1-1'
+                        },
+                        {
+                          label: 'item1-2'
+                        },
+                        {
+                          label: 'item1-3'
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'item2'
+                },
+                {
+                  label: 'item3'
+                }
+              ]
+            }
+          ]
         }
       ]
     }
