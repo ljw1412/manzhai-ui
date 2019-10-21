@@ -1,6 +1,6 @@
 <template>
   <div class="component-card">
-    <p>当前层级：{{elevation}}</p>
+    <mz-sub-header>当前层级：{{elevation}}</mz-sub-header>
     <mz-card :elevation="elevation"
       style="margin:10px;width:200px;height:200px;"
       @click.native="elevation = (elevation + 1) % 25">

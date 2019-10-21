@@ -1,6 +1,6 @@
 <template>
   <div v-ripple="!itemDisabled && ripple"
-    class="mz-list-item"
+    class="mz-list-item color-transition"
     :class="itemClasses"
     :style="itemStyles"
     @click="onClick">
