@@ -40,8 +40,8 @@ export default class ComponentIcon extends Vue {
   grid-auto-rows: minmax(70px, auto);
   &__cell {
     margin: 5px;
-    fill: var(--color-primary);
-    color: var(--color-primary);
+    fill: var(--color-text-primary);
+    color: var(--color-text-primary);
     &:hover {
       border-radius: 5px;
       box-shadow: 0 1px 5px 0 currentColor;
