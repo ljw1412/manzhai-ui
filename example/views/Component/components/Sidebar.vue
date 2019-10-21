@@ -62,8 +62,10 @@ export default class Sidebar extends Vue {
 
 <style lang="scss">
 #sidebar {
+  flex-shrink: 0;
   box-sizing: border-box;
   width: 216px;
-  padding: 0 8px;
+  padding: 10px 8px;
+  overflow-y: scroll;
 }
 </style>

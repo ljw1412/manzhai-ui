@@ -1,12 +1,9 @@
 <template>
-  <div class="page-component">
-    <mz-button style="margin-bottom:10px"
-      @click="onChangeThemeClick">切换主题</mz-button>
-    <div id="page-component">
-      <sidebar></sidebar>
-      <div id="page-component-content">
-        <router-view></router-view>
-      </div>
+  <div class="page-component"
+    id="page-component">
+    <sidebar></sidebar>
+    <div id="page-component-content">
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -20,21 +17,17 @@ import Sidebar from './components/Sidebar.vue'
     Sidebar
   }
 })
-export default class PageComponent extends Vue {
-  onChangeThemeClick() {
-    this.$changeTheme(this.$getCurrentTheme() === 'dark' ? '' : 'dark')
-  }
-}
+export default class PageComponent extends Vue {}
 </script>
 
 <style lang="scss" scoped>
 #page-component {
   display: flex;
-  .sidebar {
-    flex-shrink: 0;
-  }
+  height: 100%;
   #page-component-content {
     flex-grow: 1;
+    padding: 10px 10px 0 10px;
+    overflow: auto;
   }
 }
 </style>
