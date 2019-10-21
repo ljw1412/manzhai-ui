@@ -80,6 +80,7 @@ export default class MzButton extends Vue {
 
   &__content {
     position: relative;
+    line-height: 16px;
     z-index: 50;
   }
 
@@ -104,7 +105,7 @@ export default class MzButton extends Vue {
 
   &--icon {
     height: auto;
-    padding: 0;
+    padding: 8px;
     .mz-button__content {
       display: flex;
     }

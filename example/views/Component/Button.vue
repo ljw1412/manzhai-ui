@@ -38,11 +38,17 @@
       <span>圆形按钮：</span>
       <mz-button v-for="type of colorTypeList"
         circle
+        icon
         :key="type"
         :type="type"
-        ripple>测</mz-button>
+        ripple>
+        <mz-icon name="md-alarm"></mz-icon>
+      </mz-button>
       <mz-button circle
-        disabled>禁</mz-button>
+        icon
+        disabled>
+        <mz-icon name="md-alarm"></mz-icon>
+      </mz-button>
     </div>
   </div>
 </template>
