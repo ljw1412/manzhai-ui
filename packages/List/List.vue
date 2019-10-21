@@ -73,7 +73,7 @@ export default class MzList extends Vue {
 //       pointer-events: none;
 //       &:not(.mz-list-item--active) {
 //         font-weight: bold;
-//         color: getColor(text-secondary);
+//         color: var(--color-text-secondary);
 //       }
 //     }
 //   }

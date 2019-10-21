@@ -86,7 +86,7 @@ export default class MzSwitch extends Vue {
   --mz-switch__bar-height: 18px;
   --mz-switch__bar-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
   --mz-switch__bar-background-color: #bdc1c6;
-  --mz-switch__bar-background-color--checked: #{getColor(primary)};
+  --mz-switch__bar-background-color--checked: #{var(--color-primary)};
   --mz-switch__thumb-background-color: #ffffff;
   --mz-switch__thumb-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
 }
@@ -107,10 +107,10 @@ export default class MzSwitch extends Vue {
 
   &__core {
     position: relative;
-    width: getVar(mz-switch, bar-width);
-    height: getVar(mz-switch, bar-height);
-    background-color: getVar(mz-switch, bar-background-color);
-    box-shadow: getVar(mz-switch, bar-box-shadow);
+    width: var(--mz-switch__bar-width);
+    height: var(--mz-switch__bar-height);
+    background-color: var(--mz-switch__bar-background-color);
+    box-shadow: var(--mz-switch__bar-box-shadow);
     border-radius: 2px;
     &::before {
       content: '';
@@ -129,17 +129,17 @@ export default class MzSwitch extends Vue {
     position: absolute;
     top: -1px;
     left: 0;
-    width: getVar(mz-switch, bar-height);
+    width: var(--mz-switch__bar-height);
     height: 100%;
-    background-color: getVar(mz-switch, thumb-background-color);
-    box-shadow: getVar(mz-switch, thumb-box-shadow);
+    background-color: var(--mz-switch__thumb-background-color);
+    box-shadow: var(--mz-switch__thumb-box-shadow);
     transition: all 0.2s linear;
     transform-origin: left center;
     border-radius: 2px;
     border: 1px solid transparent;
     .mz-icon {
-      width: getVar(mz-switch, bar-height) !important;
-      height: getVar(mz-switch, bar-height) !important;
+      width: var(--mz-switch__bar-height) !important;
+      height: var(--mz-switch__bar-height) !important;
     }
   }
 
@@ -150,10 +150,10 @@ export default class MzSwitch extends Vue {
   &--checked {
     .mz-switch {
       &__core {
-        background-color: getVar(mz-switch, bar-background-color, checked);
+        background-color: var(--mz-switch__bar-background-color--checked);
       }
       &__thumb {
-        left: calc(100% - #{getVar(mz-switch, bar-height)});
+        left: calc(100% - #{var(--mz-switch__bar-height)});
         transform-origin: right center;
       }
     }

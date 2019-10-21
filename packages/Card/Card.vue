@@ -29,7 +29,7 @@ export default class MzCard extends Vue {
   fill: var(--color-text-primary);
   background-color: var(--color-body-background);
   &--outlined {
-    border: 1px solid getColor(border-base);
+    border: 1px solid var(--color-border-base);
   }
 }
 </style>

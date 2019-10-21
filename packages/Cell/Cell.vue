@@ -87,7 +87,7 @@ export default class MzCell extends Vue {
 .mz-cell {
   position: relative;
   & + & {
-    border-top: 1px solid getColor(border-base);
+    border-top: 1px solid var(--color-border-base);
   }
   &__core {
     padding: 10px 20px;
@@ -96,12 +96,12 @@ export default class MzCell extends Vue {
 
   &__title {
     font-size: 13px;
-    color: getColor(text-primary);
+    color: var(--color-text-primary);
   }
 
   &__desc {
     font-size: 12px;
-    color: getColor(text-secondary);
+    color: var(--color-text-secondary);
   }
 
   &__title + &__desc {

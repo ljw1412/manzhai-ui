@@ -130,15 +130,15 @@ export default class MzListItem extends Vue {
 @import '@/styles/common/index.scss';
 
 :root {
-  --mz-list-item__font-color--active: #{getColor(primary)};
+  --mz-list-item__font-color--active: #{var(--color-primary)};
 }
 
 .mz-list-item {
   position: relative;
   display: flex;
   padding: 0 16px;
-  color: getColor(text-regular);
-  fill: getColor(text-regular);
+  color: var(--color-text-regular);
+  fill: var(--color-text-regular);
   &__content {
     flex-grow: 1;
     position: relative;
@@ -152,8 +152,8 @@ export default class MzListItem extends Vue {
 
   &__text {
     font-size: 14px;
-    color: getColor(text-secondary);
-    fill: getColor(text-secondary);
+    color: var(--color-text-secondary);
+    fill: var(--color-text-secondary);
     margin-top: 3px;
   }
 
@@ -187,8 +187,8 @@ export default class MzListItem extends Vue {
       &__title,
       &__text {
         font-weight: bold;
-        color: getColor(text-placeholder);
-        fill: getColor(text-placeholder);
+        color: var(--color-text-placeholder);
+        fill: var(--color-text-placeholder);
       }
       &:not(.mz-list-item--active) {
         @include before-background-disabled;
@@ -198,8 +198,8 @@ export default class MzListItem extends Vue {
 
   &--active.mz-list-item--link {
     @include before-background-active;
-    color: getVar(mz-list-item, font-color, active);
-    fill: getVar(mz-list-item, font-color, active);
+    color: var(--mz-list-item__font-color--active);
+    fill: var(--mz-list-item__font-color--active);
   }
 
   &--large {
