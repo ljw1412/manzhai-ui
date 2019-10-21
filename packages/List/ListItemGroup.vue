@@ -86,7 +86,6 @@ export default class MzListItemGroup extends Vue {
   &__arrow {
     transform-origin: center;
     transition: transform 0.3s;
-    margin: auto;
   }
 }
 </style>
