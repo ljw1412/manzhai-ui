@@ -7,7 +7,7 @@ export default class MzIcon extends Vue {
   @Prop({ required: true })
   readonly name!: string
 
-  @Prop({ default: 20 })
+  @Prop({ default: 16 })
   readonly size!: number
 
   @Prop(String)
