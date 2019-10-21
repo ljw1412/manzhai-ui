@@ -149,6 +149,8 @@ export default class MzDropdown extends Vue {
   }
 
   beforeDestroy() {
+    if (this.mPopper) this.mPopper.destroy()
+    if (this.popper.$el) document.body.removeChild(this.popper.$el)
     if (this.reference) {
       this.reference.removeEventListener('click', this.changeVisiable, false)
     }
