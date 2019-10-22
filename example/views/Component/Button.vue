@@ -40,7 +40,9 @@
         round
         :key="type"
         :type="type"
-        ripple>测试按钮</mz-button>
+        ripple>
+        测试按钮
+      </mz-button>
       <mz-button round
         disabled>禁用按钮</mz-button>
     </div>

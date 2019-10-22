@@ -5,7 +5,7 @@
     :class="buttonClasses"
     :disabled="disabled">
     <span v-if="$slots.default"
-      class="mz-button__content">
+      class="mz-button__content flex-double-center">
       <slot></slot>
     </span>
   </button>
