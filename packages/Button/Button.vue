@@ -28,6 +28,8 @@ export default class MzButton extends Vue {
   @Prop(Boolean)
   readonly outlined!: boolean
   @Prop(Boolean)
+  readonly flat!: boolean
+  @Prop(Boolean)
   readonly round!: boolean
 
   get buttonClasses() {
@@ -37,6 +39,7 @@ export default class MzButton extends Vue {
       { 'is-circle': this.circle },
       { 'mz-button--icon': this.icon },
       { 'mz-button--round': this.round },
+      { 'mz-button--flat': this.flat },
       { 'mz-button--outlined': this.outlined },
       { 'mz-button--disabled': this.disabled }
     ]
@@ -109,6 +112,10 @@ export default class MzButton extends Vue {
     }
   }
 
+  &--flat {
+    background-color: transparent !important;
+  }
+
   &--outlined {
     padding: 7px 15px;
     background-color: transparent !important;
@@ -119,21 +126,24 @@ export default class MzButton extends Vue {
       color: #ffffff;
       fill: #ffffff;
       background-color: var(--color-#{$type});
-    }
-    &--#{$type}.mz-button--outlined {
-      color: var(--color-#{$type});
-      fill: var(--color-#{$type});
-      border: 1px solid var(--color-#{$type});
+      &.mz-button--outlined,
+      &.mz-button--flat {
+        color: var(--color-#{$type});
+        fill: var(--color-#{$type});
+      }
+      &.mz-button--outlined {
+        border: 1px solid var(--color-#{$type});
+      }
     }
   }
 
   &--default {
     background-color: transparent;
-  }
-  &--default.mz-button--outlined {
-    color: var(--color-text-regular);
-    fill: var(--color-text-regular);
-    border: 1px solid var(--color-text-regular);
+    &.mz-button--outlined {
+      color: var(--color-text-regular);
+      fill: var(--color-text-regular);
+      border: 1px solid var(--color-text-regular);
+    }
   }
 
   &--disabled {
@@ -141,11 +151,11 @@ export default class MzButton extends Vue {
     color: var(--color-text-placeholder);
     fill: var(--color-text-placeholder);
     background-color: var(--mz-button__background-color--disabled);
-  }
-  &--disabled.mz-button--outlined {
-    color: var(--color-text-placeholder);
-    fill: var(--color-text-placeholder);
-    border: 1px solid var(--color-text-placeholder);
+    &.mz-button--outlined {
+      color: var(--color-text-placeholder);
+      fill: var(--color-text-placeholder);
+      border: 1px solid var(--color-text-placeholder);
+    }
   }
 }
 </style>

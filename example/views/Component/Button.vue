@@ -24,6 +24,17 @@
     </div>
     <br>
     <div>
+      <span>扁平按钮：</span>
+      <mz-button v-for="type of colorTypeList"
+        flat
+        :key="type"
+        :type="type"
+        ripple>测试按钮</mz-button>
+      <mz-button disabled
+        flat>禁用按钮</mz-button>
+    </div>
+    <br>
+    <div>
       <span>圆角按钮：</span>
       <mz-button v-for="type of colorTypeList"
         round
