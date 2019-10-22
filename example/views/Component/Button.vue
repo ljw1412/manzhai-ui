@@ -53,12 +53,14 @@
         :key="type"
         :type="type"
         ripple>
-        <mz-icon name="md-alarm"></mz-icon>
+        <mz-icon name="md-alarm"
+          size="20"></mz-icon>
       </mz-button>
       <mz-button circle
         icon
         disabled>
-        <mz-icon name="md-alarm"></mz-icon>
+        <mz-icon name="md-alarm"
+          size="20"></mz-icon>
       </mz-button>
     </div>
   </div>

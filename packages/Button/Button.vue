@@ -66,10 +66,10 @@ export default class MzButton extends Vue {
   cursor: pointer;
   font-size: 14px;
   height: 32px;
-  line-height: 1;
+  line-height: 32px;
   outline: none;
   position: relative;
-  padding: 8px 16px;
+  padding: 0 16px;
   text-align: center;
   text-decoration: none;
   text-transform: none;
@@ -81,7 +81,6 @@ export default class MzButton extends Vue {
 
   &__content {
     position: relative;
-    line-height: 16px;
     z-index: 50;
   }
 
@@ -117,7 +116,8 @@ export default class MzButton extends Vue {
   }
 
   &--outlined {
-    padding: 7px 15px;
+    padding: 0 15px;
+    line-height: 30px;
     background-color: transparent !important;
   }
 
