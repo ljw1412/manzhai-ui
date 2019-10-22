@@ -10,6 +10,7 @@ import ComponentIcon from './views/Component/Icon.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentSwitch from './views/Component/Switch.vue'
+import ComponentTabs from './views/Component/Tabs.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -66,6 +67,11 @@ export default new Router({
               path: 'switch',
               name: 'ComponentSwitch',
               component: ComponentSwitch
+            },
+            {
+              path: 'tabs',
+              name: 'ComponentTabs',
+              component: ComponentTabs
             }
           ]
         },

@@ -1,5 +1,6 @@
 import './styles/global/index.scss'
 import { VueConstructor } from 'vue'
+import { InstallationOptions } from '../types/index'
 import { changeTheme, getCurrentTheme } from './utils/theme'
 import * as directives from './directives'
 import Icon from '../packages/Icon/index'
@@ -17,7 +18,7 @@ import {
 import Navigation from '../packages/Navigation/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
-import { InstallationOptions } from '../types/index'
+import { Tabs, Tab } from '../packages/Tabs/index'
 
 const components = [
   Icon,
@@ -32,7 +33,9 @@ const components = [
   ListItemGroup,
   Navigation,
   SubHeader,
-  Switch
+  Switch,
+  Tabs,
+  Tab
 ]
 
 /**
@@ -93,5 +96,7 @@ export default {
   ListItemGroup,
   Navigation,
   SubHeader,
-  Switch
+  Switch,
+  Tabs,
+  Tab
 }
