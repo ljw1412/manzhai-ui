@@ -1,5 +1,6 @@
 <template>
-  <div class="mz-tab"
+  <div v-ripple="!disabled && ripple"
+    class="mz-tab color-transition"
     :class="tabClasses"
     @click="onTabClick">
     {{label||value}}
@@ -19,6 +20,8 @@ export default class MzTab extends Vue {
   readonly label!: string
   @Prop(Boolean)
   readonly disabled!: boolean
+  @Prop({ type: [Boolean, Object], default: true })
+  readonly ripple!: boolean | object
 
   active = false
 
@@ -30,6 +33,8 @@ export default class MzTab extends Vue {
   }
 
   onTabClick() {
+    if (this.disabled) return
+
     this.$emit('click', this.value)
     this.mzTabs.setValue(this)
   }
@@ -46,6 +51,7 @@ export default class MzTab extends Vue {
 
 <style lang="scss">
 .mz-tab {
+  user-select: none;
   cursor: pointer;
   height: 100%;
   padding: 0 12px;
