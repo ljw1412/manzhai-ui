@@ -1,14 +1,6 @@
-<template>
-  <div v-ripple="!disabled && ripple"
-    class="mz-tab color-transition"
-    :class="tabClasses"
-    @click="onTabClick">
-    {{label||value}}
-  </div>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Inject, Prop } from 'vue-property-decorator'
+import { CreateElement } from 'vue'
 
 @Component
 export default class MzTab extends Vue {
@@ -24,12 +16,30 @@ export default class MzTab extends Vue {
   readonly ripple!: boolean | object
 
   active = false
+  reverse = false
+
+  get transitionName() {
+    if (this.mzTabs && this.mzTabs.animation === false) return undefined
+    return this.reverse ? 'mz-x-reverse-transition' : 'mz-x-transition'
+  }
 
   get tabClasses() {
     return {
       'mz-tab--active': this.active,
       'mz-tab--disabled': this.disabled
     }
+  }
+
+  render(h: CreateElement) {
+    const mzTab = (
+      <div v-show={this.active} class="mz-tab">
+        {this.$slots.default}
+      </div>
+    )
+    if (this.transitionName) {
+      return <transition name={this.transitionName}>{mzTab}</transition>
+    }
+    return mzTab
   }
 
   onTabClick() {
