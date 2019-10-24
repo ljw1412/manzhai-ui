@@ -31,15 +31,15 @@ export default class MzTab extends Vue {
   }
 
   render(h: CreateElement) {
-    const mzTab = (
-      <div v-show={this.active} class="mz-tab">
+    const mzTabPanels = (
+      <div v-show={this.active} class="mz-tab-panel">
         {this.$slots.default}
       </div>
     )
     if (this.transitionName) {
-      return <transition name={this.transitionName}>{mzTab}</transition>
+      return <transition name={this.transitionName}>{mzTabPanels}</transition>
     }
-    return mzTab
+    return mzTabPanels
   }
 
   onTabClick() {
@@ -77,5 +77,9 @@ export default class MzTab extends Vue {
     fill: var(--color-text-placeholder);
     color: var(--color-text-placeholder);
   }
+}
+.mz-tab-panel {
+  fill: var(--color-text-primary);
+  color: var(--color-text-primary);
 }
 </style>
