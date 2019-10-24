@@ -36,7 +36,7 @@ export default class MzList extends Vue {
     if (this.value === undefined || this.value !== value) {
       this.$emit('input', value)
       this.$emit('change', value, data)
-      this.selectItem(vm)
+      // this.selectItem(vm)
     }
   }
 
