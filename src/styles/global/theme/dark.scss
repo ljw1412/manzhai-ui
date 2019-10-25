@@ -15,6 +15,7 @@ $colors: (
   border-lighter: #ebeef5,
   border-extra-light: #f2f6fc,
   body-background: #303030,
+  card-background: #424242,
   hover-background-b: rgba(0, 0, 0, 0.25),
   hover-background-w: rgba(255, 255, 255, 0.25)
 );
@@ -28,10 +29,6 @@ $colors: (
   --shadow-umbra-color: rgba(192, 196, 204, 0.2);
   --shadow-penumbra-color: rgba(192, 196, 204, 0.14);
   --shadow-ambient-color: rgba(192, 196, 204, 0.12);
-
-  .mz-cell-group {
-    --mz-cell-group__list-background-color: #424242;
-  }
 
   .mz-list-item {
     --mz-list-item__font-color--active: var(--color-text-primary);

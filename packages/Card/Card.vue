@@ -26,7 +26,7 @@ export default class MzCard extends Vue {
 @import '@/styles/common/index.scss';
 .mz-card {
   @include mzColor(--color-text-primary);
-  background-color: var(--color-body-background);
+  background-color: var(--color-card-background, #ffffff);
   &--outlined {
     border: 1px solid var(--color-border-base);
   }

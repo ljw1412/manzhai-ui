@@ -34,7 +34,6 @@ export default class MzCellGroup extends Vue {
 <style lang="scss">
 @import '@/styles/common/index.scss';
 .mz-cell-group {
-  --mz-cell-group__list-background-color: #ffffff;
   --mz-cell-group__list-box-shadow: 0 1px 2px 0
       rgba(var(--color-shadow-rgb), 0.3),
     0 3px 6px 2px rgba(var(--color-shadow-rgb), 0.15);
@@ -46,7 +45,7 @@ export default class MzCellGroup extends Vue {
   }
 
   &__list {
-    background-color: var(--mz-cell-group__list-background-color);
+    background-color: var(--color-card-background, #ffffff);
   }
 
   &--card {
