@@ -81,17 +81,15 @@ export default class MzSwitch extends Vue {
 
 <style lang="scss" >
 @import '@/styles/common/index.scss';
-:root {
+.mz-switch {
   --mz-switch__bar-width: 40.5px;
   --mz-switch__bar-height: 18px;
   --mz-switch__bar-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
   --mz-switch__bar-background-color: #bdc1c6;
-  --mz-switch__bar-background-color--checked: #{var(--color-primary)};
+  --mz-switch__bar-background-color--checked: var(--color-primary);
   --mz-switch__thumb-background-color: #ffffff;
   --mz-switch__thumb-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
-}
 
-.mz-switch {
   position: relative;
   display: inline-block;
   vertical-align: middle;
