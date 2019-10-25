@@ -19,14 +19,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Ref, Emit } from 'vue-property-decorator'
+import { Component, Vue, Prop, Ref, Emit, Mixins } from 'vue-property-decorator'
+import SizeMixin from '@/mixins/size'
 import MzIcon from '../Icon/index'
 @Component({
   components: {
     MzIcon
   }
 })
-export default class MzSwitch extends Vue {
+export default class MzSwitch extends Mixins(SizeMixin) {
   @Prop(String)
   readonly name!: string
   @Prop(Boolean)
@@ -39,8 +40,6 @@ export default class MzSwitch extends Vue {
   readonly inactiveIcon!: string
   @Prop(String)
   readonly iconColor!: string
-  @Prop(String)
-  readonly size!: string
   @Ref('input')
   readonly input!: HTMLInputElement
 
@@ -60,9 +59,7 @@ export default class MzSwitch extends Vue {
         'mz-switch--disabled': this.disabled
       }
     ]
-    if (['large', 'small'].includes(this.size)) {
-      classes.push(`mz-switch--${this.size}`)
-    }
+    this.mzSizeClass('mz-switch', this.size, classes)
     return classes
   }
 
