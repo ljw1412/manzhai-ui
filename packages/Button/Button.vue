@@ -2,6 +2,7 @@
   <button v-ripple="ripple"
     class="mz-button"
     v-on="$listeners"
+    :type="nativeType"
     :class="buttonClasses"
     :disabled="disabled">
     <span v-if="$slots.default"
@@ -31,6 +32,8 @@ export default class MzButton extends Vue {
   readonly flat!: boolean
   @Prop(Boolean)
   readonly round!: boolean
+  @Prop({ type: String, default: 'button' })
+  readonly nativeType!: string
 
   get buttonClasses() {
     const types = ['primary', 'success', 'warning', 'danger', 'info']
