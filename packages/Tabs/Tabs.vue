@@ -82,6 +82,7 @@ export default class MzTabs extends Vue {
     display: flex;
     height: 36px;
     line-height: 36px;
+    overflow: hidden;
   }
 
   &__content {

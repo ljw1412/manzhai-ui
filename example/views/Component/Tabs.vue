@@ -6,7 +6,7 @@
     <mz-tabs v-model="value"
       :animation="animation"
       :grow="grow">
-      <mz-tab v-for="index of 4"
+      <mz-tab v-for="index of 20"
         :key="index"
         :label="'Tab'+index"
         :value="index">{{index}}:测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试</mz-tab>
