@@ -1,15 +1,26 @@
 <template>
   <div class="component-button">
     <div>
+      <mz-button outlined
+        @click="size='small'">小</mz-button>
+      <mz-button outlined
+        @click="size=''">正常</mz-button>
+      <mz-button outlined
+        @click="size='large'">大</mz-button>
+    </div>
+    <br>
+    <div>
       <span>普通按钮：</span>
       <mz-button v-for="type of colorTypeList"
         :outlined="outlined"
         :key="type"
         :type="type"
+        :size="size"
         ripple>测试按钮</mz-button>
-      <mz-button disabled
+      <mz-button ripple
+        disabled
         :outlined="outlined"
-        ripple>禁用按钮</mz-button>
+        :size="size">禁用按钮</mz-button>
     </div>
     <br>
     <div>
@@ -18,9 +29,11 @@
         outlined
         :key="type"
         :type="type"
+        :size="size"
         ripple>测试按钮</mz-button>
       <mz-button disabled
-        outlined>禁用按钮</mz-button>
+        outlined
+        :size="size">禁用按钮</mz-button>
     </div>
     <br>
     <div>
@@ -29,9 +42,11 @@
         flat
         :key="type"
         :type="type"
-        ripple>测试按钮</mz-button>
+        ripple
+        :size="size">测试按钮</mz-button>
       <mz-button disabled
-        flat>禁用按钮</mz-button>
+        flat
+        :size="size">禁用按钮</mz-button>
     </div>
     <br>
     <div>
@@ -40,11 +55,13 @@
         round
         :key="type"
         :type="type"
-        ripple>
+        ripple
+        :size="size">
         测试按钮
       </mz-button>
       <mz-button round
-        disabled>禁用按钮</mz-button>
+        disabled
+        :size="size">禁用按钮</mz-button>
     </div>
     <br>
     <div>
@@ -54,13 +71,15 @@
         icon
         :key="type"
         :type="type"
-        ripple>
+        ripple
+        :size="size">
         <mz-icon name="md-alarm"
           size="20"></mz-icon>
       </mz-button>
       <mz-button circle
         icon
-        disabled>
+        disabled
+        :size="size">
         <mz-icon name="md-alarm"
           size="20"></mz-icon>
       </mz-button>
@@ -75,6 +94,7 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class ComponentButton extends Vue {
   outlined = false
   colorTypeList = ['', 'primary', 'success', 'warning', 'danger', 'info']
+  size = ''
 }
 </script>
 

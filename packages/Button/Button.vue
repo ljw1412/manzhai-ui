@@ -13,9 +13,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
+import SizeMixin from '@/mixins/size'
+
 @Component
-export default class MzButton extends Vue {
+export default class MzButton extends Mixins(SizeMixin) {
   @Prop(String)
   readonly type!: string
   @Prop(Boolean)
@@ -47,6 +49,7 @@ export default class MzButton extends Vue {
       { 'mz-button--disabled': this.disabled }
     ]
     if (!this.disabled) classes.push(`mz-button--${type}`)
+    this.mzSizeClass('mz-button', this.size, classes)
     return classes
   }
 }
@@ -75,7 +78,7 @@ export default class MzButton extends Vue {
   cursor: var(--mz-button__cursor);
   font-size: var(--mz-button__font-size);
   height: var(--mz-button__height);
-  line-height: var(--mz-button__height);
+  line-height: var(--mz-button__line-height);
   padding: var(--mz-button__padding);
   background-color: var(--mz-button__background-color);
   outline: none;
@@ -85,7 +88,7 @@ export default class MzButton extends Vue {
   text-transform: none;
   user-select: none;
   white-space: nowrap;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), var(--color-transition);
+  transition: height 0.3s linear, width 0.3s linear, var(--color-transition);
   overflow: hidden;
   vertical-align: middle;
 
@@ -93,14 +96,11 @@ export default class MzButton extends Vue {
     @include mzColorVar(--mz-button__font-color);
     position: relative;
     z-index: 50;
+    transition: all 0.3s map-get($transition, 'fast-in-fast-out');
   }
 
   &::before {
     border-radius: var(--mz-button__border-radius);
-  }
-
-  &.is-circle {
-    --mz-button__border-radius: 50%;
   }
 
   &:not(.mz-button--disabled) {
@@ -109,6 +109,32 @@ export default class MzButton extends Vue {
     &:active {
       box-shadow: var(--mz-button__box-shadow);
     }
+  }
+
+  &--small {
+    --mz-button__height: 30px;
+    --mz-button__line-height: 30px;
+    --mz-button__padding: 0 14px;
+    --mz-button__font-size: 12px;
+    &.mz-button--outlined {
+      --mz-button__line-height: 28px;
+      --mz-button__padding: 0 13px;
+    }
+  }
+
+  &--large {
+    --mz-button__height: 34px;
+    --mz-button__line-height: 34px;
+    --mz-button__padding: 0 18px;
+    --mz-button__font-size: 16px;
+    &.mz-button--outlined {
+      --mz-button__line-height: 30px;
+      --mz-button__padding: 0 17px;
+    }
+  }
+
+  &.is-circle {
+    --mz-button__border-radius: 50%;
   }
 
   &--round {
