@@ -10,6 +10,11 @@ const config = {
   devServer: {
     port: 10086
   },
+  configureWebpack: {
+    performance: {
+      hints: false
+    }
+  },
   chainWebpack: config => {
     // 在 svg 规则中排除我们的图标库文件夹目录
     config.module
