@@ -148,7 +148,7 @@ export default class MzSwitch extends Mixins(SizeMixin) {
         background-color: var(--mz-switch__bar-background-color--checked);
       }
       &__thumb {
-        left: calc(100% - #{var(--mz-switch__bar-height)});
+        left: calc(100% - var(--mz-switch__bar-height));
         transform-origin: right center;
       }
     }

@@ -28,16 +28,12 @@ $colors: (
   --shadow-umbra-color: rgba(192, 196, 204, 0.2);
   --shadow-penumbra-color: rgba(192, 196, 204, 0.14);
   --shadow-ambient-color: rgba(192, 196, 204, 0.12);
-  // MZButton
-  --mz-button__background-color: transparent;
-  --mz-button__background-color--disabled: rgba(255, 255, 255, 0.12);
-  --mz-button__box-shadow: 0 1px 2px 0 rgba(192, 196, 204, 0.3),
-    0 3px 6px 2px rgba(192, 196, 204, 0.15);
-  // MZCellGroup
-  --mz-cell-group__list-background-color: #424242;
-  --mz-cell-group__list-box-shadow: 0 1px 2px 0
-      rgba(#{var(--color-shadow-rgb)}, 0.3),
-    0 3px 6px 2px rgba(#{var(--color-shadow-rgb)}, 0.15);
-  // MZListItem
-  --mz-list-item__font-color--active: #{var(--color-text-primary)};
+
+  .mz-cell-group {
+    --mz-cell-group__list-background-color: #424242;
+  }
+
+  .mz-list-item {
+    --mz-list-item__font-color--active: var(--color-text-primary);
+  }
 }

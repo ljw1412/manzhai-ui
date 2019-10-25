@@ -1,5 +1,3 @@
-
-
 <script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import MzTab from './Tab.vue'

@@ -33,14 +33,12 @@ export default class MzCellGroup extends Vue {
 
 <style lang="scss">
 @import '@/styles/common/index.scss';
-:root {
+.mz-cell-group {
   --mz-cell-group__list-background-color: #ffffff;
   --mz-cell-group__list-box-shadow: 0 1px 2px 0
-      rgba(#{var(--color-shadow-rgb)}, 0.3),
-    0 3px 6px 2px rgba(#{var(--color-shadow-rgb)}, 0.15);
-}
+      rgba(var(--color-shadow-rgb), 0.3),
+    0 3px 6px 2px rgba(var(--color-shadow-rgb), 0.15);
 
-.mz-cell-group {
   &__title {
     font-size: 14px;
     padding: 8px 0;

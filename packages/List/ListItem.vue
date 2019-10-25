@@ -128,12 +128,8 @@ export default class MzListItem extends Vue {
 
 <style lang="scss">
 @import '@/styles/common/index.scss';
-
-:root {
-  --mz-list-item__font-color--active: var(--color-primary);
-}
-
 .mz-list-item {
+  --mz-list-item__font-color--active: var(--color-primary);
   position: relative;
   display: flex;
   padding: 0 16px;
