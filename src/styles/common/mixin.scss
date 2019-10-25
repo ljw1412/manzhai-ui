@@ -15,6 +15,16 @@
     map-get($shadow-ambient, $z) if($important, !important, null);
 }
 
+@mixin mzColorVar($var, $default: null) {
+  color: if($default, var($var, $default), var($var));
+  fill: if($default, var($var, $default), var($var));
+}
+
+@mixin mzColor($var) {
+  color: $var;
+  fill: $var;
+}
+
 @mixin before-background {
   &::before {
     content: '';

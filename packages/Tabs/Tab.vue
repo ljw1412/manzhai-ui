@@ -38,7 +38,7 @@ export default class MzTab extends Vue {
   getTabNode() {
     return (
       <div
-        v-ripple={this.disabled && this.ripple}
+        v-ripple={{ value: this.disabled && this.ripple }}
         class={['mz-tab', 'color-transition', this.tabClasses]}
         on-click={this.onTabClick}
       >
@@ -77,14 +77,14 @@ export default class MzTab extends Vue {
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
 .mz-tab {
   user-select: none;
   cursor: pointer;
   height: 100%;
   padding: 0 12px;
   text-align: center;
-  fill: var(--color-text-secondary);
-  color: var(--color-text-secondary);
+  @include mzColorVar(--color-text-secondary);
 
   &--grow {
     flex: 1 0 auto;
@@ -92,17 +92,14 @@ export default class MzTab extends Vue {
   }
 
   &--active {
-    fill: var(--color-primary);
-    color: var(--color-primary);
+    @include mzColorVar(--color-primary);
   }
 
   &--disabled {
-    fill: var(--color-text-placeholder);
-    color: var(--color-text-placeholder);
+    @include mzColorVar(--color-text-placeholder);
   }
 }
 .mz-tab-panel {
-  fill: var(--color-text-primary);
-  color: var(--color-text-primary);
+  @include mzColorVar(--color-text-primary);
 }
 </style>

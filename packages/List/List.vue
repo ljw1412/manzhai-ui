@@ -66,16 +66,4 @@ export default class MzList extends Vue {
 
 <style lang="scss">
 @import '@/styles/common/index.scss';
-
-// .mz-list {
-//   &--disabled {
-//     .mz-list-item {
-//       pointer-events: none;
-//       &:not(.mz-list-item--active) {
-//         font-weight: bold;
-//         color: var(--color-text-secondary);
-//       }
-//     }
-//   }
-// }
 </style>

@@ -34,9 +34,9 @@ export default class MzSubHeader extends Vue {
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
 .sub-header {
-  color: var(--color-text-secondary);
-  fill: var(--color-text-secondary);
+  @include mzColorVar(--color-text-secondary);
   @for $i from 1 through 6 {
     &--level-#{$i} {
       font-size: (24 - $i * 2) + px;

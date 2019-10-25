@@ -61,8 +61,7 @@ export default class MzButton extends Vue {
   box-sizing: border-box;
   border: none;
   border-radius: 4px;
-  color: var(--color-text-regular);
-  fill: var(--color-text-regular);
+  @include mzColorVar(--color-text-regular);
   cursor: pointer;
   font-size: 14px;
   height: 32px;
@@ -80,6 +79,7 @@ export default class MzButton extends Vue {
   vertical-align: middle;
 
   &__content {
+    @include mzColorVar(--color-text-regular);
     position: relative;
     z-index: 50;
   }
@@ -123,13 +123,17 @@ export default class MzButton extends Vue {
 
   @each $type in (primary, success, warning, danger, info) {
     &--#{$type} {
-      color: #ffffff;
-      fill: #ffffff;
+      @include mzColor(#ffffff);
       background-color: var(--color-#{$type});
+      .mz-button__content {
+        @include mzColor(#ffffff);
+      }
       &.mz-button--outlined,
       &.mz-button--flat {
-        color: var(--color-#{$type});
-        fill: var(--color-#{$type});
+        @include mzColorVar(--color-#{$type});
+        .mz-button__content {
+          @include mzColorVar(--color-#{$type});
+        }
       }
       &.mz-button--outlined {
         border: 1px solid var(--color-#{$type});
@@ -140,21 +144,26 @@ export default class MzButton extends Vue {
   &--default {
     background-color: transparent;
     &.mz-button--outlined {
-      color: var(--color-text-regular);
-      fill: var(--color-text-regular);
+      @include mzColorVar(--color-text-regular);
       border: 1px solid var(--color-text-regular);
+      .mz-button__content {
+        @include mzColorVar(--color-text-regular);
+      }
     }
   }
 
   &--disabled {
     cursor: not-allowed;
-    color: var(--color-text-placeholder);
-    fill: var(--color-text-placeholder);
     background-color: var(--mz-button__background-color--disabled);
+    @include mzColorVar(--color-text-placeholder);
+    .mz-button__content {
+      @include mzColorVar(--color-text-placeholder);
+    }
     &.mz-button--outlined {
-      color: var(--color-text-placeholder);
-      fill: var(--color-text-placeholder);
       border: 1px solid var(--color-text-placeholder);
+      .mz-button__content {
+        @include mzColorVar(--color-text-placeholder);
+      }
     }
   }
 }

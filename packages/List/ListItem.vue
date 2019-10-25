@@ -137,8 +137,7 @@ export default class MzListItem extends Vue {
   position: relative;
   display: flex;
   padding: 0 16px;
-  color: var(--color-text-regular);
-  fill: var(--color-text-regular);
+  @include mzColorVar(--color-text-regular);
   &__content {
     flex-grow: 1;
     position: relative;
@@ -148,13 +147,13 @@ export default class MzListItem extends Vue {
 
   &__title {
     font-size: 16px;
+    @include mzColorVar(--color-text-regular);
   }
 
   &__text {
-    font-size: 14px;
-    color: var(--color-text-secondary);
-    fill: var(--color-text-secondary);
     margin-top: 3px;
+    font-size: 14px;
+    @include mzColorVar(--color-text-secondary);
   }
 
   &__prefix,
@@ -187,8 +186,7 @@ export default class MzListItem extends Vue {
       &__title,
       &__text {
         font-weight: bold;
-        color: var(--color-text-placeholder);
-        fill: var(--color-text-placeholder);
+        @include mzColorVar(--color-text-placeholder);
       }
       &:not(.mz-list-item--active) {
         @include before-background-disabled;
@@ -198,8 +196,10 @@ export default class MzListItem extends Vue {
 
   &--active.mz-list-item--link {
     @include before-background-active;
-    color: var(--mz-list-item__font-color--active);
-    fill: var(--mz-list-item__font-color--active);
+    @include mzColorVar(--mz-list-item__font-color--active);
+    .mz-list-item__title {
+      @include mzColorVar(--mz-list-item__font-color--active);
+    }
   }
 
   &--large {

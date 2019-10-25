@@ -96,12 +96,12 @@ export default class MzCell extends Vue {
 
   &__title {
     font-size: 13px;
-    color: var(--color-text-primary);
+    @include mzColorVar(--color-text-primary);
   }
 
   &__desc {
     font-size: 12px;
-    color: var(--color-text-secondary);
+    @include mzColorVar(--color-text-secondary);
   }
 
   &__title + &__desc {

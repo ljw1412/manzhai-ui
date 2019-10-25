@@ -1,6 +1,6 @@
 <template>
   <div v-elevation="outlined? 0 : elevation"
-    class="mz-card"
+    class="mz-card color-transition"
     :class="classes">
     <slot></slot>
   </div>
@@ -25,8 +25,7 @@ export default class MzCard extends Vue {
 <style lang="scss">
 @import '@/styles/common/index.scss';
 .mz-card {
-  color: var(--color-text-primary);
-  fill: var(--color-text-primary);
+  @include mzColor(--color-text-primary);
   background-color: var(--color-body-background);
   &--outlined {
     border: 1px solid var(--color-border-base);
