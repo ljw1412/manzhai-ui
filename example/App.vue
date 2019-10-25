@@ -14,10 +14,12 @@ body,
 #app {
   height: 100%;
 }
+
 * {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  color: var(--color-text-primary);
 }
 ::-webkit-scrollbar {
   width: 12px;

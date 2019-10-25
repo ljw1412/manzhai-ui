@@ -23,11 +23,28 @@ export default class MzTab extends Vue {
     return this.reverse ? 'mz-x-reverse-transition' : 'mz-x-transition'
   }
 
+  get grow() {
+    return !!this.mzTabs && this.mzTabs.grow
+  }
+
   get tabClasses() {
     return {
+      'mz-tab--grow': this.grow,
       'mz-tab--active': this.active,
       'mz-tab--disabled': this.disabled
     }
+  }
+
+  getTabNode() {
+    return (
+      <div
+        v-ripple={this.disabled && this.ripple}
+        class={['mz-tab', 'color-transition', this.tabClasses]}
+        on-click={this.onTabClick}
+      >
+        {this.label || this.value}
+      </div>
+    )
   }
 
   render(h: CreateElement) {
@@ -65,12 +82,18 @@ export default class MzTab extends Vue {
   cursor: pointer;
   height: 100%;
   padding: 0 12px;
+  text-align: center;
   fill: var(--color-text-secondary);
   color: var(--color-text-secondary);
 
+  &--grow {
+    flex: 1 0 auto;
+    max-width: none;
+  }
+
   &--active {
-    fill: var(--color-text-primary);
-    color: var(--color-text-primary);
+    fill: var(--color-primary);
+    color: var(--color-primary);
   }
 
   &--disabled {

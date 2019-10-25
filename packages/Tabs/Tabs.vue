@@ -1,21 +1,11 @@
-<template>
-  <div class="mz-tabs">
-    <mz-tab-nav></mz-tab-nav>
-    <div class="mz-tabs__content">
-      <slot></slot>
-    </div>
-  </div>
-</template>
 
-<script lang="ts">
+
+<script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
-import MzTabNav from './TabNav.vue'
 import MzTab from './Tab.vue'
+import { CreateElement } from 'vue'
 
 @Component({
-  components: {
-    MzTabNav
-  },
   provide() {
     return { mzTabs: this }
   }
@@ -27,7 +17,20 @@ export default class MzTabs extends Vue {
   readonly position!: string
   @Prop({ type: Boolean, default: true })
   readonly animation!: boolean
+  @Prop(Boolean)
+  readonly grow!: boolean
   itemList: MzTab[] = []
+
+  render(h: CreateElement) {
+    return (
+      <div class="mz-tabs">
+        <div class="mz-tabs__nav">
+          {this.itemList.map(item => item.getTabNode())}
+        </div>
+        <div class="mz-tabs__content">{this.$slots.default}</div>
+      </div>
+    )
+  }
 
   selectItem(vm: MzTab) {
     // 动画方向判断
@@ -77,6 +80,12 @@ export default class MzTabs extends Vue {
 
 <style lang="scss">
 .mz-tabs {
+  &__nav {
+    display: flex;
+    height: 36px;
+    line-height: 36px;
+  }
+
   &__content {
     position: relative;
     overflow: hidden;
