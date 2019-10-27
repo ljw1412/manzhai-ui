@@ -1,7 +1,10 @@
 <template>
   <div class="app-topbar flex-center-space-between">
     <ul class="app-topbar__navigation">
-      <li id="app-logo"> <span class="app-topbar__logo">ManZhai</span></li>
+      <li id="app-logo">
+        <router-link class="app-topbar__logo"
+          :to="{name:'home'}">ManZhai</router-link>
+      </li>
       <li v-for="(navigation,index) of navigations"
         :key="index">
         <router-link :to="navigation.route">{{navigation.label}}</router-link>
@@ -46,7 +49,6 @@ export default class Topbar extends Vue {
   &__logo {
     line-height: 24px;
     font-size: 24px;
-    color: var(--color-text-primary);
   }
 
   &__navigation {
@@ -56,6 +58,9 @@ export default class Topbar extends Vue {
       flex: 0 1 auto;
       font-size: 16px;
       padding: 0 20px;
+      a:hover {
+        color: var(--color-success);
+      }
     }
     li + li {
       margin-left: 10px;
