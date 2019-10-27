@@ -21,71 +21,69 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: Home
+    },
+    {
+      path: '/component',
+      name: 'pageComponent',
+      component: Component,
       children: [
         {
-          path: 'component',
-          name: 'pageComponent',
-          component: Component,
-          children: [
-            {
-              path: 'button',
-              name: 'ComponentButton',
-              component: ComponentButton
-            },
-            {
-              path: 'card',
-              name: 'ComponentCard',
-              component: ComponentCard
-            },
-            {
-              path: 'cell',
-              name: 'ComponentCell',
-              component: ComponentCell
-            },
-            {
-              path: 'dropdown',
-              name: 'ComponentDropdown',
-              component: ComponentDropdown
-            },
-            {
-              path: 'icon',
-              name: 'ComponentIcon',
-              component: ComponentIcon
-            },
-            {
-              path: 'list',
-              name: 'ComponentList',
-              component: ComponentList
-            },
-            {
-              path: 'navigation',
-              name: 'ComponentNavigation',
-              component: ComponentNavigation
-            },
-            {
-              path: 'switch',
-              name: 'ComponentSwitch',
-              component: ComponentSwitch
-            },
-            {
-              path: 'tabs',
-              name: 'ComponentTabs',
-              component: ComponentTabs
-            }
-          ]
+          path: 'button',
+          name: 'ComponentButton',
+          component: ComponentButton
         },
         {
-          path: 'guide',
-          name: 'pageGuide',
-          component: Guide
+          path: 'card',
+          name: 'ComponentCard',
+          component: ComponentCard
         },
         {
-          path: 'theme',
-          name: 'pageTheme',
-          component: Theme
+          path: 'cell',
+          name: 'ComponentCell',
+          component: ComponentCell
+        },
+        {
+          path: 'dropdown',
+          name: 'ComponentDropdown',
+          component: ComponentDropdown
+        },
+        {
+          path: 'icon',
+          name: 'ComponentIcon',
+          component: ComponentIcon
+        },
+        {
+          path: 'list',
+          name: 'ComponentList',
+          component: ComponentList
+        },
+        {
+          path: 'navigation',
+          name: 'ComponentNavigation',
+          component: ComponentNavigation
+        },
+        {
+          path: 'switch',
+          name: 'ComponentSwitch',
+          component: ComponentSwitch
+        },
+        {
+          path: 'tabs',
+          name: 'ComponentTabs',
+          component: ComponentTabs
         }
       ]
+    },
+    {
+      path: '/guide',
+      name: 'pageGuide',
+      component: Guide
+    },
+    {
+      path: '/theme',
+      name: 'pageTheme',
+      component: Theme
     },
     {
       path: '*',
