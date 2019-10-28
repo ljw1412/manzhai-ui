@@ -33,4 +33,8 @@ $colors: (
   .mz-list-item {
     --mz-list-item__font-color--active: var(--color-text-primary);
   }
+
+  .mz-tab {
+    --mz-tab__font-color--active: var(--color-text-primary);
+  }
 }
