@@ -11,9 +11,14 @@
       </li>
     </ul>
     <div>
-      <mz-button type="success"
+      <mz-button icon
+        circle
+        outlined
         size="small"
-        @click="onChangeThemeClick">切换主题</mz-button>
+        type="success"
+        @click="onChangeThemeClick">
+        <mz-icon :name="!isDark?'md-moon':'md-sunny'"></mz-icon>
+      </mz-button>
     </div>
   </div>
 </template>
@@ -23,6 +28,7 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class Topbar extends Vue {
+  isDark = this.$getCurrentTheme() === 'dark'
   navigations = [
     { label: '指南', route: { name: 'pageGuide' } },
     { label: '组件', route: { name: 'pageComponent' } },
@@ -31,6 +37,7 @@ export default class Topbar extends Vue {
 
   onChangeThemeClick() {
     this.$changeTheme(this.$getCurrentTheme() === 'dark' ? '' : 'dark')
+    this.isDark = !this.isDark
   }
 }
 </script>

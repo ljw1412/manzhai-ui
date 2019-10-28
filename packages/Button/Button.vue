@@ -143,7 +143,7 @@ export default class MzButton extends Mixins(SizeMixin) {
 
   &--icon {
     --mz-button__height: auto;
-    --mz-button__padding: 8px;
+    --mz-button__padding: 8px !important;
     .mz-button__content {
       display: flex;
     }
