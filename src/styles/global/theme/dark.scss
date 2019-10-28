@@ -37,4 +37,11 @@ $colors: (
   .mz-tab {
     --mz-tab__font-color--active: var(--color-text-primary);
   }
+
+  .mz-button.mz-button--primary {
+    --mz-button__font-color: var(--color-white);
+    &.mz-button--outlined {
+      --mz-button__border: 1px solid var(--color-white);
+    }
+  }
 }
