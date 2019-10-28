@@ -1,0 +1,5 @@
+:root {
+  --app-topbar__navigation-font-color: #ffffff;
+  --app-topbar__navigation-font-color--hover: #46c37b;
+  --app-topbar__navigation-font-color--active: #{mix(#ffffff, #46c37b, 30%)};
+}

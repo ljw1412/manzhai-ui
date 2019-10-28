@@ -58,8 +58,14 @@ export default class Topbar extends Vue {
       flex: 0 1 auto;
       font-size: 16px;
       padding: 0 20px;
-      a:hover {
-        color: var(--color-success);
+      a {
+        color: var(--app-topbar__navigation-font-color);
+        &:hover {
+          color: var(--app-topbar__navigation-font-color--hover);
+        }
+        &:active {
+          color: var(--app-topbar__navigation-font-color--active);
+        }
       }
     }
     li + li {
