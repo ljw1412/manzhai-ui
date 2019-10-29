@@ -1,6 +1,11 @@
 import Vue, { VNode, PluginFunction } from 'vue'
 
 declare global {
+  interface Element {
+    __resizeListeners__?: Function[]
+    __ro__?: ResizeObserver
+  }
+
   interface HTMLElement {
     _clickOutside?: EventListenerOrEventListenerObject
 

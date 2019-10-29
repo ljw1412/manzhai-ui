@@ -18,6 +18,7 @@ import {
 import Navigation from '../packages/Navigation/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
+import Scrollbar from '../packages/Scrollbar/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 
 const components = [
@@ -34,6 +35,7 @@ const components = [
   Navigation,
   SubHeader,
   Switch,
+  Scrollbar,
   Tabs,
   Tab
 ]
@@ -97,6 +99,7 @@ export default {
   Navigation,
   SubHeader,
   Switch,
+  Scrollbar,
   Tabs,
   Tab
 }
