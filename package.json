@@ -31,6 +31,7 @@
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "core-js": "^2.6.5",
     "popper.js": "^1.15.0",
+    "resize-observer-polyfill": "^1.5.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0"
