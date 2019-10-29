@@ -16,7 +16,7 @@ import Topbar from './components/Topbar.vue'
     Topbar
   }
 })
-export default class Home extends Vue {}
+export default class APP extends Vue {}
 </script>
 
 <style lang="scss" scoped>
