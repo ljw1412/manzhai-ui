@@ -1,9 +1,10 @@
 import MzSubHeader from './SubHeader.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzSubHeader.componentName = 'MzSubHeader'
+
 MzSubHeader.install = (Vue: VueConstructor) => {
-  Vue.component(MzSubHeader.name, MzSubHeader)
+  Vue.component(MzSubHeader.componentName, MzSubHeader)
 }
 
 export default MzSubHeader

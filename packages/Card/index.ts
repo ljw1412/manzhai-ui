@@ -1,9 +1,10 @@
 import MzCard from './Card.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzCard.componentName = 'MzCard'
+
 MzCard.install = (Vue: VueConstructor) => {
-  Vue.component(MzCard.name, MzCard)
+  Vue.component(MzCard.componentName, MzCard)
 }
 
 export default MzCard

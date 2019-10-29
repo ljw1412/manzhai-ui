@@ -1,4 +1,4 @@
-import Vue, { VNode } from 'vue'
+import Vue, { VNode, PluginFunction } from 'vue'
 
 declare global {
   interface HTMLElement {
@@ -21,5 +21,9 @@ declare module 'vue/types/vue' {
   interface Vue {
     $changeTheme: Function
     $getCurrentTheme: Function
+  }
+  interface VueConstructor<V extends Vue = Vue> {
+    install: PluginFunction<Vue>
+    componentName: string
   }
 }

@@ -1,9 +1,10 @@
 import MzSwitch from './Switch.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzSwitch.componentName = 'MzSwitch'
+
 MzSwitch.install = (Vue: VueConstructor) => {
-  Vue.component(MzSwitch.name, MzSwitch)
+  Vue.component(MzSwitch.componentName, MzSwitch)
 }
 
 export default MzSwitch

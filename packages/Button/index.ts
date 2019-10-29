@@ -1,9 +1,10 @@
 import MzButton from './Button.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzButton.componentName = 'MzButton'
+
 MzButton.install = (Vue: VueConstructor) => {
-  Vue.component(MzButton.name, MzButton)
+  Vue.component(MzButton.componentName, MzButton)
 }
 
 export default MzButton

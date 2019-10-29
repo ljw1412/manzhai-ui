@@ -54,7 +54,7 @@ function bindDirectives(Vue: VueConstructor) {
  */
 function bindComponents(Vue: VueConstructor) {
   components.forEach(component => {
-    Vue.component(component.name, component)
+    Vue.component(component.componentName, component)
   })
 }
 

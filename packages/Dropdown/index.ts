@@ -1,9 +1,10 @@
 import MzDropdown from './Dropdown.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzDropdown.componentName = 'MzDropdown'
+
 MzDropdown.install = (Vue: VueConstructor) => {
-  Vue.component(MzDropdown.name, MzDropdown)
+  Vue.component(MzDropdown.componentName, MzDropdown)
 }
 
 export default MzDropdown

@@ -1,9 +1,10 @@
 import MzIcon from './Icon.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzIcon.componentName = 'MzIcon'
+
 MzIcon.install = (Vue: VueConstructor) => {
-  Vue.component(MzIcon.name, MzIcon)
+  Vue.component(MzIcon.componentName, MzIcon)
 }
 
 export default MzIcon

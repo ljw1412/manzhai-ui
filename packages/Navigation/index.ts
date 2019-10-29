@@ -1,9 +1,10 @@
 import MzNavigation from './Navigation.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzNavigation.componentName = 'MzNavigation'
+
 MzNavigation.install = (Vue: VueConstructor) => {
-  Vue.component(MzNavigation.name, MzNavigation)
+  Vue.component(MzNavigation.componentName, MzNavigation)
 }
 
 export default MzNavigation

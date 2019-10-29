@@ -1,9 +1,10 @@
 import MzCell from './Cell.vue'
 import { VueConstructor } from 'vue'
 
-// @ts-ignore
+MzCell.componentName = 'MzCell'
+
 MzCell.install = (Vue: VueConstructor) => {
-  Vue.component(MzCell.name, MzCell)
+  Vue.component(MzCell.componentName, MzCell)
 }
 
 export default MzCell
