@@ -19,6 +19,7 @@ import Navigation from '../packages/Navigation/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
 import Scrollbar from '../packages/Scrollbar/index'
+import SildeGroup from '../packages/SlideGroup/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 
 const components = [
@@ -36,6 +37,7 @@ const components = [
   SubHeader,
   Switch,
   Scrollbar,
+  SildeGroup,
   Tabs,
   Tab
 ]
@@ -100,6 +102,7 @@ export default {
   SubHeader,
   Switch,
   Scrollbar,
+  SildeGroup,
   Tabs,
   Tab
 }
