@@ -22,9 +22,11 @@ export default class MzTabs extends Vue {
   render(h: CreateElement) {
     return (
       <div class="mz-tabs">
-        <div class="mz-tabs__nav">
-          {this.itemList.map(item => item.getTabNode())}
-        </div>
+        <mz-slide-group>
+          <div class="mz-tabs__nav">
+            {this.itemList.map(item => item.getTabNode())}
+          </div>
+        </mz-slide-group>
         <div class="mz-tabs__content">{this.$slots.default}</div>
       </div>
     )
@@ -82,7 +84,7 @@ export default class MzTabs extends Vue {
     display: flex;
     height: 36px;
     line-height: 36px;
-    overflow: hidden;
+    // overflow: hidden;
   }
 
   &__content {
