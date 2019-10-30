@@ -22,7 +22,7 @@ import Scrollbar from '../packages/Scrollbar/index'
 import SildeGroup from '../packages/SlideGroup/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 
-const components = [
+const components: VueConstructor[] = [
   Icon,
   Button,
   Card,
