@@ -79,6 +79,19 @@ export default class MzBar extends Vue {
     )
   }
 
+  moveThumb(clientX: number, clientY: number) {
+    let currentPoint = 0
+    let deltaMove = 0
+    if (this.x) {
+      currentPoint = clientX
+    } else if (this.y) {
+      currentPoint = clientY
+    }
+    deltaMove = currentPoint - this.dragPoint
+    this.dragPoint = currentPoint
+    this.setTranslate(deltaMove)
+  }
+
   onThumbMousedown(e: MouseEvent) {
     if (this.x) {
       this.dragPoint = e.clientX
@@ -91,16 +104,7 @@ export default class MzBar extends Vue {
   }
 
   onThumbMousemove(e: MouseEvent) {
-    let currentPoint = 0
-    let deltaMove = 0
-    if (this.x) {
-      currentPoint = e.clientX
-    } else if (this.y) {
-      currentPoint = e.clientY
-    }
-    deltaMove = currentPoint - this.dragPoint
-    this.dragPoint = currentPoint
-    this.setTranslate(deltaMove)
+    this.moveThumb(e.clientX, e.clientY)
   }
 
   onThumbMouseup(e: MouseEvent) {
@@ -110,6 +114,7 @@ export default class MzBar extends Vue {
   }
 
   onTouchstart(e: TouchEvent) {
+    if (!e.touches || e.touches.length > 1) return
     if (this.x) {
       this.dragPoint = e.touches[0].clientX
     } else if (this.y) {
@@ -121,16 +126,8 @@ export default class MzBar extends Vue {
 
   // 触摸事件移动
   handleTouchmove(e: TouchEvent) {
-    let currentPoint = 0
-    let deltaMove = 0
-    if (this.x) {
-      currentPoint = e.touches[0].clientX
-    } else if (this.y) {
-      currentPoint = e.touches[0].clientY
-    }
-    deltaMove = currentPoint - this.dragPoint
-    this.dragPoint = currentPoint
-    this.setTranslate(deltaMove)
+    if (!e.touches || e.touches.length > 1) return
+    this.moveThumb(e.touches[0].clientX, e.touches[0].clientY)
   }
 
   // 触摸事件结束
