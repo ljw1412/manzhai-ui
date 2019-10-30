@@ -10,6 +10,7 @@ import ComponentIcon from './views/Component/Icon.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentSwitch from './views/Component/Switch.vue'
+import ComponentScrollbar from './views/Component/Scrollbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
@@ -72,6 +73,11 @@ export default new Router({
           path: 'tabs',
           name: 'ComponentTabs',
           component: ComponentTabs
+        },
+        {
+          path: 'scrollbar',
+          name: 'ComponentScrollbar',
+          component: ComponentScrollbar
         }
       ]
     },

@@ -43,6 +43,11 @@ export default [
         to: { name: 'ComponentSwitch' }
       },
       {
+        label: 'Scrollbar',
+        text: '滚动条',
+        to: { name: 'ComponentScrollbar' }
+      },
+      {
         label: 'Tabs',
         text: '标签页',
         to: { name: 'ComponentTabs' }
