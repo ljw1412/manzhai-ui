@@ -15,11 +15,42 @@ export default class MzSlideGroup extends Vue {
   wrapper = { width: 0, height: 0 }
   content = { width: 0, height: 0 }
 
+  get isOverflow() {
+    return this.content.width > this.wrapper.width
+  }
+
   render(h: CreateElement) {
+    const contentData = {
+      ref: 'content',
+      class: ['mz-slide-group__content']
+    }
+    let content: JSX.Element[] | JSX.Element = (
+      <div {...contentData}>{this.$slots.default}</div>
+    )
+
+    const controls = ['left', 'right'].map(item => {
+      const classes = [
+        'mz-slide-group__control',
+        `mz-slide-group__${item}-button`,
+        'flex-double-center'
+      ]
+      return (
+        <div class={classes} style={{ [item]: 0 }}>
+          <mz-icon name={`md-arrow-drop${item}`} size="30"></mz-icon>
+        </div>
+      )
+    })
+
     return (
-      <div ref="wrapper" class="mz-slide-group">
-        <div ref="content" class="mz-slide-group__content">
-          {this.$slots.default}
+      <div
+        class={[
+          'mz-slide-group-wrapper',
+          { 'mz-slide-group-wrapper--scrollable': this.isOverflow }
+        ]}
+      >
+        {this.isOverflow && controls}
+        <div ref="wrapper" class="mz-slide-group">
+          {content}
         </div>
       </div>
     )
@@ -50,6 +81,15 @@ export default class MzSlideGroup extends Vue {
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
+
+.mz-slide-group-wrapper {
+  position: relative;
+  &--scrollable {
+    padding: 0 30px;
+  }
+}
+
 .mz-slide-group {
   position: relative;
   width: 100%;
@@ -57,6 +97,14 @@ export default class MzSlideGroup extends Vue {
 
   &__content {
     display: inline-block;
+  }
+
+  &__control {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 100%;
+    @include mzColorVar(--color-text-primary);
   }
 }
 </style>
