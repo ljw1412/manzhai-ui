@@ -2,7 +2,7 @@
   <div v-if="scrollSize > viewSize"
     class='mz-bar'
     :class="barClasses">
-    <div class="mz-bar__thumb"
+    <div class="mz-bar__thumb color-transition"
       :style="thumbStyles"
       @mousedown="onThumbMousedown"
       @touchstart.stop="onTouchstart"></div>
