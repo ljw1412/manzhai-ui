@@ -2,12 +2,10 @@ import Vue from 'vue'
 
 const isServer = Vue.prototype.$isServer
 
-type DomEvent = keyof (HTMLElementEventMap | WindowEventMap)
-
-type DomEventListener = <K extends DomEvent>(
+type DomEventListener = (
   element: HTMLElement | Window,
-  event: K,
-  handler: EventListenerOrEventListenerObject
+  event: string,
+  handler: (e: any) => any
 ) => void
 
 export const on = (function(): DomEventListener {
@@ -34,10 +32,10 @@ export const off = (function(): DomEventListener {
   }
 })()
 
-export const once = function<K extends DomEvent>(
+export const once = function(
   el: HTMLElement | Window,
-  event: K,
-  fn: EventListener
+  event: string,
+  fn: (e: any) => any
 ) {
   const listener = function() {
     if (fn) {
