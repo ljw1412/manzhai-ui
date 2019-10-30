@@ -6,6 +6,7 @@ import {
   removeResizeListener
 } from '../../src/utils/resize-event'
 import { CreateElement } from 'vue'
+import { on, off } from '../../src/utils/dom'
 
 @Component({
   components: {
@@ -25,6 +26,7 @@ export default class MzScrollbar extends Vue {
   barX = { viewSize: 0, scrollSize: 0, type: 'x', barSize: '15px' }
   barY = { viewSize: 0, scrollSize: 0, type: 'y', barSize: '15px' }
   translate = { x: 0, y: 0 }
+  touchPoint = { x: 0, y: 0 }
 
   get contentStyles() {
     return {
@@ -61,8 +63,17 @@ export default class MzScrollbar extends Vue {
       }
     })
 
+    const wrapperData = {
+      ref: 'wrapper',
+      class: 'mz-scrollbar',
+      on: {
+        mousewheel: this.handleMousewheel,
+        touchstart: this.handleTouchstart
+      }
+    }
+
     return (
-      <div ref="wrapper" class="mz-scrollbar" on-mousewheel={this.onMousewheel}>
+      <div {...wrapperData}>
         {content}
         {bar}
       </div>
@@ -74,7 +85,6 @@ export default class MzScrollbar extends Vue {
     this.barY.viewSize = this.wrapperRef.clientHeight
     this.barX.scrollSize = this.wrapperRef.scrollWidth
     this.barX.viewSize = this.wrapperRef.clientWidth
-    console.log(this.wrapperRef.scrollHeight, this.wrapperRef.clientHeight)
   }
 
   mounted() {
@@ -93,13 +103,43 @@ export default class MzScrollbar extends Vue {
     }
   }
 
-  onMousewheel(e: MouseWheelEvent) {
-    if (this.barXRef) {
-      this.barXRef.setTranslate(e.deltaX)
+  setBarTranslate({ deltaX, deltaY }: { deltaX?: number; deltaY?: number }) {
+    if (deltaX && this.barXRef) {
+      this.barXRef.setTranslate(deltaX)
     }
-    if (this.barYRef) {
-      this.barYRef.setTranslate(e.deltaY)
+    if (deltaY && this.barYRef) {
+      this.barYRef.setTranslate(deltaY)
     }
+  }
+
+  // 鼠标滚轮事件
+  handleMousewheel(e: MouseWheelEvent) {
+    this.setBarTranslate({ deltaX: e.deltaX, deltaY: e.deltaY })
+  }
+
+  // 触摸事件开始
+  handleTouchstart(e: TouchEvent) {
+    if (!e.touches || e.touches.length > 1) return
+    this.touchPoint.y = e.touches[0].clientY
+    this.touchPoint.x = e.touches[0].clientX
+    on(window, 'touchmove', this.handleTouchmove)
+    on(window, 'touchend', this.handleTouchend)
+  }
+
+  // 触摸事件移动
+  handleTouchmove(e: TouchEvent) {
+    if (!e.touches || e.touches.length > 1) return
+    const deltaY = this.touchPoint.y - e.touches[0].clientY
+    this.touchPoint.y = e.touches[0].clientY
+    const deltaX = this.touchPoint.x - e.touches[0].clientX
+    this.touchPoint.x = e.touches[0].clientX
+    this.setBarTranslate({ deltaX, deltaY })
+  }
+
+  // 触摸事件结束
+  handleTouchend(e: TouchEvent) {
+    off(window, 'touchmove', this.handleTouchmove)
+    off(window, 'touchend', this.handleTouchend)
   }
 }
 </script>

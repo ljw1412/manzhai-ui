@@ -4,7 +4,8 @@
     :class="barClasses">
     <div class="mz-bar__thumb"
       :style="thumbStyles"
-      @mousedown="onThumbMousedown"></div>
+      @mousedown="onThumbMousedown"
+      @touchstart.stop="onTouchstart"></div>
   </div>
 </template>
 
@@ -106,6 +107,36 @@ export default class MzBar extends Vue {
     off(window, 'mousemove', this.onThumbMousemove)
     off(window, 'mouseup', this.onThumbMouseup)
     document.onselectstart = null
+  }
+
+  onTouchstart(e: TouchEvent) {
+    if (this.x) {
+      this.dragPoint = e.touches[0].clientX
+    } else if (this.y) {
+      this.dragPoint = e.touches[0].clientY
+    }
+    on(window, 'touchmove', this.handleTouchmove)
+    on(window, 'touchend', this.handleTouchend)
+  }
+
+  // 触摸事件移动
+  handleTouchmove(e: TouchEvent) {
+    let currentPoint = 0
+    let deltaMove = 0
+    if (this.x) {
+      currentPoint = e.touches[0].clientX
+    } else if (this.y) {
+      currentPoint = e.touches[0].clientY
+    }
+    deltaMove = currentPoint - this.dragPoint
+    this.dragPoint = currentPoint
+    this.setTranslate(deltaMove)
+  }
+
+  // 触摸事件结束
+  handleTouchend(e: TouchEvent) {
+    off(window, 'touchmove', this.handleTouchmove)
+    off(window, 'touchend', this.handleTouchend)
   }
 }
 </script>
