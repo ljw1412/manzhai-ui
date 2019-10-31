@@ -126,9 +126,9 @@ export default class MzSlideGroup extends Vue {
     overflow: hidden;
   }
 
-  // &__content {
-  //   display: inline-block;
-  // }
+  &__content {
+    transition: transform 0.3s linear;
+  }
 
   &__control {
     position: absolute;
