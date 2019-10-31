@@ -52,3 +52,14 @@ export function throttle(fn: Function, delay: number = 0) {
     }
   }
 }
+
+export function debounce(fn: Function, wait: number = 0) {
+  let timeout: number
+  return function() {
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      // @ts-ignore
+      fn.call(this, arguments)
+    }, wait)
+  }
+}
