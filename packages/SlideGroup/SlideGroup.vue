@@ -7,20 +7,24 @@ import { throttle, debounce } from '@/utils/assist'
 @Component
 export default class MzSlideGroup extends Vue {
   @Ref('scroll')
-  scrollRef!: HTMLElement
+  scrollWrapperRef!: HTMLElement
   @Ref('content')
   contentRef!: HTMLElement
-  wrapper = { width: 0, height: 0 }
+  scrollWrapper = { width: 0, height: 0 }
   content = { width: 0, height: 0 }
-  centerPoint = {}
+  // centerPoint = { x: 0, y: 0 }
   translate = 0
 
   get isOverflow() {
-    return this.content.width > this.wrapper.width
+    return this.content.width > this.scrollWrapper.width
+  }
+
+  get centerPoint() {
+    return { x: this.scrollWrapper.width / 2, y: this.scrollWrapper.height / 2 }
   }
 
   render(h: CreateElement) {
-    const content = this.renderContent()
+    const content = this.renderContent(this.translate)
 
     const controls = this.renderControls()
 
@@ -43,14 +47,14 @@ export default class MzSlideGroup extends Vue {
     )
   }
 
-  renderContent() {
+  renderContent(translate: number) {
     const contentData = {
       ref: 'content',
       class: ['mz-slide-group__content'],
-      style: [
-        `transform:translateX(${this.translate}px)`,
-        { display: this.isOverflow ? 'inline-block' : '' }
-      ],
+      style: {
+        display: this.isOverflow ? 'inline-block' : '',
+        transform: `translateX(${translate}px)`
+      },
       key: 'slideGroupContent',
       on: { click: this.contentClick }
     }
@@ -77,24 +81,30 @@ export default class MzSlideGroup extends Vue {
 
   throttleSizeChange = debounce(this.sizeChange, 500)
   sizeChange() {
-    this.wrapper.width = this.scrollRef.clientWidth
-    this.wrapper.height = this.scrollRef.clientHeight
+    this.scrollWrapper.width = this.scrollWrapperRef.clientWidth
+    this.scrollWrapper.height = this.scrollWrapperRef.clientHeight
     this.content.width = this.contentRef.scrollWidth
     this.content.height = this.contentRef.scrollHeight
-    console.log('!!!!', this.scrollRef)
   }
 
   contentClick(e: MouseEvent) {
+    if (!this.isOverflow) return
+    const target = e.target as HTMLElement
     console.dir(e.target)
+    if (target) {
+      this.translate =
+        this.centerPoint.x - target.offsetLeft - target.clientWidth / 2
+      console.log(target.offsetLeft, this.centerPoint.x)
+    }
   }
 
   mounted() {
-    addResizeListener(this.scrollRef, this.throttleSizeChange)
+    addResizeListener(this.scrollWrapperRef, this.throttleSizeChange)
     addResizeListener(this.contentRef, this.throttleSizeChange)
   }
 
   beforeDestroy() {
-    removeResizeListener(this.scrollRef, this.throttleSizeChange)
+    removeResizeListener(this.scrollWrapperRef, this.throttleSizeChange)
     removeResizeListener(this.contentRef, this.throttleSizeChange)
   }
 }
