@@ -1,6 +1,7 @@
 <script lang="tsx">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
 import MzTab from './Tab.vue'
+import MzSlideGroup from '../SlideGroup'
 import { CreateElement } from 'vue'
 
 @Component({
@@ -17,12 +18,14 @@ export default class MzTabs extends Vue {
   readonly animation!: boolean
   @Prop(Boolean)
   readonly grow!: boolean
+  @Ref('slideGroup')
+  readonly slideGroupRef!: MzSlideGroup
   itemList: MzTab[] = []
 
   render(h: CreateElement) {
     return (
       <div class="mz-tabs">
-        <mz-slide-group>
+        <mz-slide-group ref="slideGroup">
           <div class="mz-tabs__nav">
             {this.itemList.map(item => item.getTabNode())}
           </div>
