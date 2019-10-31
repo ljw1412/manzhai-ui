@@ -40,3 +40,15 @@ export function deepCopy(data: any) {
   }
   return o
 }
+
+export function throttle(fn: Function, delay: number = 0) {
+  let last = 0
+  return function() {
+    let curr = +new Date()
+    if (curr - last > delay) {
+      // @ts-ignore
+      fn.apply(this, arguments)
+      last = curr
+    }
+  }
+}
