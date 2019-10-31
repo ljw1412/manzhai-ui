@@ -1,10 +1,8 @@
 <script lang="tsx">
 import { Component, Vue, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import {
-  addResizeListener,
-  removeResizeListener
-} from '../../src/utils/resize-event'
+import { addResizeListener, removeResizeListener } from '@/utils/resize-event'
+import { throttle } from '@/utils/assist'
 
 @Component
 export default class MzSlideGroup extends Vue {
@@ -12,6 +10,8 @@ export default class MzSlideGroup extends Vue {
   wrapperRef!: HTMLElement
   @Ref('content')
   contentRef!: HTMLElement
+  @Ref('wrap')
+  wrapRef!: HTMLElement
   wrapper = { width: 0, height: 0 }
   content = { width: 0, height: 0 }
 
@@ -22,7 +22,9 @@ export default class MzSlideGroup extends Vue {
   render(h: CreateElement) {
     const contentData = {
       ref: 'content',
-      class: ['mz-slide-group__content']
+      class: ['mz-slide-group__content'],
+      style: { display: this.isOverflow ? 'inline-block' : '' },
+      key: 'slideGroupContent'
     }
     let content: JSX.Element[] | JSX.Element = (
       <div {...contentData}>{this.$slots.default}</div>
@@ -43,39 +45,37 @@ export default class MzSlideGroup extends Vue {
 
     return (
       <div
+        ref="wrap"
         class={[
           'mz-slide-group-wrapper',
           { 'mz-slide-group-wrapper--scrollable': this.isOverflow }
         ]}
       >
         {this.isOverflow && controls}
-        <div ref="wrapper" class="mz-slide-group">
+        <div ref="wrapper" class="mz-slide-group" key="slideGroupWrapper">
           {content}
         </div>
       </div>
     )
   }
 
-  wrapperSizeChange() {
+  throttleSizeChange = throttle(this.sizeChange, 300)
+  sizeChange() {
     this.wrapper.width = this.wrapperRef.clientWidth
     this.wrapper.height = this.wrapperRef.clientHeight
-    console.dir(this.wrapperRef)
-  }
-
-  contentSizeChange() {
     this.content.width = this.contentRef.scrollWidth
     this.content.height = this.contentRef.scrollHeight
-    console.dir(this.contentRef)
+    console.log('!!!!')
   }
 
   mounted() {
-    addResizeListener(this.wrapperRef, this.wrapperSizeChange)
-    addResizeListener(this.contentRef, this.contentSizeChange)
+    addResizeListener(this.wrapperRef, this.throttleSizeChange)
+    addResizeListener(this.contentRef, this.throttleSizeChange)
   }
 
   beforeDestroy() {
-    removeResizeListener(this.wrapperRef, this.wrapperSizeChange)
-    removeResizeListener(this.contentRef, this.contentSizeChange)
+    removeResizeListener(this.wrapperRef, this.throttleSizeChange)
+    removeResizeListener(this.contentRef, this.throttleSizeChange)
   }
 }
 </script>
@@ -95,9 +95,9 @@ export default class MzSlideGroup extends Vue {
   width: 100%;
   overflow: hidden;
 
-  &__content {
-    display: inline-block;
-  }
+  // &__content {
+  //   display: inline-block;
+  // }
 
   &__control {
     position: absolute;
