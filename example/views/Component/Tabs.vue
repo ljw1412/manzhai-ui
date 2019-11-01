@@ -5,6 +5,7 @@
     铺满:<mz-switch v-model="grow"></mz-switch>
     <mz-button @click="count=(count+20)%21">-</mz-button>
     <mz-tabs v-model="value"
+      align="right"
       :animation="animation"
       :grow="grow">
       <mz-tab v-for="index of count"

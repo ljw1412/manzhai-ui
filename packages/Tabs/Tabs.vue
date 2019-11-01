@@ -18,6 +18,8 @@ export default class MzTabs extends Vue {
   readonly animation!: boolean
   @Prop(Boolean)
   readonly grow!: boolean
+  @Prop(String)
+  readonly align!: 'left' | 'center' | 'right'
   @Ref('slideGroup')
   readonly slideGroupRef!: MzSlideGroup
   itemList: MzTab[] = []
@@ -25,14 +27,27 @@ export default class MzTabs extends Vue {
   render(h: CreateElement) {
     return (
       <div class="mz-tabs">
-        <mz-slide-group ref="slideGroup">
-          <div class="mz-tabs__nav">
-            {this.itemList.map(item => item.getTabNode())}
-          </div>
+        <mz-slide-group ref="slideGroup" key="slideGroupInTabs">
+          {this.renderNav(this.navClasses)}
         </mz-slide-group>
-        <div class="mz-tabs__content">{this.$slots.default}</div>
+        <div class="mz-tabs__content" key="tabsContent">
+          {this.$slots.default}
+        </div>
       </div>
     )
+  }
+
+  get navClasses() {
+    const classes = ['mz-tabs__nav']
+    if (['left', 'center', 'right'].includes(this.align)) {
+      classes.push(`mz-tabs__nav--${this.align}`)
+    }
+    return classes
+  }
+
+  renderNav(classes: any[]) {
+    const data = { class: classes, key: 'tabsNav' }
+    return <div {...data}>{this.itemList.map(item => item.getTabNode())}</div>
   }
 
   selectItem(vm: MzTab) {
@@ -78,6 +93,15 @@ export default class MzTabs extends Vue {
     const vm = this.itemList.find(item => item.value === value)
     if (vm) this.selectItem(vm)
   }
+
+  @Watch('itemList.length')
+  onItemListChange() {
+    if (this.slideGroupRef) {
+      this.$nextTick(() => {
+        this.slideGroupRef.sizeChange()
+      })
+    }
+  }
 }
 </script>
 
@@ -87,7 +111,18 @@ export default class MzTabs extends Vue {
     display: flex;
     height: 36px;
     line-height: 36px;
-    // overflow: hidden;
+    &--center,
+    &--left {
+      .mz-tab:last-child {
+        margin-right: auto;
+      }
+    }
+    &--center,
+    &--right {
+      .mz-tab:first-child {
+        margin-left: auto;
+      }
+    }
   }
 
   &__content {

@@ -74,7 +74,8 @@ export default class MzSlideGroup extends Vue {
           click: () => {
             this.controlClick(item as 'left' | 'right')
           }
-        }
+        },
+        key: `${item}slideGroupControls`
       }
       return (
         <div {...data}>
@@ -101,8 +102,6 @@ export default class MzSlideGroup extends Vue {
 
   controlClick(direction: 'left' | 'right') {
     const directionRatio = { left: 1, right: -1 }
-    console.log((this.scrollWrapper.width / 2) * directionRatio[direction])
-
     this.contentTranslate(
       this.translate +
         (this.scrollWrapper.width / 2) * directionRatio[direction]
