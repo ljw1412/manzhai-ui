@@ -65,13 +65,10 @@ export default class MzBar extends Vue {
   }
 
   setTranslate(deltaMove: number) {
-    if (this.translate + deltaMove > this.maxTranslate) {
-      this.translate = this.maxTranslate
-    } else if (this.translate + deltaMove < 0) {
-      this.translate = 0
-    } else {
-      this.translate += deltaMove
-    }
+    this.translate = Math.min(
+      Math.max(this.translate + deltaMove, 0),
+      this.maxTranslate
+    )
     this.$emit(
       'translate',
       this.x ? 'x' : this.y ? 'y' : '',
