@@ -1,7 +1,8 @@
 <template>
-  <div v-elevation="outlined? 0 : elevation"
+  <div v-elevation="outlined ? 0 : elevation"
     class="mz-card color-transition"
-    :class="classes">
+    :class="classes"
+    :style="styles">
     <slot></slot>
   </div>
 </template>
@@ -15,9 +16,15 @@ export default class MzCard extends Vue {
   readonly elevation!: string | number
   @Prop(Boolean)
   readonly outlined!: boolean
+  @Prop(String)
+  readonly background!: string
 
   get classes() {
     return [{ 'mz-card--outlined': this.outlined }]
+  }
+
+  get styles() {
+    return { background: this.background }
   }
 }
 </script>
