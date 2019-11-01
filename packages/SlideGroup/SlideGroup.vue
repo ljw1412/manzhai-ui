@@ -69,7 +69,12 @@ export default class MzSlideGroup extends Vue {
           `mz-slide-group__${item}-button`,
           'flex-double-center'
         ],
-        style: { [item]: 0 }
+        style: { [item]: 0 },
+        on: {
+          click: () => {
+            this.controlClick(item as 'left' | 'right')
+          }
+        }
       }
       return (
         <div {...data}>
@@ -87,14 +92,31 @@ export default class MzSlideGroup extends Vue {
     this.content.height = this.contentRef.scrollHeight
   }
 
+  contentTranslate(delta: number) {
+    this.translate = -Math.min(
+      Math.max(-delta, 0),
+      this.content.width - this.scrollWrapper.width
+    )
+  }
+
+  controlClick(direction: 'left' | 'right') {
+    const directionRatio = { left: 1, right: -1 }
+    console.log((this.scrollWrapper.width / 2) * directionRatio[direction])
+
+    this.contentTranslate(
+      this.translate +
+        (this.scrollWrapper.width / 2) * directionRatio[direction]
+    )
+  }
+
   contentClick(e: MouseEvent) {
     if (!this.isOverflow) return
     const target = e.target as HTMLElement
     console.dir(e.target)
     if (target) {
-      this.translate =
+      let translate =
         this.centerPoint.x - target.offsetLeft - target.clientWidth / 2
-      console.log(target.offsetLeft, this.centerPoint.x)
+      this.contentTranslate(translate)
     }
   }
 
@@ -127,15 +149,19 @@ export default class MzSlideGroup extends Vue {
   }
 
   &__content {
-    transition: transform 0.3s linear;
+    transition: transform $primary-transition 0.15s;
   }
 
   &__control {
+    cursor: pointer;
     position: absolute;
     top: 0;
     width: 30px;
     height: 100%;
     @include mzColorVar(--color-text-primary);
+    &:active {
+      @include mzColorVar(--color-text-regular);
+    }
   }
 }
 </style>
