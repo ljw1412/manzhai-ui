@@ -1,5 +1,10 @@
 <template>
   <div class="component-icon">
+    <mz-tabs v-model="iconType"
+      align="right">
+      <mz-tab value="ios"></mz-tab>
+      <mz-tab value="md"></mz-tab>
+    </mz-tabs>
     <mz-sub-header>图标</mz-sub-header>
     <div class="icon-grid">
       <div v-for="item of icons[iconType]"
