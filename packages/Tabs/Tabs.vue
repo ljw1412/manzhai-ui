@@ -2,7 +2,7 @@
 import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
 import MzTab from './Tab.vue'
 import MzSlideGroup from '../SlideGroup'
-import { CreateElement } from 'vue'
+import { CreateElement, VNode } from 'vue'
 
 @Component({
   provide() {
@@ -23,19 +23,23 @@ export default class MzTabs extends Vue {
   @Ref('slideGroup')
   readonly slideGroupRef!: MzSlideGroup
   itemList: MzTab[] = []
-  activeBarStyle: Record<string, any> = { display: 'none' }
+  activedTabVNode: VNode | null = null
 
   get activedTab() {
     return this.itemList.find(item => item.active)
   }
 
-  // get activeBarStyle() {
-  //   if (this.activedTab && this.activedTab.vnode && this.activedTab.vnode.elm) {
-  //     const elm = this.activedTab.vnode.elm as HTMLElement
-  //     return { width: elm.clientWidth + 'px' }
-  //   }
-  //   return { display: 'none' }
-  // }
+  get activeBarStyle() {
+    if (this.activedTabVNode && this.activedTabVNode.elm) {
+      const elm = this.activedTabVNode.elm as HTMLElement
+      return {
+        width: elm.clientWidth + 'px',
+        left: elm.offsetLeft + 'px',
+        bottom: 0
+      }
+    }
+    return { display: 'none' }
+  }
 
   render(h: CreateElement) {
     return (
@@ -120,19 +124,8 @@ export default class MzTabs extends Vue {
   @Watch('activedTab')
   onActivedTab(vm: any) {
     this.$nextTick(() => {
-      if (
-        this.activedTab &&
-        this.activedTab.vnode &&
-        this.activedTab.vnode.elm
-      ) {
-        const elm = this.activedTab.vnode.elm as HTMLElement
-        this.activeBarStyle = {
-          width: elm.clientWidth + 'px',
-          left: elm.offsetLeft + 'px',
-          bottom: 0
-        }
-      } else {
-        this.activeBarStyle = { display: 'none' }
+      if (this.activedTab && this.activedTab.vnode) {
+        this.activedTabVNode = this.activedTab.vnode
       }
     })
   }
