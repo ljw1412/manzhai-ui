@@ -61,9 +61,7 @@ export default class MzTabs extends Vue {
     }
     return (
       <div {...data}>
-        {this.value && (
-          <div class="mz-tabs__active-bar" style={this.activeBarStyle}></div>
-        )}
+        <div class="mz-tabs__active-bar" style={this.activeBarStyle}></div>
         {this.itemList.map(item => item.getTabNode())}
       </div>
     )
@@ -138,6 +136,7 @@ export default class MzTabs extends Vue {
   --mz-tabs__active-bar-color: var(--color-primary);
 
   &__nav {
+    position: relative;
     display: flex;
     height: 36px;
     line-height: 36px;
@@ -149,7 +148,7 @@ export default class MzTabs extends Vue {
     }
     &--center,
     &--right {
-      .mz-tab:first-child {
+      .mz-tabs__active-bar + .mz-tab {
         margin-left: auto;
       }
     }
