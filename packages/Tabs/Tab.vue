@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { Component, Vue, Inject, Prop } from 'vue-property-decorator'
-import { CreateElement } from 'vue'
+import { CreateElement, VNode } from 'vue'
 
 @Component
 export default class MzTab extends Vue {
@@ -17,6 +17,7 @@ export default class MzTab extends Vue {
 
   active = false
   reverse = false
+  vnode!: VNode
 
   get transitionName() {
     if (this.mzTabs && this.mzTabs.animation === false) return undefined
@@ -35,18 +36,6 @@ export default class MzTab extends Vue {
     }
   }
 
-  getTabNode() {
-    return (
-      <div
-        v-ripple={{ value: this.disabled && this.ripple }}
-        class={['mz-tab', 'color-transition', this.tabClasses]}
-        on-click={this.onTabClick}
-      >
-        {this.label || this.value}
-      </div>
-    )
-  }
-
   render(h: CreateElement) {
     const mzTabPanels = (
       <div v-show={this.active} class="mz-tab-panel">
@@ -59,7 +48,20 @@ export default class MzTab extends Vue {
     return mzTabPanels
   }
 
-  onTabClick() {
+  getTabNode() {
+    this.vnode = (
+      <div
+        v-ripple={{ value: this.disabled && this.ripple }}
+        class={['mz-tab', 'color-transition', this.tabClasses]}
+        on-click={this.onTabClick}
+      >
+        {this.label || this.value}
+      </div>
+    )
+    return this.vnode
+  }
+
+  onTabClick(e: MouseEvent) {
     if (this.disabled) return
 
     this.$emit('click', this.value)

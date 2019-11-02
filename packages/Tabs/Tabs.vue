@@ -23,12 +23,25 @@ export default class MzTabs extends Vue {
   @Ref('slideGroup')
   readonly slideGroupRef!: MzSlideGroup
   itemList: MzTab[] = []
+  activeBarStyle: Record<string, any> = { display: 'none' }
+
+  get activedTab() {
+    return this.itemList.find(item => item.active)
+  }
+
+  // get activeBarStyle() {
+  //   if (this.activedTab && this.activedTab.vnode && this.activedTab.vnode.elm) {
+  //     const elm = this.activedTab.vnode.elm as HTMLElement
+  //     return { width: elm.clientWidth + 'px' }
+  //   }
+  //   return { display: 'none' }
+  // }
 
   render(h: CreateElement) {
     return (
       <div class="mz-tabs">
         <mz-slide-group ref="slideGroup" key="slideGroupInTabs">
-          {this.renderNav(this.navClasses)}
+          {this.renderNav()}
         </mz-slide-group>
         <div class="mz-tabs__content" key="tabsContent">
           {this.$slots.default}
@@ -37,30 +50,37 @@ export default class MzTabs extends Vue {
     )
   }
 
-  get navClasses() {
-    const classes = ['mz-tabs__nav']
+  renderNav() {
+    const data = { class: ['mz-tabs__nav'], key: 'tabsNav' }
     if (['left', 'center', 'right'].includes(this.align)) {
-      classes.push(`mz-tabs__nav--${this.align}`)
+      data.class.push(`mz-tabs__nav--${this.align}`)
     }
-    return classes
+    return (
+      <div {...data}>
+        {this.value && (
+          <div class="mz-tabs__active-bar" style={this.activeBarStyle}></div>
+        )}
+        {this.itemList.map(item => item.getTabNode())}
+      </div>
+    )
   }
 
-  renderNav(classes: any[]) {
-    const data = { class: classes, key: 'tabsNav' }
-    return <div {...data}>{this.itemList.map(item => item.getTabNode())}</div>
-  }
-
-  selectItem(vm: MzTab) {
-    // 动画方向判断
+  reverseItemTransiton(vm: MzTab) {
     let preActiveItemIndex = this.itemList.findIndex(item => item.active)
     const currentItemIndex = this.itemList.findIndex(item => item === vm)
     if (preActiveItemIndex === -1) preActiveItemIndex = 0
     this.itemList[preActiveItemIndex].reverse = vm.reverse =
       preActiveItemIndex > currentItemIndex
+  }
+
+  selectItem(vm: MzTab) {
+    // 动画方向判断
+    this.reverseItemTransiton(vm)
     // 修改选中状态
-    this.itemList.forEach(item => {
-      item.active = false
-    })
+    if (this.activedTab) this.activedTab.active = false
+    // this.itemList.forEach(item => {
+    //   item.active = false
+    // })
     this.$nextTick(() => {
       vm.active = true
     })
@@ -70,7 +90,7 @@ export default class MzTabs extends Vue {
     if (this.value !== vm.value) {
       this.$emit('change', vm.value)
       this.$emit('input', vm.value)
-      // this.selectItem(vm)
+      this.selectItem(vm)
     }
   }
 
@@ -88,12 +108,6 @@ export default class MzTabs extends Vue {
     }
   }
 
-  @Watch('value')
-  onValueChange(value: any) {
-    const vm = this.itemList.find(item => item.value === value)
-    if (vm) this.selectItem(vm)
-  }
-
   @Watch('itemList.length')
   onItemListChange() {
     if (this.slideGroupRef) {
@@ -102,11 +116,34 @@ export default class MzTabs extends Vue {
       })
     }
   }
+
+  @Watch('activedTab')
+  onActivedTab(vm: any) {
+    this.$nextTick(() => {
+      if (
+        this.activedTab &&
+        this.activedTab.vnode &&
+        this.activedTab.vnode.elm
+      ) {
+        const elm = this.activedTab.vnode.elm as HTMLElement
+        this.activeBarStyle = {
+          width: elm.clientWidth + 'px',
+          left: elm.offsetLeft + 'px',
+          bottom: 0
+        }
+      } else {
+        this.activeBarStyle = { display: 'none' }
+      }
+    })
+  }
 }
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
 .mz-tabs {
+  --mz-tabs__active-bar-color: var(--color-primary);
+
   &__nav {
     display: flex;
     height: 36px;
@@ -123,6 +160,13 @@ export default class MzTabs extends Vue {
         margin-left: auto;
       }
     }
+  }
+
+  &__active-bar {
+    position: absolute;
+    height: 2px;
+    background-color: var(--mz-tabs__active-bar-color);
+    transition: all $primary-transition;
   }
 
   &__content {

@@ -34,6 +34,10 @@ $colors: (
     --mz-list-item__font-color--active: var(--color-text-primary);
   }
 
+  .mz-tabs {
+    --mz-tabs__active-bar-color: var(--color-text-primary);
+  }
+
   .mz-tab {
     --mz-tab__font-color--active: var(--color-text-primary);
   }
