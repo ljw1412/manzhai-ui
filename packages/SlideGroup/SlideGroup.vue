@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Ref } from 'vue-property-decorator'
+import { Component, Vue, Ref, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import { addResizeListener, removeResizeListener } from '@/utils/resize-event'
 import { throttle, debounce } from '@/utils/assist'
@@ -126,6 +126,11 @@ export default class MzSlideGroup extends Vue {
   beforeDestroy() {
     removeResizeListener(this.scrollWrapperRef, this.throttleSizeChange)
     removeResizeListener(this.contentRef, this.throttleSizeChange)
+  }
+
+  @Watch('isOverflow')
+  onIsOverflowChange(val: boolean) {
+    if (!val) this.translate = 0
   }
 }
 </script>
