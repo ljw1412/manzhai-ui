@@ -111,7 +111,6 @@ export default class MzSlideGroup extends Vue {
   contentClick(e: MouseEvent) {
     if (!this.isOverflow) return
     const target = e.target as HTMLElement
-    console.dir(e.target)
     if (target) {
       let translate =
         this.centerPoint.x - target.offsetLeft - target.clientWidth / 2
