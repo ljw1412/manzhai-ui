@@ -1,15 +1,17 @@
 <template>
   <div class="component-tabs">
-    动画效果:<mz-switch v-model="animation"></mz-switch>
-    <span> </span>
-    布局铺满:<mz-switch v-model="grow"></mz-switch>
-    <span> </span>
-    bar铺满:<mz-switch v-model="isFillBar"></mz-switch>
-    <mz-button @click="count=(count+20)%21">-</mz-button>
-    <mz-dropdown v-model="align"
-      :list="alignList">
-      <mz-button type="primary">{{align}}</mz-button>
-    </mz-dropdown>
+    <div style="margin-bottom:10px;">
+      动画效果:<mz-switch v-model="animation"></mz-switch>
+      <span> </span>
+      布局铺满:<mz-switch v-model="grow"></mz-switch>
+      <span> </span>
+      bar铺满:<mz-switch v-model="isFillBar"></mz-switch>
+      <mz-button @click="count=(count+20)%21">-</mz-button>
+      <mz-dropdown v-model="align"
+        :list="alignList">
+        <mz-button type="primary">{{align}}</mz-button>
+      </mz-dropdown>
+    </div>
 
     <mz-tabs v-model="value"
       :align="align"
