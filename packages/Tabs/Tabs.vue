@@ -20,8 +20,11 @@ export default class MzTabs extends Vue {
   readonly grow!: boolean
   @Prop(String)
   readonly align!: 'left' | 'center' | 'right'
+  @Prop(String)
+  readonly activeBarMode!: 'fill' | 'none'
   @Ref('slideGroup')
   readonly slideGroupRef!: MzSlideGroup
+
   itemList: MzTab[] = []
   activedTabVNode: VNode | null = null
 
@@ -30,15 +33,16 @@ export default class MzTabs extends Vue {
   }
 
   get activeBarStyle() {
+    let styles: Record<string, any> = { display: 'none' }
     if (this.activedTabVNode && this.activedTabVNode.elm) {
       const elm = this.activedTabVNode.elm as HTMLElement
-      return {
+      styles = {
         width: elm.clientWidth + 'px',
         left: elm.offsetLeft + 'px',
         bottom: 0
       }
     }
-    return { display: 'none' }
+    return styles
   }
 
   render(h: CreateElement) {
@@ -55,7 +59,13 @@ export default class MzTabs extends Vue {
   }
 
   renderNav() {
-    const data = { class: ['mz-tabs__nav'], key: 'tabsNav' }
+    const data = {
+      class: [
+        'mz-tabs__nav',
+        { 'mz-tabs__nav--fill': this.activeBarMode === 'fill' }
+      ],
+      key: 'tabsNav'
+    }
     if (['left', 'center', 'right'].includes(this.align)) {
       data.class.push(`mz-tabs__nav--${this.align}`)
     }
@@ -150,6 +160,15 @@ export default class MzTabs extends Vue {
     &--right {
       .mz-tabs__active-bar + .mz-tab {
         margin-left: auto;
+      }
+    }
+
+    &--fill {
+      .mz-tab--active {
+        color: #ffffff;
+      }
+      .mz-tabs__active-bar {
+        height: 100%;
       }
     }
   }
