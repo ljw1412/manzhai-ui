@@ -120,6 +120,14 @@ export default class MzTabs extends Vue {
     }
   }
 
+  flushActiveBar() {
+    const activedTabVNode = this.activedTabVNode
+    this.activedTabVNode = null
+    this.$nextTick(() => {
+      this.activedTabVNode = activedTabVNode
+    })
+  }
+
   @Watch('itemList.length')
   onItemListChange() {
     if (this.slideGroupRef) {
@@ -136,6 +144,15 @@ export default class MzTabs extends Vue {
         this.activedTabVNode = this.activedTab.vnode
       }
     })
+  }
+
+  @Watch('grow')
+  onGrowChange(val: boolean) {
+    this.flushActiveBar()
+  }
+  @Watch('align')
+  onAlignChange(val: string) {
+    this.flushActiveBar()
   }
 }
 </script>
