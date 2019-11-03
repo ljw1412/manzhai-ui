@@ -7,6 +7,7 @@ import ComponentCard from './views/Component/Card.vue'
 import ComponentCell from './views/Component/Cell.vue'
 import ComponentDropdown from './views/Component/Dropdown.vue'
 import ComponentIcon from './views/Component/Icon.vue'
+import ComponentImage from './views/Component/Image.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentSwitch from './views/Component/Switch.vue'
@@ -53,6 +54,11 @@ export default new Router({
           path: 'icon',
           name: 'ComponentIcon',
           component: ComponentIcon
+        },
+        {
+          path: 'image',
+          name: 'ComponentImage',
+          component: ComponentImage
         },
         {
           path: 'list',

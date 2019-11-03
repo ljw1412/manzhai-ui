@@ -28,6 +28,11 @@ export default [
         to: { name: 'ComponentIcon' }
       },
       {
+        label: 'Image',
+        text: '图片',
+        to: { name: 'ComponentImage' }
+      },
+      {
         label: 'List',
         text: '列表',
         to: { name: 'ComponentList' }

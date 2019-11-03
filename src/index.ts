@@ -3,12 +3,13 @@ import { VueConstructor } from 'vue'
 import { InstallationOptions } from '../types/index'
 import { changeTheme, getCurrentTheme } from './utils/theme'
 import * as directives from './directives'
-import Icon from '../packages/Icon/index'
 import Button from '../packages/Button/index'
 import Card from '../packages/Card/index'
 import Cell from '../packages/Cell/index'
 import CellGroup from '../packages/CellGroup/index'
 import Dropdown from '../packages/Dropdown/index'
+import Icon from '../packages/Icon/index'
+import Image from '../packages/Image/index'
 import {
   List,
   ListItem,
@@ -23,12 +24,13 @@ import SildeGroup from '../packages/SlideGroup/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 
 const components: VueConstructor[] = [
-  Icon,
   Button,
   Card,
   Cell,
   CellGroup,
   Dropdown,
+  Icon,
+  Image,
   List,
   ListItem,
   ListGroup,
@@ -88,12 +90,13 @@ const install = function(
 
 export default {
   install,
-  Icon,
   Button,
   Card,
   Cell,
   CellGroup,
   Dropdown,
+  Icon,
+  Image,
   List,
   ListItem,
   ListGroup,
