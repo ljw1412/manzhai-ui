@@ -6,9 +6,13 @@
     <span> </span>
     bar铺满:<mz-switch v-model="isFillBar"></mz-switch>
     <mz-button @click="count=(count+20)%21">-</mz-button>
+    <mz-dropdown v-model="align"
+      :list="alignList">
+      <mz-button type="primary">{{align}}</mz-button>
+    </mz-dropdown>
 
     <mz-tabs v-model="value"
-      align="right"
+      :align="align"
       :active-bar-mode="isFillBar?'fill':'none'"
       :animation="animation"
       :grow="grow">
@@ -30,6 +34,8 @@ export default class ComponentTabs extends Vue {
   grow = false
   count = 20
   isFillBar = false
+  align = 'left'
+  alignList = [{ value: 'left' }, { value: 'center' }, { value: 'right' }]
 }
 </script>
 
