@@ -36,6 +36,10 @@ $colors: (
 
   .mz-tabs {
     --mz-tabs__active-bar-color: var(--color-text-primary);
+
+    &__nav--fill .mz-tab--active {
+      color: var(--color-primary);
+    }
   }
 
   .mz-tab {
