@@ -15,27 +15,82 @@ export default class MzImage extends Vue {
   @Prop(String)
   readonly fit!: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
 
+  naturalWidth: string = ''
+  naturalHeight: string = ''
+  preImageSrc: string = ''
+
+  get mWidth() {
+    return this.background ? this.width || this.naturalWidth : this.width
+  }
+
+  get mHeight() {
+    return this.background ? this.height || this.naturalHeight : this.height
+  }
+
   render(h: CreateElement) {
     const data: Record<string, any> = { class: ['mz-image'] }
+    return this.background
+      ? this.renderBackground(data)
+      : this.renderImage(data)
+  }
 
-    if (this.background) {
-      data.style = {
-        backgroundImage: `url(${this.src})`,
-        width: this.width,
-        height: this.height
+  initBackgroundSize() {
+    if (this.src && this.src !== this.preImageSrc) {
+      const image = new Image()
+      image.src = this.src
+      image.onload = e => {
+        this.preImageSrc = this.src
+        if (!this.width) {
+          this.naturalWidth = image.naturalWidth + 'px'
+        }
+        if (!this.height) {
+          this.naturalHeight = image.naturalHeight + 'px'
+        }
+        this.onLoad(e)
       }
-      if (['contain', 'cover'].includes(this.fit)) {
-        data.style.backgroundSize = this.fit
-      }
-      return <div {...data}>{this.$slots.default}</div>
-    } else {
-      data.attrs = { src: this.src, width: this.width, height: this.height }
-      data.style = { objectFit: this.fit }
-      return <img {...data} />
+      image.onerror = this.onError
     }
+  }
+
+  renderBackground(data: Record<string, any>) {
+    this.initBackgroundSize()
+    data.style = {
+      backgroundImage: `url(${this.src})`,
+      width: this.mWidth,
+      height: this.mHeight
+    }
+    if (['contain', 'cover'].includes(this.fit)) {
+      data.style.backgroundSize = this.fit
+    }
+    return <div {...data}>{this.$slots.default}</div>
+  }
+
+  renderImage(data: Record<string, any>) {
+    Object.assign(data, {
+      style: { objectFit: this.fit },
+      attrs: { src: this.src, width: this.mWidth, height: this.mHeight },
+      on: {
+        load: this.onLoad,
+        error: this.onError
+      }
+    })
+    return <img {...data} />
+  }
+
+  onLoad(e: Event) {
+    this.$emit('load', ...arguments)
+  }
+
+  onError(e: Event | string) {
+    this.$emit('error', ...arguments)
   }
 }
 </script>
 
 <style lang="scss">
+.mz-image {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
 </style>
