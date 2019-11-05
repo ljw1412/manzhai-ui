@@ -1,0 +1,163 @@
+<template>
+  <div class="mz-snackbar flex-double-center"
+    :class="snackbarClasses"
+    :style="snackbarStyles">
+    <div class="mz-snackbar__wrapper"
+      :class="wrapperClasses">
+      <div class="mz-snackbar__content flex-center-space-between">
+        <div></div>
+        <mz-button v-if="buttonText"
+          ripple
+          @click="onButtonClick">{{buttonText}}</mz-button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import MzButton from '../Button'
+import { PlacementTypes } from './Snackbar'
+import { COLOR_TYPES } from '@/constants'
+import getZIndex from '@/utils/zindex'
+
+@Component({
+  components: {
+    MzButton
+  }
+})
+export default class MzSnackbar extends Vue {
+  @Prop(Boolean)
+  readonly absolute!: boolean
+  @Prop(Boolean)
+  readonly fixed!: boolean
+  @Prop(String)
+  readonly value!: string
+  @Prop({ type: Number, default: 5000 })
+  readonly timeout!: number
+  @Prop(String)
+  readonly color!: string
+  @Prop(String)
+  readonly title!: string
+  @Prop(String)
+  readonly text!: string
+  @Prop(String)
+  readonly buttonText!: string
+  @Prop(Boolean)
+  readonly vertical!: boolean
+  @Prop({ type: String, default: 'bottom' })
+  readonly placement!: PlacementTypes
+  @Prop({ type: Number, default: () => getZIndex() })
+  readonly zIndex!: number
+
+  get placementList() {
+    if (!/^(top|bottom|center)(-start|-end)?$/g.test(this.placement)) {
+      console.warn(`[ManZhaiUI] placement 属性值无法解析 "${this.placement}"`)
+      return ['bottom']
+    }
+    return this.placement.split('-')
+  }
+
+  get snackbarClasses() {
+    const classes: (Record<string, any> | string)[] = [
+      {
+        'mz-snackbar--fixed': this.fixed,
+        'mz-snackbar--absolute': this.absolute
+      }
+    ]
+    this.placementList.forEach(item => {
+      classes.push(`mz-snackbar--${item}`)
+    })
+    return classes
+  }
+
+  get snackbarStyles() {
+    return { zIndex: this.zIndex }
+  }
+
+  get wrapperClasses() {
+    const classes: (Record<string, any> | string)[] = []
+    if (COLOR_TYPES.includes(this.color)) {
+      classes.push(`mz-snackbar__wrapper--${this.color}`)
+    }
+    return classes
+  }
+
+  onButtonClick() {
+    this.$emit('event')
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '@/styles/common/index.scss';
+.mz-snackbar {
+  --mz-snackbar__background-color: #323232;
+  --mz-snackbar__min-width: 100%;
+  --mz-snackbar__max-width: none;
+  --mz-snackbar__font-color: #ffffff;
+
+  width: 100%;
+
+  &--fixed {
+    position: fixed;
+  }
+
+  &--absolute {
+    position: absolute;
+  }
+  &--bottom {
+    left: 0;
+    bottom: 0;
+  }
+
+  &--top {
+    left: 0;
+    top: 0;
+  }
+
+  &--center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--start {
+    justify-content: flex-start;
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &__wrapper {
+    min-width: var(--mz-snackbar__min-width);
+    max-width: var(--mz-snackbar__max-width);
+    background-color: var(--mz-snackbar__background-color);
+    @each $type in (primary, success, warning, danger, info) {
+      &--#{$type} {
+        --mz-snackbar__background-color: var(--color-#{$type});
+      }
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    min-height: 48px;
+    width: 100%;
+    padding: 8px 16px;
+    overflow: hidden;
+    color: var(--mz-snackbar__font-color);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .mz-snackbar {
+    &--fixed,
+    &--absolute {
+      --mz-snackbar__min-width: 344px;
+      --mz-snackbar__max-width: 672px;
+    }
+  }
+}
+</style>

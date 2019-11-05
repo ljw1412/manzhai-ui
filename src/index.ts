@@ -21,6 +21,7 @@ import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
 import Scrollbar from '../packages/Scrollbar/index'
 import SildeGroup from '../packages/SlideGroup/index'
+import Snackbar from '../packages/Snackbar/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 
 const components: VueConstructor[] = [
@@ -40,6 +41,7 @@ const components: VueConstructor[] = [
   Switch,
   Scrollbar,
   SildeGroup,
+  Snackbar,
   Tabs,
   Tab
 ]
@@ -106,6 +108,7 @@ export default {
   Switch,
   Scrollbar,
   SildeGroup,
+  Snackbar,
   Tabs,
   Tab
 }

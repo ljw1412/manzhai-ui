@@ -53,6 +53,11 @@ export default [
         to: { name: 'ComponentScrollbar' }
       },
       {
+        label: 'Snackbar',
+        text: '消息条',
+        to: { name: 'ComponentSnackbar' }
+      },
+      {
         label: 'Tabs',
         text: '标签页',
         to: { name: 'ComponentTabs' }
