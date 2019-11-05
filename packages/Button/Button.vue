@@ -15,6 +15,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
 import SizeMixin from '@/mixins/size'
+import { COLOR_TYPES } from '@/constants/index'
 
 @Component
 export default class MzButton extends Mixins(SizeMixin) {
@@ -38,8 +39,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   readonly nativeType!: string
 
   get buttonClasses() {
-    const types = ['primary', 'success', 'warning', 'danger', 'info']
-    const type = types.includes(this.type) ? this.type : 'default'
+    const type = COLOR_TYPES.includes(this.type) ? this.type : 'default'
     const classes: any[] = [
       { 'is-circle': this.circle },
       { 'mz-button--icon': this.icon },
