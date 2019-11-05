@@ -48,7 +48,11 @@ export default class MzTabs extends Vue {
   render(h: CreateElement) {
     return (
       <div class="mz-tabs">
-        <mz-slide-group ref="slideGroup" key="slideGroupInTabs">
+        <mz-slide-group
+          ref="slideGroup"
+          key="slideGroupInTabs"
+          on-resize={this.flushActiveBar}
+        >
           {this.renderNav()}
         </mz-slide-group>
         <div class="mz-tabs__content" key="tabsContent">
@@ -139,11 +143,13 @@ export default class MzTabs extends Vue {
 
   @Watch('activedTab')
   onActivedTab(vm: any) {
-    this.$nextTick(() => {
-      if (this.activedTab && this.activedTab.vnode) {
-        this.activedTabVNode = this.activedTab.vnode
-      }
-    })
+    setTimeout(() => {
+      this.$nextTick(() => {
+        if (this.activedTab && this.activedTab.vnode) {
+          this.activedTabVNode = this.activedTab.vnode
+        }
+      })
+    }, 0)
   }
 
   @Watch('grow')

@@ -85,12 +85,13 @@ export default class MzSlideGroup extends Vue {
     })
   }
 
-  throttleSizeChange = debounce(this.sizeChange, 500)
+  throttleSizeChange = debounce(this.sizeChange, 100)
   sizeChange() {
     this.scrollWrapper.width = this.scrollWrapperRef.clientWidth
     this.scrollWrapper.height = this.scrollWrapperRef.clientHeight
     this.content.width = this.contentRef.scrollWidth
     this.content.height = this.contentRef.scrollHeight
+    this.$emit('resize')
   }
 
   contentTranslate(delta: number) {
