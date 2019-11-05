@@ -10,7 +10,7 @@
         <mz-list :value="value"
           :size="size"
           @change="onValueChange">
-          <mz-list-item v-for="item of list"
+          <mz-list-item v-for="item of mList"
             ripple
             :data="item"
             :key="item[valueName]"
@@ -35,6 +35,7 @@ import getZIndex from '@/utils/zindex'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
 import Popper from 'popper.js'
+import { typeOf } from '../../src/utils/assist'
 
 @Component({
   components: { MzCard, MzList, MzListItem, MzListGroup }
@@ -83,6 +84,15 @@ export default class MzDropdown extends Vue {
       minHeight: this.minHeight,
       zIndex: this.zIndex || this.mZIndex
     }
+  }
+
+  get mList() {
+    return this.list.map((item: any) => {
+      if (typeOf(item) === 'string') {
+        return { value: item }
+      }
+      return item
+    })
   }
 
   onValueChange(value: any, data: any) {
