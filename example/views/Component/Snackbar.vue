@@ -6,8 +6,13 @@
       <mz-button type="primary"
         style="width: 100px;">{{placement}}</mz-button>
     </mz-dropdown>
+    <mz-button type="success"
+      @click="onShowClick">显示</mz-button>
+
     <mz-snackbar></mz-snackbar>
-    <mz-snackbar fixed
+    <mz-snackbar ref="snackbar"
+      v-model="isShow"
+      fixed
       color="success"
       buttonText="按钮"
       :placement="placement"></mz-snackbar>
@@ -29,6 +34,17 @@ export default class ComponentSnackbar extends Vue {
     'bottom-end'
   ]
   placement = 'bottom'
+
+  isShow = false
+
+  onShowClick() {
+    // this.isShow = false
+    // this.$nextTick().then(() => {
+    // this.isShow = true
+    // })
+    // @ts-ignore
+    this.$refs.snackbar.show()
+  }
 }
 </script>
 

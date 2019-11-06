@@ -1,21 +1,24 @@
 <template>
-  <div class="mz-snackbar flex-double-center"
-    :class="snackbarClasses"
-    :style="snackbarStyles">
-    <div class="mz-snackbar__wrapper"
-      :class="wrapperClasses">
-      <div class="mz-snackbar__content flex-center-space-between">
-        <div></div>
-        <mz-button v-if="buttonText"
-          ripple
-          @click="onButtonClick">{{buttonText}}</mz-button>
+  <transition name="mz-y-zoom">
+    <div v-if="value"
+      class="mz-snackbar flex-double-center"
+      :class="snackbarClasses"
+      :style="snackbarStyles">
+      <div class="mz-snackbar__wrapper"
+        :class="wrapperClasses">
+        <div class="mz-snackbar__content flex-center-space-between">
+          <div></div>
+          <mz-button v-if="buttonText"
+            ripple
+            @click="onButtonClick">{{buttonText}}</mz-button>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import MzButton from '../Button'
 import { PlacementTypes } from './Snackbar'
 import { COLOR_TYPES } from '@/constants'
@@ -31,8 +34,8 @@ export default class MzSnackbar extends Vue {
   readonly absolute!: boolean
   @Prop(Boolean)
   readonly fixed!: boolean
-  @Prop(String)
-  readonly value!: string
+  @Prop(Boolean)
+  readonly value!: boolean
   @Prop({ type: Number, default: 5000 })
   readonly timeout!: number
   @Prop(String)
@@ -50,6 +53,8 @@ export default class MzSnackbar extends Vue {
   @Prop({ type: Number, default: () => getZIndex() })
   readonly zIndex!: number
 
+  timer: number | null = null
+
   get placementList() {
     if (!/^(top|bottom|center)(-start|-end)?$/g.test(this.placement)) {
       console.warn(`[ManZhaiUI] placement 属性值无法解析 "${this.placement}"`)
@@ -62,7 +67,8 @@ export default class MzSnackbar extends Vue {
     const classes: (Record<string, any> | string)[] = [
       {
         'mz-snackbar--fixed': this.fixed,
-        'mz-snackbar--absolute': this.absolute
+        'mz-snackbar--absolute': this.absolute,
+        'mz-snackbar--vertical': this.vertical
       }
     ]
     this.placementList.forEach(item => {
@@ -72,7 +78,10 @@ export default class MzSnackbar extends Vue {
   }
 
   get snackbarStyles() {
-    return { zIndex: this.zIndex }
+    return {
+      zIndex: this.zIndex,
+      transformOrigin: this.placementList[0]
+    }
   }
 
   get wrapperClasses() {
@@ -84,7 +93,27 @@ export default class MzSnackbar extends Vue {
   }
 
   onButtonClick() {
-    this.$emit('event')
+    this.$emit('buttonClick')
+  }
+
+  show() {
+    this.$emit('input', false)
+    this.$nextTick(() => {
+      this.$emit('input', true)
+    })
+  }
+
+  @Watch('value')
+  onValueChange(val: boolean) {
+    if (this.timer) {
+      clearTimeout(this.timer)
+      this.timer = null
+    }
+    if (val && this.timeout) {
+      this.timer = setTimeout(() => {
+        this.$emit('input', false)
+      }, this.timeout)
+    }
   }
 }
 </script>
@@ -98,6 +127,7 @@ export default class MzSnackbar extends Vue {
   --mz-snackbar__font-color: #ffffff;
 
   width: 100%;
+  pointer-events: none;
 
   &--fixed {
     position: fixed;
@@ -106,6 +136,11 @@ export default class MzSnackbar extends Vue {
   &--absolute {
     position: absolute;
   }
+
+  &--vertical {
+    flex-direction: column;
+  }
+
   &--bottom {
     left: 0;
     bottom: 0;
@@ -117,9 +152,11 @@ export default class MzSnackbar extends Vue {
   }
 
   &--center {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    // transform: translate(-50%, -50%);
   }
 
   &--start {
@@ -131,6 +168,7 @@ export default class MzSnackbar extends Vue {
   }
 
   &__wrapper {
+    pointer-events: auto;
     min-width: var(--mz-snackbar__min-width);
     max-width: var(--mz-snackbar__max-width);
     background-color: var(--mz-snackbar__background-color);
