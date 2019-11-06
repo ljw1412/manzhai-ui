@@ -67,3 +67,54 @@
     }
   }
 }
+
+@each $type, $type2 in ('', 'scale'), ('x', 'scaleX'), ('y', 'scaleY') {
+  .mz-#{$type}-zoom {
+    &-enter-active,
+    &-leave-active {
+      transition: $primary-transition;
+    }
+    &-enter,
+    &-leave-to {
+      transform: #{'#{$type2}(0)'};
+    }
+
+    &-enter-to,
+    &-leave {
+      transform: #{'#{$type2}(1)'};
+    }
+  }
+}
+
+//   .mz-y-zoom
+// {
+//   &-enter-active,
+//   &-leave-active {
+//     transition: $primary-transition;
+//   }
+//   &-enter,
+//   &-leave-to {
+//     transform: scaleY(0);
+//   }
+
+//   &-enter-to,
+//   &-leave {
+//     transform: scaleY(1);
+//   }
+// }
+
+// .mz-x-zoom {
+//   &-enter-active,
+//   &-leave-active {
+//     transition: $primary-transition;
+//   }
+//   &-enter,
+//   &-leave-to {
+//     transform: scaleX(0);
+//   }
+
+//   &-enter-to,
+//   &-leave {
+//     transform: scaleX(1);
+//   }
+// }
