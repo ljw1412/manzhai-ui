@@ -144,11 +144,9 @@ export default class MzTabs extends Vue {
   @Watch('activedTab')
   onActivedTab(vm: any) {
     setTimeout(() => {
-      this.$nextTick(() => {
-        if (this.activedTab && this.activedTab.vnode) {
-          this.activedTabVNode = this.activedTab.vnode
-        }
-      })
+      if (this.activedTab && this.activedTab.vnode) {
+        this.activedTabVNode = this.activedTab.vnode
+      }
     }, 0)
   }
 
