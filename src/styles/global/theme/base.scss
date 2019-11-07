@@ -27,4 +27,6 @@ $colors: (
   @each $name, $color in $colors {
     --color-#{$name}: #{$color};
   }
+  --scrollbar-thumb-color: var(--color-primary);
+  --scrollbar-thumb-color--active: #f56c6c;
 }

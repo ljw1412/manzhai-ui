@@ -34,6 +34,9 @@ a {
   }
   // 滚动条上的滚动滑块
   &-thumb {
-    background-color: var(--color-primary);
+    background-color: var(--scrollbar-thumb-color);
+  }
+  &-thumb:active {
+    background-color: var(--scrollbar-thumb-color--active);
   }
 }

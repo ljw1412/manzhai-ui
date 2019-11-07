@@ -25,6 +25,8 @@ $colors: (
   @each $name, $color in $colors {
     --color-#{$name}: #{$color};
   }
+
+  --scrollbar-thumb-color--active: #636363;
   // shadow 阴影颜色
   --shadow-umbra-color: rgba(192, 196, 204, 0.2);
   --shadow-penumbra-color: rgba(192, 196, 204, 0.14);
