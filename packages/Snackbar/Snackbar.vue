@@ -1,5 +1,5 @@
 <template>
-  <transition name="mz-y-zoom">
+  <transition :name="transitionName">
     <div v-if="value"
       class="mz-snackbar flex-double-center"
       :class="snackbarClasses"
@@ -70,6 +70,10 @@ export default class MzSnackbar extends Vue {
       return ['bottom']
     }
     return this.placement.split('-')
+  }
+
+  get transitionName() {
+    return this.placementList[0] === 'center' ? 'mz-zoom' : 'mz-y-zoom'
   }
 
   get snackbarClasses() {
