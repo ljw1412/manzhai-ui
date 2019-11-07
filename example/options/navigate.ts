@@ -33,6 +33,11 @@ export default [
         to: { name: 'ComponentImage' }
       },
       {
+        label: 'Input',
+        text: '输入框',
+        to: { name: 'ComponentInput' }
+      },
+      {
         label: 'List',
         text: '列表',
         to: { name: 'ComponentList' }

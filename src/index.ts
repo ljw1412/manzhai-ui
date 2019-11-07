@@ -10,6 +10,7 @@ import CellGroup from '../packages/CellGroup/index'
 import Dropdown from '../packages/Dropdown/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
+import Input from '../packages/Input/index'
 import {
   List,
   ListItem,
@@ -32,6 +33,7 @@ const components: VueConstructor[] = [
   Dropdown,
   Icon,
   Image,
+  Input,
   List,
   ListItem,
   ListGroup,
@@ -99,6 +101,7 @@ export default {
   Dropdown,
   Icon,
   Image,
+  Input,
   List,
   ListItem,
   ListGroup,
