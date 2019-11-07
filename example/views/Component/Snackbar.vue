@@ -22,10 +22,14 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Ref } from 'vue-property-decorator'
+import MzSnackbar from '../../../packages/Snackbar'
 
 @Component
 export default class ComponentSnackbar extends Vue {
+  @Ref('snackbar')
+  readonly snackbar!: MzSnackbar
+
   placementList = [
     'top',
     'top-start',
@@ -40,12 +44,7 @@ export default class ComponentSnackbar extends Vue {
   isShow = false
 
   onShowClick() {
-    // this.isShow = false
-    // this.$nextTick().then(() => {
-    // this.isShow = true
-    // })
-    // @ts-ignore
-    this.$refs.snackbar.show()
+    this.snackbar.show()
   }
 }
 </script>
