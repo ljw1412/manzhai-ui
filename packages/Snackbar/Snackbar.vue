@@ -7,10 +7,19 @@
       <div class="mz-snackbar__wrapper"
         :class="wrapperClasses">
         <div class="mz-snackbar__content flex-center-space-between">
-          <div></div>
-          <mz-button v-if="buttonText"
-            ripple
-            @click="onButtonClick">{{buttonText}}</mz-button>
+          <slot>
+            <div class="mz-snackbar__text">
+              <slot name="text">{{this.text}}</slot>
+            </div>
+            <div class="mz-snackbar__action">
+              <slot name="action">
+                <mz-button v-if="buttonText"
+                  ripple
+                  v-bind="buttonProps"
+                  @click="onButtonClick">{{buttonText}}</mz-button>
+              </slot>
+            </div>
+          </slot>
         </div>
       </div>
     </div>
@@ -41,11 +50,11 @@ export default class MzSnackbar extends Vue {
   @Prop(String)
   readonly color!: string
   @Prop(String)
-  readonly title!: string
-  @Prop(String)
   readonly text!: string
   @Prop(String)
   readonly buttonText!: string
+  @Prop(Object)
+  readonly buttonProps!: Object
   @Prop(Boolean)
   readonly vertical!: boolean
   @Prop({ type: String, default: 'bottom' })
@@ -94,6 +103,7 @@ export default class MzSnackbar extends Vue {
 
   onButtonClick() {
     this.$emit('buttonClick')
+    this.$emit('button-click')
   }
 
   show() {

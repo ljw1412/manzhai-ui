@@ -9,13 +9,15 @@
     <mz-button type="success"
       @click="onShowClick">显示</mz-button>
 
-    <mz-snackbar></mz-snackbar>
     <mz-snackbar ref="snackbar"
       v-model="isShow"
       fixed
       color="success"
-      buttonText="按钮"
-      :placement="placement"></mz-snackbar>
+      text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+      buttonText="关闭"
+      :buttonProps="{type:'primary'}"
+      :placement="placement"
+      @buttonClick="isShow = false"></mz-snackbar>
   </div>
 </template>
 
