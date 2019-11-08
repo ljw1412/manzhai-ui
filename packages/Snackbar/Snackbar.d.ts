@@ -1,4 +1,5 @@
-import MzSnackbar from '.'
+// import MzSnackbar from '.'
+import Vue from 'vue'
 
 export type SnackbarPlacementTypes =
   | 'top'
@@ -23,7 +24,7 @@ export interface SnackbarPluginOptions {
   zIndex?: number
 }
 
-export interface SnackbarConstructor extends MzSnackbar, SnackbarPluginOptions {
+export interface SnackbarConstructor extends Vue, SnackbarPluginOptions {
   show: () => void
 }
 

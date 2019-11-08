@@ -40,27 +40,27 @@ import getZIndex from '@/utils/zindex'
 })
 export default class MzSnackbar extends Vue {
   @Prop(Boolean)
-  readonly absolute!: boolean
+  absolute!: boolean
   @Prop(Boolean)
-  readonly fixed!: boolean
+  fixed!: boolean
   @Prop(Boolean)
-  readonly value!: boolean
+  value!: boolean
   @Prop({ type: Number, default: 5000 })
-  readonly timeout!: number
+  timeout!: number
   @Prop(String)
-  readonly color!: string
+  color!: string
   @Prop(String)
-  readonly text!: string
+  text!: string
   @Prop(String)
-  readonly buttonText!: string
+  buttonText!: string
   @Prop(Object)
-  readonly buttonProps!: Object
+  buttonProps!: Object
   @Prop(Boolean)
-  readonly vertical!: boolean
+  vertical!: boolean
   @Prop({ type: String, default: 'bottom' })
-  readonly placement!: SnackbarPlacementTypes
+  placement!: SnackbarPlacementTypes
   @Prop({ type: Number })
-  readonly zIndex!: number
+  zIndex!: number
 
   timer: number | null = null
   mZIndex = getZIndex()
