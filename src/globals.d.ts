@@ -1,4 +1,5 @@
 import Vue, { VNode, PluginFunction } from 'vue'
+import { SnackbarPluginOptions } from 'packages/Snackbar/Snackbar'
 
 declare global {
   interface Element {
@@ -30,5 +31,6 @@ declare module 'vue/types/vue' {
   interface VueConstructor<V extends Vue = Vue> {
     install: PluginFunction<Vue>
     componentName: string
+    plugin: (Vue: VueConstructor) => void
   }
 }

@@ -9,6 +9,8 @@
     <mz-button type="success"
       @click="onShowClick">显示</mz-button>
 
+    <mz-button @click="onCodeTestClick">指令测试</mz-button>
+
     <mz-snackbar ref="snackbar"
       v-model="isShow"
       fixed
@@ -45,6 +47,17 @@ export default class ComponentSnackbar extends Vue {
 
   onShowClick() {
     this.snackbar.show()
+  }
+
+  onCodeTestClick() {
+    this.$snackbar.show({
+      text: '123',
+      buttonText: '关闭',
+      buttonProps: {},
+      buttonClick: () => {
+        this.$snackbar.close()
+      }
+    })
   }
 }
 </script>

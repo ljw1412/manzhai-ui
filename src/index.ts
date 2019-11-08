@@ -65,6 +65,10 @@ function bindDirectives(Vue: VueConstructor) {
 function bindComponents(Vue: VueConstructor) {
   components.forEach(component => {
     Vue.component(component.componentName, component)
+    // 如果包含插件则在Vue原型中注册
+    if (component.plugin) {
+      component.plugin(Vue)
+    }
   })
 }
 

@@ -59,10 +59,11 @@ export default class MzSnackbar extends Vue {
   readonly vertical!: boolean
   @Prop({ type: String, default: 'bottom' })
   readonly placement!: PlacementTypes
-  @Prop({ type: Number, default: () => getZIndex() })
+  @Prop({ type: Number })
   readonly zIndex!: number
 
   timer: number | null = null
+  mZIndex = getZIndex()
 
   get placementList() {
     if (!/^(top|bottom|center)(-start|-end)?$/g.test(this.placement)) {
@@ -92,7 +93,7 @@ export default class MzSnackbar extends Vue {
 
   get snackbarStyles() {
     return {
-      zIndex: this.zIndex,
+      zIndex: this.zIndex || this.mZIndex,
       transformOrigin: this.placementList[0]
     }
   }
@@ -123,10 +124,13 @@ export default class MzSnackbar extends Vue {
       clearTimeout(this.timer)
       this.timer = null
     }
-    if (val && this.timeout) {
-      this.timer = setTimeout(() => {
-        this.$emit('input', false)
-      }, this.timeout)
+    if (val) {
+      this.mZIndex = getZIndex()
+      if (this.timeout) {
+        this.timer = setTimeout(() => {
+          this.$emit('input', false)
+        }, this.timeout)
+      }
     }
   }
 }
