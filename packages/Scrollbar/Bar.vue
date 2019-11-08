@@ -28,11 +28,13 @@ export default class MzBar extends Vue {
 
   translate = 0
   dragPoint = 0
+  isDrag = false
 
   get barClasses() {
     return {
       'mz-bar--x': this.x,
-      'mz-bar--y': this.y
+      'mz-bar--y': this.y,
+      'mz-bar--drag': this.isDrag
     }
   }
 
@@ -98,6 +100,7 @@ export default class MzBar extends Vue {
     on(window, 'mousemove', this.onThumbMousemove)
     on(window, 'mouseup', this.onThumbMouseup)
     document.onselectstart = () => false
+    this.isDrag = true
   }
 
   onThumbMousemove(e: MouseEvent) {
@@ -108,6 +111,7 @@ export default class MzBar extends Vue {
     off(window, 'mousemove', this.onThumbMousemove)
     off(window, 'mouseup', this.onThumbMouseup)
     document.onselectstart = null
+    this.isDrag = false
   }
 
   onTouchstart(e: TouchEvent) {
@@ -137,8 +141,9 @@ export default class MzBar extends Vue {
 
 <style lang="scss">
 .mz-bar {
-  --mz-bar__thumb-background-color: var(--color-primary);
   position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s linear;
   &--x {
     width: 100%;
     left: 0;
@@ -149,8 +154,14 @@ export default class MzBar extends Vue {
     top: 0;
     right: 0;
   }
+  &--drag {
+    opacity: 0.75 !important;
+  }
   &__thumb {
-    background-color: var(--mz-bar__thumb-background-color);
+    background-color: var(--scrollbar-thumb-color);
+    &:active {
+      background-color: var(--scrollbar-thumb-color--active);
+    }
   }
 }
 </style>

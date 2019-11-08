@@ -151,5 +151,8 @@ export default class MzScrollbar extends Vue {
   &__content {
     box-sizing: border-box;
   }
+  &:hover .mz-bar {
+    opacity: 0.5;
+  }
 }
 </style>
