@@ -156,7 +156,15 @@ export default class MzSnackbar extends Vue {
   }
 
   &--vertical {
-    flex-direction: column;
+    .mz-snackbar__content {
+      flex-direction: column;
+    }
+    .mz-snackbar__action {
+      margin-top: 5px;
+      margin-left: unset;
+      width: 100%;
+      text-align: right;
+    }
   }
 
   &--bottom {
@@ -204,6 +212,10 @@ export default class MzSnackbar extends Vue {
     padding: 8px 16px;
     overflow: hidden;
     color: var(--mz-snackbar__font-color);
+  }
+
+  &__action {
+    margin-left: 16px;
   }
 }
 

@@ -8,17 +8,19 @@
     </mz-dropdown>
     <mz-button type="success"
       @click="onShowClick">显示</mz-button>
-
+    是否垂直：<mz-switch v-model="vertical"></mz-switch>
     <mz-button @click="onCodeTestClick">指令测试</mz-button>
 
     <mz-snackbar ref="snackbar"
       v-model="isShow"
       fixed
       color="success"
-      text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+      text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测"
       buttonText="关闭"
+      :vertical="vertical"
       :buttonProps="{type:'primary'}"
       :placement="placement"
+      :timeout="0"
       @buttonClick="isShow = false"></mz-snackbar>
   </div>
 </template>
@@ -45,6 +47,7 @@ export default class ComponentSnackbar extends Vue {
   placement: SnackbarPlacementTypes = 'bottom'
 
   isShow = false
+  vertical = false
 
   onShowClick() {
     this.snackbar.show()
