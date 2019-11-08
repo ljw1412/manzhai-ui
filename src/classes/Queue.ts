@@ -23,7 +23,7 @@ export default class Queue {
   }
 
   pop() {
-    return !this.isEmpty ? this.q.shift() : null
+    return !this.isEmpty() ? this.q.shift() : null
   }
 
   push(data: any) {
@@ -36,12 +36,12 @@ export default class Queue {
   }
 
   front() {
-    if (this.isEmpty) return null
+    if (this.isEmpty()) return null
     return this.q[0]
   }
 
   back() {
-    if (this.isEmpty) return null
+    if (this.isEmpty()) return null
     return this.q[this.size() - 1]
   }
 
