@@ -1,9 +1,13 @@
 <template>
   <div class="mz-input">
     <div class="mz-input__container">
-      <div></div>
+      <div v-if="$slots.prepend"
+        class="mz-input__prepend">
+        <slot name="prepend"></slot>
+      </div>
       <input class="mz-input__inner"
         ref="input"
+        v-bind="$attrs"
         :value="value"
         :autocomplete="autocomplete"
         @compositionstart="onCompositionstart"
@@ -13,7 +17,10 @@
         @focus="onFocus"
         @blur="onBlur"
         @change="onChange" />
-      <div></div>
+      <div v-if="$slots.append"
+        class="mz-input__append">
+        <slot name="append"></slot>
+      </div>
       <div class="mz-input__line"
         :class="{'mz-input__line--active':isFocused}"></div>
     </div>
