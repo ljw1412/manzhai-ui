@@ -1,20 +1,26 @@
 <template>
   <div class="mz-input">
-    <div></div>
-    <input class="mz-input__inner"
-      ref="input"
-      :value="value"
-      :autocomplete="autocomplete"
-      @compositionstart="onCompositionstart"
-      @compositionupdate="onCompositionUpdate"
-      @compositionend="onCompositionEnd"
-      @input="onInput"
-      @focus="onFocus"
-      @blur="onBlur"
-      @change="onChange" />
-    <div></div>
-    <div class="mz-input__line"
-      :class="{'mz-input__line--active':isFocused}"></div>
+    <div class="mz-input__container">
+      <div></div>
+      <input class="mz-input__inner"
+        ref="input"
+        :value="value"
+        :autocomplete="autocomplete"
+        @compositionstart="onCompositionstart"
+        @compositionupdate="onCompositionUpdate"
+        @compositionend="onCompositionEnd"
+        @input="onInput"
+        @focus="onFocus"
+        @blur="onBlur"
+        @change="onChange" />
+      <div></div>
+      <div class="mz-input__line"
+        :class="{'mz-input__line--active':isFocused}"></div>
+    </div>
+    <div class="mz-input__helper-line">
+      <div class="mz-input__helper-text"></div>
+      <div class="mz-input__counter"></div>
+    </div>
   </div>
 </template>
 
@@ -80,7 +86,10 @@ export default class MzInput extends Mixins(SizeMixin) {
   --mz-input__font-size: 16px;
   --mz-input__line-color: var(--color-primary);
 
-  position: relative;
+  &__container {
+    position: relative;
+  }
+
   &__inner {
     box-sizing: border-box;
     font-size: var(--mz-input__font-size);
