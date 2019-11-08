@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <mz-input></mz-input>
+    <mz-input v-model="value"></mz-input>
   </div>
 </template>
 
@@ -8,7 +8,9 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class ComponentInput extends Vue {}
+export default class ComponentInput extends Vue {
+  value = ''
+}
 </script>
 
 <style lang="scss" scoped>
