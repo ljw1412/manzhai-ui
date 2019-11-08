@@ -23,7 +23,7 @@ export default class Queue {
   }
 
   pop() {
-    return !this.isEmpty ? this.q.unshift() : null
+    return !this.isEmpty ? this.q.shift() : null
   }
 
   push(data: any) {
