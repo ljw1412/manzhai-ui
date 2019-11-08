@@ -26,6 +26,7 @@
 <script lang="ts">
 import { Component, Vue, Ref } from 'vue-property-decorator'
 import MzSnackbar from '../../../packages/Snackbar'
+import { SnackbarPlacementTypes } from '../../../packages/Snackbar/Snackbar'
 
 @Component
 export default class ComponentSnackbar extends Vue {
@@ -41,7 +42,7 @@ export default class ComponentSnackbar extends Vue {
     'bottom-start',
     'bottom-end'
   ]
-  placement = 'bottom'
+  placement: SnackbarPlacementTypes = 'bottom'
 
   isShow = false
 
@@ -56,7 +57,8 @@ export default class ComponentSnackbar extends Vue {
       buttonProps: {},
       buttonClick: () => {
         this.$snackbar.close()
-      }
+      },
+      placement: this.placement
     })
   }
 }

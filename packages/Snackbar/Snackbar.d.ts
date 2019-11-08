@@ -1,6 +1,6 @@
 import MzSnackbar from '.'
 
-export type PlacementTypes =
+export type SnackbarPlacementTypes =
   | 'top'
   | 'top-start'
   | 'top-end'
@@ -19,7 +19,7 @@ export interface SnackbarPluginOptions {
   buttonProps?: Record<string, any>
   buttonClick?: () => void
   vertical?: boolean
-  placement?: PlacementTypes
+  placement?: SnackbarPlacementTypes
   zIndex?: number
 }
 

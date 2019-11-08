@@ -29,7 +29,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import MzButton from '../Button'
-import { PlacementTypes } from './Snackbar'
+import { SnackbarPlacementTypes } from './Snackbar'
 import { COLOR_TYPES } from '@/constants'
 import getZIndex from '@/utils/zindex'
 
@@ -58,7 +58,7 @@ export default class MzSnackbar extends Vue {
   @Prop(Boolean)
   readonly vertical!: boolean
   @Prop({ type: String, default: 'bottom' })
-  readonly placement!: PlacementTypes
+  readonly placement!: SnackbarPlacementTypes
   @Prop({ type: Number })
   readonly zIndex!: number
 

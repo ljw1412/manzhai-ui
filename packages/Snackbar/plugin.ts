@@ -34,7 +34,7 @@ const initInstance = () => {
 
 const showNextSnackbar = () => {
   initInstance()
-  if (queue.size()) {
+  if (!queue.isEmpty()) {
     currentSnackbar = queue.pop()
     let options = currentSnackbar.options
     for (let prop in options) {
