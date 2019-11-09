@@ -9,7 +9,7 @@
         ref="input"
         v-bind="$attrs"
         :value="value"
-        :autocomplete="autocomplete"
+        :autocomplete="autocomplete?'on':'off'"
         @compositionstart="onCompositionstart"
         @compositionupdate="onCompositionUpdate"
         @compositionend="onCompositionEnd"
@@ -23,6 +23,11 @@
       </div>
       <div class="mz-input__line"
         :class="{'mz-input__line--active':isFocused}"></div>
+      <label class="mz-input__label"
+        :class="{
+          'mz-input__label--above':isFocused || value,'mz-input__label--focus':isFocused
+        }"
+        :for="$attrs.id">{{label}}</label>
     </div>
     <div class="mz-input__helper-line">
       <div class="mz-input__helper-text"></div>
@@ -43,7 +48,7 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly type!: string
   @Prop(Boolean)
   readonly readonly!: boolean
-  @Prop(Boolean)
+  @Prop({ type: Boolean, default: false })
   readonly autocomplete!: boolean
   @Prop(String)
   readonly label!: string
@@ -89,26 +94,55 @@ export default class MzInput extends Mixins(SizeMixin) {
 </script>
 
 <style lang="scss">
+@import '@/styles/common/index.scss';
 .mz-input {
+  --mz-input__input-padding: 20px 16px 6px;
   --mz-input__font-size: 16px;
+  --mz-input__font-color: var(--color-text-primary);
   --mz-input__line-color: var(--color-primary);
+  --mz-input__caret-color: var(--color-primary);
+  --mz-input__label-color: var(--color-text-secondary);
+  --mz-input__label-color--focus: var(--color-primary);
 
   &__container {
     position: relative;
   }
 
+  &__label {
+    pointer-events: none;
+    position: absolute;
+    left: 14px;
+    right: initial;
+    top: 50%;
+    color: var(--mz-input__label-color);
+    transform: translateY(-50%);
+    transition: transform 150ms map-get($transition, 'fast-in-fast-out'),
+      color 150ms map-get($transition, 'fast-in-fast-out'),
+      opacity 150ms map-get($transition, 'fast-in-fast-out');
+    opacity: 0.5;
+    &--above {
+      opacity: 1;
+      transform: translateY(-106%) scale(0.75);
+    }
+    &--focus {
+      color: var(--mz-input__label-color--focus);
+    }
+  }
+
   &__inner {
     box-sizing: border-box;
     font-size: var(--mz-input__font-size);
+    color: var(--mz-input__font-color);
     width: 100%;
     height: 100%;
-    padding: 20px 16px 6px;
+    padding: var(--mz-input__input-padding);
     border-radius: 0;
     border: none;
     border-bottom: 1px solid;
     outline: none;
     background: none;
     appearance: none;
+    caret-color: var(--mz-input__caret-color);
   }
 
   &__line {

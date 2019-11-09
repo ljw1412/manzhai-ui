@@ -54,4 +54,10 @@ $colors: (
       --mz-button__border: 1px solid var(--color-white);
     }
   }
+
+  .mz-input {
+    --mz-input__line-color: var(--color-text-primary);
+    --mz-input__caret-color: var(--color-text-primary);
+    --mz-input__label-color--focus: var(--color-text-primary);
+  }
 }

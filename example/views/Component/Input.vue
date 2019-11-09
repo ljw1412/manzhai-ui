@@ -1,6 +1,8 @@
 <template>
   <div class="component-input">
-    <mz-input v-model="value"></mz-input>
+    <mz-input v-model="value"
+      label="Test"
+      id="test"></mz-input>
   </div>
 </template>
 
