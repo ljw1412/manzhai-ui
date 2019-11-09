@@ -1,0 +1,10 @@
+$colors: initColors(
+  $merge-default: true
+);
+
+:root {
+  @include mzThemeColorVariable($colors);
+
+  --scrollbar-thumb-color: var(--color-primary);
+  --scrollbar-thumb-color--active: #f56c6c;
+}

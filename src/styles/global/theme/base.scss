@@ -1,11 +1,12 @@
-$colors: (
-  'white': #ffffff,
-  'black': #000000,
+// 默认颜色对照变量
+$base-colors: (
   primary: #c20c0c,
   success: #46c37b,
   warning: #f5a623,
   danger: #f56c6c,
   info: #909399,
+  'white': #ffffff,
+  'black': #000000,
   text-primary: #303133,
   text-regular: #606266,
   text-secondary: #909399,
@@ -22,11 +23,3 @@ $colors: (
   transition:
     'background-color 0.3s linear, color 0.3s linear, fill 0.3s linear, box-shadow 0.3s linear, border-color 0.3s linear'
 );
-
-:root {
-  @each $name, $color in $colors {
-    --color-#{$name}: #{$color};
-  }
-  --scrollbar-thumb-color: var(--color-primary);
-  --scrollbar-thumb-color--active: #f56c6c;
-}

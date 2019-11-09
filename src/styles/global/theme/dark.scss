@@ -1,30 +1,21 @@
-$colors: (
-  'white': #ffffff,
-  'black': #000000,
-  primary: #424242,
-  success: #46c37b,
-  warning: #f5a623,
-  danger: #f56c6c,
-  info: #909399,
-  text-primary: #ffffff,
-  text-regular: #c0c4cc,
-  text-secondary: #909399,
-  text-placeholder: #606266,
-  border-base: rgba(255, 255, 255, 0.12),
-  border-light: #e4e7ed,
-  border-lighter: #ebeef5,
-  border-extra-light: #f2f6fc,
-  body-background: #303030,
-  card-background: #424242,
-  hover-background-b: rgba(0, 0, 0, 0.25),
-  hover-background-w: rgba(255, 255, 255, 0.25)
+$colors: initColors(
+  (
+    primary: #424242,
+    text-primary: #ffffff,
+    text-regular: #c0c4cc,
+    text-secondary: #909399,
+    text-placeholder: #606266,
+    border-base: rgba(255, 255, 255, 0.12),
+    border-light: #e4e7ed,
+    border-lighter: #ebeef5,
+    border-extra-light: #f2f6fc,
+    body-background: #303030,
+    card-background: #424242
+  )
 );
 
 :root[data-theme='dark'] {
-  // color
-  @each $name, $color in $colors {
-    --color-#{$name}: #{$color};
-  }
+  @include mzThemeColorVariable($colors);
 
   --scrollbar-thumb-color--active: #636363;
   // shadow 阴影颜色

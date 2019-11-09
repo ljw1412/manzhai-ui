@@ -1,0 +1,43 @@
+@import '../global/theme/base.scss';
+
+// 获得不同亮度的颜色
+// $name 颜色名称
+// $color 颜色值
+@function getBrightnessColor($name, $color) {
+  $map: ();
+  @each $type, $mixColor in (light, #ffffff), (dark, #000000) {
+    @for $i from 1 through 9 {
+      $map: map-merge(
+        $map,
+        (#{$name}-#{$type}-#{$i}: mix($mixColor, $color, 10% * $i))
+      );
+    }
+  }
+  @return $map;
+}
+
+// 初始化颜色颜色
+// $colors 颜色列表
+// $merge-default 是否与默认颜色列表合并
+@function initColors($colors: (), $merge-default: false) {
+  @if $merge-default {
+    $colors: map-merge($base-colors, $colors);
+  }
+
+  // 如果颜色列表中有 primary 生成明暗(1-9)度不同的主色
+  @if map-has-key($colors, primary) {
+    $colors: map-merge(
+      getBrightnessColor(primary, map-get($colors, primary)),
+      $colors
+    );
+  }
+
+  @return $colors;
+}
+
+// 生成颜色 css variable
+@mixin mzThemeColorVariable($colors) {
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+}
