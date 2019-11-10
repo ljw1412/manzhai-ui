@@ -5,29 +5,33 @@
         class="mz-input__prepend">
         <slot name="prepend"></slot>
       </div>
-      <input class="mz-input__inner"
-        ref="input"
-        v-bind="$attrs"
-        :value="value"
-        :autocomplete="autocomplete?'on':'off'"
-        @compositionstart="onCompositionstart"
-        @compositionupdate="onCompositionUpdate"
-        @compositionend="onCompositionEnd"
-        @input="onInput"
-        @focus="onFocus"
-        @blur="onBlur"
-        @change="onChange" />
+      <div class="mz-input__content">
+        <label class="mz-input__label"
+          :class="{
+            'mz-input__label--above':isFocused || value,
+            'mz-input__label--focus':isFocused
+          }"
+          :for="$attrs.id">{{label}}</label>
+        <input class="mz-input__inner"
+          ref="input"
+          v-bind="$attrs"
+          :value="value"
+          :type="type"
+          :autocomplete="autocomplete?'on':'off'"
+          @compositionstart="onCompositionstart"
+          @compositionupdate="onCompositionUpdate"
+          @compositionend="onCompositionEnd"
+          @input="onInput"
+          @focus="onFocus"
+          @blur="onBlur"
+          @change="onChange" />
+      </div>
       <div v-if="$slots.append"
         class="mz-input__append">
         <slot name="append"></slot>
       </div>
       <div class="mz-input__line"
         :class="{'mz-input__line--active':isFocused}"></div>
-      <label class="mz-input__label"
-        :class="{
-          'mz-input__label--above':isFocused || value,'mz-input__label--focus':isFocused
-        }"
-        :for="$attrs.id">{{label}}</label>
     </div>
     <div class="mz-input__helper-line">
       <div class="mz-input__helper-text"></div>
@@ -96,7 +100,7 @@ export default class MzInput extends Mixins(SizeMixin) {
 <style lang="scss">
 @import '@/styles/common/index.scss';
 .mz-input {
-  --mz-input__input-padding: 20px 16px 6px;
+  --mz-input__input-padding: 20px 6px 6px;
   --mz-input__font-size: 16px;
   --mz-input__font-color: var(--color-text-primary);
   --mz-input__line-color: var(--color-primary);
@@ -106,16 +110,37 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &__container {
     position: relative;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid;
+  }
+
+  &__prepend {
+    flex-shrink: 0;
+    display: flex;
+    padding-left: 12px;
+  }
+
+  &__append {
+    flex-shrink: 0;
+    display: flex;
+    padding-right: 12px;
+  }
+
+  &__content {
+    position: relative;
+    flex-grow: 1;
   }
 
   &__label {
     pointer-events: none;
     position: absolute;
-    left: 14px;
+    left: 6px;
     right: initial;
     top: 50%;
     color: var(--mz-input__label-color);
     transform: translateY(-50%);
+    transform-origin: left center;
     transition: transform 150ms map-get($transition, 'fast-in-fast-out'),
       color 150ms map-get($transition, 'fast-in-fast-out'),
       opacity 150ms map-get($transition, 'fast-in-fast-out');
@@ -138,7 +163,6 @@ export default class MzInput extends Mixins(SizeMixin) {
     padding: var(--mz-input__input-padding);
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid;
     outline: none;
     background: none;
     appearance: none;

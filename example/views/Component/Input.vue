@@ -3,6 +3,20 @@
     <mz-input v-model="value"
       label="Test"
       id="test"></mz-input>
+    <mz-input v-model="value"
+      type="password"
+      label="Password"
+      id="password">
+      <mz-icon slot="prepend"
+        name="md-key"
+        color="#ffffff"
+        size="26"></mz-icon>
+
+      <mz-icon slot="append"
+        name="md-eye"
+        color="#ffffff"
+        size="26"></mz-icon>
+    </mz-input>
   </div>
 </template>
 
