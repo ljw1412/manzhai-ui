@@ -32,7 +32,7 @@ export default class MzIcon extends Vue {
     }
 
     const iconProps = {
-      class: 'mz-icon',
+      class: 'mz-icon color-transition',
       style: this.svgStyles,
       'aria-hidden': true,
       on: this.$listeners
