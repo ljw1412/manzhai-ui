@@ -13,12 +13,12 @@
       id="password">
       <mz-icon slot="prepend"
         name="md-key"
-        color="#ffffff"
+        color="var(--color-text-primary)"
         size="26"></mz-icon>
 
       <mz-icon slot="append"
         name="md-eye"
-        color="#ffffff"
+        color="var(--color-text-primary)"
         size="26"></mz-icon>
     </mz-input>
   </div>
