@@ -2,10 +2,14 @@
   <div class="component-input">
     <mz-input v-model="value"
       label="Test"
-      id="test"></mz-input>
+      id="test"
+      hint="请输入"
+      show-word-count
+      maxlength="10"></mz-input>
     <mz-input v-model="value"
       type="password"
       label="Password"
+      show-word-count
       id="password">
       <mz-icon slot="prepend"
         name="md-key"

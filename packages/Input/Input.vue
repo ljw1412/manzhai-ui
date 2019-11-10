@@ -17,6 +17,8 @@
           v-bind="$attrs"
           :value="value"
           :type="type"
+          :maxlength="maxlength"
+          :readonly="readonly"
           :autocomplete="autocomplete?'on':'off'"
           @compositionstart="onCompositionstart"
           @compositionupdate="onCompositionUpdate"
@@ -33,9 +35,10 @@
       <div class="mz-input__line"
         :class="{'mz-input__line--active':isFocused}"></div>
     </div>
-    <div class="mz-input__helper-line">
-      <div class="mz-input__helper-text"></div>
-      <div class="mz-input__counter"></div>
+    <div class="mz-input__helper-line flex-center-space-between">
+      <div class="mz-input__helper-text">{{hint}}</div>
+      <div v-if="showWordCount"
+        class="mz-input__counter">{{countStr}}</div>
     </div>
   </div>
 </template>
@@ -54,13 +57,28 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly readonly!: boolean
   @Prop({ type: Boolean, default: false })
   readonly autocomplete!: boolean
+  @Prop(Boolean)
+  readonly showWordCount!: boolean
+  @Prop([String, Number])
+  readonly maxlength!: string | number
   @Prop(String)
   readonly label!: string
+  @Prop(String)
+  readonly hint!: string
   @Ref('input')
   readonly inputRef!: HTMLInputElement
 
   isFocused = false
   isComposing = false
+
+  get count() {
+    if (typeof this.value === 'string') return this.value.length
+    return this.value
+  }
+
+  get countStr() {
+    return this.maxlength ? this.count + ' / ' + this.maxlength : this.count
+  }
 
   onCompositionstart(event: CompositionEvent) {
     this.isComposing = true
@@ -101,12 +119,14 @@ export default class MzInput extends Mixins(SizeMixin) {
 @import '@/styles/common/index.scss';
 .mz-input {
   --mz-input__input-padding: 20px 6px 6px;
-  --mz-input__font-size: 16px;
-  --mz-input__font-color: var(--color-text-primary);
-  --mz-input__line-color: var(--color-primary);
-  --mz-input__caret-color: var(--color-primary);
+  --mz-input__input-font-size: 16px;
+  --mz-input__input-font-color: var(--color-text-primary);
+  --mz-input__input-caret-color: var(--color-primary);
   --mz-input__label-color: var(--color-text-secondary);
   --mz-input__label-color--focus: var(--color-primary);
+  --mz-input__line-color: var(--color-primary);
+  --mz-input__message-color: var(--color-text-secondary);
+  --mz-input__message-font-size: 12px;
 
   &__container {
     position: relative;
@@ -156,8 +176,8 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &__inner {
     box-sizing: border-box;
-    font-size: var(--mz-input__font-size);
-    color: var(--mz-input__font-color);
+    font-size: var(--mz-input__input-font-size);
+    color: var(--mz-input__input-font-color);
     width: 100%;
     height: 100%;
     padding: var(--mz-input__input-padding);
@@ -166,7 +186,7 @@ export default class MzInput extends Mixins(SizeMixin) {
     outline: none;
     background: none;
     appearance: none;
-    caret-color: var(--mz-input__caret-color);
+    caret-color: var(--mz-input__input-caret-color);
   }
 
   &__line {
@@ -185,6 +205,12 @@ export default class MzInput extends Mixins(SizeMixin) {
       opacity: 1;
       transform: scaleX(1);
     }
+  }
+
+  &__helper-line {
+    padding: 0 6px;
+    color: var(--mz-input__message-color);
+    font-size: var(--mz-input__message-font-size);
   }
 }
 </style>
