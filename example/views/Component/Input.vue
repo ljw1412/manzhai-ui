@@ -6,6 +6,7 @@
       hint="请输入"
       show-word-count
       maxlength="10"></mz-input>
+    <br>
     <mz-input v-model="value"
       type="password"
       label="Password"

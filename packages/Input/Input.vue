@@ -132,7 +132,15 @@ export default class MzInput extends Mixins(SizeMixin) {
     position: relative;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid;
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-border-base);
+    }
   }
 
   &__prepend {
