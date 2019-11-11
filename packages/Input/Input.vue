@@ -1,5 +1,6 @@
 <template>
-  <div class="mz-input">
+  <div class="mz-input"
+    :class="{'mz-input--error':error}">
     <div class="mz-input__container">
       <div v-if="$slots.prepend"
         class="mz-input__prepend">
@@ -36,7 +37,7 @@
         :class="{'mz-input__line--active':isFocused}"></div>
     </div>
     <div class="mz-input__helper-line flex-center-space-between">
-      <div class="mz-input__helper-text">{{hint}}</div>
+      <div class="mz-input__helper-text">{{error?errorMessage:hint}}</div>
       <div v-if="showWordCount"
         class="mz-input__counter">{{countStr}}</div>
     </div>
@@ -59,12 +60,18 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly autocomplete!: boolean
   @Prop(Boolean)
   readonly showWordCount!: boolean
+  @Prop(Boolean)
+  readonly error!: boolean
+  @Prop(String)
+  readonly errorMessage!: string
   @Prop([String, Number])
   readonly maxlength!: string | number
   @Prop(String)
   readonly label!: string
   @Prop(String)
   readonly hint!: string
+  @Prop(Object)
+  readonly rule!: object
   @Ref('input')
   readonly inputRef!: HTMLInputElement
 
@@ -122,9 +129,11 @@ export default class MzInput extends Mixins(SizeMixin) {
   --mz-input__input-font-size: 16px;
   --mz-input__input-font-color: var(--color-text-primary);
   --mz-input__input-caret-color: var(--color-primary);
+  --mz-input__icon-color: var(--color-text-primary);
   --mz-input__label-color: var(--color-text-secondary);
-  --mz-input__label-color--focus: var(--color-primary);
-  --mz-input__line-color: var(--color-primary);
+  --mz-input__label-color--focused: var(--color-primary);
+  --mz-input__line-color: var(--color-border-base);
+  --mz-input__line-color--focused: var(--color-primary);
   --mz-input__message-color: var(--color-text-secondary);
   --mz-input__message-font-size: 12px;
 
@@ -139,20 +148,26 @@ export default class MzInput extends Mixins(SizeMixin) {
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: var(--color-border-base);
+      background-color: var(--mz-input__line-color);
     }
   }
 
   &__prepend {
     flex-shrink: 0;
     display: flex;
-    padding-left: 12px;
+    padding-left: 6px;
+    .mz-icon {
+      @include mzColor(var(--mz-input__icon-color));
+    }
   }
 
   &__append {
     flex-shrink: 0;
     display: flex;
-    padding-right: 12px;
+    padding-right: 6px;
+    .mz-icon {
+      @include mzColor(var(--mz-input__icon-color));
+    }
   }
 
   &__content {
@@ -178,7 +193,7 @@ export default class MzInput extends Mixins(SizeMixin) {
       transform: translateY(-106%) scale(0.75);
     }
     &--focus {
-      color: var(--mz-input__label-color--focus);
+      color: var(--mz-input__label-color--focused);
     }
   }
 
@@ -204,11 +219,11 @@ export default class MzInput extends Mixins(SizeMixin) {
     width: 100%;
     height: 2px;
     transform: scaleX(0);
-    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 180ms map-get($transition, 'fast-in-fast-out'),
+      opacity 180ms map-get($transition, 'fast-in-fast-out');
     opacity: 0;
     z-index: 2;
-    background-color: var(--mz-input__line-color);
+    background-color: var(--mz-input__line-color--focused);
     &--active {
       opacity: 1;
       transform: scaleX(1);
@@ -216,9 +231,20 @@ export default class MzInput extends Mixins(SizeMixin) {
   }
 
   &__helper-line {
-    padding: 0 6px;
+    padding: 2px 6px;
     color: var(--mz-input__message-color);
     font-size: var(--mz-input__message-font-size);
+  }
+
+  &--error {
+    --mz-input__input-font-color: var(--color-danger) !important;
+    --mz-input__input-caret-color: var(--color-danger) !important;
+    --mz-input__icon-color: var(--color-danger) !important;
+    --mz-input__label-color: var(--color-danger) !important;
+    --mz-input__label-color--focused: var(--color-danger) !important;
+    --mz-input__line-color: var(--color-danger) !important;
+    --mz-input__line-color--focused: var(--color-danger) !important;
+    --mz-input__message-color: var(--color-danger) !important;
   }
 }
 </style>

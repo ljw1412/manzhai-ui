@@ -4,6 +4,8 @@
       label="Test"
       id="test"
       hint="请输入"
+      error
+      error-message="错误"
       show-word-count
       maxlength="10"></mz-input>
     <br>
@@ -14,12 +16,10 @@
       id="password">
       <mz-icon slot="prepend"
         name="md-key"
-        color="var(--color-text-primary)"
         size="26"></mz-icon>
 
       <mz-icon slot="append"
         name="md-eye"
-        color="var(--color-text-primary)"
         size="26"></mz-icon>
     </mz-input>
   </div>
