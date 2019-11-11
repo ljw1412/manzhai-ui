@@ -1,38 +1,44 @@
 <template>
   <div class="mz-input"
-    :class="{'mz-input--error':error}">
+    :class="{
+      'mz-input--error':error,
+      'mz-input--outlined':outlined,
+      'mz-input--focused':isFocused
+    }">
     <div class="mz-input__container">
       <div v-if="$slots.prepend"
+        ref="prepend"
         class="mz-input__prepend">
         <slot name="prepend"></slot>
       </div>
-      <div class="mz-input__content">
-        <label class="mz-input__label"
-          :class="{
-            'mz-input__label--above':isFocused || value,
-            'mz-input__label--focus':isFocused
-          }"
-          :for="$attrs.id">{{label}}</label>
-        <input class="mz-input__inner"
-          ref="input"
-          v-bind="$attrs"
-          :value="value"
-          :type="type"
-          :maxlength="maxlength"
-          :readonly="readonly"
-          :autocomplete="autocomplete?'on':'off'"
-          @compositionstart="onCompositionstart"
-          @compositionupdate="onCompositionUpdate"
-          @compositionend="onCompositionEnd"
-          @input="onInput"
-          @focus="onFocus"
-          @blur="onBlur"
-          @change="onChange" />
-      </div>
+      <!-- <div class="mz-input__content"> -->
+      <input class="mz-input__inner"
+        ref="input"
+        v-bind="$attrs"
+        :value="value"
+        :type="type"
+        :maxlength="maxlength"
+        :readonly="readonly"
+        :autocomplete="autocomplete?'on':'off'"
+        @compositionstart="onCompositionstart"
+        @compositionupdate="onCompositionUpdate"
+        @compositionend="onCompositionEnd"
+        @input="onInput"
+        @focus="onFocus"
+        @blur="onBlur"
+        @change="onChange" />
+      <!-- </div> -->
       <div v-if="$slots.append"
         class="mz-input__append">
         <slot name="append"></slot>
       </div>
+      <label class="mz-input__label"
+        :for="$attrs.id"
+        :class="{
+            'mz-input__label--above':isFocused || value,
+            'mz-input__label--focused':isFocused
+        }"
+        :style="labelStyles">{{label}}</label>
       <div class="mz-input__line"
         :class="{'mz-input__line--active':isFocused}"></div>
     </div>
@@ -61,6 +67,8 @@ export default class MzInput extends Mixins(SizeMixin) {
   @Prop(Boolean)
   readonly showWordCount!: boolean
   @Prop(Boolean)
+  readonly outlined!: boolean
+  @Prop(Boolean)
   readonly error!: boolean
   @Prop(String)
   readonly errorMessage!: string
@@ -74,9 +82,18 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly rule!: object
   @Ref('input')
   readonly inputRef!: HTMLInputElement
+  @Ref('prepend')
+  readonly prependRef!: HTMLElement
 
   isFocused = false
   isComposing = false
+  prependWidth = 0
+
+  get labelStyles() {
+    return {
+      left: this.isFocused || this.value ? undefined : this.prependWidth + 'px'
+    }
+  }
 
   get count() {
     if (typeof this.value === 'string') return this.value.length
@@ -118,6 +135,20 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   onChange(event: InputEvent) {
     this.$emit('change', (event.target as HTMLInputElement).value)
+  }
+
+  update() {
+    if (this.prependRef) {
+      this.prependWidth = this.prependRef.clientWidth
+    }
+  }
+
+  mounted() {
+    this.update()
+  }
+
+  updated() {
+    this.update()
   }
 }
 </script>
@@ -170,17 +201,13 @@ export default class MzInput extends Mixins(SizeMixin) {
     }
   }
 
-  &__content {
-    position: relative;
-    flex-grow: 1;
-  }
-
   &__label {
     pointer-events: none;
     position: absolute;
     left: 6px;
     right: initial;
     top: 50%;
+    padding-left: 6px;
     color: var(--mz-input__label-color);
     transform: translateY(-50%);
     transform-origin: left center;
@@ -192,12 +219,13 @@ export default class MzInput extends Mixins(SizeMixin) {
       opacity: 1;
       transform: translateY(-106%) scale(0.75);
     }
-    &--focus {
+    &--focused {
       color: var(--mz-input__label-color--focused);
     }
   }
 
   &__inner {
+    flex-grow: 1;
     box-sizing: border-box;
     font-size: var(--mz-input__input-font-size);
     color: var(--mz-input__input-font-color);
@@ -245,6 +273,17 @@ export default class MzInput extends Mixins(SizeMixin) {
     --mz-input__line-color: var(--color-danger) !important;
     --mz-input__line-color--focused: var(--color-danger) !important;
     --mz-input__message-color: var(--color-danger) !important;
+  }
+
+  &--outlined {
+    .mz-input {
+      &__container::before {
+        display: none;
+      }
+      &__label--above {
+        transform: translateY(-160%) scale(0.75);
+      }
+    }
   }
 }
 </style>

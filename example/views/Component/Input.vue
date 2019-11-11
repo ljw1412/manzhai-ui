@@ -22,6 +22,19 @@
         name="md-eye"
         size="26"></mz-icon>
     </mz-input>
+
+    <mz-input v-model="value"
+      type="password"
+      label="Password"
+      show-word-count
+      outlined
+      id="password2">
+      <div slot="prepend">{{value}}</div>
+
+      <mz-icon slot="append"
+        name="md-eye"
+        size="26"></mz-icon>
+    </mz-input>
   </div>
 </template>
 
