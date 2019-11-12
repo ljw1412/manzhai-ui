@@ -19,9 +19,7 @@ export default class MzIcon extends Vue {
 
   get svgStyles() {
     return {
-      width: this.size + 'px',
-      height: this.size + 'px',
-      fill: this.color
+      fontSize: this.size
     }
   }
 
@@ -34,7 +32,7 @@ export default class MzIcon extends Vue {
     const iconProps = {
       class: 'mz-icon color-transition',
       style: this.svgStyles,
-      'aria-hidden': true,
+      attrs: { 'aria-hidden': true, fill: this.color || 'currentColor' },
       on: this.$listeners
     }
 
@@ -44,4 +42,8 @@ export default class MzIcon extends Vue {
 </script>
 
 <style lang="scss">
+.mz-icon {
+  width: 1em;
+  height: 1em;
+}
 </style>

@@ -79,7 +79,7 @@ export default class MzSlideGroup extends Vue {
       }
       return (
         <div {...data}>
-          <mz-icon name={`md-arrow-drop${item}`} size="30"></mz-icon>
+          <mz-icon name={`md-arrow-drop${item}`} size="30px"></mz-icon>
         </div>
       )
     })
@@ -162,9 +162,9 @@ export default class MzSlideGroup extends Vue {
     top: 0;
     width: 30px;
     height: 100%;
-    @include mzColorVar(--color-text-primary);
+    color: var(--color-text-primary);
     &:active {
-      @include mzColorVar(--color-text-regular);
+      color: var(--color-text-regular);
     }
   }
 }

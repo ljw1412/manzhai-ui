@@ -74,7 +74,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   box-sizing: border-box;
   border: var(--mz-button__border);
   border-radius: var(--mz-button__border-radius);
-  @include mzColorVar(--mz-button__font-color);
+  color: var(--mz-button__font-color);
   cursor: var(--mz-button__cursor);
   font-size: var(--mz-button__font-size);
   height: var(--mz-button__height);
@@ -93,7 +93,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   vertical-align: middle;
 
   &__content {
-    @include mzColorVar(--mz-button__font-color);
+    color: var(--mz-button__font-color);
     position: relative;
     z-index: 50;
     transition: all 0.3s map-get($transition, 'fast-in-fast-out');

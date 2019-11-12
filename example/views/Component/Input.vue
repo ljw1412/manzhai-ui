@@ -30,7 +30,7 @@
 
       <mz-icon slot="append"
         name="md-eye"
-        size="26"></mz-icon>
+        size="26px"></mz-icon>
     </mz-input>
   </div>
 </template>

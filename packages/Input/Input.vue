@@ -239,7 +239,7 @@ export default class MzInput extends Mixins(SizeMixin) {
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
-    fill: var(--mz-input__icon-color);
+    color: var(--mz-input__icon-color);
     pointer-events: none;
   }
 
@@ -248,7 +248,7 @@ export default class MzInput extends Mixins(SizeMixin) {
     top: 50%;
     right: 12px;
     transform: translateY(-50%);
-    fill: var(--mz-input__icon-color);
+    color: var(--mz-input__icon-color);
   }
 
   &__label {

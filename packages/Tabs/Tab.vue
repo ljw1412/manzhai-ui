@@ -91,7 +91,7 @@ export default class MzTab extends Vue {
   padding: 0 12px;
   text-align: center;
   z-index: 50;
-  @include mzColorVar(--mz-tab__font-color);
+  color: var(--mz-tab__font-color);
 
   &--grow {
     flex: 1 0 auto;
@@ -99,15 +99,15 @@ export default class MzTab extends Vue {
   }
 
   &--active {
-    @include mzColorVar(--mz-tab__font-color--active);
+    color: var(--mz-tab__font-color--active);
   }
 
   &--disabled {
-    @include mzColorVar(--mz-tab__font-color--disabled);
+    color: var(--mz-tab__font-color--disabled);
   }
 }
 
 .mz-tab-panel {
-  @include mzColorVar(--color-text-primary);
+  color: var(--color-text-primary);
 }
 </style>

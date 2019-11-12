@@ -11,7 +11,7 @@
         :key="item"
         class="icon-grid__cell flex-double-center">
         <mz-icon :name="item"
-          size="40"></mz-icon>
+          size="40px"></mz-icon>
       </div>
     </div>
     <mz-sub-header>logo</mz-sub-header>
@@ -20,7 +20,7 @@
         :key="item"
         class="icon-grid__cell flex-double-center">
         <mz-icon :name="item"
-          size="40"></mz-icon>
+          size="40px"></mz-icon>
       </div>
     </div>
   </div>
@@ -45,7 +45,6 @@ export default class ComponentIcon extends Vue {
   grid-auto-rows: minmax(70px, auto);
   &__cell {
     margin: 5px;
-    fill: var(--color-text-primary);
     color: var(--color-text-primary);
     &:hover {
       border-radius: 5px;

@@ -74,14 +74,14 @@
         ripple
         :size="size">
         <mz-icon name="md-alarm"
-          size="20"></mz-icon>
+          size="20px"></mz-icon>
       </mz-button>
       <mz-button circle
         icon
         disabled
         :size="size">
         <mz-icon name="md-alarm"
-          size="20"></mz-icon>
+          size="20px"></mz-icon>
       </mz-button>
     </div>
   </div>
