@@ -13,14 +13,11 @@
       type="password"
       label="Password"
       show-word-count
-      id="password">
-      <mz-icon slot="prepend"
-        name="md-key"
-        size="26"></mz-icon>
-
-      <mz-icon slot="append"
-        name="md-eye"
-        size="26"></mz-icon>
+      prepend-icon="md-key"
+      append-icon="md-eye"
+      id="password"
+      @prependClick="iconClick"
+      @appendClick="iconClick">
     </mz-input>
 
     <mz-input v-model="value"
@@ -44,6 +41,10 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class ComponentInput extends Vue {
   value = ''
+
+  iconClick() {
+    console.log('!!!')
+  }
 }
 </script>
 

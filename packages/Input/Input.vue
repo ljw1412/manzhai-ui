@@ -1,60 +1,16 @@
-<template>
-  <div class="mz-input"
-    :class="{
-      'mz-input--error':error,
-      'mz-input--outlined':outlined,
-      'mz-input--focused':isFocused
-    }">
-    <div class="mz-input__container">
-      <div v-if="$slots.prepend"
-        ref="prepend"
-        class="mz-input__prepend">
-        <slot name="prepend"></slot>
-      </div>
-      <!-- <div class="mz-input__content"> -->
-      <input class="mz-input__inner"
-        ref="input"
-        v-bind="$attrs"
-        :value="value"
-        :type="type"
-        :maxlength="maxlength"
-        :readonly="readonly"
-        :autocomplete="autocomplete?'on':'off'"
-        @compositionstart="onCompositionstart"
-        @compositionupdate="onCompositionUpdate"
-        @compositionend="onCompositionEnd"
-        @input="onInput"
-        @focus="onFocus"
-        @blur="onBlur"
-        @change="onChange" />
-      <!-- </div> -->
-      <div v-if="$slots.append"
-        class="mz-input__append">
-        <slot name="append"></slot>
-      </div>
-      <label class="mz-input__label"
-        :for="$attrs.id"
-        :class="{
-            'mz-input__label--above':isFocused || value,
-            'mz-input__label--focused':isFocused
-        }"
-        :style="labelStyles">{{label}}</label>
-      <div class="mz-input__line"
-        :class="{'mz-input__line--active':isFocused}"></div>
-    </div>
-    <div class="mz-input__helper-line flex-center-space-between">
-      <div class="mz-input__helper-text">{{error?errorMessage:hint}}</div>
-      <div v-if="showWordCount"
-        class="mz-input__counter">{{countStr}}</div>
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
+import MzIcon from '../Icon/index'
+import MzImage from '../Image/index'
 import SizeMixin from '@/mixins/size'
+import { CreateElement } from 'vue'
 
-@Component
+@Component({
+  components: {
+    MzIcon,
+    MzImage
+  }
+})
 export default class MzInput extends Mixins(SizeMixin) {
   @Prop([String, Number])
   readonly value!: string | number
@@ -70,6 +26,14 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly outlined!: boolean
   @Prop(Boolean)
   readonly error!: boolean
+  @Prop(String)
+  readonly prependIcon!: string
+  @Prop(String)
+  readonly prependSrc!: string
+  @Prop(String)
+  readonly appendIcon!: string
+  @Prop(String)
+  readonly appendSrc!: string
   @Prop(String)
   readonly errorMessage!: string
   @Prop([String, Number])
@@ -87,12 +51,19 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   isFocused = false
   isComposing = false
-  prependWidth = 0
 
-  get labelStyles() {
-    return {
-      left: this.isFocused || this.value ? undefined : this.prependWidth + 'px'
-    }
+  get mzInputClasses() {
+    return [
+      'mz-input',
+      'color-transition',
+      {
+        'mz-input--error': this.error,
+        'mz-input--outlined': this.outlined,
+        'mz-input--focused': this.isFocused,
+        'mz-input--prepend': this.prependIcon || this.prependSrc,
+        'mz-input--append': this.appendIcon || this.appendSrc
+      }
+    ]
   }
 
   get count() {
@@ -102,6 +73,110 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   get countStr() {
     return this.maxlength ? this.count + ' / ' + this.maxlength : this.count
+  }
+
+  renderInput() {
+    return (
+      <input
+        class="mz-input__inner"
+        ref="input"
+        attrs={this.$attrs}
+        value={this.value}
+        type={this.type}
+        maxlength={this.maxlength}
+        readonly={this.readonly}
+        autocomplete={this.autocomplete ? 'on' : 'off'}
+        on-compositionstart={this.onCompositionstart}
+        on-compositionupdate={this.onCompositionUpdate}
+        on-compositionend={this.onCompositionEnd}
+        on-input={this.onInput}
+        on-focus={this.onFocus}
+        on-blur={this.onBlur}
+        on-change={this.onChange}
+      />
+    )
+  }
+
+  renderIcon(type: string, icon?: string, src?: string) {
+    const data = {
+      class: `mz-input__icon-${type}`,
+      on: {
+        click: () => {
+          this.$emit(`${type}Click`)
+          this.$emit(`${type}-click`)
+        }
+      }
+    }
+
+    if (icon) {
+      const props = { name: icon, size: '24' }
+      Object.assign(data, { props })
+      return <mz-icon {...data}></mz-icon>
+    }
+    if (src) {
+      const props = { src, fit: 'contain', width: '24px', height: '24px' }
+      Object.assign(data, { props })
+      return <mz-image {...data}></mz-image>
+    }
+    return null
+  }
+
+  renderLine() {
+    if (this.outlined) {
+      return null
+    }
+    const classes = {
+      'mz-input__line': true,
+      'mz-input__line--active': this.isFocused
+    }
+    return <div class={classes}></div>
+  }
+
+  renderContainer() {
+    const label = (
+      <label
+        class={{
+          'mz-input__label': true,
+          'mz-input__label--above': this.isFocused || this.value,
+          'mz-input__label--focused': this.isFocused
+        }}
+        for={this.$attrs.id}
+      >
+        {this.label}
+      </label>
+    )
+
+    return (
+      <div class="mz-input__container">
+        {this.renderInput()}
+        {this.renderIcon('prepend', this.prependIcon, this.prependSrc)}
+        {this.renderIcon('append', this.appendIcon, this.appendSrc)}
+        {label}
+        {this.renderLine()}
+      </div>
+    )
+  }
+
+  renderHelper() {
+    return (
+      <div class="mz-input__helper-line flex-center-space-between">
+        <div class="mz-input__helper-text">
+          {this.error ? this.errorMessage : this.hint}
+        </div>
+        {this.showWordCount && (
+          <div class="mz-input__counter">{this.countStr}</div>
+        )}
+      </div>
+    )
+  }
+
+  render(h: CreateElement) {
+    return (
+      <div class={this.mzInputClasses}>
+        {this.renderContainer()}
+        {this.renderHelper()}
+      </div>
+    )
   }
 
   onCompositionstart(event: CompositionEvent) {
@@ -136,27 +211,14 @@ export default class MzInput extends Mixins(SizeMixin) {
   onChange(event: InputEvent) {
     this.$emit('change', (event.target as HTMLInputElement).value)
   }
-
-  update() {
-    if (this.prependRef) {
-      this.prependWidth = this.prependRef.clientWidth
-    }
-  }
-
-  mounted() {
-    this.update()
-  }
-
-  updated() {
-    this.update()
-  }
 }
 </script>
 
 <style lang="scss">
 @import '@/styles/common/index.scss';
 .mz-input {
-  --mz-input__input-padding: 20px 6px 6px;
+  --mz-input__input-left: 16px;
+  --mz-input__input-padding: 20px var(--mz-input__input-left) 6px;
   --mz-input__input-font-size: 16px;
   --mz-input__input-font-color: var(--color-text-primary);
   --mz-input__input-caret-color: var(--color-primary);
@@ -170,44 +232,31 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &__container {
     position: relative;
-    display: flex;
-    align-items: center;
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--mz-input__line-color);
-    }
   }
 
-  &__prepend {
-    flex-shrink: 0;
-    display: flex;
-    padding-left: 6px;
-    .mz-icon {
-      @include mzColor(var(--mz-input__icon-color));
-    }
+  &__icon-prepend {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    fill: var(--mz-input__icon-color);
+    pointer-events: none;
   }
 
-  &__append {
-    flex-shrink: 0;
-    display: flex;
-    padding-right: 6px;
-    .mz-icon {
-      @include mzColor(var(--mz-input__icon-color));
-    }
+  &__icon-append {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    fill: var(--mz-input__icon-color);
   }
 
   &__label {
     pointer-events: none;
     position: absolute;
-    left: 6px;
+    left: var(--mz-input__input-left);
     right: initial;
     top: 50%;
-    padding-left: 6px;
     color: var(--mz-input__label-color);
     transform: translateY(-50%);
     transform-origin: left center;
@@ -225,7 +274,6 @@ export default class MzInput extends Mixins(SizeMixin) {
   }
 
   &__inner {
-    flex-grow: 1;
     box-sizing: border-box;
     font-size: var(--mz-input__input-font-size);
     color: var(--mz-input__input-font-color);
@@ -234,6 +282,7 @@ export default class MzInput extends Mixins(SizeMixin) {
     padding: var(--mz-input__input-padding);
     border-radius: 0;
     border: none;
+    border-bottom: 1px solid var(--mz-input__line-color);
     outline: none;
     background: none;
     appearance: none;
@@ -259,9 +308,29 @@ export default class MzInput extends Mixins(SizeMixin) {
   }
 
   &__helper-line {
-    padding: 2px 6px;
+    padding: 2px 16px;
     color: var(--mz-input__message-color);
     font-size: var(--mz-input__message-font-size);
+  }
+
+  &--prepend {
+    --mz-input__input-left: 48px;
+    // .mz-input {
+    //   &__inner {
+    //     padding-left: 48px;
+    //   }
+    //   &__label {
+    //     left: 48px;
+    //   }
+    // }
+  }
+
+  &--append {
+    .mz-input {
+      &__inner {
+        padding-right: 48px;
+      }
+    }
   }
 
   &--error {
