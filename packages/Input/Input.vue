@@ -46,11 +46,12 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly rule!: object
   @Ref('input')
   readonly inputRef!: HTMLInputElement
-  @Ref('prepend')
-  readonly prependRef!: HTMLElement
+  @Ref('label')
+  readonly labelRef!: HTMLElement
 
   isFocused = false
   isComposing = false
+  notchWidth = 0
 
   get mzInputClasses() {
     return [
@@ -60,6 +61,7 @@ export default class MzInput extends Mixins(SizeMixin) {
         'mz-input--error': this.error,
         'mz-input--outlined': this.outlined,
         'mz-input--focused': this.isFocused,
+        'mz-input--empty': !this.value,
         'mz-input--prepend': this.prependIcon || this.prependSrc,
         'mz-input--append': this.appendIcon || this.appendSrc
       }
@@ -126,7 +128,10 @@ export default class MzInput extends Mixins(SizeMixin) {
       return (
         <div class="mz-input-outline">
           <div class="mz-input-outline__leading"></div>
-          <div class="mz-input-outline__notch"></div>
+          <div
+            class="mz-input-outline__notch"
+            style={{ width: this.notchWidth + 'px' }}
+          ></div>
           <div class="mz-input-outline__trailing"></div>
         </div>
       )
@@ -145,7 +150,7 @@ export default class MzInput extends Mixins(SizeMixin) {
       'mz-input__label--focused': this.isFocused
     }
     const label = (
-      <label class={classes} for={this.$attrs.id}>
+      <label ref="label" class={classes} for={this.$attrs.id}>
         {this.label}
       </label>
     )
@@ -204,6 +209,9 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   onFocus(event: InputEvent) {
     this.isFocused = true
+    if (this.labelRef) {
+      this.notchWidth = this.labelRef.offsetWidth * 0.75 + 8
+    }
     this.$emit('focus', event)
   }
 
@@ -236,6 +244,7 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &__container {
     position: relative;
+    height: 56px;
   }
 
   &__icon-prepend {
@@ -331,9 +340,24 @@ export default class MzInput extends Mixins(SizeMixin) {
       width: 12px;
     }
     &__notch {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: calc(100% - 12px * 2);
     }
     &__trailing {
       border-radius: 0 4px 4px 0;
+      border-left: none;
+      border-right: 1px solid;
+      flex-grow: 1;
+    }
+    &__leading,
+    &__notch,
+    &__trailing {
+      box-sizing: border-box;
+      height: 100%;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      pointer-events: none;
     }
   }
 
@@ -365,12 +389,30 @@ export default class MzInput extends Mixins(SizeMixin) {
   }
 
   &--outlined {
+    --mz-input__input-padding: 12px var(--mz-input__input-left) 14px;
     .mz-input {
       &__inner {
         border: none !important;
       }
       &__label--above {
-        transform: translateY(-160%) scale(0.75);
+        transform: translateY(-210%) scale(0.75);
+      }
+    }
+  }
+
+  &--focused,
+  &:not(.mz-input--empty) {
+    .mz-input-outline__notch {
+      border-top: none !important;
+    }
+  }
+  &--focused {
+    .mz-input-outline {
+      &__leading,
+      &__notch,
+      &__trailing {
+        border-width: 2px;
+        border-color: var(--mz-input__line-color--focused);
       }
     }
   }
