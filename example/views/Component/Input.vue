@@ -10,7 +10,7 @@
       maxlength="10"></mz-input>
     <br>
     <mz-input v-model="value"
-      type="password"
+      :type="type"
       label="Password"
       show-word-count
       prepend-icon="md-key"
@@ -21,7 +21,6 @@
     </mz-input>
 
     <mz-input v-model="value"
-      type="password"
       label="Password"
       show-word-count
       outlined
@@ -41,9 +40,10 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class ComponentInput extends Vue {
   value = ''
+  type = 'password'
 
   iconClick() {
-    console.log('!!!')
+    this.type = this.type === 'password' ? 'text' : 'password'
   }
 }
 </script>

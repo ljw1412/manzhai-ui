@@ -249,6 +249,7 @@ export default class MzInput extends Mixins(SizeMixin) {
     right: 12px;
     transform: translateY(-50%);
     color: var(--mz-input__icon-color);
+    cursor: pointer;
   }
 
   &__label {
