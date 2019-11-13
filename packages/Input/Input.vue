@@ -123,7 +123,13 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   renderLine() {
     if (this.outlined) {
-      return null
+      return (
+        <div class="mz-input-outline">
+          <div class="mz-input-outline__leading"></div>
+          <div class="mz-input-outline__notch"></div>
+          <div class="mz-input-outline__trailing"></div>
+        </div>
+      )
     }
     const classes = {
       'mz-input__line': true,
@@ -133,15 +139,13 @@ export default class MzInput extends Mixins(SizeMixin) {
   }
 
   renderContainer() {
+    const classes = {
+      'mz-input__label': true,
+      'mz-input__label--above': this.isFocused || this.value,
+      'mz-input__label--focused': this.isFocused
+    }
     const label = (
-      <label
-        class={{
-          'mz-input__label': true,
-          'mz-input__label--above': this.isFocused || this.value,
-          'mz-input__label--focused': this.isFocused
-        }}
-        for={this.$attrs.id}
-      >
+      <label class={classes} for={this.$attrs.id}>
         {this.label}
       </label>
     )
@@ -308,6 +312,31 @@ export default class MzInput extends Mixins(SizeMixin) {
     }
   }
 
+  &-outline {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    text-align: left;
+    pointer-events: none;
+    &__leading {
+      border-radius: 4px 0 0 4px;
+      border-left: 1px solid;
+      border-right: none;
+      width: 12px;
+    }
+    &__notch {
+    }
+    &__trailing {
+      border-radius: 0 4px 4px 0;
+    }
+  }
+
   &__helper-line {
     padding: 2px 16px;
     color: var(--mz-input__message-color);
@@ -316,21 +345,11 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &--prepend {
     --mz-input__input-left: 48px;
-    // .mz-input {
-    //   &__inner {
-    //     padding-left: 48px;
-    //   }
-    //   &__label {
-    //     left: 48px;
-    //   }
-    // }
   }
 
   &--append {
-    .mz-input {
-      &__inner {
-        padding-right: 48px;
-      }
+    .mz-input__inner {
+      padding-right: 48px;
     }
   }
 
@@ -347,8 +366,8 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   &--outlined {
     .mz-input {
-      &__container::before {
-        display: none;
+      &__inner {
+        border: none !important;
       }
       &__label--above {
         transform: translateY(-160%) scale(0.75);
