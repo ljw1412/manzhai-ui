@@ -358,6 +358,7 @@ export default class MzInput extends Mixins(SizeMixin) {
       border-top: 1px solid;
       border-bottom: 1px solid;
       pointer-events: none;
+      border-color: var(--mz-input__line-color);
     }
   }
 
