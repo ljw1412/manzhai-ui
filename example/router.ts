@@ -11,6 +11,7 @@ import ComponentImage from './views/Component/Image.vue'
 import ComponentInput from './views/Component/Input.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
+import ComponentRadio from './views/Component/Radio.vue'
 import ComponentSwitch from './views/Component/Switch.vue'
 import ComponentScrollbar from './views/Component/Scrollbar.vue'
 import ComponentSnackbar from './views/Component/Snackbar.vue'
@@ -76,6 +77,11 @@ export default new Router({
           path: 'navigation',
           name: 'ComponentNavigation',
           component: ComponentNavigation
+        },
+        {
+          path: 'radio',
+          name: 'ComponentRadio',
+          component: ComponentRadio
         },
         {
           path: 'switch',

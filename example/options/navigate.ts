@@ -48,6 +48,11 @@ export default [
         to: { name: 'ComponentNavigation' }
       },
       {
+        label: 'Radio',
+        text: '单选框',
+        to: { name: 'ComponentRadio' }
+      },
+      {
         label: 'Switch',
         text: '开关',
         to: { name: 'ComponentSwitch' }
