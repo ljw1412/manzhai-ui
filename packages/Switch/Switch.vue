@@ -40,6 +40,8 @@ export default class MzSwitch extends Mixins(SizeMixin) {
   readonly inactiveIcon!: string
   @Prop(String)
   readonly iconColor!: string
+  @Prop(Boolean)
+  readonly circle!: boolean
   @Ref('input')
   readonly input!: HTMLInputElement
 
@@ -56,6 +58,7 @@ export default class MzSwitch extends Mixins(SizeMixin) {
       this.disabled ? 'is-not-allowed' : 'is-pointer',
       {
         'mz-switch--checked': this.value,
+        'mz-switch--circle': this.circle,
         'mz-switch--disabled': this.disabled
       }
     ]
@@ -81,11 +84,13 @@ export default class MzSwitch extends Mixins(SizeMixin) {
 .mz-switch {
   --mz-switch__bar-width: 40.5px;
   --mz-switch__bar-height: 18px;
+  --mz-switch__bar-border-radius: 2px;
   --mz-switch__bar-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
   --mz-switch__bar-background-color: #bdc1c6;
   --mz-switch__bar-background-color--checked: var(--color-primary);
   --mz-switch__thumb-background-color: #ffffff;
   --mz-switch__thumb-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
+  --mz-switch__thumb-border-radius: 2px;
 
   position: relative;
   display: inline-block;
@@ -106,7 +111,7 @@ export default class MzSwitch extends Mixins(SizeMixin) {
     height: var(--mz-switch__bar-height);
     background-color: var(--mz-switch__bar-background-color);
     box-shadow: var(--mz-switch__bar-box-shadow);
-    border-radius: 2px;
+    border-radius: var(--mz-switch__bar-border-radius);
     &::before {
       content: '';
       position: absolute;
@@ -130,8 +135,8 @@ export default class MzSwitch extends Mixins(SizeMixin) {
     box-shadow: var(--mz-switch__thumb-box-shadow);
     transition: all 0.2s linear;
     transform-origin: left center;
-    border-radius: 2px;
     border: 1px solid transparent;
+    border-radius: var(--mz-switch__thumb-border-radius);
     .mz-icon {
       width: var(--mz-switch__bar-height) !important;
       height: var(--mz-switch__bar-height) !important;
@@ -152,6 +157,11 @@ export default class MzSwitch extends Mixins(SizeMixin) {
         transform-origin: right center;
       }
     }
+  }
+
+  &--circle {
+    --mz-switch__thumb-border-radius: 100%;
+    --mz-switch__bar-border-radius: 100px;
   }
 
   &--disabled {
