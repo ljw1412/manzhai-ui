@@ -10,6 +10,9 @@ export default class MzIcon extends Vue {
   @Prop({ default: 16 })
   readonly size!: number
 
+  @Prop(Boolean)
+  readonly cssSize!: boolean
+
   @Prop(String)
   readonly color!: string
 
@@ -18,6 +21,7 @@ export default class MzIcon extends Vue {
   }
 
   get svgStyles() {
+    if (this.cssSize) return {}
     return {
       fontSize: this.size
     }
@@ -45,5 +49,6 @@ export default class MzIcon extends Vue {
 .mz-icon {
   width: 1em;
   height: 1em;
+  vertical-align: middle;
 }
 </style>
