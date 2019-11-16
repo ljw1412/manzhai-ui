@@ -6,6 +6,8 @@
     <mz-switch v-model="value"
       size="large"></mz-switch>
     <mz-switch disabled></mz-switch>
+    <mz-switch v-model="value"
+      circle></mz-switch>
   </div>
 </template>
 
