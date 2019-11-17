@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const { resolve } = require('path')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 
@@ -11,6 +12,11 @@ const config = {
     port: 10086
   },
   configureWebpack: {
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: `Build Time: ${new Date().toString()}`
+      })
+    ],
     performance: {
       hints: false
     }
