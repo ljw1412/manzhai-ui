@@ -52,4 +52,11 @@ $colors: initColors(
     --mz-input__input-caret-color: var(--color-text-primary);
     --mz-input__label-color--focused: var(--color-text-primary);
   }
+
+  .mz-radio {
+    --mz-radio__label-font-color: var(--color-text-secondary);
+    &--checked {
+      --mz-radio__label-font-color: var(--color-text-primary);
+    }
+  }
 }
