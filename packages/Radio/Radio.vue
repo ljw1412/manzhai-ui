@@ -6,25 +6,30 @@
       :name="icon"></mz-icon>
     <input type="radio"
       class="mz-radio__input"
-      :name="name"
+      :name="currentName"
       :checked="checked"
       :value="value" />
     <label class="mz-radio__label color-transition"
       role="radio">
-      <slot></slot>
+      <slot>{{label}}</slot>
     </label>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Model } from 'vue-property-decorator'
+import { Component, Vue, Prop, Model, Inject } from 'vue-property-decorator'
+import MzRadioGroup from './RadioGroup.vue'
 
 @Component
 export default class MzRadio extends Vue {
   @Model('input')
   readonly inputValue!: any
+  @Inject({ from: 'radioGroup', default: null })
+  readonly radioGroup?: MzRadioGroup
   @Prop()
   readonly value!: any
+  @Prop(String)
+  readonly label!: string
   @Prop(String)
   readonly name!: string
   @Prop(Boolean)
@@ -32,8 +37,17 @@ export default class MzRadio extends Vue {
   @Prop(Boolean)
   readonly circle!: boolean
 
+  get currentValue() {
+    if (this.radioGroup) return this.radioGroup.value
+    return this.inputValue
+  }
+
+  get currentName() {
+    return this.radioGroup ? this.radioGroup.name : this.name
+  }
+
   get checked() {
-    return this.value === this.inputValue
+    return this.value === this.currentValue
   }
 
   get icon() {
@@ -50,7 +64,9 @@ export default class MzRadio extends Vue {
   }
 
   onRadioClick() {
+    if (this.disabled) return
     this.$emit('input', this.value)
+    if (this.radioGroup) this.radioGroup.setValue(this.value)
   }
 }
 </script>
