@@ -49,6 +49,6 @@ export default class MzIcon extends Vue {
 .mz-icon {
   width: 1em;
   height: 1em;
-  vertical-align: middle;
+  vertical-align: top;
 }
 </style>

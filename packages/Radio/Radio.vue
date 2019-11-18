@@ -100,7 +100,7 @@ export default class MzRadio extends Vue {
 
   &__label {
     cursor: pointer;
-    vertical-align: middle;
+    vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
     line-height: var(--mz-radio__icon-size);
