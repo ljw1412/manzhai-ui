@@ -36,6 +36,8 @@ export default class MzRadio extends Vue {
   readonly disabled!: boolean
   @Prop(Boolean)
   readonly circle!: boolean
+  @Prop(Boolean)
+  readonly border!: boolean
 
   get currentValue() {
     if (this.radioGroup) return this.radioGroup.value
@@ -44,6 +46,10 @@ export default class MzRadio extends Vue {
 
   get currentName() {
     return this.radioGroup ? this.radioGroup.name : this.name
+  }
+
+  get currentBorder() {
+    return this.border || (this.radioGroup && this.radioGroup.border)
   }
 
   get checked() {
@@ -58,8 +64,9 @@ export default class MzRadio extends Vue {
 
   get radioClasses() {
     return {
-      'mz-radio--checked': this.checked,
-      'mz-radio--disabled': this.disabled
+      checked: this.checked,
+      disabled: this.disabled,
+      border: this.currentBorder
     }
   }
 
@@ -106,11 +113,11 @@ export default class MzRadio extends Vue {
     line-height: var(--mz-radio__icon-size);
   }
 
-  &--checked {
+  &.checked {
     --mz-radio__label-font-color: var(--color-primary);
   }
 
-  &:not(&--checked):active {
+  &:not(.checked):active {
     opacity: 0.6;
     transition: opacity 0.2s;
   }

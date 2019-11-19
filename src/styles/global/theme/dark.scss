@@ -55,8 +55,15 @@ $colors: initColors(
 
   .mz-radio {
     --mz-radio__label-font-color: var(--color-text-secondary);
-    &--checked {
+    &.checked {
       --mz-radio__label-font-color: var(--color-text-primary);
+    }
+  }
+
+  .mz-radio-button {
+    --mz-radio-button__label-font-color: var(--color-text-secondary);
+    &.checked {
+      --mz-radio-button__label-font-color: var(--color-text-primary);
     }
   }
 }

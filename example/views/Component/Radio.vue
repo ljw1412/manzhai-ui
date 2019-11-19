@@ -20,6 +20,22 @@
       <mz-radio circle
         value="3">测试3</mz-radio>
     </mz-radio-group>
+    <br />
+    <mz-radio-group name="test4"
+      v-model="value">
+      <mz-radio-button value="1"
+        border></mz-radio-button>
+      <mz-radio-button value="2"
+        border></mz-radio-button>
+      <mz-radio-button value="3"
+        border></mz-radio-button>
+    </mz-radio-group>
+    <br />
+    <mz-radio-group name="test2"
+      v-model="value"
+      :data="list"
+      button
+      border></mz-radio-group>
   </div>
 </template>
 

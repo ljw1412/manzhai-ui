@@ -1,14 +1,15 @@
 <script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import MzRadio from './Radio.vue'
+import { MzRadio, MzRadioButton } from '.'
 
 @Component({
   provide() {
     return { radioGroup: this }
   },
   components: {
-    MzRadio
+    MzRadio,
+    MzRadioButton
   }
 })
 export default class MzRadioGroup extends Vue {
@@ -18,6 +19,10 @@ export default class MzRadioGroup extends Vue {
   readonly name!: string
   @Prop({ type: Array, default: () => [] })
   readonly data!: Record<string, any>[]
+  @Prop(Boolean)
+  readonly button!: boolean
+  @Prop(Boolean)
+  readonly border!: boolean
 
   render(h: CreateElement) {
     return (
@@ -33,7 +38,11 @@ export default class MzRadioGroup extends Vue {
       const data = {
         props: { ...item, inputValue: this.value }
       }
-      return <mz-radio {...data}></mz-radio>
+      return this.button ? (
+        <mz-radio-button {...data}></mz-radio-button>
+      ) : (
+        <mz-radio {...data}></mz-radio>
+      )
     })
   }
 

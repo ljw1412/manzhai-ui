@@ -1,0 +1,55 @@
+<template>
+  <div class="mz-radio-button color-transition"
+    :class="radioClasses"
+    @click="onRadioClick">
+    <input type="radio"
+      class="mz-radio__input"
+      :name="currentName"
+      :checked="checked"
+      :value="value" />
+    <label class="mz-radio-button__label color-transition"
+      role="radio">
+      <slot>{{label||value}}</slot>
+    </label>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import { MzRadio } from '.'
+
+@Component
+export default class MzRadioButton extends MzRadio {}
+</script>
+
+<style lang="scss" >
+.mz-radio-button {
+  --mz-radio-button__padding: 5px 10px;
+  --mz-radio-button__background-color: var(--color-body-background);
+  --mz-radio-button__label-font-color: var(--color-text-primary);
+  --mz-radio-button__border-color: var(--color-border-base);
+
+  display: inline-block;
+  padding: var(--mz-radio-button__padding);
+  color: var(--mz-radio-button__label-font-color);
+  background-color: var(--mz-radio-button__background-color);
+
+  &.checked {
+    --mz-radio-button__background-color: var(--color-primary);
+    --mz-radio-button__label-font-color: #ffffff;
+  }
+
+  &.border {
+    border: 1px solid var(--mz-radio-button__border-color);
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+    & + & {
+      border-left: none;
+    }
+  }
+}
+</style>
