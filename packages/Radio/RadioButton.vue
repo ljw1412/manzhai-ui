@@ -28,15 +28,24 @@ export default class MzRadioButton extends MzRadio {}
   --mz-radio-button__background-color: var(--color-body-background);
   --mz-radio-button__label-font-color: var(--color-text-primary);
   --mz-radio-button__border-color: var(--color-border-base);
+  --mz-radio-button__cursor: pointer;
 
   display: inline-block;
   padding: var(--mz-radio-button__padding);
   color: var(--mz-radio-button__label-font-color);
   background-color: var(--mz-radio-button__background-color);
+  &,
+  &__label {
+    cursor: var(--mz-radio-button__cursor);
+  }
 
   &.checked {
     --mz-radio-button__background-color: var(--color-primary);
     --mz-radio-button__label-font-color: #ffffff;
+  }
+
+  &.disabled {
+    --mz-radio-button__cursor: not-allowed;
   }
 
   &.border {

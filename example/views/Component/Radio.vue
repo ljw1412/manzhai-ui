@@ -6,7 +6,8 @@
       value="2">测试2</mz-radio>
     <mz-radio v-model="value"
       circle
-      value="3">测试3</mz-radio>
+      value="3"
+      disabled>测试3</mz-radio>
     <br>
     <br>
     <mz-radio-group name="test2"
@@ -28,7 +29,8 @@
       <mz-radio-button value="2"
         border></mz-radio-button>
       <mz-radio-button value="3"
-        border></mz-radio-button>
+        border
+        disabled></mz-radio-button>
     </mz-radio-group>
     <br />
     <mz-radio-group name="test2"

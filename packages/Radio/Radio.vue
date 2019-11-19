@@ -83,9 +83,10 @@ export default class MzRadio extends Vue {
   --mz-radio__icon-size: 20px;
   --mz-radio__label-font-size: 16px;
   --mz-radio__label-font-color: var(--color-text-primary);
+  --mz-radio__cursor: pointer;
 
   position: relative;
-  cursor: pointer;
+  cursor: var(--mz-radio__cursor);
   user-select: none;
   display: inline-block;
   color: var(--mz-radio__label-font-color);
@@ -106,7 +107,7 @@ export default class MzRadio extends Vue {
   }
 
   &__label {
-    cursor: pointer;
+    cursor: var(--mz-radio__cursor);
     vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
@@ -117,7 +118,11 @@ export default class MzRadio extends Vue {
     --mz-radio__label-font-color: var(--color-primary);
   }
 
-  &:not(.checked):active {
+  &.disabled {
+    --mz-radio__cursor: not-allowed;
+  }
+
+  &:not(.checked):not(.disabled):active {
     opacity: 0.6;
     transition: opacity 0.2s;
   }
