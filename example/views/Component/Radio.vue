@@ -9,10 +9,9 @@
       value="3"
       disabled>测试3</mz-radio>
     <br>
-    <br>
     <mz-radio-group name="test2"
       v-model="value"
-      block
+      border
       :data="list"></mz-radio-group>
     <br>
     <mz-radio-group name="test3"
@@ -52,7 +51,7 @@ export default class ComponentRadio extends Vue {
   list = [
     { value: '1', label: '测试1' },
     { value: '2', label: '测试2' },
-    { value: '3', label: '测试3' }
+    { value: '3', label: '测试3', disabled: true }
   ]
 }
 </script>
