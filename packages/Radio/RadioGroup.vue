@@ -23,12 +23,19 @@ export default class MzRadioGroup extends Vue {
   readonly button!: boolean
   @Prop(Boolean)
   readonly border!: boolean
+  @Prop(Boolean)
+  readonly block!: boolean
 
   render(h: CreateElement) {
+    const classes = [
+      'mz-radio-group',
+      {
+        'mz-radio-group--block': this.block,
+        'mz-radio-group--button': this.button
+      }
+    ]
     return (
-      <div class="mz-radio-group">
-        {this.$slots.default || this.renderRadioList()}
-      </div>
+      <div class={classes}>{this.$slots.default || this.renderRadioList()}</div>
     )
   }
 
@@ -54,4 +61,17 @@ export default class MzRadioGroup extends Vue {
 </script>
 
 <style lang="scss">
+.mz-radio-group {
+  display: inline-block;
+  &--block {
+    display: block;
+    &.mz-radio-group--button {
+      display: flex;
+      .mz-radio,
+      .mz-radio-button {
+        flex: 1 0 auto;
+      }
+    }
+  }
+}
 </style>

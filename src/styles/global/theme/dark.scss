@@ -58,12 +58,21 @@ $colors: initColors(
     &.checked {
       --mz-radio__label-font-color: var(--color-text-primary);
     }
+    &.disabled {
+      --mz-radio__label-font-color: var(--color-text-placeholder);
+    }
   }
 
   .mz-radio-button {
     --mz-radio-button__label-font-color: var(--color-text-secondary);
     &.checked {
       --mz-radio-button__label-font-color: var(--color-text-primary);
+    }
+    &.disabled {
+      --mz-radio-button__label-font-color: var(--color-text-placeholder);
+      &.checked {
+        --mz-radio-button__background-color: var(--color-primary-dark-1);
+      }
     }
   }
 }

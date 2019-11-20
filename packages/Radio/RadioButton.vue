@@ -7,7 +7,7 @@
       :name="currentName"
       :checked="checked"
       :value="value" />
-    <label class="mz-radio-button__label color-transition"
+    <label class="mz-radio-button__label"
       role="radio">
       <slot>{{label||value}}</slot>
     </label>
@@ -37,6 +37,7 @@ export default class MzRadioButton extends MzRadio {}
   &,
   &__label {
     cursor: var(--mz-radio-button__cursor);
+    text-align: center;
   }
 
   &.checked {
@@ -46,6 +47,10 @@ export default class MzRadioButton extends MzRadio {}
 
   &.disabled {
     --mz-radio-button__cursor: not-allowed;
+    --mz-radio-button__label-font-color: var(--color-text-placeholder);
+    &.checked {
+      --mz-radio-button__background-color: var(--color-primary-light-5);
+    }
   }
 
   &.border {

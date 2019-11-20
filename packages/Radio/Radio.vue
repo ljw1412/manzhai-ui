@@ -120,6 +120,10 @@ export default class MzRadio extends Vue {
 
   &.disabled {
     --mz-radio__cursor: not-allowed;
+    --mz-radio__label-font-color: var(--color-text-placeholder);
+    &.checked {
+      --mz-radio__label-font-color: var(--color-primary-light-5);
+    }
   }
 
   &:not(.checked):not(.disabled):active {

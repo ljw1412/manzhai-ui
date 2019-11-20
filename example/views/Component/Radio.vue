@@ -12,6 +12,7 @@
     <br>
     <mz-radio-group name="test2"
       v-model="value"
+      block
       :data="list"></mz-radio-group>
     <br>
     <mz-radio-group name="test3"
@@ -36,6 +37,7 @@
     <mz-radio-group name="test2"
       v-model="value"
       :data="list"
+      block
       button
       border></mz-radio-group>
   </div>
