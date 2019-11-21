@@ -20,7 +20,7 @@ export default class MzListItemGroup extends Vue {
   readonly text!: string
   @Prop([Boolean, String])
   readonly round!: boolean | 'left' | 'right' | 'mini'
-  @Prop([Boolean, Object])
+  @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop({ type: Boolean, default: true })
   readonly notAllowSelected!: boolean

@@ -188,6 +188,12 @@ export default class MzInput extends Mixins(SizeMixin) {
     )
   }
 
+  getNotchWidth() {
+    if (this.outlined && this.labelRef) {
+      this.notchWidth = this.labelRef.offsetWidth * 0.75 + 8
+    }
+  }
+
   onCompositionstart(event: CompositionEvent) {
     this.isComposing = true
   }
@@ -209,9 +215,7 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   onFocus(event: InputEvent) {
     this.isFocused = true
-    if (this.labelRef) {
-      this.notchWidth = this.labelRef.offsetWidth * 0.75 + 8
-    }
+    this.getNotchWidth()
     this.$emit('focus', event)
   }
 
@@ -222,6 +226,10 @@ export default class MzInput extends Mixins(SizeMixin) {
 
   onChange(event: InputEvent) {
     this.$emit('change', (event.target as HTMLInputElement).value)
+  }
+
+  mounted() {
+    this.getNotchWidth()
   }
 }
 </script>

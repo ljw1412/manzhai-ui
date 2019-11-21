@@ -25,7 +25,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   readonly disabled!: boolean
   @Prop(Boolean)
   readonly icon!: string | boolean
-  @Prop([Boolean, Object])
+  @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop(Boolean)
   readonly circle!: boolean

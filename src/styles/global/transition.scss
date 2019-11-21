@@ -1,18 +1,19 @@
-.mz-fade-enter,
-.mz-fade-leave-to {
-  opacity: 0;
-}
+.mz-fade {
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+  }
 
-.mz-fade-enter-to,
-.mz-fade-leave {
-  opacity: 1;
-}
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+  }
 
-.mz-fade-enter-active,
-.mz-fade-leave-active {
-  transition: opacity $primary-transition;
+  &-enter-active,
+  &-leave-active {
+    transition: opacity $primary-transition;
+  }
 }
-
 .mz {
   &-x-transition,
   &-x-reverse-transition,

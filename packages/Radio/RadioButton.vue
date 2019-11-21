@@ -1,5 +1,6 @@
 <template>
   <div class="mz-radio-button color-transition"
+    v-ripple="!disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
     <input type="radio"

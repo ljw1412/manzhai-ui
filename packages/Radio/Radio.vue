@@ -1,5 +1,6 @@
 <template>
   <div class="mz-radio"
+    v-ripple="!disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
     <mz-icon cssSize
@@ -38,6 +39,8 @@ export default class MzRadio extends Vue {
   readonly circle!: boolean
   @Prop(Boolean)
   readonly border!: boolean
+  @Prop({ type: [Boolean, Object], default: true })
+  readonly ripple!: boolean | object
 
   get currentValue() {
     if (this.radioGroup) return this.radioGroup.value

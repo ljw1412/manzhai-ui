@@ -51,7 +51,7 @@ export default class MzListItem extends Vue {
   readonly notAllowSelected!: boolean
   @Prop([Boolean, String])
   readonly round!: boolean | 'left' | 'right' | 'mini'
-  @Prop([Boolean, Object])
+  @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop(String)
   readonly size!: string

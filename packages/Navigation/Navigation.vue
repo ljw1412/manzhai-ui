@@ -26,7 +26,7 @@ export default class MzNavigation extends Vue {
   readonly data!: NavigationItem | NavigationItem[]
   @Prop([Boolean, String])
   readonly round!: boolean | 'left' | 'right' | 'mini'
-  @Prop([Boolean, Object])
+  @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
 
   value = ''
