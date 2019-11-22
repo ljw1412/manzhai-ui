@@ -18,6 +18,11 @@ export default [
         to: { name: 'ComponentCell' }
       },
       {
+        label: 'Checkbox',
+        text: '多选框',
+        to: { name: 'ComponentCheckbox' }
+      },
+      {
         label: 'Dropdown',
         text: '下拉菜单',
         to: '/component/dropdown'
