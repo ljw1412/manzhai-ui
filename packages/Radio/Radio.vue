@@ -1,5 +1,5 @@
 <template>
-  <div class="mz-radio"
+  <label class="mz-radio"
     v-ripple="!disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
@@ -10,11 +10,11 @@
       :name="currentName"
       :checked="checked"
       :value="value" />
-    <label class="mz-radio__label color-transition"
+    <span class="mz-radio__label color-transition"
       role="radio">
       <slot>{{label}}</slot>
-    </label>
-  </div>
+    </span>
+  </label>
 </template>
 
 <script lang="ts">
@@ -109,7 +109,6 @@ export default class MzRadio extends Vue {
   }
 
   &__label {
-    cursor: var(--mz-radio__cursor);
     vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
