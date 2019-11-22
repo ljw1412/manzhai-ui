@@ -6,7 +6,7 @@ import * as directives from './directives'
 import Button from '../packages/Button/index'
 import Card from '../packages/Card/index'
 import Cell from '../packages/Cell/index'
-import Checkbox from '../packages/Checkbox/index'
+import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import CellGroup from '../packages/CellGroup/index'
 import Dropdown from '../packages/Dropdown/index'
 import Icon from '../packages/Icon/index'
@@ -33,6 +33,7 @@ const components: VueConstructor[] = [
   Cell,
   CellGroup,
   Checkbox,
+  CheckboxGroup,
   Dropdown,
   Icon,
   Image,
@@ -109,6 +110,7 @@ export default {
   Cell,
   CellGroup,
   Checkbox,
+  CheckboxGroup,
   Dropdown,
   Icon,
   Image,
