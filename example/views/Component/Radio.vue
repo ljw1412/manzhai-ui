@@ -5,7 +5,6 @@
     <mz-radio v-model="value"
       value="2">测试2</mz-radio>
     <mz-radio v-model="value"
-      circle
       value="3"
       disabled>测试3</mz-radio>
     <br>
@@ -18,8 +17,7 @@
       v-model="value">
       <mz-radio value="1">测试1</mz-radio>
       <mz-radio value="2">测试2</mz-radio>
-      <mz-radio circle
-        value="3">测试3</mz-radio>
+      <mz-radio value="3">测试3</mz-radio>
     </mz-radio-group>
     <br />
     <mz-radio-group name="test4"

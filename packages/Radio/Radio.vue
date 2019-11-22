@@ -36,8 +36,6 @@ export default class MzRadio extends Vue {
   @Prop(Boolean)
   readonly disabled!: boolean
   @Prop(Boolean)
-  readonly circle!: boolean
-  @Prop(Boolean)
   readonly border!: boolean
   @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
@@ -60,9 +58,7 @@ export default class MzRadio extends Vue {
   }
 
   get icon() {
-    if (this.circle)
-      return this.checked ? 'md-radio-button-on' : 'md-radio-button-off'
-    return this.checked ? 'md-square' : 'md-square-outline'
+    return this.checked ? 'md-radio-button-on' : 'md-radio-button-off'
   }
 
   get radioClasses() {
