@@ -1,7 +1,7 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
-export default class BaseAttrs extends Vue {
+export default class BaseAttribute extends Vue {
   @Prop(String)
   readonly width!: string
   @Prop(String)
