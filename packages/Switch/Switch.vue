@@ -19,21 +19,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Ref, Emit, Mixins } from 'vue-property-decorator'
+import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
 import SizeMixin from '@/mixins/size'
+import FormElement from '@/mixins/FormElement'
 import MzIcon from '../Icon/index'
 @Component({
   components: {
     MzIcon
   }
 })
-export default class MzSwitch extends Mixins(SizeMixin) {
-  @Prop(String)
-  readonly name!: string
+export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   @Prop(Boolean)
   readonly value!: boolean
-  @Prop(Boolean)
-  readonly disabled!: boolean
   @Prop(String)
   readonly activeIcon!: string
   @Prop(String)

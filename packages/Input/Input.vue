@@ -3,6 +3,7 @@ import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
 import MzIcon from '../Icon/index'
 import MzImage from '../Image/index'
 import SizeMixin from '@/mixins/size'
+import FormElement from '@/mixins/FormElement'
 import { CreateElement } from 'vue'
 
 @Component({
@@ -11,7 +12,7 @@ import { CreateElement } from 'vue'
     MzImage
   }
 })
-export default class MzInput extends Mixins(SizeMixin) {
+export default class MzInput extends Mixins(SizeMixin, FormElement) {
   @Prop([String, Number])
   readonly value!: string | number
   @Prop(String)
@@ -38,8 +39,6 @@ export default class MzInput extends Mixins(SizeMixin) {
   readonly errorMessage!: string
   @Prop([String, Number])
   readonly maxlength!: string | number
-  @Prop(String)
-  readonly label!: string
   @Prop(String)
   readonly hint!: string
   @Prop(Object)
@@ -87,6 +86,7 @@ export default class MzInput extends Mixins(SizeMixin) {
         type={this.type}
         maxlength={this.maxlength}
         readonly={this.readonly}
+        disabled={this.disabled}
         autocomplete={this.autocomplete ? 'on' : 'off'}
         on-compositionstart={this.onCompositionstart}
         on-compositionupdate={this.onCompositionUpdate}

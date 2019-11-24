@@ -18,23 +18,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Model, Inject } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  Prop,
+  Model,
+  Inject,
+  Mixins
+} from 'vue-property-decorator'
 import MzRadioGroup from './RadioGroup.vue'
+import FormElement from '@/mixins/FormElement'
 
 @Component
-export default class MzRadio extends Vue {
+export default class MzRadio extends Mixins(FormElement) {
   @Model('input')
   readonly inputValue!: any
   @Inject({ from: 'radioGroup', default: null })
   readonly radioGroup?: MzRadioGroup
   @Prop()
   readonly value!: any
-  @Prop(String)
-  readonly label!: string
-  @Prop(String)
-  readonly name!: string
-  @Prop(Boolean)
-  readonly disabled!: boolean
   @Prop(Boolean)
   readonly border!: boolean
   @Prop({ type: [Boolean, Object], default: true })
