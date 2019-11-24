@@ -5,7 +5,7 @@
     @click="onRadioClick">
     <input type="radio"
       class="mz-radio__input"
-      :name="currentName"
+      :name="name"
       :checked="checked"
       :value="value" />
     <label class="mz-radio-button__label"

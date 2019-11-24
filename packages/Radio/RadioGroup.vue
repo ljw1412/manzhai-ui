@@ -43,7 +43,12 @@ export default class MzRadioGroup extends Vue {
     if (!this.data.length) return null
     return this.data.map(item => {
       const data = {
-        props: { ...item, inputValue: this.value }
+        props: {
+          ...item,
+          inputValue: this.value,
+          border: this.border,
+          name: this.name
+        }
       }
       return this.button ? (
         <mz-radio-button {...data}></mz-radio-button>

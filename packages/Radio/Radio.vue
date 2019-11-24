@@ -1,13 +1,15 @@
 <template>
   <label class="mz-radio"
-    v-ripple="!disabled && ripple"
+    v-ripple="border && !disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
-    <mz-icon cssSize
-      :name="icon"></mz-icon>
+    <span v-ripple="!border && !disabled && ripple"
+      class="mz-radio__icon">
+      <span style="display:block;"></span>
+    </span>
     <input type="radio"
       class="mz-radio__input"
-      :name="currentName"
+      :name="name"
       :checked="checked"
       :value="value" />
     <span class="mz-radio__label color-transition"
@@ -39,20 +41,15 @@ export default class MzRadio extends Mixins(FormElement) {
   readonly value!: any
   @Prop(Boolean)
   readonly border!: boolean
-  @Prop({ type: [Boolean, Object], default: true })
+  @Prop({
+    type: [Boolean, Object],
+    default: () => ({ value: true, center: true })
+  })
   readonly ripple!: boolean | object
 
   get currentValue() {
     if (this.radioGroup) return this.radioGroup.value
     return this.inputValue
-  }
-
-  get currentName() {
-    return this.radioGroup ? this.radioGroup.name : this.name
-  }
-
-  get currentBorder() {
-    return this.border || (this.radioGroup && this.radioGroup.border)
   }
 
   get checked() {
@@ -67,7 +64,7 @@ export default class MzRadio extends Mixins(FormElement) {
     return {
       checked: this.checked,
       disabled: this.disabled,
-      border: this.currentBorder
+      border: this.border
     }
   }
 
@@ -82,8 +79,8 @@ export default class MzRadio extends Mixins(FormElement) {
 <style lang="scss">
 .mz-radio {
   --mz-radio__padding: 0;
-  --mz-radio__icon-size: 20px;
-  --mz-radio__label-font-size: 16px;
+  --mz-radio__icon-size: 16px;
+  --mz-radio__label-font-size: 14px;
   --mz-radio__label-font-color: var(--color-text-primary);
   --mz-radio__cursor: pointer;
 
@@ -94,6 +91,28 @@ export default class MzRadio extends Mixins(FormElement) {
   color: var(--mz-radio__label-font-color);
   padding: var(--mz-radio__padding);
   margin: 10px 10px 0 0;
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: var(--mz-radio__icon-size);
+    height: var(--mz-radio__icon-size);
+    box-sizing: border-box;
+    border: 1px solid var(--mz-radio__label-font-color);
+    border-radius: 100px;
+    vertical-align: sub;
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: var(--mz-radio__label-font-color);
+      border-radius: 50%;
+      transform: scale(0.6);
+      visibility: hidden;
+    }
+  }
+
   .mz-icon {
     font-size: var(--mz-radio__icon-size);
   }
@@ -114,11 +133,14 @@ export default class MzRadio extends Mixins(FormElement) {
     vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
-    line-height: var(--mz-radio__icon-size);
+    line-height: 1.5;
   }
 
   &.checked {
     --mz-radio__label-font-color: var(--color-primary);
+    .mz-radio__icon::after {
+      visibility: visible;
+    }
   }
 
   &.disabled {
