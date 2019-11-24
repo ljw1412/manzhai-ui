@@ -1,5 +1,5 @@
 <template>
-  <div class="mz-radio-button color-transition"
+  <label class="mz-radio-button color-transition"
     v-ripple="!disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
@@ -8,11 +8,11 @@
       :name="name"
       :checked="checked"
       :value="value" />
-    <label class="mz-radio-button__label"
+    <span class="mz-radio-button__label"
       role="radio">
       <slot>{{label||value}}</slot>
-    </label>
-  </div>
+    </span>
+  </label>
 </template>
 
 <script lang="ts">
@@ -35,10 +35,12 @@ export default class MzRadioButton extends MzRadio {}
   padding: var(--mz-radio-button__padding);
   color: var(--mz-radio-button__label-font-color);
   background-color: var(--mz-radio-button__background-color);
-  &,
+  cursor: var(--mz-radio-button__cursor);
+  text-align: center;
+
   &__label {
-    cursor: var(--mz-radio-button__cursor);
-    text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   &.checked {

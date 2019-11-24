@@ -101,6 +101,7 @@ export default class MzRadio extends Mixins(FormElement) {
     border: 1px solid var(--mz-radio__label-font-color);
     border-radius: 100px;
     vertical-align: sub;
+    z-index: 1;
     &::after {
       content: ' ';
       position: absolute;
@@ -130,10 +131,12 @@ export default class MzRadio extends Mixins(FormElement) {
   }
 
   &__label {
+    position: relative;
     vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
     line-height: 1.5;
+    z-index: 1;
   }
 
   &.checked {
