@@ -8,4 +8,6 @@ export default class FormElement extends Vue {
   readonly name!: string
   @Prop(String)
   readonly label!: string
+  @Prop()
+  readonly value!: any
 }
