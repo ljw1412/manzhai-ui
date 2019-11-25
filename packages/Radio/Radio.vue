@@ -8,7 +8,7 @@
       <span style="display:block;"></span>
     </span>
     <input type="radio"
-      class="mz-radio__input"
+      class="mz-radio__input mz-hidden-input"
       :name="name"
       :checked="checked"
       :value="value" />
@@ -116,18 +116,6 @@ export default class MzRadio extends Mixins(FormElement) {
 
   .mz-icon {
     font-size: var(--mz-radio__icon-size);
-  }
-
-  &__input {
-    opacity: 0;
-    outline: none;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
   }
 
   &__label {

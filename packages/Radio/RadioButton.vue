@@ -4,7 +4,7 @@
     :class="radioClasses"
     @click="onRadioClick">
     <input type="radio"
-      class="mz-radio__input"
+      class="mz-radio-button__input mz-hidden-input"
       :name="name"
       :checked="checked"
       :value="value" />

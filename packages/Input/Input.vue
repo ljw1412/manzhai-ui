@@ -84,6 +84,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
         attrs={this.$attrs}
         value={this.value}
         type={this.type}
+        name={this.name}
         maxlength={this.maxlength}
         readonly={this.readonly}
         disabled={this.disabled}
