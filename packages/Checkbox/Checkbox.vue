@@ -1,22 +1,27 @@
 <template>
   <label class="mz-checkbox"
-    :class="checkboxClasses"
-    @click="onCheckboxClick">
+    :class="checkboxClasses">
     <span class="mz-checkbox__icon"></span>
     <input v-if="trueValue || falseValue"
       type="checkbox"
       class="mz-checkbox__input mz-hidden-input"
-      :value="checked"
+      v-model="checked"
       :name="name"
+      :disabled="disabled"
       :tabIndex="tabIndex"
       :true-value="trueValue"
-      :false-value="falseValue" />
+      :false-value="falseValue"
+      :value="checked"
+      @change="onCheckboxChange" />
     <input v-else
       type="checkbox"
       class="mz-checkbox__input mz-hidden-input"
-      :value="label"
+      v-model="checked"
+      :value="value"
       :name="name"
-      :tabIndex="tabIndex" />
+      :disabled="disabled"
+      :tabIndex="tabIndex"
+      @change="onCheckboxChange" />
     <span class="mz-checkbox__label color-transition"
       role="checkbox">
       <slot>{{label}}</slot>
@@ -25,11 +30,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins, Prop } from 'vue-property-decorator'
+import { Component, Vue, Mixins, Prop, Model } from 'vue-property-decorator'
 import FormElement from '@/mixins/FormElement'
 
 @Component
 export default class MzCheckbox extends Mixins(FormElement) {
+  @Model('input')
+  readonly inputValue!: any
   @Prop(Boolean)
   readonly border!: boolean
   @Prop(Number)
@@ -39,22 +46,30 @@ export default class MzCheckbox extends Mixins(FormElement) {
   @Prop()
   readonly falseValue!: any
 
-  checked = false
+  get checked() {
+    return this.inputValue
+  }
+
+  set checked(value) {
+    this.$emit('input', value)
+  }
 
   get checkboxClasses() {
     return {
-      checked: this.checked,
+      checked: this.trueValue === this.checked || this.checked === true,
       disabled: this.disabled,
       border: this.border
     }
   }
 
-  onCheckboxClick() {
-    console.log(this.checked)
-
-    this.checked = !this.checked
-    this.$emit('input', this.value, this.checked)
-    this.$emit('change', this.value, this.checked)
+  onCheckboxChange(ev: InputEvent) {
+    let value
+    if ((ev.target as HTMLInputElement).checked) {
+      value = this.trueValue === undefined ? true : this.trueValue
+    } else {
+      value = this.falseValue === undefined ? false : this.falseValue
+    }
+    this.$emit('change', value, ev)
   }
 }
 </script>
