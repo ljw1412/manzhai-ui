@@ -20,6 +20,7 @@ import {
 } from '../packages/List/index'
 import Navigation from '../packages/Navigation/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
+import { Select } from '../packages/Select/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
 import Scrollbar from '../packages/Scrollbar/index'
@@ -46,6 +47,7 @@ const components: VueConstructor[] = [
   Radio,
   RadioButton,
   RadioGroup,
+  Select,
   SubHeader,
   Switch,
   Scrollbar,
@@ -123,6 +125,7 @@ export default {
   Radio,
   RadioButton,
   RadioGroup,
+  Select,
   SubHeader,
   Switch,
   Scrollbar,
