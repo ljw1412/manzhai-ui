@@ -6,5 +6,5 @@ $colors: initColors(
   @include mzThemeColorVariable($colors);
 
   --scrollbar-thumb-color: var(--color-primary);
-  --scrollbar-thumb-color--active: #f56c6c;
+  --scrollbar-thumb-color--active: var(--color-primary-light-2);
 }
