@@ -16,8 +16,7 @@
 }
 
 .color-transition {
-  transition: background-color 0.3s linear, color 0.3s linear, fill 0.3s linear,
-    box-shadow 0.3s linear, border-color 0.3s linear;
+  transition: var(--color-transition);
 }
 
 .flex-center-space-between {

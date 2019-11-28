@@ -1,7 +1,7 @@
 <template>
   <label class="mz-checkbox"
     :class="checkboxClasses">
-    <span class="mz-checkbox__icon"></span>
+    <span class="mz-checkbox__icon color-transition"></span>
     <input v-if="trueValue || falseValue"
       type="checkbox"
       class="mz-checkbox__input mz-hidden-input"
@@ -97,13 +97,38 @@ export default class MzCheckbox extends Mixins(FormElement) {
     height: var(--mz-checkbox__icon-size);
     box-sizing: border-box;
     border: 1px solid var(--mz-checkbox__label-font-color);
-    vertical-align: sub;
+    vertical-align: text-bottom;
     z-index: 1;
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--mz-checkbox__label-font-color);
+      transition: var(--color-transition);
+      transform: scale(0);
+      transform-origin: center;
+    }
+    &::after {
+      box-sizing: content-box;
+      content: '';
+      border: 1px solid #fff;
+      border-left: 0;
+      border-top: 0;
+      height: 7px;
+      left: 5px;
+      position: absolute;
+      top: 2px;
+      transform: rotate(45deg) scaleY(0);
+      width: 3px;
+      transition: transform 0.15s ease-in 0.05s;
+      transform-origin: center;
+    }
   }
 
   &__label {
     position: relative;
-    vertical-align: top;
+    vertical-align: middle;
     margin-left: 5px;
     font-size: var(--mz-checkbox__label-font-size);
     line-height: 1.5;
@@ -112,8 +137,15 @@ export default class MzCheckbox extends Mixins(FormElement) {
 
   &.checked {
     --mz-checkbox__label-font-color: var(--color-primary);
-    .mz-checkbox__icon::after {
-      visibility: visible;
+    .mz-checkbox__icon {
+      &::before {
+        visibility: visible;
+        transform: scale(1);
+        transition: var(--color-transition), transform 0.2s 0.2s;
+      }
+      &::after {
+        transform: rotate(45deg) scaleY(1);
+      }
     }
   }
 

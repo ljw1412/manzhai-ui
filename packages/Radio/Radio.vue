@@ -4,7 +4,7 @@
     :class="radioClasses"
     @click="onRadioClick">
     <span v-ripple="!border && !disabled && ripple"
-      class="mz-radio__icon">
+      class="mz-radio__icon color-transition">
       <span style="display:block;"></span>
     </span>
     <input type="radio"
@@ -100,7 +100,7 @@ export default class MzRadio extends Mixins(FormElement) {
     box-sizing: border-box;
     border: 1px solid var(--mz-radio__label-font-color);
     border-radius: 100px;
-    vertical-align: sub;
+    vertical-align: text-bottom;
     z-index: 1;
     &::after {
       content: ' ';
