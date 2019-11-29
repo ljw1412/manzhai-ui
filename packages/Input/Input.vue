@@ -191,7 +191,9 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
 
   getNotchWidth() {
     if (this.outlined && this.labelRef) {
-      this.notchWidth = this.labelRef.offsetWidth * 0.75 + 8
+      this.notchWidth = this.labelRef.offsetWidth
+        ? this.labelRef.offsetWidth * 0.75 + 8
+        : 0
     }
   }
 
@@ -416,7 +418,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
       border-top: none !important;
     }
   }
-  &--focused {
+  &--focused,
+  .mz-select--active & {
     .mz-input-outline {
       &__leading,
       &__notch,
