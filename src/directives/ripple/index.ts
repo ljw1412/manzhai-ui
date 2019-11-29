@@ -35,7 +35,7 @@ function calculate(
   const tapX = clientX - left
   const tapY = clientY - top
 
-  let scale = options.circle ? 0 : 0.15
+  let scale = 0
   // 触击的X位置距离元素中心点的距离
   const xToCenter = options.center ? 0 : Math.abs(width / 2 - tapX)
   // 触击的Y位置距离元素中心点的距离
@@ -69,14 +69,14 @@ const ripple = {
     el.appendChild(rippleWrapper)
 
     ripple.classList.add('mz-ripple--enter')
-    transform(ripple, `scale3d(${scale},${scale},${scale})`)
+    transform(ripple, `scale(${scale})`)
     xy(ripple, centerX, centerY)
     ripple.dataset.activated = String(performance.now())
 
     setTimeout(() => {
       ripple.classList.remove('mz-ripple--enter')
       ripple.classList.add('mz-ripple--in')
-      transform(ripple, `scale3d(1,1,1)`)
+      transform(ripple, `scale(1)`)
     }, 0)
   },
   remove(el: HTMLElement | null) {
@@ -105,7 +105,7 @@ const ripple = {
           delete el.dataset.previousPosition
         }
         ripple.parentNode && el.removeChild(ripple.parentNode)
-      }, 300)
+      }, 500)
     }, delay)
   }
 }

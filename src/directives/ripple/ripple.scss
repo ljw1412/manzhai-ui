@@ -23,20 +23,17 @@
     opacity: 0;
     pointer-events: none;
     will-change: height, width, transform, opacity;
+    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
 
-    &--enter {
-      transition: none;
+    &--enter,
+    &--out {
+      transform: scale(0);
     }
 
     &--in {
-      transition: transform 0.25s map-get($transition, 'fast-in-slow-out'),
-        opacity 0.1s map-get($transition, 'fast-in-slow-out');
+      transform: scale(1);
       opacity: var(--ripple-opacity, 0.15);
-    }
-
-    &--out {
-      transition: transform 0.3s map-get($transition, 'fast-in-slow-out'),
-        opacity 0.3s map-get($transition, 'fast-in-slow-out');
     }
   }
 }
