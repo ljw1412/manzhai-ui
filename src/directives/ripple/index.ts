@@ -69,14 +69,13 @@ const ripple = {
     el.appendChild(rippleWrapper)
 
     ripple.classList.add('mz-ripple--enter')
-    transform(ripple, `scale(${scale})`)
+    ripple.classList.add('mz-ripple--active')
     xy(ripple, centerX, centerY)
     ripple.dataset.activated = String(performance.now())
 
     setTimeout(() => {
       ripple.classList.remove('mz-ripple--enter')
       ripple.classList.add('mz-ripple--in')
-      transform(ripple, `scale(1)`)
     }, 0)
   },
   remove(el: HTMLElement | null) {
@@ -96,6 +95,7 @@ const ripple = {
 
     setTimeout(() => {
       ripple.classList.remove('mz-ripple--in')
+      ripple.classList.remove('mz-ripple--active')
       ripple.classList.add('mz-ripple--out')
       el.blur()
       setTimeout(() => {
@@ -105,7 +105,7 @@ const ripple = {
           delete el.dataset.previousPosition
         }
         ripple.parentNode && el.removeChild(ripple.parentNode)
-      }, 500)
+      }, 1000)
     }, delay)
   }
 }

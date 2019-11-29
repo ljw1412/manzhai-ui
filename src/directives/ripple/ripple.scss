@@ -23,17 +23,24 @@
     opacity: 0;
     pointer-events: none;
     will-change: height, width, transform, opacity;
-    transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
-      transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
 
-    &--enter,
-    &--out {
+    &--enter {
       transform: scale(0);
+    }
+
+    &--active {
+      transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     &--in {
       transform: scale(1);
       opacity: var(--ripple-opacity, 0.15);
+    }
+
+    &--out {
+      transform: scale(1);
+      opacity: 0;
     }
   }
 }
