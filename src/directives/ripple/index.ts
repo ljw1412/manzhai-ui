@@ -90,8 +90,9 @@ const ripple = {
     if (ripple.dataset.isHiding) return
     ripple.dataset.isHiding = 'true'
 
+    // 判断动画剩余时间
     const diff = performance.now() - Number(ripple.dataset.activated)
-    const delay = Math.max(250 - diff, 0)
+    const delay = Math.max(500 - diff, 0)
 
     setTimeout(() => {
       ripple.classList.remove('mz-ripple--in')
@@ -105,7 +106,7 @@ const ripple = {
           delete el.dataset.previousPosition
         }
         ripple.parentNode && el.removeChild(ripple.parentNode)
-      }, 1000)
+      }, 50)
     }, delay)
   }
 }
