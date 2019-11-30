@@ -90,7 +90,6 @@ export default class MzButton extends Mixins(SizeMixin) {
   white-space: nowrap;
   transition: height 0.3s linear, width 0.3s linear, var(--color-transition);
   overflow: hidden;
-  vertical-align: middle;
 
   &__content {
     color: var(--mz-button__font-color);
