@@ -1,15 +1,6 @@
 import './ripple.scss'
 import { VNodeDirective, VNode } from 'vue'
 
-function transform(el: HTMLElement, value: string) {
-  el.style.transform = value
-  el.style.webkitTransform = value
-}
-
-function opacity(el: HTMLElement, value: number) {
-  el.style.opacity = value.toString()
-}
-
 function xy(el: HTMLElement, x: string, y: string) {
   el.style.left = x
   el.style.top = y
