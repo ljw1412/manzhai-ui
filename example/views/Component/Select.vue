@@ -12,4 +12,7 @@ export default class ComponentSelect extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+.component-select {
+  height: 200%;
+}
 </style>

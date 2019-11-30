@@ -8,10 +8,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
+import BaseAttribute from '../../src/mixins/BaseAttribute'
 
 @Component
-export default class MzCard extends Vue {
+export default class MzCard extends Mixins(BaseAttribute) {
   @Prop({ type: [String, Number], default: 3 })
   readonly elevation!: string | number
   @Prop(Boolean)
@@ -24,7 +25,7 @@ export default class MzCard extends Vue {
   }
 
   get styles() {
-    return { background: this.background }
+    return [this.baseStyles, { background: this.background }]
   }
 }
 </script>
