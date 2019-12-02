@@ -25,12 +25,21 @@ export default class MzDropdownCard extends Vue {
   readonly top!: string
   @Prop([Number, String])
   readonly left!: string
+  @Prop({ type: [String, Element], default: 'body' })
+  readonly getContainer!: string | Element
 
-  isAddBody = false
+  isAddContainer = false
   mZIndex = 1000
 
   get styles() {
     return { left: this.left, top: this.top }
+  }
+
+  get reference() {
+    if (typeof this.getContainer === 'string') {
+      return document.querySelector(this.getContainer)
+    }
+    return this.getContainer
   }
 
   close() {
@@ -42,9 +51,9 @@ export default class MzDropdownCard extends Vue {
   onVisiableChange(val: boolean) {
     if (val) {
       this.mZIndex = getZIndex()
-      if (!this.isAddBody) {
-        document.body.appendChild(this.$el)
-        this.isAddBody = true
+      if (this.reference && !this.isAddContainer) {
+        this.reference.appendChild(this.$el)
+        this.isAddContainer = true
       }
     }
   }
