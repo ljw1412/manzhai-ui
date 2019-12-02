@@ -11,8 +11,8 @@
       :left="left"
       :top="top"
       height="100px"
-      :width="width">
-
+      :width="width"
+      :getContainer="appendToBody? 'body' : $refs.input">
     </mz-dropdown-card>
   </div>
 </template>
@@ -29,6 +29,8 @@ import { Component, Vue, Prop, Ref, Watch } from 'vue-property-decorator'
 export default class MzSelect extends Vue {
   @Prop(Boolean)
   readonly search!: boolean
+  @Prop(Boolean)
+  readonly appendToBody!: boolean
   @Ref('input')
   readonly input!: MzInput
 
@@ -46,12 +48,23 @@ export default class MzSelect extends Vue {
     this.isActive = !this.isActive
   }
 
+  getInputRect() {
+    return this.input && this.input.$el
+      ? this.input.$el.getBoundingClientRect()
+      : null
+  }
+
   positionCard() {
-    if (this.isActive && this.input && this.input.$el) {
-      const rect = this.input.$el.getBoundingClientRect()
-      this.top = rect.top + 'px'
-      this.left = rect.left + 'px'
-      this.width = rect.width + 'px'
+    if (this.isActive) {
+      const rect = this.getInputRect()
+      if (!this.appendToBody) {
+        this.top = this.left = '0'
+        if (rect) this.width = rect.width + 'px'
+      } else if (rect) {
+        this.top = rect.top + 'px'
+        this.left = rect.left + 'px'
+        this.width = rect.width + 'px'
+      }
     }
   }
 
