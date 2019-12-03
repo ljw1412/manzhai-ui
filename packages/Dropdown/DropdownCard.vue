@@ -25,14 +25,14 @@ export default class MzDropdownCard extends Vue {
   readonly top!: string
   @Prop([Number, String])
   readonly left!: string
-  @Prop({ type: [String, Element], default: 'body' })
-  readonly getContainer!: string | Element
+  @Prop({ type: [String, Object], default: 'body' })
+  readonly getContainer!: string | Element | null
 
   isAddContainer = false
   mZIndex = 1000
 
   get styles() {
-    return { left: this.left, top: this.top }
+    return { left: this.left, top: this.top, zIndex: this.mZIndex }
   }
 
   get reference() {

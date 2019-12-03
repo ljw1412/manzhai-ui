@@ -12,7 +12,7 @@
       :top="top"
       height="100px"
       :width="width"
-      :getContainer="appendToBody? 'body' : $refs.input">
+      :getContainer="appendToBody? 'body' : null">
     </mz-dropdown-card>
   </div>
 </template>
