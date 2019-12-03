@@ -13,9 +13,6 @@ const documentHandler = (el: HTMLElement, value: any) => (e: Event) => {
 
 export const ClickOutside = {
   inserted(el: HTMLElement, binding: DirectiveBinding) {
-    if (typeOf(binding.value) === 'object') {
-      el.dataset.beforeDisabled = binding.value.disabled || false
-    }
     el._clickOutside = documentHandler(el, binding.value)
     document.addEventListener('click', el._clickOutside)
   },
