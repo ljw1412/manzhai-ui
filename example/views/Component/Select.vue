@@ -1,6 +1,7 @@
 <template>
   <div class="component-select">
     <mz-select></mz-select>
+    <mz-select :dropdownMatchSelectWidth="true"></mz-select>
   </div>
 </template>
 

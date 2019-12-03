@@ -4,7 +4,6 @@
       v-clickoutside="{fn:close,disabled:!mVisiable}"
       ref="popper"
       class="mz-dropdown-card"
-      v-bind="$attrs"
       :style="styles">
       <slot></slot>
     </mz-card>
@@ -12,34 +11,68 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, PropSync, Prop, Watch } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  PropSync,
+  Prop,
+  Watch,
+  Mixins
+} from 'vue-property-decorator'
 import getZIndex from '@/utils/zindex'
+import BaseAttribute from '../../src/mixins/BaseAttribute'
 
 @Component
-export default class MzDropdownCard extends Vue {
+export default class MzDropdownCard extends Mixins(BaseAttribute) {
   @PropSync('visiable')
   mVisiable!: boolean
   @Prop([Number, String])
   readonly zIndex!: number | string
-  @Prop([Number, String])
-  readonly top!: string
-  @Prop([Number, String])
-  readonly left!: string
+  @Prop({ type: [String, Object] })
+  readonly reference!: string | Element | Vue | null
   @Prop({ type: [String, Object], default: 'body' })
-  readonly getContainer!: string | Element | null
+  readonly container!: string | Element | Vue | null
+  @Prop(Boolean)
+  readonly dropdownMatchReferenceWidth!: boolean
 
-  isAddContainer = false
+  top = '0'
+  left = '0'
   mZIndex = 1000
+  referenceWidth = ''
+  isAddContainer = false
 
   get styles() {
-    return { left: this.left, top: this.top, zIndex: this.mZIndex }
+    return {
+      ...this.baseStyles,
+      zIndex: this.mZIndex,
+      left: this.left,
+      top: this.top,
+      width: this.dropdownMatchReferenceWidth ? this.referenceWidth : this.width
+    }
   }
 
-  get reference() {
-    if (typeof this.getContainer === 'string') {
-      return document.querySelector(this.getContainer)
+  get containerElement() {
+    let container = null
+    if (typeof this.container === 'string') {
+      container = document.querySelector(this.container)
+    } else if (this.container instanceof Vue) {
+      container = (this.reference as Vue).$el
     }
-    return this.getContainer
+    return container
+  }
+
+  get referenceElement() {
+    let reference = null
+    if (!this.reference) {
+      console.warn('[MzDropdownCard] 请传入 reference，以判断绑定的引用元素！')
+      reference = null
+    }
+    if (typeof this.reference === 'string') {
+      reference = document.querySelector(this.reference)
+    } else if (this.reference instanceof Vue) {
+      reference = (this.reference as Vue).$el
+    }
+    return reference
   }
 
   close() {
@@ -47,15 +80,36 @@ export default class MzDropdownCard extends Vue {
     this.mVisiable = false
   }
 
+  getReferenceRect() {
+    return this.referenceElement
+      ? this.referenceElement.getBoundingClientRect()
+      : null
+  }
+
+  updateCardPosition() {
+    if (this.mVisiable) {
+      const rect = this.getReferenceRect()
+      if (!this.isAddContainer) {
+        this.top = this.left = '0'
+        if (rect) this.referenceWidth = rect.width + 'px'
+      } else if (rect) {
+        this.top = rect.top + 'px'
+        this.left = rect.left + 'px'
+        this.referenceWidth = rect.width + 'px'
+      }
+    }
+  }
+
   @Watch('mVisiable', { immediate: true })
   onVisiableChange(val: boolean) {
     if (val) {
       this.mZIndex = getZIndex()
-      if (this.reference && !this.isAddContainer) {
-        this.reference.appendChild(this.$el)
+      if (this.containerElement && !this.isAddContainer) {
+        this.containerElement.appendChild(this.$el)
         this.isAddContainer = true
       }
     }
+    this.updateCardPosition()
   }
 }
 </script>

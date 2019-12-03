@@ -8,11 +8,11 @@
       :readonly="!search"
       @click.native.stop="onClick"></mz-input>
     <mz-dropdown-card :visiable.sync="isActive"
-      :left="left"
-      :top="top"
-      height="100px"
+      min-height="100px"
+      :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
-      :getContainer="appendToBody? 'body' : null">
+      :reference="inputRef"
+      :container="appendToBody? 'body' : null">
     </mz-dropdown-card>
   </div>
 </template>
@@ -30,9 +30,11 @@ export default class MzSelect extends Vue {
   @Prop(Boolean)
   readonly search!: boolean
   @Prop(Boolean)
+  readonly dropdownMatchSelectWidth!: boolean
+  @Prop(Boolean)
   readonly appendToBody!: boolean
   @Ref('input')
-  readonly input!: MzInput
+  readonly inputRef!: MzInput
 
   value = ''
   isActive = false
@@ -46,41 +48,6 @@ export default class MzSelect extends Vue {
 
   onClick() {
     this.isActive = !this.isActive
-  }
-
-  getInputRect() {
-    return this.input && this.input.$el
-      ? this.input.$el.getBoundingClientRect()
-      : null
-  }
-
-  positionCard() {
-    if (this.isActive) {
-      const rect = this.getInputRect()
-      if (!this.appendToBody) {
-        this.top = this.left = '0'
-        if (rect) this.width = rect.width + 'px'
-      } else if (rect) {
-        this.top = rect.top + 'px'
-        this.left = rect.left + 'px'
-        this.width = rect.width + 'px'
-      }
-    }
-  }
-
-  mounted() {
-    window.addEventListener('scroll', this.positionCard)
-  }
-
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.positionCard)
-  }
-
-  @Watch('isActive')
-  onActiveChange(val: boolean) {
-    if (val) {
-      this.positionCard()
-    }
   }
 }
 </script>
