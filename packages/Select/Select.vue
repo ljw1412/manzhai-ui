@@ -4,7 +4,7 @@
     <mz-input ref="input"
       outlined
       :append-icon="arrowIcon"
-      :value="value"
+      :value="current"
       :readonly="!search"
       @click.native.stop="onClick"></mz-input>
     <mz-dropdown-card :visiable.sync="isActive"
@@ -13,20 +13,50 @@
       :width="width"
       :reference="inputRef"
       :container="appendToBody? 'body' : null">
+      <mz-list :value="value"
+        :size="size"
+        @change="onValueChange">
+        <mz-list-item v-for="item of list"
+          ripple
+          :data="item"
+          :key="item[valueName]"
+          :value="item[valueName]"
+          :label="item[labelName] || item[valueName]"
+          @click="onItemClick"></mz-list-item>
+      </mz-list>
     </mz-dropdown-card>
   </div>
 </template>
 
 <script lang="ts">
+import {
+  Component,
+  Vue,
+  Prop,
+  Ref,
+  Watch,
+  Mixins
+} from 'vue-property-decorator'
+import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzInput from '../Input'
-import { Component, Vue, Prop, Ref, Watch } from 'vue-property-decorator'
+import SizeMixin from '../../src/mixins/size'
+import FormElement from '../../src/mixins/FormElement'
+import { typeOf } from '../../src/utils/assist'
 
 @Component({
   components: {
     MzInput
   }
 })
-export default class MzSelect extends Vue {
+export default class MzSelect extends Mixins(SizeMixin, FormElement) {
+  @Prop({ default: () => [] })
+  readonly list!: Record<string, any>[]
+  @Prop()
+  readonly value!: any
+  @Prop({ default: 'value' })
+  readonly valueName!: string
+  @Prop({ default: 'label' })
+  readonly labelName!: string
   @Prop(Boolean)
   readonly search!: boolean
   @Prop(Boolean)
@@ -36,11 +66,15 @@ export default class MzSelect extends Vue {
   @Ref('input')
   readonly inputRef!: MzInput
 
-  value = ''
   isActive = false
   left = ''
   top = ''
   width = '100px'
+
+  get current() {
+    const item = this.list.find(item => item[this.valueName] === this.value)
+    return item ? item[this.labelName] || item[this.valueName] : ''
+  }
 
   get arrowIcon() {
     return this.isActive ? 'md-arrow-dropup' : 'md-arrow-dropdown'
@@ -48,6 +82,15 @@ export default class MzSelect extends Vue {
 
   onClick() {
     this.isActive = !this.isActive
+  }
+
+  onValueChange(value: any, data: any) {
+    this.$emit('input', value)
+    this.$emit('change', value, data)
+  }
+
+  onItemClick(value: any, data: any) {
+    this.isActive = false
   }
 }
 </script>

@@ -42,7 +42,7 @@ import { typeOf } from '../../src/utils/assist'
 })
 export default class MzDropdown extends Vue {
   @Prop({ default: () => [] })
-  readonly list!: Record<string, any>
+  readonly list!: Record<string, any>[]
   @Prop()
   readonly value!: any
   @Prop({ default: 'value' })
