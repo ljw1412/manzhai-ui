@@ -5,7 +5,7 @@ import { MzRadio, MzRadioButton } from '.'
 
 @Component({
   provide() {
-    return { radioGroup: this }
+    return { mzRadioGroup: this }
   },
   components: {
     MzRadio,

@@ -35,8 +35,8 @@ import FormElement from '@/mixins/FormElement'
 export default class MzRadio extends Mixins(FormElement) {
   @Model('input')
   readonly inputValue!: any
-  @Inject({ from: 'radioGroup', default: null })
-  readonly radioGroup?: MzRadioGroup
+  @Inject({ from: 'mzRadioGroup', default: null })
+  readonly mzRadioGroup?: MzRadioGroup
   @Prop()
   readonly value!: any
   @Prop(Boolean)
@@ -48,7 +48,7 @@ export default class MzRadio extends Mixins(FormElement) {
   readonly ripple!: boolean | object
 
   get currentValue() {
-    if (this.radioGroup) return this.radioGroup.value
+    if (this.mzRadioGroup) return this.mzRadioGroup.value
     return this.inputValue
   }
 
@@ -71,7 +71,7 @@ export default class MzRadio extends Mixins(FormElement) {
   onRadioClick() {
     if (this.disabled) return
     this.$emit('input', this.value)
-    if (this.radioGroup) this.radioGroup.setValue(this.value)
+    if (this.mzRadioGroup) this.mzRadioGroup.setValue(this.value)
   }
 }
 </script>
