@@ -6,7 +6,7 @@
       :append-icon="arrowIcon"
       :value="current"
       :readonly="!search"
-      @click.native.stop="onClick"></mz-input>
+      @click.native="onClick"></mz-input>
     <mz-dropdown-card :visiable.sync="isActive"
       min-height="100px"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
@@ -16,13 +16,15 @@
       <mz-list :value="value"
         :size="size"
         @change="onValueChange">
-        <mz-list-item v-for="item of list"
-          ripple
-          :data="item"
-          :key="item[valueName]"
-          :value="item[valueName]"
-          :label="item[labelName] || item[valueName]"
-          @click="onItemClick"></mz-list-item>
+        <slot>
+          <mz-list-item v-for="item of list"
+            ripple
+            :data="item"
+            :key="item[valueName]"
+            :value="item[valueName]"
+            :label="item[labelName] || item[valueName]"
+            @click="onItemClick"></mz-list-item>
+        </slot>
       </mz-list>
     </mz-dropdown-card>
   </div>
@@ -42,10 +44,14 @@ import MzInput from '../Input'
 import SizeMixin from '../../src/mixins/size'
 import FormElement from '../../src/mixins/FormElement'
 import { typeOf } from '../../src/utils/assist'
+import { MzOption } from '.'
 
 @Component({
   components: {
     MzInput
+  },
+  provide() {
+    return { mzSelect: this }
   }
 })
 export default class MzSelect extends Mixins(SizeMixin, FormElement) {
@@ -65,6 +71,8 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   readonly appendToBody!: boolean
   @Ref('input')
   readonly inputRef!: MzInput
+
+  OptionList: MzOption[] = []
 
   isActive = false
   left = ''
