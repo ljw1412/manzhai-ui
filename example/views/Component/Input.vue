@@ -21,7 +21,30 @@
     </mz-input>
 
     <mz-input v-model="value"
+      :type="type"
+      label="顶部label"
+      show-word-count
+      prepend-icon="md-key"
+      append-icon="md-eye"
+      id="password"
+      @prependClick="iconClick"
+      @appendClick="iconClick">
+    </mz-input>
+
+    <mz-input v-model="value"
       label="Password"
+      show-word-count
+      outlined
+      id="password2">
+      <div slot="prepend">{{value}}</div>
+
+      <mz-icon slot="append"
+        name="md-eye"
+        size="26px"></mz-icon>
+    </mz-input>
+
+    <mz-input v-model="value"
+      label="顶部label"
       show-word-count
       outlined
       id="password2">
