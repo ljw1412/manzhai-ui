@@ -29,6 +29,18 @@ export default class MzOption extends Mixins(FormElement) {
       this.mzSelect.onItemClick(value, data)
     }
   }
+
+  created() {
+    if (this.mzSelect) {
+      this.mzSelect.optionList.push(this)
+    }
+  }
+
+  beforeDestroy() {
+    if (this.mzSelect) {
+      this.mzSelect.optionList.remove(this)
+    }
+  }
 }
 </script>
 

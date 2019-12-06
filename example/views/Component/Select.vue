@@ -5,7 +5,8 @@
       :dropdownMatchSelectWidth="true"
       :list="list"></mz-select>
 
-    <mz-select v-model="value">
+    <mz-select label="目标"
+      v-model="value">
       <mz-option v-for="(item) of list"
         :key="item.value"
         :value="item.value"

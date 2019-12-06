@@ -5,6 +5,7 @@
       outlined
       :append-icon="arrowIcon"
       :value="current"
+      :label="label"
       :readonly="!search"
       @click.native="onClick"></mz-input>
     <mz-dropdown-card :visiable.sync="isActive"
@@ -45,6 +46,7 @@ import SizeMixin from '../../src/mixins/size'
 import FormElement from '../../src/mixins/FormElement'
 import { typeOf } from '../../src/utils/assist'
 import { MzOption } from '.'
+import ItemComponentList from '@/classes/ItemComponentList'
 
 @Component({
   components: {
@@ -72,16 +74,26 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   @Ref('input')
   readonly inputRef!: MzInput
 
-  OptionList: MzOption[] = []
+  // optionList: MzOption[] = []
+  optionList: ItemComponentList<MzOption> = new ItemComponentList()
 
   isActive = false
   left = ''
   top = ''
   width = '100px'
 
+  get mList() {
+    return this.optionList.length ? this.optionList : this.list
+  }
+
   get current() {
-    const item = this.list.find(item => item[this.valueName] === this.value)
-    return item ? item[this.labelName] || item[this.valueName] : ''
+    if (this.optionList.length) {
+      const item = this.optionList.find(item => item.value === this.value)
+      return item ? item.label || item.value : ''
+    } else {
+      const item = this.list.find(item => item[this.valueName] === this.value)
+      return item ? item[this.labelName] || item[this.valueName] : ''
+    }
   }
 
   get arrowIcon() {
