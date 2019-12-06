@@ -99,12 +99,23 @@ const install = function(
   Vue: VueConstructor,
   options: InstallationOptions = {}
 ) {
+  inject()
   Vue.prototype.$changeTheme = changeTheme
   Vue.prototype.$getCurrentTheme = getCurrentTheme
   bindDirectives(Vue)
   bindComponents(Vue)
-
   init(options)
+}
+
+const inject = () => {
+  Array.prototype.remove = function(item) {
+    const index = this.indexOf(item)
+    if (~index) {
+      this.splice(index, 1)
+      return true
+    }
+    return false
+  }
 }
 
 export default {

@@ -1,11 +1,12 @@
 <script lang="tsx">
 import { Component, Vue, Inject, Prop } from 'vue-property-decorator'
 import { CreateElement, VNode } from 'vue'
+import { MzTabs } from '.'
 
 @Component
 export default class MzTab extends Vue {
   @Inject({ from: 'mzTabs', default: null })
-  readonly mzTabs!: any
+  readonly mzTabs!: MzTabs
   @Prop()
   readonly value!: any
   @Prop(String)
@@ -69,11 +70,16 @@ export default class MzTab extends Vue {
   }
 
   created() {
-    if (this.mzTabs) this.mzTabs.addItem(this)
+    if (this.mzTabs) {
+      this.mzTabs.itemList.push(this)
+      if (this.mzTabs.value === this.value) {
+        this.active = true
+      }
+    }
   }
 
   beforeDestroy() {
-    if (this.mzTabs) this.mzTabs.removeItem(this)
+    if (this.mzTabs) this.mzTabs.itemList.remove(this)
   }
 }
 </script>

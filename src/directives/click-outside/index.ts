@@ -2,8 +2,6 @@ import { DirectiveBinding } from 'vue/types/options'
 import { typeOf } from '@/utils/assist'
 
 const documentHandler = (el: HTMLElement, value: any) => (e: Event) => {
-  console.log(value)
-
   if (el.contains(e.target as Node)) return
   if (typeOf(value) === 'function') {
     value(e)

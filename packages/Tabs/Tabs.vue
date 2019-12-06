@@ -110,20 +110,6 @@ export default class MzTabs extends Vue {
     }
   }
 
-  addItem(vm: MzTab) {
-    this.itemList.push(vm)
-    if (vm.value === this.value) {
-      vm.active = true
-    }
-  }
-
-  removeItem(vm: MzTab) {
-    const index = this.itemList.findIndex(item => item === vm)
-    if (index != -1) {
-      this.itemList.splice(index, 1)
-    }
-  }
-
   flushActiveBar() {
     const activedTabVNode = this.activedTabVNode
     this.activedTabVNode = null

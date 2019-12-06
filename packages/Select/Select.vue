@@ -46,7 +46,6 @@ import SizeMixin from '../../src/mixins/size'
 import FormElement from '../../src/mixins/FormElement'
 import { typeOf } from '../../src/utils/assist'
 import { MzOption } from '.'
-import ItemComponentList from '@/classes/ItemComponentList'
 
 @Component({
   components: {
@@ -74,8 +73,7 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   @Ref('input')
   readonly inputRef!: MzInput
 
-  // optionList: MzOption[] = []
-  optionList: ItemComponentList<MzOption> = new ItemComponentList()
+  optionList: MzOption[] = []
 
   isActive = false
   left = ''

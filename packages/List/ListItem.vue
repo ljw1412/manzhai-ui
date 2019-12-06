@@ -28,11 +28,12 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Inject, Watch } from 'vue-property-decorator'
+import { MzList } from '.'
 
 @Component
 export default class MzListItem extends Vue {
   @Inject({ from: 'mzList', default: null })
-  readonly mzList!: any
+  readonly mzList!: MzList
   @Prop()
   readonly data!: any
   @Prop(String)
@@ -117,11 +118,16 @@ export default class MzListItem extends Vue {
   }
 
   created() {
-    if (this.mzList) this.mzList.addItem(this)
+    if (this.mzList) {
+      this.mzList.itemList.push(this)
+      if (this.mzList.value === this.value) {
+        this.mActive = true
+      }
+    }
   }
 
   beforeDestroy() {
-    if (this.mzList) this.mzList.removeItem(this)
+    if (this.mzList) this.mzList.itemList.remove(this)
   }
 }
 </script>

@@ -40,22 +40,6 @@ export default class MzList extends Vue {
     }
   }
 
-  addItem(vm: ListItem) {
-    if (vm instanceof ListItem) {
-      this.itemList.push(vm)
-      if (vm.value === this.value) {
-        vm.mActive = true
-      }
-    }
-  }
-
-  removeItem(vm: ListItem) {
-    const index = this.itemList.indexOf(vm)
-    if (index != -1) {
-      this.itemList.splice(index, 1)
-    }
-  }
-
   @Watch('value')
   onValueChange(value: any) {
     const vm = this.itemList.find(item => item.value === value)
