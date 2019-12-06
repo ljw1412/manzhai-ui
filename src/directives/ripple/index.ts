@@ -59,14 +59,14 @@ const ripple = {
     safeElementPosition(el)
     el.appendChild(rippleWrapper)
 
-    ripple.classList.add('mz-ripple--enter')
-    ripple.classList.add('mz-ripple--active')
+    ripple.classList.add('mz-ripple-enter')
+    ripple.classList.add('mz-ripple-enter-active')
     xy(ripple, centerX, centerY)
     ripple.dataset.activated = String(performance.now())
 
     setTimeout(() => {
-      ripple.classList.remove('mz-ripple--enter')
-      ripple.classList.add('mz-ripple--in')
+      ripple.classList.remove('mz-ripple-enter')
+      ripple.classList.add('mz-ripple-in')
     }, 0)
   },
   remove(el: HTMLElement | null) {
@@ -86,9 +86,10 @@ const ripple = {
     const delay = Math.max(500 - diff, 0)
 
     setTimeout(() => {
-      ripple.classList.remove('mz-ripple--in')
-      ripple.classList.remove('mz-ripple--active')
-      ripple.classList.add('mz-ripple--out')
+      ripple.classList.remove('mz-ripple-in')
+      ripple.classList.remove('mz-ripple-enter-active')
+      ripple.classList.add('mz-ripple-out')
+      ripple.classList.add('mz-ripple-out-active')
       el.blur()
       setTimeout(() => {
         const ripples = el.querySelectorAll('.mz-ripple')
@@ -97,7 +98,7 @@ const ripple = {
           delete el.dataset.previousPosition
         }
         ripple.parentNode && el.removeChild(ripple.parentNode)
-      }, 50)
+      }, 450)
     }, delay)
   }
 }
