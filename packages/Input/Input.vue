@@ -253,7 +253,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   --mz-input__message-color: var(--color-text-secondary);
   --mz-input__message-font-size: 12px;
 
-  padding-top: 8px;
+  margin-top: 8px;
 
   &__container {
     position: relative;
