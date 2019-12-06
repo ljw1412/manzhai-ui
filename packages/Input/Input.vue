@@ -253,6 +253,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   --mz-input__message-color: var(--color-text-secondary);
   --mz-input__message-font-size: 12px;
 
+  padding-top: 8px;
+
   &__container {
     position: relative;
     height: 56px;
@@ -286,12 +288,14 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
     transform: translateY(-50%);
     transform-origin: left center;
     transition: transform 150ms map-get($transition, 'fast-in-fast-out'),
+      top 150ms map-get($transition, 'fast-in-fast-out'),
       color 150ms map-get($transition, 'fast-in-fast-out'),
       opacity 150ms map-get($transition, 'fast-in-fast-out');
     opacity: 0.5;
     &--above {
       opacity: 1;
-      transform: translateY(-106%) scale(0.75);
+      transform: translateY(25%) scale(0.75);
+      top: 0;
     }
     &--focused {
       color: var(--mz-input__label-color--focused);
@@ -407,7 +411,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
         border: none !important;
       }
       &__label--above {
-        transform: translateY(-210%) scale(0.75);
+        transform: translateY(-50%) scale(0.75);
+        top: 0;
       }
     }
   }
