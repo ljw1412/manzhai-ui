@@ -30,11 +30,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins, Prop, Model } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  Mixins,
+  Prop,
+  Model,
+  Inject
+} from 'vue-property-decorator'
 import FormElement from '@/mixins/FormElement'
+import { MzCheckboxGroup } from '.'
 
 @Component
 export default class MzCheckbox extends Mixins(FormElement) {
+  @Inject({ from: 'mzCheckboxGroup', default: null })
+  readonly mzCheckboxGroup!: MzCheckboxGroup
   @Model('input')
   readonly inputValue!: any
   @Prop(Boolean)
@@ -45,12 +55,33 @@ export default class MzCheckbox extends Mixins(FormElement) {
   readonly trueValue!: any
   @Prop()
   readonly falseValue!: any
+  @Prop()
+  readonly group!: MzCheckboxGroup
 
   get checked() {
+    if (this.group) {
+      return this.group.isAllChecked
+    }
+    if (this.mzCheckboxGroup) {
+      return this.mzCheckboxGroup.checkedList.includes(this.value)
+    }
     return this.inputValue
   }
 
   set checked(value) {
+    if (this.group) {
+      this.group.checkedList = value
+        ? this.group.itemList.map(item => item.value)
+        : []
+    }
+    if (this.mzCheckboxGroup) {
+      if (value) {
+        this.mzCheckboxGroup.checkedList.push(this.value)
+      } else {
+        this.mzCheckboxGroup.checkedList.remove(this.value)
+      }
+      return
+    }
     this.$emit('input', value)
   }
 
@@ -70,6 +101,14 @@ export default class MzCheckbox extends Mixins(FormElement) {
       value = this.falseValue === undefined ? false : this.falseValue
     }
     this.$emit('change', value, ev)
+  }
+
+  created() {
+    if (this.mzCheckboxGroup) this.mzCheckboxGroup.itemList.push(this)
+  }
+
+  beforeDestroy() {
+    if (this.mzCheckboxGroup) this.mzCheckboxGroup.itemList.remove(this)
   }
 }
 </script>

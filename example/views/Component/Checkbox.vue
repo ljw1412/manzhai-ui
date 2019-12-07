@@ -8,6 +8,18 @@
       name="checkbox"
       label="测试"
       value="test">测试</mz-checkbox>
+    <br>
+    <mz-checkbox :group="$refs.checkboxGroup">全选</mz-checkbox>
+
+    <mz-checkbox-group v-model="groupValue"
+      ref="checkboxGroup">
+      <mz-checkbox label="测试1"
+        value="1"></mz-checkbox>
+      <mz-checkbox label="测试2"
+        value="2"></mz-checkbox>
+      <mz-checkbox label="测试3"
+        value="3"></mz-checkbox>
+    </mz-checkbox-group>
   </div>
 </template>
 
@@ -18,6 +30,8 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class ComponentCheckbox extends Vue {
   value = 1
   value2 = true
+
+  groupValue = ['1']
 }
 </script>
 
