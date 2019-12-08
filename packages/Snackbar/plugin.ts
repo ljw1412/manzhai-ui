@@ -38,7 +38,7 @@ const showNextSnackbar = () => {
     currentSnackbar = queue.pop()
     let options = currentSnackbar.options
     for (let prop in options) {
-      if (options.hasOwnProperty(prop)) {
+      if (Object.prototype.hasOwnProperty.call(options, prop)) {
         instance[prop as keyof SnackbarPluginOptions] = options[prop]
       }
     }
