@@ -48,6 +48,8 @@ export default class MzCheckbox extends Mixins(FormElement) {
   @Model('input')
   readonly inputValue!: any
   @Prop(Boolean)
+  readonly indeterminate!: boolean
+  @Prop(Boolean)
   readonly border!: boolean
   @Prop(Number)
   readonly tabIndex!: number
@@ -55,25 +57,15 @@ export default class MzCheckbox extends Mixins(FormElement) {
   readonly trueValue!: any
   @Prop()
   readonly falseValue!: any
-  @Prop()
-  readonly group!: MzCheckboxGroup
 
   get checked() {
-    if (this.group) {
-      return this.group.isAllChecked
-    }
     if (this.mzCheckboxGroup) {
       return this.mzCheckboxGroup.checkedList.includes(this.value)
     }
-    return this.inputValue
+    return this.inputValue || false
   }
 
   set checked(value) {
-    if (this.group) {
-      this.group.checkedList = value
-        ? this.group.itemList.map(item => item.value)
-        : []
-    }
     if (this.mzCheckboxGroup) {
       if (value) {
         this.mzCheckboxGroup.checkedList.push(this.value)
@@ -87,6 +79,7 @@ export default class MzCheckbox extends Mixins(FormElement) {
 
   get checkboxClasses() {
     return {
+      indeterminate: this.indeterminate,
       checked: this.trueValue === this.checked || this.checked === true,
       disabled: this.disabled,
       border: this.border
@@ -117,6 +110,7 @@ export default class MzCheckbox extends Mixins(FormElement) {
 .mz-checkbox {
   --mz-checkbox__padding: 0;
   --mz-checkbox__icon-size: 16px;
+  --mz-checkbox__icon-color: var(--color-text-primary);
   --mz-checkbox__label-font-size: 14px;
   --mz-checkbox__label-font-color: var(--color-text-primary);
   --mz-checkbox__cursor: pointer;
@@ -129,42 +123,6 @@ export default class MzCheckbox extends Mixins(FormElement) {
   padding: var(--mz-checkbox__padding);
   margin: 10px 10px 0 0;
 
-  &__icon {
-    position: relative;
-    display: inline-block;
-    width: var(--mz-checkbox__icon-size);
-    height: var(--mz-checkbox__icon-size);
-    box-sizing: border-box;
-    border: 1px solid var(--mz-checkbox__label-font-color);
-    vertical-align: text-bottom;
-    z-index: 1;
-    &::before {
-      content: ' ';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: var(--mz-checkbox__label-font-color);
-      transition: var(--color-transition);
-      transform: scale(0);
-      transform-origin: center;
-    }
-    &::after {
-      box-sizing: content-box;
-      content: '';
-      border: 1px solid #fff;
-      border-left: 0;
-      border-top: 0;
-      height: 7px;
-      left: 5px;
-      position: absolute;
-      top: 2px;
-      transform: rotate(45deg) scaleY(0);
-      width: 3px;
-      transition: transform 0.15s ease-in 0.05s;
-      transform-origin: center;
-    }
-  }
-
   &__label {
     position: relative;
     vertical-align: middle;
@@ -174,25 +132,75 @@ export default class MzCheckbox extends Mixins(FormElement) {
     z-index: 1;
   }
 
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: var(--mz-checkbox__icon-size);
+    height: var(--mz-checkbox__icon-size);
+    box-sizing: border-box;
+    border: 1px solid var(--mz-checkbox__icon-color);
+    vertical-align: text-bottom;
+    z-index: 1;
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: var(--mz-checkbox__icon-color);
+      transition: var(--color-transition);
+      transform: scale(0);
+      transform-origin: center;
+    }
+    &::after {
+      box-sizing: content-box;
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      height: 7px;
+      width: 3px;
+      transform: scaleY(0);
+      border-style: solid;
+      border-color: #ffffff;
+      border-width: 0 1px 0 0;
+      transition: transform 0.15s ease-in 0.05s;
+      transform-origin: center;
+    }
+  }
+
+  &.indeterminate,
   &.checked {
-    --mz-checkbox__label-font-color: var(--color-primary);
+    --mz-checkbox__icon-color: var(--color-primary);
     .mz-checkbox__icon {
       &::before {
         visibility: visible;
         transform: scale(1);
         transition: var(--color-transition), transform 0.2s 0.2s;
       }
-      &::after {
-        transform: rotate(45deg) scaleY(1);
-      }
+    }
+  }
+
+  &.indeterminate {
+    .mz-checkbox__icon::after {
+      transform: rotate(90deg) scaleY(1);
+    }
+  }
+
+  &.checked {
+    --mz-checkbox__label-font-color: var(--color-primary);
+    .mz-checkbox__icon::after {
+      border-width: 0 1px 1px 0;
+      transform: rotate(45deg) scaleY(1);
     }
   }
 
   &.disabled {
     --mz-checkbox__cursor: not-allowed;
     --mz-checkbox__label-font-color: var(--color-text-placeholder);
+    --mz-checkbox__icon-color: var(--color-text-placeholder);
     &.checked {
       --mz-checkbox__label-font-color: var(--color-primary-light-5);
+      --mz-checkbox__icon-color: var(--color-primary-light-5);
     }
   }
 
