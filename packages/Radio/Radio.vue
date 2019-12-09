@@ -138,7 +138,7 @@ export default class MzRadio extends Mixins(FormElement) {
     --mz-radio__cursor: not-allowed;
     --mz-radio__label-font-color: var(--color-text-placeholder);
     &.checked {
-      --mz-radio__label-font-color: var(--color-primary-light-5);
+      --mz-radio__label-font-color: var(--color-primary-5);
     }
   }
 

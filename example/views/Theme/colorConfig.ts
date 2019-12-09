@@ -11,13 +11,17 @@ export class ColorItem {
     if (fontColor) this.fontColor = fontColor
   }
 
-  getHex(name: string) {
+  getHex(name: string = this.name) {
     const root = getComputedStyle(document.documentElement)
     return root.getPropertyValue(name).trim()
   }
+
+  updateHex() {
+    this.hex = this.getHex()
+  }
 }
 
-export default [
+const list = [
   {
     title: 'Color',
     colorList: [
@@ -47,3 +51,13 @@ export default [
     ]
   }
 ]
+
+export default list
+
+export function updateHex() {
+  list.forEach(item => {
+    item.colorList.forEach(c => {
+      c.updateHex()
+    })
+  })
+}

@@ -1,6 +1,5 @@
 <template>
   <div class="page-theme">
-
     <div v-for="(item,index) of colorConfig"
       :key="index">
       <div>{{item.title}}</div>
@@ -15,11 +14,15 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import colorConfig from './colorConfig'
+import colorConfig, { updateHex } from './colorConfig'
 
 @Component
 export default class PageTheme extends Vue {
   colorConfig = colorConfig
+
+  mounted() {
+    updateHex()
+  }
 }
 </script>
 
