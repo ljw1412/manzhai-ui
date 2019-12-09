@@ -238,7 +238,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-input {
   --mz-input__input-left: 16px;
   --mz-input__input-padding: 20px var(--mz-input__input-left) 6px;

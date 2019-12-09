@@ -49,5 +49,5 @@ export default class MzList extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 </style>

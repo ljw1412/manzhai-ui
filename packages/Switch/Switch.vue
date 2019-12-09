@@ -77,7 +77,7 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
 </script>
 
 <style lang="scss" >
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-switch {
   --mz-switch__bar-width: 40.5px;
   --mz-switch__bar-height: 18px;

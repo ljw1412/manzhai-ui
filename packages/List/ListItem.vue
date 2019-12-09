@@ -133,7 +133,7 @@ export default class MzListItem extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-list-item {
   --mz-list-item__font-color--active: var(--color-primary);
   position: relative;

@@ -32,7 +32,7 @@ export default class MzCellGroup extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-cell-group {
   --mz-cell-group__list-box-shadow: 0 1px 2px 0
       rgba(var(--color-shadow-rgb), 0.3),

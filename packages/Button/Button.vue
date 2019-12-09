@@ -56,7 +56,7 @@ export default class MzButton extends Mixins(SizeMixin) {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-button {
   --mz-button__height: 32px;
   --mz-button__line-height: 32px;

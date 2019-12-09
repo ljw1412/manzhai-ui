@@ -85,7 +85,7 @@ export default class MzTab extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-tab {
   --mz-tab__font-color: var(--color-text-secondary);
   --mz-tab__font-color--active: var(--color-primary);

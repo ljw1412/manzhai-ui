@@ -148,7 +148,7 @@ export default class MzTabs extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/styles/common/index.scss';
+@import '@/scss/index.scss';
 .mz-tabs {
   --mz-tabs__active-bar-color: var(--color-primary);
 
