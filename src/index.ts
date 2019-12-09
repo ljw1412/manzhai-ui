@@ -8,6 +8,7 @@ import Card from '../packages/Card/index'
 import Cell from '../packages/Cell/index'
 import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import CellGroup from '../packages/CellGroup/index'
+import Col from '../packages/Col/index'
 import { Dropdown, DropdownCard } from '../packages/Dropdown/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
@@ -20,6 +21,7 @@ import {
 } from '../packages/List/index'
 import Navigation from '../packages/Navigation/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
+import Row from '../packages/Row/index'
 import { Select, Option } from '../packages/Select/index'
 import SubHeader from '../packages/SubHeader/index'
 import Switch from '../packages/Switch/index'
@@ -35,6 +37,7 @@ const components: VueConstructor[] = [
   CellGroup,
   Checkbox,
   CheckboxGroup,
+  Col,
   Dropdown,
   DropdownCard,
   Icon,
@@ -49,6 +52,7 @@ const components: VueConstructor[] = [
   Radio,
   RadioButton,
   RadioGroup,
+  Row,
   Select,
   SubHeader,
   Switch,
@@ -126,6 +130,7 @@ export default {
   CellGroup,
   Checkbox,
   CheckboxGroup,
+  Col,
   Dropdown,
   DropdownCard,
   Icon,
@@ -140,6 +145,7 @@ export default {
   Radio,
   RadioButton,
   RadioGroup,
+  Row,
   Select,
   SubHeader,
   Switch,

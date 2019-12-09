@@ -25,7 +25,12 @@ export default [
       {
         label: 'Dropdown',
         text: '下拉菜单',
-        to: '/component/dropdown'
+        to: { name: 'ComponentDropdown' }
+      },
+      {
+        label: 'Grid',
+        text: '栅格',
+        to: { name: 'ComponentGrid' }
       },
       {
         label: 'Icon',

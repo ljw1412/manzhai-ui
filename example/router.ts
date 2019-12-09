@@ -7,6 +7,7 @@ import ComponentCard from './views/Component/Card.vue'
 import ComponentCell from './views/Component/Cell.vue'
 import ComponentCheckbox from './views/Component/Checkbox.vue'
 import ComponentDropdown from './views/Component/Dropdown.vue'
+import ComponentGrid from './views/Component/Grid.vue'
 import ComponentIcon from './views/Component/Icon.vue'
 import ComponentImage from './views/Component/Image.vue'
 import ComponentInput from './views/Component/Input.vue'
@@ -59,6 +60,11 @@ export default new Router({
           path: 'dropdown',
           name: 'ComponentDropdown',
           component: ComponentDropdown
+        },
+        {
+          path: 'grid',
+          name: 'ComponentGrid',
+          component: ComponentGrid
         },
         {
           path: 'icon',
