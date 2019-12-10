@@ -22,6 +22,13 @@ export default class PageTheme extends Vue {
 
   mounted() {
     updateHex()
+    this.$mzEventBus.$on('theme-change', (val: string) => {
+      updateHex()
+    })
+  }
+
+  beforeDestroy() {
+    this.$mzEventBus.$off('theme-change')
   }
 }
 </script>

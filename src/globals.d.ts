@@ -25,8 +25,9 @@ declare global {
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $changeTheme: Function
-    $getCurrentTheme: Function
+    $changeTheme: (name: string) => void
+    $getCurrentTheme: () => string
+    $mzEventBus: Vue
   }
   interface VueConstructor<V extends Vue = Vue> {
     install: PluginFunction<Vue>

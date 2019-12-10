@@ -99,18 +99,6 @@ function init(options: InstallationOptions) {
   changeTheme(getCurrentTheme())
 }
 
-const install = function(
-  Vue: VueConstructor,
-  options: InstallationOptions = {}
-) {
-  inject()
-  Vue.prototype.$changeTheme = changeTheme
-  Vue.prototype.$getCurrentTheme = getCurrentTheme
-  bindDirectives(Vue)
-  bindComponents(Vue)
-  init(options)
-}
-
 const inject = () => {
   Array.prototype.remove = function(item) {
     const index = this.indexOf(item)
@@ -120,6 +108,33 @@ const inject = () => {
     }
     return false
   }
+}
+
+const injectVuePrototype = (Vue: VueConstructor) => {
+  Vue.prototype.$mzEventBus = new Vue({
+    data: { theme: getCurrentTheme() },
+    watch: {
+      theme(val) {
+        this.$emit('theme-change', val)
+      }
+    }
+  })
+  Vue.prototype.$changeTheme = (name: string) => {
+    Vue.prototype.$mzEventBus.theme = name
+    changeTheme(name)
+  }
+  Vue.prototype.$getCurrentTheme = getCurrentTheme
+}
+
+const install = function(
+  Vue: VueConstructor,
+  options: InstallationOptions = {}
+) {
+  inject()
+  injectVuePrototype(Vue)
+  bindDirectives(Vue)
+  bindComponents(Vue)
+  init(options)
 }
 
 export default {
