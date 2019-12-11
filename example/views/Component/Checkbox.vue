@@ -20,7 +20,15 @@
         :key="item"
         :label="'测试'+item"
         :value="item"></mz-checkbox>
+      <br>
+
     </mz-checkbox-group>
+
+    <mz-checkbox v-model="value2"
+      disabled
+      name="checkbox"
+      label="测试"
+      value="test">测试</mz-checkbox>
   </div>
 </template>
 

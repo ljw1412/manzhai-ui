@@ -76,4 +76,12 @@ $colors: initColors(
       }
     }
   }
+
+  .mz-checkbox {
+    --mz-checkbox__label-font-color: var(--color-text-regular);
+    &.indeterminate,
+    &.checked {
+      --mz-checkbox__label-font-color: var(--color-text-primary);
+    }
+  }
 }

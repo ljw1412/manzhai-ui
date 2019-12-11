@@ -196,11 +196,12 @@ export default class MzCheckbox extends Mixins(FormElement) {
 
   &.disabled {
     --mz-checkbox__cursor: not-allowed;
-    --mz-checkbox__label-font-color: var(--color-text-placeholder);
-    --mz-checkbox__icon-color: var(--color-text-placeholder);
+    &:not(.checked) {
+      --mz-checkbox__label-font-color: var(--color-text-placeholder);
+      --mz-checkbox__icon-color: var(--color-text-placeholder);
+    }
     &.checked {
-      --mz-checkbox__label-font-color: var(--color-primary-5);
-      --mz-checkbox__icon-color: var(--color-primary-5);
+      opacity: 0.6;
     }
   }
 
