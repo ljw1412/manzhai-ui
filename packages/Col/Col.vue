@@ -15,11 +15,26 @@ export default class MzCol extends Vue {
 
   get colClasses() {
     const classes = []
-    if (this.span) classes.push(`mz-col-span-${this.span}`)
+    if (this.span) classes.push(`mz-col-${this.span}`)
     return classes
   }
 }
 </script>
 
 <style lang="scss">
+[class*='mz-col-'] {
+  float: left;
+  box-sizing: border-box;
+}
+
+.mz-col {
+  position: relative;
+  box-sizing: border-box;
+}
+
+@for $i from 1 through 24 {
+  .mz-col-#{$i} {
+    width: 100%/24 * $i;
+  }
+}
 </style>
