@@ -1,14 +1,27 @@
 <template>
-  <div class="mz-row">
+  <div class="mz-row"
+    :style="rowStyles">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Prop, Provide } from 'vue-property-decorator'
 
 @Component
-export default class MzRow extends Vue {}
+export default class MzRow extends Vue {
+  @Provide('gutter')
+  @Prop(Number)
+  readonly gutter!: number
+
+  get rowStyles() {
+    const styles: Record<string, string> = {}
+    if (this.gutter) {
+      styles.margin = `0 -${this.gutter / 2}px`
+    }
+    return styles
+  }
+}
 </script>
 
 <style lang="scss">
@@ -19,6 +32,9 @@ export default class MzRow extends Vue {}
   &::after {
     display: table;
     content: '';
+  }
+  &::after {
+    clear: both;
   }
 }
 </style>

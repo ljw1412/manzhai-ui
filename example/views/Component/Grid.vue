@@ -5,6 +5,11 @@
       <mz-col :span="1">bbbbbb</mz-col>
       <mz-col :span="1">cccccc</mz-col>
     </mz-row>
+    <mz-row :gutter="20">
+      <mz-col :span="1">aaaaaa</mz-col>
+      <mz-col :span="1">bbbbbb</mz-col>
+      <mz-col :span="1">cccccc</mz-col>
+    </mz-row>
   </div>
 </template>
 

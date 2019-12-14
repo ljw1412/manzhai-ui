@@ -1,15 +1,18 @@
 <template>
   <div class="mz-col"
-    :class="colClasses">
+    :class="colClasses"
+    :style="colStyles">
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
 
 @Component
 export default class MzCol extends Vue {
+  @Inject('gutter')
+  readonly gutter!: number
   @Prop(Number)
   readonly span!: number
 
@@ -17,6 +20,12 @@ export default class MzCol extends Vue {
     const classes = []
     if (this.span) classes.push(`mz-col-${this.span}`)
     return classes
+  }
+
+  get colStyles() {
+    const styles: Record<string, string> = {}
+    if (this.gutter) styles.padding = `0 ${this.gutter / 2}px`
+    return styles
   }
 }
 </script>
