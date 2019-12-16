@@ -32,6 +32,20 @@
         <div class="col-card">3</div>
       </mz-col>
     </mz-row>
+
+    <mz-row :gutter="20">
+      <mz-col :span="5">
+        <div class="col-card">1</div>
+      </mz-col>
+      <mz-col :span="6"
+        :push="1">
+        <div class="col-card">2</div>
+      </mz-col>
+      <mz-col :span="7"
+        :push="2">
+        <div class="col-card">3</div>
+      </mz-col>
+    </mz-row>
   </div>
 </template>
 

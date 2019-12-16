@@ -17,11 +17,17 @@ export default class MzCol extends Vue {
   readonly span!: number
   @Prop(Number)
   readonly offset!: number
+  @Prop(Number)
+  readonly pull!: number
+  @Prop(Number)
+  readonly push!: number
 
   get colClasses() {
     const classes = []
     if (this.span) classes.push(`mz-col-${this.span}`)
     if (this.offset) classes.push(`mz-col-offset-${this.offset}`)
+    if (this.pull) classes.push(`mz-col-pull-${this.pull}`)
+    if (this.push) classes.push(`mz-col-push-${this.push}`)
     return classes
   }
 
@@ -50,6 +56,15 @@ export default class MzCol extends Vue {
   }
   .mz-col-offset-#{$i} {
     margin-left: 100% * $i / 24;
+  }
+}
+
+@for $i from 1 through 12 {
+  .mz-col-push-#{$i} {
+    left: 100% * $i / 12;
+  }
+  .mz-col-pull-#{$i} {
+    right: 100% * $i / 12;
   }
 }
 </style>
