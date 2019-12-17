@@ -41,7 +41,8 @@ export default class MzRow extends Vue {
   get rowStyles() {
     const styles: Record<string, string> = {}
     if (this.gutter) {
-      styles.margin = `0 -${this.gutter / 2}px`
+      styles.marginLeft = `-${this.gutter / 2}px`
+      styles.marginRight = `-${this.gutter / 2}px`
     }
     return styles
   }

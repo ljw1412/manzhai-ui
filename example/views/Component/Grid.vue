@@ -46,6 +46,12 @@
         <div class="col-card">3</div>
       </mz-col>
     </mz-row>
+
+    <mz-row :gutter="20">
+      <mz-col :md="6">
+        <div class="col-card">1</div>
+      </mz-col>
+    </mz-row>
   </div>
 </template>
 
@@ -59,6 +65,9 @@ export default class ComponentGrid extends Vue {}
 <style lang="scss" scoped>
 .component-grid {
   color: var(--color-text-primary);
+  .mz-row {
+    margin-bottom: 10px;
+  }
 }
 
 .col-card {
