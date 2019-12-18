@@ -1,13 +1,6 @@
-<template>
-  <div class="mz-row"
-    :class="rowClasses"
-    :style="rowStyles">
-    <slot></slot>
-  </div>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Prop, Provide } from 'vue-property-decorator'
+import { CreateElement, VNodeChildren } from 'vue'
 
 @Component
 export default class MzRow extends Vue {
@@ -16,6 +9,11 @@ export default class MzRow extends Vue {
   readonly gutter!: number
   @Prop(Boolean)
   readonly flex!: boolean
+  @Prop({
+    type: String,
+    validator: val => ['top', 'middle', 'bottom'].includes(val)
+  })
+  readonly align!: string
   @Prop({
     type: String,
     validator: val =>
@@ -29,12 +27,16 @@ export default class MzRow extends Vue {
       ].includes(val)
   })
   readonly justify!: string
+  @Prop({ type: String, default: 'div' })
+  readonly tag!: string
 
   get rowClasses() {
     const classes: (Record<string, any> | string)[] = [
+      'mz-row',
       { 'mz-row--flex': this.flex }
     ]
     if (this.justify) classes.push(`justify-${this.justify}`)
+    if (this.align) classes.push(`align-${this.align}`)
     return classes
   }
 
@@ -45,6 +47,14 @@ export default class MzRow extends Vue {
       styles.marginRight = `-${this.gutter / 2}px`
     }
     return styles
+  }
+
+  render(h: CreateElement) {
+    return h(
+      this.tag,
+      { class: this.rowClasses, style: this.rowStyles },
+      this.$slots.default as VNodeChildren
+    )
   }
 }
 </script>
@@ -82,6 +92,18 @@ export default class MzRow extends Vue {
       }
       &-space-evenly {
         justify-content: space-evenly;
+      }
+    }
+    &.align {
+      &-top {
+        align-items: flex-start;
+      }
+
+      &-middle {
+        align-items: center;
+      }
+      &-bottom {
+        align-items: flex-end;
       }
     }
   }

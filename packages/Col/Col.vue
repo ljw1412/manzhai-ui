@@ -1,13 +1,6 @@
-<template>
-  <div class="mz-col"
-    :class="colClasses"
-    :style="colStyles">
-    <slot></slot>
-  </div>
-</template>
-
-<script lang="ts">
+<script lang="tsx">
 import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
+import { CreateElement, VNodeChildren } from 'vue'
 
 @Component
 export default class MzCol extends Vue {
@@ -31,9 +24,11 @@ export default class MzCol extends Vue {
   readonly lg!: number
   @Prop(Number)
   readonly xl!: number
+  @Prop({ type: String, default: 'div' })
+  readonly tag!: string
 
   get colClasses() {
-    const classes = []
+    const classes = ['mz-col']
     ;['offset', 'pull', 'push', 'xs', 'sm', 'md', 'lg', 'xl'].forEach(key => {
       if (this[key as keyof MzCol]) {
         classes.push(`mz-col-${key}-${this[key as keyof MzCol]}`)
@@ -54,6 +49,14 @@ export default class MzCol extends Vue {
       styles.paddingRight = `${this.gutter / 2}px`
     }
     return styles
+  }
+
+  render(h: CreateElement) {
+    return h(
+      this.tag,
+      { class: this.colClasses, style: this.colStyles },
+      this.$slots.default as VNodeChildren
+    )
   }
 }
 </script>
