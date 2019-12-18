@@ -52,6 +52,14 @@
         <div class="col-card">1</div>
       </mz-col>
     </mz-row>
+
+    <mz-row :gutter="20"
+      tag="ul">
+      <mz-col :md="6"
+        tag="li">
+        <div class="col-card">1</div>
+      </mz-col>
+    </mz-row>
   </div>
 </template>
 
