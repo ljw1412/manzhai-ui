@@ -39,6 +39,7 @@ $copyright-height: 20px;
     height: calc(100% - #{$topbar-height + $copyright-height});
   }
   #copyright {
+    position: relative;
     font-size: 14px;
     height: $copyright-height;
     line-height: $copyright-height;

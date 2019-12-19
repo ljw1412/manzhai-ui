@@ -92,9 +92,11 @@ export default class MzButton extends Mixins(SizeMixin) {
   overflow: hidden;
 
   &__content {
+    display: inline-flex;
     color: var(--mz-button__font-color);
     position: relative;
     z-index: 50;
+    vertical-align: top;
     transition: all 0.3s map-get($transition, 'fast-in-fast-out');
   }
 
