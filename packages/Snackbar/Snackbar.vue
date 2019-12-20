@@ -11,7 +11,8 @@
             <div class="mz-snackbar__text">
               <slot name="text">{{this.text}}</slot>
             </div>
-            <div class="mz-snackbar__action">
+            <div v-if="$slots.action || buttonText"
+              class="mz-snackbar__action">
               <slot name="action">
                 <mz-button v-if="buttonText"
                   ripple
@@ -147,6 +148,31 @@ export default class MzSnackbar extends Vue {
   width: 100%;
   pointer-events: none;
 
+  &__wrapper {
+    pointer-events: auto;
+    min-width: var(--mz-snackbar__min-width);
+    max-width: var(--mz-snackbar__max-width);
+    background-color: var(--mz-snackbar__background-color);
+    @each $type in (primary, success, warning, danger, info) {
+      &--#{$type} {
+        --mz-snackbar__background-color: var(--color-#{$type});
+      }
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    min-height: 48px;
+    width: 100%;
+    padding: 8px 16px;
+    overflow: hidden;
+    color: var(--mz-snackbar__font-color);
+  }
+
+  &__action {
+    margin-left: 42px;
+  }
+
   &--fixed {
     position: fixed;
   }
@@ -191,31 +217,6 @@ export default class MzSnackbar extends Vue {
 
   &--end {
     justify-content: flex-end;
-  }
-
-  &__wrapper {
-    pointer-events: auto;
-    min-width: var(--mz-snackbar__min-width);
-    max-width: var(--mz-snackbar__max-width);
-    background-color: var(--mz-snackbar__background-color);
-    @each $type in (primary, success, warning, danger, info) {
-      &--#{$type} {
-        --mz-snackbar__background-color: var(--color-#{$type});
-      }
-    }
-  }
-
-  &__content {
-    box-sizing: border-box;
-    min-height: 48px;
-    width: 100%;
-    padding: 8px 16px;
-    overflow: hidden;
-    color: var(--mz-snackbar__font-color);
-  }
-
-  &__action {
-    margin-left: 16px;
   }
 }
 

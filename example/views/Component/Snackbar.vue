@@ -18,7 +18,7 @@
       text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测"
       buttonText="关闭"
       :vertical="vertical"
-      :buttonProps="{type:'primary'}"
+      :buttonProps="{fontColor:'#ffffff',flat:true,color:'#ccc'}"
       :placement="placement"
       :timeout="0"
       @buttonClick="isShow = false"></mz-snackbar>
@@ -57,7 +57,7 @@ export default class ComponentSnackbar extends Vue {
     this.$snackbar.show({
       text: '123',
       buttonText: '关闭',
-      buttonProps: {},
+      buttonProps: { fontColor: '#ffffff', flat: true },
       buttonClick: () => {
         this.$snackbar.close()
       },
