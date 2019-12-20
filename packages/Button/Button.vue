@@ -4,6 +4,7 @@
     v-on="$listeners"
     :type="nativeType"
     :class="buttonClasses"
+    :style="buttonStyles"
     :disabled="disabled">
     <span v-if="$slots.default"
       class="mz-button__content flex-double-center">
@@ -37,6 +38,10 @@ export default class MzButton extends Mixins(SizeMixin) {
   readonly round!: boolean
   @Prop({ type: String, default: 'button' })
   readonly nativeType!: string
+  @Prop(String)
+  readonly fontColor!: string
+  @Prop(String)
+  readonly color!: string
 
   get buttonClasses() {
     const type = COLOR_TYPES.includes(this.type) ? this.type : 'default'
@@ -51,6 +56,13 @@ export default class MzButton extends Mixins(SizeMixin) {
     if (!this.disabled) classes.push(`mz-button--${type}`)
     this.mzSizeClass('mz-button', this.size, classes)
     return classes
+  }
+
+  get buttonStyles() {
+    return {
+      '--mz-button__font-color': this.fontColor,
+      '--mz-button__background-color': this.color
+    }
   }
 }
 </script>
@@ -107,7 +119,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   &:not(.mz-button--disabled) {
     @include before-background;
     will-change: box-shadow;
-    &:active {
+    &:not(.mz-button--flat):active {
       box-shadow: var(--mz-button__box-shadow);
     }
   }
