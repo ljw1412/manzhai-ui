@@ -1,6 +1,8 @@
 import { VueConstructor } from 'vue'
 
-export interface InstallationOptions {}
+export interface InstallationOptions {
+  size?: string
+}
 
 export function bindDirectives(Vue: VueConstructor): void
 

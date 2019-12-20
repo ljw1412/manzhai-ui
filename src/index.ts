@@ -2,6 +2,7 @@ import './styles/index.scss'
 import { VueConstructor } from 'vue'
 import { InstallationOptions } from '../types/index'
 import { changeTheme, getCurrentTheme } from './utils/theme'
+import mzEventBus from './bus'
 import * as directives from './directives'
 import Button from '../packages/Button/index'
 import Card from '../packages/Card/index'
@@ -87,16 +88,14 @@ function bindComponents(Vue: VueConstructor) {
   })
 }
 
+/**
+ * 图标注册
+ */
 function registerIcon() {
   const svgs = require.context('@/icons', false, /\.svg$/)
   const requireAll = (requireContext: __WebpackModuleApi.RequireContext) =>
     requireContext.keys().map(requireContext)
   requireAll(svgs)
-}
-
-function init(options: InstallationOptions) {
-  registerIcon()
-  changeTheme(getCurrentTheme())
 }
 
 const inject = () => {
@@ -110,20 +109,17 @@ const inject = () => {
   }
 }
 
-const injectVuePrototype = (Vue: VueConstructor) => {
-  Vue.prototype.$mzEventBus = new Vue({
-    data: { theme: getCurrentTheme() },
-    watch: {
-      theme(val) {
-        this.$emit('theme-change', val)
-      }
-    }
-  })
-  Vue.prototype.$changeTheme = (name: string) => {
-    Vue.prototype.$mzEventBus.theme = name
-    changeTheme(name)
-  }
+// Vue原型注入
+const injectVuePrototype = (
+  Vue: VueConstructor,
+  options: InstallationOptions = {}
+) => {
+  Vue.prototype.$mzEventBus = mzEventBus
+  Vue.prototype.$changeTheme = mzEventBus.changeTheme
   Vue.prototype.$getCurrentTheme = getCurrentTheme
+  Vue.prototype.$MANZHAI = {
+    size: options.size || ''
+  }
 }
 
 const install = function(
@@ -131,10 +127,10 @@ const install = function(
   options: InstallationOptions = {}
 ) {
   inject()
-  injectVuePrototype(Vue)
+  injectVuePrototype(Vue, options)
   bindDirectives(Vue)
   bindComponents(Vue)
-  init(options)
+  registerIcon()
 }
 
 export default {
