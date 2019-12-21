@@ -163,13 +163,13 @@ export default class MzButton extends Mixins(SizeMixin) {
   }
 
   &--flat {
-    --mz-button__background-color: transparent !important;
+    --mz-button__background-color: transparent;
   }
 
   &--outlined {
     --mz-button__padding: 0 15px;
     --mz-button__line-height: 30px;
-    --mz-button__background-color: transparent !important;
+    --mz-button__background-color: transparent;
   }
 
   @each $type in (primary, success, warning, danger, info) {
@@ -179,6 +179,7 @@ export default class MzButton extends Mixins(SizeMixin) {
       &.mz-button--outlined,
       &.mz-button--flat {
         --mz-button__font-color: var(--color-#{$type});
+        --mz-button__background-color: transparent;
       }
       &.mz-button--outlined {
         --mz-button__border: 1px solid var(--color-#{$type});
