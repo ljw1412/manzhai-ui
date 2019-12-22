@@ -12,6 +12,16 @@
         :value="item.value"
         :label="item.label"></mz-option>
     </mz-select>
+
+    <mz-select label="目标"
+      v-model="value"
+      under
+      search>
+      <mz-option v-for="(item) of list"
+        :key="item.value"
+        :value="item.value"
+        :label="item.label"></mz-option>
+    </mz-select>
   </div>
 </template>
 

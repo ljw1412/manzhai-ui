@@ -34,6 +34,8 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   readonly container!: string | Element | Vue | null
   @Prop(Boolean)
   readonly dropdownMatchReferenceWidth!: boolean
+  @Prop(String)
+  readonly placement?: 'bottom'
 
   top = '0'
   left = '0'
@@ -41,6 +43,10 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   referenceWidth = ''
   isAddContainer = false
   disabledClickoutside = true
+
+  get isBottom() {
+    return this.placement === 'bottom'
+  }
 
   get isDisabledClickoutside() {
     return !this.mVisiable || this.disabledClickoutside
@@ -98,12 +104,9 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   updateCardPosition() {
     if (this.mVisiable) {
       const rect = this.getReferenceRect()
-      if (!this.isAddContainer) {
-        this.top = this.left = '0'
-        if (rect) this.referenceWidth = rect.width + 'px'
-      } else if (rect) {
-        this.top = rect.top + 'px'
-        this.left = rect.left + 'px'
+      if (rect) {
+        this.top = (this.isBottom ? rect.height : 0) + 'px'
+        this.left = '0px'
         this.referenceWidth = rect.width + 'px'
       }
     }

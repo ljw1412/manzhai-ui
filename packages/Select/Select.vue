@@ -1,18 +1,25 @@
 <template>
   <div class="mz-select"
-    :class="{'mz-select--active':isActive}">
+    :class="{
+      'mz-select--active':isActive,
+      'mz-select--search':search
+    }">
     <mz-input ref="input"
       outlined
       :append-icon="arrowIcon"
       :value="current"
       :label="label"
-      :readonly="!search"
+      :readonly="true"
       @click.native="onClick"></mz-input>
+    <input v-if="search"
+      class="mz-select__search-input"
+      v-model="filterText" />
     <mz-dropdown-card :visiable.sync="isActive"
       min-height="100px"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
       :reference="inputRef"
+      :placement="under?'bottom':undefined"
       :container="appendToBody? 'body' : null">
       <mz-list :value="value"
         :size="size"
@@ -70,6 +77,8 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   readonly dropdownMatchSelectWidth!: boolean
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop(Boolean)
+  readonly under!: boolean
   @Ref('input')
   readonly inputRef!: MzInput
 
@@ -79,6 +88,7 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   left = ''
   top = ''
   width = '100px'
+  filterText = ''
 
   get mList() {
     return this.optionList.length ? this.optionList : this.list
@@ -116,5 +126,18 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
 <style lang="scss">
 .mz-select {
   position: relative;
+
+  .mz-input__inner {
+    cursor: pointer;
+  }
+
+  &__search-input {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
 }
 </style>
