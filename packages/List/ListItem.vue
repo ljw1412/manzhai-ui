@@ -1,5 +1,6 @@
 <template>
-  <div v-ripple="!itemDisabled && ripple"
+  <div v-show="!hidden"
+    v-ripple="!itemDisabled && ripple"
     class="mz-list-item color-transition"
     :class="itemClasses"
     :style="itemStyles"
@@ -58,6 +59,7 @@ export default class MzListItem extends Vue {
   readonly size!: string
 
   mActive = false
+  hidden = false
 
   get itemDisabled() {
     if (this.mzList && this.mzList.disabled) return true

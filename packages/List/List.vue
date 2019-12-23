@@ -22,6 +22,8 @@ export default class MzList extends Vue {
   readonly disabled!: boolean
   @Prop(String)
   readonly size!: string
+  @Prop({ type: String, default: '' })
+  readonly filterText!: string
 
   itemList: ListItem[] = []
 
@@ -44,6 +46,13 @@ export default class MzList extends Vue {
   onValueChange(value: any) {
     const vm = this.itemList.find(item => item.value === value)
     if (vm) this.selectItem(vm)
+  }
+
+  @Watch('filterText')
+  onFilterTextChange(text: string) {
+    this.itemList.forEach(item => {
+      item.hidden = !item.label.includes(text)
+    })
   }
 }
 </script>

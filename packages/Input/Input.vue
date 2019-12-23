@@ -1,5 +1,12 @@
 <script lang="tsx">
-import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  Prop,
+  Ref,
+  Mixins,
+  Watch
+} from 'vue-property-decorator'
 import MzIcon from '../Icon/index'
 import MzImage from '../Image/index'
 import SizeMixin from '@/mixins/size'
@@ -43,14 +50,22 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   readonly hint!: string
   @Prop(Object)
   readonly rule!: object
+  @Prop(Boolean)
+  readonly labelUp!: boolean
+  @Prop(Boolean)
+  readonly isFocus!: boolean
   @Ref('input')
   readonly inputRef!: HTMLInputElement
   @Ref('label')
   readonly labelRef!: HTMLElement
 
-  isFocused = false
+  focus = false
   isComposing = false
   notchWidth = 0
+
+  get inputFocus() {
+    return this.isFocus || this.focus
+  }
 
   get mzInputClasses() {
     return [
@@ -59,7 +74,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
       {
         'mz-input--error': this.error,
         'mz-input--outlined': this.outlined,
-        'mz-input--focused': this.isFocused,
+        'mz-input--label-up': this.labelUp,
+        'mz-input--focused': this.inputFocus,
         'mz-input--empty': !this.value,
         'mz-input--prepend': this.prependIcon || this.prependSrc,
         'mz-input--append': this.appendIcon || this.appendSrc
@@ -139,7 +155,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
     }
     const classes = {
       'mz-input__line': true,
-      'mz-input__line--active': this.isFocused
+      'mz-input__line--active': this.inputFocus
     }
     return <div class={classes}></div>
   }
@@ -147,8 +163,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   renderContainer() {
     const classes = {
       'mz-input__label': true,
-      'mz-input__label--above': this.isFocused || this.value,
-      'mz-input__label--focused': this.isFocused
+      'mz-input__label--above': this.labelUp || this.inputFocus || this.value,
+      'mz-input__label--focused': this.inputFocus
     }
     const label = (
       <label ref="label" class={classes} for={this.$attrs.id}>
@@ -217,13 +233,13 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   }
 
   onFocus(event: InputEvent) {
-    this.isFocused = true
+    this.focus = true
     this.getNotchWidth()
     this.$emit('focus', event)
   }
 
   onBlur(event: InputEvent) {
-    this.isFocused = false
+    this.focus = false
     this.$emit('blur', event)
   }
 
@@ -234,6 +250,9 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   mounted() {
     this.getNotchWidth()
   }
+
+  @Watch('labelUp', { immediate: true })
+  onLabelUpChange() {}
 }
 </script>
 
@@ -418,6 +437,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   }
 
   &--focused,
+  &--label-up,
   &:not(.mz-input--empty) {
     .mz-input-outline__notch {
       border-top: none !important;

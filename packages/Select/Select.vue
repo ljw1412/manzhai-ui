@@ -10,10 +10,14 @@
       :value="current"
       :label="label"
       :readonly="true"
+      :label-up="true"
+      :is-focus="searchFocus"
       @click.native="onClick"></mz-input>
     <input v-if="search"
       class="mz-select__search-input"
-      v-model="filterText" />
+      v-model="filterText"
+      @focus="searchFocus = true"
+      @blur="searchFocus = false" />
     <mz-dropdown-card :visiable.sync="isActive"
       min-height="100px"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
@@ -23,6 +27,7 @@
       :container="appendToBody? 'body' : null">
       <mz-list :value="value"
         :size="size"
+        :filter-text="filterText"
         @change="onValueChange">
         <slot>
           <mz-list-item v-for="item of list"
@@ -89,6 +94,7 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   top = ''
   width = '100px'
   filterText = ''
+  searchFocus = false
 
   get mList() {
     return this.optionList.length ? this.optionList : this.list
@@ -120,6 +126,12 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   onItemClick(value: any, data: any) {
     this.isActive = false
   }
+
+  @Watch('searchFocus')
+  onSearchFocusChange(focus: boolean) {
+    if (!focus) this.filterText = ''
+    else this.filterText = this.current
+  }
 }
 </script>
 
@@ -132,12 +144,17 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   }
 
   &__search-input {
+    box-sizing: border-box;
     position: absolute;
-    bottom: 20px;
-    left: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56px;
+    padding: 12px 16px 14px;
     background-color: transparent;
     border: none;
     outline: none;
+    font-size: 16px;
   }
 }
 </style>
