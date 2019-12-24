@@ -101,6 +101,7 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   }
 
   get current() {
+    if(this.searchFocus) return ''
     if (this.optionList.length) {
       const item = this.optionList.find(item => item.value === this.value)
       return item ? item.label || item.value : ''
@@ -130,7 +131,11 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   @Watch('searchFocus')
   onSearchFocusChange(focus: boolean) {
     if (!focus) this.filterText = ''
-    else this.filterText = this.current
+    else {
+      setTimeout(() => {
+        this.isActive = true
+      }, 100)
+    }
   }
 }
 </script>
