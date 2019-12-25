@@ -14,12 +14,11 @@
       :is-focus="searchFocus"
       @click.native="onClick"></mz-input>
     <input v-if="search"
-      class="mz-select__search-input"
+      class="mz-select__search-input mz-input"
       v-model="filterText"
       @focus="searchFocus = true"
       @blur="searchFocus = false" />
     <mz-dropdown-card :visiable.sync="isActive"
-      min-height="100px"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
       :reference="inputRef"
@@ -101,7 +100,7 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   }
 
   get current() {
-    if(this.searchFocus) return ''
+    if (this.searchFocus) return ''
     if (this.optionList.length) {
       const item = this.optionList.find(item => item.value === this.value)
       return item ? item.label || item.value : ''
@@ -160,6 +159,10 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
     border: none;
     outline: none;
     font-size: 16px;
+    margin-top: 0;
+    font-size: var(--mz-input__input-font-size);
+    color: var(--mz-input__input-font-color);
+    caret-color: var(--mz-input__input-caret-color);
   }
 }
 </style>

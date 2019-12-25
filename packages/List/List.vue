@@ -2,6 +2,10 @@
   <div class="mz-list"
     :class="{'mz-list--disabled':disabled}">
     <slot></slot>
+    <slot v-if="isEmpty"
+      name="empty">
+      <div class="mz-list__empty">{{emptyText}}</div>
+    </slot>
   </div>
 </template>
 
@@ -24,8 +28,14 @@ export default class MzList extends Vue {
   readonly size!: string
   @Prop({ type: String, default: '' })
   readonly filterText!: string
+  @Prop({ type: String, default: '无数据' })
+  readonly emptyText!: string
 
   itemList: ListItem[] = []
+
+  get isEmpty() {
+    return !this.itemList.length || this.itemList.every(item => item.hidden)
+  }
 
   selectItem(vm: ListItem) {
     this.itemList.forEach(item => {
@@ -59,4 +69,10 @@ export default class MzList extends Vue {
 
 <style lang="scss">
 @import '@/scss/index.scss';
+.mz-list {
+  &__empty {
+    padding: 10px 0;
+    text-align: center;
+  }
+}
 </style>
