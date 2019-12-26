@@ -1,0 +1,10 @@
+import Mz##name## from './##name##.vue'
+import { VueConstructor } from 'vue'
+
+Mz##name##.componentName = 'Mz##name##'
+
+Mz##name##.install = (Vue: VueConstructor) => {
+  Vue.component(Mz##name##.componentName, Mz##name##)
+}
+
+export default Mz##name##
