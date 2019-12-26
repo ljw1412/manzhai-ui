@@ -7,12 +7,24 @@ interface ReplaceOptions {
   value: string
 }
 
+async function readFile(filepath: string) {
+  return await fs.readFile(filepath, 'utf-8')
+}
+
 async function replaceTemplate(filename: string, replace: ReplaceOptions[]) {
   let template = await fs.readFile(`./templates/${filename}`, 'utf-8')
   replace.forEach(({ key, value }) => {
     template = template.replace(key, value)
   })
   return template
+}
+
+async function replaceSave(filepath: string, replace: ReplaceOptions[]) {
+  let content = await readFile(filepath)
+  replace.forEach(({ key, value }) => {
+    content = content.replace(key, value)
+  })
+  await fs.writeFile(filepath, content)
 }
 
 async function saveFiles(
@@ -44,4 +56,11 @@ logger.error = (...args) => {
   console.log(chalk.red('[失败]'), ...args)
 }
 
-module.exports = { hyphenate, replaceTemplate, saveFiles, logger }
+module.exports = {
+  hyphenate,
+  replaceTemplate,
+  replaceSave,
+  readFile,
+  saveFiles,
+  logger
+}

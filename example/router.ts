@@ -21,6 +21,7 @@ import ComponentSnackbar from './views/Component/Snackbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
+// inject import
 
 Vue.use(Router)
 
@@ -36,6 +37,7 @@ export default new Router({
       name: 'pageComponent',
       component: Component,
       children: [
+        // inject router
         {
           path: 'button',
           name: 'ComponentButton',

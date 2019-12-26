@@ -64,6 +64,21 @@ module.exports = class ComponentCreater {
     await utils.saveFiles(`../example/views/Component`, [
       { name: `${this.name}.vue`, content: vueStr }
     ])
+    // 路由追加
+    utils.replaceSave('../example/router.ts', [
+      {
+        key: /\/\/ inject router/g,
+        value: `// inject router\n        {
+          path: '${this.name}',
+          name: '${name}',
+          component: ${name}
+        },`
+      },
+      {
+        key: /\/\/ inject import/g,
+        value: `// inject import\nimport ${name} from './views/Component/${name}.vue'`
+      }
+    ])
     // 文档导航栏追加
     const navigateOptions = require('../example/options/navigate.json')
     const componentChildren = navigateOptions[0].children
@@ -78,9 +93,32 @@ module.exports = class ComponentCreater {
       return 0
     })
     await utils.saveFiles(`../example/options`, [
-      { name: 'navigate.json', content: JSON.stringify(navigateOptions) }
+      {
+        name: 'navigate.json',
+        content: JSON.stringify(navigateOptions, null, 2)
+      }
     ])
   }
 
-  async injectEntry() {}
+  async injectEntry() {
+    utils.replaceSave('../src/index.ts', [
+      {
+        key: /\/\/ inject import/g,
+        value: `// inject import\nimport ${this.name} form '../packages/${this.name}/index'`
+      },
+      {
+        key: /\/\/ inject component/g,
+        value: `// inject component\n  ${this.name},`
+      }
+    ])
+
+    let entry = await utils.readFile('../src/index.ts')
+    entry = entry
+      .replace(
+        /\/\/ inject import/g,
+        `// inject import\nimport ${this.name} from '../packages/${this.name}/index'`
+      )
+      .replace(/\/\/ inject component/g, `// inject component\n  ${this.name},`)
+    await utils.saveFiles(`../src`, [{ name: 'index.ts', content: entry }])
+  }
 }

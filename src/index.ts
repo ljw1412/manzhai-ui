@@ -1,7 +1,7 @@
 import './styles/index.scss'
 import { VueConstructor } from 'vue'
 import { InstallationOptions } from '../types/index'
-import { changeTheme, getCurrentTheme } from './utils/theme'
+import { getCurrentTheme } from './utils/theme'
 import mzEventBus from './bus'
 import * as directives from './directives'
 import Button from '../packages/Button/index'
@@ -30,8 +30,10 @@ import Scrollbar from '../packages/Scrollbar/index'
 import SildeGroup from '../packages/SlideGroup/index'
 import Snackbar from '../packages/Snackbar/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
+// inject import
 
 const components: VueConstructor[] = [
+  // inject component
   Button,
   Card,
   Cell,
@@ -135,6 +137,7 @@ const install = function(
 
 export default {
   install,
+  // inject component
   Button,
   Card,
   Cell,
