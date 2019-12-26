@@ -76,7 +76,7 @@ module.exports = class ComponentCreater {
       },
       {
         key: /\/\/ inject import/g,
-        value: `// inject import\nimport ${name} from './views/Component/${name}.vue'`
+        value: `// inject import\nimport ${name} from './views/Component/${this.name}.vue'`
       }
     ])
     // 文档导航栏追加
