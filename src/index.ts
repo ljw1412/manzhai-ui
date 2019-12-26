@@ -11,6 +11,11 @@ import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import CellGroup from '../packages/CellGroup/index'
 import Col from '../packages/Col/index'
 import { Dropdown, DropdownCard } from '../packages/Dropdown/index'
+import {
+  FilterSection,
+  FilterSectionGroup,
+  FilterSectionItem
+} from '../packages/FilterSection/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
 import Input from '../packages/Input/index'
@@ -43,6 +48,9 @@ const components: VueConstructor[] = [
   Col,
   Dropdown,
   DropdownCard,
+  FilterSection,
+  FilterSectionGroup,
+  FilterSectionItem,
   Icon,
   Image,
   Input,
@@ -147,6 +155,9 @@ export default {
   Col,
   Dropdown,
   DropdownCard,
+  FilterSection,
+  FilterSectionGroup,
+  FilterSectionItem,
   Icon,
   Image,
   Input,
