@@ -69,7 +69,7 @@ module.exports = class ComponentCreater {
       {
         key: /\/\/ inject router/g,
         value: `// inject router\n        {
-          path: '${this.name}',
+          path: '${utils.hyphenate(this.name)}',
           name: '${name}',
           component: ${name}
         },`
