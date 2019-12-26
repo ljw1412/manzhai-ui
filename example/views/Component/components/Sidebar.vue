@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import navigate from '../../../options/navigate'
+import navigate from '../../../options/navigate.json'
 
 @Component
 export default class Sidebar extends Vue {
