@@ -19,6 +19,15 @@
   transition: var(--color-transition);
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .flex-center-space-between {
   display: flex;
   align-items: center;

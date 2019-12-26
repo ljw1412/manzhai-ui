@@ -1,5 +1,6 @@
 <template>
   <div class="mz-filter-section-group">
+    <slot></slot>
   </div>
 </template>
 
