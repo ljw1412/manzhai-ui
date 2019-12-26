@@ -38,7 +38,7 @@ module.exports = class ComponentCreater {
   // 创建组件包
   async createPackage() {
     const replaceList = [
-      { key: /##hyphenatename##/g, value: utils.hyphenate(this.name) },
+      { key: /##hyphenatename##/g, value: 'mz-' + utils.hyphenate(this.name) },
       { key: /##name##/g, value: 'Mz' + this.name },
       { key: /##scoped##/g, value: '' }
     ]
