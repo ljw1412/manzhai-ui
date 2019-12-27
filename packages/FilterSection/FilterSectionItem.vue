@@ -17,7 +17,7 @@ import { typeOf } from '../../src/utils/assist'
 
 @Component
 export default class MzFilterSectionItem extends Mixins(FormElement) {
-  @Inject({ default: null })
+  @Inject({ from: 'mzFilterSection', default: null })
   section!: MzFilterSection
   @Prop({ required: true })
   readonly value!: any
@@ -37,11 +37,13 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   get selected() {
     if (this.section) {
       if (this.section.multiple) {
-        return typeOf(this.section.value) === 'array'
-          ? this.section.value.includes(this.value)
-          : false
+        return (
+          !!this.section.mValue &&
+          typeOf(this.section.mValue) === 'array' &&
+          this.section.mValue.includes(this.value)
+        )
       }
-      return this.section.value === this.value
+      return this.section.mValue === this.value
     }
     return this.checked
   }

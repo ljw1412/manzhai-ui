@@ -6,7 +6,8 @@
       <mz-radio value="left">left</mz-radio>
       <mz-radio value="right">right</mz-radio>
     </mz-radio-group>
-
+    <br><br>
+    当前值：{{value}}
     <mz-filter-section v-model="value"
       label="类型1："
       :label-position="position"
@@ -25,10 +26,11 @@
         :key="i"
         :value="i">
         <div slot-scope="{ selected }"
-          :class="{'is-item-selected':selected}">{{a}}选项{{i}}</div>
+          :class="{'is-item-selected':selected}">选项{{i}}</div>
       </mz-filter-section-item>
     </mz-filter-section>
-
+    <br>
+    当前值：{{value2}}
     <mz-filter-section v-model="value2"
       label="类型1："
       :label-position="position"
@@ -38,6 +40,27 @@
         :key="i"
         :value="i">选项{{i}}</mz-filter-section-item>
     </mz-filter-section>
+    <br>
+    当前值：{{this.groupValue}}
+    <mz-filter-section-group v-model="groupValue">
+      <mz-filter-section name="type1"
+        label="类型1(name=type1)："
+        :label-position="position"
+        outlined>
+        <mz-filter-section-item v-for="i of 10"
+          :key="i"
+          :value="i">选项{{i}}</mz-filter-section-item>
+      </mz-filter-section>
+      <mz-filter-section label="类型2(name=type2)："
+        name="type2"
+        :label-position="position"
+        label-width="200px"
+        multiple>
+        <mz-filter-section-item v-for="i of 10"
+          :key="i"
+          :value="i">选项{{i}}</mz-filter-section-item>
+      </mz-filter-section>
+    </mz-filter-section-group>
   </div>
 </template>
 
@@ -49,6 +72,7 @@ export default class ComponentFilterSection extends Vue {
   position = 'top'
   value = ''
   value2 = []
+  groupValue = { type1: 5 }
 }
 </script>
 

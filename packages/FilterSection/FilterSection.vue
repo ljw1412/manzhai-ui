@@ -17,22 +17,25 @@ import {
   Vue,
   Prop,
   Mixins,
-  ProvideReactive
+  ProvideReactive,
+  Inject
 } from 'vue-property-decorator'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 import FormElement from '../../src/mixins/FormElement'
 import { typeOf } from '../../src/utils/assist'
-import { FilterSectionItem } from '.'
+import { FilterSectionItem, MzFilterSectionGroup } from '.'
 
 @Component({
   provide() {
-    return { section: this }
+    return { mzFilterSection: this }
   }
 })
 export default class MzFilterSection extends Mixins(
   BaseAttribute,
   FormElement
 ) {
+  @Inject({ from: 'mzFilterSectionGroup', default: null })
+  readonly group!: MzFilterSectionGroup
   @Prop(String)
   readonly label!: string
   @Prop({ type: String, default: 'top' })
@@ -45,6 +48,7 @@ export default class MzFilterSection extends Mixins(
   readonly multiple!: boolean
 
   itemList: FilterSectionItem[] = []
+  mValue: any = []
 
   get sectionClasses() {
     const classes: (Record<string, any> | string)[] = []
@@ -58,9 +62,19 @@ export default class MzFilterSection extends Mixins(
     if (this.multiple) {
       value = this.itemList.filter(item => item.checked).map(item => item.value)
     }
-
     this.$emit('input', value)
     this.$emit('change', value)
+    this.mValue = value
+
+    if (this.group) {
+      this.group.setValue(this.name, value)
+    }
+  }
+
+  mounted() {
+    if (this.group) {
+      console.log(this.group.value)
+    }
   }
 }
 </script>
