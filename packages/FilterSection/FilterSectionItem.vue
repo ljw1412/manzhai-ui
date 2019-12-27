@@ -2,8 +2,9 @@
   <div class="mz-filter-section-item"
     :class="itemClass"
     @click="onItemClick">
-    <div class="mz-filter-section-item__label color-transition">
-      <slot>{{label}}</slot>
+    <div class="mz-filter-section-item__label"
+      :style="labelStyle">
+      <slot :selected="selected">{{label}}</slot>
     </div>
   </div>
 </template>
@@ -22,6 +23,10 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   readonly value!: any
   @Prop(Boolean)
   readonly outlined!: boolean
+  @Prop(Boolean)
+  readonly custom!: boolean
+  @Prop()
+  readonly labelStyle!: any
 
   checked = false
 
@@ -49,11 +54,14 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   }
 
   get itemClass() {
-    return {
-      'is-selected': this.selected,
-      'is-pointer': !this.disabled,
-      'is-outlined': this.isOutlined
+    const classes = { 'is-pointer': !this.disabled, 'is-custom': this.custom }
+    if (!this.custom) {
+      Object.assign(classes, {
+        'is-outlined': this.isOutlined,
+        'is-selected': this.selected
+      })
     }
+    return classes
   }
 
   onItemClick() {
@@ -77,7 +85,7 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   --mz-filter-section-item__border-color: transparent;
   padding: 3px 5px;
   &__label {
-    padding: 3px 5px;
+    box-sizing: border-box;
     color: var(--mz-filter-section-item__label-color);
     background-color: var(--mz-filter-section-item__background-color);
     border: 1px solid var(--mz-filter-section-item__border-color);

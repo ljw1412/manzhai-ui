@@ -16,9 +16,18 @@
         :value="i">选项{{i}}</mz-filter-section-item>
     </mz-filter-section>
 
-    <!-- <mz-filter-section-item v-for="i of 10"
-      :key="i"
-      :value="i">选项{{i}}</mz-filter-section-item> -->
+    <mz-filter-section v-model="value"
+      label="类型1："
+      :label-position="position"
+      outlined>
+      <mz-filter-section-item v-for="i of 10"
+        custom
+        :key="i"
+        :value="i">
+        <div slot-scope="{ selected }"
+          :class="{'is-item-selected':selected}">{{a}}选项{{i}}</div>
+      </mz-filter-section-item>
+    </mz-filter-section>
 
     <mz-filter-section v-model="value2"
       label="类型1："
@@ -29,8 +38,6 @@
         :key="i"
         :value="i">选项{{i}}</mz-filter-section-item>
     </mz-filter-section>
-
-    <mz-button @click="value = (Number(value)+1)%10">+</mz-button>
   </div>
 </template>
 
@@ -48,5 +55,18 @@ export default class ComponentFilterSection extends Vue {
 <style lang="scss" scoped>
 .component-filter-section {
   color: var(--color-text-primary);
+}
+
+.is-item-selected {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+  }
 }
 </style>
