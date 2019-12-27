@@ -8,6 +8,7 @@
 import { Component, Vue, Mixins, Prop } from 'vue-property-decorator'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 import FormElement from '../../src/mixins/FormElement'
+import { MzFilterSectionItem } from '.'
 
 @Component({
   provide() {
@@ -20,6 +21,8 @@ export default class MzFilterSectionGroup extends Mixins(
 ) {
   @Prop({ type: Object, default: () => ({}) })
   readonly value!: Record<string, any>
+
+  itemList: MzFilterSectionItem[] = []
 
   setValue(name: string, value: any) {
     if (!name) {

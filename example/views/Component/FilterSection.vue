@@ -61,6 +61,8 @@
           :value="i">选项{{i}}</mz-filter-section-item>
       </mz-filter-section>
     </mz-filter-section-group>
+
+    <mz-button @click="$set(groupValue,'type2',[1,2])">2134</mz-button>
   </div>
 </template>
 
@@ -70,8 +72,8 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class ComponentFilterSection extends Vue {
   position = 'top'
-  value = ''
-  value2 = []
+  value = 1
+  value2 = [1]
   groupValue = { type1: 5 }
 }
 </script>

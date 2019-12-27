@@ -18,7 +18,8 @@ import {
   Prop,
   Mixins,
   ProvideReactive,
-  Inject
+  Inject,
+  Watch
 } from 'vue-property-decorator'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 import FormElement from '../../src/mixins/FormElement'
@@ -58,24 +59,36 @@ export default class MzFilterSection extends Mixins(
     return classes
   }
 
+  // get theValue() {
+  //   return this.value || this.mValue
+  // }
+
   setValue(value: any) {
     if (this.multiple) {
       value = this.itemList.filter(item => item.checked).map(item => item.value)
     }
     this.$emit('input', value)
     this.$emit('change', value)
-    this.mValue = value
-
+    if (this.value === undefined) this.mValue = value
     if (this.group) {
       this.group.setValue(this.name, value)
     }
   }
 
-  mounted() {
-    if (this.group) {
-      console.log(this.group.value)
-    }
+  @Watch('value', { immediate: true })
+  onValueChange(val: any) {
+    if (val) this.mValue = val
   }
+
+  // @Watch('group.value', { immediate: true })
+  // onGroupValueChange(val: any) {
+  //   if (val && typeOf(val) === 'object' && this.name) {
+  //     this.mValue = val[this.name]
+  //     this.itemList.forEach(item => {
+  //       item.selected = this.mValue.includes(item.value)
+  //     })
+  //   }
+  // }
 }
 </script>
 
