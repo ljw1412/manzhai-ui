@@ -1,5 +1,6 @@
 <template>
   <div class="mz-select"
+    v-clickoutside="{fn:()=>{searchFocus=false;isActive=false;},disabled:search}"
     :class="{
       'mz-select--active':isActive,
       'mz-select--search':search
@@ -7,7 +8,7 @@
     <mz-input ref="input"
       outlined
       :append-icon="arrowIcon"
-      :value="current"
+      :value="searchFocus ? '' : current"
       :label="label"
       :readonly="true"
       :label-up="true"
@@ -16,8 +17,9 @@
     <input v-if="search"
       class="mz-select__search-input mz-input"
       v-model="filterText"
+      :placeholder="searchFocus ? current:''"
       @focus="searchFocus = true"
-      @blur="searchFocus = false" />
+      @click.stop />
     <mz-dropdown-card :visiable.sync="isActive"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
@@ -100,7 +102,6 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   }
 
   get current() {
-    if (this.searchFocus) return ''
     if (this.optionList.length) {
       const item = this.optionList.find(item => item.value === this.value)
       return item ? item.label || item.value : ''

@@ -1,6 +1,6 @@
 <template>
   <div class="component-select">
-    <mz-select :list="list"></mz-select>
+
     <mz-select v-model="value"
       :dropdownMatchSelectWidth="true"
       :list="list"></mz-select>
@@ -15,6 +15,7 @@
 
     <mz-select label="目标"
       v-model="value"
+      :dropdownMatchSelectWidth="true"
       under
       search>
       <mz-option v-for="(item) of list"
@@ -30,7 +31,7 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class ComponentSelect extends Vue {
-  value = ''
+  value = 1
   list = [
     { value: 1, label: '甲' },
     { value: 2, label: '乙' },
