@@ -4,7 +4,7 @@
     @click="onItemClick">
     <div class="mz-filter-section-item__label"
       :style="labelStyle">
-      <slot :selected="selected">{{label}}</slot>
+      <slot :checked="checked">{{label}}</slot>
     </div>
   </div>
 </template>
@@ -34,40 +34,23 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
     return (this.section && this.section.outlined) || this.outlined
   }
 
-  get selected() {
-    if (this.section) {
-      if (this.section.multiple) {
-        return (
-          !!this.section.mValue &&
-          typeOf(this.section.mValue) === 'array' &&
-          this.section.mValue.includes(this.value)
-        )
-      }
-      return this.section.mValue === this.value
-    }
-    return this.checked
-  }
-
-  set selected(value: any) {
-    this.checked = value
-    if (this.section) {
-      this.section.setValue(this.value)
-    }
-  }
-
   get itemClass() {
     const classes = { 'is-pointer': !this.disabled, 'is-custom': this.custom }
     if (!this.custom) {
       Object.assign(classes, {
         'is-outlined': this.isOutlined,
-        'is-selected': this.selected
+        'is-checked': this.checked
       })
     }
     return classes
   }
 
   onItemClick() {
-    this.selected = !this.selected
+    this.checked = !this.checked
+    this.$emit('change', this.checked)
+    if (this.section) {
+      this.section.updateValue(this.value)
+    }
   }
 
   created() {
@@ -85,18 +68,20 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   --mz-filter-section-item__label-color: var(--color-text-primary);
   --mz-filter-section-item__background-color: transparent;
   --mz-filter-section-item__border-color: transparent;
+
   padding: 3px 5px;
+  user-select: none;
   &__label {
     box-sizing: border-box;
     color: var(--mz-filter-section-item__label-color);
     background-color: var(--mz-filter-section-item__background-color);
     border: 1px solid var(--mz-filter-section-item__border-color);
   }
-  &:not(.is-outlined).is-selected {
+  &:not(.is-outlined).is-checked {
     --mz-filter-section-item__label-color: #ffffff;
     --mz-filter-section-item__background-color: var(--color-primary);
   }
-  &.is-outlined.is-selected {
+  &.is-outlined.is-checked {
     --mz-filter-section-item__label-color: var(--color-primary);
     --mz-filter-section-item__border-color: var(--color-primary);
   }

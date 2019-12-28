@@ -49,7 +49,16 @@ export default class MzFilterSection extends Mixins(
   readonly multiple!: boolean
 
   itemList: FilterSectionItem[] = []
-  mValue: any = []
+  mValue: any = null
+
+  get sectionValue() {
+    return this.value
+  }
+
+  set sectionValue(value: any) {
+    this.$emit('input', value)
+    this.$emit('change', value)
+  }
 
   get sectionClasses() {
     const classes: (Record<string, any> | string)[] = []
@@ -59,36 +68,28 @@ export default class MzFilterSection extends Mixins(
     return classes
   }
 
-  // get theValue() {
-  //   return this.value || this.mValue
-  // }
+  // 更新子的选中状态
+  updateItem(value: any) {
+    if (!value) return
+    this.itemList.forEach(item => {
+      item.checked =
+        this.multiple && typeOf(value) === 'array'
+          ? value.includes(item.value)
+          : item.value === value
+    })
+  }
 
-  setValue(value: any) {
+  updateValue(value: any) {
     if (this.multiple) {
       value = this.itemList.filter(item => item.checked).map(item => item.value)
     }
-    this.$emit('input', value)
-    this.$emit('change', value)
-    if (this.value === undefined) this.mValue = value
-    if (this.group) {
-      this.group.setValue(this.name, value)
-    }
+    this.sectionValue = value
   }
 
   @Watch('value', { immediate: true })
   onValueChange(val: any) {
-    if (val) this.mValue = val
+    this.$nextTick(() => this.updateItem(val))
   }
-
-  // @Watch('group.value', { immediate: true })
-  // onGroupValueChange(val: any) {
-  //   if (val && typeOf(val) === 'object' && this.name) {
-  //     this.mValue = val[this.name]
-  //     this.itemList.forEach(item => {
-  //       item.selected = this.mValue.includes(item.value)
-  //     })
-  //   }
-  // }
 }
 </script>
 
