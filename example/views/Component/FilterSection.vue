@@ -63,8 +63,29 @@
           :value="i">选项{{i}}</mz-filter-section-item>
       </mz-filter-section>
     </mz-filter-section-group>
+    <br>
+    当前值(auto-fix-value)：{{this.groupValue2}}
+    <mz-filter-section-group v-model="groupValue2"
+      auto-fix-value>
+      <mz-filter-section name="type1"
+        label="类型1(name=type1)："
+        :label-position="position"
+        outlined>
+        <mz-filter-section-item v-for="i of 10"
+          :key="i"
+          :value="i">选项{{i}}</mz-filter-section-item>
+      </mz-filter-section>
+      <mz-filter-section label="类型2(name=type2)："
+        name="type2"
+        :label-position="position"
+        label-width="200px"
+        multiple>
+        <mz-filter-section-item v-for="i of 10"
+          :key="i"
+          :value="i">选项{{i}}</mz-filter-section-item>
+      </mz-filter-section>
+    </mz-filter-section-group>
 
-    <mz-button @click="$set(groupValue,'type2',[1,2])">2134</mz-button>
   </div>
 </template>
 
@@ -77,6 +98,7 @@ export default class ComponentFilterSection extends Vue {
   value = 1
   value2 = [1]
   groupValue = null
+  groupValue2 = null
 }
 </script>
 

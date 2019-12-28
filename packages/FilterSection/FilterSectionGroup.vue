@@ -22,6 +22,8 @@ export default class MzFilterSectionGroup extends Mixins(
 ) {
   @Prop({ type: Object, default: () => ({}) })
   readonly value!: Record<string, any>
+  @Prop(Boolean)
+  readonly autoFixValue!: boolean
 
   itemList: MzFilterSection[] = []
 
@@ -38,6 +40,19 @@ export default class MzFilterSectionGroup extends Mixins(
     this.$emit('input', Object.assign({}, this.value, val))
   }
 
+  updateGroupValueKey() {
+    const groupValueKeyList =
+      typeOf(this.value) === 'object' ? Object.keys(this.value) : []
+    const obj: Record<string, any> = {}
+    this.itemList.forEach(item => {
+      if (!item.name) return
+      if (!groupValueKeyList.length || !groupValueKeyList.includes(item.name)) {
+        obj[item.name] = item.multiple ? [] : null
+      }
+    })
+    this.$emit('input', Object.assign(obj, this.value))
+  }
+
   @Watch('value', { immediate: true })
   onValueChange(val: Record<string, any>) {
     if (typeOf(val) === 'object') this.updateSection(val)
@@ -45,16 +60,7 @@ export default class MzFilterSectionGroup extends Mixins(
 
   @Watch('itemList')
   onItemListChange(list: MzFilterSection[]) {
-    const groupValueKeyList =
-      typeOf(this.value) === 'object' ? Object.keys(this.value) : []
-    const obj: Record<string, any> = {}
-    list.forEach(item => {
-      if (!item.name) return
-      if (!groupValueKeyList.length || !groupValueKeyList.includes(item.name)) {
-        obj[item.name] = item.multiple ? [] : null
-      }
-    })
-    this.$emit('input', Object.assign(obj, this.value))
+    if (this.autoFixValue) this.updateGroupValueKey()
   }
 }
 </script>
