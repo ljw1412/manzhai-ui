@@ -52,12 +52,23 @@ export default class MzFilterSection extends Mixins(
   mValue: any = null
 
   get sectionValue() {
-    return this.value
+    return this.group ? this.mValue : this.value
   }
 
   set sectionValue(value: any) {
     this.$emit('input', value)
     this.$emit('change', value)
+    if (this.group) {
+      this.mValue = value
+      if (!this.name) {
+        console.error(
+          '[MzFilterSectionGroup]',
+          '在Group下的Section必须包含name属性来区别，且name值必须唯一！'
+        )
+        return
+      }
+      this.group.updateGroupValue({ [this.name]: value })
+    }
   }
 
   get sectionClasses() {
@@ -86,9 +97,17 @@ export default class MzFilterSection extends Mixins(
     this.sectionValue = value
   }
 
-  @Watch('value', { immediate: true })
+  @Watch('sectionValue', { immediate: true })
   onValueChange(val: any) {
     this.$nextTick(() => this.updateItem(val))
+  }
+
+  created() {
+    this.group && this.group.itemList.push(this)
+  }
+
+  beforeDestroy() {
+    this.group && this.group.itemList.remove(this)
   }
 }
 </script>

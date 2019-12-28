@@ -7,6 +7,8 @@
       <mz-radio value="right">right</mz-radio>
     </mz-radio-group>
     <br><br>
+    <mz-button type="primary"
+      @click="value=2">修改为2</mz-button>
     当前值：{{value}}
     <mz-filter-section v-model="value"
       label="类型1："
@@ -25,8 +27,8 @@
         custom
         :key="i"
         :value="i">
-        <div slot-scope="{ selected }"
-          :class="{'is-item-selected':selected}">选项{{i}}</div>
+        <div slot-scope="{ checked }"
+          :class="{'is-item-checked':checked}">选项{{i}}</div>
       </mz-filter-section-item>
     </mz-filter-section>
     <br>
@@ -83,7 +85,7 @@ export default class ComponentFilterSection extends Vue {
   color: var(--color-text-primary);
 }
 
-.is-item-selected {
+.is-item-checked {
   position: relative;
   &::after {
     content: '';

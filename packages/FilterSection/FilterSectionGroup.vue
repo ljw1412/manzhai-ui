@@ -5,10 +5,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins, Prop } from 'vue-property-decorator'
+import { Component, Vue, Mixins, Prop, Watch } from 'vue-property-decorator'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 import FormElement from '../../src/mixins/FormElement'
-import { MzFilterSectionItem } from '.'
+import { MzFilterSection } from '.'
+import { typeOf } from '../../src/utils/assist'
 
 @Component({
   provide() {
@@ -22,17 +23,24 @@ export default class MzFilterSectionGroup extends Mixins(
   @Prop({ type: Object, default: () => ({}) })
   readonly value!: Record<string, any>
 
-  itemList: MzFilterSectionItem[] = []
+  itemList: MzFilterSection[] = []
 
-  setValue(name: string, value: any) {
-    if (!name) {
-      console.error(
-        '[MzFilterSectionGroup]',
-        '在Group下的Section必须包含name属性来区别，且name值必须唯一！'
-      )
-      return
-    }
-    this.$emit('input', { ...this.value, [name]: value })
+  updateSection(val: Record<string, any>) {
+    Object.keys(val).forEach(name => {
+      const item = this.itemList.find(el => el.name === name)
+      item && item.updateItem(val[name])
+    })
+  }
+
+  updateGroupValue(val: Record<string, any>) {
+    this.$emit('input', Object.assign({}, this.value, val))
+  }
+
+  @Watch('value', { immediate: true })
+  onValueChange(val: Record<string, any>) {
+    this.$nextTick(() => {
+      this.updateSection(val)
+    })
   }
 }
 </script>

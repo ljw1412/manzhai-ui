@@ -46,7 +46,7 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   }
 
   onItemClick() {
-    this.checked = !this.checked
+    this.checked = (this.section && !this.section.multiple) || !this.checked
     this.$emit('change', this.checked)
     if (this.section) {
       this.section.updateValue(this.value)
