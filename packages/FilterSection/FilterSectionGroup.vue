@@ -26,9 +26,11 @@ export default class MzFilterSectionGroup extends Mixins(
   itemList: MzFilterSection[] = []
 
   updateSection(val: Record<string, any>) {
-    Object.keys(val).forEach(name => {
-      const item = this.itemList.find(el => el.name === name)
-      item && item.updateItem(val[name])
+    this.$nextTick(() => {
+      Object.keys(val).forEach(name => {
+        const item = this.itemList.find(el => el.name === name)
+        item && item.updateItem(val[name])
+      })
     })
   }
 
@@ -38,9 +40,21 @@ export default class MzFilterSectionGroup extends Mixins(
 
   @Watch('value', { immediate: true })
   onValueChange(val: Record<string, any>) {
-    this.$nextTick(() => {
-      this.updateSection(val)
+    if (typeOf(val) === 'object') this.updateSection(val)
+  }
+
+  @Watch('itemList')
+  onItemListChange(list: MzFilterSection[]) {
+    const groupValueKeyList =
+      typeOf(this.value) === 'object' ? Object.keys(this.value) : []
+    const obj: Record<string, any> = {}
+    list.forEach(item => {
+      if (!item.name) return
+      if (!groupValueKeyList.length || !groupValueKeyList.includes(item.name)) {
+        obj[item.name] = item.multiple ? [] : null
+      }
     })
+    this.$emit('input', Object.assign(obj, this.value))
   }
 }
 </script>

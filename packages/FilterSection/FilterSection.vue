@@ -82,11 +82,13 @@ export default class MzFilterSection extends Mixins(
   // 更新子的选中状态
   updateItem(value: any) {
     if (!value) return
-    this.itemList.forEach(item => {
-      item.checked =
-        this.multiple && typeOf(value) === 'array'
-          ? value.includes(item.value)
-          : item.value === value
+    this.$nextTick(() => {
+      this.itemList.forEach(item => {
+        item.checked =
+          this.multiple && typeOf(value) === 'array'
+            ? value.includes(item.value)
+            : item.value === value
+      })
     })
   }
 
@@ -99,7 +101,7 @@ export default class MzFilterSection extends Mixins(
 
   @Watch('sectionValue', { immediate: true })
   onValueChange(val: any) {
-    this.$nextTick(() => this.updateItem(val))
+    this.updateItem(val)
   }
 
   created() {

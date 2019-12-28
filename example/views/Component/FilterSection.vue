@@ -76,7 +76,7 @@ export default class ComponentFilterSection extends Vue {
   position = 'top'
   value = 1
   value2 = [1]
-  groupValue = { type1: 5 }
+  groupValue = null
 }
 </script>
 
