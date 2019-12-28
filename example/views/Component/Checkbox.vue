@@ -52,7 +52,7 @@ export default class ComponentCheckbox extends Vue {
 
   onCheckAll(value: boolean) {
     console.log('onCheckAll', value)
-    this.groupValue = value ? this.list : []
+    this.groupValue = value ? [...this.list] : []
   }
 
   onGroupChange(data: any[]) {
