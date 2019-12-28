@@ -1,8 +1,8 @@
 <template>
   <div class="mz-select"
     v-clickoutside="{
-      fn:()=>{searchFocus=false;isActive=false;},
-      disabled:!isActive
+      fn: onClickoutside,
+      disabled: !isActive
     }"
     :class="{
       'mz-select--active':isActive,
@@ -18,6 +18,7 @@
       :is-focus="searchFocus"
       @click.native="onClick"></mz-input>
     <input v-if="search"
+      ref="searchInput"
       class="mz-select__search-input mz-input"
       v-model="filterText"
       :placeholder="searchFocus ? current:''"
@@ -89,6 +90,8 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
   readonly under!: boolean
   @Ref('input')
   readonly inputRef!: MzInput
+  @Ref('searchInput')
+  readonly searchInputRef!: HTMLInputElement
 
   optionList: MzOption[] = []
 
@@ -119,6 +122,12 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
 
   onClick() {
     this.isActive = !this.isActive
+  }
+
+  onClickoutside() {
+    this.searchFocus = false
+    this.isActive = false
+    if (this.search && this.searchInputRef) this.searchInputRef.blur()
   }
 
   onSearchInputFocus() {
