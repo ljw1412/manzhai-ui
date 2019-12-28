@@ -1,7 +1,10 @@
 <template>
   <transition name="mz-fade">
     <mz-card v-show="mVisiable"
-      v-clickoutside="{fn:close,disabled:isDisabledClickoutside}"
+      v-clickoutside="{
+        fn: close,
+        disabled: isDisabledClickoutside
+      }"
       ref="popper"
       class="mz-dropdown-card"
       :style="styles">
@@ -36,6 +39,8 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   readonly dropdownMatchReferenceWidth!: boolean
   @Prop(String)
   readonly placement?: 'bottom'
+  @Prop(Boolean)
+  readonly clickoutside!: boolean
 
   top = '0'
   left = '0'
@@ -49,7 +54,7 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   }
 
   get isDisabledClickoutside() {
-    return !this.mVisiable || this.disabledClickoutside
+    return !this.clickoutside || !this.mVisiable || this.disabledClickoutside
   }
 
   set isDisabledClickoutside(value) {

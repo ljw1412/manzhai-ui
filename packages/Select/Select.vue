@@ -1,6 +1,9 @@
 <template>
   <div class="mz-select"
-    v-clickoutside="{fn:()=>{searchFocus=false;isActive=false;},disabled:search}"
+    v-clickoutside="{
+      fn:()=>{searchFocus=false;isActive=false;},
+      disabled:!isActive
+    }"
     :class="{
       'mz-select--active':isActive,
       'mz-select--search':search
@@ -18,8 +21,7 @@
       class="mz-select__search-input mz-input"
       v-model="filterText"
       :placeholder="searchFocus ? current:''"
-      @focus="searchFocus = true"
-      @click.stop />
+      @focus="searchFocus = true" />
     <mz-dropdown-card :visiable.sync="isActive"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
@@ -119,6 +121,11 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
     this.isActive = !this.isActive
   }
 
+  onSearchInputFocus() {
+    this.searchFocus = true
+    this.isActive = true
+  }
+
   onValueChange(value: any, data: any) {
     this.$emit('input', value)
     this.$emit('change', value, data)
@@ -126,15 +133,17 @@ export default class MzSelect extends Mixins(SizeMixin, FormElement) {
 
   onItemClick(value: any, data: any) {
     this.isActive = false
+    setTimeout(() => {
+      this.searchFocus = false
+    }, 300)
   }
 
   @Watch('searchFocus')
   onSearchFocusChange(focus: boolean) {
-    if (!focus) this.filterText = ''
-    else {
-      setTimeout(() => {
-        this.isActive = true
-      }, 100)
+    if (!focus) {
+      this.filterText = ''
+    } else {
+      this.isActive = true
     }
   }
 }
