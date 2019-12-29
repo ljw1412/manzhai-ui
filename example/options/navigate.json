@@ -45,6 +45,13 @@
         }
       },
       {
+        "label": "Form",
+        "text": "表单",
+        "to": {
+          "name": "ComponentForm"
+        }
+      },
+      {
         "label": "Grid",
         "text": "栅格",
         "to": {
