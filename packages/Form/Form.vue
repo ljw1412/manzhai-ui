@@ -1,5 +1,6 @@
 <template>
   <div class="mz-form">
+    <slot></slot>
   </div>
 </template>
 
