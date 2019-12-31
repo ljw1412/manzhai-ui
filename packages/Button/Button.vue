@@ -42,6 +42,8 @@ export default class MzButton extends Mixins(SizeMixin) {
   readonly fontColor!: string
   @Prop(String)
   readonly color!: string
+  @Prop(String)
+  readonly borderColor!: string
 
   get buttonClasses() {
     const type = COLOR_TYPES.includes(this.type) ? this.type : 'default'
@@ -61,7 +63,8 @@ export default class MzButton extends Mixins(SizeMixin) {
   get buttonStyles() {
     return {
       '--mz-button__font-color': this.fontColor,
-      '--mz-button__background-color': this.color
+      '--mz-button__background-color': this.color,
+      '--mz-button__border-color': this.borderColor
     }
   }
 }
@@ -76,6 +79,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   --mz-button__font-size: 14px;
   --mz-button__font-color: var(--color-text-regular);
   --mz-button__border: none;
+  --mz-button__border-color: transparent;
   --mz-button__border-radius: 4px;
   --mz-button__background-color: transparent;
   --mz-button__cursor: pointer;
@@ -85,6 +89,7 @@ export default class MzButton extends Mixins(SizeMixin) {
   -webkit-appearance: none;
   box-sizing: border-box;
   border: var(--mz-button__border);
+  border-color: var(--mz-button__border-color);
   border-radius: var(--mz-button__border-radius);
   color: var(--mz-button__font-color);
   cursor: var(--mz-button__cursor);
@@ -182,7 +187,8 @@ export default class MzButton extends Mixins(SizeMixin) {
         --mz-button__background-color: transparent;
       }
       &.mz-button--outlined {
-        --mz-button__border: 1px solid var(--color-#{$type});
+        --mz-button__border-color: var(--color-#{$type});
+        --mz-button__border: 1px solid var(--mz-button__border-color);
       }
     }
   }
@@ -191,7 +197,8 @@ export default class MzButton extends Mixins(SizeMixin) {
     background-color: transparent;
     &.mz-button--outlined {
       --mz-button__font-color: var(--color-text-regular);
-      --mz-button__border: 1px solid var(--color-text-regular);
+      --mz-button__border-color: var(--color-text-regular);
+      --mz-button__border: 1px solid var(--mz-button__border-color);
     }
   }
 
@@ -200,7 +207,8 @@ export default class MzButton extends Mixins(SizeMixin) {
     --mz-button__background-color: rgba(0, 0, 0, 0.12) !important;
     --mz-button__font-color: var(--color-text-placeholder) !important;
     &.mz-button--outlined {
-      --mz-button__border: 1px solid var(--color-text-placeholder);
+      --mz-button__border-color: var(--color-text-placeholder);
+      --mz-button__border: 1px solid var(--mz-button__border-color);
     }
   }
 }

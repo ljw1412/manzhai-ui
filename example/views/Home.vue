@@ -18,6 +18,7 @@
           <mz-button outlined
             size="large"
             font-color="#ffffff"
+            border-color="#ffffff"
             @click="toGithub">
             <mz-icon name="logo-github"
               size="20"></mz-icon>
