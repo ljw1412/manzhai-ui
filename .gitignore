@@ -22,4 +22,4 @@ yarn-error.log*
 
 /lib
 
-/ComponentCreater/*.js
+/tools/ComponentCreater/*.js
