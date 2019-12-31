@@ -36,6 +36,7 @@ import Scrollbar from '../packages/Scrollbar/index'
 import SildeGroup from '../packages/SlideGroup/index'
 import Snackbar from '../packages/Snackbar/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
+import Table from '../packages/Table/index'
 // inject import
 
 const components: VueConstructor[] = [
@@ -73,7 +74,8 @@ const components: VueConstructor[] = [
   SildeGroup,
   Snackbar,
   Tabs,
-  Tab
+  Tab,
+  Table
 ]
 
 /**
@@ -181,5 +183,6 @@ export default {
   SildeGroup,
   Snackbar,
   Tabs,
-  Tab
+  Tab,
+  Table
 }

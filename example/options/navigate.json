@@ -129,6 +129,13 @@
         }
       },
       {
+        "label": "Table",
+        "text": "表格",
+        "to": {
+          "name": "ComponentTable"
+        }
+      },
+      {
         "label": "Tabs",
         "text": "标签页",
         "to": {

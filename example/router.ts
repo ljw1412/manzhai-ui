@@ -21,6 +21,7 @@ import ComponentSwitch from './views/Component/Switch.vue'
 import ComponentScrollbar from './views/Component/Scrollbar.vue'
 import ComponentSnackbar from './views/Component/Snackbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
+import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 // inject import
@@ -134,6 +135,11 @@ export default new Router({
           path: 'tabs',
           name: 'ComponentTabs',
           component: ComponentTabs
+        },
+        {
+          path: 'table',
+          name: 'ComponentTable',
+          component: ComponentTable
         }
       ]
     },
