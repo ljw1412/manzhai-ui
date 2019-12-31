@@ -28,8 +28,7 @@ const list = [
       new ColorItem('--color-primary', '主题色'),
       new ColorItem('--color-success', '成功色'),
       new ColorItem('--color-warning', '警告色'),
-      new ColorItem('--color-danger', '危险色'),
-      new ColorItem('--color-info', '信息色')
+      new ColorItem('--color-danger', '危险色')
     ]
   },
   {

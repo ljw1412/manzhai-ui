@@ -172,7 +172,7 @@ export default class MzButton extends Mixins(SizeMixin) {
     --mz-button__background-color: transparent;
   }
 
-  @each $type in (primary, success, warning, danger, info) {
+  @each $type in (primary, success, warning, danger) {
     &--#{$type} {
       --mz-button__font-color: #ffffff;
       --mz-button__background-color: var(--color-#{$type});

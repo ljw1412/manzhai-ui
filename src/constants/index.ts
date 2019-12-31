@@ -1,1 +1,1 @@
-export const COLOR_TYPES = ['primary', 'success', 'warning', 'danger', 'info']
+export const COLOR_TYPES = ['primary', 'success', 'warning', 'danger']

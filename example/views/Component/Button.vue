@@ -93,7 +93,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component
 export default class ComponentButton extends Vue {
   outlined = false
-  colorTypeList = ['', 'primary', 'success', 'warning', 'danger', 'info']
+  colorTypeList = ['', 'primary', 'success', 'warning', 'danger']
   size = ''
 }
 </script>

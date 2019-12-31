@@ -15,9 +15,9 @@
           <mz-button type="success"
             size="large"
             @click="$router.push({name:'pageComponent'})">快速入门</mz-button>
-          <mz-button type="info"
-            outlined
+          <mz-button outlined
             size="large"
+            font-color="#ffffff"
             @click="toGithub">
             <mz-icon name="logo-github"
               size="20"></mz-icon>

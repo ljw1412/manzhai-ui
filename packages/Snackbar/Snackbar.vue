@@ -153,7 +153,7 @@ export default class MzSnackbar extends Vue {
     min-width: var(--mz-snackbar__min-width);
     max-width: var(--mz-snackbar__max-width);
     background-color: var(--mz-snackbar__background-color);
-    @each $type in (primary, success, warning, danger, info) {
+    @each $type in (primary, success, warning, danger) {
       &--#{$type} {
         --mz-snackbar__background-color: var(--color-#{$type});
       }
