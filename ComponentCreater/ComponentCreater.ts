@@ -39,7 +39,7 @@ module.exports = class ComponentCreater {
   async createPackage() {
     const replaceList = [
       { key: /##hyphenatename##/g, value: 'mz-' + utils.hyphenate(this.name) },
-      { key: /##name##/g, value: 'Mz' + this.name },
+      { key: /##name##/g, value: this.name },
       { key: /##scoped##/g, value: '' }
     ]
     const vueStr = await utils.replaceTemplate('vue', replaceList)
