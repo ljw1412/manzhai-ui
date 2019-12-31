@@ -1,3 +1,16 @@
+const fs = require('fs').promises
+const glob = require('glob')
+const path = require('path')
+
+async function listMarkdownFiles(pattern) {
+  return new Promise((resolve, reject) => {
+    glob(pattern, (err, files) => {
+      if (err) return reject(err)
+      resolve(files)
+    })
+  })
+}
+
 // 剥离模板
 function stripTemplate(content) {
   content = content.trim()
@@ -17,19 +30,19 @@ function stripScript(content) {
 }
 
 // 提取示例
-function extractTemplate(content) {
+function extractTemplate(content, componentName) {
   const block = {}
   const Regx = /<!--example~[\s\S]+?~example-->/g
   let i = 0
   content = content.replace(Regx, function(match) {
     match = match.replace('<!--example~', '').replace('~example-->', '')
-    const name = `##template${i++}##`
+    const name = `##${componentName}Demo${++i}##`
     block[name] = {
       template: stripTemplate(match),
       script: stripScript(match),
       style: stripStyle(match)
     }
-    return block
+    return name
   })
   return { content, block }
 }
@@ -42,4 +55,13 @@ function pad(source) {
     .join('\n')
 }
 
-module.exports = { extractTemplate, genInlineComponentText }
+function getName(filePath) {
+  return path.parse(filePath).name
+}
+
+async function createVueFile(block, componentName) {
+  await fs.mkdir(`./.temp/${componentName}`, { recursive: true })
+  Object.keys(block).forEach(async key => {})
+}
+
+module.exports = { extractTemplate, listMarkdownFiles, createVueFile, getName }

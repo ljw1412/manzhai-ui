@@ -3,14 +3,12 @@ const fs = require('fs').promises
 const utils = require('./utils')
 
 ;(async () => {
-  let doc = md.render(await fs.readFile('example/docs/Button.md', 'utf-8'))
-
-  let { content, block } = utils.extractTemplate(doc)
-
-  Object.keys(block).forEach((key, index) => {
-    utils.genInlineComponentText(block[key], `manzhai-demo${index}`)
+  const docs = await utils.listMarkdownFiles('example/docs/*.md')
+  console.log(docs)
+  docs.forEach(async path => {
+    const componentName = utils.getName(path)
+    let doc = md.render(await fs.readFile(path, 'utf-8'))
+    let { content, block } = utils.extractTemplate(doc, componentName)
+    await utils.createVueFile(block, componentName)
   })
-
-  content = `<template><div>${content}</div></template>`
-  fs.writeFile('./Test.vue', content)
 })()

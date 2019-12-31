@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "core-js": "^3.4.7",
+    "glob": "^7.1.6",
     "popper.js": "^1.16.0",
     "resize-observer-polyfill": "^1.5.1",
     "vue": "^2.6.10",
