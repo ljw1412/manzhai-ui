@@ -4,9 +4,19 @@ const path = require('path')
 const basePath = './example/docs/.temp/'
 
 // 剥离模板
-function stripTemplate(content) {
+function stripTemplate(content, classes = '') {
   content = content.trim()
-  return content && content.replace(/<(script|style)[\s\S]+<\/\1>/g, '').trim()
+  if (!content) return content
+  content = content.replace(/<(script|style)[\s\S]+<\/\1>/g, '').trim()
+  content = content
+    .split('\n')
+    .map(line => `\t\t${line}`)
+    .join('\n')
+  return `<template>
+  <div class="${classes}">
+${content}
+  </div>
+</template>`
 }
 
 // 剥离样式
@@ -31,13 +41,17 @@ function extractTemplate(content, moduleName) {
     const name = `${moduleName}Demo${++i}`
     const hyphenateName = utils.hyphenate(name)
     blocks[name] = {
-      template: stripTemplate(match),
+      template: stripTemplate(match, hyphenateName),
       script: stripScript(match),
       style: stripStyle(match)
     }
     return `<${hyphenateName}></${hyphenateName}>`
   })
-  content = `<template>\n    ${content}\n  </template>`
+  content = `<template>
+  <div class="${utils.hyphenate(`Component${moduleName}`)}">
+    ${content}
+  </div>
+</template>`
   return { content, blocks }
 }
 
@@ -87,7 +101,7 @@ export default {
 async function generateRouter(moduleList) {
   console.log('正在生成路由中……')
   let content = `${moduleList
-    .map(n => `import Component${n} from './${n}'`)
+    .map(n => `import Component${n} from './${n}/index.vue'`)
     .join('\n')}`
   const routerList = moduleList.map(
     name => `  {
@@ -97,7 +111,7 @@ async function generateRouter(moduleList) {
   }`
   )
   content += `\n\nexport default [\n${routerList.join('\n')}\n]\n`
-  await utils.saveFiles(basePath, [{ name: 'router.js', content }])
+  await utils.saveFiles(basePath, [{ name: 'router.ts', content }])
 }
 
 module.exports = {

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
+import DocsRouter from './docs/.temp/router'
 import ComponentButton from './views/Component/Button.vue'
 import ComponentCard from './views/Component/Card.vue'
 import ComponentCell from './views/Component/Cell.vue'
@@ -29,6 +30,7 @@ import Theme from './views/Theme/index.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -40,6 +42,7 @@ export default new Router({
       name: 'pageComponent',
       component: Component,
       children: [
+        ...DocsRouter,
         // inject router
         {
           path: 'button',

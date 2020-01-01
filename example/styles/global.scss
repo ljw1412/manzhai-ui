@@ -40,3 +40,22 @@ a {
     background-color: var(--scrollbar-thumb-color--active);
   }
 }
+
+#page-component-content {
+  .header-anchor {
+    opacity: 0;
+    color: var(--color-primary);
+  }
+  h2:hover .header-anchor,
+  h3:hover .header-anchor,
+  h4:hover .header-anchor,
+  h5:hover .header-anchor {
+    opacity: 0.4;
+  }
+  & [class^='component-'] > p {
+    padding: 0 16px;
+  }
+  .demo-block {
+    padding: 10px 16px;
+  }
+}
