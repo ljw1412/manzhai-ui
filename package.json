@@ -26,6 +26,7 @@
     "report:ui": "vue-cli-service build --target lib --dest lib --report ./src/index.ts",
     "build:creater": "cd tools/ComponentCreater && tsc",
     "creater": "cd tools/ComponentCreater && node index.js",
+    "build:md": "node tools/MarkdownBuilder/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
   },

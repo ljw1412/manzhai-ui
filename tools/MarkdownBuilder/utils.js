@@ -1,15 +1,7 @@
-const fs = require('fs').promises
-const glob = require('glob')
+const utils = require('../utils')
 const path = require('path')
 
-async function listMarkdownFiles(pattern) {
-  return new Promise((resolve, reject) => {
-    glob(pattern, (err, files) => {
-      if (err) return reject(err)
-      resolve(files)
-    })
-  })
-}
+const basePath = './example/docs/.temp/'
 
 // 剥离模板
 function stripTemplate(content) {
@@ -30,21 +22,23 @@ function stripScript(content) {
 }
 
 // 提取示例
-function extractTemplate(content, componentName) {
-  const block = {}
+function extractTemplate(content, moduleName) {
+  const blocks = {}
   const Regx = /<!--example~[\s\S]+?~example-->/g
   let i = 0
   content = content.replace(Regx, function(match) {
     match = match.replace('<!--example~', '').replace('~example-->', '')
-    const name = `##${componentName}Demo${++i}##`
-    block[name] = {
+    const name = `${moduleName}Demo${++i}`
+    const hyphenateName = utils.hyphenate(name)
+    blocks[name] = {
       template: stripTemplate(match),
       script: stripScript(match),
       style: stripStyle(match)
     }
-    return name
+    return `<${hyphenateName}></${hyphenateName}>`
   })
-  return { content, block }
+  content = `<template>\n    ${content}\n  </template>`
+  return { content, blocks }
 }
 
 // 字符串扁平化
@@ -55,13 +49,60 @@ function pad(source) {
     .join('\n')
 }
 
-function getName(filePath) {
-  return path.parse(filePath).name
+const vueBlockKeys = ['template', 'script', 'style']
+function getVueContent(vueBlock) {
+  let contentList = []
+  vueBlockKeys.forEach(key => {
+    if (vueBlock[key]) contentList.push(vueBlock[key])
+  })
+  return contentList.join('\n')
 }
 
-async function createVueFile(block, componentName) {
-  await fs.mkdir(`./.temp/${componentName}`, { recursive: true })
-  Object.keys(block).forEach(async key => {})
+// 创建文档DEMO VUE 文件
+async function generateVueFiles(block, moduleName) {
+  const dirPath = path.join(basePath, moduleName)
+  const fileList = Object.keys(block).map(key => {
+    return {
+      name: `${key}.vue`,
+      content: getVueContent(block[key])
+    }
+  })
+  await utils.saveFiles(dirPath, fileList)
 }
 
-module.exports = { extractTemplate, listMarkdownFiles, createVueFile, getName }
+async function generateIndexVueFile(moduleName, content, componentList) {
+  const dirPath = path.join(basePath, moduleName)
+  const script = `<script>
+${componentList.map(item => `import ${item} from './${item}'`).join('\n')}
+export default {
+  components: { ${componentList.join(',')} }
+}
+</script>`
+  await utils.saveFiles(dirPath, [
+    { name: 'index.vue', content: getVueContent({ template: content, script }) }
+  ])
+}
+
+// 构建路由
+async function generateRouter(moduleList) {
+  console.log('正在生成路由中……')
+  let content = `${moduleList
+    .map(n => `import Component${n} from './${n}'`)
+    .join('\n')}`
+  const routerList = moduleList.map(
+    name => `  {
+    path: '${utils.hyphenate(name)}',
+    name: 'Component${name}',
+    component: Component${name}
+  }`
+  )
+  content += `\n\nexport default [\n${routerList.join('\n')}\n]\n`
+  await utils.saveFiles(basePath, [{ name: 'router.js', content }])
+}
+
+module.exports = {
+  extractTemplate,
+  generateVueFiles,
+  generateIndexVueFile,
+  generateRouter
+}

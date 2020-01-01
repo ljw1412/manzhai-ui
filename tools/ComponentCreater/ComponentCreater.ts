@@ -1,4 +1,4 @@
-const utils = require('./utils')
+const utils = Object.assign({}, require('./utils'), require('../utils'))
 
 module.exports = class ComponentCreater {
   // 模块名称 大驼峰
