@@ -23,7 +23,6 @@ export default class ComponentName extends Vue {}
 
 <style lang="scss">
 .demo-block {
-  margin: 10px 16px;
   padding: 16px;
   background-color: var(--demo-block__background-color);
 
@@ -37,7 +36,7 @@ export default class ComponentName extends Vue {}
     border-radius: 5px;
     background-color: var(--demo-block__description-background-color);
     p {
-      padding: 0 !important;
+      margin: 0 !important;
     }
     code {
       margin: 0 4px;
