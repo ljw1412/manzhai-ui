@@ -22,4 +22,38 @@ export default class ComponentName extends Vue {}
 </script>
 
 <style lang="scss">
+.demo-block {
+  margin: 10px 16px;
+  padding: 16px 10px;
+  background-color: var(--demo-block__background-color);
+
+  .example {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: var(--color-body-background);
+  }
+
+  .description {
+    padding: 10px 20px;
+    border: 1px solid var(--color-border-base);
+    border-radius: 3px;
+    background-color: var(--demo-block__description-background-color);
+    p {
+      padding: 0 !important;
+    }
+    code {
+      margin: 0 4px;
+      padding: 2px 3px;
+      border-radius: 3px;
+      background-color: var(--demo-block__description-code-background-color);
+      color: var(--demo-block__description-code-color);
+      font-style: italic;
+    }
+  }
+
+  .highlight .hljs,
+  .highlight .hljs-subst {
+    color: var(--demo-block__highlight-color);
+  }
+}
 </style>

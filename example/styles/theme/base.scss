@@ -2,4 +2,10 @@
   --app-topbar__navigation-font-color: #ffffff;
   --app-topbar__navigation-font-color--hover: #46c37b;
   --app-topbar__navigation-font-color--active: #{mix(#ffffff, #46c37b, 30%)};
+
+  --demo-block__background-color: #fafafa;
+  --demo-block__highlight-color: #333333;
+  --demo-block__description-background-color: #ffffff;
+  --demo-block__description-code-color: #5e6d82;
+  --demo-block__description-code-background-color: #e6effb;
 }

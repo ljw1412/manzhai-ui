@@ -89,7 +89,7 @@ async function generateIndexVueFile(moduleName, content, componentList) {
   const script = `<script>
 ${componentList.map(item => `import ${item} from './${item}'`).join('\n')}
 export default {
-  components: { ${componentList.join(',')} }
+  components: { ${componentList.join(', ')} }
 }
 </script>`
   await utils.saveFiles(dirPath, [

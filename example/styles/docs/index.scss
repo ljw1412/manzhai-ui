@@ -1,0 +1,45 @@
+#page-component-content {
+  * {
+    transition: all 0.3s;
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--color-text-regular);
+    line-height: 1.5em;
+    padding: 0 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 400;
+    color: var(--color-text-primary);
+    &:hover .header-anchor {
+      opacity: 0.4;
+    }
+  }
+
+  [class^='component-'] > h3 {
+    margin: 55px 0 20px;
+  }
+
+  .header-anchor {
+    opacity: 0;
+    color: var(--color-primary);
+  }
+
+  .highlight .html {
+    background-color: transparent;
+  }
+
+  @import './button.scss';
+}
+
+:root[data-theme='dark'] {
+  #page-component-content .header-anchor {
+    color: #ffffff;
+  }
+}
