@@ -8932,6 +8932,13 @@ tr46@^1.0.1:
   dependencies:
     punycode "^2.1.0"
 
+transliteration@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.npm.taobao.org/transliteration/download/transliteration-2.1.8.tgz#b2a032107be42910dbb792ff96b39938114a4eb8"
+  integrity sha1-sqAyEHvkKRDbt5L/lrOZOBFKTrg=
+  dependencies:
+    yargs "^15.0.2"
+
 traverse@^0.6.6:
   version "0.6.6"
   resolved "https://registry.npm.taobao.org/traverse/download/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
@@ -9833,6 +9840,23 @@ yargs@^15.0.0:
   version "15.0.2"
   resolved "https://registry.npm.taobao.org/yargs/download/yargs-15.0.2.tgz#4248bf218ef050385c4f7e14ebdf425653d13bd3"
   integrity sha1-Qki/IY7wUDhcT34U699CVlPRO9M=
+  dependencies:
+    cliui "^6.0.0"
+    decamelize "^1.2.0"
+    find-up "^4.1.0"
+    get-caller-file "^2.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^2.0.0"
+    set-blocking "^2.0.0"
+    string-width "^4.2.0"
+    which-module "^2.0.0"
+    y18n "^4.0.0"
+    yargs-parser "^16.1.0"
+
+yargs@^15.0.2:
+  version "15.1.0"
+  resolved "https://registry.npm.taobao.org/yargs/download/yargs-15.1.0.tgz?cache=0&sync_timestamp=1577940973312&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fyargs%2Fdownload%2Fyargs-15.1.0.tgz#e111381f5830e863a89550bd4b136bb6a5f37219"
+  integrity sha1-4RE4H1gw6GOolVC9SxNrtqXzchk=
   dependencies:
     cliui "^6.0.0"
     decamelize "^1.2.0"
