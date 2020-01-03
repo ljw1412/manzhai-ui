@@ -25,7 +25,13 @@
   }
 
   [class^='component-'] > h3 {
+    font-size: 24px;
     margin: 55px 0 20px;
+  }
+
+  [class^='component-'] > h4 {
+    font-size: 20px;
+    margin: 20px 0 12px;
   }
 
   .header-anchor {
@@ -39,6 +45,27 @@
     .html {
       background-color: transparent;
       padding: 10px 20px;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    tr {
+      th,
+      td {
+        text-align: left;
+        padding: 16px 10px;
+        border-bottom: 1px solid var(--color-border-light);
+      }
+      th {
+        font-size: 13px;
+        color: var(--color-text-secondary);
+      }
+      td {
+        color: var(--color-text-primary);
+        font-size: 14px;
+      }
     }
   }
 

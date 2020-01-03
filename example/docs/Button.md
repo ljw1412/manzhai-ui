@@ -109,3 +109,29 @@ export default {
 </div>
 ```
 :::
+
+### API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+| type | 类型 | String | 默认 / primary / success / warning / danger | - |
+| size | 尺寸 | String | 默认 / large / small   | - |
+| disabled | 是否禁用状态 | Boolean | | |
+| icon | 是否图标状态	 | Boolean | | |
+| ripple | 点击涟漪效果 | Boolean / Object | | true |
+| circle | 是否圆形按钮	 | Boolean | | |
+| outlined | 是否线条按钮	 | Boolean | | |
+| flat | 是否扁平按钮	 | Boolean | | |
+| round | 是否圆角按钮	 | Boolean | | |
+| native-type | 原生 type 属性 | String | button / submit / reset | 'button' |
+| font-color | 文字颜色 | String | | |
+| color | 背景颜色 | String | | |
+| border-color | 边框颜色 | String | | |
+
+#### 插槽
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|-|按钮的内容||
