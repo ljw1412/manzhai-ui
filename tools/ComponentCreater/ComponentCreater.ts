@@ -54,30 +54,9 @@ module.exports = class ComponentCreater {
   }
 
   async createExample() {
-    const name = `Component${this.name}`
-    const replaceList = [
-      { key: /##hyphenatename##/g, value: utils.hyphenate(name) },
-      { key: /##name##/g, value: name },
-      { key: /##scoped##/g, value: 'scoped' }
-    ]
-    const vueStr = await utils.replaceTemplate('vue', replaceList)
-    await utils.saveFiles(`../../example/views/Component`, [
-      { name: `${this.name}.vue`, content: vueStr }
-    ])
-    // 路由追加
-    utils.replaceSave('../../example/router.ts', [
-      {
-        key: /\/\/ inject router/g,
-        value: `// inject router\n        {
-          path: '${utils.hyphenate(this.name)}',
-          name: '${name}',
-          component: ${name}
-        },`
-      },
-      {
-        key: /\/\/ inject import/g,
-        value: `// inject import\nimport ${name} from './views/Component/${this.name}.vue'`
-      }
+    // 新增文档
+    await utils.saveFiles(`../../example/docs`, [
+      { name: `${this.name}.md`, content: `## ${this.name} ${this.nameCN}` }
     ])
     // 文档导航栏追加
     const navigateOptions = require('../../example/options/navigate.json')
@@ -85,7 +64,7 @@ module.exports = class ComponentCreater {
     componentChildren.push({
       label: this.name,
       text: this.nameCN,
-      to: { name }
+      to: { name:`Component${this.name}` }
     })
     componentChildren.sort((a, b) => {
       if (a.label > b.label) return 1
