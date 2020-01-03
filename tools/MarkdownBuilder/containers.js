@@ -1,7 +1,6 @@
 const mdContainer = require('markdown-it-container')
 
 module.exports = md => {
-  let i = 0
   md.use(mdContainer, 'demo', {
     validate(params) {
       return params.trim().match(/^demo\s*(.*)$/)
@@ -16,7 +15,7 @@ module.exports = md => {
         }
         const content =
           tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : ''
-        return `<demo-block class="demo-block-${++i}">
+        return `<demo-block>
         <template #example><!--example~${content}~example--></template>
         <template #description>${description}</template>
         `
@@ -24,6 +23,4 @@ module.exports = md => {
       return '</demo-block>'
     }
   })
-  md.use(mdContainer, 'tip')
-  md.use(mdContainer, 'warning')
 }
