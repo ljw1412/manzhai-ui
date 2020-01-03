@@ -37,6 +37,7 @@ export default class ComponentName extends Vue {}
     background-color: var(--demo-block__description-background-color);
     p {
       margin: 0 !important;
+      line-height: 2em !important;
     }
     code {
       margin: 0 4px;

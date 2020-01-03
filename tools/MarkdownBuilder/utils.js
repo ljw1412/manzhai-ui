@@ -1,7 +1,7 @@
 const utils = require('../utils')
 const path = require('path')
 
-const basePath = './example/docs/.temp/'
+const basePath = './example/docs/.auto/'
 
 // 剥离模板
 function stripTemplate(content, classes = '') {

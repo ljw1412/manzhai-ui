@@ -6,7 +6,7 @@
 
 基础按钮的用法。
 
-:::demo 你可以通过`disabled`(`Boolean`)属性来修改按钮的禁用状态
+:::demo 使用`type`、`outlined`、`flat`、`round`、`circle`、`icon`属性来定义 Button 的样式。<br>你可以通过`disabled`属性来修改按钮的禁用状态。
 
 ```html
 <div>
@@ -17,81 +17,54 @@
   <mz-button type="danger">危险按钮</mz-button>
   <mz-button disabled>禁用按钮</mz-button>
 </div>
-```
 
-:::
-
-### 线条按钮
-
-:::demo 你可以通过`outlined`(`Boolean`)属性来修改按钮为线条样式
-
-```html
 <div>
-  <mz-button v-for="type of colorTypeList" :key="type" :type="type" outlined
-    >线条按钮</mz-button
-  >
-  <mz-button outlined disabled>禁用按钮</mz-button>
+  <mz-button outlined>线条按钮</mz-button>
+  <mz-button type="primary" outlined>主要按钮</mz-button>
+  <mz-button type="success" outlined>成功按钮</mz-button>
+  <mz-button type="warning" outlined>警告按钮</mz-button>
+  <mz-button type="danger" outlined>危险按钮</mz-button>
+  <mz-button disabled outlined>禁用按钮</mz-button>
 </div>
 
-<script>
-  export default {
-    data() {
-      return {
-        colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
-      }
-    }
-  }
-</script>
-```
-
-:::
-
-### 扁平按钮
-
-:::demo 你可以通过`flat`(`Boolean`)属性来修改按钮为扁平样式
-
-```html
 <div>
-  <mz-button v-for="type of colorTypeList" :key="type" :type="type" flat
-    >测试按钮</mz-button
-  >
-  <mz-button flat disabled>禁用按钮</mz-button>
+  <mz-button flat>扁平按钮</mz-button>
+  <mz-button type="primary" flat>主要按钮</mz-button>
+  <mz-button type="success" flat>成功按钮</mz-button>
+  <mz-button type="warning" flat>警告按钮</mz-button>
+  <mz-button type="danger" flat>危险按钮</mz-button>
+  <mz-button disabled flat>禁用按钮</mz-button>
 </div>
 
-<script>
-  export default {
-    data() {
-      return {
-        colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
-      }
-    }
-  }
-</script>
-```
-
-:::
-
-### 圆角按钮
-
-:::demo 你可以通过`round`(`Boolean`)属性来修改按钮为圆角样式
-
-```html
 <div>
-  <mz-button v-for="type of colorTypeList" :key="type" :type="type" round
-    >测试按钮</mz-button
-  >
-  <mz-button round disabled>禁用按钮</mz-button>
+  <mz-button round>圆角按钮</mz-button>
+  <mz-button type="primary" round>主要按钮</mz-button>
+  <mz-button type="success" round>成功按钮</mz-button>
+  <mz-button type="warning" round>警告按钮</mz-button>
+  <mz-button type="danger" round>危险按钮</mz-button>
+  <mz-button disabled round>禁用按钮</mz-button>
 </div>
 
-<script>
-  export default {
-    data() {
-      return {
-        colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
-      }
-    }
-  }
-</script>
+<div>
+  <mz-button circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+  <mz-button type="primary" circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+  <mz-button type="success" circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+  <mz-button type="warning" circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+  <mz-button type="danger" circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+  <mz-button disabled circle icon>
+    <mz-icon name="md-alarm"size="20px"></mz-icon>
+  </mz-button>
+</div>
 ```
 
 :::
