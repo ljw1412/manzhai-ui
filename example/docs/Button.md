@@ -65,6 +65,16 @@
     <mz-icon name="md-alarm"size="20px"></mz-icon>
   </mz-button>
 </div>
+
+<script>
+export default {
+  data() {
+    return {
+      colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
+    }
+  }
+}
+</script>
 ```
 
 :::

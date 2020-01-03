@@ -5,7 +5,64 @@
 <h3 id="ji-ben-yong-fa"><a class="header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <p>基础按钮的用法。</p>
 <demo-block>
-        <template #example><button-demo1></button-demo1></template>
+        <template #example><button-demo1 inline-template><div class="button-demo1">
+  <div>
+    <mz-button>默认按钮</mz-button>
+    <mz-button type="primary">主要按钮</mz-button>
+    <mz-button type="success">成功按钮</mz-button>
+    <mz-button type="warning">警告按钮</mz-button>
+    <mz-button type="danger">危险按钮</mz-button>
+    <mz-button disabled>禁用按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button outlined>线条按钮</mz-button>
+    <mz-button type="primary" outlined>主要按钮</mz-button>
+    <mz-button type="success" outlined>成功按钮</mz-button>
+    <mz-button type="warning" outlined>警告按钮</mz-button>
+    <mz-button type="danger" outlined>危险按钮</mz-button>
+    <mz-button disabled outlined>禁用按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button flat>扁平按钮</mz-button>
+    <mz-button type="primary" flat>主要按钮</mz-button>
+    <mz-button type="success" flat>成功按钮</mz-button>
+    <mz-button type="warning" flat>警告按钮</mz-button>
+    <mz-button type="danger" flat>危险按钮</mz-button>
+    <mz-button disabled flat>禁用按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button round>圆角按钮</mz-button>
+    <mz-button type="primary" round>主要按钮</mz-button>
+    <mz-button type="success" round>成功按钮</mz-button>
+    <mz-button type="warning" round>警告按钮</mz-button>
+    <mz-button type="danger" round>危险按钮</mz-button>
+    <mz-button disabled round>禁用按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+    <mz-button type="primary" circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+    <mz-button type="success" circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+    <mz-button type="warning" circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+    <mz-button type="danger" circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+    <mz-button disabled circle icon>
+      <mz-icon name="md-alarm"size="20px"></mz-icon>
+    </mz-button>
+  </div>
+</div></button-demo1></template>
         <template #description><p>使用<code>type</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。<br>你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
@@ -64,12 +121,27 @@
     &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
   &lt;/mz-button&gt;
 &lt;/div&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block>
   </div>
 </template>
 <script>
-import ButtonDemo1 from './ButtonDemo1'
-export default {
-  components: { ButtonDemo1 }
-}
-</script>
+  export default {
+    components: { ButtonDemo1: {
+  data() {
+    return {
+      colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
+    }
+  }
+} }
+  }
+  </script>

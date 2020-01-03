@@ -12,11 +12,15 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
       const moduleName = utils.getName(path)
       let doc = md.render(await fs.readFile(path, 'utf-8'))
       let { content, blocks } = utils.extractTemplate(doc, moduleName)
-      await utils.generateVueFiles(blocks, moduleName)
-      await utils.generateIndexVueFile(moduleName, content, Object.keys(blocks))
+      await utils.generateDocVueFile(moduleName, content, blocks)
       moduleList.push(moduleName)
     })
   )
 
   await utils.generateRouter(moduleList)
 })()
+
+module.exports = function(source) {
+  console.log('!!!!', arguments)
+  utils.saveFiles('.', [{ name: 'test', content: arguments }])
+}

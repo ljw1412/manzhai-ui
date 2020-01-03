@@ -1,4 +1,4 @@
-import ComponentButton from './Button/index.vue'
+import ComponentButton from './Button.vue'
 
 export default [
   {

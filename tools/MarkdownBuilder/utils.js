@@ -8,15 +8,10 @@ function stripTemplate(content, classes = '') {
   content = content.trim()
   if (!content) return content
   content = content.replace(/<(script|style)[\s\S]+<\/\1>/g, '').trim()
-  content = content
-    .split('\n')
-    .map(line => `\t\t${line}`)
-    .join('\n')
-  return `<template>
-  <div class="${classes}">
+  content = pad(content)
+  return `<div class="${classes}">
 ${content}
-  </div>
-</template>`
+</div>`
 }
 
 // 剥离样式
@@ -33,19 +28,28 @@ function stripScript(content) {
 
 // 提取示例
 function extractTemplate(content, moduleName) {
-  const blocks = {}
+  const blocks = []
   const Regx = /<!--example~[\s\S]+?~example-->/g
   let i = 0
   content = content.replace(Regx, function(match) {
     match = match.replace('<!--example~', '').replace('~example-->', '')
     const name = `${moduleName}Demo${++i}`
     const hyphenateName = utils.hyphenate(name)
-    blocks[name] = {
-      template: stripTemplate(match, hyphenateName),
-      script: stripScript(match),
-      style: stripStyle(match)
+    let script = stripScript(match)
+    if (script) {
+      script = script.substring(
+        script.indexOf('{'),
+        script.lastIndexOf('}') + 1
+      )
     }
-    return `<${hyphenateName}></${hyphenateName}>`
+    blocks.push({
+      name,
+      hyphenateName,
+      // template: stripTemplate(match, hyphenateName),
+      script,
+      style: stripStyle(match)
+    })
+    return `<${hyphenateName} inline-template>${stripTemplate(match, hyphenateName)}</${hyphenateName}>`
   })
   content = `<template>
   <div class="${utils.hyphenate(`Component${moduleName}`)}">
@@ -72,36 +76,41 @@ function getVueContent(vueBlock) {
   return contentList.join('\n')
 }
 
-// 创建文档DEMO VUE 文件
-async function generateVueFiles(block, moduleName) {
-  const dirPath = path.join(basePath, moduleName)
-  const fileList = Object.keys(block).map(key => {
-    return {
-      name: `${key}.vue`,
-      content: getVueContent(block[key])
+async function generateDocVueFile(moduleName, content, blocks) {
+  const componentList = blocks.map(
+    item => `${item.name}: ${item.script || '{}'}`
+  )
+  const script = `<script>
+  export default {
+    components: { ${componentList.join(', ')} }
+  }
+  </script>`
+  await utils.saveFiles(basePath, [
+    {
+      name: `${moduleName}.vue`,
+      content: getVueContent({ template: content, script })
     }
-  })
-  await utils.saveFiles(dirPath, fileList)
+  ])
 }
 
-async function generateIndexVueFile(moduleName, content, componentList) {
-  const dirPath = path.join(basePath, moduleName)
+async function generateDocVue(moduleName, content, blocks) {
+  const componentList = blocks.map(
+    item => `${item.name}: ${item.script || '{}'}`
+  )
   const script = `<script>
-${componentList.map(item => `import ${item} from './${item}'`).join('\n')}
-export default {
-  components: { ${componentList.join(', ')} }
-}
-</script>`
-  await utils.saveFiles(dirPath, [
-    { name: 'index.vue', content: getVueContent({ template: content, script }) }
-  ])
+  export default {
+    components: { ${componentList.join(', ')} }
+  }
+  </script>`
+
+  return getVueContent({ template: content, script })
 }
 
 // 构建路由
 async function generateRouter(moduleList) {
   console.log('正在生成路由中……')
   let content = `${moduleList
-    .map(n => `import Component${n} from './${n}/index.vue'`)
+    .map(n => `import Component${n} from './${n}.vue'`)
     .join('\n')}`
   const routerList = moduleList.map(
     name => `  {
@@ -116,7 +125,7 @@ async function generateRouter(moduleList) {
 
 module.exports = {
   extractTemplate,
-  generateVueFiles,
-  generateIndexVueFile,
+  generateDocVueFile,
+  generateDocVue,
   generateRouter
 }
