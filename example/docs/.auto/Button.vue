@@ -131,6 +131,59 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="an-niu-chi-cun"><a class="header-anchor" href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
+<p>我们为按钮提供了3种大小尺寸，根据场景选择合适的按钮尺寸。</p>
+<demo-block>
+        <template #example><button-demo2 inline-template><div class="button-demo2">
+  <div>
+    <mz-button type="primary" size="large">默认按钮</mz-button>
+    <mz-button type="primary">默认按钮</mz-button>
+    <mz-button type="primary" size="small">默认按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button type="primary" outlined size="large">线条按钮</mz-button>
+    <mz-button type="primary" outlined>线条按钮</mz-button>
+    <mz-button type="primary" outlined size="small">线条按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button type="primary" flat size="large">扁平按钮</mz-button>
+    <mz-button type="primary" flat>扁平按钮</mz-button>
+    <mz-button type="primary" flat size="small">扁平按钮</mz-button>
+  </div>
+  
+  <div>
+    <mz-button type="primary" round size="large">圆角按钮</mz-button>
+    <mz-button type="primary" round>圆角按钮</mz-button>
+    <mz-button type="primary" round size="small">圆角按钮</mz-button>
+  </div>
+</div></button-demo2></template>
+        <template #description><p>尺寸有<code>small</code>、<code>(默认)</code>、<code>large</code>，通过设置size属性来配置它们。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;div&gt;
+  &lt;mz-button type=&quot;primary&quot; size=&quot;large&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; size=&quot;small&quot;&gt;默认按钮&lt;/mz-button&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;mz-button type=&quot;primary&quot; outlined size=&quot;large&quot;&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; outlined&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; outlined size=&quot;small&quot;&gt;线条按钮&lt;/mz-button&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;mz-button type=&quot;primary&quot; flat size=&quot;large&quot;&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; flat&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; flat size=&quot;small&quot;&gt;扁平按钮&lt;/mz-button&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;mz-button type=&quot;primary&quot; round size=&quot;large&quot;&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
+&lt;/div&gt;
 </code></pre></template></demo-block>
   </div>
 </template>
@@ -142,6 +195,6 @@ export default {
       colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
     }
   }
-} }
+}, ButtonDemo2: {} }
   }
   </script>

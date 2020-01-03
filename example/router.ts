@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
 import DocsRouter from './docs/.auto/router'
-import ComponentButton from './views/Component/Button.vue'
 import ComponentCard from './views/Component/Card.vue'
 import ComponentCell from './views/Component/Cell.vue'
 import ComponentCheckbox from './views/Component/Checkbox.vue'
@@ -44,11 +43,6 @@ export default new Router({
       children: [
         ...DocsRouter,
         // inject router
-        {
-          path: 'button',
-          name: 'ComponentButton',
-          component: ComponentButton
-        },
         {
           path: 'card',
           name: 'ComponentCard',

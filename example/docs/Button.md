@@ -76,5 +76,36 @@ export default {
 }
 </script>
 ```
+:::
 
+### 按钮尺寸
+
+我们为按钮提供了3种大小尺寸，根据场景选择合适的按钮尺寸。
+
+:::demo 尺寸有`small`、`(默认)`、`large`，通过设置size属性来配置它们。
+```html
+<div>
+  <mz-button type="primary" size="large">默认按钮</mz-button>
+  <mz-button type="primary">默认按钮</mz-button>
+  <mz-button type="primary" size="small">默认按钮</mz-button>
+</div>
+
+<div>
+  <mz-button type="primary" outlined size="large">线条按钮</mz-button>
+  <mz-button type="primary" outlined>线条按钮</mz-button>
+  <mz-button type="primary" outlined size="small">线条按钮</mz-button>
+</div>
+
+<div>
+  <mz-button type="primary" flat size="large">扁平按钮</mz-button>
+  <mz-button type="primary" flat>扁平按钮</mz-button>
+  <mz-button type="primary" flat size="small">扁平按钮</mz-button>
+</div>
+
+<div>
+  <mz-button type="primary" round size="large">圆角按钮</mz-button>
+  <mz-button type="primary" round>圆角按钮</mz-button>
+  <mz-button type="primary" round size="small">圆角按钮</mz-button>
+</div>
+```
 :::
