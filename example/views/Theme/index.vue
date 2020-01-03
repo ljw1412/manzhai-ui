@@ -4,7 +4,7 @@
       :key="index">
       <div>{{item.title}}</div>
       <mz-card v-for="color of item.colorList||[]"
-        outlined
+        :elevation="0"
         :key="color.name"
         :background="`var(${color.name})`"
         :style="{color:color.fontColor}">{{color.name}} {{color.label}} {{color.hex}}</mz-card>
@@ -35,6 +35,9 @@ export default class PageTheme extends Vue {
 
 <style lang="scss" scoped>
 .page-theme {
+  box-sizing: border-box;
+  height: 100%;
   padding: 10px 10px 0 10px;
+  overflow-y: auto;
 }
 </style>
