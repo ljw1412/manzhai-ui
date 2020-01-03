@@ -21,6 +21,8 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
 })()
 
 module.exports = function(source) {
-  console.log('!!!!', arguments)
-  utils.saveFiles('.', [{ name: 'test', content: arguments }])
+  // console.log('!!!!', arguments)
+  // utils.saveFiles('/Volumes/HardDisk/ljw/mzui', [
+  //   { name: 'test', content: arguments }
+  // ])
 }

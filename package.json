@@ -20,10 +20,10 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "node tools/MarkdownBuilder/index.js && vue-cli-service build",
     "report": "vue-cli-service build --report",
-    "build:ui": "vue-cli-service build --target lib --dest lib ./src/index.ts",
-    "report:ui": "vue-cli-service build --target lib --dest lib --report ./src/index.ts",
+    "build:ui": "vue-cli-service build --target lib --dest lib ./src/index.ts --mode ui",
+    "report:ui": "vue-cli-service build --target lib --dest lib --report ./src/index.ts --mode ui",
     "build:creater": "cd tools/ComponentCreater && tsc",
     "creater": "cd tools/ComponentCreater && node index.js",
     "build:md": "node tools/MarkdownBuilder/index.js",
