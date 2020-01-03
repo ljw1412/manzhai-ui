@@ -1,9 +1,11 @@
 <template>
-  <mz-row class="demo-block">
+  <mz-row ref="demoBlock"
+    class="demo-block">
     <mz-col class="example">
       <slot name="example"></slot>
     </mz-col>
-    <mz-col class="source-code">
+    <mz-col v-show="isDisplayCode"
+      class="source-code">
       <div class="description">
         <slot name="description"></slot>
       </div>
@@ -11,23 +13,45 @@
         <slot name="highlight"></slot>
       </div>
     </mz-col>
+    <div class="action">
+      <mz-icon class="is-pointer"
+        :size="22"
+        :name="isDisplayCode?'md-code-working':'md-code'"
+        @click="onCodeIconClick"></mz-icon>
+    </div>
   </mz-row>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Ref } from 'vue-property-decorator'
+import MzRow from '../../packages/Row'
 
 @Component
-export default class DemoBlock extends Vue {}
+export default class DemoBlock extends Vue {
+  @Ref('demoBlock')
+  readonly demoBlockRef!: MzRow
+
+  isDisplayCode = false
+
+  onCodeIconClick() {
+    this.isDisplayCode = !this.isDisplayCode
+    if (this.isDisplayCode) {
+      this.$nextTick(() => {
+        this.demoBlockRef.$el.scrollIntoView({ behavior: 'smooth' })
+      })
+    }
+  }
+}
 </script>
 
 <style lang="scss">
 .demo-block {
+  position: relative;
   padding: 16px;
   background-color: var(--demo-block__background-color);
 
-  .example {
-    margin-bottom: 20px;
+  .source-code {
+    margin-top: 20px;
   }
 
   .description {
@@ -57,6 +81,16 @@ export default class DemoBlock extends Vue {}
     .hljs,
     .hljs-subst {
       color: var(--demo-block__highlight-color);
+    }
+  }
+
+  .action {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    color: var(--demo-block__highlight-color);
+    &:hover {
+      color: var(--color-primary);
     }
   }
 }
