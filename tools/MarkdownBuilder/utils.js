@@ -119,7 +119,7 @@ async function generateRouter(moduleList) {
     component: Component${name}
   }`
   )
-  content += `\n\nexport default [\n${routerList.join('\n')}\n]\n`
+  content += `\n\nexport default [\n${routerList.join(',\n')}\n]\n`
   await utils.saveFiles(basePath, [{ name: 'router.ts', content }])
 }
 

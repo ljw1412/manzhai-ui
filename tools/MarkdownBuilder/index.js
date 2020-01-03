@@ -17,7 +17,7 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
     })
   )
 
-  await utils.generateRouter(moduleList)
+  await utils.generateRouter(moduleList.sort())
 })()
 
 module.exports = function(source) {
