@@ -110,14 +110,12 @@ export default {
 ```
 :::
 
-### API
-
-#### 属性
+### 属性
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
-| type | 类型 | String | 默认 / primary / success / warning / danger | - |
-| size | 尺寸 | String | 默认 / large / small   | - |
+| type | 类型 | String | primary / success / warning / danger | - |
+| size | 尺寸 | String | large / small   | - |
 | disabled | 是否禁用状态 | Boolean | | |
 | icon | 是否图标状态	 | Boolean | | |
 | ripple | 点击涟漪效果 | Boolean / Object | | true |
@@ -130,7 +128,7 @@ export default {
 | color | 背景颜色 | String | | |
 | border-color | 边框颜色 | String | | |
 
-#### 插槽
+### 插槽
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |

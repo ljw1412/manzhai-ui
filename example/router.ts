@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
 import DocsRouter from './docs/.auto/router'
-import ComponentCard from './views/Component/Card.vue'
 import ComponentCell from './views/Component/Cell.vue'
 import ComponentCheckbox from './views/Component/Checkbox.vue'
 import ComponentDropdown from './views/Component/Dropdown.vue'
@@ -24,7 +23,6 @@ import ComponentTabs from './views/Component/Tabs.vue'
 import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
-// inject import
 
 Vue.use(Router)
 
@@ -42,12 +40,6 @@ export default new Router({
       component: Component,
       children: [
         ...DocsRouter,
-        // inject router
-        {
-          path: 'card',
-          name: 'ComponentCard',
-          component: ComponentCard
-        },
         {
           path: 'cell',
           name: 'ComponentCell',

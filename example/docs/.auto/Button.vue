@@ -184,8 +184,7 @@ export default {
   &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="api"><a class="header-anchor" href="#api">¶</a>API</h3>
-<h4 id="shu-xing"><a class="header-anchor" href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="shu-xing"><a class="header-anchor" href="#shu-xing">¶</a>属性</h3>
 <table>
 <thead>
 <tr>
@@ -201,14 +200,14 @@ export default {
 <td>type</td>
 <td>类型</td>
 <td>String</td>
-<td>默认 / primary / success / warning / danger</td>
+<td>primary / success / warning / danger</td>
 <td>-</td>
 </tr>
 <tr>
 <td>size</td>
 <td>尺寸</td>
 <td>String</td>
-<td>默认 / large / small</td>
+<td>large / small</td>
 <td>-</td>
 </tr>
 <tr>
@@ -290,7 +289,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao"><a class="header-anchor" href="#cha-cao">¶</a>插槽</h4>
+<h3 id="cha-cao"><a class="header-anchor" href="#cha-cao">¶</a>插槽</h3>
 <table>
 <thead>
 <tr>
