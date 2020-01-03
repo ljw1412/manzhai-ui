@@ -6,7 +6,7 @@ const config = {
   pages: {
     index: { entry: 'example/main.ts', template: 'example/index.html' }
   },
-  publicPath: isDevelopment ? '/' : '',
+  publicPath: '/',
   productionSourceMap: false,
   devServer: {
     port: 10086
