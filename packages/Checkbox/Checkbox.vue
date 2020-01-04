@@ -175,7 +175,7 @@ export default class MzCheckbox extends Mixins(FormElement) {
       &::before {
         visibility: visible;
         transform: scale(1);
-        transition: var(--color-transition), transform 0.2s 0.2s;
+        transition: var(--color-transition), transform 0.15s;
       }
     }
   }
