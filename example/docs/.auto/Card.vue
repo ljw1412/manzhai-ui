@@ -1,5 +1,6 @@
 <template>
   <div class="component-card">
+    <div class="update-datetime">文档更新时间：2020-01-04 13:19</div>
     <h2 id="card-qia-pian"><a class="header-anchor" href="#card-qia-pian">¶</a>Card 卡片</h2>
 <p>以卡片显示展示内容。</p>
 <h3 id="qia-pian-hai-ba"><a class="header-anchor" href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>

@@ -1,4 +1,16 @@
 #page-component-content {
+  [class^='component-'] {
+    position: relative;
+  }
+  .update-datetime {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: var(--color-text-regular);
+    z-index: 1;
+  }
+
   p {
     font-size: 14px;
     color: var(--color-text-regular);

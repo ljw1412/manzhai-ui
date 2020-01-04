@@ -1,6 +1,6 @@
 const utils = require('../utils')
 const path = require('path')
-
+const moment = require('moment')
 const basePath = './example/docs/.auto/'
 
 // 剥离模板
@@ -51,8 +51,10 @@ function extractTemplate(content, moduleName) {
     })
     return `<${hyphenateName} inline-template>${stripTemplate(match, hyphenateName)}</${hyphenateName}>`
   })
+  const datetime = moment().format('YYYY-MM-DD HH:mm')
   content = `<template>
   <div class="${utils.hyphenate(`Component${moduleName}`)}">
+    <div class="update-datetime">文档更新时间：${datetime}</div>
     ${content}
   </div>
 </template>`

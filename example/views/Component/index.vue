@@ -25,6 +25,7 @@ export default class PageComponent extends Vue {}
   display: flex;
   height: 100%;
   #page-component-content {
+    position: relative;
     flex-grow: 1;
     padding: 40px 30px;
     overflow: auto;

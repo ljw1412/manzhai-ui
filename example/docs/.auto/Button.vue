@@ -1,5 +1,6 @@
 <template>
   <div class="component-button">
+    <div class="update-datetime">文档更新时间：2020-01-04 13:19</div>
     <h2 id="button-an-niu"><a class="header-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa"><a class="header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
