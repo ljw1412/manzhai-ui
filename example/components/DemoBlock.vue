@@ -6,7 +6,8 @@
     </mz-col>
     <mz-col v-show="isDisplayCode"
       class="source-code">
-      <div class="description">
+      <div v-if="$slots.description"
+        class="description">
         <slot name="description"></slot>
       </div>
       <div class="highlight">
@@ -52,6 +53,8 @@ export default class DemoBlock extends Vue {
 
   .source-code {
     margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-base);
   }
 
   .description {

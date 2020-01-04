@@ -9,6 +9,7 @@
     font-size: 14px;
     color: var(--color-text-regular);
     z-index: 1;
+    transition: opacity 0.2s;
   }
 
   p {
@@ -83,10 +84,19 @@
 
   @import './button.scss';
   @import './card.scss';
+  @import './checkbox.scss';
 }
 
 :root[data-theme='dark'] {
   #page-component-content .header-anchor {
     color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #page-component-content {
+    .update-datetime {
+      opacity: 0;
+    }
   }
 }

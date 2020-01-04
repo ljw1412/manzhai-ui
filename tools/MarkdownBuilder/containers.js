@@ -10,7 +10,7 @@ module.exports = md => {
       const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
       if (tokens[idx].nesting === 1) {
         let description = m && m.length > 1 ? m[1] : ''
-        if (description) {
+        if (description.trim()) {
           description = `${md.render(description)}`
         }
         const content =

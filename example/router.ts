@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
 import DocsRouter from './docs/.auto/router'
-import ComponentCheckbox from './views/Component/Checkbox.vue'
 import ComponentDropdown from './views/Component/Dropdown.vue'
 import ComponentGrid from './views/Component/Grid.vue'
 import ComponentForm from './views/Component/Form.vue'
@@ -39,11 +38,6 @@ export default new Router({
       component: Component,
       children: [
         ...DocsRouter,
-        {
-          path: 'checkbox',
-          name: 'ComponentCheckbox',
-          component: ComponentCheckbox
-        },
         {
           path: 'dropdown',
           name: 'ComponentDropdown',

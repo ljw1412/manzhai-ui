@@ -6,7 +6,7 @@
 
 基础按钮的用法。
 
-:::demo 使用`type`、`outlined`、`flat`、`round`、`circle`、`icon`属性来定义 Button 的样式。<br>你可以通过`disabled`属性来修改按钮的禁用状态。
+:::demo 使用`type`、`outlined`、`flat`、`round`、`circle`、`icon`属性来定义 Button 的样式。你可以通过`disabled`属性来修改按钮的禁用状态。
 
 ```html
 <div>

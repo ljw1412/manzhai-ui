@@ -1,6 +1,7 @@
 import ComponentButton from './Button.vue'
 import ComponentCard from './Card.vue'
 import ComponentCell from './Cell.vue'
+import ComponentCheckbox from './Checkbox.vue'
 
 export default [
   {
@@ -17,5 +18,10 @@ export default [
     path: 'cell',
     name: 'ComponentCell',
     component: ComponentCell
+  },
+  {
+    path: 'checkbox',
+    name: 'ComponentCheckbox',
+    component: ComponentCheckbox
   }
 ]

@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-01-04 13:19</div>
+    <div class="update-datetime">文档更新时间：2020-01-04 14:23</div>
     <h2 id="button-an-niu"><a class="header-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa"><a class="header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -64,7 +64,7 @@
     </mz-button>
   </div>
 </div></button-demo1></template>
-        <template #description><p>使用<code>type</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。<br>你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
+        <template #description><p>使用<code>type</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-button&gt;默认按钮&lt;/mz-button&gt;
