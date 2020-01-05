@@ -4,8 +4,10 @@ import { InstallationOptions } from '../types/index'
 import { getCurrentTheme } from './utils/theme'
 import mzEventBus from './bus'
 import * as directives from './directives'
+import Anchor from '../packages/Anchor/index'
 import Button from '../packages/Button/index'
 import Card from '../packages/Card/index'
+import Catalogue from '../packages/Catalogue/index'
 import Cell from '../packages/Cell/index'
 import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import CellGroup from '../packages/CellGroup/index'
@@ -41,8 +43,10 @@ import Table from '../packages/Table/index'
 
 const components: VueConstructor[] = [
   // inject component
+  Anchor,
   Button,
   Card,
+  Catalogue,
   Cell,
   CellGroup,
   Checkbox,
@@ -150,8 +154,10 @@ const install = function(
 export default {
   install,
   // inject component
+  Anchor,
   Button,
   Card,
+  Catalogue,
   Cell,
   CellGroup,
   Checkbox,

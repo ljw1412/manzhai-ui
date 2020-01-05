@@ -27,7 +27,7 @@
     position: relative;
     font-weight: 400;
     color: var(--color-text-primary);
-    &:hover .header-anchor {
+    &:hover .mz-header-anchor {
       opacity: 0.4;
     }
   }
@@ -47,7 +47,7 @@
     margin: 20px 0 12px;
   }
 
-  .header-anchor {
+  .mz-header-anchor {
     position: absolute;
     left: -20px;
     opacity: 0;
@@ -88,7 +88,7 @@
 }
 
 :root[data-theme='dark'] {
-  #page-component-content .header-anchor {
+  #page-component-content .mz-header-anchor {
     color: #ffffff;
   }
 }

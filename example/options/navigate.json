@@ -3,6 +3,13 @@
     "group": "组件",
     "children": [
       {
+        "label": "Anchor",
+        "text": "锚点",
+        "to": {
+          "name": "ComponentAnchor"
+        }
+      },
+      {
         "label": "Button",
         "text": "按钮",
         "to": {
@@ -14,6 +21,13 @@
         "text": "卡片",
         "to": {
           "name": "ComponentCard"
+        }
+      },
+      {
+        "label": "Catalogue",
+        "text": "目录",
+        "to": {
+          "name": "ComponentCatalogue"
         }
       },
       {

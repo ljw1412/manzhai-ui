@@ -16,7 +16,8 @@ chain.options
       slugify,
       permalink: true,
       permalinkBefore: true,
-      permalinkSpace: false
+      permalinkSpace: false,
+      permalinkClass: 'mz-header-anchor'
     }
   ])
   .end()

@@ -3,6 +3,7 @@
     id="page-component">
     <sidebar></sidebar>
     <div id="page-component-content">
+      <mz-catalogue></mz-catalogue>
       <router-view></router-view>
     </div>
   </div>
