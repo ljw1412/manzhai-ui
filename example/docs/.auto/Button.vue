@@ -1,9 +1,9 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-01-04 14:23</div>
-    <h2 id="button-an-niu"><a class="header-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
+    <div class="update-datetime">文档更新时间：2020-01-05 14:12</div>
+    <h2 id="button-an-niu"><a class="mz-header-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
-<h3 id="ji-ben-yong-fa"><a class="header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
+<h3 id="ji-ben-yong-fa"><a class="mz-header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <p>基础按钮的用法。</p>
 <demo-block>
         <template #example><button-demo1 inline-template><div class="button-demo1">
@@ -132,7 +132,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="an-niu-chi-cun"><a class="header-anchor" href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
+</code></pre></template></demo-block><h3 id="an-niu-chi-cun"><a class="mz-header-anchor" href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
 <p>我们为按钮提供了3种大小尺寸，根据场景选择合适的按钮尺寸。</p>
 <demo-block>
         <template #example><button-demo2 inline-template><div class="button-demo2">
@@ -185,7 +185,7 @@ export default {
   &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="shu-xing"><a class="header-anchor" href="#shu-xing">¶</a>属性</h3>
+</code></pre></template></demo-block><h3 id="shu-xing"><a class="mz-header-anchor" href="#shu-xing">¶</a>属性</h3>
 <table>
 <thead>
 <tr>
@@ -290,7 +290,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao"><a class="header-anchor" href="#cha-cao">¶</a>插槽</h3>
+<h3 id="cha-cao"><a class="mz-header-anchor" href="#cha-cao">¶</a>插槽</h3>
 <table>
 <thead>
 <tr>
