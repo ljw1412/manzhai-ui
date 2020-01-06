@@ -39,10 +39,11 @@ module.exports = class ComponentCreater {
   async createPackage() {
     const replaceList = [
       { key: /##hyphenatename##/g, value: 'mz-' + utils.hyphenate(this.name) },
-      { key: /##name##/g, value: this.name },
+      { key: /##name##/g, value: 'Mz' + this.name },
       { key: /##scoped##/g, value: '' }
     ]
     const vueStr = await utils.replaceTemplate('vue', replaceList)
+    replaceList[1].value = this.name
     const packageEntryStr = await utils.replaceTemplate(
       'packageEntry',
       replaceList
@@ -64,7 +65,7 @@ module.exports = class ComponentCreater {
     componentChildren.push({
       label: this.name,
       text: this.nameCN,
-      to: { name:`Component${this.name}` }
+      to: { name: `Component${this.name}` }
     })
     componentChildren.sort((a, b) => {
       if (a.label > b.label) return 1

@@ -10,7 +10,7 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
-export default class Anchor extends Vue {
+export default class MzAnchor extends Vue {
   @Prop({ type: String, required: true })
   readonly name!: string
   @Prop(String)
