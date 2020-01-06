@@ -94,9 +94,15 @@
 }
 
 @media only screen and (max-width: 992px) {
-  #page-component-content {
-    .update-datetime {
-      opacity: 0;
+  #page-component {
+    .mz-catalogue {
+      display: none;
+    }
+    #page-component-content {
+      padding-right: 30px !important;
+      .update-datetime {
+        opacity: 0;
+      }
     }
   }
 }

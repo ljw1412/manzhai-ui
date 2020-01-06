@@ -2,8 +2,12 @@
   <div class="page-component"
     id="page-component">
     <sidebar></sidebar>
+    <mz-catalogue ref="catalogue"
+      scroll-by-js
+      fixed
+      width="200px"
+      :offset="{top:'80px',right:'20px'}"></mz-catalogue>
     <div id="page-component-content">
-      <mz-catalogue ref="catalogue"></mz-catalogue>
       <router-view></router-view>
     </div>
   </div>
@@ -38,7 +42,9 @@ export default class PageComponent extends Vue {
     position: relative;
     flex-grow: 1;
     padding: 40px 30px;
+    padding-right: 230px;
     overflow: auto;
+    transition: padding-right 0.3s;
   }
 }
 </style>
