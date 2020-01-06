@@ -6,6 +6,7 @@
       scroll-by-js
       fixed
       width="200px"
+      container="#page-component-content"
       :offset="{top:'80px',right:'20px'}"></mz-catalogue>
     <div id="page-component-content">
       <router-view></router-view>

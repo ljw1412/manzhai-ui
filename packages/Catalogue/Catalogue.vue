@@ -24,8 +24,32 @@ export default class MzCatalogue extends BaseAttribute {
   readonly scrollByJs!: boolean
   @Prop({ type: [Number, String], default: 1000 })
   readonly zIndex!: number | string
+  @Prop({ type: String, default: () => '' })
+  readonly container!: string
 
-  data: FlatCatalogueItem[] = []
+  view: HTMLElement | Window = window
+  anchorList: Element[] = []
+
+  get flatCatalogueItem() {
+    if (!this.anchorList) return []
+    return this.anchorList.map(item => {
+      const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
+      const parentEl = item.parentElement
+      const level =
+        (parentEl && parseInt(parentEl.tagName.replace(/H/g, ''))) || -1
+      return { title, level, target: (parentEl && parentEl.id) || '' }
+    })
+  }
+
+  get catalogue() {
+    const list: CatalogueItem[] = []
+    this.flatCatalogueItem
+      .filter(item => item.level !== -1)
+      .forEach(item => {
+        this.addLevelItem(list, item)
+      })
+    return list
+  }
 
   get catalogueOffset() {
     const offset: Record<string, any> = {}
@@ -64,6 +88,7 @@ export default class MzCatalogue extends BaseAttribute {
     ))
   }
 
+  // 滚动到目标位置
   scrollToTarget(target: string) {
     if (target) {
       if (this.scrollByJs) {
@@ -80,16 +105,7 @@ export default class MzCatalogue extends BaseAttribute {
     }
   }
 
-  get catalogue() {
-    const list: CatalogueItem[] = []
-    this.data
-      .filter(item => item.level !== -1)
-      .forEach(item => {
-        this.addLevelItem(list, item)
-      })
-    return list
-  }
-
+  // 递归整理目录树状结构
   addLevelItem(list: CatalogueItem[], item: CatalogueItem) {
     const lastIndex = list.length - 1
     if (list.length && list[lastIndex].level < item.level) {
@@ -101,20 +117,41 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   initCatalogue() {
-    this.data = []
-    console.log(document.querySelectorAll('.mz-header-anchor'))
-    document.querySelectorAll('.mz-header-anchor').forEach(item => {
-      const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
-      const parentEl = item.parentElement
-      const level =
-        (parentEl && parseInt(parentEl.tagName.replace(/H/g, ''))) || -1
-      this.data.push({ title, level, target: (parentEl && parentEl.id) || '' })
-    })
-    console.log(this.data)
+    this.anchorList = Array.from(document.querySelectorAll('.mz-header-anchor'))
+  }
+
+  onScroll(e: Event) {
+    const screenHeight =
+      this.view === window
+        ? document.body.offsetHeight
+        : (this.view as HTMLElement).offsetHeight
+    let i = 0
+    for (; i < this.anchorList.length; i++) {
+      const el = this.anchorList[i]
+      const rect = el.getBoundingClientRect()
+      if (
+        rect.top + rect.height >= 0 &&
+        rect.top + rect.height <= screenHeight
+      ) {
+        console.log(el, rect)
+        break
+      }
+    }
+    console.log(i)
   }
 
   mounted() {
     this.$nextTick(this.initCatalogue)
+    this.$nextTick(() => {
+      if (this.container) {
+        this.view = document.querySelector(this.container) as HTMLElement
+      }
+      this.view.addEventListener('scroll', this.onScroll)
+    })
+  }
+
+  beforeDestroy() {
+    this.view.removeEventListener('scroll', this.onScroll)
   }
 }
 </script>
