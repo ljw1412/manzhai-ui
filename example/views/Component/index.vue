@@ -3,22 +3,31 @@
     id="page-component">
     <sidebar></sidebar>
     <div id="page-component-content">
-      <mz-catalogue></mz-catalogue>
+      <mz-catalogue ref="catalogue"></mz-catalogue>
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch, Ref } from 'vue-property-decorator'
 import Sidebar from './components/Sidebar.vue'
+import MzCatalogue from '../../../packages/Catalogue'
 
 @Component({
   components: {
     Sidebar
   }
 })
-export default class PageComponent extends Vue {}
+export default class PageComponent extends Vue {
+  @Ref('catalogue')
+  readonly catalogueRef!: MzCatalogue
+
+  @Watch('$route.name')
+  onRouteNameChange(val: string) {
+    this.$nextTick(this.catalogueRef.initCatalogue)
+  }
+}
 </script>
 
 <style lang="scss" scoped>
