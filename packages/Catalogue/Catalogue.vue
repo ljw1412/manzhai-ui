@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import { typeOf } from '../../src/utils/assist'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
@@ -33,11 +33,16 @@ export default class MzCatalogue extends BaseAttribute {
   readonly flat!: boolean
   @Prop(Boolean)
   readonly manual!: boolean
+  @Prop(Boolean)
+  readonly sidebar!: boolean
+  @Ref('catalogue')
+  readonly catalogueRef!: HTMLDivElement
 
   view: HTMLElement | Window = window
   viewOffsetTop = 0
   anchorList: Element[] = []
   activeIndex = 0
+  arrowTop = 0
 
   get flatCatalogue() {
     if (!this.anchorList) return []
@@ -83,15 +88,31 @@ export default class MzCatalogue extends BaseAttribute {
 
   render(h: CreateElement) {
     const data = {
-      class: ['mz-catalogue'],
-      style: { zIndex: this.zIndex, ...this.baseStyles }
+      class: [
+        'mz-catalogue',
+        {
+          'mz-catalogue--fixed': this.fixed,
+          'mz-catalogue--sidebar': this.sidebar
+        }
+      ],
+      style: { zIndex: this.zIndex, ...this.baseStyles },
+      ref: 'catalogue'
     }
     if (this.fixed) {
-      data.class.push('mz-catalogue--fixed')
       Object.assign(data.style, this.catalogueOffset)
     }
     return (
       <div {...data}>
+        {this.sidebar && (
+          <div class="mz-catalogue__sidebar">
+            <em class="circle top"></em>
+            <em class="circle bottom"></em>
+            <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
+              <div class="square"></div>
+              <div class="triangle"></div>
+            </div>
+          </div>
+        )}
         {this.renderItem(this.flat ? this.flatCatalogue : this.catalogue, 1)}
       </div>
     )
@@ -101,7 +122,13 @@ export default class MzCatalogue extends BaseAttribute {
     if (!list) return null
     return list.map(item => {
       const data = {
-        props: { ...item, scrollByJs: this.scrollByJs }
+        props: { ...item, level, scrollByJs: this.scrollByJs },
+        on: {
+          actived: (top: number) => {
+            const catalogueTop = this.catalogueRef.getBoundingClientRect().top
+            this.arrowTop = top - catalogueTop - 10
+          }
+        }
       }
       return (
         <mz-catalogue-item {...data}>
@@ -171,8 +198,65 @@ export default class MzCatalogue extends BaseAttribute {
 
 <style lang="scss">
 .mz-catalogue {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
   &--fixed {
     position: fixed;
+  }
+  &--sidebar {
+    padding: 10px 0 10px 30px;
+  }
+
+  &__sidebar {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    height: 100%;
+    width: 1px;
+    padding: 9px 0;
+    box-sizing: border-box;
+    background-color: var(--color-text-regular);
+    background-clip: content-box;
+    .circle {
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: 9px;
+      height: 9px;
+      left: -4px;
+      border: 2px solid var(--color-text-regular);
+      &.top {
+        top: 0px;
+      }
+      &.bottom {
+        bottom: 0px;
+      }
+    }
+    .arrow {
+      position: absolute;
+      left: -5px;
+      top: 15px;
+      width: 30px;
+      z-index: 9;
+      transition: top 0.3s;
+      .square {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-text-regular);
+      }
+      .triangle {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-right: 0 solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid var(--color-text-regular);
+        // background-color: var(--color-text-primary);
+      }
+    }
   }
 }
 </style>

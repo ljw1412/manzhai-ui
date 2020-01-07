@@ -4,6 +4,7 @@
     <sidebar></sidebar>
     <mz-catalogue ref="catalogue"
       scroll-by-js
+      sidebar
       fixed
       width="200px"
       container="#page-component-content"

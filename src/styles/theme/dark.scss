@@ -92,7 +92,7 @@ $colors: initColors(
         --mz-catalogue-item__font-color: #ffffff;
       }
     }
-    &--active > .mz-catalogue-item__text {
+    &--active {
       --mz-catalogue-item__font-color: #ffffff;
     }
   }

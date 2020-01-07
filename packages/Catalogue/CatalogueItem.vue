@@ -2,14 +2,15 @@
   <div class="mz-catalogue-item"
     :class="{ 'mz-catalogue-item--active': active }"
     :data-level="level">
-    <span class="mz-catalogue-item__text"
+    <span ref="text"
+      class="mz-catalogue-item__text"
       @click="scrollToTarget">{{title}}</span>
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
 
 @Component
 export default class MzCatalogueItem extends Vue {
@@ -23,6 +24,8 @@ export default class MzCatalogueItem extends Vue {
   readonly target!: string
   @Prop(Boolean)
   readonly scrollByJs!: boolean
+  @Ref('text')
+  readonly textRef!: HTMLSpanElement
 
   // 滚动到目标位置
   scrollToTarget() {
@@ -40,6 +43,17 @@ export default class MzCatalogueItem extends Vue {
       }
     }
   }
+
+  @Watch('active', { immediate: true })
+  onActiveChange(active: boolean) {
+    if (active) {
+      this.$nextTick(() => {
+        const rect = this.textRef.getBoundingClientRect()
+        console.dir(this.textRef)
+        this.$emit('actived', rect.top + rect.height / 2)
+      })
+    }
+  }
 }
 </script>
 
@@ -47,6 +61,8 @@ export default class MzCatalogueItem extends Vue {
 .mz-catalogue-item {
   --mz-catalogue-item__font-color: var(--color-text-regular);
   --mz-catalogue-item__font-weight: 400;
+
+  position: relative;
 
   &__text {
     cursor: pointer;
@@ -73,10 +89,24 @@ export default class MzCatalogueItem extends Vue {
     }
   }
 
-  &--active > .mz-catalogue-item__text {
+  &--active {
     --mz-catalogue-item__font-color: var(--color-primary);
     --mz-catalogue-item__font-weight: 500;
-    font-size: 16px;
+    > .mz-catalogue-item__text {
+      font-size: 16px;
+    }
   }
+}
+
+.mz-catalogue--sidebar > .mz-catalogue-item::before {
+  content: '';
+  position: absolute;
+  left: -23px;
+  top: 7px;
+  width: 7px;
+  height: 7px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: var(--mz-catalogue-item__font-color);
 }
 </style>
