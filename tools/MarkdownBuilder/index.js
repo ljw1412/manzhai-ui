@@ -1,5 +1,4 @@
 const md = require('./config')
-const fs = require('fs').promises
 const utils = Object.assign({}, require('./utils'), require('../utils'))
 
 ;(async () => {
@@ -8,11 +7,16 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
   const moduleList = []
   await Promise.all(
     docs.map(async path => {
-      console.log('读取文档:', path)
       const moduleName = utils.getName(path)
-      let doc = md.render(await fs.readFile(path, 'utf-8'))
-      let { content, blocks } = utils.extractTemplate(doc, moduleName)
-      await utils.generateDocVueFile(moduleName, content, blocks)
+      const hash = await utils.getFileHash(path)
+      if (await utils.isFileChange(path, hash)) {
+        console.log('读取文档:', path)
+        let doc = md.render(await utils.readFile(path))
+        let { content, blocks } = utils.extractTemplate(doc, moduleName)
+        await utils.generateDocVueFile(moduleName, content, blocks)
+      } else {
+        console.log('[文档未修改]', moduleName)
+      }
       moduleList.push(moduleName)
     })
   )

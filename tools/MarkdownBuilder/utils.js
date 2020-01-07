@@ -125,9 +125,28 @@ async function generateRouter(moduleList) {
   await utils.saveFiles(basePath, [{ name: 'router.ts', content }])
 }
 
+/**
+ * 是否文件 hash 变化
+ * @param {String} key
+ * @param {String} hash
+ */
+async function isFileChange(key, hash) {
+  const hashMap = require('./!hash.json')
+  if (!hashMap[key] || hashMap[key] !== hash) {
+    hashMap[key] = hash
+    const hashJson = JSON.stringify(hashMap, null, 2)
+    console.log(hashMap)
+
+    await utils.saveFile('./tools/MarkdownBuilder', '!hash.json', hashJson)
+    return true
+  }
+  return false
+}
+
 module.exports = {
   extractTemplate,
   generateDocVueFile,
   generateDocVue,
-  generateRouter
+  generateRouter,
+  isFileChange
 }
