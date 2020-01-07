@@ -87,6 +87,7 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   render(h: CreateElement) {
+    if (!this.flatCatalogue.length) return null
     const data = {
       class: [
         'mz-catalogue',
