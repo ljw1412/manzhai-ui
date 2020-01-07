@@ -196,6 +196,9 @@ export default class MzCatalogue extends BaseAttribute {
       cursor: pointer;
       text-decoration: none;
       color: var(--mz-catalogue__item-font-color);
+      transition: all 0.3s;
+      font-size: 15px;
+      line-height: 20px;
       &:hover {
         color: var(--mz-catalogue__item-font-color--hover);
         opacity: 0.8;
@@ -213,6 +216,7 @@ export default class MzCatalogue extends BaseAttribute {
       > a {
         color: var(--mz-catalogue__item-font-color--active);
         font-weight: 500;
+        font-size: 16px;
       }
     }
   }
