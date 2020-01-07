@@ -83,10 +83,10 @@ async function generateDocVueFile(moduleName, content, blocks) {
     item => `${item.name}: ${item.script || '{}'}`
   )
   const script = `<script>
-  export default {
-    components: { ${componentList.join(', ')} }
-  }
-  </script>`
+export default {
+  components: { ${componentList.join(', ')} }
+}
+</script>`
   await utils.saveFiles(basePath, [
     {
       name: `${moduleName}.vue`,
@@ -130,15 +130,24 @@ async function generateRouter(moduleList) {
  * @param {String} key
  * @param {String} hash
  */
-async function isFileChange(key, hash) {
+function isFileChange(key, hash) {
   const hashMap = require('./!hash.json')
-  if (!hashMap[key] || hashMap[key] !== hash) {
-    hashMap[key] = hash
-    const hashJson = JSON.stringify(hashMap, null, 2)
-    await utils.saveFile('./tools/MarkdownBuilder', '!hash.json', hashJson)
-    return true
-  }
-  return false
+  return !hashMap[key] || hashMap[key] !== hash
+}
+
+/**
+ * 更新hash文件
+ */
+async function updateHash(hashChangeMap = {}) {
+  const hashMap = require('./!hash.json')
+  const keys = Object.keys(hashChangeMap)
+  if (!keys.length) return
+  keys.forEach(key => {
+    hashMap[key] = hashChangeMap[key]
+  })
+  const hashJson = JSON.stringify(hashMap, null, 2)
+  await utils.saveFile('./tools/MarkdownBuilder', '!hash.json', hashJson)
+  utils.logger.success('更新hash文件')
 }
 
 module.exports = {
@@ -146,5 +155,6 @@ module.exports = {
   generateDocVueFile,
   generateDocVue,
   generateRouter,
-  isFileChange
+  isFileChange,
+  updateHash
 }

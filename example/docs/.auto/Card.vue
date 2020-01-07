@@ -1,6 +1,6 @@
 <template>
   <div class="component-card">
-    <div class="update-datetime">文档更新时间：2020-01-05 14:12</div>
+    <div class="update-datetime">文档更新时间：2020-01-07 19:11</div>
     <h2 id="card-qia-pian"><a class="mz-header-anchor" href="#card-qia-pian">¶</a>Card 卡片</h2>
 <p>以卡片显示展示内容。</p>
 <h3 id="qia-pian-hai-ba"><a class="mz-header-anchor" href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>
@@ -173,8 +173,8 @@ export default{
   </div>
 </template>
 <script>
-  export default {
-    components: { CardDemo1: {
+export default {
+  components: { CardDemo1: {
   data(){
     return {
       elevation: 0
@@ -187,5 +187,5 @@ export default{
     }
   }
 }, CardDemo2: {} }
-  }
-  </script>
+}
+</script>

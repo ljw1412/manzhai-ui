@@ -1,6 +1,6 @@
 <template>
   <div class="component-checkbox">
-    <div class="update-datetime">文档更新时间：2020-01-05 14:12</div>
+    <div class="update-datetime">文档更新时间：2020-01-07 19:11</div>
     <h2 id="checkbox-duo-xuan-kuang"><a class="mz-header-anchor" href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
 <p>在数个选项中进行多选</p>
 <h3 id="ji-chu-yong-fa"><a class="mz-header-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -165,8 +165,8 @@ export default{
   </div>
 </template>
 <script>
-  export default {
-    components: { CheckboxDemo1: {
+export default {
+  components: { CheckboxDemo1: {
   data(){
     return {
       value: '关',
@@ -210,5 +210,5 @@ export default{
     }
   }
 } }
-  }
-  </script>
+}
+</script>

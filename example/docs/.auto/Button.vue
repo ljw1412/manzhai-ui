@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-01-05 14:12</div>
+    <div class="update-datetime">文档更新时间：2020-01-07 19:11</div>
     <h2 id="button-an-niu"><a class="mz-header-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-header-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -311,13 +311,13 @@ export default {
   </div>
 </template>
 <script>
-  export default {
-    components: { ButtonDemo1: {
+export default {
+  components: { ButtonDemo1: {
   data() {
     return {
       colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
     }
   }
 }, ButtonDemo2: {} }
-  }
-  </script>
+}
+</script>
