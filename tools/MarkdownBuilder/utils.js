@@ -135,8 +135,6 @@ async function isFileChange(key, hash) {
   if (!hashMap[key] || hashMap[key] !== hash) {
     hashMap[key] = hash
     const hashJson = JSON.stringify(hashMap, null, 2)
-    console.log(hashMap)
-
     await utils.saveFile('./tools/MarkdownBuilder', '!hash.json', hashJson)
     return true
   }

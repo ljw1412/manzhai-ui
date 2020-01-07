@@ -44,13 +44,13 @@ async function readFile(filepath) {
  * @param {String} name
  * @param {String} content
  */
-async function saveFile(dir, name, content, mkdir = true) {
+async function saveFile(dir, name, content, mkdir = true, silent = true) {
   if (mkdir) {
     await fsp.mkdir(dir, { recursive: true })
   }
   const filepath = path.join(dir, name)
   await fsp.writeFile(filepath, content)
-  console.log(`  写入: ${chalk.blue(path.resolve(filepath))}`)
+  if (!silent) console.log(`  写入: ${chalk.blue(path.resolve(filepath))}`)
 }
 
 /**
@@ -62,7 +62,7 @@ async function saveFiles(dir, fileList) {
   await fsp.mkdir(dir, { recursive: true })
   await Promise.all(
     fileList.map(async ({ name, content }) => {
-      await saveFile(dir, name, content, false)
+      await saveFile(dir, name, content, false, false)
     })
   )
 }
