@@ -7,7 +7,7 @@ import * as directives from './directives'
 import Anchor from '../packages/Anchor/index'
 import Button from '../packages/Button/index'
 import Card from '../packages/Card/index'
-import Catalogue from '../packages/Catalogue/index'
+import { Catalogue, CatalogueItem } from '../packages/Catalogue/index'
 import Cell from '../packages/Cell/index'
 import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import CellGroup from '../packages/CellGroup/index'
@@ -47,6 +47,7 @@ const components: VueConstructor[] = [
   Button,
   Card,
   Catalogue,
+  CatalogueItem,
   Cell,
   CellGroup,
   Checkbox,
@@ -158,6 +159,7 @@ export default {
   Button,
   Card,
   Catalogue,
+  CatalogueItem,
   Cell,
   CellGroup,
   Checkbox,

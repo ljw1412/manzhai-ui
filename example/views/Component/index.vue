@@ -17,7 +17,7 @@
 <script lang="ts">
 import { Component, Vue, Watch, Ref } from 'vue-property-decorator'
 import Sidebar from './components/Sidebar.vue'
-import MzCatalogue from '../../../packages/Catalogue'
+import { MzCatalogue } from '../../../packages/Catalogue'
 
 @Component({
   components: {

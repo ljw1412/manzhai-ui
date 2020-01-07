@@ -3,6 +3,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import { typeOf } from '../../src/utils/assist'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
+import { MzCatalogueItem } from './index'
 
 interface CatalogueItem extends FlatCatalogueItem {
   children?: CatalogueItem[]
@@ -30,6 +31,8 @@ export default class MzCatalogue extends BaseAttribute {
   readonly container!: string
   @Prop(Boolean)
   readonly flat!: boolean
+  @Prop(Boolean)
+  readonly manual!: boolean
 
   view: HTMLElement | Window = window
   viewOffsetTop = 0
@@ -96,35 +99,16 @@ export default class MzCatalogue extends BaseAttribute {
 
   renderItem(list: CatalogueItem[] | undefined, level: number) {
     if (!list) return null
-    return list.map(item => (
-      <div
-        class={[
-          'mz-catalogue__item',
-          { 'mz-catalogue__item--active': item.active }
-        ]}
-        data-level={level}
-      >
-        <a on-click={() => this.scrollToTarget(item.target)}>{item.title}</a>
-        {this.renderItem(item.children, level + 1)}
-      </div>
-    ))
-  }
-
-  // 滚动到目标位置
-  scrollToTarget(target: string) {
-    if (target) {
-      if (this.scrollByJs) {
-        const targetEl = document.querySelector(`#${target}`)
-        if (!targetEl) {
-          console.warn('[MzCatalogue]', `目标锚点${target}不存在`)
-          return
-        }
-        // firefox 36+ | chrome 61+ | Opera 48+
-        targetEl.scrollIntoView({ behavior: 'smooth' })
-      } else {
-        location.hash = `#${target}`
+    return list.map(item => {
+      const data = {
+        props: { ...item, scrollByJs: this.scrollByJs }
       }
-    }
+      return (
+        <mz-catalogue-item {...data}>
+          {this.renderItem(item.children, level + 1)}
+        </mz-catalogue-item>
+      )
+    })
   }
 
   // 递归整理目录树状结构
@@ -139,7 +123,11 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   initCatalogue() {
-    this.anchorList = Array.from(document.querySelectorAll('.mz-header-anchor'))
+    if (!this.manual) {
+      this.anchorList = Array.from(
+        document.querySelectorAll('.mz-header-anchor')
+      )
+    }
   }
 
   // 监听滚动，确认当前界面显示的位置
@@ -183,42 +171,8 @@ export default class MzCatalogue extends BaseAttribute {
 
 <style lang="scss">
 .mz-catalogue {
-  --mz-catalogue__item-font-color: var(--color-text-regular);
-  --mz-catalogue__item-font-color--hover: var(--color-primary);
-  --mz-catalogue__item-font-color--active: var(--color-primary);
-
   &--fixed {
     position: fixed;
-  }
-
-  &__item {
-    > a {
-      cursor: pointer;
-      text-decoration: none;
-      color: var(--mz-catalogue__item-font-color);
-      transition: all 0.3s;
-      font-size: 15px;
-      line-height: 20px;
-      &:hover {
-        color: var(--mz-catalogue__item-font-color--hover);
-        opacity: 0.8;
-      }
-    }
-
-    @for $i from 1 through 6 {
-      &[data-level='#{$i}'] {
-        margin: 5px 0;
-        padding-left: 10px * ($i - 1);
-      }
-    }
-
-    &--active {
-      > a {
-        color: var(--mz-catalogue__item-font-color--active);
-        font-weight: 500;
-        font-size: 16px;
-      }
-    }
   }
 }
 </style>
