@@ -87,7 +87,7 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   render(h: CreateElement) {
-    if (!this.flatCatalogue.length) return null
+    if (!this.manual && !this.flatCatalogue.length) return null
     const data = {
       class: [
         'mz-catalogue',
@@ -114,7 +114,9 @@ export default class MzCatalogue extends BaseAttribute {
             </div>
           </div>
         )}
-        {this.renderItem(this.flat ? this.flatCatalogue : this.catalogue, 1)}
+        {this.manual
+          ? this.$slots.default
+          : this.renderItem(this.flat ? this.flatCatalogue : this.catalogue, 1)}
       </div>
     )
   }
