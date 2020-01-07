@@ -84,4 +84,10 @@ $colors: initColors(
       --mz-checkbox__label-font-color: var(--color-text-primary);
     }
   }
+
+  .mz-catalogue {
+    --mz-catalogue__item-font-color: var(--color-text-regular);
+    --mz-catalogue__item-font-color--hover: #ffffff;
+    --mz-catalogue__item-font-color--active: #ffffff;
+  }
 }

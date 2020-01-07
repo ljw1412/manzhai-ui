@@ -44,7 +44,8 @@ export default class PageComponent extends Vue {
     flex-grow: 1;
     padding: 40px 30px;
     padding-right: 230px;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: auto;
     transition: padding-right 0.3s;
   }
 }

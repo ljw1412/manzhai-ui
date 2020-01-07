@@ -9,6 +9,8 @@ interface CatalogueItem extends FlatCatalogueItem {
 }
 
 interface FlatCatalogueItem {
+  index: number
+  active: boolean
   title: string
   level: number
   target: string
@@ -26,24 +28,34 @@ export default class MzCatalogue extends BaseAttribute {
   readonly zIndex!: number | string
   @Prop({ type: String, default: () => '' })
   readonly container!: string
+  @Prop(Boolean)
+  readonly flat!: boolean
 
   view: HTMLElement | Window = window
+  viewOffsetTop = 0
   anchorList: Element[] = []
+  activeIndex = 0
 
-  get flatCatalogueItem() {
+  get flatCatalogue() {
     if (!this.anchorList) return []
-    return this.anchorList.map(item => {
+    return this.anchorList.map((item, index) => {
       const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
       const parentEl = item.parentElement
       const level =
         (parentEl && parseInt(parentEl.tagName.replace(/H/g, ''))) || -1
-      return { title, level, target: (parentEl && parentEl.id) || '' }
+      return {
+        index,
+        title,
+        level,
+        target: (parentEl && parentEl.id) || '',
+        active: index === this.activeIndex
+      }
     })
   }
 
   get catalogue() {
     const list: CatalogueItem[] = []
-    this.flatCatalogueItem
+    this.flatCatalogue
       .filter(item => item.level !== -1)
       .forEach(item => {
         this.addLevelItem(list, item)
@@ -75,13 +87,23 @@ export default class MzCatalogue extends BaseAttribute {
       data.class.push('mz-catalogue--fixed')
       Object.assign(data.style, this.catalogueOffset)
     }
-    return <div {...data}>{this.renderItem(this.catalogue, 1)}</div>
+    return (
+      <div {...data}>
+        {this.renderItem(this.flat ? this.flatCatalogue : this.catalogue, 1)}
+      </div>
+    )
   }
 
   renderItem(list: CatalogueItem[] | undefined, level: number) {
     if (!list) return null
     return list.map(item => (
-      <div class="mz-catalogue__item" data-level={level}>
+      <div
+        class={[
+          'mz-catalogue__item',
+          { 'mz-catalogue__item--active': item.active }
+        ]}
+        data-level={level}
+      >
         <a on-click={() => this.scrollToTarget(item.target)}>{item.title}</a>
         {this.renderItem(item.children, level + 1)}
       </div>
@@ -120,24 +142,21 @@ export default class MzCatalogue extends BaseAttribute {
     this.anchorList = Array.from(document.querySelectorAll('.mz-header-anchor'))
   }
 
+  // 监听滚动，确认当前界面显示的位置
   onScroll(e: Event) {
     const screenHeight =
       this.view === window
         ? document.body.offsetHeight
         : (this.view as HTMLElement).offsetHeight
-    let i = 0
-    for (; i < this.anchorList.length; i++) {
+    for (let i = 0; i < this.anchorList.length; i++) {
       const el = this.anchorList[i]
       const rect = el.getBoundingClientRect()
-      if (
-        rect.top + rect.height >= 0 &&
-        rect.top + rect.height <= screenHeight
-      ) {
-        console.log(el, rect)
+      const rectBottom = rect.bottom - this.viewOffsetTop
+      if (rectBottom >= 0 && rectBottom <= screenHeight) {
+        this.activeIndex = i
         break
       }
     }
-    console.log(i)
   }
 
   mounted() {
@@ -145,6 +164,12 @@ export default class MzCatalogue extends BaseAttribute {
     this.$nextTick(() => {
       if (this.container) {
         this.view = document.querySelector(this.container) as HTMLElement
+        if (!this.view) {
+          console.warn('[MzCatalogue]', `滚动容器${this.container}为找到`)
+          this.view = window
+        } else {
+          this.viewOffsetTop = this.view.offsetTop
+        }
       }
       this.view.addEventListener('scroll', this.onScroll)
     })
@@ -158,17 +183,21 @@ export default class MzCatalogue extends BaseAttribute {
 
 <style lang="scss">
 .mz-catalogue {
+  --mz-catalogue__item-font-color: var(--color-text-regular);
+  --mz-catalogue__item-font-color--hover: var(--color-primary);
+  --mz-catalogue__item-font-color--active: var(--color-primary);
+
   &--fixed {
     position: fixed;
   }
 
   &__item {
-    a {
+    > a {
       cursor: pointer;
       text-decoration: none;
-      color: var(--color-text-primary);
+      color: var(--mz-catalogue__item-font-color);
       &:hover {
-        color: var(--color-primary);
+        color: var(--mz-catalogue__item-font-color--hover);
         opacity: 0.8;
       }
     }
@@ -177,6 +206,13 @@ export default class MzCatalogue extends BaseAttribute {
       &[data-level='#{$i}'] {
         margin: 5px 0;
         padding-left: 10px * ($i - 1);
+      }
+    }
+
+    &--active {
+      > a {
+        color: var(--mz-catalogue__item-font-color--active);
+        font-weight: 500;
       }
     }
   }
