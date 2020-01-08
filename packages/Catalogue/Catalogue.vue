@@ -27,7 +27,7 @@ export default class MzCatalogue extends BaseAttribute {
   readonly scrollByJs!: boolean
   @Prop({ type: [Number, String], default: 1000 })
   readonly zIndex!: number | string
-  @Prop({ type: String, default: () => '' })
+  @Prop({ type: String, default: '' })
   readonly container!: string
   @Prop(Boolean)
   readonly flat!: boolean
@@ -35,6 +35,8 @@ export default class MzCatalogue extends BaseAttribute {
   readonly manual!: boolean
   @Prop(Boolean)
   readonly sidebar!: boolean
+  @Prop({ type: String, default: '.mz-anchor-symbol' })
+  readonly anchorClassName!: string
   @Ref('catalogue')
   readonly catalogueRef!: HTMLDivElement
 
@@ -49,8 +51,14 @@ export default class MzCatalogue extends BaseAttribute {
     return this.anchorList.map((item, index) => {
       const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
       const parentEl = item.parentElement
-      const level =
-        (parentEl && parseInt(parentEl.tagName.replace(/H/g, ''))) || -1
+      let level = -1
+      if (parentEl) {
+        if (parentEl.tagName.toLowerCase() === 'div') {
+          level = parseInt(parentEl.dataset.level || '-1')
+        } else {
+          level = parseInt(parentEl.tagName.replace(/H/g, '')) || -1
+        }
+      }
       return {
         index,
         title,
@@ -155,7 +163,7 @@ export default class MzCatalogue extends BaseAttribute {
   initCatalogue() {
     if (!this.manual) {
       this.anchorList = Array.from(
-        document.querySelectorAll('.mz-header-anchor')
+        document.querySelectorAll(this.anchorClassName)
       )
     }
   }

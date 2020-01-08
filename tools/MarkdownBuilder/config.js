@@ -17,7 +17,7 @@ chain.options
       permalink: true,
       permalinkBefore: true,
       permalinkSpace: false,
-      permalinkClass: 'mz-header-anchor'
+      permalinkClass: 'mz-document-anchor'
     }
   ])
   .end()

@@ -82,10 +82,10 @@ export default class MzCatalogueItem extends Vue {
     --mz-catalogue-item__font-weight: 600;
   }
 
-  @for $i from 1 through 6 {
+  @for $i from 1 through 9 {
     &[data-level='#{$i}'] {
       margin: 5px 0;
-      padding-left: 10px * ($i - 1);
+      padding-left: 10px;
     }
   }
 

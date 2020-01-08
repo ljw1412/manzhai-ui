@@ -1,8 +1,15 @@
 <template>
   <div class="mz-anchor"
     :id="name"
-    :class="{'mz-anchor--invisible': invisible}">
-    <slot>{{label}}</slot>
+    :data-level="level"
+    :class="[
+      `level-${level}`,
+      {'mz-anchor--invisible': invisible}
+    ]">
+    <a :href="`#${name}`"
+      class="mz-anchor-symbol"
+      :class="anchorClass">{{symbol}}</a>
+    <slot>{{title}}</slot>
   </div>
 </template>
 
@@ -15,8 +22,14 @@ export default class MzAnchor extends Vue {
   readonly name!: string
   @Prop(String)
   readonly title!: string
+  @Prop({ type: Number, default: 3 })
+  readonly level!: number
   @Prop(Boolean)
   readonly invisible!: boolean
+  @Prop({ type: String, default: '¶' })
+  readonly symbol!: string
+  @Prop([String])
+  readonly anchorClass!: string
 
   get label() {
     return this.title || this.$slots.default
@@ -26,11 +39,35 @@ export default class MzAnchor extends Vue {
 
 <style lang="scss">
 .mz-anchor {
+  --mz-anchor__symbol-color: var(--color-primary);
+
+  position: relative;
+  color: var(--color-text-primary);
   &--invisible {
     height: 0;
     width: 0;
     overflow: hidden;
     visibility: hidden;
+  }
+
+  $font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
+  @for $i from 1 through 9 {
+    &.level-#{$i} {
+      font-size: nth($font-size-list, $i);
+    }
+  }
+
+  .mz-anchor-symbol {
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    color: var(--mz-anchor__symbol-color);
+  }
+
+  &:hover {
+    .mz-anchor-symbol {
+      opacity: 0.4 !important;
+    }
   }
 }
 </style>

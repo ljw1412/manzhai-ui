@@ -27,7 +27,7 @@
     position: relative;
     font-weight: 400;
     color: var(--color-text-primary);
-    &:hover .mz-header-anchor {
+    &:hover .mz-document-anchor {
       opacity: 0.4;
     }
   }
@@ -47,7 +47,7 @@
     margin: 20px 0 12px;
   }
 
-  .mz-header-anchor {
+  .mz-document-anchor {
     position: absolute;
     left: -20px;
     opacity: 0;
@@ -82,13 +82,14 @@
     }
   }
 
+  @import './anchor.scss';
   @import './button.scss';
   @import './card.scss';
   @import './checkbox.scss';
 }
 
 :root[data-theme='dark'] {
-  #page-component-content .mz-header-anchor {
+  #page-component-content .mz-document-anchor {
     color: #ffffff;
   }
 }
