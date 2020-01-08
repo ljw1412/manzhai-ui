@@ -18,7 +18,11 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 
 @Component
 export default class MzAnchor extends Vue {
-  @Prop({ type: String, required: true })
+  @Prop({
+    type: String,
+    required: true,
+    validator: name => /^[a-zA-Z0-9-_]+$/.test(name)
+  })
   readonly name!: string
   @Prop(String)
   readonly title!: string
@@ -30,10 +34,6 @@ export default class MzAnchor extends Vue {
   readonly symbol!: string
   @Prop([String])
   readonly anchorClass!: string
-
-  get label() {
-    return this.title || this.$slots.default
-  }
 }
 </script>
 

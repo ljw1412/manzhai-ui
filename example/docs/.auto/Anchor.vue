@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-08 14:52</div>
+    <div class="update-datetime">文档更新时间：2020-01-08 17:37</div>
     <h2 id="anchor-mao-dian"><a class="mz-document-anchor" href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -96,7 +96,80 @@
       anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block>
+</code></pre></template></demo-block><h3 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h3>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>(必填)锚点id名称，允许以下字符：[a-z],[A-Z],'-','_'</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>title</td>
+<td>标题</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>level</td>
+<td>层级</td>
+<td>Number</td>
+<td>1-9</td>
+<td>3</td>
+</tr>
+<tr>
+<td>invisible</td>
+<td>是否可见</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>标题前的锚点文字</td>
+<td>String</td>
+<td></td>
+<td>¶</td>
+</tr>
+<tr>
+<td>anchorClass</td>
+<td>锚点文字的附加Class</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h3>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>标题</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
   </div>
 </template>
 <script>

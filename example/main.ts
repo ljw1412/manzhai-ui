@@ -1,11 +1,12 @@
-import './styles/global.scss'
-import './styles/theme/index.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import manzhaiUI from '../src/index'
 import DemoBlock from './components/DemoBlock.vue'
 import hljs from 'highlight.js'
+
+import './styles/global.scss'
+import './styles/theme/index.scss'
 
 Vue.use(manzhaiUI)
 
