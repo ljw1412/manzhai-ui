@@ -191,8 +191,6 @@ export default class MzCatalogue extends BaseAttribute {
       const rect = el.getBoundingClientRect()
       const rectBottom = rect.bottom - this.viewOffsetTop
       if (rectBottom >= 0 && rectBottom <= screenHeight) {
-        console.dir(el)
-
         this.activeIndex = i
         break
       }
