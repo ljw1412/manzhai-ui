@@ -39,29 +39,28 @@
 <mz-row>
   <mz-col :span="12" 
     id="demo-anchor-scroll-container" 
-    style="height:300px;overflow-y:auto;">
+    style="height: 300px; overflow-y: auto;">
     <mz-anchor name="anchor-1" anchorClass="demo-anchor"
       title="不可见锚点-1" :level="4" invisible></mz-anchor>
-    <div style="height:200px"></div>
+    <div style="height: 200px;"></div>
     <mz-anchor name="anchor-2" anchorClass="demo-anchor"
       title="锚点-2" :level="4"></mz-anchor>
-    <div style="height:200px"></div>
+    <div style="height: 200px;"></div>
     <mz-anchor name="anchor-3" anchorClass="demo-anchor"
       title="锚点-3" :level="4"></mz-anchor>
-    <div style="height:200px"></div>
+    <div style="height: 200px;"></div>
     <mz-anchor name="anchor-4" anchorClass="demo-anchor"
       title="锚点-4" :level="4"></mz-anchor>
-    <div style="height:200px"></div>
+    <div style="height: 200px;"></div>
     <mz-anchor name="anchor-5" anchorClass="demo-anchor"
       title="锚点-5" :level="4"></mz-anchor>
-    <div style="height:200px"></div>
+    <div style="height: 200px;"></div>
   </mz-col>
+
   <mz-col :span="12">
     <mz-catalogue container="#demo-anchor-scroll-container"  
       anchorClassName=".demo-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
-
-
 ```
 :::

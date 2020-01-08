@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-08 13:41</div>
+    <div class="update-datetime">文档更新时间：2020-01-08 14:50</div>
     <h2 id="anchor-mao-dian"><a class="mz-document-anchor" href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -44,23 +44,24 @@
   <mz-row>
     <mz-col :span="12" 
       id="demo-anchor-scroll-container" 
-      style="height:300px;overflow-y:auto;">
+      style="height: 300px; overflow-y: auto;">
       <mz-anchor name="anchor-1" anchorClass="demo-anchor"
         title="不可见锚点-1" :level="4" invisible></mz-anchor>
-      <div style="height:200px"></div>
+      <div style="height: 200px;"></div>
       <mz-anchor name="anchor-2" anchorClass="demo-anchor"
         title="锚点-2" :level="4"></mz-anchor>
-      <div style="height:200px"></div>
+      <div style="height: 200px;"></div>
       <mz-anchor name="anchor-3" anchorClass="demo-anchor"
         title="锚点-3" :level="4"></mz-anchor>
-      <div style="height:200px"></div>
+      <div style="height: 200px;"></div>
       <mz-anchor name="anchor-4" anchorClass="demo-anchor"
         title="锚点-4" :level="4"></mz-anchor>
-      <div style="height:200px"></div>
+      <div style="height: 200px;"></div>
       <mz-anchor name="anchor-5" anchorClass="demo-anchor"
         title="锚点-5" :level="4"></mz-anchor>
-      <div style="height:200px"></div>
+      <div style="height: 200px;"></div>
     </mz-col>
+  
     <mz-col :span="12">
       <mz-catalogue container="#demo-anchor-scroll-container"  
         anchorClassName=".demo-anchor"></mz-catalogue>
@@ -72,23 +73,24 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
   &lt;mz-col :span=&quot;12&quot; 
     id=&quot;demo-anchor-scroll-container&quot; 
-    style=&quot;height:300px;overflow-y:auto;&quot;&gt;
+    style=&quot;height: 300px; overflow-y: auto;&quot;&gt;
     &lt;mz-anchor name=&quot;anchor-1&quot; anchorClass=&quot;demo-anchor&quot;
       title=&quot;不可见锚点-1&quot; :level=&quot;4&quot; invisible&gt;&lt;/mz-anchor&gt;
-    &lt;div style=&quot;height:200px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;height: 200px;&quot;&gt;&lt;/div&gt;
     &lt;mz-anchor name=&quot;anchor-2&quot; anchorClass=&quot;demo-anchor&quot;
       title=&quot;锚点-2&quot; :level=&quot;4&quot;&gt;&lt;/mz-anchor&gt;
-    &lt;div style=&quot;height:200px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;height: 200px;&quot;&gt;&lt;/div&gt;
     &lt;mz-anchor name=&quot;anchor-3&quot; anchorClass=&quot;demo-anchor&quot;
       title=&quot;锚点-3&quot; :level=&quot;4&quot;&gt;&lt;/mz-anchor&gt;
-    &lt;div style=&quot;height:200px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;height: 200px;&quot;&gt;&lt;/div&gt;
     &lt;mz-anchor name=&quot;anchor-4&quot; anchorClass=&quot;demo-anchor&quot;
       title=&quot;锚点-4&quot; :level=&quot;4&quot;&gt;&lt;/mz-anchor&gt;
-    &lt;div style=&quot;height:200px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;height: 200px;&quot;&gt;&lt;/div&gt;
     &lt;mz-anchor name=&quot;anchor-5&quot; anchorClass=&quot;demo-anchor&quot;
       title=&quot;锚点-5&quot; :level=&quot;4&quot;&gt;&lt;/mz-anchor&gt;
-    &lt;div style=&quot;height:200px&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;height: 200px;&quot;&gt;&lt;/div&gt;
   &lt;/mz-col&gt;
+
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue container=&quot;#demo-anchor-scroll-container&quot;  
       anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
