@@ -41,7 +41,6 @@ export default class MzCatalogue extends BaseAttribute {
   readonly catalogueRef!: HTMLDivElement
 
   view: HTMLElement | Window = window
-  viewOffsetTop = 0
   anchorList: Element[] = []
   activeIndex = 0
   arrowTop = 0
@@ -170,31 +169,33 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   // 获取滚动父容器的顶部
-  getViewTop() {
+  getViewInfo() {
     if (this.view === window) {
-      this.viewOffsetTop = 0
-      return
+      return { top: 0, height: document.body.offsetHeight }
     }
     const rect = (this.view as Element).getBoundingClientRect()
-    this.viewOffsetTop = rect.top
+    return { top: rect.top, height: rect.height }
   }
 
   // 监听滚动，确认当前界面显示的位置
   onScroll(e: Event) {
-    this.getViewTop()
-    const screenHeight =
-      this.view === window
-        ? document.body.offsetHeight
-        : (this.view as HTMLElement).offsetHeight
-    for (let i = 0; i < this.anchorList.length; i++) {
-      const el = this.anchorList[i]
+    const viewInfo = this.getViewInfo()
+    const list = this.anchorList.map(el => {
       const rect = el.getBoundingClientRect()
-      const rectBottom = rect.bottom - this.viewOffsetTop
-      if (rectBottom >= 0 && rectBottom <= screenHeight) {
-        this.activeIndex = i
-        break
+      const rectBottom = rect.bottom - viewInfo.top
+      return rectBottom
+    })
+    let index = list.findIndex(b => b >= 0 && b <= viewInfo.height)
+    if (!~index) {
+      if (list.every(b => b < 0)) {
+        index = list.length - 1
+      } else if (list.every(b => b >= 0)) {
+        index = 0
+      } else {
+        index = this.activeIndex
       }
     }
+    this.activeIndex = index
   }
 
   mounted() {
@@ -206,7 +207,7 @@ export default class MzCatalogue extends BaseAttribute {
           console.warn('[MzCatalogue]', `滚动容器${this.container}为找到`)
           this.view = window
         }
-        this.getViewTop()
+        this.getViewInfo()
       }
       this.view.addEventListener('scroll', this.onScroll)
     })
