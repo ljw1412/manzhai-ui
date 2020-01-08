@@ -1,9 +1,9 @@
 <template>
   <div class="component-checkbox">
-    <div class="update-datetime">文档更新时间：2020-01-07 19:11</div>
-    <h2 id="checkbox-duo-xuan-kuang"><a class="mz-header-anchor" href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
+    <div class="update-datetime">文档更新时间：2020-01-08 12:37</div>
+    <h2 id="checkbox-duo-xuan-kuang"><a class="mz-document-anchor" href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
 <p>在数个选项中进行多选</p>
-<h3 id="ji-chu-yong-fa"><a class="mz-header-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>单独使用可以表示两种状态</p>
 <demo-block>
         <template #example><checkbox-demo1 inline-template><div class="checkbox-demo1">
@@ -39,7 +39,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong-zhuang-tai"><a class="mz-header-anchor" href="#jin-yong-zhuang-tai">¶</a>禁用状态</h3>
+</code></pre></template></demo-block><h3 id="jin-yong-zhuang-tai"><a class="mz-document-anchor" href="#jin-yong-zhuang-tai">¶</a>禁用状态</h3>
 <p>多选框不可用状态。</p>
 <demo-block>
         <template #example><checkbox-demo2 inline-template><div class="checkbox-demo2">
@@ -65,7 +65,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="duo-xuan-kuang-zu"><a class="mz-header-anchor" href="#duo-xuan-kuang-zu">¶</a>多选框组</h3>
+</code></pre></template></demo-block><h3 id="duo-xuan-kuang-zu"><a class="mz-document-anchor" href="#duo-xuan-kuang-zu">¶</a>多选框组</h3>
 <p>适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。</p>
 <demo-block>
         <template #example><checkbox-demo3 inline-template><div class="checkbox-demo3">
@@ -102,7 +102,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-que-ding-zhuang-tai"><a class="mz-header-anchor" href="#bu-que-ding-zhuang-tai">¶</a>不确定状态</h3>
+</code></pre></template></demo-block><h3 id="bu-que-ding-zhuang-tai"><a class="mz-document-anchor" href="#bu-que-ding-zhuang-tai">¶</a>不确定状态</h3>
 <p><code>indeterminate</code> 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果</p>
 <demo-block>
         <template #example><checkbox-demo4 inline-template><div class="checkbox-demo4">

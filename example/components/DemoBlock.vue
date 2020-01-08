@@ -62,6 +62,7 @@ export default class DemoBlock extends Vue {
     border: 1px solid var(--color-border-base);
     border-radius: 5px;
     background-color: var(--demo-block__description-background-color);
+    margin-bottom: 10px;
     p {
       margin: 0 !important;
       line-height: 2em !important;
@@ -77,7 +78,6 @@ export default class DemoBlock extends Vue {
   }
 
   .highlight {
-    margin-top: 10px;
     ::selection {
       background-color: var(--demo-block__selection-color);
     }
