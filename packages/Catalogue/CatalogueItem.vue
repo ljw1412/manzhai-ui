@@ -42,6 +42,7 @@ export default class MzCatalogueItem extends Vue {
         location.hash = `#${this.target}`
       }
     }
+    this.$emit('click')
   }
 
   @Watch('active', { immediate: true })

@@ -73,8 +73,8 @@
 | title | 标题 | String |||
 |level|层级|Number|1-9|3|
 |invisible|是否可见|Boolean|||
-|symbol|标题前的锚点文字|String||¶|
-|anchorClass|锚点文字的附加Class|String|||
+|symbol|标题前的锚点符号|String||¶|
+|anchorClass|锚点符号的附加Class|String|||
 
 
 ### 插槽

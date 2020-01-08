@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-08 17:37</div>
+    <div class="update-datetime">文档更新时间：2020-01-08 17:43</div>
     <h2 id="anchor-mao-dian"><a class="mz-document-anchor" href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -138,14 +138,14 @@
 </tr>
 <tr>
 <td>symbol</td>
-<td>标题前的锚点文字</td>
+<td>标题前的锚点符号</td>
 <td>String</td>
 <td></td>
 <td>¶</td>
 </tr>
 <tr>
 <td>anchorClass</td>
-<td>锚点文字的附加Class</td>
+<td>锚点符号的附加Class</td>
 <td>String</td>
 <td></td>
 <td></td>
