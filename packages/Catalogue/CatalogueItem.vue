@@ -49,7 +49,6 @@ export default class MzCatalogueItem extends Vue {
     if (active) {
       this.$nextTick(() => {
         const rect = this.textRef.getBoundingClientRect()
-        console.dir(this.textRef)
         this.$emit('actived', rect.top + rect.height / 2)
       })
     }

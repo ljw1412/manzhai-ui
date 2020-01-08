@@ -160,6 +160,7 @@ export default class MzCatalogue extends BaseAttribute {
     }
   }
 
+  // 非手动模式下，初始化目录
   initCatalogue() {
     if (!this.manual) {
       this.anchorList = Array.from(
@@ -168,8 +169,19 @@ export default class MzCatalogue extends BaseAttribute {
     }
   }
 
+  // 获取滚动父容器的顶部
+  getViewTop() {
+    if (this.view === window) {
+      this.viewOffsetTop = 0
+      return
+    }
+    const rect = (this.view as Element).getBoundingClientRect()
+    this.viewOffsetTop = rect.top
+  }
+
   // 监听滚动，确认当前界面显示的位置
   onScroll(e: Event) {
+    this.getViewTop()
     const screenHeight =
       this.view === window
         ? document.body.offsetHeight
@@ -179,6 +191,8 @@ export default class MzCatalogue extends BaseAttribute {
       const rect = el.getBoundingClientRect()
       const rectBottom = rect.bottom - this.viewOffsetTop
       if (rectBottom >= 0 && rectBottom <= screenHeight) {
+        console.dir(el)
+
         this.activeIndex = i
         break
       }
@@ -193,9 +207,8 @@ export default class MzCatalogue extends BaseAttribute {
         if (!this.view) {
           console.warn('[MzCatalogue]', `滚动容器${this.container}为找到`)
           this.view = window
-        } else {
-          this.viewOffsetTop = this.view.offsetTop
         }
+        this.getViewTop()
       }
       this.view.addEventListener('scroll', this.onScroll)
     })
