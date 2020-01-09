@@ -98,15 +98,24 @@ export default class MzCatalogueItem extends Vue {
   }
 }
 
-.mz-catalogue--sidebar > .mz-catalogue-item::before {
-  content: '';
-  position: absolute;
-  left: -23px;
-  top: 7px;
-  width: 7px;
-  height: 7px;
-  box-sizing: border-box;
-  border-radius: 50%;
-  background-color: var(--mz-catalogue-item__font-color);
+.mz-catalogue--sidebar > .mz-catalogue-item {
+  &::before {
+    content: '';
+    position: absolute;
+    left: -23px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: var(
+      --mz-catalogue__sidebar-point-color,
+      var(--mz-catalogue__sidebar-color)
+    );
+    transition: all 0.3s;
+  }
+  &--active::before {
+    background-color: var(--mz-catalogue-item__font-color);
+  }
 }
 </style>

@@ -33,20 +33,26 @@ export default class MzCatalogue extends BaseAttribute {
   readonly flat!: boolean
   @Prop(Boolean)
   readonly manual!: boolean
-  @Prop(Boolean)
-  readonly sidebar!: boolean
   @Prop({ type: String, default: '.mz-anchor-symbol' })
   readonly anchorClassName!: string
+  @Prop(Boolean)
+  readonly sidebar!: boolean
+  @Prop(String)
+  readonly sidebarColor!: string
+  @Prop(String)
+  readonly sidebarPointColor!: string
+  @Prop(String)
+  readonly sidebarArrowColor!: string
   @Ref('catalogue')
   readonly catalogueRef!: HTMLDivElement
 
   view: HTMLElement | Window = window
   anchorList: Element[] = []
-  activeIndex = 0
+  activeIndex = -1
   arrowTop = 0
 
   get flatCatalogue() {
-    if (!this.anchorList) return []
+    if (!this.anchorList.length) return []
     return this.anchorList.map((item, index) => {
       const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
       const parentEl = item.parentElement
@@ -103,7 +109,13 @@ export default class MzCatalogue extends BaseAttribute {
           'mz-catalogue--sidebar': this.sidebar
         }
       ],
-      style: { zIndex: this.zIndex, ...this.baseStyles },
+      style: {
+        zIndex: this.zIndex,
+        ...this.baseStyles,
+        '--mz-catalogue__sidebar-color': this.sidebarColor,
+        '--mz-catalogue__sidebar-point-color': this.sidebarPointColor,
+        '--mz-catalogue__sidebar-arrow-color': this.sidebarArrowColor
+      },
       ref: 'catalogue'
     }
     if (this.fixed) {
@@ -115,10 +127,12 @@ export default class MzCatalogue extends BaseAttribute {
           <div class="mz-catalogue__sidebar">
             <em class="circle top"></em>
             <em class="circle bottom"></em>
-            <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
-              <div class="square"></div>
-              <div class="triangle"></div>
-            </div>
+            {this.activeIndex !== -1 && (
+              <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
+                <div class="square"></div>
+                <div class="triangle"></div>
+              </div>
+            )}
           </div>
         )}
         {this.manual
@@ -165,6 +179,7 @@ export default class MzCatalogue extends BaseAttribute {
       this.anchorList = Array.from(
         document.querySelectorAll(this.anchorClassName)
       )
+      this.updateActive()
     }
   }
 
@@ -178,7 +193,8 @@ export default class MzCatalogue extends BaseAttribute {
   }
 
   // 监听滚动，确认当前界面显示的位置
-  onScroll(e: Event) {
+  updateActive() {
+    if (!this.anchorList.length) return
     const viewInfo = this.getViewInfo()
     const list = this.anchorList.map(el => {
       const rect = el.getBoundingClientRect()
@@ -209,18 +225,20 @@ export default class MzCatalogue extends BaseAttribute {
         }
         this.getViewInfo()
       }
-      this.view.addEventListener('scroll', this.onScroll)
+      this.view.addEventListener('scroll', this.updateActive)
     })
   }
 
   beforeDestroy() {
-    this.view.removeEventListener('scroll', this.onScroll)
+    this.view.removeEventListener('scroll', this.updateActive)
   }
 }
 </script>
 
 <style lang="scss">
 .mz-catalogue {
+  --mz-catalogue__sidebar-color: var(--color-text-regular);
+
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
@@ -236,19 +254,19 @@ export default class MzCatalogue extends BaseAttribute {
     top: 0;
     left: 10px;
     height: 100%;
-    width: 1px;
+    width: 2px;
     padding: 9px 0;
     box-sizing: border-box;
-    background-color: var(--color-text-regular);
+    background-color: var(--mz-catalogue__sidebar-color);
     background-clip: content-box;
     .circle {
       position: absolute;
       box-sizing: border-box;
       border-radius: 50%;
-      width: 9px;
-      height: 9px;
+      width: 10px;
+      height: 10px;
       left: -4px;
-      border: 2px solid var(--color-text-regular);
+      border: 2px solid var(--mz-catalogue__sidebar-color);
       &.top {
         top: 0px;
       }
@@ -262,12 +280,15 @@ export default class MzCatalogue extends BaseAttribute {
       top: 15px;
       width: 30px;
       z-index: 9;
-      transition: top 0.3s;
+      transition: top 0.2s;
       .square {
         display: inline-block;
         width: 10px;
         height: 10px;
-        background-color: var(--color-text-regular);
+        background-color: var(
+          --mz-catalogue__sidebar-arrow-color,
+          var(--mz-catalogue__sidebar-color)
+        );
       }
       .triangle {
         display: inline-block;
@@ -276,8 +297,11 @@ export default class MzCatalogue extends BaseAttribute {
         border-top: 5px solid transparent;
         border-right: 0 solid transparent;
         border-bottom: 5px solid transparent;
-        border-left: 5px solid var(--color-text-regular);
-        // background-color: var(--color-text-primary);
+        border-left: 5px solid
+          var(
+            --mz-catalogue__sidebar-arrow-color,
+            var(--mz-catalogue__sidebar-color)
+          );
       }
     }
   }
