@@ -6,7 +6,7 @@
 
 提供了25个海拔层级显示卡片的效果。
 
-:::demo `elevation`属性范围为 0-24 之间的整数
+:::demo `elevation`属性范围为 0-24 之间的整数。
 ```html
 <div>
   <mz-button outlined
@@ -47,7 +47,7 @@ export default{
 
 有线条围绕的扁平卡片
 
-:::demo 注意: 当使用`outlined`属性展示线条卡片时，会自动将`elevation`降到0
+:::demo 注意: 当使用`outlined`属性展示线条卡片时，会自动将`elevation`降到0。
 ```html
 <mz-card outlined
   width="80%"

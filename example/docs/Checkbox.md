@@ -1,10 +1,10 @@
 ## Checkbox 多选框
 
-在数个选项中进行多选
+在数个选项中进行多选。
 
 ### 基础用法
 
-单独使用可以表示两种状态
+单独使用可以表示两种状态。
 
 :::demo 定义`v-model`绑定变量，单一的`checkbox`中，默认绑定变量的值会是`Boolean`，选中为`true`。如果你定义了`trueValue`或`falseValue`时，选中返回`trueValue`表示的值。
 
@@ -144,7 +144,7 @@ export default{
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
-|inputValue/v-model|当前值选中值|any| | |
+|inputValue/v-model|当前选中值|any| | |
 |value|当前选项代表的值||||
 |label|选项名称|String| | |
 |name|同原生input的name属性|String|||
@@ -152,8 +152,8 @@ export default{
 |indeterminate|是否不确定状态|Boolean| | |
 |border|是否边框模式|Boolean| | |
 |tabIndex|tab 键控制次序|Number| | |
-|trueValue|选中的值|any| |true|
-|falseValue|未被选中的值|any| |false|
+|trueValue|选中的值|any| ||
+|falseValue|未被选中的值|any| ||
 
 #### 插槽
 

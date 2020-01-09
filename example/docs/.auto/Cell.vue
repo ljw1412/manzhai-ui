@@ -1,6 +1,6 @@
 <template>
   <div class="component-cell">
-    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
     <h2 id="cell-dan-yuan-ge"><a class="mz-document-anchor" href="#cell-dan-yuan-ge">¶</a>Cell 单元格</h2>
 <p>单元列表效果。</p>
 <h3 id="dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao"><a class="mz-document-anchor" href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao">¶</a>单元格组及单元格嵌套</h3>
@@ -28,7 +28,7 @@
     </mz-cell>
   </mz-cell-group>
 </div></cell-demo1></template>
-        <template #description><p>单元格允许多层嵌套</p>
+        <template #description><p>单元格允许多层嵌套。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-cell-group
   title=&quot;单元格组&quot;&gt;
@@ -66,7 +66,7 @@
     </mz-cell>
   </mz-cell-group>
 </div></cell-demo2></template>
-        <template #description><p><code>type=&quot;card&quot;</code>切换卡片样式</p>
+        <template #description><p><code>type=&quot;card&quot;</code>切换卡片样式。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-cell-group
   title=&quot;单元格组&quot;
@@ -105,7 +105,7 @@
     </mz-cell>
   </mz-cell-group>
 </div></cell-demo3></template>
-        <template #description><p>cell上的<code>size</code>来调整switch大小</p>
+        <template #description><p>cell上的<code>size</code>来调整switch大小。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-cell-group
   title=&quot;开关单元格组&quot;&gt;

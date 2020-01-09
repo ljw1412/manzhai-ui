@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
     <h2 id="catalogue-mu-lu"><a class="mz-document-anchor" href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
 <p>用于列出页面目录。</p>
 <h3 id="ji-chu-yong-fa"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -36,7 +36,7 @@
   &lt;/mz-catalogue-item&gt;
 &lt;/mz-catalogue&gt;
 </code></pre></template></demo-block><h3 id="mao-dian-mu-lu"><a class="mz-document-anchor" href="#mao-dian-mu-lu">¶</a>锚点目录</h3>
-<p>有位置跳转功能的目录</p>
+<p>有位置跳转功能的目录。</p>
 <demo-block>
         <template #example><catalogue-demo2 inline-template><div class="catalogue-demo2">
   <mz-row>
@@ -87,7 +87,7 @@
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="gu-ding-ding-wei-mu-lu"><a class="mz-document-anchor" href="#gu-ding-ding-wei-mu-lu">¶</a>固定定位目录</h3>
-<p>将目录固定在某一个位置</p>
+<p>将目录固定在某一个位置。</p>
 <demo-block>
         <template #example><catalogue-demo3 inline-template><div class="catalogue-demo3">
   <div>

@@ -1,10 +1,10 @@
 <template>
   <div class="component-checkbox">
-    <div class="update-datetime">文档更新时间：2020-01-09 11:48</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
     <h2 id="checkbox-duo-xuan-kuang"><a class="mz-document-anchor" href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
-<p>在数个选项中进行多选</p>
+<p>在数个选项中进行多选。</p>
 <h3 id="ji-chu-yong-fa"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
-<p>单独使用可以表示两种状态</p>
+<p>单独使用可以表示两种状态。</p>
 <demo-block>
         <template #example><checkbox-demo1 inline-template><div class="checkbox-demo1">
   <div>
@@ -176,7 +176,7 @@ export default{
 <tbody>
 <tr>
 <td>inputValue/v-model</td>
-<td>当前值选中值</td>
+<td>当前选中值</td>
 <td>any</td>
 <td></td>
 <td></td>
@@ -235,14 +235,14 @@ export default{
 <td>选中的值</td>
 <td>any</td>
 <td></td>
-<td>true</td>
+<td></td>
 </tr>
 <tr>
 <td>falseValue</td>
 <td>未被选中的值</td>
 <td>any</td>
 <td></td>
-<td>false</td>
+<td></td>
 </tr>
 </tbody>
 </table>

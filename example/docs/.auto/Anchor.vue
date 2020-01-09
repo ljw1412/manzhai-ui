@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
     <h2 id="anchor-mao-dian"><a class="mz-document-anchor" href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -29,7 +29,7 @@
 &lt;mz-anchor name=&quot;a-anchor-8&quot; title=&quot;锚点-8&quot; :level=&quot;8&quot;&gt;&lt;/mz-anchor&gt;
 &lt;mz-anchor name=&quot;a-anchor-9&quot; title=&quot;锚点-9&quot; :level=&quot;9&quot;&gt;&lt;/mz-anchor&gt;
 </code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian">¶</a>隐蔽式锚点</h3>
-<p>不可见的锚点</p>
+<p>不可见的锚点。</p>
 <demo-block>
         <template #example><anchor-demo2 inline-template><div class="anchor-demo2">
   <mz-anchor name="anchor-invisible" title="不可见锚点-1" :level="4" invisible></mz-anchor>

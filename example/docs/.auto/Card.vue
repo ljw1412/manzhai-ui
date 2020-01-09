@@ -1,6 +1,6 @@
 <template>
   <div class="component-card">
-    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
     <h2 id="card-qia-pian"><a class="mz-document-anchor" href="#card-qia-pian">¶</a>Card 卡片</h2>
 <p>以卡片显示展示内容。</p>
 <h3 id="qia-pian-hai-ba"><a class="mz-document-anchor" href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>
@@ -24,7 +24,7 @@
     </mz-card>
   </div>
 </div></card-demo1></template>
-        <template #description><p><code>elevation</code>属性范围为 0-24 之间的整数</p>
+        <template #description><p><code>elevation</code>属性范围为 0-24 之间的整数。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-button outlined
@@ -68,7 +68,7 @@ export default{
     <span>边框卡片</span>
   </mz-card>
 </div></card-demo2></template>
-        <template #description><p>注意: 当使用<code>outlined</code>属性展示线条卡片时，会自动将<code>elevation</code>降到0</p>
+        <template #description><p>注意: 当使用<code>outlined</code>属性展示线条卡片时，会自动将<code>elevation</code>降到0。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-card outlined
   width=&quot;80%&quot;
