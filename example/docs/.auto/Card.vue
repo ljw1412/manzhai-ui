@@ -1,6 +1,6 @@
 <template>
   <div class="component-card">
-    <div class="update-datetime">文档更新时间：2020-01-08 12:37</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
     <h2 id="card-qia-pian"><a class="mz-document-anchor" href="#card-qia-pian">¶</a>Card 卡片</h2>
 <p>以卡片显示展示内容。</p>
 <h3 id="qia-pian-hai-ba"><a class="mz-document-anchor" href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>
@@ -75,7 +75,8 @@ export default{
   height=&quot;200px&quot;&gt;
   &lt;span&gt;边框卡片&lt;/span&gt;
 &lt;/mz-card&gt;
-</code></pre></template></demo-block><h3 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h3>
+</code></pre></template></demo-block><h3 id="api"><a class="mz-document-anchor" href="#api">¶</a>API</h3>
+<h4 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -152,7 +153,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h3>
+<h4 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

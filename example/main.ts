@@ -16,6 +16,12 @@ router.afterEach(route => {
   Vue.nextTick(() => {
     const blocks = document.querySelectorAll('pre code:not(.hljs)')
     Array.prototype.forEach.call(blocks, hljs.highlightBlock)
+    const descriptions = document.querySelectorAll('.demo-block .description p')
+    descriptions.forEach(p => {
+      if (p.innerHTML.includes('注意:')) {
+        ;(p as HTMLElement).style.color = 'var(--color-warning)'
+      }
+    })
   })
 })
 

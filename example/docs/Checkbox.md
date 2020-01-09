@@ -11,12 +11,12 @@
 ```html
 <div>
   <mz-checkbox v-model="value2">选择项</mz-checkbox>
-  <span class="checkbox-checked-value">当前值：{{value2}}</span>
+  <span class="demo-font-size-14">当前值：{{value2}}</span>
 
   <mz-checkbox v-model="value"
     trueValue="开"
     falseValue="关">选择项</mz-checkbox>
-  <span class="checkbox-checked-value">当前值：{{value}}</span>
+  <span class="demo-font-size-14">当前值：{{value}}</span>
 </div>
 
 <script>
@@ -66,7 +66,7 @@ export default{
 
 ```html
 <div>
-  <div class="checkbox-checked-value">当前值：{{value}}</div>
+  <div class="demo-font-size-14">当前值：{{value}}</div>
   <mz-checkbox-group v-model="value">
     <mz-checkbox value="A">选择项A</mz-checkbox>
     <mz-checkbox value="B">选择项B</mz-checkbox>
@@ -96,7 +96,7 @@ export default{
 
 ```html
 <div>
-  <div class="checkbox-checked-value">当前值：{{value}}</div>
+  <div class="demo-font-size-14">当前值：{{value}}</div>
   <mz-checkbox v-model="isAll"
     :indeterminate="indeterminate"
     @change="onCheckAll">全选</mz-checkbox>
@@ -137,3 +137,42 @@ export default{
 </script>
 ```
 :::
+
+### Checkbox API 
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|inputValue/v-model|当前值选中值|any| | |
+|value|当前选项代表的值||||
+|label|选项名称|String| | |
+|name|同原生input的name属性|String|||
+|disabled|是否禁用|Boolean| | |
+|indeterminate|是否不确定状态|Boolean| | |
+|border|是否边框模式|Boolean| | |
+|tabIndex|tab 键控制次序|Number| | |
+|trueValue|选中的值|any| |true|
+|falseValue|未被选中的值|any| |false|
+
+#### 插槽
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|-|同label||
+
+#### 事件
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选项选中状态修改事件|(value, ev)|
+
+### CheckboxGroup API 
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|value/v-model|当前值|Array| | [] |
+
+#### 事件
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选项选中状态修改事件|由选中选项的value值组成的数组|

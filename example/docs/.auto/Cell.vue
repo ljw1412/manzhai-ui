@@ -1,6 +1,6 @@
 <template>
   <div class="component-cell">
-    <div class="update-datetime">文档更新时间：2020-01-08 12:37</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
     <h2 id="cell-dan-yuan-ge"><a class="mz-document-anchor" href="#cell-dan-yuan-ge">¶</a>Cell 单元格</h2>
 <p>单元列表效果。</p>
 <h3 id="dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao"><a class="mz-document-anchor" href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao">¶</a>单元格组及单元格嵌套</h3>
@@ -138,7 +138,8 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="cell-shu-xing"><a class="mz-document-anchor" href="#cell-shu-xing">¶</a>Cell 属性</h3>
+</code></pre></template></demo-block><h3 id="cell-api"><a class="mz-document-anchor" href="#cell-api">¶</a>Cell API</h3>
+<h4 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -187,7 +188,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cell-cha-cao"><a class="mz-document-anchor" href="#cell-cha-cao">¶</a>Cell 插槽</h3>
+<h4 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -224,7 +225,8 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cellgroup-shu-xing"><a class="mz-document-anchor" href="#cellgroup-shu-xing">¶</a>CellGroup 属性</h3>
+<h3 id="cellgroup-api"><a class="mz-document-anchor" href="#cellgroup-api">¶</a>CellGroup API</h3>
+<h4 id="shu-xing-2"><a class="mz-document-anchor" href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -252,7 +254,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cellgroup-cha-cao"><a class="mz-document-anchor" href="#cellgroup-cha-cao">¶</a>CellGroup 插槽</h3>
+<h3 id="cha-cao-2"><a class="mz-document-anchor" href="#cha-cao-2">¶</a>插槽</h3>
 <table>
 <thead>
 <tr>

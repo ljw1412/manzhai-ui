@@ -19,6 +19,10 @@
     margin: 1em 0;
   }
 
+  .demo-font-size-14 {
+    font-size: 14px;
+  }
+
   h1,
   h2,
   h3,
@@ -54,13 +58,6 @@
     color: var(--color-primary);
   }
 
-  .highlight {
-    .html {
-      background-color: transparent;
-      padding: 10px 20px;
-    }
-  }
-
   table {
     width: 100%;
     border-spacing: 0;
@@ -82,10 +79,41 @@
     }
   }
 
-  @import './anchor.scss';
-  @import './button.scss';
-  @import './card.scss';
-  @import './checkbox.scss';
+  .component-anchor {
+    [class^='anchor-demo'] {
+      padding: 0 20px;
+    }
+    .anchor-demo2 {
+      padding: 10px 0;
+    }
+  }
+
+  .component-button {
+    [class^='button-demo'] {
+      .mz-button {
+        margin: 8px 10px 8px 0;
+      }
+    }
+  }
+
+  .component-card {
+    [class^='card-demo'] {
+      .mz-button + .mz-button {
+        margin-left: 10px;
+      }
+      .mz-card {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .component-checkbox {
+    .checkbox-demo1 {
+      > div > span {
+        margin-right: 50px;
+      }
+    }
+  }
 }
 
 :root[data-theme='dark'] {
@@ -96,7 +124,7 @@
 
 @media only screen and (max-width: 992px) {
   #page-component {
-    .mz-catalogue {
+    > .mz-catalogue {
       display: none;
     }
     #page-component-content {

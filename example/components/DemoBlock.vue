@@ -51,6 +51,10 @@ export default class DemoBlock extends Vue {
   padding: 16px;
   background-color: var(--demo-block__background-color);
 
+  .example {
+    color: var(--color-text-secondary);
+  }
+
   .source-code {
     margin-top: 20px;
     padding-top: 20px;
@@ -84,6 +88,10 @@ export default class DemoBlock extends Vue {
     .hljs,
     .hljs-subst {
       color: var(--demo-block__highlight-color);
+    }
+    .html {
+      background-color: transparent;
+      padding: 10px 20px;
     }
   }
 

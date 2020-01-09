@@ -88,8 +88,9 @@ export default{
 ```
 :::
 
+### Cell API
 
-### Cell 属性
+#### 属性
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
@@ -100,7 +101,7 @@ export default{
 | value / v-model | switch 的值 | String | | |
 
 
-### Cell 插槽
+#### 插槽
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
@@ -110,7 +111,9 @@ export default{
 |right|单元格右侧的内容||
 |child|单元格子级内容||
 
-### CellGroup 属性
+### CellGroup API
+
+#### 属性
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
@@ -118,7 +121,7 @@ export default{
 | type | 类型 | String | card | |
 
 
-### CellGroup 插槽
+### 插槽
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |

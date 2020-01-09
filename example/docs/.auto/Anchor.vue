@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-08 17:43</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
     <h2 id="anchor-mao-dian"><a class="mz-document-anchor" href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -96,7 +96,8 @@
       anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h3>
+</code></pre></template></demo-block><h3 id="api"><a class="mz-document-anchor" href="#api">¶</a>API</h3>
+<h4 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -152,7 +153,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h3>
+<h4 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

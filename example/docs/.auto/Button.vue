@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-01-08 12:37</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 11:50</div>
     <h2 id="button-an-niu"><a class="mz-document-anchor" href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -185,7 +185,8 @@ export default {
   &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h3>
+</code></pre></template></demo-block><h3 id="api"><a class="mz-document-anchor" href="#api">¶</a>API</h3>
+<h4 id="shu-xing"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -290,7 +291,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h3>
+<h4 id="cha-cao"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
