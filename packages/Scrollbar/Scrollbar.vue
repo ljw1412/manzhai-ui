@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Ref } from 'vue-property-decorator'
+import { Component, Vue, Ref, Prop, Watch } from 'vue-property-decorator'
 import MzBar from './Bar.vue'
 import {
   addResizeListener,
@@ -14,6 +14,8 @@ import { on, off } from '../../src/utils/dom'
   }
 })
 export default class MzScrollbar extends Vue {
+  @Prop({ type: String, default: '15px' })
+  readonly barSize!: string
   @Ref('wrapper')
   wrapperRef!: HTMLElement
   @Ref('content')
@@ -23,8 +25,8 @@ export default class MzScrollbar extends Vue {
   @Ref('barY')
   barYRef!: MzBar
 
-  barX = { viewSize: 0, scrollSize: 0, type: 'x', barSize: '15px' }
-  barY = { viewSize: 0, scrollSize: 0, type: 'y', barSize: '15px' }
+  barX = { viewSize: 0, scrollSize: 0, type: 'x', barSize: '' }
+  barY = { viewSize: 0, scrollSize: 0, type: 'y', barSize: '' }
   translate = { x: 0, y: 0 }
   touchPoint = { x: 0, y: 0 }
 
@@ -140,6 +142,12 @@ export default class MzScrollbar extends Vue {
   handleTouchend(e: TouchEvent) {
     off(window, 'touchmove', this.handleTouchmove)
     off(window, 'touchend', this.handleTouchend)
+  }
+
+  @Watch('barSize', { immediate: true })
+  onBarSizeChange(val: string) {
+    this.barX.barSize = val
+    this.barY.barSize = val
   }
 }
 </script>

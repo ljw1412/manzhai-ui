@@ -3,7 +3,7 @@ import { Component, Vue, Prop, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import { typeOf } from '../../src/utils/assist'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
-import { MzCatalogueItem } from './index'
+import MzCatalogueItem from './CatalogueItem.vue'
 
 interface CatalogueItem extends FlatCatalogueItem {
   children?: CatalogueItem[]
@@ -17,10 +17,16 @@ interface FlatCatalogueItem {
   target: string
 }
 
-@Component
+@Component({
+  components: {
+    MzCatalogueItem
+  }
+})
 export default class MzCatalogue extends BaseAttribute {
   @Prop(Boolean)
   readonly fixed!: boolean
+  @Prop(Boolean)
+  readonly absolute!: boolean
   @Prop({ type: Object, default: () => ({}) })
   readonly offset!: { left: string; right: string; top: string; bottom: string }
   @Prop(Boolean)
@@ -121,6 +127,7 @@ export default class MzCatalogue extends BaseAttribute {
     if (this.fixed) {
       Object.assign(data.style, this.catalogueOffset)
     }
+    const itemList = this.flat ? this.flatCatalogue : this.catalogue
     return (
       <div {...data}>
         {this.sidebar && (
@@ -135,14 +142,12 @@ export default class MzCatalogue extends BaseAttribute {
             )}
           </div>
         )}
-        {this.manual
-          ? this.$slots.default
-          : this.renderItem(this.flat ? this.flatCatalogue : this.catalogue, 1)}
+        {this.manual ? this.$slots.default : this.renderItem(itemList)}
       </div>
     )
   }
 
-  renderItem(list: CatalogueItem[] | undefined, level: number) {
+  renderItem(list: CatalogueItem[] | undefined, level: number = 1) {
     if (!list) return null
     return list.map(item => {
       const data = {
@@ -244,6 +249,9 @@ export default class MzCatalogue extends BaseAttribute {
   box-sizing: border-box;
   &--fixed {
     position: fixed;
+  }
+  &--absolute {
+    position: absolute;
   }
   &--sidebar {
     padding: 10px 0 10px 30px;

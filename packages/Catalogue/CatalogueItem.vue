@@ -98,8 +98,8 @@ export default class MzCatalogueItem extends Vue {
   }
 }
 
-.mz-catalogue--sidebar > .mz-catalogue-item {
-  &::before {
+.mz-catalogue--sidebar .mz-catalogue-item {
+  &[data-level='1']::before {
     content: '';
     position: absolute;
     left: -23px;
@@ -114,7 +114,7 @@ export default class MzCatalogueItem extends Vue {
     );
     transition: all 0.3s;
   }
-  &--active::before {
+  &--active[data-level='1']::before {
     background-color: var(--mz-catalogue-item__font-color);
   }
 }

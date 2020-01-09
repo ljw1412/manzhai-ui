@@ -202,8 +202,9 @@ export default {
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-|fixed|是否固定|Boolean|||
-|offset|固定偏移量|Object:{left,right,top,bottom}|||
+|fixed|是否固定定位|Boolean|||
+|absolute|是否绝对定位|Boolean|||
+|offset|定位偏移量|Object:{left,right,top,bottom}|||
 |container|锚点所在父级|String|||
 |scrollByJs|是否使用js滚动|Boolean|||
 |zIndex|层级|Number||1000|

@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-09 13:34</div>
+    <div class="update-datetime">文档更新时间：2020-01-09 14:11</div>
     <h2 id="catalogue-mu-lu"><a class="mz-document-anchor" href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
 <p>用于列出页面目录。</p>
 <h3 id="ji-chu-yong-fa"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -329,14 +329,21 @@ export default {
 <tbody>
 <tr>
 <td>fixed</td>
-<td>是否固定</td>
+<td>是否固定定位</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>absolute</td>
+<td>是否绝对定位</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>offset</td>
-<td>固定偏移量</td>
+<td>定位偏移量</td>
 <td>Object:{left,right,top,bottom}</td>
 <td></td>
 <td></td>
