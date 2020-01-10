@@ -19,6 +19,7 @@ import {
   FilterSectionGroup,
   FilterSectionItem
 } from '../packages/FilterSection/index'
+import Heading from '../packages/Heading/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
 import Input from '../packages/Input/index'
@@ -59,6 +60,7 @@ const components: VueConstructor[] = [
   FilterSection,
   FilterSectionGroup,
   FilterSectionItem,
+  Heading,
   Icon,
   Image,
   Input,
@@ -171,6 +173,7 @@ export default {
   FilterSection,
   FilterSectionGroup,
   FilterSectionItem,
+  Heading,
   Icon,
   Image,
   Input,

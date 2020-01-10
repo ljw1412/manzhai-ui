@@ -73,6 +73,13 @@
         }
       },
       {
+        "label": "Heading",
+        "text": "标题",
+        "to": {
+          "name": "ComponentHeading"
+        }
+      },
+      {
         "label": "Icon",
         "text": "图标",
         "to": {
