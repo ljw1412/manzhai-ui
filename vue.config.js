@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const { resolve } = require('path')
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const isUI = process.env.MARK_ENV === 'UI'
 
 const config = {
   pages: {

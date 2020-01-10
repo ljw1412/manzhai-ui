@@ -24,10 +24,3 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
   await utils.updateHash(HashChangeMap)
   await utils.generateRouter(moduleList.sort())
 })()
-
-module.exports = function(source) {
-  // console.log('!!!!', arguments)
-  // utils.saveFiles('/Volumes/HardDisk/ljw/mzui', [
-  //   { name: 'test', content: arguments }
-  // ])
-}
