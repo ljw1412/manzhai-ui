@@ -3,6 +3,7 @@ const anchor = require('markdown-it-anchor')
 const slugify = require('transliteration').slugify
 const containers = require('./containers')
 const rewriteFence = require('./fence')
+const rewriteHeading = require('./heading')
 
 const chain = new Chain()
 
@@ -26,6 +27,7 @@ chain.options
   .end()
 
 const markdown = chain.toMd()
+rewriteHeading(markdown)
 rewriteFence(markdown)
 
 module.exports = markdown
