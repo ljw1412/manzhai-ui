@@ -1,6 +1,6 @@
 $colors: initColors(
   (
-    primary: #424242,
+    primary: #1e1e24,
     text-primary: #cccccc,
     text-regular: var(--color-text-primary-8),
     text-secondary: var(--color-text-primary-6),
@@ -9,8 +9,8 @@ $colors: initColors(
     border-light: rgba(255, 255, 255, 0.12),
     border-lighter: rgba(255, 255, 255, 0.08),
     border-extra-light: rgba(255, 255, 255, 0.04),
-    body-background: #303030,
-    card-background: #424242
+    body-background: #16161a,
+    card-background: #1e1e24
   ),
   $mode: 'dark'
 );
