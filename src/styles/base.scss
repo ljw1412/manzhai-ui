@@ -72,3 +72,10 @@
   bottom: 0;
   margin: 0;
 }
+
+$font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
+@for $i from 1 through 9 {
+  .mz-level-#{$i} {
+    font-size: nth($font-size-list, $i);
+  }
+}

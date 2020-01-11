@@ -4,6 +4,7 @@ import ComponentCard from './Card.vue'
 import ComponentCatalogue from './Catalogue.vue'
 import ComponentCell from './Cell.vue'
 import ComponentCheckbox from './Checkbox.vue'
+import ComponentHeading from './Heading.vue'
 
 export default [
   {
@@ -35,5 +36,10 @@ export default [
     path: 'checkbox',
     name: 'ComponentCheckbox',
     component: ComponentCheckbox
+  },
+  {
+    path: 'heading',
+    name: 'ComponentHeading',
+    component: ComponentHeading
   }
 ]

@@ -3,7 +3,7 @@
     :id="name"
     :data-level="level"
     :class="[
-      `level-${level}`,
+      `mz-level-${level}`,
       {'mz-anchor--invisible': invisible}
     ]">
     <a :href="`#${name}`"
@@ -48,13 +48,6 @@ export default class MzAnchor extends Vue {
     width: 0;
     overflow: hidden;
     visibility: hidden;
-  }
-
-  $font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
-  @for $i from 1 through 9 {
-    &.level-#{$i} {
-      font-size: nth($font-size-list, $i);
-    }
   }
 
   .mz-anchor-symbol {
