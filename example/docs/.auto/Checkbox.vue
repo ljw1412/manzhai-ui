@@ -1,6 +1,6 @@
 <template>
   <div class="component-checkbox">
-    <div class="update-datetime">文档更新时间：2020-01-10 14:59</div>
+    <div class="update-datetime">文档更新时间：2020-01-12 14:23</div>
     <h2 id="checkbox-duo-xuan-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
 <p>在数个选项中进行多选。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>

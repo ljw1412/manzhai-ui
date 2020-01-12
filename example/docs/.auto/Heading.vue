@@ -1,9 +1,9 @@
 <template>
   <div class="component-heading">
-    <div class="update-datetime">文档更新时间：2020-01-11 12:37</div>
-    <h2 id="heading-biao-ti" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti">¶</a>Heading 标题</h2>
+    <div class="update-datetime">文档更新时间：2020-01-12 15:15</div>
+    <h2 id="heading-biao-ti" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti" title="Heading 标题">¶</a><div class="mz-header__title">Heading 标题</div></h2>
 <p>有着不同级别的标题。</p>
-<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa">¶</a>基本用法</h3>
+<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法">¶</a><div class="mz-header__title">基本用法</div></h3>
 <p>标题的基本用法。</p>
 <demo-block>
         <template #example><heading-demo1 inline-template><div class="heading-demo1">
