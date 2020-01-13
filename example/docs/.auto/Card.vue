@@ -1,9 +1,9 @@
 <template>
   <div class="component-card">
-    <div class="update-datetime">文档更新时间：2020-01-12 14:23</div>
-    <h2 id="card-qia-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#card-qia-pian">¶</a>Card 卡片</h2>
+    <div class="update-datetime">文档更新时间：2020-01-13 09:26</div>
+    <h2 id="card-qia-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#card-qia-pian" title="Card 卡片">¶</a><div class="mz-header__title">Card 卡片</div></h2>
 <p>以卡片显示展示内容。</p>
-<h3 id="qia-pian-hai-ba" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>
+<h3 id="qia-pian-hai-ba" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qia-pian-hai-ba" title="卡片海拔">¶</a><div class="mz-header__title">卡片海拔</div></h3>
 <p>提供了25个海拔层级显示卡片的效果。</p>
 <demo-block>
         <template #example><card-demo1 inline-template><div class="card-demo1">
@@ -58,7 +58,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="xian-tiao-qia-pian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-tiao-qia-pian">¶</a>线条卡片</h3>
+</code></pre></template></demo-block><h3 id="xian-tiao-qia-pian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-tiao-qia-pian" title="线条卡片">¶</a><div class="mz-header__title">线条卡片</div></h3>
 <p>有线条围绕的扁平卡片</p>
 <demo-block>
         <template #example><card-demo2 inline-template><div class="card-demo2">
@@ -75,8 +75,8 @@ export default{
   height=&quot;200px&quot;&gt;
   &lt;span&gt;边框卡片&lt;/span&gt;
 &lt;/mz-card&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API">¶</a><div class="mz-header__title">API</div></h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性">¶</a><div class="mz-header__title">属性</div></h4>
 <table>
 <thead>
 <tr>
@@ -153,7 +153,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽">¶</a><div class="mz-header__title">插槽</div></h4>
 <table>
 <thead>
 <tr>

@@ -1,9 +1,9 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-12 14:23</div>
-    <h2 id="catalogue-mu-lu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
+    <div class="update-datetime">文档更新时间：2020-01-13 09:26</div>
+    <h2 id="catalogue-mu-lu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu" title="Catalogue 目录">¶</a><div class="mz-header__title">Catalogue 目录</div></h2>
 <p>用于列出页面目录。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法">¶</a><div class="mz-header__title">基础用法</div></h3>
 <demo-block>
         <template #example><catalogue-demo1 inline-template><div class="catalogue-demo1">
   <mz-catalogue manual>
@@ -35,7 +35,7 @@
     &lt;mz-catalogue-item title=&quot;标题3-1&quot; :level=&quot;2&quot;&gt;&lt;/mz-catalogue-item&gt;
   &lt;/mz-catalogue-item&gt;
 &lt;/mz-catalogue&gt;
-</code></pre></template></demo-block><h3 id="mao-dian-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-mu-lu">¶</a>锚点目录</h3>
+</code></pre></template></demo-block><h3 id="mao-dian-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-mu-lu" title="锚点目录">¶</a><div class="mz-header__title">锚点目录</div></h3>
 <p>有位置跳转功能的目录。</p>
 <demo-block>
         <template #example><catalogue-demo2 inline-template><div class="catalogue-demo2">
@@ -86,7 +86,7 @@
     &lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="gu-ding-ding-wei-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#gu-ding-ding-wei-mu-lu">¶</a>固定定位目录</h3>
+</code></pre></template></demo-block><h3 id="gu-ding-ding-wei-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#gu-ding-ding-wei-mu-lu" title="固定定位目录">¶</a><div class="mz-header__title">固定定位目录</div></h3>
 <p>将目录固定在某一个位置。</p>
 <demo-block>
         <template #example><catalogue-demo3 inline-template><div class="catalogue-demo3">
@@ -159,7 +159,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="you-ce-bian-xian-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#you-ce-bian-xian-mu-lu">¶</a>有侧边线目录</h3>
+</code></pre></template></demo-block><h3 id="you-ce-bian-xian-mu-lu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#you-ce-bian-xian-mu-lu" title="有侧边线目录">¶</a><div class="mz-header__title">有侧边线目录</div></h3>
 <p>左侧有节点线条。</p>
 <demo-block>
         <template #example><catalogue-demo4 inline-template><div class="catalogue-demo4">
@@ -192,7 +192,7 @@ export default {
     &lt;mz-catalogue-item title=&quot;标题3-1&quot; :level=&quot;2&quot;&gt;&lt;/mz-catalogue-item&gt;
   &lt;/mz-catalogue-item&gt;
 &lt;/mz-catalogue&gt;
-</code></pre></template></demo-block><h3 id="yu-mao-dian-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-mao-dian-lian-dong">¶</a>与锚点联动</h3>
+</code></pre></template></demo-block><h3 id="yu-mao-dian-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-mao-dian-lian-dong" title="与锚点联动">¶</a><div class="mz-header__title">与锚点联动</div></h3>
 <p>配合 <a href="anchor">锚点(Anchor)组件</a> 使用效果更好。</p>
 <demo-block>
         <template #example><catalogue-demo5 inline-template><div class="catalogue-demo5">
@@ -253,7 +253,7 @@ export default {
       anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="ping-hua-gun-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ping-hua-gun-dong">¶</a>平滑滚动</h3>
+</code></pre></template></demo-block><h3 id="ping-hua-gun-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ping-hua-gun-dong" title="平滑滚动">¶</a><div class="mz-header__title">平滑滚动</div></h3>
 <p>使用JS方法触发滚动效果。此时不会采用hash。</p>
 <demo-block>
         <template #example><catalogue-demo6 inline-template><div class="catalogue-demo6">
@@ -314,8 +314,8 @@ export default {
       anchorClassName=&quot;.scroll-by-js-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="catalogue-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#catalogue-api">¶</a>Catalogue API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="catalogue-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#catalogue-api" title="Catalogue API">¶</a><div class="mz-header__title">Catalogue API</div></h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性">¶</a><div class="mz-header__title">属性</div></h4>
 <table>
 <thead>
 <tr>
@@ -420,7 +420,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="fang-fa" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#fang-fa">¶</a>方法</h4>
+<h4 id="fang-fa" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#fang-fa" title="方法">¶</a><div class="mz-header__title">方法</div></h4>
 <table>
 <thead>
 <tr>
@@ -437,7 +437,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽">¶</a><div class="mz-header__title">插槽</div></h4>
 <table>
 <thead>
 <tr>
@@ -454,8 +454,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="catalogueitem-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#catalogueitem-api">¶</a>CatalogueItem API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="catalogueitem-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#catalogueitem-api" title="CatalogueItem API">¶</a><div class="mz-header__title">CatalogueItem API</div></h3>
+<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性">¶</a><div class="mz-header__title">属性</div></h4>
 <table>
 <thead>
 <tr>
@@ -504,7 +504,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽">¶</a><div class="mz-header__title">插槽</div></h4>
 <table>
 <thead>
 <tr>
@@ -521,7 +521,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件">¶</a><div class="mz-header__title">事件</div></h4>
 <table>
 <thead>
 <tr>
