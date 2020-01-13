@@ -13,7 +13,7 @@ function getName(filePath) {
 // 获取文件的 hash
 async function getFileHash(filePath) {
   return new Promise((resolve, reject) => {
-    const rs = fs.createReadStream(filePath)
+    const rs = fs.createReadStream(filePath, { encoding: 'utf-8' })
     const hash = crypto.createHash('md5')
     rs.on('data', hash.update.bind(hash))
     rs.on('end', () => {
