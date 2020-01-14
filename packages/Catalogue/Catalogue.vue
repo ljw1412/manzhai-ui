@@ -53,28 +53,18 @@ export default class MzCatalogue extends BaseAttribute {
   readonly catalogueRef!: HTMLDivElement
 
   view: HTMLElement | Window = window
-  anchorList: Element[] = []
+  anchorList: HTMLLinkElement[] = []
   activeIndex = -1
   arrowTop = 0
 
   get flatCatalogue() {
     if (!this.anchorList.length) return []
     return this.anchorList.map((item, index) => {
-      const title = (item.nextSibling && (item.nextSibling as Text).data) || ''
-      const parentEl = item.parentElement
-      let level = -1
-      if (parentEl) {
-        if (parentEl.tagName.toLowerCase() === 'div') {
-          level = parseInt(parentEl.dataset.level || '-1')
-        } else {
-          level = parseInt(parentEl.tagName.replace(/H/g, '')) || -1
-        }
-      }
       return {
         index,
-        title,
-        level,
-        target: (parentEl && parentEl.id) || '',
+        title: item.title,
+        level: (item.dataset.level && parseInt(item.dataset.level)) || -1,
+        target: item.dataset.href || '',
         active: index === this.activeIndex
       }
     })
@@ -183,7 +173,7 @@ export default class MzCatalogue extends BaseAttribute {
     if (!this.manual) {
       this.anchorList = Array.from(
         document.querySelectorAll(this.anchorClassName)
-      )
+      ) as HTMLLinkElement[]
       this.updateActive()
     }
   }

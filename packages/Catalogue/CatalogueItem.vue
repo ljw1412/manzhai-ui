@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
+import { scrollIntoView } from '../../src/utils/dom'
 
 @Component
 export default class MzCatalogueItem extends Vue {
@@ -29,19 +30,7 @@ export default class MzCatalogueItem extends Vue {
 
   // 滚动到目标位置
   scrollToTarget() {
-    if (this.target) {
-      if (this.scrollByJs) {
-        const targetEl = document.querySelector(`#${this.target}`)
-        if (!targetEl) {
-          console.warn('[MzCatalogue]', `目标锚点${this.target}不存在`)
-          return
-        }
-        // firefox 36+ | chrome 61+ | Opera 48+
-        targetEl.scrollIntoView({ behavior: 'smooth' })
-      } else {
-        location.hash = `#${this.target}`
-      }
-    }
+    if (this.target) scrollIntoView(this.target, this.scrollByJs)
     this.$emit('click')
   }
 
