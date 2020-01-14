@@ -1,9 +1,9 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-01-13 09:26</div>
-    <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮">¶</a><div class="mz-header__title">Button 按钮</div></h2>
+    <div class="update-datetime">文档更新时间：2020-01-14 17:19</div>
+    <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a><div class="mz-header__title">Button 按钮</div></h2>
 <p>实现常用的按钮功能。</p>
-<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法">¶</a><div class="mz-header__title">基本用法</div></h3>
+<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a><div class="mz-header__title">基本用法</div></h3>
 <p>基础按钮的用法。</p>
 <demo-block>
         <template #example><button-demo1 inline-template><div class="button-demo1">
@@ -132,7 +132,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="an-niu-chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-chi-cun" title="按钮尺寸">¶</a><div class="mz-header__title">按钮尺寸</div></h3>
+</code></pre></template></demo-block><h3 id="an-niu-chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-chi-cun" title="按钮尺寸" data-level="3" data-href="#an-niu-chi-cun">¶</a><div class="mz-header__title">按钮尺寸</div></h3>
 <p>我们为按钮提供了3种大小尺寸，根据场景选择合适的按钮尺寸。</p>
 <demo-block>
         <template #example><button-demo2 inline-template><div class="button-demo2">
@@ -185,8 +185,8 @@ export default {
   &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API">¶</a><div class="mz-header__title">API</div></h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性">¶</a><div class="mz-header__title">属性</div></h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a><div class="mz-header__title">API</div></h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a><div class="mz-header__title">属性</div></h4>
 <table>
 <thead>
 <tr>
@@ -291,7 +291,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽">¶</a><div class="mz-header__title">插槽</div></h4>
+<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a><div class="mz-header__title">插槽</div></h4>
 <table>
 <thead>
 <tr>

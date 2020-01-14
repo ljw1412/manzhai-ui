@@ -22,6 +22,8 @@ module.exports = md => {
         textToken.attrJoin('class', 'mz-header__title')
         if (anchorToken) {
           anchorToken.attrJoin('title', textToken.content)
+          anchorToken.attrJoin('data-level', token.tag.replace('h', ''))
+          anchorToken.attrJoin('data-href', anchorToken.attrGet('href'))
         }
       }
     }

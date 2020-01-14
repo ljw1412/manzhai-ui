@@ -8,15 +8,10 @@
 
 :::demo `level`属性来控制标题大小，默认为`3`。
 ```html
-<mz-anchor name="a-anchor-1" title="锚点-1" :level="1"></mz-anchor>
-<mz-anchor name="a-anchor-2" title="锚点-2" :level="2"></mz-anchor>
-<mz-anchor name="a-anchor-3" title="锚点-3" :level="3"></mz-anchor>
-<mz-anchor name="a-anchor-4" title="锚点-4" :level="4"></mz-anchor>
-<mz-anchor name="a-anchor-5" title="锚点-5" :level="5"></mz-anchor>
-<mz-anchor name="a-anchor-6" title="锚点-6" :level="6"></mz-anchor>
-<mz-anchor name="a-anchor-7" title="锚点-7" :level="7"></mz-anchor>
-<mz-anchor name="a-anchor-8" title="锚点-8" :level="8"></mz-anchor>
-<mz-anchor name="a-anchor-9" title="锚点-9" :level="9"></mz-anchor>
+<p>
+  <mz-anchor href="#a-anchor-1" />
+  <span id="a-anchor-1">锚点-1</span>
+</p>
 ```
 :::
 
@@ -26,7 +21,7 @@
 
 :::demo `invisible`属性来控制锚点的可见性。
 ```html
-<mz-anchor name="anchor-invisible" title="不可见锚点-1" :level="4" invisible></mz-anchor>
+<mz-anchor href="#anchor-invisible" title="不可见锚点-1" invisible></mz-anchor>
 ```
 :::
 
@@ -34,27 +29,32 @@
 
 配合 [目录(Catalogue)组件](catalogue) 使用效果更好。
 
-:::demo 将 catalogue 设置 `anchorClassName`(自动匹配的锚点class名称)，与 anchor 设置 `anchorClass`(锚点class名称)保持一致。这样可以避免锚点出现互串的情况。
+:::demo 将 catalogue 设置 `anchorClassName`(自动匹配的锚点class名称)，与 anchor 设置 `class`保持一致。这样可以避免锚点出现互串的情况。anchor 的`title`属性值，会作为目录元素的标题。
 ```html
 <mz-row>
   <mz-col :span="12" 
     id="demo-anchor-scroll-container" 
     style="height: 300px; overflow-y: auto;">
-    <mz-anchor name="anchor-1" anchorClass="demo-anchor"
-      title="不可见锚点-1" :level="4" invisible></mz-anchor>
-    <div style="height: 200px;"></div>
-    <mz-anchor name="anchor-2" anchorClass="demo-anchor"
-      title="锚点-2" :level="4"></mz-anchor>
-    <div style="height: 200px;"></div>
-    <mz-anchor name="anchor-3" anchorClass="demo-anchor"
-      title="锚点-3" :level="4"></mz-anchor>
-    <div style="height: 200px;"></div>
-    <mz-anchor name="anchor-4" anchorClass="demo-anchor"
-      title="锚点-4" :level="4"></mz-anchor>
-    <div style="height: 200px;"></div>
-    <mz-anchor name="anchor-5" anchorClass="demo-anchor"
-      title="锚点-5" :level="4"></mz-anchor>
-    <div style="height: 200px;"></div>
+    <div style="height: 200px;">
+      <mz-anchor href="#anchor-1" class="demo-anchor" title="不可见锚点-1" invisible></mz-anchor>
+      <span id="anchor-1">我是不可见锚点</span>
+    </div>
+    <div style="height: 200px;">    
+      <mz-anchor href="#anchor-2" class="demo-anchor" title="锚点-2"></mz-anchor> 
+      <span id="anchor-2">锚点-2</span>
+    </div>
+    <div style="height: 200px;">    
+      <mz-anchor href="#anchor-3" class="demo-anchor" title="锚点-3"></mz-anchor> 
+      <span id="anchor-3">锚点-3</span>
+    </div>
+    <div style="height: 200px;">    
+      <mz-anchor href="#anchor-4" class="demo-anchor" title="锚点-4"></mz-anchor> 
+      <span id="anchor-4">锚点-4</span>
+    </div>
+    <div style="height: 200px;">    
+      <mz-anchor href="#anchor-5" class="demo-anchor" title="锚点-5"></mz-anchor> 
+      <span id="anchor-5">锚点-5</span>
+    </div>
   </mz-col>
 
   <mz-col :span="12">
@@ -71,16 +71,9 @@
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-| name | (必填)锚点id名称，允许以下字符：[a-z],[A-Z],'-','_' | String | | |
+| href | (必填)锚点id名称，匹配规则：/^#[a-zA-Z0-9-_]+$/ | String | | |
 | title | 标题 | String |||
 |level|层级|Number|1-9|3|
 |invisible|是否可见|Boolean|||
 |symbol|标题前的锚点符号|String||¶|
-|anchorClass|锚点符号的附加Class|String|||
-
-
-#### 插槽
-
-| 名称 | 说明 | 参数 |
-| --- | --- | --- |
-| - | 标题 |  |
+|scrollByJs|是否使用js滚动|Boolean|||
