@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
+    <div class="update-datetime">文档更新时间：2020-01-15 19:08</div>
     <h2 id="catalogue-mu-lu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu" title="Catalogue 目录" data-level="2" data-href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
 <p>用于列出页面目录。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -234,7 +234,7 @@ export default {
     </mz-col>
   </mz-row>
 </div></catalogue-demo5></template>
-        <template #description><p>将 catalogue 设置<code>anchorClassName</code>(自动匹配的锚点class名称)，与 anchor 设置<code>class</code>保持一致。这样可以避免锚点出现互串的情况。anchor 的<code>title</code>属性值，会作为目录元素的标题。</p>
+        <template #description><p>将 catalogue 设置<code>target</code>(自动匹配的锚点class名称)，与 anchor 设置<code>class</code>保持一致。这样可以避免锚点出现互串的情况。anchor 的<code>title</code>属性值，会作为目录元素的标题。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
   &lt;mz-col :span=&quot;12&quot; 
@@ -600,3 +600,6 @@ export default {
 }, CatalogueDemo4: {}, CatalogueDemo5: {}, CatalogueDemo6: {} }
 }
 </script>
+<style lang="scss">
+
+</style>

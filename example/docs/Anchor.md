@@ -29,7 +29,7 @@
 
 配合 [目录(Catalogue)组件](catalogue) 使用效果更好。
 
-:::demo 将 catalogue 设置 `anchorClassName`(自动匹配的锚点class名称)，与 anchor 设置 `class`保持一致。这样可以避免锚点出现互串的情况。anchor 的`title`属性值，会作为目录元素的标题。
+:::demo 将 catalogue 设置 `target`(自动匹配的锚点class名称)，与 anchor 设置 `class`保持一致。这样可以避免锚点出现互串的情况。anchor 的`title`属性值，会作为目录元素的标题。
 ```html
 <mz-row>
   <mz-col :span="12" 
@@ -59,7 +59,7 @@
 
   <mz-col :span="12">
     <mz-catalogue container="#demo-anchor-scroll-container"  
-      anchorClassName=".demo-anchor"></mz-catalogue>
+      target=".demo-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```

@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
+    <div class="update-datetime">文档更新时间：2020-01-15 19:08</div>
     <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -59,11 +59,11 @@
   
     <mz-col :span="12">
       <mz-catalogue container="#demo-anchor-scroll-container"  
-        anchorClassName=".demo-anchor"></mz-catalogue>
+        target=".demo-anchor"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></anchor-demo3></template>
-        <template #description><p>将 catalogue 设置 <code>anchorClassName</code>(自动匹配的锚点class名称)，与 anchor 设置 <code>class</code>保持一致。这样可以避免锚点出现互串的情况。anchor 的<code>title</code>属性值，会作为目录元素的标题。</p>
+        <template #description><p>将 catalogue 设置 <code>target</code>(自动匹配的锚点class名称)，与 anchor 设置 <code>class</code>保持一致。这样可以避免锚点出现互串的情况。anchor 的<code>title</code>属性值，会作为目录元素的标题。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
   &lt;mz-col :span=&quot;12&quot; 
@@ -93,7 +93,7 @@
 
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue container=&quot;#demo-anchor-scroll-container&quot;  
-      anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
@@ -161,3 +161,6 @@ export default {
   components: { AnchorDemo1: {}, AnchorDemo2: {}, AnchorDemo3: {} }
 }
 </script>
+<style lang="scss">
+
+</style>
