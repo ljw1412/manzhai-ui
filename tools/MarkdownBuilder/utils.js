@@ -42,13 +42,11 @@ function extractTemplate(content, moduleName) {
         script.lastIndexOf('}') + 1
       )
     }
-    blocks.push({
-      name,
-      hyphenateName,
-      // template: stripTemplate(match, hyphenateName),
-      script,
-      style: stripStyle(match)
-    })
+    let style = stripStyle(match)
+    if (style) {
+      style = style.substring(style.indexOf('>') + 1, style.lastIndexOf('</'))
+    }
+    blocks.push({ name, hyphenateName, script, style })
     return `<${hyphenateName} inline-template>${stripTemplate(match, hyphenateName)}</${hyphenateName}>`
   })
   const datetime = moment().format('YYYY-MM-DD HH:mm')
@@ -65,7 +63,7 @@ function extractTemplate(content, moduleName) {
 function pad(source) {
   return source
     .split(/\r?\n/)
-    .map(line => `  ${line}`)
+    .map(line => (line !== '\n' || line !== '' ? `  ${line}` : ''))
     .join('\n')
 }
 
@@ -79,18 +77,25 @@ function getVueContent(vueBlock) {
 }
 
 async function generateDocVueFile(moduleName, content, blocks) {
-  const componentList = blocks.map(
+  // script 组装
+  const componentScriptList = blocks.map(
     item => `${item.name}: ${item.script || '{}'}`
   )
   const script = `<script>
 export default {
-  components: { ${componentList.join(', ')} }
+  components: { ${componentScriptList.join(', ')} }
 }
 </script>`
+  // style 组装
+  const componentStyleList = blocks.filter(item => item.style)
+  const style = `<style lang="scss">
+${componentStyleList.map(item => `.${item.hyphenateName}{${pad(item.style)}}`)}
+</style>`
+
   await utils.saveFiles(basePath, [
     {
       name: `${moduleName}.vue`,
-      content: getVueContent({ template: content, script })
+      content: getVueContent({ template: content, script, style })
     }
   ])
 }
