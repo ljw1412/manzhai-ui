@@ -3,7 +3,7 @@
     id="page-component">
     <sidebar></sidebar>
     <mz-catalogue ref="catalogue"
-      scroll-by-js
+      scroll-smooth
       sidebar
       fixed
       width="200px"

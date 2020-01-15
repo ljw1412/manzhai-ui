@@ -19,10 +19,6 @@
     margin: 1em 0;
   }
 
-  .demo-font-size-14 {
-    font-size: 14px;
-  }
-
   .mz-document-header {
     position: relative;
     font-weight: 400;
@@ -75,6 +71,14 @@
     }
   }
 
+  .demo-font-size-14 {
+    font-size: 14px;
+  }
+
+  .height-400 {
+    height: 400px;
+  }
+
   .component-anchor {
     [class^='anchor-demo'] {
       padding: 0 20px;
@@ -110,6 +114,11 @@
       }
     }
   }
+}
+
+#demo-heading-scroll-container,
+#demo-heading-scroll-container-2 {
+  padding: 0 40px;
 }
 
 :root[data-theme='dark'] {

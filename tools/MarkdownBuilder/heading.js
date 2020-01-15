@@ -17,32 +17,12 @@ module.exports = md => {
           item.attrGet('class').includes('mz-document-anchor')
       )
       const textToken = nextToken.children.find(item => item.type === 'text')
-      if (textToken) {
-        textToken.tag = 'div'
-        textToken.attrJoin('class', 'mz-header__title')
-        if (anchorToken) {
-          anchorToken.attrJoin('title', textToken.content)
-          anchorToken.attrJoin('data-level', token.tag.replace('h', ''))
-          anchorToken.attrJoin('data-href', anchorToken.attrGet('href'))
-        }
+      if (textToken && anchorToken) {
+        anchorToken.attrJoin('title', textToken.content)
+        anchorToken.attrJoin('data-level', token.tag.replace('h', ''))
+        anchorToken.attrJoin('data-href', anchorToken.attrGet('href'))
       }
     }
     return defaultRender(tokens, idx, options, env, self)
-  }
-
-  const defaultTextRender =
-    md.renderer.rules.text ||
-    function(tokens, idx, options, env, self) {
-      return self.renderToken(tokens, idx, options)
-    }
-  md.renderer.rules.text = (tokens, idx, options, env, self) => {
-    const token = tokens[idx]
-    if (
-      token.attrGet('class') &&
-      token.attrGet('class').includes('mz-header__title')
-    ) {
-      return `<div class="mz-header__title">${token.content}</div>`
-    }
-    return defaultTextRender(tokens, idx, options, env, self)
   }
 }

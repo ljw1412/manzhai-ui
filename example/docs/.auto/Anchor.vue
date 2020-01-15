@@ -1,9 +1,9 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-14 17:45</div>
-    <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a><div class="mz-header__title">Anchor 锚点</div></h2>
+    <div class="update-datetime">文档更新时间：2020-01-15 11:46</div>
+    <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
-<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a><div class="mz-header__title">基本用法</div></h3>
+<h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <p>基础锚点的用法。</p>
 <demo-block>
         <template #example><anchor-demo1 inline-template><div class="anchor-demo1">
@@ -18,7 +18,7 @@
   &lt;mz-anchor href=&quot;#a-anchor-1&quot; /&gt;
   &lt;span id=&quot;a-anchor-1&quot;&gt;锚点-1&lt;/span&gt;
 &lt;/p&gt;
-</code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian" title="隐蔽式锚点" data-level="3" data-href="#yin-bi-shi-mao-dian">¶</a><div class="mz-header__title">隐蔽式锚点</div></h3>
+</code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian" title="隐蔽式锚点" data-level="3" data-href="#yin-bi-shi-mao-dian">¶</a>隐蔽式锚点</h3>
 <p>不可见的锚点。</p>
 <demo-block>
         <template #example><anchor-demo2 inline-template><div class="anchor-demo2">
@@ -27,7 +27,7 @@
         <template #description><p><code>invisible</code>属性来控制锚点的可见性。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-anchor href=&quot;#anchor-invisible&quot; title=&quot;不可见锚点-1&quot; invisible&gt;&lt;/mz-anchor&gt;
-</code></pre></template></demo-block><h3 id="yu-mu-lu-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-mu-lu-lian-dong" title="与目录联动" data-level="3" data-href="#yu-mu-lu-lian-dong">¶</a><div class="mz-header__title">与目录联动</div></h3>
+</code></pre></template></demo-block><h3 id="yu-mu-lu-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-mu-lu-lian-dong" title="与目录联动" data-level="3" data-href="#yu-mu-lu-lian-dong">¶</a>与目录联动</h3>
 <p>配合 <a href="catalogue">目录(Catalogue)组件</a> 使用效果更好。</p>
 <demo-block>
         <template #example><anchor-demo3 inline-template><div class="anchor-demo3">
@@ -35,23 +35,23 @@
     <mz-col :span="12" 
       id="demo-anchor-scroll-container" 
       style="height: 300px; overflow-y: auto;">
-      <div style="height: 200px;">
+      <div class="height-400">
         <mz-anchor href="#anchor-1" class="demo-anchor" title="不可见锚点-1" invisible></mz-anchor>
         <span id="anchor-1">我是不可见锚点</span>
       </div>
-      <div style="height: 200px;">    
+      <div class="height-400">    
         <mz-anchor href="#anchor-2" class="demo-anchor" title="锚点-2"></mz-anchor> 
         <span id="anchor-2">锚点-2</span>
       </div>
-      <div style="height: 200px;">    
+      <div class="height-400">    
         <mz-anchor href="#anchor-3" class="demo-anchor" title="锚点-3"></mz-anchor> 
         <span id="anchor-3">锚点-3</span>
       </div>
-      <div style="height: 200px;">    
+      <div class="height-400">    
         <mz-anchor href="#anchor-4" class="demo-anchor" title="锚点-4"></mz-anchor> 
         <span id="anchor-4">锚点-4</span>
       </div>
-      <div style="height: 200px;">    
+      <div class="height-400">    
         <mz-anchor href="#anchor-5" class="demo-anchor" title="锚点-5"></mz-anchor> 
         <span id="anchor-5">锚点-5</span>
       </div>
@@ -69,23 +69,23 @@
   &lt;mz-col :span=&quot;12&quot; 
     id=&quot;demo-anchor-scroll-container&quot; 
     style=&quot;height: 300px; overflow-y: auto;&quot;&gt;
-    &lt;div style=&quot;height: 200px;&quot;&gt;
+    &lt;div class=&quot;height-400&quot;&gt;
       &lt;mz-anchor href=&quot;#anchor-1&quot; class=&quot;demo-anchor&quot; title=&quot;不可见锚点-1&quot; invisible&gt;&lt;/mz-anchor&gt;
       &lt;span id=&quot;anchor-1&quot;&gt;我是不可见锚点&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div style=&quot;height: 200px;&quot;&gt;    
+    &lt;div class=&quot;height-400&quot;&gt;    
       &lt;mz-anchor href=&quot;#anchor-2&quot; class=&quot;demo-anchor&quot; title=&quot;锚点-2&quot;&gt;&lt;/mz-anchor&gt; 
       &lt;span id=&quot;anchor-2&quot;&gt;锚点-2&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div style=&quot;height: 200px;&quot;&gt;    
+    &lt;div class=&quot;height-400&quot;&gt;    
       &lt;mz-anchor href=&quot;#anchor-3&quot; class=&quot;demo-anchor&quot; title=&quot;锚点-3&quot;&gt;&lt;/mz-anchor&gt; 
       &lt;span id=&quot;anchor-3&quot;&gt;锚点-3&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div style=&quot;height: 200px;&quot;&gt;    
+    &lt;div class=&quot;height-400&quot;&gt;    
       &lt;mz-anchor href=&quot;#anchor-4&quot; class=&quot;demo-anchor&quot; title=&quot;锚点-4&quot;&gt;&lt;/mz-anchor&gt; 
       &lt;span id=&quot;anchor-4&quot;&gt;锚点-4&lt;/span&gt;
     &lt;/div&gt;
-    &lt;div style=&quot;height: 200px;&quot;&gt;    
+    &lt;div class=&quot;height-400&quot;&gt;    
       &lt;mz-anchor href=&quot;#anchor-5&quot; class=&quot;demo-anchor&quot; title=&quot;锚点-5&quot;&gt;&lt;/mz-anchor&gt; 
       &lt;span id=&quot;anchor-5&quot;&gt;锚点-5&lt;/span&gt;
     &lt;/div&gt;
@@ -96,8 +96,8 @@
       anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a><div class="mz-header__title">API</div></h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a><div class="mz-header__title">属性</div></h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -145,7 +145,7 @@
 <td>¶</td>
 </tr>
 <tr>
-<td>scrollByJs</td>
+<td>scrollSmooth</td>
 <td>是否使用js滚动</td>
 <td>Boolean</td>
 <td></td>

@@ -35,23 +35,23 @@
   <mz-col :span="12" 
     id="demo-anchor-scroll-container" 
     style="height: 300px; overflow-y: auto;">
-    <div style="height: 200px;">
+    <div class="height-400">
       <mz-anchor href="#anchor-1" class="demo-anchor" title="不可见锚点-1" invisible></mz-anchor>
       <span id="anchor-1">我是不可见锚点</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor href="#anchor-2" class="demo-anchor" title="锚点-2"></mz-anchor> 
       <span id="anchor-2">锚点-2</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor href="#anchor-3" class="demo-anchor" title="锚点-3"></mz-anchor> 
       <span id="anchor-3">锚点-3</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor href="#anchor-4" class="demo-anchor" title="锚点-4"></mz-anchor> 
       <span id="anchor-4">锚点-4</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor href="#anchor-5" class="demo-anchor" title="锚点-5"></mz-anchor> 
       <span id="anchor-5">锚点-5</span>
     </div>
@@ -76,4 +76,4 @@
 |level|层级|Number|1-9|3|
 |invisible|是否可见|Boolean|||
 |symbol|标题前的锚点符号|String||¶|
-|scrollByJs|是否使用js滚动|Boolean|||
+|scrollSmooth|是否使用js滚动|Boolean|||

@@ -33,11 +33,11 @@
     id="demo-scroll-container" 
     style="height: 300px; overflow-y: auto;">
     <div id="anchor-1">位置1</div>
-    <div style="height: 200px;"></div>
+    <div class="height-400"></div>
     <div id="anchor-2">位置2</div>
-    <div style="height: 200px;"></div>
+    <div class="height-400"></div>
     <div id="anchor-3">位置3</div>
-    <div style="height: 200px;"></div>
+    <div class="height-400"></div>
     <div id="anchor-4">位置4</div>
   </mz-col>
 
@@ -135,27 +135,27 @@ export default {
   <mz-col :span="12" 
     id="demo-anchor-scroll-container" 
     style="height: 300px; overflow-y: auto;">
-    <div style="height: 200px;">
+    <div class="height-400">
       <mz-anchor class="demo-anchor" 
         href="#catalogue-anchor-1" title="不可见锚点" invisible></mz-anchor>
       <span id="catalogue-anchor-1">我是不可见锚点</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor class="demo-anchor" 
         href="#catalogue-anchor-2" title="锚点-2"></mz-anchor> 
       <span id="catalogue-anchor-2">锚点-2</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor class="demo-anchor" 
         href="#catalogue-anchor-3" title="锚点-3"></mz-anchor> 
       <span id="catalogue-anchor-3">锚点-3</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor class="demo-anchor" 
         href="#catalogue-anchor-4" title="锚点-4"></mz-anchor> 
       <span id="catalogue-anchor-4">锚点-4</span>
     </div>
-    <div style="height: 200px;">    
+    <div class="height-400">    
       <mz-anchor class="demo-anchor" 
         href="#catalogue-anchor-5" title="锚点-5"></mz-anchor> 
       <span id="catalogue-anchor-5">锚点-5</span>
@@ -181,38 +181,38 @@ export default {
   <mz-col :span="12" 
     id="demo-anchor-scroll-container-2" 
     style="height: 300px; overflow-y: auto;">
-    <div style="height: 200px;">
-      <mz-anchor class="scroll-by-js-anchor"
-        href="#scroll-by-js-anchor-1" 
+    <div class="height-400">
+      <mz-anchor class="scroll-smooth-anchor"
+        href="#scroll-smooth-anchor-1" 
         title="锚点-1" :level="4"></mz-anchor>
-        <span id="scroll-by-js-anchor-1">锚点-1</span>
+        <span id="scroll-smooth-anchor-1">锚点-1</span>
     </div>
-      <mz-anchor class="scroll-by-js-anchor"
-        href="#scroll-by-js-anchor-2" 
+      <mz-anchor class="scroll-smooth-anchor"
+        href="#scroll-smooth-anchor-2" 
         title="锚点-1.1" :level="5"></mz-anchor>
-        <span id="scroll-by-js-anchor-2">锚点-1.1</span>
-    <div style="height: 200px;"></div>
-      <mz-anchor class="scroll-by-js-anchor"
-        href="#scroll-by-js-anchor-3" 
+        <span id="scroll-smooth-anchor-2">锚点-1.1</span>
+    <div class="height-400"></div>
+      <mz-anchor class="scroll-smooth-anchor"
+        href="#scroll-smooth-anchor-3" 
         title="锚点-1.2" :level="5"></mz-anchor>
-        <span id="scroll-by-js-anchor-3">锚点-1.2</span>
-    <div style="height: 200px;"></div>
-      <mz-anchor class="scroll-by-js-anchor"
-        href="#scroll-by-js-anchor-4" 
+        <span id="scroll-smooth-anchor-3">锚点-1.2</span>
+    <div class="height-400"></div>
+      <mz-anchor class="scroll-smooth-anchor"
+        href="#scroll-smooth-anchor-4" 
         title="锚点-2" :level="4"></mz-anchor>
-        <span id="scroll-by-js-anchor-4">锚点-2</span>
-    <div style="height: 200px;"></div>
-      <mz-anchor class="scroll-by-js-anchor"
-        href="#scroll-by-js-anchor-5" 
+        <span id="scroll-smooth-anchor-4">锚点-2</span>
+    <div class="height-400"></div>
+      <mz-anchor class="scroll-smooth-anchor"
+        href="#scroll-smooth-anchor-5" 
         title="锚点-3" :level="4"></mz-anchor>
-        <span id="scroll-by-js-anchor-5">锚点-3</span>
-    <div style="height: 200px;"></div>
+        <span id="scroll-smooth-anchor-5">锚点-3</span>
+    <div class="height-400"></div>
   </mz-col>
 
   <mz-col :span="12">
-    <mz-catalogue sidebar scroll-by-js 
+    <mz-catalogue sidebar scroll-smooth 
       container="#demo-anchor-scroll-container-2"  
-      anchorClassName=".scroll-by-js-anchor"></mz-catalogue>
+      anchorClassName=".scroll-smooth-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```
@@ -227,7 +227,7 @@ export default {
 |absolute|是否绝对定位|Boolean|||
 |offset|定位偏移量|Object:{left,right,top,bottom}|||
 |container|锚点所在父级|String|||
-|scrollByJs|是否使用js滚动|Boolean|||
+|scrollSmooth|是否使用js平滑滚动|Boolean|||
 |zIndex|层级|Number||1000|
 |manual|是否为手动目录|Boolean|||
 |flat|扁平化目录，仅在非手动模式有效|Boolean|||
@@ -257,7 +257,7 @@ export default {
 |active|是否选中|Boolean|||
 |level|等级|Number|1-9||
 |target|锚点目标名称|String|||
-|scrollByJs|是否使用js滚动|Boolean|||
+|scrollSmooth|是否使用js滚动|Boolean|||
 
 #### 插槽
 | 名称 | 说明 | 参数 |
