@@ -31,10 +31,7 @@ import { FilterSectionItem, MzFilterSectionGroup } from '.'
     return { mzFilterSection: this }
   }
 })
-export default class MzFilterSection extends Mixins(
-  BaseAttribute,
-  FormElement
-) {
+export default class MzFilterSection extends Mixins(FormElement) {
   @Inject({ from: 'mzFilterSectionGroup', default: null })
   readonly group!: MzFilterSectionGroup
   @Prop(String)

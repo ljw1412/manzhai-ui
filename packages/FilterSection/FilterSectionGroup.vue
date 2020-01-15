@@ -16,10 +16,7 @@ import { typeOf } from '../../src/utils/assist'
     return { mzFilterSectionGroup: this }
   }
 })
-export default class MzFilterSectionGroup extends Mixins(
-  BaseAttribute,
-  FormElement
-) {
+export default class MzFilterSectionGroup extends Mixins(FormElement) {
   @Prop({ type: Object, default: () => ({}) })
   readonly value!: Record<string, any>
   @Prop(Boolean)
