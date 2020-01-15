@@ -118,7 +118,6 @@ export default class MzFilterSection extends Mixins(
 .mz-filter-section {
   &__label {
     color: var(--color-text-primary);
-    margin-bottom: 2px;
   }
 
   &__content {
@@ -131,7 +130,7 @@ export default class MzFilterSection extends Mixins(
     .mz-filter-section {
       &__label {
         flex-shrink: 0;
-        line-height: 34px;
+        line-height: 30px;
       }
 
       &__content {
@@ -143,6 +142,12 @@ export default class MzFilterSection extends Mixins(
   &--right {
     .mz-filter-section__label {
       text-align: right;
+    }
+  }
+
+  &--top {
+    .mz-filter-section__label {
+      margin-bottom: 2px;
     }
   }
 }

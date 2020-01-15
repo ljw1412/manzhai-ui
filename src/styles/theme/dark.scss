@@ -100,4 +100,15 @@ $colors: initColors(
   .mz-anchor {
     --mz-anchor__symbol-color: #ffffff;
   }
+
+  .mz-filter-section-item {
+    &:not(.is-outlined).is-checked {
+      --mz-filter-section-item__label-color: var(--color-primary);
+      --mz-filter-section-item__background-color: #ffffff;
+    }
+    &.is-outlined.is-checked {
+      --mz-filter-section-item__label-color: #ffffff;
+      --mz-filter-section-item__border-color: #ffffff;
+    }
+  }
 }
