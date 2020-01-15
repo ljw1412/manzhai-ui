@@ -6,7 +6,7 @@ import { scrollIntoView } from '../../src/utils/dom'
 @Component
 export default class MzAnchor extends Vue {
   @Prop(Boolean)
-  readonly scrollByJs!: boolean
+  readonly scrollSmooth!: boolean
   @Prop({
     type: String,
     required: true,
@@ -31,13 +31,13 @@ export default class MzAnchor extends Vue {
       ],
       attrs: {
         title: this.title,
-        href: this.scrollByJs ? undefined : this.href,
+        href: this.scrollSmooth ? undefined : this.href,
         'data-href': this.href,
         'data-level': this.level
       },
       on: {
         click: () => {
-          scrollIntoView(this.href, this.scrollByJs)
+          scrollIntoView(this.href, this.scrollSmooth)
         }
       }
     }

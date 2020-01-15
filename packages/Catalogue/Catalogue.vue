@@ -30,7 +30,7 @@ export default class MzCatalogue extends BaseAttribute {
   @Prop({ type: Object, default: () => ({}) })
   readonly offset!: { left: string; right: string; top: string; bottom: string }
   @Prop(Boolean)
-  readonly scrollByJs!: boolean
+  readonly scrollSmooth!: boolean
   @Prop({ type: [Number, String], default: 1000 })
   readonly zIndex!: number | string
   @Prop({ type: String, default: '' })
@@ -141,7 +141,7 @@ export default class MzCatalogue extends BaseAttribute {
     if (!list) return null
     return list.map(item => {
       const data = {
-        props: { ...item, level, scrollByJs: this.scrollByJs },
+        props: { ...item, level, scrollSmooth: this.scrollSmooth },
         on: {
           actived: (top: number) => {
             const catalogueTop = this.catalogueRef.getBoundingClientRect().top

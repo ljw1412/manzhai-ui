@@ -9,10 +9,12 @@ export default class MzHeading extends Vue {
   readonly tag!: string
   @Prop({ type: Number, default: 3 })
   readonly level!: number
+  @Prop([Boolean, String])
+  readonly anchor!: boolean | string
   @Prop(Boolean)
-  readonly anchor!: boolean
+  readonly invisibleAnchor!: boolean
   @Prop(String)
-  readonly label!: string
+  readonly title!: string
 
   render(h: CreateElement) {
     return h(
@@ -21,17 +23,20 @@ export default class MzHeading extends Vue {
         class: ['mz-heading', `mz-level-${this.level}`],
         attrs: { 'data-level': this.level }
       },
-      [this.renderAnchor(), this.$slots.default || this.label] as VNodeChildren
+      [this.renderAnchor(), this.$slots.default || this.title] as VNodeChildren
     )
   }
 
   renderAnchor() {
     if (!this.anchor) return null
+    const anchorClass = typeof this.anchor === 'string' ? this.anchor : ''
     const data = {
+      class: [anchorClass],
       props: {
         level: this.level,
+        invisible: this.invisibleAnchor,
         title:
-          this.label ||
+          this.title ||
           (this.$slots.default && this.$slots.default[0].text) ||
           '',
         href: `#${this.$attrs.id}`
@@ -45,6 +50,7 @@ export default class MzHeading extends Vue {
 <style lang="scss">
 .mz-heading {
   position: relative;
+  color: var(--color-text-primary);
   .mz-anchor {
     position: absolute;
     top: 0;

@@ -24,13 +24,13 @@ export default class MzCatalogueItem extends Vue {
   @Prop(String)
   readonly target!: string
   @Prop(Boolean)
-  readonly scrollByJs!: boolean
+  readonly scrollSmooth!: boolean
   @Ref('text')
   readonly textRef!: HTMLSpanElement
 
   // 滚动到目标位置
   scrollToTarget() {
-    if (this.target) scrollIntoView(this.target, this.scrollByJs)
+    if (this.target) scrollIntoView(this.target, this.scrollSmooth)
     this.$emit('click')
   }
 
