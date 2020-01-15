@@ -40,7 +40,7 @@ export default class MzCatalogue extends BaseAttribute {
   @Prop(Boolean)
   readonly manual!: boolean
   @Prop({ type: String, default: '.mz-anchor-symbol' })
-  readonly anchorClassName!: string
+  readonly target!: string
   @Prop(Boolean)
   readonly sidebar!: boolean
   @Prop(String)
@@ -172,7 +172,7 @@ export default class MzCatalogue extends BaseAttribute {
   initCatalogue() {
     if (!this.manual) {
       this.anchorList = Array.from(
-        document.querySelectorAll(this.anchorClassName)
+        document.querySelectorAll(this.target)
       ) as HTMLLinkElement[]
       this.updateActive()
     }
