@@ -3,4 +3,9 @@
   --demo-block__background-color: rgba(0, 0, 0, 0.1);
   --demo-block__highlight-color: #ffffff;
   --demo-block__description-background-color: #303030;
+
+  .demo-block .action .mz-icon:hover {
+    color: #ffffff;
+    opacity: 0.8;
+  }
 }

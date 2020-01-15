@@ -6,7 +6,6 @@ import DocsRouter from './docs/.auto/router'
 import ComponentDropdown from './views/Component/Dropdown.vue'
 import ComponentGrid from './views/Component/Grid.vue'
 import ComponentForm from './views/Component/Form.vue'
-import ComponentFilterSection from './views/Component/FilterSection.vue'
 import ComponentIcon from './views/Component/Icon.vue'
 import ComponentImage from './views/Component/Image.vue'
 import ComponentInput from './views/Component/Input.vue'
@@ -52,11 +51,6 @@ export default new Router({
           path: 'form',
           name: 'ComponentForm',
           component: ComponentForm
-        },
-        {
-          path: 'filter-section',
-          name: 'ComponentFilterSection',
-          component: ComponentFilterSection
         },
         {
           path: 'icon',
