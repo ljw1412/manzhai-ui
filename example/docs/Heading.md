@@ -42,7 +42,7 @@
 
 带锚点的标题。配合 [目录(Catalogue)组件](catalogue) 使用。
 
-:::demo 当`anchor`属性值为 string 类型，那么它将作为锚点的 class，此时可将catalogue的`anchorClassName`属性值设置为与锚点 class一致时，目录就只会寻找带有指定class的锚点。
+:::demo 当`anchor`属性值为 string 类型，那么它将作为锚点的 class，此时可将catalogue的`target`属性值设置为与锚点 class一致时，目录就只会寻找带有指定class的锚点。
 ```html
 <mz-row>
   <mz-col :span="12" 
@@ -71,7 +71,7 @@
   <mz-col :span="12">
     <mz-catalogue sidebar
       container="#demo-heading-scroll-container"  
-      anchorClassName=".heading-anchor"></mz-catalogue>
+      target=".heading-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```
@@ -95,7 +95,7 @@
   <mz-col :span="12">
     <mz-catalogue sidebar
       container="#demo-heading-scroll-container-2"  
-      anchorClassName=".heading-anchor-2"></mz-catalogue>
+      target=".heading-anchor-2"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```
@@ -131,7 +131,7 @@
   <mz-col :span="12">
     <mz-catalogue sidebar
       container="#demo-heading-scroll-container-3"  
-      anchorClassName=".heading-anchor-3"></mz-catalogue>
+      target=".heading-anchor-3"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```

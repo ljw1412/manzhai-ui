@@ -66,12 +66,12 @@ export default{
 | elevation | 海拔 | String / Number | 1-24 | 3 |
 | outlined | 是否线条卡片 | Boolean | --- |---|
 | background | 卡片背景，同style的background | String | --- |---|
-| width | 宽 | String | --- |---|
-| minWidth | 最小宽 | String | --- |---|
-| maxWidth | 最大宽 | String | --- |---|
-| height | 高 | String | --- |---|
-| minHeight | 最小高 | String | --- |---|
-| maxHeight | 最大高 | String | --- |---|
+| width | 宽度 | String | --- |---|
+| min-width | 最小宽度 | String | --- |---|
+| max-width | 最大宽度 | String | --- |---|
+| height | 高度 | String | --- |---|
+| min-height | 最小高度 | String | --- |---|
+| max-height | 最大高度 | String | --- |---|
 
 #### 插槽
 

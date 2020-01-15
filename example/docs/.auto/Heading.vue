@@ -1,6 +1,6 @@
 <template>
   <div class="component-heading">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:43</div>
+    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
     <h2 id="heading-biao-ti" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti" title="Heading 标题" data-level="2" data-href="#heading-biao-ti">¶</a>Heading 标题</h2>
 <p>有着不同级别的标题。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -83,11 +83,11 @@
     <mz-col :span="12">
       <mz-catalogue sidebar
         container="#demo-heading-scroll-container"  
-        anchorClassName=".heading-anchor"></mz-catalogue>
+        target=".heading-anchor"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></heading-demo3></template>
-        <template #description><p>当<code>anchor</code>属性值为 string 类型，那么它将作为锚点的 class，此时可将catalogue的<code>anchorClassName</code>属性值设置为与锚点 class一致时，目录就只会寻找带有指定class的锚点。</p>
+        <template #description><p>当<code>anchor</code>属性值为 string 类型，那么它将作为锚点的 class，此时可将catalogue的<code>target</code>属性值设置为与锚点 class一致时，目录就只会寻找带有指定class的锚点。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
   &lt;mz-col :span=&quot;12&quot; 
@@ -116,7 +116,7 @@
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue sidebar
       container=&quot;#demo-heading-scroll-container&quot;  
-      anchorClassName=&quot;.heading-anchor&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.heading-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="kou-shi-xin-fei-de-mao-dian-biao-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#kou-shi-xin-fei-de-mao-dian-biao-ti" title="口是心非的锚点标题" data-level="3" data-href="#kou-shi-xin-fei-de-mao-dian-biao-ti">¶</a>口是心非的锚点标题</h3>
@@ -136,7 +136,7 @@
     <mz-col :span="12">
       <mz-catalogue sidebar
         container="#demo-heading-scroll-container-2"  
-        anchorClassName=".heading-anchor-2"></mz-catalogue>
+        target=".heading-anchor-2"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></heading-demo4></template>
@@ -156,7 +156,7 @@
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue sidebar
       container=&quot;#demo-heading-scroll-container-2&quot;  
-      anchorClassName=&quot;.heading-anchor-2&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.heading-anchor-2&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="mao-dian-biao-ti-mao-dian-bu-ke-jian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti-mao-dian-bu-ke-jian" title="锚点标题(锚点不可见)" data-level="3" data-href="#mao-dian-biao-ti-mao-dian-bu-ke-jian">¶</a>锚点标题(锚点不可见)</h3>
@@ -187,7 +187,7 @@
     <mz-col :span="12">
       <mz-catalogue sidebar
         container="#demo-heading-scroll-container-3"  
-        anchorClassName=".heading-anchor-3"></mz-catalogue>
+        target=".heading-anchor-3"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></heading-demo5></template>
@@ -217,7 +217,7 @@
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue sidebar
       container=&quot;#demo-heading-scroll-container-3&quot;  
-      anchorClassName=&quot;.heading-anchor-3&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.heading-anchor-3&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>

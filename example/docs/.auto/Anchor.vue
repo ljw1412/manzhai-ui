@@ -1,6 +1,6 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:46</div>
+    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
     <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -145,7 +145,7 @@
 <td>¶</td>
 </tr>
 <tr>
-<td>scrollSmooth</td>
+<td>scroll-smooth</td>
 <td>是否使用js滚动</td>
 <td>Boolean</td>
 <td></td>

@@ -71,9 +71,9 @@
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-| href | (必填)锚点id名称，匹配规则：/^#[a-zA-Z0-9-_]+$/ | String | | |
-| title | 标题 | String |||
+|href|(必填)锚点id名称，匹配规则：/^#[a-zA-Z0-9-_]+$/|String|||
+|title|标题|String|||
 |level|层级|Number|1-9|3|
 |invisible|是否可见|Boolean|||
 |symbol|标题前的锚点符号|String||¶|
-|scrollSmooth|是否使用js滚动|Boolean|||
+|scroll-smooth|是否使用js滚动|Boolean|||

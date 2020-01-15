@@ -165,7 +165,7 @@ export default {
   <mz-col :span="12">
     <mz-catalogue sidebar
       container="#demo-anchor-scroll-container"  
-      anchorClassName=".demo-anchor"></mz-catalogue>
+      target=".demo-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```
@@ -212,7 +212,7 @@ export default {
   <mz-col :span="12">
     <mz-catalogue sidebar scroll-smooth 
       container="#demo-anchor-scroll-container-2"  
-      anchorClassName=".scroll-smooth-anchor"></mz-catalogue>
+      target=".scroll-smooth-anchor"></mz-catalogue>
   </mz-col>
 </mz-row>
 ```
@@ -227,15 +227,15 @@ export default {
 |absolute|是否绝对定位|Boolean|||
 |offset|定位偏移量|Object:{left,right,top,bottom}|||
 |container|锚点所在父级|String|||
-|scrollSmooth|是否使用js平滑滚动|Boolean|||
+|scroll-smooth|是否使用js平滑滚动|Boolean|||
 |zIndex|层级|Number||1000|
 |manual|是否为手动目录|Boolean|||
 |flat|扁平化目录，仅在非手动模式有效|Boolean|||
-|anchorClassName|锚点的类名|String|||
+|target|锚点的类名|String|||
 |sidebar|是否有侧边线|Boolean|||
-|sidebarColor|侧边线颜色|String|||
-|sidebarPointColor|侧边线点的颜色|String|||
-|sidebarArrowColor|侧边线箭头的颜色|String|||
+|sidebar-color|侧边线颜色|String|||
+|sidebar-point-color|侧边线点的颜色|String|||
+|sidebar-arrow-color|侧边线箭头的颜色|String|||
 
 #### 方法
 |名称|说明|参数|
@@ -257,7 +257,7 @@ export default {
 |active|是否选中|Boolean|||
 |level|等级|Number|1-9||
 |target|锚点目标名称|String|||
-|scrollSmooth|是否使用js滚动|Boolean|||
+|scroll-smooth|是否使用js滚动|Boolean|||
 
 #### 插槽
 | 名称 | 说明 | 参数 |

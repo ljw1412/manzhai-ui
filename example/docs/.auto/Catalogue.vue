@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:46</div>
+    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
     <h2 id="catalogue-mu-lu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu" title="Catalogue 目录" data-level="2" data-href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
 <p>用于列出页面目录。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -230,7 +230,7 @@ export default {
     <mz-col :span="12">
       <mz-catalogue sidebar
         container="#demo-anchor-scroll-container"  
-        anchorClassName=".demo-anchor"></mz-catalogue>
+        target=".demo-anchor"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></catalogue-demo5></template>
@@ -270,7 +270,7 @@ export default {
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue sidebar
       container=&quot;#demo-anchor-scroll-container&quot;  
-      anchorClassName=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="ping-hua-gun-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ping-hua-gun-dong" title="平滑滚动" data-level="3" data-href="#ping-hua-gun-dong">¶</a>平滑滚动</h3>
@@ -312,7 +312,7 @@ export default {
     <mz-col :span="12">
       <mz-catalogue sidebar scroll-smooth 
         container="#demo-anchor-scroll-container-2"  
-        anchorClassName=".scroll-smooth-anchor"></mz-catalogue>
+        target=".scroll-smooth-anchor"></mz-catalogue>
     </mz-col>
   </mz-row>
 </div></catalogue-demo6></template>
@@ -353,7 +353,7 @@ export default {
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;mz-catalogue sidebar scroll-smooth 
       container=&quot;#demo-anchor-scroll-container-2&quot;  
-      anchorClassName=&quot;.scroll-smooth-anchor&quot;&gt;&lt;/mz-catalogue&gt;
+      target=&quot;.scroll-smooth-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 </code></pre></template></demo-block><h3 id="catalogue-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#catalogue-api" title="Catalogue API" data-level="3" data-href="#catalogue-api">¶</a>Catalogue API</h3>
@@ -398,8 +398,8 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>scrollSmooth</td>
-<td>是否使用js滚动</td>
+<td>scroll-smooth</td>
+<td>是否使用js平滑滚动</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
@@ -426,7 +426,7 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>anchorClassName</td>
+<td>target</td>
 <td>锚点的类名</td>
 <td>String</td>
 <td></td>
@@ -440,21 +440,21 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>sidebarColor</td>
+<td>sidebar-color</td>
 <td>侧边线颜色</td>
 <td>String</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>sidebarPointColor</td>
+<td>sidebar-point-color</td>
 <td>侧边线点的颜色</td>
 <td>String</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>sidebarArrowColor</td>
+<td>sidebar-arrow-color</td>
 <td>侧边线箭头的颜色</td>
 <td>String</td>
 <td></td>
@@ -538,7 +538,7 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>scrollSmooth</td>
+<td>scroll-smooth</td>
 <td>是否使用js滚动</td>
 <td>Boolean</td>
 <td></td>
