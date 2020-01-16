@@ -1,31 +1,41 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-01-15 18:57</div>
+    <div class="update-datetime">文档更新时间：2020-01-16 10:09</div>
     <h2 id="filtersection-shai-xuan-xiang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
 <p>用于筛选条件的选择。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><filter-section-demo1 inline-template><div class="filter-section-demo1">
-  <div class="demo-font-size-14">当前值：{{value}}</div>
-  <mz-filter-section v-model="value" label="类型1：">
-    <mz-filter-section-item v-for="i of 10"
-      :key="i"
-      :value="i">选项{{i}}</mz-filter-section-item>
+  <div class="demo-font-size-14">当前值：{{ value }}</div>
+  <mz-filter-section v-model="value" label="产地：">
+    <mz-filter-section-item v-for="country of countries"
+      :key="country.value"
+      :value="country.value">{{ country.label }}</mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo1></template>
         <template #description><p><code>label</code>用来描述选择项的类型标签。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
-&lt;mz-filter-section v-model=&quot;value&quot; label=&quot;类型1：&quot;&gt;
-  &lt;mz-filter-section-item v-for=&quot;i of 10&quot;
-    :key=&quot;i&quot;
-    :value=&quot;i&quot;&gt;选项{{i}}&lt;/mz-filter-section-item&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{ value }}&lt;/div&gt;
+&lt;mz-filter-section v-model=&quot;value&quot; label=&quot;产地：&quot;&gt;
+  &lt;mz-filter-section-item v-for=&quot;country of countries&quot;
+    :key=&quot;country.value&quot;
+    :value=&quot;country.value&quot;&gt;{{ country.label }}&lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
 export default {
   data() {
-    return { value: '' }
+    return {
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
   }
 }
 &lt;/script&gt;
@@ -33,25 +43,30 @@ export default {
 <demo-block>
         <template #example><filter-section-demo2 inline-template><div class="filter-section-demo2">
   <div class="demo-font-size-14">当前值：{{value}}</div>
-  <mz-filter-section v-model="value" label="类型1：" outlined>
-    <mz-filter-section-item v-for="i of 10"
-      :key="i"
-      :value="i">选项{{i}}</mz-filter-section-item>
+  <mz-filter-section v-model="value" label="漫画类型" outlined>
+    <mz-filter-section-item v-for="type of typeList"
+      :key="type"
+      :value="type"
+      :label="type"></mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo2></template>
         <template #description><p><code>outlined</code>用来控制是否以边框模式显示选中的效果。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
-&lt;mz-filter-section v-model=&quot;value&quot; label=&quot;类型1：&quot; outlined&gt;
-  &lt;mz-filter-section-item v-for=&quot;i of 10&quot;
-    :key=&quot;i&quot;
-    :value=&quot;i&quot;&gt;选项{{i}}&lt;/mz-filter-section-item&gt;
+&lt;mz-filter-section v-model=&quot;value&quot; label=&quot;漫画类型&quot; outlined&gt;
+  &lt;mz-filter-section-item v-for=&quot;type of typeList&quot;
+    :key=&quot;type&quot;
+    :value=&quot;type&quot;
+    :label=&quot;type&quot;&gt;&lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
 export default {
   data() {
-    return { value: '' }
+    return {
+      value: '全部',
+      typeList: [&quot;全部&quot;, &quot;爆笑&quot;, &quot;热血&quot;, &quot;冒险&quot;, &quot;科幻&quot;, &quot;魔幻&quot;, &quot;玄幻&quot;, &quot;校园&quot;, &quot;推理&quot;, &quot;萌系&quot;, &quot;穿越&quot;, &quot;后宫&quot;, &quot;都市&quot;, &quot;恋爱&quot;, &quot;武侠&quot;, &quot;格斗&quot;, &quot;战争&quot;, &quot;历史&quot;, &quot;同人&quot;, &quot;竞技&quot;, &quot;励志&quot;, &quot;治愈&quot;, &quot;机甲&quot;, &quot;纯爱&quot;, &quot;美食&quot;, &quot;血腥&quot;, &quot;僵尸&quot;, &quot;恶搞&quot;, &quot;虐心&quot;, &quot;生活&quot;, &quot;动作&quot;, &quot;惊险&quot;, &quot;唯美&quot;, &quot;震撼&quot;, &quot;复仇&quot;, &quot;侦探&quot;, &quot;其它&quot;, &quot;脑洞&quot;, &quot;奇幻&quot;, &quot;宫斗&quot;, &quot;运动&quot;, &quot;青春&quot;, &quot;灵异&quot;, &quot;古风&quot;, &quot;权谋&quot;, &quot;节操&quot;, &quot;明星&quot;, &quot;暗黑&quot;, &quot;社会&quot;, &quot;浪漫&quot;, &quot;栏目&quot;]
+    }
   }
 }
 &lt;/script&gt;
@@ -68,9 +83,9 @@ export default {
     </mz-radio-group>
   </div>
   <mz-filter-section v-model="value" 
-    label="类型1：" :label-position="position" label-width="100px">
+    label="上线月份" :label-position="position" label-width="100px">
     <mz-filter-section-item 
-      v-for="i of 10" :key="i" :value="i">选项{{i}}</mz-filter-section-item>
+      v-for="i of 12" :key="i" :value="i">{{i}}月</mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo3></template>
         <template #description><p><code>label-position</code>用来控制选择项的标签的位置，可选值为<code>top</code>、<code>left</code>、<code>right</code>。属性值<code>label-width</code>控制标签的宽度。</p>
@@ -84,9 +99,9 @@ export default {
   &lt;/mz-radio-group&gt;
 &lt;/div&gt;
 &lt;mz-filter-section v-model=&quot;value&quot; 
-  label=&quot;类型1：&quot; :label-position=&quot;position&quot; label-width=&quot;100px&quot;&gt;
+  label=&quot;上线月份&quot; :label-position=&quot;position&quot; label-width=&quot;100px&quot;&gt;
   &lt;mz-filter-section-item 
-    v-for=&quot;i of 10&quot; :key=&quot;i&quot; :value=&quot;i&quot;&gt;选项{{i}}&lt;/mz-filter-section-item&gt;
+    v-for=&quot;i of 12&quot; :key=&quot;i&quot; :value=&quot;i&quot;&gt;{{i}}月&lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
@@ -431,11 +446,24 @@ export default {
 export default {
   components: { FilterSectionDemo1: {
   data() {
-    return { value: '' }
+    return {
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
   }
 }, FilterSectionDemo2: {
   data() {
-    return { value: '' }
+    return {
+      value: '全部',
+      typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
+    }
   }
 }, FilterSectionDemo3: {
   data() {

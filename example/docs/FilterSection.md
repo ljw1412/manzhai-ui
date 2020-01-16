@@ -6,17 +6,27 @@
 
 :::demo `label`用来描述选择项的类型标签。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
-<mz-filter-section v-model="value" label="类型1：">
-  <mz-filter-section-item v-for="i of 10"
-    :key="i"
-    :value="i">选项{{i}}</mz-filter-section-item>
+<div class="demo-font-size-14">当前值：{{ value }}</div>
+<mz-filter-section v-model="value" label="产地：">
+  <mz-filter-section-item v-for="country of countries"
+    :key="country.value"
+    :value="country.value">{{ country.label }}</mz-filter-section-item>
 </mz-filter-section>
 
 <script>
 export default {
   data() {
-    return { value: '' }
+    return {
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
   }
 }
 </script>
@@ -28,16 +38,20 @@ export default {
 :::demo `outlined`用来控制是否以边框模式显示选中的效果。
 ```html
 <div class="demo-font-size-14">当前值：{{value}}</div>
-<mz-filter-section v-model="value" label="类型1：" outlined>
-  <mz-filter-section-item v-for="i of 10"
-    :key="i"
-    :value="i">选项{{i}}</mz-filter-section-item>
+<mz-filter-section v-model="value" label="漫画类型" outlined>
+  <mz-filter-section-item v-for="type of typeList"
+    :key="type"
+    :value="type"
+    :label="type"></mz-filter-section-item>
 </mz-filter-section>
 
 <script>
 export default {
   data() {
-    return { value: '' }
+    return {
+      value: '全部',
+      typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
+    }
   }
 }
 </script>
@@ -59,9 +73,9 @@ export default {
   </mz-radio-group>
 </div>
 <mz-filter-section v-model="value" 
-  label="类型1：" :label-position="position" label-width="100px">
+  label="上线月份" :label-position="position" label-width="100px">
   <mz-filter-section-item 
-    v-for="i of 10" :key="i" :value="i">选项{{i}}</mz-filter-section-item>
+    v-for="i of 12" :key="i" :value="i">{{i}}月</mz-filter-section-item>
 </mz-filter-section>
 
 <script>
