@@ -4,6 +4,7 @@ import { CreateElement } from 'vue'
 import { typeOf } from '../../src/utils/assist'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 import MzCatalogueItem from './CatalogueItem.vue'
+import MzScrollbar from '../Scrollbar'
 
 interface CatalogueItem extends FlatCatalogueItem {
   children?: CatalogueItem[]
@@ -18,9 +19,10 @@ interface FlatCatalogueItem {
 }
 
 @Component({
-  components: {
-    MzCatalogueItem
-  }
+  provide() {
+    return { mzCatalogue: this }
+  },
+  components: { MzScrollbar, MzCatalogueItem }
 })
 export default class MzCatalogue extends BaseAttribute {
   @Prop(Boolean)
@@ -49,12 +51,15 @@ export default class MzCatalogue extends BaseAttribute {
   readonly sidebarPointColor!: string
   @Prop(String)
   readonly sidebarArrowColor!: string
-  @Ref('catalogue')
-  readonly catalogueRef!: HTMLDivElement
+  @Ref('content')
+  readonly contentRef!: HTMLDivElement
+  @Ref('scroll')
+  readonly scrollRef!: MzScrollbar
 
   view: HTMLElement | Window = window
   anchorList: HTMLLinkElement[] = []
   activeIndex = -1
+  targetIndex = -1
   arrowTop = 0
 
   get flatCatalogue() {
@@ -95,6 +100,15 @@ export default class MzCatalogue extends BaseAttribute {
     return offset
   }
 
+  get scrollStyles() {
+    const styles: Record<string, any> = {}
+    for (const name of ['height', 'maxHeight', 'minHeight']) {
+      const v = this.baseStyles[name as 'height' | 'maxHeight' | 'minHeight']
+      if (v) styles[name] = this.sidebar ? `calc(${v} - 20px)` : v
+    }
+    return styles
+  }
+
   render(h: CreateElement) {
     if (!this.manual && !this.flatCatalogue.length) return null
     const data = {
@@ -107,12 +121,14 @@ export default class MzCatalogue extends BaseAttribute {
       ],
       style: {
         zIndex: this.zIndex,
-        ...this.baseStyles,
+        width: this.baseStyles.width,
+        minWidth: this.baseStyles.minWidth,
+        maxWidth: this.baseStyles.maxWidth,
+
         '--mz-catalogue__sidebar-color': this.sidebarColor,
         '--mz-catalogue__sidebar-point-color': this.sidebarPointColor,
         '--mz-catalogue__sidebar-arrow-color': this.sidebarArrowColor
-      },
-      ref: 'catalogue'
+      }
     }
     if (this.fixed) {
       Object.assign(data.style, this.catalogueOffset)
@@ -120,19 +136,30 @@ export default class MzCatalogue extends BaseAttribute {
     const itemList = this.flat ? this.flatCatalogue : this.catalogue
     return (
       <div {...data}>
-        {this.sidebar && (
-          <div class="mz-catalogue__sidebar">
-            <em class="circle top"></em>
-            <em class="circle bottom"></em>
-            {this.activeIndex !== -1 && (
-              <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
-                <div class="square"></div>
-                <div class="triangle"></div>
-              </div>
-            )}
+        <mz-scrollbar
+          ref="scroll"
+          bar-size="0"
+          class="mz-catalogue__scroll"
+          style={this.scrollStyles}
+        >
+          <div ref="content" class="mz-catalogue__content">
+            {this.sidebar && this.renderSidebar()}
+            {this.manual ? this.$slots.default : this.renderItem(itemList)}
+          </div>
+        </mz-scrollbar>
+      </div>
+    )
+  }
+
+  renderSidebar() {
+    return (
+      <div class="mz-catalogue__sidebar">
+        {this.activeIndex !== -1 && (
+          <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
+            <div class="square"></div>
+            <div class="triangle"></div>
           </div>
         )}
-        {this.manual ? this.$slots.default : this.renderItem(itemList)}
       </div>
     )
   }
@@ -144,8 +171,12 @@ export default class MzCatalogue extends BaseAttribute {
         props: { ...item, level, scrollSmooth: this.scrollSmooth },
         on: {
           actived: (top: number) => {
-            const catalogueTop = this.catalogueRef.getBoundingClientRect().top
-            this.arrowTop = top - catalogueTop - 10
+            const contentRect = this.contentRef.getBoundingClientRect()
+
+            this.arrowTop = top - contentRect.top - 10
+            console.log(this.arrowTop, contentRect)
+
+            // this.scrollRef && this.scrollRef.setBarTranslate({ deltaY: 90 })
           }
         }
       }
@@ -235,7 +266,6 @@ export default class MzCatalogue extends BaseAttribute {
   --mz-catalogue__sidebar-color: var(--color-text-regular);
 
   position: relative;
-  overflow: hidden;
   box-sizing: border-box;
   &--fixed {
     position: fixed;
@@ -244,7 +274,32 @@ export default class MzCatalogue extends BaseAttribute {
     position: absolute;
   }
   &--sidebar {
-    padding: 10px 0 10px 30px;
+    padding: 10px 0;
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      box-sizing: border-box;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      left: 6px;
+      border: 2px solid var(--mz-catalogue__sidebar-color);
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    .mz-catalogue__content {
+      overflow: hidden;
+      padding-left: 20px;
+    }
+  }
+
+  &__content {
+    position: relative;
   }
 
   &__sidebar {
@@ -252,26 +307,12 @@ export default class MzCatalogue extends BaseAttribute {
     top: 0;
     left: 10px;
     height: 100%;
-    width: 2px;
+    width: 0;
     padding: 9px 0;
     box-sizing: border-box;
+    border: 1px solid var(--mz-catalogue__sidebar-color);
     background-color: var(--mz-catalogue__sidebar-color);
     background-clip: content-box;
-    .circle {
-      position: absolute;
-      box-sizing: border-box;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      left: -4px;
-      border: 2px solid var(--mz-catalogue__sidebar-color);
-      &.top {
-        top: 0px;
-      }
-      &.bottom {
-        bottom: 0px;
-      }
-    }
     .arrow {
       position: absolute;
       left: -5px;

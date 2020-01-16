@@ -58,7 +58,7 @@ export default class MzScrollbar extends Vue {
         }
         const data = {
           props: { ...item, [item.type]: true },
-          on: { translate: this.onTranslate },
+          on: { translate: this.translateTo },
           ref: 'bar' + item.type.toUpperCase()
         }
         return <mz-bar {...data}></mz-bar>
@@ -99,7 +99,7 @@ export default class MzScrollbar extends Vue {
     removeResizeListener(this.contentRef, this.updateSize)
   }
 
-  onTranslate(direction: 'x' | 'y' | '', translate: number) {
+  translateTo(direction: 'x' | 'y' | '', translate: number) {
     if (direction) {
       this.translate[direction] = -translate
     }

@@ -10,11 +10,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
+import {
+  Component,
+  Vue,
+  Prop,
+  Watch,
+  Ref,
+  Inject
+} from 'vue-property-decorator'
 import { scrollIntoView } from '../../src/utils/dom'
+import MzCatalogue from './Catalogue.vue'
 
 @Component
 export default class MzCatalogueItem extends Vue {
+  @Inject('mzCatalogue')
+  readonly mzCatalogue!: MzCatalogue
   @Prop(String)
   readonly title!: string
   @Prop(Boolean)
@@ -91,7 +101,7 @@ export default class MzCatalogueItem extends Vue {
   &[data-level='1']::before {
     content: '';
     position: absolute;
-    left: -23px;
+    left: -13px;
     top: 6px;
     width: 8px;
     height: 8px;
