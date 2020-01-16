@@ -1,7 +1,8 @@
 <template>
   <mz-row class="mz-filter-section"
     :class="sectionClasses">
-    <mz-col class="mz-filter-section__label"
+    <mz-col v-if="$slots.label || label"
+      class="mz-filter-section__label"
       :style="{width:labelWidth}">
       <slot name="label">{{label}}</slot>
     </mz-col>
@@ -128,6 +129,7 @@ export default class MzFilterSection extends Mixins(FormElement) {
       &__label {
         flex-shrink: 0;
         line-height: 30px;
+        margin-right: 10px;
       }
 
       &__content {
