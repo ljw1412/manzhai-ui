@@ -7,6 +7,7 @@
       sidebar
       fixed
       width="200px"
+      max-height="200px"
       container="#page-component-content"
       target=".mz-document-anchor"
       :offset="{top:'80px',right:'20px'}"></mz-catalogue>
