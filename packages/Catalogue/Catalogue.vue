@@ -174,9 +174,11 @@ export default class MzCatalogue extends BaseAttribute {
             const contentRect = this.contentRef.getBoundingClientRect()
 
             this.arrowTop = top - contentRect.top - 10
-            console.log(this.arrowTop, contentRect)
-
-            // this.scrollRef && this.scrollRef.setBarTranslate({ deltaY: 90 })
+            if (this.scrollRef) {
+              const scrollViewCenter =
+                (this.scrollRef.$el as HTMLElement).offsetHeight / 2
+              this.scrollRef.translateTo('y', this.arrowTop - scrollViewCenter)
+            }
           }
         }
       }
