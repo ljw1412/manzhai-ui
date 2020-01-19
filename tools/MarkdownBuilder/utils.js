@@ -87,9 +87,11 @@ export default {
 }
 </script>`
   // style 组装
-  const componentStyleList = blocks.filter(item => item.style)
+  const componentStyleList = blocks
+    .filter(item => item.style)
+    .map(item => `.${item.hyphenateName}{${pad(item.style)}}`)
   const style = `<style lang="scss">
-${componentStyleList.map(item => `.${item.hyphenateName}{${pad(item.style)}}`)}
+${componentStyleList.join('\n')}
 </style>`
 
   await utils.saveFiles(basePath, [
