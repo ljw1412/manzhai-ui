@@ -4,7 +4,7 @@
     @click="onItemClick">
     <div class="mz-filter-section-item__label"
       :style="labelStyle">
-      <slot :checked="checked">{{label}}</slot>
+      <slot :checked="checked">{{label||value}}</slot>
     </div>
   </div>
 </template>
