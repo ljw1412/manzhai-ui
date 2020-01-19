@@ -4,7 +4,7 @@
 
 :::demo
 ```html
-图片地址：<input v-model="src" />
+<mz-input v-model="src" label="图片地址"/>
 <br>
 <mz-image :src="src"
   width="100px"

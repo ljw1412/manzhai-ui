@@ -49,6 +49,7 @@ export default class DemoBlock extends Vue {
 .demo-block {
   position: relative;
   padding: 16px;
+  padding-top: 36px;
   background-color: var(--demo-block__background-color);
 
   .example {
@@ -97,8 +98,8 @@ export default class DemoBlock extends Vue {
 
   .action {
     position: absolute;
-    right: 16px;
-    top: 16px;
+    right: 12px;
+    top: 8px;
     color: var(--demo-block__highlight-color);
     z-index: 1001;
     .mz-icon {

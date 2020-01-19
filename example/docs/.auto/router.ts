@@ -5,7 +5,9 @@ import ComponentCatalogue from './Catalogue.vue'
 import ComponentCell from './Cell.vue'
 import ComponentCheckbox from './Checkbox.vue'
 import ComponentFilterSection from './FilterSection.vue'
+import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
+import ComponentImage from './Image.vue'
 
 export default [
   {
@@ -44,8 +46,18 @@ export default [
     component: ComponentFilterSection
   },
   {
+    path: 'grid',
+    name: 'ComponentGrid',
+    component: ComponentGrid
+  },
+  {
     path: 'heading',
     name: 'ComponentHeading',
     component: ComponentHeading
+  },
+  {
+    path: 'image',
+    name: 'ComponentImage',
+    component: ComponentImage
   }
 ]

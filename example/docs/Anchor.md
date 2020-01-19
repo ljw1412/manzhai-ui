@@ -8,10 +8,10 @@
 
 :::demo `level`属性来控制标题大小，默认为`3`。
 ```html
-<p>
+<div>
   <mz-anchor href="#a-anchor-1" />
   <span id="a-anchor-1">锚点-1</span>
-</p>
+</div>
 ```
 :::
 

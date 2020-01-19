@@ -1,23 +1,23 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-01-15 19:08</div>
+    <div class="update-datetime">文档更新时间：2020-01-19 09:55</div>
     <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <p>基础锚点的用法。</p>
 <demo-block>
         <template #example><anchor-demo1 inline-template><div class="anchor-demo1">
-  <p>
+  <div>
     <mz-anchor href="#a-anchor-1" />
     <span id="a-anchor-1">锚点-1</span>
-  </p>
+  </div>
 </div></anchor-demo1></template>
         <template #description><p><code>level</code>属性来控制标题大小，默认为<code>3</code>。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;p&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-anchor href=&quot;#a-anchor-1&quot; /&gt;
   &lt;span id=&quot;a-anchor-1&quot;&gt;锚点-1&lt;/span&gt;
-&lt;/p&gt;
+&lt;/div&gt;
 </code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian" title="隐蔽式锚点" data-level="3" data-href="#yin-bi-shi-mao-dian">¶</a>隐蔽式锚点</h3>
 <p>不可见的锚点。</p>
 <demo-block>
