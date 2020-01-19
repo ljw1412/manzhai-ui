@@ -30,7 +30,7 @@ export default class MzCol extends Vue {
   get colClasses() {
     const classes = ['mz-col']
     ;['offset', 'pull', 'push', 'xs', 'sm', 'md', 'lg', 'xl'].forEach(key => {
-      if (this[key as keyof MzCol]) {
+      if (this[key as keyof MzCol] !== undefined) {
         classes.push(`mz-col-${key}-${this[key as keyof MzCol]}`)
       }
     })
@@ -38,7 +38,7 @@ export default class MzCol extends Vue {
     if (!span && (this.xs || this.sm || this.md || this.lg || this.xl)) {
       span = 24
     }
-    if (span) classes.push(`mz-col-${span}`)
+    if (span >= 0) classes.push(`mz-col-${span}`)
     return classes
   }
 
@@ -72,6 +72,10 @@ export default class MzCol extends Vue {
   box-sizing: border-box;
 }
 
+.mz-col-0 {
+  display: none;
+}
+
 @for $i from 1 through 24 {
   .mz-col-#{$i} {
     width: 100% * $i / 24;
@@ -95,8 +99,12 @@ $sizeMap: (xs, 768px, max) (sm, 768px, min) (md, 992px, min) (lg, 1200px, min)
 
 @each $size, $screen-width, $maxmin in $sizeMap {
   @media screen and(#{$maxmin}-width:#{$screen-width}) {
+    .mz-col-#{$size}-0 {
+      display: none;
+    }
     @for $i from 1 through 24 {
       .mz-col-#{$size}-#{$i} {
+        display: block;
         width: 100% * $i / 24;
       }
     }
