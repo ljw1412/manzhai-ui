@@ -100,13 +100,15 @@ export default class MzScrollbar extends Vue {
   }
 
   translateTo(direction: 'x' | 'y' | '', translate: number) {
-    if (!direction) return
-    if (translate < 0) translate = 0
-    const bar = this[('bar' + direction.toUpperCase()) as 'barX' | 'barY']
-    if (translate > bar.scrollSize - bar.viewSize) {
-      translate = bar.scrollSize - bar.viewSize
-    }
-    this.translate[direction] = -translate
+    setTimeout(() => {
+      if (!direction) return
+      if (translate < 0) translate = 0
+      const bar = this[('bar' + direction.toUpperCase()) as 'barX' | 'barY']
+      if (translate > bar.scrollSize - bar.viewSize) {
+        translate = bar.scrollSize - bar.viewSize
+      }
+      this.translate[direction] = -translate
+    }, 0)
   }
 
   setBarTranslate({ deltaX, deltaY }: { deltaX?: number; deltaY?: number }) {
