@@ -14,6 +14,12 @@ export default class MzImage extends Vue {
   readonly height!: string
   @Prop(String)
   readonly fit!: 'fill' | 'contain' | 'cover' | 'none' | 'scale-down'
+  @Prop({ type: String, default: 'center' })
+  readonly position!: string
+  @Prop(String)
+  readonly alt!: string
+  @Prop(String)
+  readonly referrerPolicy!: string
 
   naturalWidth: string = ''
   naturalHeight: string = ''
@@ -56,6 +62,7 @@ export default class MzImage extends Vue {
     this.initBackgroundSize()
     data.style = {
       backgroundImage: `url(${this.src})`,
+      backgroundPosition: this.position,
       width: this.mWidth,
       height: this.mHeight
     }
@@ -67,8 +74,14 @@ export default class MzImage extends Vue {
 
   renderImage(data: Record<string, any>) {
     Object.assign(data, {
-      style: { objectFit: this.fit },
-      attrs: { src: this.src, width: this.mWidth, height: this.mHeight },
+      style: { objectFit: this.fit, objectPosition: this.position },
+      attrs: {
+        src: this.src,
+        width: this.mWidth,
+        height: this.mHeight,
+        alt: this.alt,
+        referrerPolicy: this.referrerPolicy
+      },
       on: {
         load: this.onLoad,
         error: this.onError
