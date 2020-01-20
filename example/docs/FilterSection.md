@@ -199,6 +199,12 @@ export default {
 |multiple|是否多选|Boolean|||
 |name|(在group下必填)选择项的名称(唯一)|String|||
 
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选择项选中状态变化|(value: any)|
+
 #### 插槽
 
 | 名称 | 说明 | 参数 |
@@ -219,6 +225,12 @@ export default {
 |custom|是否自定义选中|Boolean|||
 |disabled|是否禁用|Boolean|||
 
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选择项选中状态变化|(checked: boolean)|
+
 #### 作用域插槽
 
 | 名称 | 说明 | 参数 |
@@ -233,6 +245,12 @@ export default {
 | --- | --- | --- | --- | --- |
 |value/v-model|绑定值|String|||
 |auto-fix-value|是否自动修复值|Boolean|||
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选择项组选中状态变化|(checked: { [name]: value })|
 
 #### 插槽
 

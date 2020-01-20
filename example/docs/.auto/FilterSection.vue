@@ -1,6 +1,6 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-01-16 10:09</div>
+    <div class="update-datetime">文档更新时间：2020-01-20 16:30</div>
     <h2 id="filtersection-shai-xuan-xiang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
 <p>用于筛选条件的选择。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -297,6 +297,23 @@ export default {
 </tr>
 </tbody>
 </table>
+<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>选择项选中状态变化</td>
+<td>(value: any)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
@@ -376,6 +393,23 @@ export default {
 </tr>
 </tbody>
 </table>
+<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>选择项选中状态变化</td>
+<td>(checked: boolean)</td>
+</tr>
+</tbody>
+</table>
 <h4 id="zuo-yong-yu-cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#zuo-yong-yu-cha-cao" title="作用域插槽" data-level="4" data-href="#zuo-yong-yu-cha-cao">¶</a>作用域插槽</h4>
 <table>
 <thead>
@@ -419,6 +453,23 @@ export default {
 <td>Boolean</td>
 <td></td>
 <td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="shi-jian-3" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-3" title="事件" data-level="4" data-href="#shi-jian-3">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>选择项组选中状态变化</td>
+<td>(checked: { [name]: value })</td>
 </tr>
 </tbody>
 </table>

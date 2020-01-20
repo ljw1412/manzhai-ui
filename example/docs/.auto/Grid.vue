@@ -1,6 +1,6 @@
 <template>
   <div class="component-grid">
-    <div class="update-datetime">文档更新时间：2020-01-19 13:41</div>
+    <div class="update-datetime">文档更新时间：2020-01-20 15:32</div>
     <h2 id="grid-zha-ge-bu-ju" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#grid-zha-ge-bu-ju" title="Grid 栅格布局" data-level="2" data-href="#grid-zha-ge-bu-ju">¶</a>Grid 栅格布局</h2>
 <p>按照 24 等分的原则进行划分。</p>
 <h3 id="ji-chu-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-bu-ju" title="基础布局" data-level="3" data-href="#ji-chu-bu-ju">¶</a>基础布局</h3>
@@ -74,9 +74,9 @@
 &lt;style lang=&quot;scss&quot;&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -126,9 +126,9 @@
 &lt;style lang=&quot;scss&quot;&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -187,9 +187,9 @@
 &lt;style lang=&quot;scss&quot;&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -241,9 +241,9 @@
 &lt;style lang=&quot;scss&quot;&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -345,9 +345,9 @@ export default {
 &lt;style&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -387,9 +387,9 @@ export default {
 &lt;style&gt;
 .mz-row{
   margin-bottom:20px;
-  &amp;:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -560,9 +560,9 @@ export default {
 .grid-demo1{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;
@@ -583,9 +583,9 @@ export default {
 .grid-demo2{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;
@@ -603,9 +603,9 @@ export default {
 .grid-demo3{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;
@@ -623,9 +623,9 @@ export default {
 .grid-demo4{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;
@@ -654,9 +654,9 @@ export default {
 .grid-demo6{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;
@@ -674,9 +674,9 @@ export default {
 .grid-demo7{  
   .mz-row{
     margin-bottom:20px;
-    &:last-child {
-      margin-bottom: 0;
-    }
+  }
+  .mz-row:last-child {
+    margin-bottom: 0;
   }
   .mz-col{
     border-radius: 4px;

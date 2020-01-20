@@ -42,9 +42,9 @@
 <style lang="scss">
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -84,9 +84,9 @@
 <style lang="scss">
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -131,9 +131,9 @@
 <style lang="scss">
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -174,9 +174,9 @@
 <style lang="scss">
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -260,9 +260,9 @@ export default {
 <style>
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
@@ -297,9 +297,9 @@ export default {
 <style>
 .mz-row{
   margin-bottom:20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+}
+.mz-row:last-child {
+  margin-bottom: 0;
 }
 .mz-col{
   border-radius: 4px;
