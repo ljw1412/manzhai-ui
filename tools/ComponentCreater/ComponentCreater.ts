@@ -61,7 +61,8 @@ module.exports = class ComponentCreater {
     ])
     // 文档导航栏追加
     const navigateOptions = require('../../example/options/navigate.json')
-    const componentChildren = navigateOptions[0].children
+    const componentGroup = navigateOptions.find(item => item.group === '组件')
+    const componentChildren = (componentGroup && componentGroup.children) || []
     componentChildren.push({
       label: this.name,
       text: this.nameCN,
