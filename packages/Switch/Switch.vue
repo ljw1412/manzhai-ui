@@ -43,11 +43,7 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   readonly input!: HTMLInputElement
 
   get icon() {
-    return this.disabled
-      ? 'md-lock'
-      : this.value
-      ? this.activeIcon
-      : this.inactiveIcon
+    return this.value ? this.activeIcon : this.inactiveIcon
   }
 
   get wrapperClasses() {
@@ -83,7 +79,7 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   --mz-switch__bar-height: 18px;
   --mz-switch__bar-border-radius: 2px;
   --mz-switch__bar-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
-  --mz-switch__bar-background-color: #bdc1c6;
+  --mz-switch__bar-background-color: #e5e5e5;
   --mz-switch__bar-background-color--checked: var(--color-primary);
   --mz-switch__thumb-background-color: #ffffff;
   --mz-switch__thumb-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 3px 0px;
@@ -162,6 +158,8 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   }
 
   &--disabled {
+    --mz-switch__bar-background-color: #d4d3c4;
+    --mz-switch__thumb-background-color: #edebe0;
     .mz-switch {
       &__core {
         &::before {
