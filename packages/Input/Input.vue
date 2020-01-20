@@ -26,6 +26,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   readonly type!: string
   @Prop(Boolean)
   readonly readonly!: boolean
+  @Prop(String)
+  readonly placeholder!: string
   @Prop({ type: Boolean, default: false })
   readonly autocomplete!: boolean
   @Prop(Boolean)
@@ -102,6 +104,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
         type={this.type}
         name={this.name}
         maxlength={this.maxlength}
+        placeholder={this.placeholder}
         readonly={this.readonly}
         disabled={this.disabled}
         autocomplete={this.autocomplete ? 'on' : 'off'}
@@ -163,7 +166,8 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   renderContainer() {
     const classes = {
       'mz-input__label': true,
-      'mz-input__label--above': this.labelUp || this.inputFocus || this.value,
+      'mz-input__label--above':
+        this.labelUp || this.placeholder || this.value || this.inputFocus,
       'mz-input__label--focused': this.inputFocus
     }
     const label = (
@@ -250,9 +254,6 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
   mounted() {
     this.getNotchWidth()
   }
-
-  @Watch('labelUp', { immediate: true })
-  onLabelUpChange() {}
 }
 </script>
 
