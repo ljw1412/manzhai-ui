@@ -158,9 +158,7 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   }
 
   &--disabled {
-    .mz-switch {
-      opacity: 0.75;
-    }
+    opacity: 0.5;
   }
 
   &--large {

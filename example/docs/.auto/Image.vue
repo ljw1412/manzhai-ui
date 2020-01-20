@@ -1,6 +1,6 @@
 <template>
   <div class="component-image">
-    <div class="update-datetime">文档更新时间：2020-01-20 16:25</div>
+    <div class="update-datetime">文档更新时间：2020-01-20 17:02</div>
     <h2 id="image-tu-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
 <p>显示图片或背景的容器。</p>
 <h3 id="ji-ben-yu-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
@@ -202,7 +202,7 @@ export default {
 <tbody>
 <tr>
 <td>-</td>
-<td>仅存在背景模式，容器内容</td>
+<td>仅在背景模式有效，容器内容</td>
 <td></td>
 </tr>
 </tbody>

@@ -11,7 +11,6 @@ import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentRadio from './views/Component/Radio.vue'
 import ComponentSelect from './views/Component/Select.vue'
-import ComponentSwitch from './views/Component/Switch.vue'
 import ComponentScrollbar from './views/Component/Scrollbar.vue'
 import ComponentSnackbar from './views/Component/Snackbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
@@ -74,11 +73,6 @@ export default new Router({
           path: 'select',
           name: 'ComponentSelect',
           component: ComponentSelect
-        },
-        {
-          path: 'switch',
-          name: 'ComponentSwitch',
-          component: ComponentSwitch
         },
         {
           path: 'scrollbar',

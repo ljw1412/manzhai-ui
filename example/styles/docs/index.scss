@@ -114,6 +114,12 @@
       }
     }
   }
+
+  .component-switch {
+    .mz-switch + .mz-switch {
+      margin-left: 20px;
+    }
+  }
 }
 
 #demo-heading-scroll-container,
