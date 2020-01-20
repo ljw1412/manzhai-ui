@@ -35,6 +35,7 @@ export default class MzFilterSectionGroup extends Mixins(FormElement) {
 
   updateGroupValue(val: Record<string, any>) {
     this.$emit('input', Object.assign({}, this.value, val))
+    this.$emit('change', Object.assign({}, this.value, val))
   }
 
   updateGroupValueKey() {
@@ -48,6 +49,7 @@ export default class MzFilterSectionGroup extends Mixins(FormElement) {
       }
     })
     this.$emit('input', Object.assign(obj, this.value))
+    this.$emit('change', Object.assign(obj, this.value))
   }
 
   @Watch('value', { immediate: true })
