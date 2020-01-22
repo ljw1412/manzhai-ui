@@ -42,7 +42,7 @@ const showNextSnackbar = () => {
         instance[prop as keyof SnackbarPluginOptions] = options[prop]
       }
     }
-    instance.$on('buttonClick', options.buttonClick)
+    instance.$on('buttonClick', options.buttonClick.bind(Snackbar))
 
     document.body.appendChild(instance.$el)
     Vue.nextTick(() => {
