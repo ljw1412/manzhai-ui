@@ -132,4 +132,20 @@ export default {
 ```
 :::
 
+### API
 
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|absolute|是否绝对定位|Boolean|||
+|fixed|是否固定定位|Boolean|||
+|value|绑定值，是否显示|Boolean|||
+|timeout|延迟关闭时间，为0时不关闭|Number||5000|
+|color|背景颜色|String|primary / success / warning / danger 或同原生background-color属性值||
+|fontColor|文字颜色|String|||
+|text|内容文本|String|||
+|buttonText|按钮文本|String|||
+|buttonProps|按钮属性值，同MzButton属性对象|Object|||
+|vertical|是否垂直模式|Boolean|||
+|placement|所在位置，在绝对或固定时有效|String|top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end|'bottom'|
+|zIndex|层级|Number||1000|
