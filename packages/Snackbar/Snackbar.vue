@@ -51,6 +51,8 @@ export default class MzSnackbar extends Vue {
   @Prop(String)
   readonly color!: string
   @Prop(String)
+  readonly fontColor!: string
+  @Prop(String)
   readonly text!: string
   @Prop(String)
   readonly buttonText!: string
@@ -93,10 +95,15 @@ export default class MzSnackbar extends Vue {
   }
 
   get snackbarStyles() {
-    return {
+    const styles: Record<string, any> = {
       zIndex: this.zIndex || this.mZIndex,
-      transformOrigin: this.placementList[0]
+      transformOrigin: this.placementList[0],
+      '--mz-snackbar__font-color': this.fontColor
     }
+    if (this.color && !COLOR_TYPES.includes(this.color)) {
+      styles['--mz-snackbar__background-color'] = this.color
+    }
+    return styles
   }
 
   get wrapperClasses() {
