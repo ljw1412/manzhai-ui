@@ -12,7 +12,6 @@ import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentRadio from './views/Component/Radio.vue'
 import ComponentSelect from './views/Component/Select.vue'
 import ComponentScrollbar from './views/Component/Scrollbar.vue'
-import ComponentSnackbar from './views/Component/Snackbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
 import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
@@ -78,11 +77,6 @@ export default new Router({
           path: 'scrollbar',
           name: 'ComponentScrollbar',
           component: ComponentScrollbar
-        },
-        {
-          path: 'snackbar',
-          name: 'ComponentSnackbar',
-          component: ComponentSnackbar
         },
         {
           path: 'tabs',
