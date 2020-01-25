@@ -44,9 +44,9 @@ export default class MzRadioGroup extends Vue {
     return this.data.map(item => {
       const data = {
         props: {
+          border: this.border,
           ...item,
           inputValue: this.value,
-          border: this.border,
           name: this.name
         }
       }
