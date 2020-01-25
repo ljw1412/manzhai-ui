@@ -8,6 +8,7 @@ import ComponentFilterSection from './FilterSection.vue'
 import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
+import ComponentRadio from './Radio.vue'
 import ComponentSnackbar from './Snackbar.vue'
 import ComponentSwitch from './Switch.vue'
 
@@ -61,6 +62,11 @@ export default [
     path: 'image',
     name: 'ComponentImage',
     component: ComponentImage
+  },
+  {
+    path: 'radio',
+    name: 'ComponentRadio',
+    component: ComponentRadio
   },
   {
     path: 'snackbar',

@@ -9,7 +9,6 @@ import ComponentIcon from './views/Component/Icon.vue'
 import ComponentInput from './views/Component/Input.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentNavigation from './views/Component/Navigation.vue'
-import ComponentRadio from './views/Component/Radio.vue'
 import ComponentSelect from './views/Component/Select.vue'
 import ComponentScrollbar from './views/Component/Scrollbar.vue'
 import ComponentTabs from './views/Component/Tabs.vue'
@@ -62,11 +61,6 @@ export default new Router({
           path: 'navigation',
           name: 'ComponentNavigation',
           component: ComponentNavigation
-        },
-        {
-          path: 'radio',
-          name: 'ComponentRadio',
-          component: ComponentRadio
         },
         {
           path: 'select',
