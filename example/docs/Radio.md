@@ -137,3 +137,37 @@ export default {
 </script>
 ```
 :::
+
+### Radio&RadioButton API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|inputValue/v-model|绑定值|any| | |
+|value|选项值|any|||
+|label|选择项标签|String|||
+|name|同原生input的name属性|String|||
+|border|是否有边框|Boolean|||
+| ripple | 点击涟漪效果 | Boolean / Object | | { value: true, center: true } |
+|disabled|是否禁用|Boolean|||
+
+#### 插槽
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| 默认 |选择项标签，类似label属性||
+
+
+### RadioGroup API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|value/v-model|绑定值|any|||
+|name|同原生input的name属性|String|||
+|data|选项数组，但插槽优先级更高|`Array<MzRadio>`|||
+|button|是否为按钮|Boolean|||
+|border|是否有边框|Boolean|||
+|block|是否为块级元素|Boolean|||
+
+#### 插槽
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+| 默认 |选项组的内容||
