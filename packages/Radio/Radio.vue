@@ -14,7 +14,7 @@
       :value="value" />
     <span class="mz-radio__label color-transition"
       role="radio">
-      <slot>{{label}}</slot>
+      <slot>{{label||value}}</slot>
     </span>
   </label>
 </template>
@@ -37,8 +37,6 @@ export default class MzRadio extends Mixins(FormElement) {
   readonly inputValue!: any
   @Inject({ from: 'mzRadioGroup', default: null })
   readonly mzRadioGroup?: MzRadioGroup
-  @Prop()
-  readonly value!: any
   @Prop(Boolean)
   readonly border!: boolean
   @Prop({
