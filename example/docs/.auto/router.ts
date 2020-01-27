@@ -11,6 +11,7 @@ import ComponentImage from './Image.vue'
 import ComponentRadio from './Radio.vue'
 import ComponentSnackbar from './Snackbar.vue'
 import ComponentSwitch from './Switch.vue'
+import ComponentTabs from './Tabs.vue'
 
 export default [
   {
@@ -77,5 +78,10 @@ export default [
     path: 'switch',
     name: 'ComponentSwitch',
     component: ComponentSwitch
+  },
+  {
+    path: 'tabs',
+    name: 'ComponentTabs',
+    component: ComponentTabs
   }
 ]
