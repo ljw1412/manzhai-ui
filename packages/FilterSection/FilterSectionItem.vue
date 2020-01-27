@@ -71,6 +71,8 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
 
   padding: 3px 5px;
   user-select: none;
+  display: inline-flex;
+  align-items: center;
   &__label {
     box-sizing: border-box;
     color: var(--mz-filter-section-item__label-color);
