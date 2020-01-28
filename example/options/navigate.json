@@ -59,6 +59,13 @@
         }
       },
       {
+        "label": "FixedSection",
+        "text": "固定项",
+        "to": {
+          "name": "ComponentFixedSection"
+        }
+      },
+      {
         "label": "Form",
         "text": "表单",
         "to": {
