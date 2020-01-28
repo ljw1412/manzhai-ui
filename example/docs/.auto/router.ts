@@ -5,10 +5,12 @@ import ComponentCatalogue from './Catalogue.vue'
 import ComponentCell from './Cell.vue'
 import ComponentCheckbox from './Checkbox.vue'
 import ComponentFilterSection from './FilterSection.vue'
+import ComponentFixedSection from './FixedSection.vue'
 import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
 import ComponentRadio from './Radio.vue'
+import ComponentScrollbar from './Scrollbar.vue'
 import ComponentSnackbar from './Snackbar.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
@@ -50,6 +52,11 @@ export default [
     component: ComponentFilterSection
   },
   {
+    path: 'fixed-section',
+    name: 'ComponentFixedSection',
+    component: ComponentFixedSection
+  },
+  {
     path: 'grid',
     name: 'ComponentGrid',
     component: ComponentGrid
@@ -68,6 +75,11 @@ export default [
     path: 'radio',
     name: 'ComponentRadio',
     component: ComponentRadio
+  },
+  {
+    path: 'scrollbar',
+    name: 'ComponentScrollbar',
+    component: ComponentScrollbar
   },
   {
     path: 'snackbar',
