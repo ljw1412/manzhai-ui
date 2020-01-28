@@ -122,7 +122,9 @@ export default class MzScrollbar extends Vue {
 
   // 鼠标滚轮事件
   handleMousewheel(e: MouseWheelEvent) {
-    this.setBarTranslate({ deltaX: e.deltaX, deltaY: e.deltaY })
+    const deltaX = e.shiftKey ? e.deltaY : e.deltaX
+    const deltaY = e.shiftKey ? e.deltaX : e.deltaY
+    this.setBarTranslate({ deltaX, deltaY })
   }
 
   // 触摸事件开始
