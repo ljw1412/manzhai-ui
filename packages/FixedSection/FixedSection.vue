@@ -84,7 +84,7 @@ export default class MzFixedSection extends BaseAttribute {
       : (element as HTMLElement).getBoundingClientRect().top
   }
 
-  handleScroll(e: UIEvent) {
+  handleScroll(e: Event) {
     const scrollTop = this.getScrollTop(this.containerEl!)
     if (!this.isFixed) {
       this.offsetHeight = (this.$el as HTMLElement).offsetHeight
