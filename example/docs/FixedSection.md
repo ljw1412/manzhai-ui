@@ -47,3 +47,27 @@ export default {
 </script>
 ```
 :::
+
+### API 
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|fixed|是否固定模式|Boolean|||
+|top|固定模式下有效，顶部位置|String|||
+|bottom|固定模式下有效，底部位置|String|||
+|left|固定模式下有效，左边位置|String|||
+|right|固定模式下有效，右边位置|String|||
+|sectionStyle|板块样式|Object|||
+|sticky|是否粘性布局|Boolean|||
+|container|所在的父级容器，一般为滚动容器。|String|||
+|offsetTop|吸顶时与顶部的距离，单位px|Number|||
+|placeholder|是否有占位容器|Boolean|||
+|zIndex|同原生 z-index|Number||900|
+#### 插槽
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|默认|板块内容||
+
