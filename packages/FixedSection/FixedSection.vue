@@ -48,8 +48,6 @@ export default class MzFixedSection extends BaseAttribute {
   }
 
   renderSection(h: CreateElement) {
-    console.log(this.sectionStyle)
-
     const data = {
       class: [
         'mz-fixed-section',
