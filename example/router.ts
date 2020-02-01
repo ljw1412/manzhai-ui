@@ -8,7 +8,6 @@ import ComponentForm from './views/Component/Form.vue'
 import ComponentIcon from './views/Component/Icon.vue'
 import ComponentInput from './views/Component/Input.vue'
 import ComponentList from './views/Component/List.vue'
-import ComponentNavigation from './views/Component/Navigation.vue'
 import ComponentSelect from './views/Component/Select.vue'
 import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
@@ -54,11 +53,6 @@ export default new Router({
           path: 'list',
           name: 'ComponentList',
           component: ComponentList
-        },
-        {
-          path: 'navigation',
-          name: 'ComponentNavigation',
-          component: ComponentNavigation
         },
         {
           path: 'select',
