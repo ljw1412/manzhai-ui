@@ -12,6 +12,7 @@ import ComponentImage from './Image.vue'
 import ComponentNavigation from './Navigation.vue'
 import ComponentRadio from './Radio.vue'
 import ComponentScrollbar from './Scrollbar.vue'
+import ComponentSelect from './Select.vue'
 import ComponentSnackbar from './Snackbar.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
@@ -86,6 +87,11 @@ export default [
     path: 'scrollbar',
     name: 'ComponentScrollbar',
     component: ComponentScrollbar
+  },
+  {
+    path: 'select',
+    name: 'ComponentSelect',
+    component: ComponentSelect
   },
   {
     path: 'snackbar',
