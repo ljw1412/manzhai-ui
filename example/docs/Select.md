@@ -76,4 +76,34 @@ export default {
 ```
 :::
 
-### API
+### Select API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|value|绑定值|any|||
+|list|选项列表|Array|||
+|valueName|列表中对象代表值的属性名称|String||'value'|
+|labelName|列表中对象代表值的标签名称|String||'label'|
+|search|是否有搜索|Boolean|||
+|dropdownMatchSelectWidth|是否与选择框同宽|Boolean|||
+|appendToBody|是否将下拉框置入body下|Boolean|||
+|under|是否将下拉框显示在选择框下方|Boolean|||
+
+#### 事件
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|选择项选中状态变化|(value: any,item:Object)|
+
+### Option API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|value|选项的值|String|||
+|label|选项的标签|String|||
+|disabled|是否禁用|Boolean|||
+
+#### 
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|click|选项点击事件|(value: any,item:Object)|

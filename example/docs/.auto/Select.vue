@@ -1,6 +1,6 @@
 <template>
   <div class="component-select">
-    <div class="update-datetime">文档更新时间：2020-02-02 16:15</div>
+    <div class="update-datetime">文档更新时间：2020-02-03 20:01</div>
     <h2 id="select-xuan-ze-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#select-xuan-ze-kuang" title="Select 选择框" data-level="2" data-href="#select-xuan-ze-kuang">¶</a>Select 选择框</h2>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <demo-block>
@@ -85,7 +85,147 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+</code></pre></template></demo-block><h3 id="select-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#select-api" title="Select API" data-level="3" data-href="#select-api">¶</a>Select API</h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>绑定值</td>
+<td>any</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>list</td>
+<td>选项列表</td>
+<td>Array</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>valueName</td>
+<td>列表中对象代表值的属性名称</td>
+<td>String</td>
+<td></td>
+<td>'value'</td>
+</tr>
+<tr>
+<td>labelName</td>
+<td>列表中对象代表值的标签名称</td>
+<td>String</td>
+<td></td>
+<td>'label'</td>
+</tr>
+<tr>
+<td>search</td>
+<td>是否有搜索</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dropdownMatchSelectWidth</td>
+<td>是否与选择框同宽</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>appendToBody</td>
+<td>是否将下拉框置入body下</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>under</td>
+<td>是否将下拉框显示在选择框下方</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>选择项选中状态变化</td>
+<td>(value: any,item:Object)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="option-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#option-api" title="Option API" data-level="3" data-href="#option-api">¶</a>Option API</h3>
+<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>选项的值</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>label</td>
+<td>选项的标签</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#">¶</a></h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>选项点击事件</td>
+<td>(value: any,item:Object)</td>
+</tr>
+</tbody>
+</table>
 
   </div>
 </template>
