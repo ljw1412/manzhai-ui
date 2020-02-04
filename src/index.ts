@@ -30,6 +30,7 @@ import {
   ListGroup,
   ListItemGroup
 } from '../packages/List/index'
+import { Masonry, MasonryItem } from '../packages/Masonry/index'
 import Navigation from '../packages/Navigation/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
 import Row from '../packages/Row/index'
@@ -70,6 +71,8 @@ const components: VueConstructor[] = [
   ListItem,
   ListGroup,
   ListItemGroup,
+  Masonry,
+  MasonryItem,
   Navigation,
   Option,
   Radio,
@@ -184,6 +187,8 @@ export default {
   ListItem,
   ListGroup,
   ListItemGroup,
+  Masonry,
+  MasonryItem,
   Navigation,
   Option,
   Radio,
