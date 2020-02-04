@@ -115,6 +115,13 @@
         }
       },
       {
+        "label": "Masonry",
+        "text": "瀑布流布局",
+        "to": {
+          "name": "ComponentMasonry"
+        }
+      },
+      {
         "label": "Navigation",
         "text": "导航",
         "to": {

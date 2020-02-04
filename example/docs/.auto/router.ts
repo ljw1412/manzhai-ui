@@ -9,6 +9,7 @@ import ComponentFixedSection from './FixedSection.vue'
 import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
+import ComponentMasonry from './Masonry.vue'
 import ComponentNavigation from './Navigation.vue'
 import ComponentRadio from './Radio.vue'
 import ComponentScrollbar from './Scrollbar.vue'
@@ -72,6 +73,11 @@ export default [
     path: 'image',
     name: 'ComponentImage',
     component: ComponentImage
+  },
+  {
+    path: 'masonry',
+    name: 'ComponentMasonry',
+    component: ComponentMasonry
   },
   {
     path: 'navigation',
