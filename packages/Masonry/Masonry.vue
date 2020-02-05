@@ -19,10 +19,19 @@ export default class MzMasonry extends Vue {
   itemList: MzMasonryItem[] = []
 
   get vnodeList(): VNode[] {
-    return (this.$slots.default || []).filter(
+    const list = (this.$slots.default || []).filter(
       item =>
         item.componentOptions && item.componentOptions.tag === 'mz-masonry-item'
     )
+    list.forEach(vnode => {
+      if (this.gutter && vnode.data) {
+        vnode.data.style = Object.assign(
+          { 'margin-bottom': this.gutter + 'px' },
+          vnode.data.style
+        )
+      }
+    })
+    return list
   }
 
   get lineList() {
@@ -32,12 +41,6 @@ export default class MzMasonry extends Vue {
     }
     for (let i = 0; i < this.vnodeList.length; i++) {
       const vnode = this.vnodeList[i]
-      if (this.gutter && vnode.data) {
-        vnode.data.style = Object.assign(
-          { 'margin-bottom': this.gutter + 'px' },
-          vnode.data.style
-        )
-      }
       list[i % this.lineCount].push(vnode)
     }
     return list
@@ -48,7 +51,7 @@ export default class MzMasonry extends Vue {
     if (this.mode === 'flex') {
       content = this.renderFlex()
     } else {
-      content = this.lineList
+      content = this.vnodeList
     }
     const data: Record<string, any> = {
       class: [
