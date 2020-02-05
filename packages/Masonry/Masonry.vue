@@ -32,9 +32,9 @@ export default class MzMasonry extends Vue {
     }
     for (let i = 0; i < this.vnodeList.length; i++) {
       const vnode = this.vnodeList[i]
-      if (this.gutter && vnode.data && i >= this.lineCount) {
+      if (this.gutter && vnode.data) {
         vnode.data.style = Object.assign(
-          { 'margin-top': this.gutter + 'px' },
+          { 'margin-bottom': this.gutter + 'px' },
           vnode.data.style
         )
       }
@@ -47,14 +47,24 @@ export default class MzMasonry extends Vue {
     let content = null
     if (this.mode === 'flex') {
       content = this.renderFlex()
+    } else {
+      content = this.lineList
     }
-    const data = {
+    const data: Record<string, any> = {
       class: [
         'mz-masonry',
         {
-          'mz-masonry--flex': this.mode === 'flex'
+          'mz-masonry--flex': this.mode === 'flex',
+          'mz-masonry--column-count': this.mode === 'column-count'
         }
-      ]
+      ],
+      style: []
+    }
+    if (this.mode === 'column-count') {
+      data.style.push({
+        'column-count': this.lineCount,
+        'column-gap': this.gutter + 'px'
+      })
     }
     return <div {...data}>{content}</div>
   }
@@ -85,6 +95,12 @@ export default class MzMasonry extends Vue {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+  }
+}
+
+.mz-masonry--column-count {
+  .mz-masonry-item {
+    break-inside: avoid;
   }
 }
 </style>
