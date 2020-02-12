@@ -129,6 +129,13 @@
         }
       },
       {
+        "label": "Progress",
+        "text": "进度条",
+        "to": {
+          "name": "ComponentProgress"
+        }
+      },
+      {
         "label": "Radio",
         "text": "单选框",
         "to": {

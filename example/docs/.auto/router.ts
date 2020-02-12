@@ -11,6 +11,7 @@ import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
 import ComponentMasonry from './Masonry.vue'
 import ComponentNavigation from './Navigation.vue'
+import ComponentProgress from './Progress.vue'
 import ComponentRadio from './Radio.vue'
 import ComponentScrollbar from './Scrollbar.vue'
 import ComponentSelect from './Select.vue'
@@ -83,6 +84,11 @@ export default [
     path: 'navigation',
     name: 'ComponentNavigation',
     component: ComponentNavigation
+  },
+  {
+    path: 'progress',
+    name: 'ComponentProgress',
+    component: ComponentProgress
   },
   {
     path: 'radio',

@@ -120,6 +120,12 @@
       margin-left: 20px;
     }
   }
+
+  .component-progress {
+    .mz-progress + .mz-progress {
+      margin-top: 20px;
+    }
+  }
 }
 
 #demo-heading-scroll-container,
