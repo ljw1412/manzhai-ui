@@ -38,7 +38,10 @@ export default {
 
 
 ### 缓冲
-:::demo 
+
+显示缓存进度的进度条。
+
+:::demo `buffer`属性来控制当前缓存进度。
 ```html
 <mz-progress v-model="value" :buffer="buffer"></mz-progress>
 <mz-progress v-model="value" :buffer="buffer" color="var(--color-success)"></mz-progress>
@@ -56,5 +59,19 @@ export default {
   }
 }
 </script>
+```
+:::
+
+### 不确定进度
+
+使用动画效果表示不确定当前进度。
+
+:::demo `indeterminate`属性来控制进度条的不确定状态，默认为 false。
+```html
+<mz-progress indeterminate></mz-progress>
+<mz-progress indeterminate color="var(--color-success)"></mz-progress>
+<mz-progress indeterminate color="var(--color-warning)"></mz-progress>
+<mz-progress indeterminate color="var(--color-danger)"></mz-progress>
+<mz-progress indeterminate color="#6200ea"></mz-progress>
 ```
 :::
