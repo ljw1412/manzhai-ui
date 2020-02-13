@@ -1,6 +1,7 @@
 <template>
   <div role="progressbar"
     class="mz-progress"
+    :class="{'mz-progress--indeterminate': indeterminate}"
     :aria-valuemin="0"
     :aria-valuemax="max"
     :aria-valuenow="value"
@@ -29,6 +30,8 @@ export default class MzProgress extends Vue {
   readonly strokeWidth!: number
   @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
   readonly color!: string
+  @Prop(Boolean)
+  readonly indeterminate!: boolean
 
   get wrapperStyles() {
     return {
@@ -77,6 +80,7 @@ export default class MzProgress extends Vue {
   --mz-progress__background-color: var(--color-primary);
 
   position: relative;
+  overflow: hidden;
   transition: 0.2s cubic-bezier(0.4, 0, 0.6, 1);
 
   &__background,
@@ -101,6 +105,31 @@ export default class MzProgress extends Vue {
   &__buffer {
     z-index: 1;
     opacity: 0.5;
+  }
+
+  &--indeterminate {
+    .mz-progress {
+      &__progress {
+        position: absolute;
+        width: 30% !important;
+        z-index: 3;
+        animation: mz-progress-indeterminate 2.2s ease-in infinite;
+        will-change: left;
+      }
+      &__buffer {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes mz-progress-indeterminate {
+  0%,
+  20% {
+    left: -30%;
+  }
+  100% {
+    left: 100%;
   }
 }
 </style>
