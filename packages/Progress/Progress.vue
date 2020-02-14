@@ -3,7 +3,10 @@
     class="mz-progress"
     :class="{
       'mz-progress--indeterminate': indeterminate,
-      'mz-progress--round': round
+      'mz-progress--alternate': alternate,
+      'mz-progress--rounded': rounded,
+      'mz-progress--striped': striped || stripedAnimation,
+      'mz-progress--striped-animation': stripedAnimation
     }"
     :aria-valuemin="0"
     :aria-valuemax="max"
@@ -40,7 +43,13 @@ export default class MzProgress extends Vue {
   @Prop(Boolean)
   readonly indeterminate!: boolean
   @Prop(Boolean)
-  readonly round!: boolean
+  readonly alternate!: boolean
+  @Prop(Boolean)
+  readonly rounded!: boolean
+  @Prop(Boolean)
+  readonly striped!: boolean
+  @Prop(Boolean)
+  readonly stripedAnimation!: boolean
 
   get wrapperStyles() {
     return {
@@ -50,14 +59,16 @@ export default class MzProgress extends Vue {
 
   get backgroundStyles() {
     return {
-      backgroundColor: this.backgroundColor || this.color
+      backgroundColor: this.backgroundColor || this.color,
+      opacity: this.backgroundColor ? 1 : undefined
     }
   }
 
   get bufferStyles() {
     return {
       backgroundColor: this.bufferColor || this.color,
-      width: this.bufferPercentage + '%'
+      width: this.bufferPercentage + '%',
+      opacity: this.bufferColor ? 1 : undefined
     }
   }
 
@@ -87,6 +98,7 @@ export default class MzProgress extends Vue {
 <style lang="scss" >
 .mz-progress {
   --mz-progress__background-color: var(--color-primary);
+  --mz-progress__striped-rgb: 255, 255, 255;
 
   position: relative;
   overflow: hidden;
@@ -129,9 +141,14 @@ export default class MzProgress extends Vue {
         display: none;
       }
     }
+    &.mz-progress--alternate {
+      .mz-progress__progress {
+        animation: mz-progress-indeterminate 2.2s ease-in-out infinite alternate;
+      }
+    }
   }
 
-  &--round {
+  &--rounded {
     border-radius: 100px;
     .mz-progress {
       &__background,
@@ -139,6 +156,26 @@ export default class MzProgress extends Vue {
       &__progress {
         border-radius: inherit;
       }
+    }
+  }
+
+  &--striped {
+    .mz-progress__progress {
+      background-image: linear-gradient(
+        135deg,
+        rgba(var(--mz-progress__striped-rgb), 0.25) 25%,
+        transparent 0,
+        transparent 50%,
+        rgba(var(--mz-progress__striped-rgb), 0.25) 0,
+        rgba(var(--mz-progress__striped-rgb), 0.25) 75%,
+        transparent 0,
+        transparent
+      );
+      background-size: 40px 40px;
+      background-repeat: repeat-x;
+    }
+    &.mz-progress--striped-animation .mz-progress__progress {
+      animation: mz-progress-striped 1s linear infinite;
     }
   }
 }
@@ -150,6 +187,15 @@ export default class MzProgress extends Vue {
   }
   100% {
     left: 100%;
+  }
+}
+
+@keyframes mz-progress-striped {
+  0% {
+    background-position-x: -40px;
+  }
+  100% {
+    background-position-x: 0;
   }
 }
 </style>
