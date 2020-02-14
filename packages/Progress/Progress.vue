@@ -1,7 +1,10 @@
 <template>
   <div role="progressbar"
     class="mz-progress"
-    :class="{'mz-progress--indeterminate': indeterminate}"
+    :class="{
+      'mz-progress--indeterminate': indeterminate,
+      'mz-progress--round': round
+    }"
     :aria-valuemin="0"
     :aria-valuemax="max"
     :aria-valuenow="value"
@@ -30,8 +33,14 @@ export default class MzProgress extends Vue {
   readonly strokeWidth!: number
   @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
   readonly color!: string
+  @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
+  readonly bufferColor!: string
+  @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
+  readonly backgroundColor!: string
   @Prop(Boolean)
   readonly indeterminate!: boolean
+  @Prop(Boolean)
+  readonly round!: boolean
 
   get wrapperStyles() {
     return {
@@ -41,13 +50,13 @@ export default class MzProgress extends Vue {
 
   get backgroundStyles() {
     return {
-      backgroundColor: this.color
+      backgroundColor: this.backgroundColor
     }
   }
 
   get bufferStyles() {
     return {
-      backgroundColor: this.color,
+      backgroundColor: this.bufferColor,
       width: this.bufferPercentage + '%'
     }
   }
@@ -118,6 +127,17 @@ export default class MzProgress extends Vue {
       }
       &__buffer {
         display: none;
+      }
+    }
+  }
+
+  &--round {
+    border-radius: 100px;
+    .mz-progress {
+      &__background,
+      &__buffer,
+      &__progress {
+        border-radius: inherit;
       }
     }
   }
