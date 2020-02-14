@@ -1,6 +1,6 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-02-13 17:40</div>
+    <div class="update-datetime">文档更新时间：2020-02-14 16:34</div>
     <h2 id="progress-jin-du-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -91,6 +91,55 @@ export default {
 &lt;mz-progress indeterminate color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
+</code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
+<p>带圆角样式的进度条。</p>
+<demo-block>
+        <template #example><progress-demo4 inline-template><div class="progress-demo4">
+  <mz-progress v-model="value" :buffer="buffer" round></mz-progress>
+  <mz-progress v-model="value" indeterminate round color="var(--color-success)"></mz-progress>
+</div></progress-demo4></template>
+        <template #description><p><code>round</code>属性来控制进度条的圆角状态，默认为 false。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; round&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; indeterminate round color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      value: 15,
+      buffer: 20
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
+<demo-block>
+        <template #example><progress-demo5 inline-template><div class="progress-demo5">
+  <mz-progress v-model="value"
+    :buffer="buffer"
+    color="#6200ea"
+    buffer-color="var(--color-warning)"
+    background-color="var(--color-danger)"></mz-progress>
+</div></progress-demo5></template>
+        <template #description><p><code>color</code>控制主进度的颜色，默认值主题色。<code>buffer-color</code>控制缓存进度的颜色，<code>background-color</code>控制背景的颜色。当<code>buffer-color</code>、<code>background-color</code>值不存在时，会采用主进度的颜色带上0.3透明度。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot;
+  :buffer=&quot;buffer&quot;
+  color=&quot;#6200ea&quot;
+  buffer-color=&quot;var(--color-warning)&quot;
+  background-color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      value: 15,
+      buffer: 30
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block>
   </div>
 </template>
@@ -116,7 +165,21 @@ export default {
       buffer: 20
     }
   }
-}, ProgressDemo3: {} }
+}, ProgressDemo3: {}, ProgressDemo4: {
+  data() {
+    return {
+      value: 15,
+      buffer: 20
+    }
+  }
+}, ProgressDemo5: {
+  data() {
+    return {
+      value: 15,
+      buffer: 30
+    }
+  }
+} }
 }
 </script>
 <style lang="scss">
