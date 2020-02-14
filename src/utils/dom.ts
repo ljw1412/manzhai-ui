@@ -61,7 +61,7 @@ export function scrollIntoView(target: HTMLElement | string, byJs = false) {
   }
   if (byJs) {
     // firefox 36+ | chrome 61+ | Opera 48+
-    el.scrollIntoView({ behavior: 'smooth' })
+    el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
   } else {
     location.hash = `#${el.id}`
   }

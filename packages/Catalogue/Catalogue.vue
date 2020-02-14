@@ -164,7 +164,10 @@ export default class MzCatalogue extends BaseAttribute {
     )
   }
 
-  renderItem(list: CatalogueItem[] | undefined, level: number = 1) {
+  renderItem(
+    list: CatalogueItem[] | undefined,
+    level: number = 1
+  ): JSX.Element[] | null {
     if (!list) return null
     return list.map(item => {
       const data = {
