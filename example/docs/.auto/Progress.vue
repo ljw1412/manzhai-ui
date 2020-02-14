@@ -1,6 +1,6 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-02-14 17:54</div>
+    <div class="update-datetime">文档更新时间：2020-02-14 18:08</div>
     <h2 id="progress-jin-du-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -131,6 +131,7 @@ export default {
 }
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
+<p>用户可以根据自己的需求自定义进度条的颜色。</p>
 <demo-block>
         <template #example><progress-demo6 inline-template><div class="progress-demo6">
   <mz-progress v-model="value"
@@ -190,7 +191,106 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block>
+</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v-model/value</td>
+<td>当前进度</td>
+<td>Number</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>max</td>
+<td>最大值</td>
+<td>Number</td>
+<td></td>
+<td>100</td>
+</tr>
+<tr>
+<td>buffer</td>
+<td>缓冲进度</td>
+<td>Number</td>
+<td></td>
+<td>0</td>
+</tr>
+<tr>
+<td>stroke-width</td>
+<td>进度条的宽度</td>
+<td>Number</td>
+<td></td>
+<td>6</td>
+</tr>
+<tr>
+<td>color</td>
+<td>进度条的颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>buffer-color</td>
+<td>缓存条的颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>background-color</td>
+<td>背景颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>indeterminate</td>
+<td>是否为不确定状态</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>alternate</td>
+<td>是否动画交替，仅indeterminate为true时有效</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>rounded</td>
+<td>是否为圆角</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>striped</td>
+<td>是否有斑马纹</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>striped-animation</td>
+<td>是否有动画效果的斑马纹</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
   </div>
 </template>
 <script>
