@@ -33,9 +33,9 @@ export default class MzProgress extends Vue {
   readonly strokeWidth!: number
   @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
   readonly color!: string
-  @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
+  @Prop(String)
   readonly bufferColor!: string
-  @Prop({ type: String, default: 'var(--mz-progress__background-color)' })
+  @Prop(String)
   readonly backgroundColor!: string
   @Prop(Boolean)
   readonly indeterminate!: boolean
@@ -50,13 +50,13 @@ export default class MzProgress extends Vue {
 
   get backgroundStyles() {
     return {
-      backgroundColor: this.backgroundColor
+      backgroundColor: this.backgroundColor || this.color
     }
   }
 
   get bufferStyles() {
     return {
-      backgroundColor: this.bufferColor,
+      backgroundColor: this.bufferColor || this.color,
       width: this.bufferPercentage + '%'
     }
   }
