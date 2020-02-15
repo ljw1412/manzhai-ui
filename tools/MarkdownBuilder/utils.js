@@ -83,6 +83,7 @@ async function generateDocVueFile(moduleName, content, blocks) {
   )
   const script = `<script>
 export default {
+  name: 'Component${moduleName}',
   components: { ${componentScriptList.join(', ')} }
 }
 </script>`
