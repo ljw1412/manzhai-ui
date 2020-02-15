@@ -24,6 +24,13 @@
         }
       },
       {
+        "label": "Carousel",
+        "text": "轮播",
+        "to": {
+          "name": "ComponentCarousel"
+        }
+      },
+      {
         "label": "Catalogue",
         "text": "目录",
         "to": {

@@ -1,6 +1,7 @@
 import ComponentAnchor from './Anchor.vue'
 import ComponentButton from './Button.vue'
 import ComponentCard from './Card.vue'
+import ComponentCarousel from './Carousel.vue'
 import ComponentCatalogue from './Catalogue.vue'
 import ComponentCell from './Cell.vue'
 import ComponentCheckbox from './Checkbox.vue'
@@ -34,6 +35,11 @@ export default [
     path: 'card',
     name: 'ComponentCard',
     component: ComponentCard
+  },
+  {
+    path: 'carousel',
+    name: 'ComponentCarousel',
+    component: ComponentCarousel
   },
   {
     path: 'catalogue',
