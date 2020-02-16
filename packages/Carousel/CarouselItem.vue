@@ -1,8 +1,10 @@
 <template>
-  <div v-show="active"
-    class="mz-carousel-item">
-    <slot></slot>
-  </div>
+  <transition :name="transitionName">
+    <div v-show="active"
+      class="mz-carousel-item">
+      <slot></slot>
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">
@@ -12,9 +14,21 @@ import { MzCarousel } from '.'
 @Component
 export default class MzCarouselItem extends Vue {
   @Inject('mzCarousel')
-  readonly mzCarousel!: MzCarousel
+  readonly mzCarousel!: MzCarousel | null
 
   active = false
+  reverse = false
+
+  get transitionName() {
+    let transition = 'mz-x-transition'
+    let reverseTransition = 'mz-x-reverse-transition'
+    if (this.mzCarousel) {
+      if (this.mzCarousel.initing) return null
+      transition = this.mzCarousel.transition
+      reverseTransition = this.mzCarousel.reverseTransition
+    }
+    return this.reverse ? reverseTransition : transition
+  }
 
   created() {
     this.mzCarousel && this.mzCarousel.itemList.push(this)

@@ -17,21 +17,30 @@ import { MzCarouselItem } from '.'
   }
 })
 export default class MzCarousel extends BaseAttribute {
-  @Prop(Number)
+  @Prop({ type: Number, default: 0 })
   readonly initialIndex!: number
-  @Prop({ type: Number, default: 3000 })
+  @Prop({ type: Number, default: 5000 })
   readonly delay!: number
+  @Prop({ type: String, default: 'mz-x-transition' })
+  readonly transition!: string
+  @Prop({ type: String, default: 'mz-x-reverse-transition' })
+  readonly reverseTransition!: string
 
   index = -1
   itemList: MzCarouselItem[] = []
   timer: number | null = null
+  initing = true
 
   start() {
     this.timer = setTimeout(() => {
-      const len = this.itemList.length
-      this.index = (this.index + 1) % len
+      this.setActiveIndex(this.index + 1)
       this.start()
     }, this.delay)
+  }
+
+  setActiveIndex(index: number) {
+    const len = this.itemList.length
+    this.index = index % len
   }
 
   @Watch('index')
@@ -43,8 +52,11 @@ export default class MzCarousel extends BaseAttribute {
   }
 
   mounted() {
-    this.index = this.initialIndex || 0
+    this.setActiveIndex(this.initialIndex)
     this.start()
+    this.$nextTick(() => {
+      this.initing = false
+    })
   }
 
   beforeDestroy() {
