@@ -20,12 +20,15 @@ export default class MzCarouselItem extends Vue {
   reverse = false
 
   get transitionName() {
-    let transition = 'mz-x-transition'
-    let reverseTransition = 'mz-x-reverse-transition'
+    let transition = null
+    let reverseTransition = null
     if (this.mzCarousel) {
       if (this.mzCarousel.initing) return null
-      transition = this.mzCarousel.transition
-      reverseTransition = this.mzCarousel.reverseTransition
+      const direction = this.mzCarousel.vertical ? 'y' : 'x'
+      transition = this.mzCarousel.transition || `mz-${direction}-transition`
+      reverseTransition =
+        this.mzCarousel.reverseTransition ||
+        `mz-${direction}-reverse-transition`
     }
     return this.reverse ? reverseTransition : transition
   }

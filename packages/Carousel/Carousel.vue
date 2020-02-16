@@ -1,5 +1,6 @@
 <template>
   <div class="mz-carousel"
+    :class="{'mz-carousel--vertical': vertical}"
     :style="[baseStyles]">
     <slot></slot>
     <slot name="indicator"></slot>
@@ -21,10 +22,12 @@ export default class MzCarousel extends BaseAttribute {
   readonly initialIndex!: number
   @Prop({ type: Number, default: 5000 })
   readonly delay!: number
-  @Prop({ type: String, default: 'mz-x-transition' })
+  @Prop(String)
   readonly transition!: string
-  @Prop({ type: String, default: 'mz-x-reverse-transition' })
+  @Prop(String)
   readonly reverseTransition!: string
+  @Prop(Boolean)
+  readonly vertical!: boolean
 
   index = -1
   itemList: MzCarouselItem[] = []
