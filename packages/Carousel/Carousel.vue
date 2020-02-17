@@ -3,18 +3,27 @@
     :class="{'mz-carousel--vertical': vertical}"
     :style="[baseStyles]">
     <slot></slot>
-    <slot name="indicator"></slot>
+    <slot name="indicator"
+      :index="index"
+      :item="currentItem"
+      :length="itemCount">
+      <mz-carousel-indicator></mz-carousel-indicator>
+    </slot>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import BaseAttribute from '@/mixins/BaseAttribute'
-import { MzCarouselItem } from '.'
+import MzCarouselItem from './CarouselItem.vue'
+import MzCarouselIndicator from './CarouselIndicator.vue'
 
 @Component({
   provide() {
     return { mzCarousel: this }
+  },
+  components: {
+    MzCarouselIndicator
   }
 })
 export default class MzCarousel extends BaseAttribute {
@@ -28,11 +37,22 @@ export default class MzCarousel extends BaseAttribute {
   readonly reverseTransition!: string
   @Prop(Boolean)
   readonly vertical!: boolean
+  @Prop(Boolean)
+  readonly indicator!: boolean
 
   index = -1
   itemList: MzCarouselItem[] = []
   timer: number | null = null
   initing = true
+
+  get currentItem() {
+    if (this.index === -1) return null
+    return this.itemList[this.index]
+  }
+
+  get itemCount() {
+    return this.itemList.length
+  }
 
   start() {
     this.timer = setTimeout(() => {

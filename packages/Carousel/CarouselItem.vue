@@ -15,6 +15,8 @@ import { MzCarousel } from '.'
 export default class MzCarouselItem extends Vue {
   @Inject('mzCarousel')
   readonly mzCarousel!: MzCarousel | null
+  @Prop()
+  readonly data!: any
 
   active = false
   reverse = false
