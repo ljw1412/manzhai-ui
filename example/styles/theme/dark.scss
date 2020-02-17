@@ -4,8 +4,11 @@
   --demo-block__highlight-color: #ffffff;
   --demo-block__description-background-color: #303030;
 
-  .demo-block .action .mz-icon:hover {
-    color: #ffffff;
-    opacity: 0.8;
+  .demo-block {
+    background-color: rgba(255, 255, 255, 0.1);
+    .action .mz-icon:hover {
+      color: #ffffff;
+      opacity: 0.8;
+    }
   }
 }
