@@ -116,4 +116,9 @@ $colors: initColors(
     --mz-progress__background-color: #ffffff;
     --mz-progress__striped-rgb: 0, 0, 0;
   }
+
+  .mz-carousel-indicators {
+    --mz-carousel-indicators__item-bg-color: #999999;
+    --mz-carousel-indicators__item-bg-color--active: #ffffff;
+  }
 }
