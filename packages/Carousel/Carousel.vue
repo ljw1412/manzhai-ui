@@ -52,6 +52,7 @@ export default class MzCarousel extends BaseAttribute {
   }
 
   renderIndicator() {
+    if (this.initing) return
     if (this.$scopedSlots.indicator) {
       return this.$scopedSlots.indicator({
         item: this.currentItem,
