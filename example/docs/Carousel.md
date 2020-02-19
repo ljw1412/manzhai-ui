@@ -31,11 +31,45 @@
 ```
 :::
 
+### 箭头
+
+轮播的手动切换箭头。
+
+:::demo `arrow`属性控制箭头显示策略。可选值`always`,`hover`,`never`。默认值`always`。
+```html
+<mz-filter-section v-model="arrow"
+  label="箭头显示策略：" label-position="right">
+  <mz-filter-section-item v-for="item of arrowList"
+    :key="item"
+    :value="item"></mz-filter-section-item>
+</mz-filter-section>
+
+<mz-carousel height="400px" :arrow="arrow">
+  <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+</mz-carousel>
+
+
+<script>
+export default {
+  data() {
+    return {
+      arrow: 'hover',
+      arrowList: ['always', 'hover', 'never'],
+    }
+  }
+}
+</script>
+```
+:::
+
 ### 指示器
 
 轮播内置了多种样式的指示器。
 
-:::demo `indicator`属性控制指示器的显示和效果。可选值`none`,`line`,`full-line`, `circle`。默认值`none`。
+:::demo `indicator`属性控制指示器的显示和效果。可选值`none`,`line`,`full-line`,`circle`。默认值`none`。
 ```html
 <mz-filter-section v-model="type"
   label="指示器类型：" label-position="right">
@@ -109,7 +143,7 @@ export default {
 
 可以自由扩展的指示器。
 
-:::demo `indicator`作用域插槽用于自定义指示器，它返回一个对象包含:item(当前轮播到的CarouselItem实例),index(当前下标)，pageIndex(当前页数，即index+1),length(总共页数)。
+:::demo `indicator`作用域插槽用于自定义指示器，它返回一个对象包含:item(当前轮播到的CarouselItem实例),index(当前下标),pageIndex(当前页数，即index+1),length(总共页数)。
 ```html
 <p>Demo1:</p>
 <mz-carousel ref="carousel" height="200px">
@@ -189,3 +223,55 @@ export default {
 </style>
 ```
 :::
+
+### Carousel API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|width|宽度|String||'100%'|
+|height|高度|String||'100%|
+|initial-index|初始状态激活的幻灯片的索引，从 0 开始|Number||0|
+|delay|自动切换的时间间隔，单位为毫秒|Number||5000|
+|transition|切换时的动画名称|String|||
+|reverseTransition|反方向切换时的动画名称|String|||
+|vertical|是否为垂直方向切换|Boolean|||
+|arrow|箭头显示的时机|String|'always' / 'hover' / 'never'|'hover'|
+|indicator|指示器的显示效果|String|'none' / 'line' / 'full-line' / 'circle'|'none'|
+|indicatorPlacement|指示器的位置|String|'top' / 'bottom' / 'left' / 'right' / 'outside'|'bottom'|
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|轮播切换事件|(index: number)|
+
+#### 方法
+|名称|说明|参数|
+|---|---|---|
+|setIndexAndRestartTimer|设置当前下标并重置计时器|(index)|
+
+#### 插槽
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|默认|轮播的内容||
+|indicator|指示器|{item,index,pageIndex,length}|
+
+### CarouselItem API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|data|用来存储单个数据，与指示器作用域插槽的`item.data`一致|any|||
+
+#### 插槽
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|默认|轮播元素的内容||
+
+### CarouselIndicator API
+#### 属性
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|placement|指示器的位置|String|'top' / 'bottom' / 'left' / 'right' / 'outside'|'bottom'|
+|type|指示器的显示效果|String|'line' / 'full-line' / 'circle'|'none'|
+|activeColor|选中时颜色|String|||
+|inactiveColor|未选中时颜色|String|||
