@@ -253,6 +253,7 @@ export default {
 |reverseTransition|反方向切换时的动画名称|String|||
 |loop|是否循环显示|Boolean||true|
 |autoplay|是否自动切换|Boolean||true|
+|stopOnHover|是否在悬浮时停止切换|Boolean||true|
 |vertical|是否为垂直方向切换|Boolean|||
 |arrow|箭头显示的时机|String|'always' / 'hover' / 'never'|'hover'|
 |indicator|指示器的显示效果|String|'none' / 'line' / 'full-line' / 'circle'|'none'|
