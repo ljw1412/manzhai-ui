@@ -28,6 +28,8 @@ export default class MzCarousel extends BaseAttribute {
   readonly loop!: boolean
   @Prop({ type: Boolean, default: true })
   readonly autoplay!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly stopOnHover!: boolean
   @Prop({ type: String, default: 'hover' })
   readonly arrow!: 'always' | 'hover' | 'never'
   @Prop({ type: String, default: 'none' })
@@ -60,9 +62,11 @@ export default class MzCarousel extends BaseAttribute {
       on: {
         mouseover: () => {
           this.isHover = true
+          if (this.stopOnHover) this.stop()
         },
         mouseout: () => {
           this.isHover = false
+          if (this.stopOnHover) this.start()
         }
       }
     }
