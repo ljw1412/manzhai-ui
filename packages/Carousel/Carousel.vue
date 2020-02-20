@@ -82,7 +82,7 @@ export default class MzCarousel extends BaseAttribute {
         on: {
           click: () => {
             const index = this.index + (item === 'next' ? 1 : -1)
-            if ((!this.loop && index < 0) || index >= this.itemCount) return
+            if (!this.loop && (index < 0 || index >= this.itemCount)) return
             this.setIndexAndRestartTimer(index, false)
             this.setItemReverse(item === 'previous')
           }
