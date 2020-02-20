@@ -1,6 +1,6 @@
 <template>
   <div class="component-carousel">
-    <div class="update-datetime">文档更新时间：2020-02-19 15:47</div>
+    <div class="update-datetime">文档更新时间：2020-02-20 10:39</div>
     <h2 id="carousel-lun-bo" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#carousel-lun-bo" title="Carousel 轮播" data-level="2" data-href="#carousel-lun-bo">¶</a>Carousel 轮播</h2>
 <p>在一个容器内循环播放内容。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -311,6 +311,25 @@ export default {
   color: #000;
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="shou-dong-mo-shi-he-bu-xun-huan" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shou-dong-mo-shi-he-bu-xun-huan" title="手动模式和不循环" data-level="3" data-href="#shou-dong-mo-shi-he-bu-xun-huan">¶</a>手动模式和不循环</h3>
+<p>进行定时轮播。</p>
+<demo-block>
+        <template #example><carousel-demo6 inline-template><div class="carousel-demo6">
+  <mz-carousel :autoplay="false" :loop="false" height="400px">
+    <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
+    <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
+    <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
+    <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+  </mz-carousel>
+</div></carousel-demo6></template>
+        <template #description><p><code>autoplay</code>属性控制轮播组件的自动播放，默认值 true。<code>loop</code>属性控制轮播方式是否循环切换，默认值 true。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-carousel :autoplay=&quot;false&quot; :loop=&quot;false&quot; height=&quot;400px&quot;&gt;
+  &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+&lt;/mz-carousel&gt;
 </code></pre></template></demo-block><h3 id="carousel-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#carousel-api" title="Carousel API" data-level="3" data-href="#carousel-api">¶</a>Carousel API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -336,7 +355,7 @@ export default {
 <td>高度</td>
 <td>String</td>
 <td></td>
-<td>'100%</td>
+<td>'100%'</td>
 </tr>
 <tr>
 <td>initial-index</td>
@@ -365,6 +384,20 @@ export default {
 <td>String</td>
 <td></td>
 <td></td>
+</tr>
+<tr>
+<td>loop</td>
+<td>是否循环显示</td>
+<td>Boolean</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>是否自动切换</td>
+<td>Boolean</td>
+<td></td>
+<td>true</td>
 </tr>
 <tr>
 <td>vertical</td>
@@ -582,7 +615,7 @@ export default {
       this.$refs.carousel.setIndexAndRestartTimer(index)
     }
   }
-} }
+}, CarouselDemo6: {} }
 }
 </script>
 <style lang="scss">

@@ -224,16 +224,35 @@ export default {
 ```
 :::
 
+
+### 手动模式和不循环
+
+进行定时轮播。
+
+:::demo `autoplay`属性控制轮播组件的自动播放，默认值 true。`loop`属性控制轮播方式是否循环切换，默认值 true。
+```html
+<mz-carousel :autoplay="false" :loop="false" height="400px">
+  <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
+  <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+</mz-carousel>
+```
+:::
+
+
 ### Carousel API
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
 |width|宽度|String||'100%'|
-|height|高度|String||'100%|
+|height|高度|String||'100%'|
 |initial-index|初始状态激活的幻灯片的索引，从 0 开始|Number||0|
 |delay|自动切换的时间间隔，单位为毫秒|Number||5000|
 |transition|切换时的动画名称|String|||
 |reverseTransition|反方向切换时的动画名称|String|||
+|loop|是否循环显示|Boolean||true|
+|autoplay|是否自动切换|Boolean||true|
 |vertical|是否为垂直方向切换|Boolean|||
 |arrow|箭头显示的时机|String|'always' / 'hover' / 'never'|'hover'|
 |indicator|指示器的显示效果|String|'none' / 'line' / 'full-line' / 'circle'|'none'|
