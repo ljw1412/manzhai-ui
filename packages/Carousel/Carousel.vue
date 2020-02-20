@@ -24,6 +24,10 @@ export default class MzCarousel extends BaseAttribute {
   readonly reverseTransition!: string
   @Prop(Boolean)
   readonly vertical!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly loop!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly autoplay!: boolean
   @Prop({ type: String, default: 'hover' })
   readonly arrow!: 'always' | 'hover' | 'never'
   @Prop({ type: String, default: 'none' })
@@ -77,22 +81,26 @@ export default class MzCarousel extends BaseAttribute {
         class: ['mz-carousel-arrow', `mz-carousel-arrow--${item}`],
         on: {
           click: () => {
-            this.setIndexAndRestartTimer(
-              this.index + (item === 'next' ? 1 : -1),
-              false
-            )
+            const index = this.index + (item === 'next' ? 1 : -1)
+            if ((!this.loop && index < 0) || index >= this.itemCount) return
+            this.setIndexAndRestartTimer(index, false)
             this.setItemReverse(item === 'previous')
           }
         }
       }
-      if (this.arrow === 'hover') {
-        return (
-          <transition name="mz-fade">
-            <div v-show={this.isHover} {...data}></div>
-          </transition>
-        )
-      }
-      return <div {...data}></div>
+
+      const disabled =
+        !this.loop &&
+        ((item === 'previous' && this.index <= 0) ||
+          (item === 'next' && this.index >= this.itemCount - 1))
+      const isShow =
+        (this.arrow === 'hover' && this.isHover) || this.arrow === 'always'
+
+      return (
+        <transition name="mz-fade">
+          <div v-show={!disabled && isShow} {...data}></div>
+        </transition>
+      )
     })
   }
 
@@ -170,7 +178,7 @@ export default class MzCarousel extends BaseAttribute {
 
   mounted() {
     this.setActiveIndex(this.initialIndex)
-    this.start()
+    if (this.autoplay) this.start()
     this.$nextTick(() => {
       this.initing = false
     })
