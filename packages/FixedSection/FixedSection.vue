@@ -29,10 +29,14 @@ export default class MzFixedSection extends BaseAttribute {
   readonly zIndex!: number
 
   isFixed = false
-  containerEl: HTMLElement | null = null
+  containerEl: Window | HTMLElement | null = null
   offsetHeight = 0
   scrollTop = 0
   translateY = 0
+
+  get isWindow() {
+    return this.containerEl === window
+  }
 
   render(h: CreateElement) {
     const section = this.renderSection(h)
@@ -51,7 +55,10 @@ export default class MzFixedSection extends BaseAttribute {
     const data = {
       class: [
         'mz-fixed-section',
-        { 'is-sticky': this.isFixed, 'is-fixed': this.fixed }
+        {
+          'is-sticky': this.isFixed,
+          'is-fixed': this.fixed || (this.isFixed && this.isWindow)
+        }
       ],
       style: [
         this.baseStyles,
@@ -62,9 +69,10 @@ export default class MzFixedSection extends BaseAttribute {
           bottom: this.bottom,
           left: this.left,
           right: this.right,
-          transform: this.isFixed
-            ? `translateY(${this.translateY}px)`
-            : undefined
+          transform:
+            this.isFixed && !this.isWindow
+              ? `translateY(${this.translateY}px)`
+              : undefined
         }
       ],
       ref: 'section'
@@ -87,10 +95,9 @@ export default class MzFixedSection extends BaseAttribute {
     if (!this.isFixed) {
       this.offsetHeight = (this.$el as HTMLElement).offsetHeight
       this.scrollTop = scrollTop
-      const sectionTopToViewTop =
-        this.getElementTop(this.$el as HTMLElement) -
-        this.getElementTop(this.containerEl!) -
-        this.offsetTop
+      const parentTop = this.getElementTop(this.containerEl!)
+      const elTop = this.getElementTop(this.$el as HTMLElement)
+      const sectionTopToViewTop = elTop - parentTop - this.offsetTop
       this.isFixed = sectionTopToViewTop <= 0
     } else if (this.scrollTop > scrollTop) {
       this.isFixed = false
@@ -99,9 +106,10 @@ export default class MzFixedSection extends BaseAttribute {
   }
 
   addScrollListener() {
-    if (this.sticky && this.container) {
-      if (this.containerEl) this.removeScrollListener(this.containerEl)
-      this.containerEl = document.querySelector(this.container)
+    if (!this.sticky) return
+    if (this.containerEl) this.removeScrollListener(this.containerEl)
+    if (this.container) {
+      this.containerEl = document.querySelector(this.container) as HTMLElement
       if (!this.containerEl) {
         console.error('[MzFixedSection]', `容器${this.container}未找到!`)
         return
@@ -110,11 +118,13 @@ export default class MzFixedSection extends BaseAttribute {
       if (containerElStyle.position === 'static') {
         this.containerEl.style.position = 'relative'
       }
-      this.containerEl.addEventListener('scroll', this.handleScroll, false)
+    } else {
+      this.containerEl = window
     }
+    this.containerEl.addEventListener('scroll', this.handleScroll, false)
   }
 
-  removeScrollListener(el?: HTMLElement | null) {
+  removeScrollListener(el?: Window | HTMLElement | null) {
     if (!el && !this.containerEl) return
     if (!el) el = this.containerEl as HTMLElement
     el.removeEventListener('scroll', this.handleScroll, false)
@@ -142,7 +152,8 @@ export default class MzFixedSection extends BaseAttribute {
 
 .mz-fixed-section {
   box-sizing: border-box;
-  &.is-fixed {
+  &.is-fixed,
+  &.is-fixed.is-sticky {
     position: fixed;
   }
   &.is-sticky {
