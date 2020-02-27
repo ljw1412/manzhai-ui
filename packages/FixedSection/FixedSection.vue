@@ -120,6 +120,11 @@ export default class MzFixedSection extends BaseAttribute {
     el.removeEventListener('scroll', this.handleScroll, false)
   }
 
+  @Watch('isFixed')
+  onFixedChange(isFixed: boolean) {
+    this.$emit('change', isFixed)
+  }
+
   mounted() {
     this.addScrollListener()
   }
