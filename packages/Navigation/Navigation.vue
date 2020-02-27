@@ -1,8 +1,8 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
-import { CreateElement } from 'vue'
-import { RawLocation } from 'vue-router'
+import { CreateElement, VNodeData } from 'vue'
+import { RawLocation, NavigationGuard } from 'vue-router'
 import { typeOf } from '../../src/utils/assist'
 
 let tempValue = 0
@@ -31,40 +31,6 @@ export default class MzNavigation extends Vue {
 
   value = ''
 
-  @Watch('data', { immediate: true })
-  onDataChange(data: NavigationItem | NavigationItem[]) {
-    this.$nextTick(() => {
-      const list = typeOf(data) === 'object' ? [this.data] : this.data
-      this.findCurrent(list as NavigationItem[])
-    })
-  }
-
-  findCurrent(data: NavigationItem[]) {
-    const found = false
-    data.forEach(item => {
-      if (item.to) {
-        const { name, path } = this.$router.resolve(item.to).resolved
-        if (this.$route.name === name || this.$route.path === path) {
-          this.value = item.value || item.label
-        }
-      }
-      if (item.children && !found) {
-        this.findCurrent(item.children)
-      }
-    })
-  }
-
-  go(item: NavigationItem) {
-    return () => {
-      if (item.to) {
-        const { name, path } = this.$router.resolve(item.to).resolved
-        if (this.$route.name !== name && this.$route.path !== path) {
-          this.$router.push(item.to)
-        }
-      }
-    }
-  }
-
   render(h: CreateElement) {
     if (!['object', 'array'].includes(typeOf(this.data)))
       throw new TypeError('请传入正确的导航栏格式!')
@@ -75,9 +41,7 @@ export default class MzNavigation extends Vue {
 
     return (
       <div class="mz-navigation">
-        <mz-list v-model={this.value} gutter="5px">
-          {navItems}
-        </mz-list>
+        <mz-list gutter="5px">{navItems}</mz-list>
       </div>
     )
   }
@@ -85,15 +49,12 @@ export default class MzNavigation extends Vue {
   renderItem(data: NavigationItem[]): any {
     return data.map(item => {
       if (!item.value && !item.group) item.value = item.label
-      const baseProps = {
+      const baseProps: VNodeData = {
         props: {
           ...item,
           round: this.round,
           link: true,
           ripple: this.ripple
-        },
-        on: {
-          click: this.go(item)
         }
       }
       // 但凡有 group 字段的都认为是列表组模式
@@ -109,13 +70,30 @@ export default class MzNavigation extends Vue {
           <mz-list-item-group {...baseProps}>{childrenItem}</mz-list-item-group>
         )
       }
-
       // 都没有的为普通列表元素
-      return <mz-list-item {...baseProps}></mz-list-item>
+      const itemNode = <mz-list-item {...baseProps}></mz-list-item>
+      return item.to ? (
+        <router-link to={item.to}>{itemNode}</router-link>
+      ) : (
+        itemNode
+      )
     })
   }
 }
 </script>
 
 <style lang="scss">
+@import '@/scss/index.scss';
+
+.mz-navigation {
+  .router-link-exact-active {
+    .mz-list-item--link {
+      @include before-background-active;
+      color: var(--mz-list-item__font-color--active);
+      .mz-list-item__title {
+        color: var(--mz-list-item__font-color--active);
+      }
+    }
+  }
+}
 </style>
