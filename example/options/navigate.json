@@ -108,6 +108,13 @@
         }
       },
       {
+        "label": "ImagePreview",
+        "text": "图片预览",
+        "to": {
+          "name": "ComponentImagePreview"
+        }
+      },
+      {
         "label": "Input",
         "text": "输入框",
         "to": {
