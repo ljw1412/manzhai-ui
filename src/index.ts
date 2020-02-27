@@ -28,6 +28,7 @@ import FixedSection from '../packages/FixedSection/index'
 import Heading from '../packages/Heading/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
+import ImagePreview from '../packages/ImagePreview/index'
 import Input from '../packages/Input/index'
 import {
   List,
@@ -75,6 +76,7 @@ const components: VueConstructor[] = [
   Heading,
   Icon,
   Image,
+  ImagePreview,
   Input,
   List,
   ListItem,
@@ -196,6 +198,7 @@ export default {
   Heading,
   Icon,
   Image,
+  ImagePreview,
   Input,
   List,
   ListItem,
