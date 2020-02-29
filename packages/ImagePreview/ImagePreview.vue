@@ -6,7 +6,8 @@
     @mousedown="mouseDrag.start($event)">
     <!-- 关闭按钮 -->
     <div class="mz-image-preview__close"
-      @click="close"></div>
+      @click.stop="close"
+      @mousedown.stop></div>
 
     <div class="mz-image-preview__image"
       :style="{transform:`translate(${mouseDrag.x}px,${mouseDrag.y}px)`}">
@@ -100,6 +101,7 @@ export default class MzImagePreview extends Vue {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   cursor: grab;
+  user-select: none;
 
   &--drag {
     cursor: grabbing;
