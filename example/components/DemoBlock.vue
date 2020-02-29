@@ -101,7 +101,7 @@ export default class DemoBlock extends Vue {
     right: 12px;
     top: 8px;
     color: var(--demo-block__highlight-color);
-    z-index: 1001;
+    z-index: 100;
     .mz-icon {
       &:hover {
         color: var(--color-primary);
