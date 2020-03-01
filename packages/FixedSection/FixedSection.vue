@@ -65,7 +65,11 @@ export default class MzFixedSection extends BaseAttribute {
         this.sectionStyle,
         {
           zIndex: this.zIndex,
-          top: this.top || this.isFixed ? 0 : undefined,
+          top:
+            this.top ||
+            (this.isWindow && `${this.offsetTop}px`) ||
+            (this.isFixed && '0') ||
+            undefined,
           bottom: this.bottom,
           left: this.left,
           right: this.right,
