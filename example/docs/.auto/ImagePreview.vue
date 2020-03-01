@@ -1,6 +1,6 @@
 <template>
   <div class="component-image-preview">
-    <div class="update-datetime">文档更新时间：2020-02-27 15:26</div>
+    <div class="update-datetime">文档更新时间：2020-03-01 16:04</div>
     <h2 id="imagepreview-tu-pian-yu-lan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
 <p>以页面全屏的形式预览图片。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -20,7 +20,10 @@ export default {
   data (){
     return {
       visible: false,
-      images: [require('@/static/image-star.jpg')]
+      images: [
+        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=1920&amp;h=1080&amp;rs=1&amp;c=4',
+        require('@/static/image-star.jpg')
+      ]
     }
   }
 }
@@ -35,7 +38,10 @@ export default {
   data (){
     return {
       visible: false,
-      images: [require('@/static/image-star.jpg')]
+      images: [
+        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
+        require('@/static/image-star.jpg')
+      ]
     }
   }
 } }
