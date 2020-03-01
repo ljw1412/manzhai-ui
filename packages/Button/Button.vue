@@ -44,6 +44,8 @@ export default class MzButton extends Mixins(SizeMixin) {
   readonly color!: string
   @Prop(String)
   readonly borderColor!: string
+  @Prop(String)
+  readonly borderRadius!: string
 
   get buttonClasses() {
     const type = COLOR_TYPES.includes(this.type) ? this.type : 'default'
@@ -64,7 +66,8 @@ export default class MzButton extends Mixins(SizeMixin) {
     return {
       '--mz-button__font-color': this.fontColor,
       '--mz-button__background-color': this.color,
-      '--mz-button__border-color': this.borderColor
+      '--mz-button__border-color': this.borderColor,
+      '--mz-button__border-radius': this.borderRadius
     }
   }
 }
