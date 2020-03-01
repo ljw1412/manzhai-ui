@@ -129,6 +129,7 @@ export default {
 | font-color | 文字颜色 | String | | |
 | color | 背景颜色 | String | | |
 | border-color | 边框颜色 | String | | |
+| border-radius | 边框圆角 | String | | |
 
 #### 插槽
 
