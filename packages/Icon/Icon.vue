@@ -7,11 +7,8 @@ export default class MzIcon extends Vue {
   @Prop({ required: true })
   readonly name!: string
 
-  @Prop({ default: 16 })
+  @Prop(Number)
   readonly size!: number
-
-  @Prop(Boolean)
-  readonly cssSize!: boolean
 
   @Prop(String)
   readonly color!: string
@@ -21,7 +18,6 @@ export default class MzIcon extends Vue {
   }
 
   get svgStyles() {
-    if (this.cssSize) return {}
     return {
       fontSize: this.size
     }
