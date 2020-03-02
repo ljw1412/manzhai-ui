@@ -1,6 +1,6 @@
 <template>
   <div class="component-select">
-    <div class="update-datetime">文档更新时间：2020-02-03 20:01</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="select-xuan-ze-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#select-xuan-ze-kuang" title="Select 选择框" data-level="2" data-href="#select-xuan-ze-kuang">¶</a>Select 选择框</h2>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <demo-block>
@@ -231,6 +231,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentSelect',
   components: { SelectDemo1: {
   data() {
     return {

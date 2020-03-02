@@ -1,6 +1,6 @@
 <template>
   <div class="component-fixed-section">
-    <div class="update-datetime">文档更新时间：2020-01-31 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="fixedsection-gu-ding-xiang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#fixedsection-gu-ding-xiang" title="FixedSection 固定项" data-level="2" data-href="#fixedsection-gu-ding-xiang">¶</a>FixedSection 固定项</h2>
 <p>一个固定块或者与滚动联动的粘性效果。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -178,6 +178,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentFixedSection',
   components: { FixedSectionDemo1: {
   data() {
     return {

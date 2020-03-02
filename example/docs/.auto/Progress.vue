@@ -1,6 +1,6 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-02-14 18:08</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="progress-jin-du-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -295,6 +295,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentProgress',
   components: { ProgressDemo1: {
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div class="component-scrollbar">
-    <div class="update-datetime">文档更新时间：2020-01-28 14:01</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="scrollbar-gun-dong-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#scrollbar-gun-dong-tiao" title="Scrollbar 滚动条" data-level="2" data-href="#scrollbar-gun-dong-tiao">¶</a>Scrollbar 滚动条</h2>
 <p>用HTML实现原生滚动条效果。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -47,6 +47,7 @@
 </template>
 <script>
 export default {
+  name: 'ComponentScrollbar',
   components: { ScrollbarDemo1: {} }
 }
 </script>

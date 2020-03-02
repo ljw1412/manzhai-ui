@@ -1,6 +1,6 @@
 <template>
   <div class="component-navigation">
-    <div class="update-datetime">文档更新时间：2020-02-01 20:57</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="dao-hang-cai-dan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#dao-hang-cai-dan" title="导航菜单" data-level="2" data-href="#dao-hang-cai-dan">¶</a>导航菜单</h2>
 <p>有站点导航功能的菜单。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -183,6 +183,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentNavigation',
   components: { NavigationDemo1: {
   data() {
     return{

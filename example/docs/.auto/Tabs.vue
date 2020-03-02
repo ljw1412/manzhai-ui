@@ -1,6 +1,6 @@
 <template>
   <div class="component-tabs">
-    <div class="update-datetime">文档更新时间：2020-01-27 14:54</div>
+    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
     <h2 id="tabs-biao-qian-ye" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tabs-biao-qian-ye" title="Tabs 标签页" data-level="2" data-href="#tabs-biao-qian-ye">¶</a>Tabs 标签页</h2>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <demo-block>
@@ -287,6 +287,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentTabs',
   components: { TabsDemo1: {
   data() {
     return {
