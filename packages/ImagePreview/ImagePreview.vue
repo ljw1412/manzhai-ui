@@ -16,7 +16,7 @@
         <m-button :icon="isPlay ? 'md-pause' : 'md-play'"
           class="toolbar-button"
           title="播放"
-          :visible="isDisplayThumbnail || isDisplayButtons && playable"
+          :visible="isDisplayButtons && playable"
           @click="isPlay = !isPlay"></m-button>
         <m-button icon="md-images"
           class="toolbar-button"
