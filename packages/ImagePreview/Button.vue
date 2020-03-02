@@ -2,7 +2,6 @@
   <transition name="mz-fade">
     <div v-show="visible"
       class="mz-image-preview-button"
-      @mousedown.stop
       @mouseenter="$emit('hover',true)"
       @mouseleave="$emit('hover',false)">
       <mz-button border-radius="0"

@@ -13,6 +13,11 @@
       <div class="mz-image-preview__toolbar"
         @mouseenter="isStopTimer = true"
         @mouseleave="isStopTimer = false">
+        <m-button :icon="isPlay ? 'md-pause' : 'md-play'"
+          class="toolbar-button"
+          title="播放"
+          :visible="isDisplayThumbnail || isDisplayButtons && playable"
+          @click="isPlay = !isPlay"></m-button>
         <m-button icon="md-images"
           class="toolbar-button"
           title="缩略图"
@@ -24,6 +29,7 @@
           :visible="isDisplayThumbnail || isDisplayButtons"
           @click="close"></m-button>
       </div>
+      <!-- 缩略图列表 -->
       <transition name="mz-x-zoom">
         <div v-show="isDisplayThumbnail"
           class="mz-image-preview__thumbnails">
@@ -43,7 +49,6 @@
             </div>
           </mz-scrollbar>
         </div>
-
       </transition>
       <!-- 切换箭头按钮 -->
       <m-button v-for="arrow of arrowButtons"
@@ -62,6 +67,11 @@
       <div class="mz-image-preview__watcher"
         @mousedown="mouseDrag.start($event)"
         @mousemove="handleMousemove"></div>
+      <!-- 播放进度条 -->
+      <mz-progress v-if="playable"
+        v-show="isPlay"
+        v-model="timeCount"
+        class="mz-image-preview__timer"></mz-progress>
       <!-- 图片 -->
       <transition name="mz-fade">
         <div class="mz-image-preview__image flex-double-center"
@@ -80,17 +90,20 @@
 import { Component, Vue, Prop, PropSync, Watch } from 'vue-property-decorator'
 import MButton from './Button.vue'
 import MzImage from '../Image/index'
+import { MzProgress } from '../Progress/index'
 import getZIndex from '@/utils/zindex'
 import MouseDrag from '@/classes/MouseDrag'
 
 export type ImageItem = { url: string; title?: string; thumbnail?: string }
 
-@Component({ components: { MButton, MzImage } })
+@Component({ components: { MButton, MzImage, MzProgress } })
 export default class MzImagePreview extends Vue {
   @PropSync('visible', Boolean)
   visibleSync!: boolean
-  @Prop({ type: Boolean, default: false })
+  @Prop(Boolean)
   readonly thumbnail!: boolean
+  @Prop(Boolean)
+  readonly playable!: boolean
   @Prop({ type: Array, default: () => [] })
   readonly images!: (string | ImageItem)[]
   @Prop(Number)
@@ -106,6 +119,10 @@ export default class MzImagePreview extends Vue {
   mZIndex = getZIndex()
   mouseDrag = new MouseDrag(0, 0, 0, true)
   isDisplayThumbnail = false
+  // 播放
+  isPlay = false
+  timeCount = 0
+  playTimer: number | null = null
   // 功能按钮相关
   isDisplayButtons = false
   hideButtonsTimer: number | null = null
@@ -196,10 +213,16 @@ export default class MzImagePreview extends Vue {
     }
   }
 
+  clearPlayTimer() {
+    this.playTimer && clearInterval(this.playTimer)
+    this.timeCount = 0
+  }
+
   @Watch('visibleSync')
   onVisibleChange(visible: boolean) {
     this.isDisplayButtons = visible
     if (!visible) {
+      this.clearPlayTimer()
       return
     }
     this.mouseDrag.reset()
@@ -217,6 +240,7 @@ export default class MzImagePreview extends Vue {
   @Watch('mIndex')
   onIndexChange() {
     this.mouseDrag.reset()
+    this.timeCount = 0
   }
 
   @Watch('isStopTimer')
@@ -225,6 +249,21 @@ export default class MzImagePreview extends Vue {
       this.clearHideButtonsTimer()
     } else {
       this.showButtons()
+    }
+  }
+
+  @Watch('isPlay')
+  onPlayChange(isPlay: boolean) {
+    if (isPlay) {
+      this.playTimer = setInterval(() => {
+        if (this.timeCount === 100) {
+          this.timeCount = 0
+          this.switchImage(1)
+        }
+        this.timeCount++
+      }, 100)
+    } else {
+      this.clearPlayTimer()
     }
   }
 }
@@ -345,6 +384,14 @@ $thumbnails-block-width: 120px;
     width: 100%;
     height: 100%;
     z-index: 9992;
+  }
+
+  &__timer.mz-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9991;
   }
 
   &__image {
