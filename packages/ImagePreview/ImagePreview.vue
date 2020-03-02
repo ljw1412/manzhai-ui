@@ -89,7 +89,7 @@ export type ImageItem = { url: string; title?: string; thumbnail?: string }
 export default class MzImagePreview extends Vue {
   @PropSync('visible', Boolean)
   visibleSync!: boolean
-  @Prop({ type: Boolean, default: true })
+  @Prop({ type: Boolean, default: false })
   readonly thumbnail!: boolean
   @Prop({ type: Array, default: () => [] })
   readonly images!: (string | ImageItem)[]
