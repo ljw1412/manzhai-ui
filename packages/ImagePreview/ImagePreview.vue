@@ -2,24 +2,50 @@
   <transition name="mz-fade">
     <div v-show="visibleSync"
       class="mz-image-preview"
-      :style="{zIndex: zIndex || mZIndex}"
-      :class="{'mz-image-preview--drag': mouseDrag.moving}"
-      @mousedown="mouseDrag.start($event)"
-      @mousemove="handleMousemove">
-
+      :class="{
+        'mz-image-preview--drag': mouseDrag.moving,
+        'mz-image-preview--thumbnail': isDisplayThumbnail
+      }"
+      :style="{zIndex: zIndex || mZIndex}">
+      <!-- 背景 -->
       <div class="mz-image-preview__bg"></div>
-
+      <!-- 工具栏 -->
       <div class="mz-image-preview__toolbar"
-        @mousedown.stop
         @mouseenter="isStopTimer = true"
         @mouseleave="isStopTimer = false">
+        <m-button icon="md-images"
+          class="toolbar-button"
+          title="缩略图"
+          :visible="isDisplayThumbnail || isDisplayButtons && thumbnail"
+          @click="isDisplayThumbnail = !isDisplayThumbnail"></m-button>
         <m-button icon="md-close"
-          class="mz-image-preview__close"
+          class="toolbar-button"
           title="关闭"
-          :visible="isDisplayButtons"
+          :visible="isDisplayThumbnail || isDisplayButtons"
           @click="close"></m-button>
       </div>
+      <transition name="mz-x-zoom">
+        <div v-show="isDisplayThumbnail"
+          class="mz-image-preview__thumbnails">
+          <mz-scrollbar v-if="thumbnail"
+            bar-size="5px"
+            @mouseenter="isStopTimer = true"
+            @mouseleave="isStopTimer = false">
+            <div v-for="(image,index) of mImages"
+              :key="index"
+              class="thumbnail-wrapper"
+              :class="{'thumbnail-wrapper--active':index === mIndex}"
+              @click="mIndex = index">
+              <mz-image fit="cover"
+                draggable="false"
+                :src="image.thumbnail || image.url"></mz-image>
+              <span class="thumbnail-title">{{image.title || index+1}}</span>
+            </div>
+          </mz-scrollbar>
+        </div>
 
+      </transition>
+      <!-- 切换箭头按钮 -->
       <m-button v-for="arrow of arrowButtons"
         :key="arrow.type"
         :icon="arrow.icon"
@@ -32,7 +58,11 @@
         :disabled="arrow.disabled"
         @click="switchImage(arrow.offset)"
         @hover="(hover)=>isStopTimer=hover"></m-button>
-
+      <!-- 事件层 -->
+      <div class="mz-image-preview__watcher"
+        @mousedown="mouseDrag.start($event)"
+        @mousemove="handleMousemove"></div>
+      <!-- 图片 -->
       <transition name="mz-fade">
         <div class="mz-image-preview__image flex-double-center"
           :key="currentImage.url"
@@ -49,12 +79,13 @@
 <script lang="ts">
 import { Component, Vue, Prop, PropSync, Watch } from 'vue-property-decorator'
 import MButton from './Button.vue'
+import MzImage from '../Image/index'
 import getZIndex from '@/utils/zindex'
 import MouseDrag from '@/classes/MouseDrag'
 
 export type ImageItem = { url: string; title?: string; thumbnail?: string }
 
-@Component({ components: { MButton } })
+@Component({ components: { MButton, MzImage } })
 export default class MzImagePreview extends Vue {
   @PropSync('visible', Boolean)
   visibleSync!: boolean
@@ -74,6 +105,8 @@ export default class MzImagePreview extends Vue {
   mIndex = 0
   mZIndex = getZIndex()
   mouseDrag = new MouseDrag(0, 0, 0, true)
+  isDisplayThumbnail = false
+  // 功能按钮相关
   isDisplayButtons = false
   hideButtonsTimer: number | null = null
   isStopTimer = false
@@ -139,12 +172,14 @@ export default class MzImagePreview extends Vue {
     this.visibleSync = false
   }
 
+  // 切换图片
   switchImage(offset: number) {
     const index =
       (this.mIndex + offset + this.mImages.length) % this.mImages.length
     this.mIndex = index
   }
 
+  // 显示按钮 在3秒后隐藏
   showButtons() {
     if (!this.visibleSync) return
     this.isDisplayButtons = true
@@ -196,6 +231,8 @@ export default class MzImagePreview extends Vue {
 </script>
 
 <style lang="scss">
+$thumbnails-block-width: 120px;
+
 .mz-image-preview {
   position: fixed;
   top: 0;
@@ -208,6 +245,21 @@ export default class MzImagePreview extends Vue {
 
   &--drag {
     cursor: grabbing;
+    .mz-image-preview__thumbnails {
+      cursor: grabbing;
+    }
+  }
+
+  &--thumbnail {
+    .mz-image-preview {
+      &__watcher,
+      &__image {
+        width: calc(100% - #{$thumbnails-block-width});
+      }
+      &__arrow--next {
+        right: $thumbnails-block-width;
+      }
+    }
   }
 
   &__bg {
@@ -220,30 +272,60 @@ export default class MzImagePreview extends Vue {
     opacity: 0.9;
   }
 
-  &__image {
-    position: relative;
-    width: 100%;
-    min-height: 100%;
-    img {
-      max-width: 100%;
-    }
-  }
-
   &__toolbar {
     z-index: 9995;
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    .toolbar-button {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+    }
   }
 
-  &__close {
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+  &__thumbnails {
+    position: absolute;
+    right: 0;
+    width: $thumbnails-block-width;
+    height: 100%;
+    padding-top: 40px;
+    box-sizing: border-box;
+    background-color: rgba(30, 30, 30, 0.95);
+    z-index: 9994;
+    cursor: default;
+    transform-origin: right;
+    transition: transform 0.15s linear;
+    .mz-scrollbar {
+      height: 100%;
+    }
+
+    .thumbnail-wrapper {
+      cursor: pointer;
+      padding: 5px;
+      text-align: center;
+      &:not(.thumbnail-wrapper--active):hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      &--active {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: #333333;
+      }
+
+      img {
+        width: 110px;
+        height: 110px;
+      }
+      .thumbnail-title {
+        white-space: nowrap;
+      }
+    }
   }
 
   &__arrow {
-    z-index: 9994;
+    z-index: 9993;
     width: 34px;
     height: 34px;
     margin: 0 6px;
@@ -252,6 +334,27 @@ export default class MzImagePreview extends Vue {
     &--next {
       left: initial;
       right: 0;
+      transition: right 0.15s linear;
+    }
+  }
+
+  &__watcher {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9992;
+  }
+
+  &__image {
+    position: relative;
+    z-index: 9990;
+    width: 100%;
+    min-height: 100%;
+    transition: width 0.15s linear;
+    img {
+      max-width: 100%;
     }
   }
 }
