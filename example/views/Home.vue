@@ -21,7 +21,7 @@
             border-color="#ffffff"
             @click="toGithub">
             <mz-icon name="logo-github"
-              size="20"></mz-icon>
+              :size="20"></mz-icon>
             <span style="margin-left:3px;">GitHub</span>
           </mz-button>
         </mz-row>
