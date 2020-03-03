@@ -261,7 +261,7 @@ export default class MzImagePreview extends Vue {
           this.switchImage(1)
         }
         this.timeCount++
-      }, 100)
+      }, 50)
     } else {
       this.clearPlayTimer()
     }
@@ -392,6 +392,7 @@ $thumbnails-block-width: 120px;
     left: 0;
     width: 100%;
     z-index: 9991;
+    transition: all 0.05s;
   }
 
   &__image {
