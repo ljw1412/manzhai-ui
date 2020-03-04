@@ -75,10 +75,13 @@
       <!-- 图片 -->
       <transition name="mz-fade">
         <div class="mz-image-preview__image flex-double-center"
+          :class="{'mz-image-preview__image--height-first':imageMode==='height'}"
           :key="currentImage.url"
           :style="{transform:`translate(${mouseDrag.x}px,${mouseDrag.y}px)`}">
-          <img draggable="false"
-            :src="currentImage.url" />
+          <img v-if="rendered"
+            draggable="false"
+            :src="currentImage.url"
+            @load="handleImageLoad" />
         </div>
       </transition>
 
@@ -115,8 +118,10 @@ export default class MzImagePreview extends Vue {
   @Prop(Boolean)
   readonly loop!: boolean
 
+  rendered = false
   mIndex = 0
   mZIndex = getZIndex()
+  imageMode = 'width'
   mouseDrag = new MouseDrag(0, 0, 0, true)
   isDisplayThumbnail = false
   // 播放
@@ -180,6 +185,13 @@ export default class MzImagePreview extends Vue {
     ]
   }
 
+  handleImageLoad(e: Event) {
+    const img = e.target as HTMLImageElement
+    // 当高宽比小于2时，让图片在页面中完全展示
+    this.imageMode =
+      img.naturalHeight / img.naturalWidth < 2 ? 'height' : 'width'
+  }
+
   handleMousemove() {
     !this.isStopTimer && this.showButtons()
   }
@@ -225,6 +237,7 @@ export default class MzImagePreview extends Vue {
       this.clearPlayTimer()
       return
     }
+    this.rendered = true
     this.mouseDrag.reset()
     if (this.index) {
       this.mIndex = Math.max(Math.min(this.index, this.mImages.length - 1), 0)
@@ -403,6 +416,14 @@ $thumbnails-block-width: 120px;
     transition: width 0.15s linear;
     img {
       max-width: 100%;
+    }
+  }
+
+  &__image--height-first {
+    height: 100%;
+    width: initial;
+    img {
+      max-height: 100%;
     }
   }
 }
