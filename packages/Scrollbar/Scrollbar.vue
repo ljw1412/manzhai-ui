@@ -16,6 +16,9 @@ import { on, off } from '../../src/utils/dom'
 export default class MzScrollbar extends Vue {
   @Prop({ type: String, default: '15px' })
   readonly barSize!: string
+  @Prop({ type: Boolean, default: true })
+  readonly always!: boolean
+
   @Ref('wrapper')
   wrapperRef!: HTMLElement
   @Ref('content')
@@ -67,7 +70,7 @@ export default class MzScrollbar extends Vue {
 
     const wrapperData = {
       ref: 'wrapper',
-      class: 'mz-scrollbar',
+      class: ['mz-scrollbar', { 'mz-scrollbar--always': this.always }],
       on: {
         mousewheel: this.handleMousewheel,
         touchstart: this.handleTouchstart
@@ -167,8 +170,11 @@ export default class MzScrollbar extends Vue {
   &__content {
     box-sizing: border-box;
   }
-  &:hover .mz-bar {
-    opacity: 0.5;
+  &--always,
+  &:hover {
+    .mz-bar {
+      opacity: 0.75;
+    }
   }
 }
 </style>
