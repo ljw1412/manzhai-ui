@@ -1,6 +1,6 @@
 <template>
   <div class="component-image-preview">
-    <div class="update-datetime">文档更新时间：2020-03-05 10:23</div>
+    <div class="update-datetime">文档更新时间：2020-03-05 13:46</div>
     <h2 id="imagepreview-tu-pian-yu-lan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
 <p>以页面全屏的形式预览图片。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -10,7 +10,8 @@
   <mz-image-preview :visible.sync="visible"
     :images="images"></mz-image-preview>
 </div></image-preview-demo1></template>
-        <template #description></template>
+        <template #description><p><code>images</code>传递图片列表。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button @click=&quot;visible = true&quot;&gt;预览&lt;/mz-button&gt;
 &lt;mz-image-preview :visible.sync=&quot;visible&quot;
   :images=&quot;images&quot;&gt;&lt;/mz-image-preview&gt;
@@ -36,7 +37,8 @@ export default {
   <mz-image-preview thumbnail :visible.sync="visible"
     :images="images"></mz-image-preview>
 </div></image-preview-demo2></template>
-        <template #description></template>
+        <template #description><p><code>thumbnail</code>控制是否显示缩略图。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button @click=&quot;visible = true&quot;&gt;预览&lt;/mz-button&gt;
 &lt;mz-image-preview thumbnail :visible.sync=&quot;visible&quot;
   :images=&quot;images&quot;&gt;&lt;/mz-image-preview&gt;
@@ -62,7 +64,8 @@ export default {
   <mz-image-preview playable :visible.sync="visible"
     :images="images"></mz-image-preview>
 </div></image-preview-demo3></template>
-        <template #description></template>
+        <template #description><p><code>playable</code>控制是否能够自动轮播。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button @click=&quot;visible = true&quot;&gt;预览&lt;/mz-button&gt;
 &lt;mz-image-preview playable :visible.sync=&quot;visible&quot;
   :images=&quot;images&quot;&gt;&lt;/mz-image-preview&gt;
@@ -88,9 +91,37 @@ export default {
   <mz-image-preview loop :visible.sync="visible"
     :images="images"></mz-image-preview>
 </div></image-preview-demo4></template>
-        <template #description></template>
+        <template #description><p><code>loop</code>控制是否能够循环切换。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button @click=&quot;visible = true&quot;&gt;预览&lt;/mz-button&gt;
 &lt;mz-image-preview loop :visible.sync=&quot;visible&quot;
+  :images=&quot;images&quot;&gt;&lt;/mz-image-preview&gt;
+
+&lt;script&gt;
+export default {
+  data (){
+    return {
+      visible: false,
+      images: [
+        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&amp;rf=LaDigue_UHD.jpg&amp;pid=hp&amp;w=1920&amp;h=1080&amp;rs=1&amp;c=4',
+        require('@/static/image-star.jpg')
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="tu-pian-cao-zuo-lan" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#tu-pian-cao-zuo-lan" title="图片操作栏" data-level="3" data-href="#tu-pian-cao-zuo-lan">¶</a>图片操作栏</h3>
+<p>对图片进行缩放的操作栏。</p>
+<demo-block>
+        <template #example><image-preview-demo5 inline-template><div class="image-preview-demo5">
+  <mz-button @click="visible = true">预览</mz-button>
+  <mz-image-preview actionbar :visible.sync="visible"
+    :images="images"></mz-image-preview>
+</div></image-preview-demo5></template>
+        <template #description><p><code>actionbar</code>控制是否显示操作栏。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button @click=&quot;visible = true&quot;&gt;预览&lt;/mz-button&gt;
+&lt;mz-image-preview actionbar :visible.sync=&quot;visible&quot;
   :images=&quot;images&quot;&gt;&lt;/mz-image-preview&gt;
 
 &lt;script&gt;
@@ -143,6 +174,16 @@ export default {
     }
   }
 }, ImagePreviewDemo4: {
+  data (){
+    return {
+      visible: false,
+      images: [
+        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
+        require('@/static/image-star.jpg')
+      ]
+    }
+  }
+}, ImagePreviewDemo5: {
   data (){
     return {
       visible: false,

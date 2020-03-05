@@ -4,7 +4,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo `images`传递图片列表。
 ```html
 <mz-button @click="visible = true">预览</mz-button>
 <mz-image-preview :visible.sync="visible"
@@ -30,7 +30,7 @@ export default {
 
 有缩略图列表，支持按图切换。
 
-:::demo
+:::demo `thumbnail`控制是否显示缩略图。
 ```html
 <mz-button @click="visible = true">预览</mz-button>
 <mz-image-preview thumbnail :visible.sync="visible"
@@ -56,7 +56,7 @@ export default {
 
 能够定时播放。
 
-:::demo
+:::demo `playable`控制是否能够自动轮播。
 ```html
 <mz-button @click="visible = true">预览</mz-button>
 <mz-image-preview playable :visible.sync="visible"
@@ -82,10 +82,36 @@ export default {
 
 最后一张的下一张为第一张。
 
-:::demo
+:::demo `loop`控制是否能够循环切换。
 ```html
 <mz-button @click="visible = true">预览</mz-button>
 <mz-image-preview loop :visible.sync="visible"
+  :images="images"></mz-image-preview>
+
+<script>
+export default {
+  data (){
+    return {
+      visible: false,
+      images: [
+        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
+        require('@/static/image-star.jpg')
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
+### 图片操作栏
+
+对图片进行缩放的操作栏。
+
+:::demo `actionbar`控制是否显示操作栏。
+```html
+<mz-button @click="visible = true">预览</mz-button>
+<mz-image-preview actionbar :visible.sync="visible"
   :images="images"></mz-image-preview>
 
 <script>
