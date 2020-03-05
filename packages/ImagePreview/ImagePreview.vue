@@ -91,8 +91,7 @@ import MActionBar from './ActionBar.vue'
 import { MzProgress } from '../Progress/index'
 import getZIndex from '@/utils/zindex'
 import MouseDrag from '@/classes/MouseDrag'
-
-export type ImageItem = { url: string; title?: string; thumbnail?: string }
+import { ImageItem } from './ImagePreview'
 
 @Component({
   components: { MButton, MToolbar, MActionBar, MzImage, MzProgress }
@@ -160,7 +159,7 @@ export default class MzImagePreview extends Vue {
   }
 
   get currentImage() {
-    return this.mImages[this.mIndex]
+    return this.mImages[this.mIndex] || {}
   }
 
   get isEmpty() {
@@ -425,6 +424,9 @@ $thumbnails-block-width: 120px;
       cursor: pointer;
       padding: 5px;
       text-align: center;
+      color: #ccc;
+      transition: color 0.2s, background-color 0.2s;
+
       &:not(.thumbnail-wrapper--active):hover {
         background-color: rgba(255, 255, 255, 0.3);
       }
