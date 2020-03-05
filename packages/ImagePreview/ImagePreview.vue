@@ -64,6 +64,7 @@
       <mz-progress v-if="playable"
         v-show="isPlay"
         v-model="timeCount"
+        :strokeWidth="2"
         class="mz-image-preview__timer"></mz-progress>
       <!-- 图片 -->
       <transition name="mz-fade">
@@ -437,8 +438,8 @@ $thumbnails-block-width: 120px;
       }
 
       img {
-        width: 110px;
         height: 110px;
+        width: 100%;
       }
       .thumbnail-title {
         white-space: nowrap;
@@ -474,7 +475,7 @@ $thumbnails-block-width: 120px;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9991;
+    z-index: 9997;
     transition: all 0.05s;
   }
 
