@@ -130,6 +130,32 @@ export default {
 ```
 :::
 
+### 使用指令形式
+
+使用$imagePreview指令进行控制预览。
+
+:::demo 
+```html
+<mz-button @click="show">预览</mz-button>
+
+
+<script>
+export default {
+  methods:{
+    show() {
+      this.$imagePreview.show({
+        images: [
+          'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
+          require('@/static/image-star.jpg')
+        ]
+      })
+    }
+  }
+}
+</script>
+```
+:::
+
 ### API
 
 #### 属性
