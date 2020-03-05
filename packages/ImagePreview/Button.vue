@@ -2,6 +2,7 @@
   <transition name="mz-fade">
     <div v-show="visible"
       class="mz-image-preview-button"
+      :class="{'is-text':!icon}"
       @mouseenter="$emit('hover',true)"
       @mouseleave="$emit('hover',false)">
       <mz-button border-radius="0"
@@ -23,7 +24,7 @@ import MzButton from '../Button/index'
 
 @Component({ components: { MzButton } })
 export default class MzImagePreviewButton extends Vue {
-  @Prop(Boolean)
+  @Prop({ type: Boolean, default: true })
   readonly visible!: boolean
   @Prop(Boolean)
   readonly disabled!: boolean

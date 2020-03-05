@@ -10,33 +10,20 @@
       <!-- 背景 -->
       <div class="mz-image-preview__bg"></div>
       <!-- 工具栏 -->
-      <div class="mz-image-preview__toolbar"
-        @mouseenter="isStopTimer = true"
-        @mouseleave="isStopTimer = false">
-        <m-button :icon="isPlay ? 'md-pause' : 'md-play'"
-          class="toolbar-button"
-          title="播放"
-          :visible="isDisplayButtons && playable"
-          @click="isPlay = !isPlay"></m-button>
-        <m-button icon="md-images"
-          class="toolbar-button"
-          title="缩略图"
-          :visible="isDisplayThumbnail || isDisplayButtons && thumbnail"
-          @click="isDisplayThumbnail = !isDisplayThumbnail"></m-button>
-        <m-button icon="md-close"
-          class="toolbar-button"
-          title="关闭"
-          :visible="isDisplayThumbnail || isDisplayButtons"
-          @click="close"></m-button>
-      </div>
+      <m-toolbar :visible='isDisplayButtons || isDisplayThumbnail'
+        :isPlay="isPlay"
+        :isDisplayThumbnail="isDisplayThumbnail"
+        :layout="toolbarLayout"
+        @hover="(hover)=>isStopTimer=hover"
+        @action="handleAction"></m-toolbar>
       <!-- 缩略图列表 -->
       <transition name="mz-x-zoom">
         <div v-show="isDisplayThumbnail"
-          class="mz-image-preview__thumbnails">
+          class="mz-image-preview__thumbnails"
+          @mouseenter="isStopTimer = true"
+          @mouseleave="isStopTimer = false">
           <mz-scrollbar v-if="thumbnail"
-            bar-size="5px"
-            @mouseenter="isStopTimer = true"
-            @mouseleave="isStopTimer = false">
+            bar-size="5px">
             <div v-for="(image,index) of mImages"
               :key="index"
               class="thumbnail-wrapper"
@@ -63,10 +50,14 @@
         :disabled="arrow.disabled"
         @click="switchImage(arrow.offset)"
         @hover="(hover)=>isStopTimer=hover"></m-button>
+      <!--操作条 -->
+      <m-action-bar :visible="isDisplayButtons"
+        @hover="(hover)=>isStopTimer=hover"
+        @action="handleAction"></m-action-bar>
       <!-- 事件层 -->
       <div class="mz-image-preview__watcher"
         @mousedown="mouseDrag.start($event)"
-        @mousemove="handleMousemove"></div>
+        @mousemove="showButtons"></div>
       <!-- 播放进度条 -->
       <mz-progress v-if="playable"
         v-show="isPlay"
@@ -75,7 +66,7 @@
       <!-- 图片 -->
       <transition name="mz-fade">
         <div class="mz-image-preview__image flex-double-center"
-          :class="{'mz-image-preview__image--height-first':imageMode==='height'}"
+          :class="{'height-first':imageMode==='height'}"
           :key="currentImage.url"
           :style="{transform:`translate(${mouseDrag.x}px,${mouseDrag.y}px)`}">
           <img v-if="rendered"
@@ -91,15 +82,19 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, PropSync, Watch } from 'vue-property-decorator'
-import MButton from './Button.vue'
 import MzImage from '../Image/index'
+import MButton from './Button.vue'
+import MToolbar from './Toolbar.vue'
+import MActionBar from './ActionBar.vue'
 import { MzProgress } from '../Progress/index'
 import getZIndex from '@/utils/zindex'
 import MouseDrag from '@/classes/MouseDrag'
 
 export type ImageItem = { url: string; title?: string; thumbnail?: string }
 
-@Component({ components: { MButton, MzImage, MzProgress } })
+@Component({
+  components: { MButton, MToolbar, MActionBar, MzImage, MzProgress }
+})
 export default class MzImagePreview extends Vue {
   @PropSync('visible', Boolean)
   visibleSync!: boolean
@@ -117,6 +112,8 @@ export default class MzImagePreview extends Vue {
   readonly zIndex!: number
   @Prop(Boolean)
   readonly loop!: boolean
+  @Prop(Boolean)
+  readonly appendToBody!: boolean
 
   rendered = false
   mIndex = 0
@@ -132,6 +129,13 @@ export default class MzImagePreview extends Vue {
   isDisplayButtons = false
   hideButtonsTimer: number | null = null
   isStopTimer = false
+
+  get toolbarLayout() {
+    const layout = ['close']
+    if (this.playable) layout.push('play')
+    if (this.thumbnail) layout.push('thumbnail')
+    return layout
+  }
 
   get mImages(): ImageItem[] {
     return this.images
@@ -185,32 +189,21 @@ export default class MzImagePreview extends Vue {
     ]
   }
 
-  handleImageLoad(e: Event) {
-    const img = e.target as HTMLImageElement
-    // 当高宽比小于2时，让图片在页面中完全展示
-    this.imageMode =
-      img.naturalHeight / img.naturalWidth < 2 ? 'height' : 'width'
-  }
-
-  handleMousemove() {
-    !this.isStopTimer && this.showButtons()
-  }
-
-  close() {
-    this.$emit('close')
-    this.visibleSync = false
-  }
-
   // 切换图片
   switchImage(offset: number) {
-    const index =
-      (this.mIndex + offset + this.mImages.length) % this.mImages.length
+    let index = this.mIndex + offset
+    if (this.loop) {
+      index = (index + this.mImages.length) % this.mImages.length
+    } else {
+      index = Math.max(Math.min(index, this.mImages.length - 1), 0)
+    }
     this.mIndex = index
+    this.showButtons()
   }
 
   // 显示按钮 在3秒后隐藏
   showButtons() {
-    if (!this.visibleSync) return
+    if (!this.visibleSync || this.isStopTimer) return
     this.isDisplayButtons = true
     this.clearHideButtonsTimer()
     this.hideButtonsTimer = setTimeout(() => {
@@ -230,13 +223,43 @@ export default class MzImagePreview extends Vue {
     this.timeCount = 0
   }
 
-  @Watch('visibleSync')
-  onVisibleChange(visible: boolean) {
-    this.isDisplayButtons = visible
-    if (!visible) {
-      this.clearPlayTimer()
-      return
+  close() {
+    this.$emit('close')
+    this.visibleSync = false
+  }
+
+  handleImageLoad(e: Event) {
+    const img = e.target as HTMLImageElement
+    // 当高宽比小于2时，让图片在页面中完全展示
+    this.imageMode =
+      img.naturalHeight / img.naturalWidth < 2 ? 'height' : 'width'
+  }
+
+  handleAction(action: string) {
+    console.log(action)
+    if (action === 'close') {
+      this.close()
+    } else if (action === 'thumbnail') {
+      this.isDisplayThumbnail = !this.isDisplayThumbnail
+    } else if (action === 'play') {
+      this.isPlay = !this.isPlay
     }
+  }
+
+  handleKeydown(event: KeyboardEvent) {
+    console.log(event)
+    if (event.keyCode === 27) {
+      this.visibleSync = false
+    } else if (event.keyCode === 37) {
+      this.switchImage(-1)
+    } else if (event.keyCode === 39) {
+      this.switchImage(1)
+    }
+  }
+
+  // 图片预览显示后
+  opened() {
+    this.isDisplayButtons = true
     this.rendered = true
     this.mouseDrag.reset()
     if (this.index) {
@@ -245,8 +268,25 @@ export default class MzImagePreview extends Vue {
       const index = this.mImages.findIndex(item => item.url === this.current)
       ~index && (this.mIndex = index)
     }
-    if (!this.zIndex) {
-      this.mZIndex = getZIndex()
+    !this.zIndex && (this.mZIndex = getZIndex())
+    // 如果设置将其添加到body上
+    this.appendToBody && document.body.appendChild(this.$el)
+    window.addEventListener('keydown', this.handleKeydown, false)
+  }
+  // 图片预览关闭后
+  closed() {
+    this.isDisplayButtons = false
+    this.isPlay = false
+    this.clearPlayTimer()
+    window.removeEventListener('keydown', this.handleKeydown, false)
+  }
+
+  @Watch('visibleSync')
+  onVisibleChange(visible: boolean) {
+    if (visible) {
+      this.opened()
+    } else {
+      this.closed()
     }
   }
 
@@ -277,6 +317,12 @@ export default class MzImagePreview extends Vue {
       }, 50)
     } else {
       this.clearPlayTimer()
+    }
+  }
+
+  destroyed() {
+    if (this.appendToBody && this.$el && this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el)
     }
   }
 }
@@ -312,6 +358,9 @@ $thumbnails-block-width: 120px;
         right: $thumbnails-block-width;
       }
     }
+    .mz-image-preview-action-bar {
+      left: calc(50% - #{$thumbnails-block-width/2});
+    }
   }
 
   &__bg {
@@ -322,19 +371,6 @@ $thumbnails-block-width: 120px;
     left: 0;
     background: rgb(30, 30, 30);
     opacity: 0.9;
-  }
-
-  &__toolbar {
-    z-index: 9995;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    .toolbar-button {
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-    }
   }
 
   &__thumbnails {
@@ -417,13 +453,12 @@ $thumbnails-block-width: 120px;
     img {
       max-width: 100%;
     }
-  }
-
-  &__image--height-first {
-    height: 100%;
-    width: initial;
-    img {
-      max-height: 100%;
+    &.height-first {
+      height: 100%;
+      width: initial;
+      img {
+        max-height: 100%;
+      }
     }
   }
 }
