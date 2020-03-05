@@ -51,7 +51,9 @@
         @click="switchImage(arrow.offset)"
         @hover="(hover)=>isStopTimer=hover"></m-button>
       <!--操作条 -->
-      <m-action-bar :visible="isDisplayButtons"
+      <m-action-bar v-if="actionbar"
+        :visible="isDisplayButtons"
+        :zoom="zoom"
         @hover="(hover)=>isStopTimer=hover"
         @action="handleAction"></m-action-bar>
       <!-- 事件层 -->
@@ -68,7 +70,7 @@
         <div class="mz-image-preview__image flex-double-center"
           :class="{'height-first':imageMode==='height'}"
           :key="currentImage.url"
-          :style="{transform:`translate(${mouseDrag.x}px,${mouseDrag.y}px)`}">
+          :style="{transform:`translate(${mouseDrag.x}px,${mouseDrag.y}px) scale(${zoom})`}">
           <img v-if="rendered"
             draggable="false"
             :src="currentImage.url"
@@ -102,6 +104,8 @@ export default class MzImagePreview extends Vue {
   readonly thumbnail!: boolean
   @Prop(Boolean)
   readonly playable!: boolean
+  @Prop(Boolean)
+  readonly actionbar!: boolean
   @Prop({ type: Array, default: () => [] })
   readonly images!: (string | ImageItem)[]
   @Prop(Number)
@@ -119,6 +123,7 @@ export default class MzImagePreview extends Vue {
   mIndex = 0
   mZIndex = getZIndex()
   imageMode = 'width'
+  zoom = 1
   mouseDrag = new MouseDrag(0, 0, 0, true)
   isDisplayThumbnail = false
   // 播放
@@ -243,6 +248,13 @@ export default class MzImagePreview extends Vue {
       this.isDisplayThumbnail = !this.isDisplayThumbnail
     } else if (action === 'play') {
       this.isPlay = !this.isPlay
+    } else if (action === 'zoom-in') {
+      this.zoom = Math.max(Math.min(this.zoom + 0.1, 4), 0.1)
+    } else if (action === 'zoom-out') {
+      this.zoom = Math.max(Math.min(this.zoom - 0.1, 4), 0.1)
+    } else if (action === 'reset') {
+      this.zoom = 1
+      this.mouseDrag.x = this.mouseDrag.y = 0
     }
   }
 
@@ -277,6 +289,7 @@ export default class MzImagePreview extends Vue {
   closed() {
     this.isDisplayButtons = false
     this.isPlay = false
+    this.zoom = 1
     this.clearPlayTimer()
     window.removeEventListener('keydown', this.handleKeydown, false)
   }
@@ -294,6 +307,7 @@ export default class MzImagePreview extends Vue {
   onIndexChange() {
     this.mouseDrag.reset()
     this.timeCount = 0
+    this.zoom = 1
   }
 
   @Watch('isStopTimer')
