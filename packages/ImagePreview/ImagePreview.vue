@@ -106,18 +106,22 @@ export default class MzImagePreview extends Vue {
   readonly playable!: boolean
   @Prop(Boolean)
   readonly actionbar!: boolean
-  @Prop({ type: Array, default: () => [] })
-  readonly images!: (string | ImageItem)[]
-  @Prop(Number)
-  readonly index!: number
-  @Prop(String)
-  readonly current!: string
-  @Prop(Number)
-  readonly zIndex!: number
   @Prop(Boolean)
   readonly loop!: boolean
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop({ type: Array, default: () => [] })
+  readonly images!: (string | ImageItem)[]
+  @Prop(String)
+  readonly current!: string
+  @Prop(Number)
+  readonly index!: number
+  @Prop({ type: Number, default: 0.1 })
+  readonly minZoom!: number
+  @Prop({ type: Number, default: 4 })
+  readonly maxZoom!: number
+  @Prop(Number)
+  readonly zIndex!: number
 
   rendered = false
   mIndex = 0
@@ -206,6 +210,13 @@ export default class MzImagePreview extends Vue {
     this.showButtons()
   }
 
+  zoomImage(offset: number) {
+    this.zoom = Math.max(
+      Math.min(this.zoom + offset, this.maxZoom),
+      this.minZoom
+    )
+  }
+
   // 显示按钮 在3秒后隐藏
   showButtons() {
     if (!this.visibleSync || this.isStopTimer) return
@@ -241,7 +252,6 @@ export default class MzImagePreview extends Vue {
   }
 
   handleAction(action: string) {
-    console.log(action)
     if (action === 'close') {
       this.close()
     } else if (action === 'thumbnail') {
@@ -249,23 +259,27 @@ export default class MzImagePreview extends Vue {
     } else if (action === 'play') {
       this.isPlay = !this.isPlay
     } else if (action === 'zoom-in') {
-      this.zoom = Math.max(Math.min(this.zoom + 0.1, 4), 0.1)
+      this.zoomImage(0.1)
     } else if (action === 'zoom-out') {
-      this.zoom = Math.max(Math.min(this.zoom - 0.1, 4), 0.1)
+      this.zoomImage(-0.1)
     } else if (action === 'reset') {
       this.zoom = 1
       this.mouseDrag.x = this.mouseDrag.y = 0
     }
+    this.$emit('action', action)
   }
 
   handleKeydown(event: KeyboardEvent) {
-    console.log(event)
     if (event.keyCode === 27) {
       this.visibleSync = false
     } else if (event.keyCode === 37) {
       this.switchImage(-1)
     } else if (event.keyCode === 39) {
       this.switchImage(1)
+    } else if (event.keyCode === 38) {
+      this.handleAction('zoom-in')
+    } else if (event.keyCode === 40) {
+      this.handleAction('zoom-out')
     }
   }
 
@@ -284,6 +298,7 @@ export default class MzImagePreview extends Vue {
     // 如果设置将其添加到body上
     this.appendToBody && document.body.appendChild(this.$el)
     window.addEventListener('keydown', this.handleKeydown, false)
+    this.$emit('opened')
   }
   // 图片预览关闭后
   closed() {
@@ -292,6 +307,7 @@ export default class MzImagePreview extends Vue {
     this.zoom = 1
     this.clearPlayTimer()
     window.removeEventListener('keydown', this.handleKeydown, false)
+    this.$emit('closed')
   }
 
   @Watch('visibleSync')
@@ -357,8 +373,10 @@ $thumbnails-block-width: 120px;
 
   &--drag {
     cursor: grabbing;
-    .mz-image-preview__thumbnails {
-      cursor: grabbing;
+    .mz-image-preview {
+      &__image {
+        transition: none;
+      }
     }
   }
 
@@ -463,7 +481,7 @@ $thumbnails-block-width: 120px;
     z-index: 9990;
     width: 100%;
     min-height: 100%;
-    transition: width 0.15s linear;
+    transition: transform 0.15s linear;
     img {
       max-width: 100%;
     }
