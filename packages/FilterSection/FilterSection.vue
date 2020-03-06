@@ -114,6 +114,8 @@ export default class MzFilterSection extends Mixins(FormElement) {
 
 <style lang="scss" >
 .mz-filter-section {
+  overflow-x: hidden;
+
   &__label {
     color: var(--color-text-regular);
   }
