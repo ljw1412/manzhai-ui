@@ -47,6 +47,7 @@ import Switch from '../packages/Switch/index'
 import Scrollbar from '../packages/Scrollbar/index'
 import SildeGroup from '../packages/SlideGroup/index'
 import Snackbar from '../packages/Snackbar/index'
+import State from '../packages/State/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
 // inject import
@@ -98,6 +99,7 @@ const components: VueConstructor[] = [
   Scrollbar,
   SildeGroup,
   Snackbar,
+  State,
   Tabs,
   Tab,
   Table
@@ -220,6 +222,7 @@ export default {
   Scrollbar,
   SildeGroup,
   Snackbar,
+  State,
   Tabs,
   Tab,
   Table
