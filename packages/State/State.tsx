@@ -4,7 +4,7 @@ import { only } from '@/utils/object'
 function renderContent(ctx: RenderContext) {
   const value = ctx.props.value
   if (typeof value !== 'string') {
-    console.error('[MzStatus]', 'value 必须是 String 类型')
+    console.error('[MzState]', 'value 必须是 String 类型')
     return null
   }
   const names = value.replace(/ /g, '').split(',')
@@ -14,6 +14,6 @@ function renderContent(ctx: RenderContext) {
 export default Vue.extend({
   functional: true,
   render(h, ctx) {
-    return <div class="mz-status">{renderContent(ctx)}</div>
+    return <div class="mz-state">{renderContent(ctx)}</div>
   }
 })
