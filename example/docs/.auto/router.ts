@@ -18,6 +18,7 @@ import ComponentRadio from './Radio.vue'
 import ComponentScrollbar from './Scrollbar.vue'
 import ComponentSelect from './Select.vue'
 import ComponentSnackbar from './Snackbar.vue'
+import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
 
@@ -121,6 +122,11 @@ export default [
     path: 'snackbar',
     name: 'ComponentSnackbar',
     component: ComponentSnackbar
+  },
+  {
+    path: 'state',
+    name: 'ComponentState',
+    component: ComponentState
   },
   {
     path: 'switch',

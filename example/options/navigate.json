@@ -178,6 +178,13 @@
         }
       },
       {
+        "label": "State",
+        "text": "状态变化",
+        "to": {
+          "name": "ComponentState"
+        }
+      },
+      {
         "label": "Switch",
         "text": "开关",
         "to": {
