@@ -21,6 +21,7 @@ import ComponentSnackbar from './Snackbar.vue'
 import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
+import ComponentTag from './Tag.vue'
 
 export default [
   {
@@ -137,5 +138,10 @@ export default [
     path: 'tabs',
     name: 'ComponentTabs',
     component: ComponentTabs
+  },
+  {
+    path: 'tag',
+    name: 'ComponentTag',
+    component: ComponentTag
   }
 ]

@@ -204,6 +204,13 @@
         "to": {
           "name": "ComponentTabs"
         }
+      },
+      {
+        "label": "Tag",
+        "text": "标签",
+        "to": {
+          "name": "ComponentTag"
+        }
       }
     ]
   }

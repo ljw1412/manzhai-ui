@@ -126,6 +126,12 @@
       margin-top: 20px;
     }
   }
+
+  .component-tag {
+    .mz-tag + .mz-tag {
+      margin-left: 10px;
+    }
+  }
 }
 
 #demo-heading-scroll-container,
