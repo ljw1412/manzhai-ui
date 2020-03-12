@@ -50,6 +50,7 @@ import Snackbar from '../packages/Snackbar/index'
 import State from '../packages/State/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
+import Tag from '../packages/Tag/index'
 // inject import
 
 const components: VueConstructor[] = [
@@ -102,7 +103,8 @@ const components: VueConstructor[] = [
   State,
   Tabs,
   Tab,
-  Table
+  Table,
+  Tag
 ]
 
 /**
@@ -225,5 +227,6 @@ export default {
   State,
   Tabs,
   Tab,
-  Table
+  Table,
+  Tag
 }
