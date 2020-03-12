@@ -1,7 +1,9 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 
 const sizeList = ['large', 'small']
-
+/**
+ * @deprecated 准备替换
+ * */
 @Component
 export default class SizeMixin extends Vue {
   @Prop(String)
