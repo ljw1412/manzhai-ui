@@ -10,11 +10,11 @@
 ```html
 <div>
   <mz-button outlined
-    type="primary"
+    color="primary"
     :disabled="elevation <= 0"
     @click="elevationBy(-1)">-</mz-button>
   <mz-button outlined
-    type="primary"
+    color="primary"
     :disabled="elevation >= 24" 
     @click="elevationBy(1)">+</mz-button>
   <mz-card

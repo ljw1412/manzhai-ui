@@ -1,15 +1,15 @@
 <template>
   <div class="component-state">
-    <div class="update-datetime">文档更新时间：2020-03-08 17:39</div>
+    <div class="update-datetime">文档更新时间：2020-03-13 17:57</div>
     <h2 id="state-zhuang-tai-bian-hua" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#state-zhuang-tai-bian-hua" title="State 状态变化" data-level="2" data-href="#state-zhuang-tai-bian-hua">¶</a>State 状态变化</h2>
 <p>根据状态显示不同内容</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>根据状态切换呈现的内容。</p>
 <demo-block>
         <template #example><state-demo1 inline-template><div class="state-demo1">
-  <mz-button outlined :disabled="loading" type="danger"
+  <mz-button outlined :disabled="loading" color="danger"
     @click="loadData(true)">加载空数据</mz-button>
-  <mz-button outlined :disabled="loading" type="success"
+  <mz-button outlined :disabled="loading" color="success"
     @click="loadData(false)">加载有数据</mz-button>
   <mz-state :value="state">
     <template #loading>加载中</template>
@@ -19,9 +19,9 @@
 </div></state-demo1></template>
         <template #description><p><code>value</code>表示当前状态，它的可选值与你所使用的插槽名称对应。(以下面的Demo为例，此时可选值为<code>loading</code>、<code>empty</code>、<code>success</code>)</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-button outlined :disabled=&quot;loading&quot; type=&quot;danger&quot;
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button outlined :disabled=&quot;loading&quot; color=&quot;danger&quot;
   @click=&quot;loadData(true)&quot;&gt;加载空数据&lt;/mz-button&gt;
-&lt;mz-button outlined :disabled=&quot;loading&quot; type=&quot;success&quot;
+&lt;mz-button outlined :disabled=&quot;loading&quot; color=&quot;success&quot;
   @click=&quot;loadData(false)&quot;&gt;加载有数据&lt;/mz-button&gt;
 &lt;mz-state :value=&quot;state&quot;&gt;
   &lt;template #loading&gt;加载中&lt;/template&gt;

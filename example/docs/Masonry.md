@@ -65,12 +65,12 @@ export default {
 ```html
 <div style="margin-bottom:10px;">
   <mz-button outlined
-    type="primary"
+    color="primary"
     :disabled="lineCount <= 1"
     @click="lineCountBy(-1)">-</mz-button>
   {{lineCount}}
   <mz-button outlined
-    type="primary"
+    color="primary"
     :disabled="lineCount >= 8" 
     @click="lineCountBy(1)">+</mz-button>
 </div>

@@ -8,9 +8,9 @@
 
 :::demo `value`表示当前状态，它的可选值与你所使用的插槽名称对应。(以下面的Demo为例，此时可选值为`loading`、`empty`、`success`)
 ```html
-<mz-button outlined :disabled="loading" type="danger"
+<mz-button outlined :disabled="loading" color="danger"
   @click="loadData(true)">加载空数据</mz-button>
-<mz-button outlined :disabled="loading" type="success"
+<mz-button outlined :disabled="loading" color="success"
   @click="loadData(false)">加载有数据</mz-button>
 <mz-state :value="state">
   <template #loading>加载中</template>

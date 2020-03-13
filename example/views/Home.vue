@@ -12,7 +12,7 @@
         </mz-row>
         <mz-row flex
           justify="center">
-          <mz-button type="success"
+          <mz-button color="success"
             size="large"
             @click="$router.push({name:'pageComponent'})">快速入门</mz-button>
           <mz-button outlined

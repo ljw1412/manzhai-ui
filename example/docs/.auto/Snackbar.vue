@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
+    <div class="update-datetime">文档更新时间：2020-03-13 17:57</div>
     <h2 id="snackbar-xiao-xi-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -93,7 +93,7 @@ export default {
     :timeout="0"
     :placement="placement"
     @buttonClick="isShow = false"></mz-snackbar>
-  <mz-button type="primary" @click="isShow = true">显示</mz-button>
+  <mz-button color="primary" @click="isShow = true">显示</mz-button>
   <br><br>
   <mz-filter-section v-model="placement" label="placement">
     <mz-filter-section-item v-for="item of placementList"
@@ -110,7 +110,7 @@ export default {
   :timeout=&quot;0&quot;
   :placement=&quot;placement&quot;
   @buttonClick=&quot;isShow = false&quot;&gt;&lt;/mz-snackbar&gt;
-&lt;mz-button type=&quot;primary&quot; @click=&quot;isShow = true&quot;&gt;显示&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; @click=&quot;isShow = true&quot;&gt;显示&lt;/mz-button&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;mz-filter-section v-model=&quot;placement&quot; label=&quot;placement&quot;&gt;
   &lt;mz-filter-section-item v-for=&quot;item of placementList&quot;

@@ -1,6 +1,6 @@
 <template>
   <div class="component-card">
-    <div class="update-datetime">文档更新时间：2020-01-15 11:56</div>
+    <div class="update-datetime">文档更新时间：2020-03-13 17:57</div>
     <h2 id="card-qia-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#card-qia-pian" title="Card 卡片" data-level="2" data-href="#card-qia-pian">¶</a>Card 卡片</h2>
 <p>以卡片显示展示内容。</p>
 <h3 id="qia-pian-hai-ba" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qia-pian-hai-ba" title="卡片海拔" data-level="3" data-href="#qia-pian-hai-ba">¶</a>卡片海拔</h3>
@@ -9,11 +9,11 @@
         <template #example><card-demo1 inline-template><div class="card-demo1">
   <div>
     <mz-button outlined
-      type="primary"
+      color="primary"
       :disabled="elevation <= 0"
       @click="elevationBy(-1)">-</mz-button>
     <mz-button outlined
-      type="primary"
+      color="primary"
       :disabled="elevation >= 24" 
       @click="elevationBy(1)">+</mz-button>
     <mz-card
@@ -28,11 +28,11 @@
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-button outlined
-    type=&quot;primary&quot;
+    color=&quot;primary&quot;
     :disabled=&quot;elevation &lt;= 0&quot;
     @click=&quot;elevationBy(-1)&quot;&gt;-&lt;/mz-button&gt;
   &lt;mz-button outlined
-    type=&quot;primary&quot;
+    color=&quot;primary&quot;
     :disabled=&quot;elevation &gt;= 24&quot; 
     @click=&quot;elevationBy(1)&quot;&gt;+&lt;/mz-button&gt;
   &lt;mz-card
@@ -175,6 +175,7 @@ export default{
 </template>
 <script>
 export default {
+  name: 'ComponentCard',
   components: { CardDemo1: {
   data(){
     return {
@@ -190,3 +191,6 @@ export default {
 }, CardDemo2: {} }
 }
 </script>
+<style lang="scss">
+
+</style>

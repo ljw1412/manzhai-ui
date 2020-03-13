@@ -1,6 +1,6 @@
 <template>
   <div class="component-masonry">
-    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
+    <div class="update-datetime">文档更新时间：2020-03-13 17:57</div>
     <h2 id="masonry-pu-bu-liu-bu-ju" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#masonry-pu-bu-liu-bu-ju" title="Masonry 瀑布流布局" data-level="2" data-href="#masonry-pu-bu-liu-bu-ju">¶</a>Masonry 瀑布流布局</h2>
 <p>简单快速实现瀑布流布局效果。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -82,12 +82,12 @@ export default {
         <template #example><masonry-demo3 inline-template><div class="masonry-demo3">
   <div style="margin-bottom:10px;">
     <mz-button outlined
-      type="primary"
+      color="primary"
       :disabled="lineCount <= 1"
       @click="lineCountBy(-1)">-</mz-button>
     {{lineCount}}
     <mz-button outlined
-      type="primary"
+      color="primary"
       :disabled="lineCount >= 8" 
       @click="lineCountBy(1)">+</mz-button>
   </div>
@@ -104,12 +104,12 @@ export default {
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div style=&quot;margin-bottom:10px;&quot;&gt;
   &lt;mz-button outlined
-    type=&quot;primary&quot;
+    color=&quot;primary&quot;
     :disabled=&quot;lineCount &lt;= 1&quot;
     @click=&quot;lineCountBy(-1)&quot;&gt;-&lt;/mz-button&gt;
   {{lineCount}}
   &lt;mz-button outlined
-    type=&quot;primary&quot;
+    color=&quot;primary&quot;
     :disabled=&quot;lineCount &gt;= 8&quot; 
     @click=&quot;lineCountBy(1)&quot;&gt;+&lt;/mz-button&gt;
 &lt;/div&gt;

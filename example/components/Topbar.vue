@@ -15,7 +15,7 @@
         circle
         outlined
         size="small"
-        type="success"
+        color="success"
         @click="onChangeThemeClick">
         <mz-icon :name="!isDark?'md-moon':'md-sunny'"></mz-icon>
       </mz-button>

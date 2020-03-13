@@ -82,7 +82,7 @@ export default {
   :timeout="0"
   :placement="placement"
   @buttonClick="isShow = false"></mz-snackbar>
-<mz-button type="primary" @click="isShow = true">显示</mz-button>
+<mz-button color="primary" @click="isShow = true">显示</mz-button>
 <br><br>
 <mz-filter-section v-model="placement" label="placement">
   <mz-filter-section-item v-for="item of placementList"

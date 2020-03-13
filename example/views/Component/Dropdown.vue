@@ -4,7 +4,7 @@
       <mz-dropdown v-model="placement"
         :list="placementList"
         :placement="placement">
-        <mz-button type="primary"
+        <mz-button color="primary"
           style="width: 100px;">{{placement}}</mz-button>
       </mz-dropdown>
     </div>
