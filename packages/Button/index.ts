@@ -1,4 +1,4 @@
-import MzButton from './Button.vue'
+import MzButton from './Button'
 import { VueConstructor } from 'vue'
 
 MzButton.componentName = 'MzButton'
