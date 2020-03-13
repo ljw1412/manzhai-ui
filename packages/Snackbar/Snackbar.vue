@@ -145,7 +145,6 @@ export default class MzSnackbar extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/index.scss';
 .mz-snackbar {
   --mz-snackbar__background-color: #323232;
   --mz-snackbar__min-width: 100%;

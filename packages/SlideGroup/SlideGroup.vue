@@ -137,8 +137,6 @@ export default class MzSlideGroup extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
-
 .mz-slide-group {
   position: relative;
 

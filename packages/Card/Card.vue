@@ -31,7 +31,6 @@ export default class MzCard extends Mixins(BaseAttribute) {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
 .mz-card {
   color: var(--color-text-primary);
   background-color: var(--color-card-background, #ffffff);

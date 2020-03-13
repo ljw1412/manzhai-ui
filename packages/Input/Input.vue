@@ -150,8 +150,7 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
           <div class="mz-input-outline__leading"></div>
           <div
             class="mz-input-outline__notch"
-            style={{ width: this.notchWidth + 'px' }}
-          ></div>
+            style={{ width: this.notchWidth + 'px' }}></div>
           <div class="mz-input-outline__trailing"></div>
         </div>
       )
@@ -258,7 +257,6 @@ export default class MzInput extends Mixins(SizeMixin, FormElement) {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
 .mz-input {
   --mz-input__input-left: 16px;
   --mz-input__input-padding: 20px var(--mz-input__input-left) 6px;

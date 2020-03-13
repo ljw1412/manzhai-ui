@@ -83,8 +83,6 @@ export default class MzNavigation extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
-
 .mz-navigation {
   .router-link-exact-active {
     .mz-list-item--link {

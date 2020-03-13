@@ -46,6 +46,15 @@ const config = {
         plugins: [{ removeXMLNS: true }]
       })
       .end()
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        prependData: `
+          @import '@/scss/index.scss';
+        `
+      }
+    }
   }
 }
 

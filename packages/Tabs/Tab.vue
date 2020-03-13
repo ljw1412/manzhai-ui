@@ -54,8 +54,7 @@ export default class MzTab extends Vue {
       <div
         v-ripple={{ value: this.disabled && this.ripple }}
         class={['mz-tab', 'color-transition', this.tabClasses]}
-        on-click={this.onTabClick}
-      >
+        on-click={this.onTabClick}>
         {this.label || this.value}
       </div>
     )
@@ -85,7 +84,6 @@ export default class MzTab extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
 .mz-tab {
   --mz-tab__font-color: var(--color-text-secondary);
   --mz-tab__font-color--active: var(--color-primary);

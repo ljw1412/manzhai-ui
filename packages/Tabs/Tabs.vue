@@ -51,8 +51,7 @@ export default class MzTabs extends Vue {
         <mz-slide-group
           ref="slideGroup"
           key="slideGroupInTabs"
-          on-resize={this.flushActiveBar}
-        >
+          on-resize={this.flushActiveBar}>
           {this.renderNav()}
         </mz-slide-group>
         <div class="mz-tabs__content" key="tabsContent">
@@ -148,7 +147,6 @@ export default class MzTabs extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
 .mz-tabs {
   --mz-tabs__active-bar-color: var(--color-primary);
 

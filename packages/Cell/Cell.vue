@@ -83,7 +83,6 @@ export default class MzCell extends Vue {
 </script>
 
 <style lang="scss">
-@import '@/scss/index.scss';
 .mz-cell {
   position: relative;
   & + & {
