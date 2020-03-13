@@ -66,7 +66,9 @@ export default class MzTag extends MzSize {
     }
     return (
       <span {...data}>
-        <span>{this.$slots.default}</span>
+        {this.$slots.prefix}
+        <span class="mz-tag__content">{this.$slots.default}</span>
+        {this.$slots.suffix}
         {this.closeVnode}
       </span>
     )

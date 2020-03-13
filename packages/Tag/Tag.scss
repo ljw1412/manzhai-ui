@@ -9,10 +9,15 @@
 }
 
 .mz-tag {
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--mz-tag__bg-color);
   background-color: var(--mz-tag__bg-color);
   color: var(--mz-tag__color);
   border-radius: 4px;
+  box-sizing: border-box;
+  vertical-align: bottom;
 
   &--round {
     border-radius: 100px;
@@ -29,7 +34,6 @@
   &--outlined {
     background-color: transparent;
     color: var(--mz-tag__bg-color);
-    border: 1px solid var(--mz-tag__bg-color);
   }
 
   &--text {
@@ -37,7 +41,12 @@
     color: var(--mz-tag__bg-color);
   }
 
+  &__content {
+    display: inline-block;
+  }
+
   &__close {
+    margin-left: 2px;
     &:hover {
       opacity: 0.8;
     }
@@ -46,36 +55,21 @@
     }
   }
 
-  &.mz-size--small {
-    padding: 2px;
-    font-size: 12px;
-    line-height: 12px;
-    .mz-tag__close {
-      margin-left: 2px;
-    }
-  }
-  &.mz-size--medium {
-    padding: 4px 6px;
-    font-size: 14px;
-    line-height: 14px;
-    .mz-tag__close {
-      margin-left: 4px;
-    }
-  }
-  &.mz-size--default {
-    padding: 5px 8px;
-    font-size: 16px;
-    line-height: 16px;
-    .mz-tag__close {
-      margin-left: 6px;
-    }
-  }
-  &.mz-size--large {
-    padding: 7px 12px;
-    font-size: 16px;
-    line-height: 16px;
-    .mz-tag__close {
-      margin-left: 10px;
+  /* prettier-ignore */
+  $size-options: (
+    // size: padding, height, fontsize
+    small: ( 2px, 16px, 12px ),
+    medium: ( 6px, 22px, 14px ),
+    default: ( 8px, 26px, 16px ),
+    large: ( 12px, 30px, 16px )
+  );
+
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      padding: 0 nth($arr, 1);
+      height: nth($arr, 2);
+      line-height: nth($arr, 2) - 2px;
+      font-size: nth($arr, 3);
     }
   }
 }
