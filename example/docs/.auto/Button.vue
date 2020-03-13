@@ -1,124 +1,66 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
+    <div class="update-datetime">文档更新时间：2020-03-13 17:33</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <p>基础按钮的用法。</p>
 <demo-block>
         <template #example><button-demo1 inline-template><div class="button-demo1">
+  <span class="demo-font-size-14">状态控制: </span>
+  <mz-checkbox-group v-model="checkedList">
+    <mz-checkbox v-for="option of options" 
+      :value="option" :key="option">{{option}}</mz-checkbox>
+  </mz-checkbox-group>
   <div>
-    <mz-button>默认按钮</mz-button>
-    <mz-button type="primary">主要按钮</mz-button>
-    <mz-button type="success">成功按钮</mz-button>
-    <mz-button type="warning">警告按钮</mz-button>
-    <mz-button type="danger">危险按钮</mz-button>
-    <mz-button disabled>禁用按钮</mz-button>
+    <mz-button v-for="item of buttonList" 
+      :key="item.label"
+      :color="item.color"
+      :disabled="state.disabled" 
+      :outlined="state.outlined"
+      :flat="state.flat"
+      :round="state.round">{{item.label}}</mz-button>
   </div>
-  
   <div>
-    <mz-button outlined>线条按钮</mz-button>
-    <mz-button type="primary" outlined>主要按钮</mz-button>
-    <mz-button type="success" outlined>成功按钮</mz-button>
-    <mz-button type="warning" outlined>警告按钮</mz-button>
-    <mz-button type="danger" outlined>危险按钮</mz-button>
-    <mz-button disabled outlined>禁用按钮</mz-button>
-  </div>
-  
-  <div>
-    <mz-button flat>扁平按钮</mz-button>
-    <mz-button type="primary" flat>主要按钮</mz-button>
-    <mz-button type="success" flat>成功按钮</mz-button>
-    <mz-button type="warning" flat>警告按钮</mz-button>
-    <mz-button type="danger" flat>危险按钮</mz-button>
-    <mz-button disabled flat>禁用按钮</mz-button>
-  </div>
-  
-  <div>
-    <mz-button round>圆角按钮</mz-button>
-    <mz-button type="primary" round>主要按钮</mz-button>
-    <mz-button type="success" round>成功按钮</mz-button>
-    <mz-button type="warning" round>警告按钮</mz-button>
-    <mz-button type="danger" round>危险按钮</mz-button>
-    <mz-button disabled round>禁用按钮</mz-button>
-  </div>
-  
-  <div>
-    <mz-button circle icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
-    </mz-button>
-    <mz-button type="primary" circle icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
-    </mz-button>
-    <mz-button type="success" circle icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
-    </mz-button>
-    <mz-button type="warning" circle icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
-    </mz-button>
-    <mz-button type="danger" circle icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
-    </mz-button>
-    <mz-button disabled circle icon>
+    <mz-button v-for="item of buttonList"
+      :key="item.label"
+      :color="item.color"
+      :disabled="state.disabled" 
+      :outlined="state.outlined"
+      :flat="state.flat"
+      :round="state.round"
+      circle 
+      icon>
       <mz-icon name="md-alarm"size="20px"></mz-icon>
     </mz-button>
   </div>
 </div></button-demo1></template>
-        <template #description><p>使用<code>type</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
+        <template #description><p>使用<code>color</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;div&gt;
-  &lt;mz-button&gt;默认按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot;&gt;主要按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;success&quot;&gt;成功按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;warning&quot;&gt;警告按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;danger&quot;&gt;危险按钮&lt;/mz-button&gt;
-  &lt;mz-button disabled&gt;禁用按钮&lt;/mz-button&gt;
-&lt;/div&gt;
-
+        <template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;状态控制: &lt;/span&gt;
+&lt;mz-checkbox-group v-model=&quot;checkedList&quot;&gt;
+  &lt;mz-checkbox v-for=&quot;option of options&quot; 
+    :value=&quot;option&quot; :key=&quot;option&quot;&gt;{{option}}&lt;/mz-checkbox&gt;
+&lt;/mz-checkbox-group&gt;
 &lt;div&gt;
-  &lt;mz-button outlined&gt;线条按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; outlined&gt;主要按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;success&quot; outlined&gt;成功按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;warning&quot; outlined&gt;警告按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;danger&quot; outlined&gt;危险按钮&lt;/mz-button&gt;
-  &lt;mz-button disabled outlined&gt;禁用按钮&lt;/mz-button&gt;
+  &lt;mz-button v-for=&quot;item of buttonList&quot; 
+    :key=&quot;item.label&quot;
+    :color=&quot;item.color&quot;
+    :disabled=&quot;state.disabled&quot; 
+    :outlined=&quot;state.outlined&quot;
+    :flat=&quot;state.flat&quot;
+    :round=&quot;state.round&quot;&gt;{{item.label}}&lt;/mz-button&gt;
 &lt;/div&gt;
-
 &lt;div&gt;
-  &lt;mz-button flat&gt;扁平按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; flat&gt;主要按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;success&quot; flat&gt;成功按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;warning&quot; flat&gt;警告按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;danger&quot; flat&gt;危险按钮&lt;/mz-button&gt;
-  &lt;mz-button disabled flat&gt;禁用按钮&lt;/mz-button&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;mz-button round&gt;圆角按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; round&gt;主要按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;success&quot; round&gt;成功按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;warning&quot; round&gt;警告按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;danger&quot; round&gt;危险按钮&lt;/mz-button&gt;
-  &lt;mz-button disabled round&gt;禁用按钮&lt;/mz-button&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;mz-button circle icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
-  &lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; circle icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
-  &lt;/mz-button&gt;
-  &lt;mz-button type=&quot;success&quot; circle icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
-  &lt;/mz-button&gt;
-  &lt;mz-button type=&quot;warning&quot; circle icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
-  &lt;/mz-button&gt;
-  &lt;mz-button type=&quot;danger&quot; circle icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
-  &lt;/mz-button&gt;
-  &lt;mz-button disabled circle icon&gt;
+  &lt;mz-button v-for=&quot;item of buttonList&quot;
+    :key=&quot;item.label&quot;
+    :color=&quot;item.color&quot;
+    :disabled=&quot;state.disabled&quot; 
+    :outlined=&quot;state.outlined&quot;
+    :flat=&quot;state.flat&quot;
+    :round=&quot;state.round&quot;
+    circle 
+    icon&gt;
     &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
   &lt;/mz-button&gt;
 &lt;/div&gt;
@@ -127,63 +69,89 @@
 export default {
   data() {
     return {
-      colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
+      checkedList: [],
+      options: ['disabled', 'outlined', 'flat', 'round'],
+      buttonList: [
+        { color:'', label:'默认按钮' },
+        { color:'primary', label:'主要按钮' },
+        { color:'success', label:'成功按钮' },
+        { color:'warning', label:'警告按钮' },
+        { color:'danger', label:'危险按钮' }
+      ]
+    }
+  },
+
+  computed: {
+    state(){
+      const state = {}
+      this.options.forEach(key =&gt;{
+        state[key] = this.checkedList.includes(key)
+      })
+      return state
     }
   }
 }
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="an-niu-chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-chi-cun" title="按钮尺寸" data-level="3" data-href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
-<p>我们为按钮提供了3种大小尺寸，根据场景选择合适的按钮尺寸。</p>
+<p>我们为按钮提供了4种大小尺寸，根据场景选择合适的按钮尺寸。</p>
 <demo-block>
         <template #example><button-demo2 inline-template><div class="button-demo2">
   <div>
-    <mz-button type="primary" size="large">默认按钮</mz-button>
-    <mz-button type="primary">默认按钮</mz-button>
-    <mz-button type="primary" size="small">默认按钮</mz-button>
+    <mz-button color="primary" size="large">默认按钮</mz-button>
+    <mz-button color="primary" size="medium">默认按钮</mz-button>
+    <mz-button color="primary">默认按钮</mz-button>
+    <mz-button color="primary" size="small">默认按钮</mz-button>
   </div>
   
   <div>
-    <mz-button type="primary" outlined size="large">线条按钮</mz-button>
-    <mz-button type="primary" outlined>线条按钮</mz-button>
-    <mz-button type="primary" outlined size="small">线条按钮</mz-button>
+    <mz-button color="primary" outlined size="large">线条按钮</mz-button>
+    <mz-button color="primary" outlined size="medium">线条按钮</mz-button>
+    <mz-button color="primary" outlined>线条按钮</mz-button>
+    <mz-button color="primary" outlined size="small">线条按钮</mz-button>
   </div>
   
   <div>
-    <mz-button type="primary" flat size="large">扁平按钮</mz-button>
-    <mz-button type="primary" flat>扁平按钮</mz-button>
-    <mz-button type="primary" flat size="small">扁平按钮</mz-button>
+    <mz-button color="primary" flat size="large">扁平按钮</mz-button>
+    <mz-button color="primary" flat size="medium">扁平按钮</mz-button>
+    <mz-button color="primary" flat>扁平按钮</mz-button>
+    <mz-button color="primary" flat size="small">扁平按钮</mz-button>
   </div>
   
   <div>
-    <mz-button type="primary" round size="large">圆角按钮</mz-button>
-    <mz-button type="primary" round>圆角按钮</mz-button>
-    <mz-button type="primary" round size="small">圆角按钮</mz-button>
+    <mz-button color="primary" round size="large">圆角按钮</mz-button>
+    <mz-button color="primary" round size="medium">圆角按钮</mz-button>
+    <mz-button color="primary" round>圆角按钮</mz-button>
+    <mz-button color="primary" round size="small">圆角按钮</mz-button>
   </div>
 </div></button-demo2></template>
-        <template #description><p>尺寸有<code>small</code>、<code>(默认)</code>、<code>large</code>，通过设置size属性来配置它们。</p>
+        <template #description><p>尺寸有<code>small</code>、<code>medium</code>、<code>(默认)</code>、<code>large</code>，通过设置size属性来配置它们。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
-  &lt;mz-button type=&quot;primary&quot; size=&quot;large&quot;&gt;默认按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot;&gt;默认按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; size=&quot;small&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; size=&quot;large&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; size=&quot;small&quot;&gt;默认按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
-  &lt;mz-button type=&quot;primary&quot; outlined size=&quot;large&quot;&gt;线条按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; outlined&gt;线条按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; outlined size=&quot;small&quot;&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; outlined size=&quot;large&quot;&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; outlined size=&quot;medium&quot;&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; outlined&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; outlined size=&quot;small&quot;&gt;线条按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
-  &lt;mz-button type=&quot;primary&quot; flat size=&quot;large&quot;&gt;扁平按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; flat&gt;扁平按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; flat size=&quot;small&quot;&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; flat size=&quot;large&quot;&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; flat size=&quot;medium&quot;&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; flat&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; flat size=&quot;small&quot;&gt;扁平按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
-  &lt;mz-button type=&quot;primary&quot; round size=&quot;large&quot;&gt;圆角按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
-  &lt;mz-button type=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; round size=&quot;large&quot;&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; round size=&quot;medium&quot;&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
@@ -324,7 +292,25 @@ export default {
   components: { ButtonDemo1: {
   data() {
     return {
-      colorTypeList: ['', 'primary', 'success', 'warning', 'danger']
+      checkedList: [],
+      options: ['disabled', 'outlined', 'flat', 'round'],
+      buttonList: [
+        { color:'', label:'默认按钮' },
+        { color:'primary', label:'主要按钮' },
+        { color:'success', label:'成功按钮' },
+        { color:'warning', label:'警告按钮' },
+        { color:'danger', label:'危险按钮' }
+      ]
+    }
+  },
+
+  computed: {
+    state(){
+      const state = {}
+      this.options.forEach(key =>{
+        state[key] = this.checkedList.includes(key)
+      })
+      return state
     }
   }
 }, ButtonDemo2: {} }
