@@ -2,6 +2,7 @@
 
 ### 基础用法
 
+可以自定义标签颜色。
 
 :::demo `color`控制标签背景颜色,`text-color`控制标签文本颜色。
 ```html
@@ -15,6 +16,8 @@
 
 ### 尺寸
 
+4种尺寸大小的标签。
+
 :::demo `size`可以控制尺寸，可选值`small`、`medium`、`large`。
 ```html
 <mz-tag size="small">标签</mz-tag>
@@ -25,6 +28,8 @@
 :::
 
 ### 形态
+
+多种样式形态的标签。
 
 :::demo `outlined`、`round`、`text`分别表示以边框模式，圆角模式，文字模式显示。
 ```html
@@ -39,7 +44,9 @@
 
 ### 可增删的标签
 
-:::demo 
+支持动态新增和删除标签
+
+:::demo `closable`属性控制标签能否被删除，点击删除图标返回`v-on:close`事件。
 ```html
 <mz-tag v-for="(item, index) of list" 
   :key="index"
@@ -74,6 +81,23 @@ export default {
 ```
 :::
 
+### 前后置内容
+
+在标签内容前后插入其它内容。
+
+:::demo `prefix`、`suffix`使用前后置插槽在标签名称前后插入内容。
+```html
+<mz-tag>
+  <mz-icon slot="prefix" name="md-bookmark"></mz-icon>
+  标签
+</mz-tag>
+<mz-tag>
+  标签
+  <mz-icon slot="suffix" name="md-flask"></mz-icon>
+</mz-tag>
+```
+:::
+
 ### Api
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
@@ -89,6 +113,8 @@ export default {
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 | 默认 |标签内容||
+|prefix|前置内容||
+|suffix|后置内容||
 
 #### 事件
 | 名称 | 说明 | 参数 |
