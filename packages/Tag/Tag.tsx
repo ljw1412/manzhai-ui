@@ -22,7 +22,7 @@ export default class MzTag extends MzSize {
   get classes() {
     return [
       'mz-tag',
-      this.sizeClass,
+      this.mzSize,
       {
         'mz-tag--closable': this.closable,
         'mz-tag--outlined': this.outlined,

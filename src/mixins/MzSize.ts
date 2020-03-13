@@ -7,7 +7,7 @@ export default class MzSize extends Vue {
   @Prop(String)
   readonly size!: string
 
-  get sizeClass() {
+  get mzSize() {
     return SIZE_LIST.includes(this.size)
       ? `mz-size--${this.size}`
       : 'mz-size--default'
