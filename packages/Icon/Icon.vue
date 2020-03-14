@@ -30,7 +30,7 @@ export default class MzIcon extends Vue {
     }
 
     const iconProps = {
-      class: 'mz-icon color-transition',
+      class: 'mz-icon',
       style: this.svgStyles,
       attrs: { 'aria-hidden': true, fill: this.color || 'currentColor' },
       on: this.$listeners
@@ -46,5 +46,8 @@ export default class MzIcon extends Vue {
   width: 1em;
   height: 1em;
   vertical-align: top;
+  transition-duration: 0.3s;
+  transition-property: fill, background-color;
+  transition-timing-function: map-get($transition, 'fast-out-slow-in');
 }
 </style>
