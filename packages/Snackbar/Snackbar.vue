@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
-import MzButton from '../Button'
+import { MzButton } from '../Button'
 import { SnackbarPlacementTypes } from './Snackbar'
 import { COLOR_TYPES } from '@/constants'
 import getZIndex from '@/utils/zindex'

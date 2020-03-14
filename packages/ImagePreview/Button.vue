@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import MzButton from '../Button/index'
+import { MzButton } from '../Button/index'
 
 @Component({ components: { MzButton } })
 export default class MzImagePreviewButton extends Vue {

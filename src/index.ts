@@ -5,7 +5,7 @@ import { getCurrentTheme } from './utils/theme'
 import mzEventBus from './bus'
 import * as directives from './directives'
 import Anchor from '../packages/Anchor/index'
-import Button from '../packages/Button/index'
+import { Button, ButtonGroup } from '../packages/Button/index'
 import Card from '../packages/Card/index'
 import {
   Carousel,
@@ -57,6 +57,7 @@ const components: VueConstructor[] = [
   // inject component
   Anchor,
   Button,
+  ButtonGroup,
   Card,
   Carousel,
   CarouselItem,
@@ -181,6 +182,7 @@ export default {
   // inject component
   Anchor,
   Button,
+  ButtonGroup,
   Card,
   Carousel,
   CarouselItem,

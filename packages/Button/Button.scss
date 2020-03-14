@@ -16,9 +16,9 @@
   text-decoration: none;
   text-transform: none;
   user-select: none;
-  transition-duration: 0.28s;
+  transition-duration: 0.3s;
   transition-property: box-shadow, transform, opacity, background-color,
-    border-radius;
+    border-radius, color, border, background-color;
   transition-timing-function: map-get($transition, 'fast-out-slow-in');
   vertical-align: middle;
 
