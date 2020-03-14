@@ -73,7 +73,7 @@ export default class MzButton extends MzSize {
 
   renderContent() {
     const data = {
-      class: ['mz-button__content'],
+      class: ['mz-button__content', 'flex-double-center'],
       style: [this.contentStyles]
     }
     return <span {...data}>{this.$slots.default}</span>
