@@ -93,6 +93,14 @@
       .mz-button {
         margin: 8px 10px 8px 0;
       }
+      .mz-button-group .mz-button {
+        margin: initial;
+      }
+
+      .mz-button-group {
+        margin-right: 10px;
+        margin-bottom: 10px;
+      }
     }
   }
 

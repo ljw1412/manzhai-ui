@@ -103,6 +103,35 @@ export default {
 ```
 :::
 
+### 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+:::demo 使用`mz-button-group`组件将按钮归为一个组。注意：插槽内只允许传入`mz-button`组件。
+```html
+<mz-button-group>
+  <mz-button color="primary">按钮1</mz-button>
+  <mz-button color="primary">按钮2</mz-button>
+  <mz-button color="primary">按钮3</mz-button>
+</mz-button-group>
+<mz-button-group>
+  <mz-button round color="primary">按钮1</mz-button>
+  <mz-button round color="primary">按钮2</mz-button>
+  <mz-button round color="primary">按钮3</mz-button>
+</mz-button-group>
+<mz-button-group>
+  <mz-button outlined color="primary">按钮1</mz-button>
+  <mz-button outlined color="primary">按钮2</mz-button>
+  <mz-button outlined color="primary">按钮3</mz-button>
+</mz-button-group>
+<mz-button-group>
+  <mz-button outlined round color="primary">按钮1</mz-button>
+  <mz-button outlined round color="primary">按钮2</mz-button>
+  <mz-button outlined round color="primary">按钮3</mz-button>
+</mz-button-group>
+```
+:::
+
 ### API
 
 #### 属性
