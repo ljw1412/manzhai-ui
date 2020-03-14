@@ -48,7 +48,7 @@ export default class Home extends Vue {
     var(--color-primary),
     var(--color-primary-7)
   );
-  transition: all 0.3;
+  transition: all 0.3s;
 }
 
 .responsive {
