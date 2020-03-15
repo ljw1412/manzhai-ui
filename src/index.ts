@@ -179,6 +179,7 @@ const install = function(
 
 export default {
   install,
+  directives,
   // inject component
   Anchor,
   Button,
