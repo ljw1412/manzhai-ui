@@ -2,6 +2,7 @@ import './styles/index.scss'
 import { VueConstructor } from 'vue'
 import { InstallationOptions } from '../types/index'
 import { getCurrentTheme } from './utils/theme'
+import * as blanking from './utils/blanking'
 import mzEventBus from './bus'
 import * as directives from './directives'
 import Anchor from '../packages/Anchor/index'
@@ -161,6 +162,7 @@ const injectVuePrototype = (
   Vue.prototype.$mzEventBus = mzEventBus
   Vue.prototype.$changeTheme = mzEventBus.changeTheme
   Vue.prototype.$getCurrentTheme = getCurrentTheme
+  Vue.prototype.$blanking = blanking
   Vue.prototype.$MANZHAI = {
     size: options.size || ''
   }
