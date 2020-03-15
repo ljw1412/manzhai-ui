@@ -3,7 +3,7 @@ const chalk = require('chalk')
 const utils = Object.assign({}, require('./utils'), require('../utils'))
 
 ;(async () => {
-  const docs = await utils.listFiles('example/docs/*.md')
+  const docs = await utils.listFiles('example/docs/**/*.md')
   // console.log('文档列表:', docs)
   const moduleList = []
   const HashChangeMap = {}
