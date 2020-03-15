@@ -22,6 +22,7 @@ import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
 import ComponentTag from './Tag.vue'
+import DirectiveBlanking from './Blanking.vue'
 import DirectiveRipple from './Ripple.vue'
 
 export default [
@@ -144,6 +145,11 @@ export default [
     path: 'tag',
     name: 'ComponentTag',
     component: ComponentTag
+  },
+  {
+    path: 'blanking',
+    name: 'DirectiveBlanking',
+    component: DirectiveBlanking
   },
   {
     path: 'ripple',

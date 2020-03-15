@@ -4,6 +4,13 @@
     "type": "directive",
     "children": [
       {
+        "label": "Blanking",
+        "text": "选择性显示",
+        "to": {
+          "name": "DirectiveBlanking"
+        }
+      },
+      {
         "label": "Ripple",
         "text": "涟漪效果",
         "to": {
