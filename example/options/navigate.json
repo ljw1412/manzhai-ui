@@ -1,6 +1,20 @@
 [
   {
+    "group": "指令",
+    "type": "directive",
+    "children": [
+      {
+        "label": "Ripple",
+        "text": "涟漪效果",
+        "to": {
+          "name": "DirectiveRipple"
+        }
+      }
+    ]
+  },
+  {
     "group": "组件",
+    "type": "component",
     "children": [
       {
         "label": "Anchor",

@@ -22,6 +22,7 @@ import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
 import ComponentTag from './Tag.vue'
+import DirectiveRipple from './Ripple.vue'
 
 export default [
   {
@@ -143,5 +144,10 @@ export default [
     path: 'tag',
     name: 'ComponentTag',
     component: ComponentTag
+  },
+  {
+    path: 'ripple',
+    name: 'DirectiveRipple',
+    component: DirectiveRipple
   }
 ]
