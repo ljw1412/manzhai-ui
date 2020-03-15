@@ -44,7 +44,7 @@ export default class MzSnackbar extends Vue {
   readonly absolute!: boolean
   @Prop(Boolean)
   readonly fixed!: boolean
-  @Prop(Boolean)
+  @Prop({ type: Boolean, default: true })
   readonly value!: boolean
   @Prop({ type: Number, default: 5000 })
   readonly timeout!: number
@@ -177,6 +177,9 @@ export default class MzSnackbar extends Vue {
 
   &__action {
     margin-left: 42px;
+    .mz-button {
+      color: #ffffff;
+    }
   }
 
   &--fixed {
