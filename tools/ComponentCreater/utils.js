@@ -2,12 +2,7 @@ const fs = require('fs').promises
 const path = require('path')
 const { readFile } = require('../utils')
 
-interface ReplaceOptions {
-  key: RegExp | string
-  value: string
-}
-
-async function replaceTemplate(filename: string, replace: ReplaceOptions[]) {
+async function replaceTemplate(filename, replace) {
   let template = await fs.readFile(`./templates/${filename}`, 'utf-8')
   replace.forEach(({ key, value }) => {
     template = template.replace(key, value)
@@ -15,7 +10,7 @@ async function replaceTemplate(filename: string, replace: ReplaceOptions[]) {
   return template
 }
 
-async function replaceSave(filepath: string, replace: ReplaceOptions[]) {
+async function replaceSave(filepath, replace) {
   let content = await readFile(filepath)
   replace.forEach(({ key, value }) => {
     content = content.replace(key, value)

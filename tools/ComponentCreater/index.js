@@ -1,7 +1,12 @@
 const ComponentCreater = require('./ComponentCreater')
 const inquirer = require('inquirer')
 ;(async () => {
-  const { name, nameCN } = await inquirer.prompt([
+  const { name, nameCN, type } = await inquirer.prompt([
+    {
+      name: 'type',
+      message: '请输入类型(必填，可选值 component, directive):',
+      validate: str => ['component', 'directive'].includes(str)
+    },
     {
       name: 'name',
       message: '请输入创建的组件名称(必填，大驼峰)',
@@ -13,5 +18,5 @@ const inquirer = require('inquirer')
       validate: str => !!str
     }
   ])
-  new ComponentCreater(name, nameCN)
+  new ComponentCreater(name, nameCN, type)
 })()

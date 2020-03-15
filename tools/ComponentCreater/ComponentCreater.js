@@ -1,36 +1,49 @@
 const utils = Object.assign({}, require('./utils'), require('../utils'))
+const typeMap = {
+  component: {
+    dir: '../../example/docs/components',
+    name: '组件',
+    commands: ['createPackage', 'createDocument', 'injectEntry']
+  },
+  directive: {
+    dir: '../../example/docs/directives',
+    name: '指令',
+    commands: ['createDocument']
+  }
+}
+const commandSuccessMsg = {
+  createPackage: '=== 创建组件包结束 ===\n',
+  createDocument: '=== 创建文档文件结束 ===\n',
+  injectEntry: '=== 入口注入结束 ===\n'
+}
 
 module.exports = class ComponentCreater {
-  // 模块名称 大驼峰
-  name: string
-  nameCN: string
-  results = []
-
-  constructor(name: string, nameCN: string) {
+  constructor(name, nameCN, type) {
+    this.results = []
     this.name = name
     this.nameCN = nameCN
+    this.type = type
     this.run()
   }
 
   async run() {
-    console.log(`开始创建组件 - ${this.name}`)
-    console.log('1. 创建组件包')
-    this.results[0] = await this.try(this.createPackage)
-    utils.logger(this.results[0], '=== 创建组件包结束 ===\n')
-    console.log('2. 创建文档文件')
-    this.results[1] = await this.try(this.createExample)
-    utils.logger(this.results[1], '=== 创建文档文件结束 ===\n')
-    console.log('3. 入口注入')
-    this.results[2] = await this.try(this.injectEntry)
-    utils.logger(this.results[2], '=== 入口注入结束 ===\n')
+    this.options = typeMap[this.type]
+    if (!this.options) {
+      return utils.logger.error(`类型:${this.type}的指令不存在！`)
+    }
+    console.log(`开始创建${this.options.name} - ${this.name}`)
+    this.options.commands.forEach(async command => {
+      await this.try(this[command], commandSuccessMsg[command])
+    })
   }
 
-  async try(fn: Function) {
+  async try(fn, successMsg) {
     try {
       await fn.call(this)
+      utils.logger.success(successMsg)
       return true
     } catch (error) {
-      console.error(error)
+      utils.logger.error(error)
       return false
     }
   }
@@ -54,19 +67,25 @@ module.exports = class ComponentCreater {
     ])
   }
 
-  async createExample() {
+  // 创建文档
+  async createDocument() {
     // 新增文档
-    await utils.saveFiles(`../../example/docs`, [
+    await utils.saveFiles(this.options.dir, [
       { name: `${this.name}.md`, content: `## ${this.name} ${this.nameCN}` }
     ])
     // 文档导航栏追加
     const navigateOptions = require('../../example/options/navigate.json')
-    const componentGroup = navigateOptions.find(item => item.group === '组件')
-    const componentChildren = (componentGroup && componentGroup.children) || []
+    let componentGroup = navigateOptions.find(item => item.type === this.type)
+    if (!componentGroup) {
+      console.log(`[自动新增] navigate.json 中未找到 type:${this.type}。`)
+      componentGroup = { type: this.type, children: [] }
+      navigateOptions.push(componentGroup)
+    }
+    const componentChildren = componentGroup.children
     componentChildren.push({
       label: this.name,
       text: this.nameCN,
-      to: { name: `Component${this.name}` }
+      to: { name: `${utils.capitalized(this.type)}${this.name}` }
     })
     componentChildren.sort((a, b) => {
       if (a.label > b.label) return 1
@@ -81,6 +100,7 @@ module.exports = class ComponentCreater {
     ])
   }
 
+  // 入口注入
   async injectEntry() {
     utils.replaceSave('../../src/index.ts', [
       {
@@ -92,7 +112,6 @@ module.exports = class ComponentCreater {
         value: `// inject component\n  ${this.name},`
       }
     ])
-
     let entry = await utils.readFile('../../src/index.ts')
     entry = entry
       .replace(

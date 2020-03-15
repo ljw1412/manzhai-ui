@@ -10,6 +10,10 @@ function getName(filePath) {
   return path.parse(filePath).name
 }
 
+function getParentName(filePath) {
+  return getName(path.dirname(filePath))
+}
+
 // 获取文件的 hash
 async function getFileHash(filePath) {
   return new Promise((resolve, reject) => {
@@ -69,8 +73,14 @@ async function saveFiles(dir, fileList) {
 
 // 驼峰转横杠分隔
 const hyphenateRE = /\B([A-Z])/g
-function hyphenate(str) {
-  return str.replace(hyphenateRE, '-$1').toLowerCase()
+function hyphenate(str, hyphenate = '-') {
+  return str.replace(hyphenateRE, `${hyphenate}$1`).toLowerCase()
+}
+
+function capitalized(str) {
+  return str.replace(/\b\w+\b/g, function(word) {
+    return word.substring(0, 1).toUpperCase() + word.substring(1)
+  })
 }
 
 // 色彩日志输出
@@ -86,8 +96,10 @@ logger.error = (...args) => {
 
 module.exports = {
   getName,
+  getParentName,
   getFileHash,
   hyphenate,
+  capitalized,
   readFile,
   saveFile,
   saveFiles,
