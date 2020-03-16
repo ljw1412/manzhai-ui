@@ -21,3 +21,26 @@ export default {
 </script>
 ```
 :::
+
+### 使用指令
+
+引入 Mask 组件后，会自动在 Vue 的 prototype 上挂载 $mask 方法，在所有组件内部都可以直接调用此方法。
+
+它包含`show`和`hide`两个方法。
+
+:::demo
+```html
+<mz-button color="success"
+  @click="show">显示遮罩</mz-button>
+
+<script>
+export default {
+  methods: {
+    show(){
+      this.$mask.show({ click: () => this.$mask.hide() })
+    }
+  }
+}
+</script>
+```
+:::
