@@ -1,5 +1,5 @@
 import './Mask.scss'
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import getZIndex from '@/utils/zindex'
 
@@ -11,13 +11,17 @@ export default class MzMask extends Vue {
   readonly transition!: string
   @Prop(Number)
   readonly zIndex!: number
+  @Prop(Boolean)
+  readonly appendToBody!: boolean
+
+  mZindex = 1000
 
   render(h: CreateElement) {
     if (!this.value) return null
     const data = {
       class: ['mz-mask'],
       style: {
-        zIndex: this.zIndex || getZIndex()
+        zIndex: this.mZindex
       },
       on: this.$listeners
     }
@@ -26,5 +30,21 @@ export default class MzMask extends Vue {
         <div {...data}>{this.$slots.default}</div>
       </transition>
     )
+  }
+
+  @Watch('value')
+  onValueChange(val: boolean) {
+    if (val) {
+      this.appendToBody && this.$el && document.body.appendChild(this.$el)
+      this.mZindex = this.zIndex || getZIndex()
+    } else if (this.appendToBody && this.$el && this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el)
+    }
+  }
+
+  destroyed() {
+    if (this.appendToBody && this.$el && this.$el.parentNode) {
+      this.$el.parentNode.removeChild(this.$el)
+    }
   }
 }
