@@ -37,6 +37,7 @@ import {
   ListGroup,
   ListItemGroup
 } from '../packages/List/index'
+import Mask from '../packages/Mask/index'
 import { Masonry, MasonryItem } from '../packages/Masonry/index'
 import Navigation from '../packages/Navigation/index'
 import { Progress, ProgressCircle } from '../packages/Progress/index'
@@ -86,6 +87,7 @@ const components: VueConstructor[] = [
   ListItem,
   ListGroup,
   ListItemGroup,
+  Mask,
   Masonry,
   MasonryItem,
   Navigation,
@@ -213,6 +215,7 @@ export default {
   ListItem,
   ListGroup,
   ListItemGroup,
+  Mask,
   Masonry,
   MasonryItem,
   Navigation,
