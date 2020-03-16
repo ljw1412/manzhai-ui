@@ -5,7 +5,7 @@
       :class="{'is-text':!icon}"
       @mouseenter="$emit('hover',true)"
       @mouseleave="$emit('hover',false)">
-      <mz-button border-radius="0"
+      <mz-button radius="0"
         font-color="#ccc"
         :icon="!!icon"
         :disabled="disabled"
@@ -42,7 +42,8 @@ export default class MzImagePreviewButton extends Vue {
     width: 100%;
     height: 100%;
     padding: 0;
-    --mz-button__font-size: 20px;
+    font-size: 20px;
+    color: #ffffff;
   }
 }
 </style>
