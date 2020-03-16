@@ -11,6 +11,7 @@ import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
 import ComponentImagePreview from './ImagePreview.vue'
+import ComponentMask from './Mask.vue'
 import ComponentMasonry from './Masonry.vue'
 import ComponentNavigation from './Navigation.vue'
 import ComponentProgress from './Progress.vue'
@@ -90,6 +91,11 @@ export default [
     path: 'image-preview',
     name: 'ComponentImagePreview',
     component: ComponentImagePreview
+  },
+  {
+    path: 'mask',
+    name: 'ComponentMask',
+    component: ComponentMask
   },
   {
     path: 'masonry',

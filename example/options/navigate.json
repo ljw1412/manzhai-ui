@@ -150,6 +150,13 @@
         }
       },
       {
+        "label": "Mask",
+        "text": "遮罩层",
+        "to": {
+          "name": "ComponentMask"
+        }
+      },
+      {
         "label": "Masonry",
         "text": "瀑布流布局",
         "to": {
