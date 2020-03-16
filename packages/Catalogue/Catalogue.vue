@@ -140,8 +140,7 @@ export default class MzCatalogue extends BaseAttribute {
           ref="scroll"
           bar-size="0"
           class="mz-catalogue__scroll"
-          style={this.scrollStyles}
-        >
+          style={this.scrollStyles}>
           <div ref="content" class="mz-catalogue__content">
             {this.sidebar && this.renderSidebar()}
             {this.manual ? this.$slots.default : this.renderItem(itemList)}
@@ -176,7 +175,7 @@ export default class MzCatalogue extends BaseAttribute {
           actived: (top: number) => {
             const contentRect = this.contentRef.getBoundingClientRect()
 
-            this.arrowTop = top - contentRect.top - 10
+            this.arrowTop = top - contentRect.top - 7
             if (this.scrollRef) {
               const scrollViewCenter =
                 (this.scrollRef.$el as HTMLElement).offsetHeight / 2
@@ -325,6 +324,7 @@ export default class MzCatalogue extends BaseAttribute {
       width: 30px;
       z-index: 9;
       transition: top 0.2s;
+      font-size: 0;
       .square {
         display: inline-block;
         width: 10px;
