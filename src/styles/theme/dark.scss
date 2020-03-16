@@ -40,13 +40,6 @@ $colors: initColors(
     --mz-tab__font-color--active: var(--color-text-primary);
   }
 
-  .mz-button.mz-button--primary {
-    --mz-button__font-color: #ffffff;
-    &.mz-button--outlined {
-      --mz-button__border: 1px solid #ffffff;
-    }
-  }
-
   .mz-input {
     --mz-input__line-color: var(--color-text-primary);
     --mz-input__line-color--focused: var(--color-text-primary);
