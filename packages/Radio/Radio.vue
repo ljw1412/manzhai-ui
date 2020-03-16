@@ -85,7 +85,7 @@ export default class MzRadio extends Mixins(FormElement) {
   position: relative;
   cursor: var(--mz-radio__cursor);
   user-select: none;
-  display: inline-block;
+  display: inline-flex;
   color: var(--mz-radio__label-font-color);
   padding: var(--mz-radio__padding);
   margin: 10px 10px 0 0;
@@ -98,7 +98,6 @@ export default class MzRadio extends Mixins(FormElement) {
     box-sizing: border-box;
     border: 1px solid var(--mz-radio__label-font-color);
     border-radius: 100px;
-    vertical-align: text-bottom;
     z-index: 1;
     &::after {
       content: ' ';
@@ -117,11 +116,11 @@ export default class MzRadio extends Mixins(FormElement) {
   }
 
   &__label {
+    display: inline-block;
     position: relative;
-    vertical-align: top;
     margin-left: 5px;
     font-size: var(--mz-radio__label-font-size);
-    line-height: 1.5;
+    line-height: var(--mz-radio__icon-size);
     z-index: 1;
   }
 
