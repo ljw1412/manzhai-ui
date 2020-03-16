@@ -1,7 +1,8 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-03-13 11:50</div>
+    <div class="update-datetime">文档更新时间：2020-03-16 14:20</div>
     <h2 id="tag-biao-qian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
+<p>进行标记和分类的小标签。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>可以自定义标签颜色。</p>
 <demo-block>

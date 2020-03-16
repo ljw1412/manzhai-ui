@@ -1,5 +1,7 @@
 ## Tabs 标签页
 
+按选项卡显示在对应内容。
+
 ### 基本用法
 
 :::demo tabs的`value`/`v-model`表示当前显示的标签值，即与tab的`value`属性对应。
