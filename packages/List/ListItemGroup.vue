@@ -45,9 +45,6 @@ export default class MzListItemGroup extends Vue {
       on: {
         click: () => {
           this.isOpen = !this.isOpen
-          if (this.childrenRef) {
-            console.log(this.childrenRef.getBoundingClientRect())
-          }
         }
       }
     }
@@ -59,15 +56,13 @@ export default class MzListItemGroup extends Vue {
             slot="suffix"
             name="md-arrow-dropdown"
             class="mz-list-item-group__arrow"
-            style={{ transform: `rotateZ(${this.arrowRotate})` }}
-          ></mz-icon>
+            style={{ transform: `rotateZ(${this.arrowRotate})` }}></mz-icon>
         </mz-list-item>
         {this.$slots.default && (
           <div
             v-show={this.isOpen}
             ref="children"
-            class="mz-list-item-group__children"
-          >
+            class="mz-list-item-group__children">
             {this.$slots.default}
           </div>
         )}

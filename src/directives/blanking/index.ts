@@ -28,9 +28,7 @@ export const Blanking = {
     }
   },
 
-  unbind(el: HTMLElement) {
-    console.log('unbind', arguments)
-  }
+  unbind(el: HTMLElement) {}
 }
 
 export default Blanking

@@ -96,8 +96,8 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   }
 
   close() {
-    console.log('close')
     this.mVisiable = false
+    this.$emit('close')
   }
 
   getReferenceRect() {

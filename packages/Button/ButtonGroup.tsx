@@ -12,8 +12,6 @@ export default class MzButtonGroup extends Vue {
   }
 
   render(h: CreateElement) {
-    console.log(this.$slots.default)
-
     const data = {
       class: ['mz-button-group']
     }
