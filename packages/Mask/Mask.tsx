@@ -13,6 +13,8 @@ export default class MzMask extends Vue {
   readonly zIndex!: number
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop(Function)
+  readonly onClick!: (e: MouseEvent) => void
 
   mZindex = 1000
 
@@ -23,7 +25,7 @@ export default class MzMask extends Vue {
       style: {
         zIndex: this.mZindex
       },
-      on: this.$listeners
+      on: Object.assign({ click: this.onClick }, this.$listeners)
     }
     return (
       <transition name={this.transition}>

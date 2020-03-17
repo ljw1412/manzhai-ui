@@ -21,9 +21,6 @@ function show(config?: MaskConfig) {
 
   instance.appendToBody = true
   instance.value = true
-  instance.$nextTick(() => {
-    instance.$el.onclick = (config && config.click) || null
-  })
 }
 
 function hide() {
