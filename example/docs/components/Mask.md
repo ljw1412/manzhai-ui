@@ -3,9 +3,9 @@
 创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。
 
 ### 基础用法
-:::demo `value`属性控制遮罩的显示和隐藏。
+:::demo `visible`属性控制遮罩的显示和隐藏。
 ```html
-<mz-mask :value="visible"
+<mz-mask :visible="visible"
   @click="visible = false"></mz-mask>
 <mz-button color="success"
   @click="visible = true">显示遮罩</mz-button>
@@ -51,7 +51,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-|value|是否显示|Boolean|||
+|visible|是否显示|Boolean|||
 |transition|动画效果|String||'mz-fade'|
 |zIndex|界面层级|Number|||
 |appendToBody|是否添加到body元素下|Boolean|||
