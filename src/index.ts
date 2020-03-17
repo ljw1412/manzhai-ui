@@ -39,6 +39,7 @@ import {
 } from '../packages/List/index'
 import Mask from '../packages/Mask/index'
 import { Masonry, MasonryItem } from '../packages/Masonry/index'
+import Modal from '../packages/Modal/index'
 import Navigation from '../packages/Navigation/index'
 import { Progress, ProgressCircle } from '../packages/Progress/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
@@ -90,6 +91,7 @@ const components: VueConstructor[] = [
   Mask,
   Masonry,
   MasonryItem,
+  Modal,
   Navigation,
   Option,
   Progress,
@@ -217,6 +219,7 @@ export default {
   ListItemGroup,
   Mask,
   Masonry,
+  Modal,
   MasonryItem,
   Navigation,
   Option,
