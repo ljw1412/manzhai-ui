@@ -164,6 +164,13 @@
         }
       },
       {
+        "label": "Modal",
+        "text": "对话框",
+        "to": {
+          "name": "ComponentModal"
+        }
+      },
+      {
         "label": "Navigation",
         "text": "导航",
         "to": {

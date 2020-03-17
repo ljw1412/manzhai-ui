@@ -13,6 +13,7 @@ import ComponentImage from './Image.vue'
 import ComponentImagePreview from './ImagePreview.vue'
 import ComponentMask from './Mask.vue'
 import ComponentMasonry from './Masonry.vue'
+import ComponentModal from './Modal.vue'
 import ComponentNavigation from './Navigation.vue'
 import ComponentProgress from './Progress.vue'
 import ComponentRadio from './Radio.vue'
@@ -101,6 +102,11 @@ export default [
     path: 'masonry',
     name: 'ComponentMasonry',
     component: ComponentMasonry
+  },
+  {
+    path: 'modal',
+    name: 'ComponentModal',
+    component: ComponentModal
   },
   {
     path: 'navigation',
