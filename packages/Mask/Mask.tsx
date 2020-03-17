@@ -13,7 +13,7 @@ export default class MzMask extends Vue {
   readonly zIndex!: number
   @Prop(Boolean)
   readonly appendToBody!: boolean
-  @Prop(Function)
+  @Prop({ type: Function, default: (e: MouseEvent) => {} })
   readonly onClick!: (e: MouseEvent) => void
 
   mZIndex = 1000
