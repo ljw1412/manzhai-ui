@@ -4,6 +4,7 @@ const slugify = require('transliteration').slugify
 const containers = require('./containers')
 const rewriteFence = require('./fence')
 const rewriteHeading = require('./heading')
+const rewriteUl = require('./ul')
 
 const chain = new Chain()
 
@@ -29,5 +30,6 @@ chain.options
 const markdown = chain.toMd()
 rewriteHeading(markdown)
 rewriteFence(markdown)
+rewriteUl(markdown)
 
 module.exports = markdown
