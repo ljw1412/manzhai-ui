@@ -20,12 +20,12 @@ function show(config?: MaskConfig) {
   }
 
   instance.appendToBody = true
-  instance.value = true
+  instance.visible = true
 }
 
 function hide() {
   initInstance()
-  instance.value = false
+  instance.visible = false
 }
 
 export default { show, hide }

@@ -1,12 +1,12 @@
 import './Mask.scss'
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import getZIndex from '@/utils/zindex'
 
 @Component
 export default class MzMask extends Vue {
-  @Prop(Boolean)
-  readonly value!: boolean
+  @Model('input', { type: Boolean })
+  readonly visible!: boolean
   @Prop({ type: String, default: 'mz-fade' })
   readonly transition!: string
   @Prop(Number)
@@ -19,7 +19,7 @@ export default class MzMask extends Vue {
   mZindex = 1000
 
   render(h: CreateElement) {
-    if (!this.value) return null
+    if (!this.visible) return null
     const data = {
       class: ['mz-mask'],
       style: {
@@ -34,9 +34,9 @@ export default class MzMask extends Vue {
     )
   }
 
-  @Watch('value')
-  onValueChange(val: boolean) {
-    if (val) {
+  @Watch('visible')
+  onVisibleChange(visible: boolean) {
+    if (visible) {
       this.appendToBody && this.$el && document.body.appendChild(this.$el)
       this.mZindex = this.zIndex || getZIndex()
     } else if (this.appendToBody && this.$el && this.$el.parentNode) {
