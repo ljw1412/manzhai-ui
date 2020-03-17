@@ -1,6 +1,6 @@
 <template>
   <div class="component-mask">
-    <div class="update-datetime">文档更新时间：2020-03-16 19:20</div>
+    <div class="update-datetime">文档更新时间：2020-03-17 11:45</div>
     <h2 id="mask-zhe-zhao-ceng" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#mask-zhe-zhao-ceng" title="Mask 遮罩层" data-level="2" data-href="#mask-zhe-zhao-ceng">¶</a>Mask 遮罩层</h2>
 <p>创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -43,12 +43,113 @@ export default {
 export default {
   methods: {
     show(){
-      this.$mask.show({ click: () =&gt; this.$mask.hide() })
+      this.$mask.show({ onClick: () =&gt; this.$mask.hide() })
     }
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block>
+</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>是否显示</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>transition</td>
+<td>动画效果</td>
+<td>String</td>
+<td></td>
+<td>'mz-fade'</td>
+</tr>
+<tr>
+<td>zIndex</td>
+<td>界面层级</td>
+<td>Number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>appendToBody</td>
+<td>是否添加到body元素下</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>click</td>
+<td>遮罩点击事件</td>
+<td>(e: Event)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mask" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#mask" title="$mask" data-level="4" data-href="#mask">¶</a>$mask</h4>
+<p>包含：</p>
+<ul class="mz-document-ul">
+<li>$mask.show(MaskConfig)</li>
+<li>$mask.hide()</li>
+</ul>
+<p>MaskConfig 为 object，具体属性如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>transition</td>
+<td>动画效果</td>
+<td>String</td>
+<td></td>
+<td>'mz-fade'</td>
+</tr>
+<tr>
+<td>zIndex</td>
+<td>界面层级</td>
+<td>Number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>点击事件</td>
+<td>function(e)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
   </div>
 </template>
 <script>
@@ -63,7 +164,7 @@ export default {
 }, MaskDemo2: {
   methods: {
     show(){
-      this.$mask.show({ click: () => this.$mask.hide() })
+      this.$mask.show({ onClick: () => this.$mask.hide() })
     }
   }
 } }

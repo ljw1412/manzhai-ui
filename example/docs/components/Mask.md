@@ -28,7 +28,7 @@ export default {
 
 它包含`show`和`hide`两个方法。
 
-:::demo
+:::demo 
 ```html
 <mz-button color="success"
   @click="show">显示遮罩</mz-button>
@@ -37,10 +37,41 @@ export default {
 export default {
   methods: {
     show(){
-      this.$mask.show({ click: () => this.$mask.hide() })
+      this.$mask.show({ onClick: () => this.$mask.hide() })
     }
   }
 }
 </script>
 ```
 :::
+
+### API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|value|是否显示|Boolean|||
+|transition|动画效果|String||'mz-fade'|
+|zIndex|界面层级|Number|||
+|appendToBody|是否添加到body元素下|Boolean|||
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|click|遮罩点击事件|(e: Event)|
+
+#### $mask
+
+包含：
+- $mask.show(MaskConfig)
+- $mask.hide()
+
+MaskConfig 为 object，具体属性如下：
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|transition|动画效果|String||'mz-fade'|
+|zIndex|界面层级|Number|||
+|onClick|点击事件|function(e)|||
