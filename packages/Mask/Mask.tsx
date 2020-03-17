@@ -16,20 +16,21 @@ export default class MzMask extends Vue {
   @Prop(Function)
   readonly onClick!: (e: MouseEvent) => void
 
-  mZindex = 1000
+  mZIndex = 1000
 
   render(h: CreateElement) {
-    if (!this.visible) return null
     const data = {
       class: ['mz-mask'],
       style: {
-        zIndex: this.mZindex
+        zIndex: this.mZIndex
       },
       on: Object.assign({ click: this.onClick }, this.$listeners)
     }
     return (
       <transition name={this.transition}>
-        <div {...data}>{this.$slots.default}</div>
+        <div v-show={this.visible} {...data}>
+          {this.$slots.default}
+        </div>
       </transition>
     )
   }
@@ -38,7 +39,7 @@ export default class MzMask extends Vue {
   onVisibleChange(visible: boolean) {
     if (visible) {
       this.appendToBody && this.$el && document.body.appendChild(this.$el)
-      this.mZindex = this.zIndex || getZIndex()
+      this.mZIndex = this.zIndex || getZIndex()
     } else if (this.appendToBody && this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el)
     }
