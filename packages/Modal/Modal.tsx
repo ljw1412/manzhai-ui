@@ -18,12 +18,14 @@ export default class MzModal extends BaseAttribute {
   readonly zIndex!: number
   @Prop({ type: String, default: '500px' })
   readonly width!: string
-  @Prop({ type: String, default: '15vh' })
+  @Prop(String)
   readonly top!: string
   @Prop(String)
   readonly radius!: string
   @Prop({ type: String, default: 'mz-zoom' })
   readonly transition!: string
+  @Prop(Boolean)
+  readonly outerScroll!: boolean
   @Prop(Boolean)
   readonly divider!: boolean
   @Prop(Boolean)
@@ -42,6 +44,17 @@ export default class MzModal extends BaseAttribute {
   mZIndex = 1000
   maskZIndex = 1000
 
+  get classes() {
+    return [
+      'mz-modal',
+      {
+        'mz-modal--divider': this.divider,
+        'mz-modal--headless': this.headless,
+        'mz-modal--inner-scroll': !this.outerScroll
+      }
+    ]
+  }
+
   render(h: CreateElement) {
     const warpperData = {
       class: ['mz-modal-wrapper'],
@@ -54,13 +67,7 @@ export default class MzModal extends BaseAttribute {
       }
     }
     const modalData = {
-      class: [
-        'mz-modal',
-        {
-          'mz-modal--divider': this.divider,
-          'mz-modal--headless': this.headless
-        }
-      ],
+      class: this.classes,
       style: [
         this.baseStyles,
         {
