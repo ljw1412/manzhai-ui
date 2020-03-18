@@ -56,12 +56,12 @@ export default class Queue {
    * 尾部插入
    * @param data
    */
-  push(data: any) {
+  push(...data: any) {
     if (this.isFull()) {
       console.error('插入数据失败，队列已达长度上限！', data)
       return false
     }
-    this.q.push(data)
+    this.q.push(...data)
     return true
   }
 
