@@ -18,6 +18,11 @@ const config = {
         banner: `Build Time: ${new Date().toString()}`
       })
     ],
+    resolve: {
+      alias: {
+        '@packages': resolve('packages')
+      }
+    },
     performance: {
       hints: false
     }
