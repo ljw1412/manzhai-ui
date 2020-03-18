@@ -39,7 +39,7 @@
     }
   }
 
-  &--only-background:not(.mz-button--outlined):not(.mz-button--flat) {
+  &--only-background {
     background-color: currentColor;
     &::before,
     .mz-ripple-wrapper .mz-ripple,

@@ -38,7 +38,8 @@ export default class MzButton extends MzSize {
       'mz-button',
       this.mzSize,
       {
-        'mz-button--only-background': this.onlyBackground,
+        'mz-button--only-background':
+          this.onlyBackground && !this.outlined && !this.flat,
         'is-circle': this.circle,
         'mz-button--icon': this.icon,
         'mz-button--round': this.round,
