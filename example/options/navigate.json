@@ -11,6 +11,13 @@
         }
       },
       {
+        "label": "Elevation",
+        "text": "海拔",
+        "to": {
+          "name": "DirectiveElevation"
+        }
+      },
+      {
         "label": "Ripple",
         "text": "涟漪效果",
         "to": {

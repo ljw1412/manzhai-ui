@@ -26,5 +26,6 @@
   "example/docs/directives/Ripple.md": "6bd7c86d653e03ea071d74bb2f710689",
   "example/docs/directives/Blanking.md": "376fdf2894e25aa034d763b5f5f5ac18",
   "example/docs/components/Mask.md": "a931cf458c9373d5f5b50c740e7065df",
-  "example/docs/components/Modal.md": "a975e1f50ccab5dc50b21d96b7d84899"
+  "example/docs/components/Modal.md": "a975e1f50ccab5dc50b21d96b7d84899",
+  "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5"
 }
