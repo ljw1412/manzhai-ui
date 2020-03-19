@@ -2,6 +2,7 @@ import './Mask.scss'
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import getZIndex from '@/utils/zindex'
+import { addMask, removeMask } from './plugin'
 
 @Component
 export default class MzMask extends Vue {
@@ -40,9 +41,16 @@ export default class MzMask extends Vue {
     if (visible) {
       this.appendToBody && this.$el && document.body.appendChild(this.$el)
       this.mZIndex = this.zIndex || getZIndex()
+      addMask(this)
     } else if (this.appendToBody && this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el)
+      removeMask(this)
     }
+  }
+
+  @Watch('zIndex')
+  onZIndexChange(zIndex?: number) {
+    this.mZIndex = zIndex || getZIndex()
   }
 
   destroyed() {
