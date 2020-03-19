@@ -5,6 +5,7 @@ import MzMask from '../Mask'
 import MzMaskPlugin from '../Mask/plugin'
 import BaseAttribute from '@/mixins/BaseAttribute'
 import getZIndex from '@/utils/zindex'
+import { modalStack } from './plugin'
 
 @Component({ components: { MzMask } })
 export default class MzModal extends BaseAttribute {
@@ -12,6 +13,8 @@ export default class MzModal extends BaseAttribute {
   readonly visible!: boolean
   @Prop(String)
   readonly title!: string
+  @Prop()
+  readonly content!: any
   @Prop({ type: Number, default: 15 })
   readonly elevation!: number
   @Prop(Number)
@@ -38,6 +41,8 @@ export default class MzModal extends BaseAttribute {
   readonly maskAppendToBody!: boolean
   @Prop({ type: Boolean, default: true })
   readonly closeOnClickMask!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly closeOnPressEscape!: boolean
   @Prop({ type: Function })
   readonly beforeClose!: (done: any) => void | Promise<any>
 
@@ -58,13 +63,7 @@ export default class MzModal extends BaseAttribute {
   render(h: CreateElement) {
     const warpperData = {
       class: ['mz-modal-wrapper'],
-      style: [{ zIndex: this.mZIndex }],
-      on: {
-        click: (event: MouseEvent) => {
-          if (event.target !== event.currentTarget) return
-          this.closeByMask()
-        }
-      }
+      style: [{ zIndex: this.mZIndex }]
     }
     const modalData = {
       class: this.classes,
@@ -101,7 +100,9 @@ export default class MzModal extends BaseAttribute {
   }
 
   renderBody() {
-    return <div class="mz-modal__body">{this.$slots.default}</div>
+    return (
+      <div class="mz-modal__body">{this.$slots.default || this.content}</div>
+    )
   }
 
   renderFooter() {
@@ -157,7 +158,10 @@ export default class MzModal extends BaseAttribute {
       this.maskZIndex = this.zIndex ? this.zIndex - 1 : getZIndex()
       this.mZIndex = this.zIndex || getZIndex()
       this.appendToBody && document.body.appendChild(this.$el)
+      modalStack.push(this)
     } else {
+      this.$emit('closed')
+      modalStack.stack.remove(this)
     }
     if (this.mask && this.maskAppendToBody) this.displayBodyMask(visible)
   }

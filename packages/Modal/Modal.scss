@@ -7,9 +7,11 @@
   right: 0;
   overflow: auto;
   will-change: transform, opacity;
+  pointer-events: none;
 }
 
 .mz-modal {
+  pointer-events: auto;
   pointer-events: initial;
   margin: auto;
   background-color: #ffffff;
@@ -25,6 +27,9 @@
   &__footer {
     padding: 10px 20px;
     text-align: right;
+    .mz-button + .mz-button {
+      margin-left: 10px;
+    }
   }
 
   &--divider {

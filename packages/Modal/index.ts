@@ -1,9 +1,13 @@
 import MzModal from './Modal'
-import { VueConstructor } from 'vue'
+import MzModalPlugin from './plugin'
 
 MzModal.componentName = 'MzModal'
 
-MzModal.install = (Vue: VueConstructor) => {
+MzModal.plugin = Vue => {
+  Vue.prototype.$modal = MzModalPlugin
+}
+
+MzModal.install = Vue => {
   Vue.component(MzModal.componentName, MzModal)
 }
 
