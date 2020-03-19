@@ -104,7 +104,7 @@ export default {
 |label|选项的标签|String|||
 |disabled|是否禁用|Boolean|||
 
-#### 
+#### 事件
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |

@@ -90,3 +90,140 @@ export default {
 </script>
 ```
 :::
+
+### 嵌套的对话框
+
+对话框内触发内部对话框显示。
+
+:::demo <span style="color:var(--color-danger)">原则上禁止嵌套弹窗，因为这样做可能会导致弹窗和遮罩的层级的关系错误。</span>如果需要在页面上同时显示多个 Dialog，可以将它们平级放置。如果万不得已一定要用，Model 组件提供了`append-to-body`属性，将内层 Model  的该属性设置为 true，它就会插入至 body 元素上，从而保证内外层 Model 和遮罩层级关系的正确。
+```html
+<mz-button color="success"
+  @click="visible = true">显示对话框</mz-button>
+
+<mz-modal v-model="visible" title="对话框">
+  <div>Welcome to chaos world!</div>
+  <mz-modal v-model="visible2" append-to-body
+    title="嵌套的对话框">
+    <div>全てはシュタインズゲートの选択だ</div>
+    <template #footer>
+      <mz-button flat color="primary"
+        @click="visible2 = false">关闭</mz-button>
+    </template>
+  </mz-modal>
+  <template #footer>
+    <mz-button flat color="primary"
+      @click.stop="visible = false">关闭</mz-button>
+    <mz-button flat color="success"
+      @click="visible2 = true">显示对话框</mz-button>
+  </template>
+</mz-modal>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false,
+      visible2: false
+    }
+  }
+}
+</script>
+```
+:::
+
+### 关闭拦截
+:::demo `before-close`属性可以拦截关闭事件，传入 function(done) 方法，`done`为关闭的方法。你也可以传入 Promise。
+```html
+<mz-button color="success"
+  @click="show">显示对话框</mz-button>
+
+<mz-modal v-model="visible" 
+  title="对话框" :before-close="beforeClose">
+  <div>Welcome to chaos world!</div>
+</mz-modal>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false,
+      count: 0
+    }
+  },
+
+  methods: {
+    show(){
+      this.count = 0
+      this.visible = true
+    },
+
+    beforeClose(done) {
+      this.count++
+      if(this.count < 5){
+        this.$snackbar.show({
+          text: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
+        })
+        return
+      }
+      this.$snackbar.hide()
+      done()
+    }
+  }
+}
+</script>
+```
+:::
+
+
+### API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|visible/v-modal|是否显示|Boolean|||
+|title|标题|String|||
+|elevation|深度|Number||15|
+|zIndex|层级|Number|||
+|width|宽度|String||'500px'|
+|top|对话框距离顶部的高度|String|||
+|radius|对话框的圆角大小|String|||
+|transition|对话框的显隐动画名称|String||'mz-zoom'|
+|outer-scroll|是否外滚动|Boolean|||
+|divider|是否有分割线|Boolean|||
+|headless|是否无头|Boolean|||
+|append-to-body|是否将对话框插入至 body 元素上|Boolean|||
+|mask|是否显示遮罩|Boolean||true|
+|mask-append-to-body|是否将遮罩插入至 body元素上|Boolean||true|
+|close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
+|close-on-press-escape|	是否可通过按下 ESC 键关闭对话框|Boolean||true|
+|before-close|关闭前的回调|(done)=>void / Promise|||
+
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|close|关闭事件||
+|closed|关闭结束事件||
+
+#### $modal
+
+包含：
+- $modal(ModalConfig)
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|title|标题|String|||
+|content|内容|String/VNode|||
+|elevation|深度|Number||15|
+|width|宽度|String||'500px'|
+|top|对话框距离顶部的高度|String|||
+|radius|对话框的圆角大小|String|||
+|transition|对话框的显隐动画名称|String||'mz-zoom'|
+|outer-scroll|是否外滚动|Boolean|||
+|divider|是否有分割线|Boolean|||
+|headless|是否无头|Boolean|||
+|mask|是否显示遮罩|Boolean||true|
+|close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
+|before-close|关闭前的回调|(done)=>void / Promise|||
