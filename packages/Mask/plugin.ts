@@ -7,20 +7,27 @@ const maskList: Mask[] = []
 const maskStack = new Stack()
 let instance: any
 
+const defaultConfig = {
+  zIndex: undefined,
+  transition: undefined,
+  onClick: (e: MouseEvent) => {}
+}
+
 function initInstance() {
   if (!instance) {
     instance = new Mask({ el: document.createElement('div') })
   }
+  Object.assign(instance, defaultConfig)
 }
 
 function show(config?: MaskConfig) {
-  initInstance()
   maskStack.push(config)
   showTopMask()
 }
 
 // 显示栈顶的遮罩
 function showTopMask() {
+  initInstance()
   if (maskStack.isEmpty()) return
   const config = maskStack.top()
   if (config) {
