@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-03-13 17:57</div>
+    <div class="update-datetime">文档更新时间：2020-03-19 16:06</div>
     <h2 id="snackbar-xiao-xi-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -148,7 +148,9 @@ export default {
         buttonText: '关闭',
         buttonProps: { fontColor: '#ffffff', flat: true },
         buttonClick: function() {
-          this.close()
+          // 不用箭头函数，可以直接使用`this.hide()`
+          // 否则要使用 this.$snackbar.hide()
+          this.hide()
         },
         placement: 'bottom'
       })
@@ -295,7 +297,9 @@ export default {
         buttonText: '关闭',
         buttonProps: { fontColor: '#ffffff', flat: true },
         buttonClick: function() {
-          this.close()
+          // 不用箭头函数，可以直接使用`this.hide()`
+          // 否则要使用 this.$snackbar.hide()
+          this.hide()
         },
         placement: 'bottom'
       })

@@ -7,6 +7,20 @@ const queue = new Queue()
 let instance: SnackbarConstructor
 let currentSnackbar
 
+const defaultConfig = {
+  value: false,
+  fixed: false,
+  text: '',
+  timeout: 5000,
+  color: undefined,
+  buttonText: undefined,
+  buttonProps: undefined,
+  buttonClick: undefined,
+  vertical: false,
+  placement: 'bottom',
+  zIndex: undefined
+}
+
 const Snackbar = {
   show: (options: SnackbarPluginOptions) => {
     if (Vue.prototype.$isServer) return
@@ -16,7 +30,7 @@ const Snackbar = {
     showNextSnackbar()
   },
 
-  close: () => {
+  hide: () => {
     initInstance()
   }
 }
@@ -29,7 +43,7 @@ const initInstance = () => {
       instance.value = val
     })
   }
-  instance.value = false
+  Object.assign(instance, defaultConfig)
 }
 
 const showNextSnackbar = () => {
@@ -42,7 +56,11 @@ const showNextSnackbar = () => {
         instance[prop as keyof SnackbarPluginOptions] = options[prop]
       }
     }
-    instance.$on('buttonClick', options.buttonClick.bind(Snackbar))
+    console.log(options)
+
+    if (options.buttonClick) {
+      instance.$on('buttonClick', options.buttonClick.bind(Snackbar))
+    }
 
     document.body.appendChild(instance.$el)
     Vue.nextTick(() => {

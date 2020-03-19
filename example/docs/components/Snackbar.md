@@ -121,7 +121,9 @@ export default {
         buttonText: '关闭',
         buttonProps: { fontColor: '#ffffff', flat: true },
         buttonClick: function() {
-          this.close()
+          // 不用箭头函数，可以直接使用`this.hide()`
+          // 否则要使用 this.$snackbar.hide()
+          this.hide()
         },
         placement: 'bottom'
       })
