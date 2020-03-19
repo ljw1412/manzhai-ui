@@ -1,4 +1,4 @@
-export class Stack {
+export default class Stack {
   stack: any[] = []
   maxLength: number = Infinity
 
