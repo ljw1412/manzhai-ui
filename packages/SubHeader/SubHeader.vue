@@ -11,9 +11,9 @@ export default class MzSubHeader extends Vue {
   readonly left!: string | number
 
   get classes() {
-    const classes = ['sub-header']
+    const classes = ['mz-sub-header']
     if (this.level && this.level > 0 && this.level < 7)
-      classes.push(`sub-header--level-${this.level}`)
+      classes.push(`mz-sub-header--level-${this.level}`)
     return classes
   }
 
@@ -34,7 +34,7 @@ export default class MzSubHeader extends Vue {
 </script>
 
 <style lang="scss">
-.sub-header {
+.mz-sub-header {
   color: var(--color-text-secondary);
   @for $i from 1 through 6 {
     &--level-#{$i} {
