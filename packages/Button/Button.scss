@@ -65,7 +65,9 @@
 
   &--disabled {
     cursor: not-allowed;
-    background-color: rgba(0, 0, 0, 0.12);
+    &:not(.mz-button--only-background) {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
 
     &.mz-button--outlined,
     &.mz-button--flat {
@@ -80,6 +82,7 @@
       width: 100%;
       height: 100%;
       background-color: rgba(#f2f2f2, 0.6);
+      border-radius: var(--mz-button__radius);
     }
     .mz-button__content {
       opacity: 0.6;
