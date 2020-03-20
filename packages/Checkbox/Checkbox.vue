@@ -128,7 +128,7 @@ export default class MzCheckbox extends Mixins(FormElement) {
     vertical-align: middle;
     margin-left: 5px;
     font-size: var(--mz-checkbox__label-font-size);
-    line-height: 1.5;
+    line-height: 1;
     z-index: 1;
   }
 
@@ -139,7 +139,7 @@ export default class MzCheckbox extends Mixins(FormElement) {
     height: var(--mz-checkbox__icon-size);
     box-sizing: border-box;
     border: 1px solid var(--mz-checkbox__icon-color);
-    vertical-align: text-bottom;
+    vertical-align: middle;
     z-index: 1;
     &::before {
       content: ' ';
