@@ -9,7 +9,7 @@ import {
 } from 'vue-property-decorator'
 import MzIcon from '../Icon/index'
 import MzImage from '../Image/index'
-import SizeMixin from '@/mixins/size'
+import MzSize from '@/mixins/MzSize'
 import FormElement from '@/mixins/FormElement'
 import { CreateElement } from 'vue'
 
@@ -19,7 +19,7 @@ import { CreateElement } from 'vue'
     MzImage
   }
 })
-export default class MzInput extends Mixins(SizeMixin, FormElement) {
+export default class MzInput extends Mixins(MzSize, FormElement) {
   @Prop([String, Number])
   readonly value!: string | number
   @Prop(String)

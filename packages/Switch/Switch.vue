@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
-import SizeMixin from '@/mixins/size'
+import MzSize from '@/mixins/MzSize'
 import FormElement from '@/mixins/FormElement'
 import MzIcon from '../Icon/index'
 @Component({
@@ -28,7 +28,7 @@ import MzIcon from '../Icon/index'
     MzIcon
   }
 })
-export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
+export default class MzSwitch extends Mixins(MzSize, FormElement) {
   @Prop(Boolean)
   readonly value!: boolean
   @Prop(String)
@@ -49,13 +49,13 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
   get wrapperClasses() {
     const classes = [
       this.disabled ? 'is-not-allowed' : 'is-pointer',
+      this.mzSize,
       {
         'mz-switch--checked': this.value,
         'mz-switch--circle': this.circle,
         'mz-switch--disabled': this.disabled
       }
     ]
-    this.mzSizeClass('mz-switch', this.size, classes)
     return classes
   }
 
@@ -160,12 +160,12 @@ export default class MzSwitch extends Mixins(SizeMixin, FormElement) {
     opacity: 0.5;
   }
 
-  &--large {
+  &.mz-size--large {
     --mz-switch__bar-width: 45px;
     --mz-switch__bar-height: 20px;
   }
 
-  &--small {
+  &.mz-size--small {
     --mz-switch__bar-width: 36px;
     --mz-switch__bar-height: 16px;
   }

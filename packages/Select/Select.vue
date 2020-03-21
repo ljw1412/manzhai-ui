@@ -58,9 +58,9 @@ import {
 } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzInput from '../Input'
-import SizeMixin from '../../src/mixins/size'
-import FormElement from '../../src/mixins/FormElement'
-import { typeOf } from '../../src/utils/assist'
+import MzSize from '@/mixins/MzSize'
+import FormElement from '@/mixins/FormElement'
+import { typeOf } from '@/utils/assist'
 import { MzOption } from '.'
 
 @Component({
@@ -71,7 +71,7 @@ import { MzOption } from '.'
     return { mzSelect: this }
   }
 })
-export default class MzSelect extends Mixins(SizeMixin, FormElement) {
+export default class MzSelect extends Mixins(MzSize, FormElement) {
   @Prop({ default: () => [] })
   readonly list!: Record<string, any>[]
   @Prop()
