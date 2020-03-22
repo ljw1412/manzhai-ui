@@ -1,6 +1,6 @@
 <template>
   <div class="component-image">
-    <div class="update-datetime">文档更新时间：2020-01-20 17:02</div>
+    <div class="update-datetime">文档更新时间：2020-03-22 11:25</div>
     <h2 id="image-tu-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
 <p>显示图片或背景的容器。</p>
 <h3 id="ji-ben-yu-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 }
@@ -83,7 +83,7 @@ export default {
     return {
       fit: '',
       position: '',
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 }
@@ -212,10 +212,11 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentImage',
   components: { ImageDemo1: {
   data() {
     return {
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 }, ImageDemo2: {
@@ -223,7 +224,7 @@ export default {
     return {
       fit: '',
       position: '',
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 } }

@@ -20,7 +20,8 @@ const config = {
     ],
     resolve: {
       alias: {
-        '@packages': resolve('packages')
+        '@packages': resolve('packages'),
+        '@example': resolve('example')
       }
     },
     performance: {

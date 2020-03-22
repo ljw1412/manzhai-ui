@@ -17,7 +17,7 @@ export default {
       visible: false,
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@/static/image-star.jpg')
+        require('@example/static/image-star.jpg')
       ]
     }
   }
@@ -43,7 +43,7 @@ export default {
       visible: false,
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@/static/image-star.jpg')
+        require('@example/static/image-star.jpg')
       ]
     }
   }
@@ -69,7 +69,7 @@ export default {
       visible: false,
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@/static/image-star.jpg')
+        require('@example/static/image-star.jpg')
       ]
     }
   }
@@ -95,7 +95,7 @@ export default {
       visible: false,
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@/static/image-star.jpg')
+        require('@example/static/image-star.jpg')
       ]
     }
   }
@@ -121,7 +121,7 @@ export default {
       visible: false,
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@/static/image-star.jpg')
+        require('@example/static/image-star.jpg')
       ]
     }
   }
@@ -146,7 +146,7 @@ export default {
       this.$imagePreview.show({
         images: [
           'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-          require('@/static/image-star.jpg')
+          require('@example/static/image-star.jpg')
         ]
       })
     }

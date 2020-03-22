@@ -20,7 +20,7 @@
 export default {
   data() {
     return {
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 }
@@ -64,7 +64,7 @@ export default {
     return {
       fit: '',
       position: '',
-      src: require('@/static/image-star.jpg')
+      src: require('@example/static/image-star.jpg')
     }
   }
 }
