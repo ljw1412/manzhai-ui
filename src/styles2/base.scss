@@ -1,0 +1,24 @@
+.mz-hidden-input {
+  opacity: 0;
+  outline: none;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+@for $z from 0 through 24 {
+  .mz-elevation-#{$z} {
+    @include elevation($z, $important: true);
+  }
+}
+
+$font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
+@for $i from 1 through 9 {
+  .mz-level-#{$i} {
+    font-size: nth($font-size-list, $i);
+  }
+}

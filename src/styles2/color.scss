@@ -1,0 +1,20 @@
+@import './scss/variables/base.scss';
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-danger: #{$color-danger};
+
+  --color-text-primary: #{$color-text-primary};
+  --color-text-regular: #{$color-text-regular};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-placeholder: #{$color-text-placeholder};
+  --color-text-disabled: #{$color-text-disabled};
+
+  --color-page-background: #{$color-page-background};
+
+  --shadow-umbra-color: #{$shadow-umbra-color};
+  --shadow-penumbra-color: #{$shadow-penumbra-color};
+  --shadow-ambient-color: #{$shadow-ambient-color};
+}

@@ -54,6 +54,7 @@ const config = {
       .end()
   },
   css: {
+    // extract: !isDevelopment && !isUI,
     loaderOptions: {
       scss: {
         prependData: `

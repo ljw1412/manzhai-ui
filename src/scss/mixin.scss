@@ -1,7 +1,5 @@
-/*
-  文本截取显示
-  line-num: 显示文本的行数 默认一行
-*/
+// 文本截取显示
+// line-num: 显示文本的行数 默认一行
 @mixin text-clip($line-num: 1) {
   word-break: break-all;
   display: -webkit-box;
