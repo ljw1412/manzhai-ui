@@ -13,7 +13,7 @@
     map-get($shadow-ambient, $z) if($important, !important, null);
 }
 
-@mixin before-background {
+@mixin foreground {
   &::before {
     content: '';
     position: absolute;
@@ -35,13 +35,13 @@
   }
 }
 
-@mixin before-background-active {
+@mixin foreground-active {
   &::before {
     opacity: 0.3;
   }
 }
 
-@mixin before-background-disabled {
+@mixin foreground-disabled {
   &::before {
     display: none;
   }

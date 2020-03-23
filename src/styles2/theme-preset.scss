@@ -13,9 +13,20 @@ $baseTheme: (
     color-text-placeholder: #{$color-text-placeholder},
     color-text-disabled: #{$color-text-disabled},
     color-page-background: #{$color-page-background},
+    color-card-background: #{$color-card-background},
     shadow-umbra-color: #{$shadow-umbra-color},
     shadow-penumbra-color: #{$shadow-penumbra-color},
     shadow-ambient-color: #{$shadow-ambient-color}
+  ),
+  dark: (
+    color-primary: #1e1e24,
+    color-text-primary: #ffffff,
+    color-text-regular: #c5c8ce,
+    color-text-secondary: #b2b4b6,
+    color-text-placeholder: #87898c,
+    color-text-disabled: #405458,
+    color-page-background: #16161a,
+    color-card-background: #1e1e24
   )
 );
 

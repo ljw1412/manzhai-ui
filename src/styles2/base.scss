@@ -22,3 +22,7 @@ $font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
     font-size: nth($font-size-list, $i);
   }
 }
+
+.mz-color-transition {
+  transition: $color-transition;
+}

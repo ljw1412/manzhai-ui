@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const { resolve } = require('path')
+const { resolve, relative } = require('path')
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const isUI = process.env.MARK_ENV === 'UI'
 
@@ -57,9 +57,13 @@ const config = {
     // extract: !isDevelopment && !isUI,
     loaderOptions: {
       scss: {
-        prependData: `
-          @import '@/scss/index.scss';
-        `
+        prependData: ({ resourcePath, rootContext }) => {
+          const relativePath = relative(rootContext, resourcePath)
+          return relativePath.startsWith('packages/') ||
+            relativePath.startsWith('example/')
+            ? "\n@import '@/styles2/scss/core.scss';\n"
+            : ''
+        }
       }
     }
   }

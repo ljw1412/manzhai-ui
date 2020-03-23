@@ -1,4 +1,5 @@
-import './styles/index.scss'
+// import './styles/index.scss'
+import './styles2/index.scss'
 import { VueConstructor } from 'vue'
 import { InstallationOptions } from '../types/index'
 import { getCurrentTheme } from './utils/theme'

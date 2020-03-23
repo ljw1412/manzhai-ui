@@ -1,5 +1,8 @@
-@import './scss/core-compatibly.scss';
-@import './reset.scss';
-@import './transition.scss';
-@import './base.scss';
 @import './common.scss';
+@import './reset.scss';
+
+@supports not (--test: 'test') {
+  @import './scss/core-compatibly.scss';
+  @import './transition.scss';
+  @import './base.scss';
+}

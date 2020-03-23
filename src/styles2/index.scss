@@ -1,6 +1,9 @@
-@import './color.scss';
-@import './scss/core.scss';
-@import './reset.scss';
-@import './transition.scss';
-@import './base.scss';
 @import './common.scss';
+@import './reset.scss';
+
+@supports (--test: 'test') {
+  @import './theme-preset.scss';
+  @import './scss/core.scss';
+  @import './transition.scss';
+  @import './base.scss';
+}
