@@ -86,7 +86,7 @@ export default class MzNavigation extends Vue {
 .mz-navigation {
   .router-link-exact-active {
     .mz-list-item--link {
-      @include before-background-active;
+      @include foreground-active;
       color: var(--mz-list-item__font-color--active);
       .mz-list-item__title {
         color: var(--mz-list-item__font-color--active);

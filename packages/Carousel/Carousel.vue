@@ -123,8 +123,7 @@ export default class MzCarousel extends BaseAttribute {
       return (
         <mz-carousel-indicator
           type={this.indicator}
-          placement={this.indicatorPlacement}
-        ></mz-carousel-indicator>
+          placement={this.indicatorPlacement}></mz-carousel-indicator>
       )
     }
     return null
@@ -193,71 +192,3 @@ export default class MzCarousel extends BaseAttribute {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.mz-carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  &--vertical {
-    .mz-carousel-arrow {
-      left: 50%;
-      margin-left: -20px;
-      &--previous {
-        transform: rotate(90deg);
-        top: 10px;
-      }
-      &--next {
-        transform: rotate(-90deg) scaleX(-1);
-        bottom: 10px;
-      }
-    }
-  }
-  &:not(&--vertical) {
-    .mz-carousel-arrow {
-      top: 50%;
-      transform: translateY(-50%);
-      &--previous {
-        left: 10px;
-      }
-      &--next {
-        right: 10px;
-      }
-    }
-  }
-}
-
-.mz-carousel-arrow {
-  cursor: pointer;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: rgba($color: #000000, $alpha: 0.2);
-  border-radius: 50%;
-  transition-duration: 0.5s;
-  &::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    margin-left: 6px;
-    margin-top: 13px;
-    border-width: 7px 8px;
-    border-style: solid;
-    border-color: transparent #ffffff transparent transparent;
-    opacity: 0.75;
-  }
-  &--next::after {
-    transform: scaleX(-1);
-    transform-origin: 14px 12px;
-  }
-}
-</style>

@@ -1,4 +1,4 @@
-import MzAnchor from './Anchor.vue'
+import MzAnchor from './Anchor'
 import { VueConstructor } from 'vue'
 
 MzAnchor.componentName = 'MzAnchor'

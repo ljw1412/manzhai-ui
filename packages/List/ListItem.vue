@@ -168,7 +168,7 @@ export default class MzListItem extends Vue {
 
   &--link {
     cursor: pointer;
-    @include before-background;
+    @include foreground;
   }
 
   @each $type, $radius in ('', 100px), ('left-', 100px 0 0 100px),
@@ -192,13 +192,13 @@ export default class MzListItem extends Vue {
         color: var(--color-text-placeholder);
       }
       &:not(.mz-list-item--active) {
-        @include before-background-disabled;
+        @include foreground-disabled;
       }
     }
   }
 
   &--active.mz-list-item--link {
-    @include before-background-active;
+    @include foreground-active;
     color: var(--mz-list-item__font-color--active);
     .mz-list-item__title {
       color: var(--mz-list-item__font-color--active);

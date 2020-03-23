@@ -1,4 +1,3 @@
-import './Button.scss'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import MzSize from '@/mixins/MzSize'
 import { CreateElement } from 'vue'
@@ -53,7 +52,7 @@ export default class MzButton extends MzSize {
   get styles() {
     return {
       color: getMzColor(this.color),
-      '--mz-button__radius': this.radius
+      borderRadius: this.radius
     }
   }
 

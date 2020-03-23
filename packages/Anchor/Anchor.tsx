@@ -1,4 +1,3 @@
-<script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import { scrollIntoView } from '../../src/utils/dom'
@@ -21,6 +20,8 @@ export default class MzAnchor extends Vue {
   readonly invisible!: boolean
   @Prop({ type: String, default: '¶' })
   readonly symbol!: string
+  @Prop(String)
+  readonly color!: string
 
   render(h: CreateElement) {
     const data: Record<string, any> = {
@@ -35,6 +36,9 @@ export default class MzAnchor extends Vue {
         'data-href': this.href,
         'data-level': this.level
       },
+      style: {
+        color: this.color
+      },
       on: {
         click: () => {
           scrollIntoView(this.href, this.scrollSmooth)
@@ -45,20 +49,3 @@ export default class MzAnchor extends Vue {
     return <a {...data}>{this.symbol}</a>
   }
 }
-</script>
-
-<style lang="scss">
-.mz-anchor {
-  --mz-anchor__symbol-color: var(--color-primary);
-
-  position: relative;
-  display: inline-block;
-  color: var(--mz-anchor__symbol-color);
-  &--invisible {
-    height: 0;
-    width: 0;
-    overflow: hidden;
-    visibility: hidden;
-  }
-}
-</style>
