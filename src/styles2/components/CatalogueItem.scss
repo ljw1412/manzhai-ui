@@ -1,0 +1,51 @@
+.mz-catalogue-item {
+  position: relative;
+  color: $color-text-regular;
+
+  &__text {
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    &:hover {
+      color: $color-primary;
+      opacity: 0.8;
+    }
+  }
+
+  &[data-level='1'] > .mz-catalogue-item__text {
+    font-weight: 600;
+  }
+
+  @for $i from 1 through 9 {
+    &[data-level='#{$i}'] {
+      margin: 5px 0;
+      padding-left: 10px;
+    }
+  }
+
+  &--active {
+    color: $color-primary;
+    > .mz-catalogue-item__text {
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}
+
+.mz-catalogue--sidebar .mz-catalogue-item {
+  &[data-level='1']::before {
+    content: '';
+    position: absolute;
+    left: -13px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: currentColor;
+    transition: all 0.3s;
+  }
+}

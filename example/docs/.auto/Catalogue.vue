@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-01-15 19:08</div>
+    <div class="update-datetime">文档更新时间：2020-03-24 17:47</div>
     <h2 id="catalogue-mu-lu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu" title="Catalogue 目录" data-level="2" data-href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
 <p>用于列出页面目录。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -585,6 +585,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentCatalogue',
   components: { CatalogueDemo1: {}, CatalogueDemo2: {}, CatalogueDemo3: {
   data(){
     return {

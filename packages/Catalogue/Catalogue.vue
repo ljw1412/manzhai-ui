@@ -125,9 +125,7 @@ export default class MzCatalogue extends BaseAttribute {
         minWidth: this.baseStyles.minWidth,
         maxWidth: this.baseStyles.maxWidth,
 
-        '--mz-catalogue__sidebar-color': this.sidebarColor,
-        '--mz-catalogue__sidebar-point-color': this.sidebarPointColor,
-        '--mz-catalogue__sidebar-arrow-color': this.sidebarArrowColor
+        '--mz-catalogue__sidebar-point-color': this.sidebarPointColor
       }
     }
     if (this.fixed) {
@@ -152,9 +150,19 @@ export default class MzCatalogue extends BaseAttribute {
 
   renderSidebar() {
     return (
-      <div class="mz-catalogue__sidebar">
+      <div
+        class="mz-catalogue__sidebar"
+        style={{
+          borderColor: this.sidebarColor,
+          backgroundColor: this.sidebarColor
+        }}>
         {this.activeIndex !== -1 && (
-          <div class="arrow" style={{ top: this.arrowTop + 'px' }}>
+          <div
+            class="arrow"
+            style={{
+              top: this.arrowTop + 'px',
+              color: this.sidebarArrowColor
+            }}>
             <div class="square"></div>
             <div class="triangle"></div>
           </div>
@@ -264,90 +272,3 @@ export default class MzCatalogue extends BaseAttribute {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-catalogue {
-  --mz-catalogue__sidebar-color: var(--color-text-regular);
-
-  position: relative;
-  box-sizing: border-box;
-  &--fixed {
-    position: fixed;
-  }
-  &--absolute {
-    position: absolute;
-  }
-  &--sidebar {
-    padding: 10px 0;
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      box-sizing: border-box;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      left: 6px;
-      border: 2px solid var(--mz-catalogue__sidebar-color);
-    }
-    &::before {
-      top: 0;
-    }
-    &::after {
-      bottom: 0;
-    }
-    .mz-catalogue__content {
-      overflow: hidden;
-      padding-left: 20px;
-    }
-  }
-
-  &__content {
-    position: relative;
-  }
-
-  &__sidebar {
-    position: absolute;
-    top: 0;
-    left: 10px;
-    height: 100%;
-    width: 0;
-    padding: 9px 0;
-    box-sizing: border-box;
-    border: 1px solid var(--mz-catalogue__sidebar-color);
-    background-color: var(--mz-catalogue__sidebar-color);
-    background-clip: content-box;
-    .arrow {
-      position: absolute;
-      left: -5px;
-      top: 15px;
-      width: 30px;
-      z-index: 9;
-      transition: top 0.2s;
-      font-size: 0;
-      .square {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background-color: var(
-          --mz-catalogue__sidebar-arrow-color,
-          var(--mz-catalogue__sidebar-color)
-        );
-      }
-      .triangle {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        border-top: 5px solid transparent;
-        border-right: 0 solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 5px solid
-          var(
-            --mz-catalogue__sidebar-arrow-color,
-            var(--mz-catalogue__sidebar-color)
-          );
-      }
-    }
-  }
-}
-</style>

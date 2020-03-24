@@ -4,11 +4,11 @@
     <div id="content">
       <router-view></router-view>
     </div>
-    <div id="copyright">
+    <!-- <div id="copyright">
       <span></span>
       <a href="http://www.beian.miit.gov.cn"
         target="_blank"></a>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -36,7 +36,8 @@ $copyright-height: 20px;
     box-shadow: 0 -4px 10px var(--color-primary);
   }
   #content {
-    height: calc(100% - #{$topbar-height + $copyright-height});
+    height: calc(100% - #{$topbar-height});
+    // height: calc(100% - #{$topbar-height + $copyright-height});
   }
   #copyright {
     position: relative;
