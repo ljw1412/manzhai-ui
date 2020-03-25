@@ -77,7 +77,14 @@ export default class MzModal extends BaseAttribute {
       directives: [{ name: 'elevation', value: this.elevation }]
     }
     return (
-      <transition name={this.transition}>
+      <transition
+        name={this.transition}
+        on-after-enter={() => {
+          this.$emit('opend')
+        }}
+        on-after-leave={() => {
+          this.$emit('closed')
+        }}>
         <div v-show={this.visible} {...warpperData}>
           {this.renderMask()}
           <div {...modalData}>
@@ -155,12 +162,12 @@ export default class MzModal extends BaseAttribute {
   @Watch('visible')
   onVisibleChange(visible: boolean) {
     if (visible) {
+      this.$emit('open')
       this.maskZIndex = this.zIndex ? this.zIndex - 1 : getZIndex()
       this.mZIndex = this.zIndex || getZIndex()
       this.appendToBody && document.body.appendChild(this.$el)
       modalStack.push(this)
     } else {
-      this.$emit('closed')
       modalStack.stack.remove(this)
     }
     if (this.mask && this.maskAppendToBody) this.displayBodyMask(visible)
