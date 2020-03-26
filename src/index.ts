@@ -15,9 +15,8 @@ import {
   CarouselIndicator
 } from '../packages/Carousel/index'
 import { Catalogue, CatalogueItem } from '../packages/Catalogue/index'
-import Cell from '../packages/Cell/index'
+import { Cell, CellGroup } from '../packages/Cell/index'
 import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
-import CellGroup from '../packages/CellGroup/index'
 import Col from '../packages/Col/index'
 import { Dropdown, DropdownCard } from '../packages/Dropdown/index'
 import Form from '../packages/Form/index'
