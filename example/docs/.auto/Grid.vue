@@ -1,6 +1,6 @@
 <template>
   <div class="component-grid">
-    <div class="update-datetime">文档更新时间：2020-01-20 15:32</div>
+    <div class="update-datetime">文档更新时间：2020-03-26 15:24</div>
     <h2 id="grid-zha-ge-bu-ju" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#grid-zha-ge-bu-ju" title="Grid 栅格布局" data-level="2" data-href="#grid-zha-ge-bu-ju">¶</a>Grid 栅格布局</h2>
 <p>按照 24 等分的原则进行划分。</p>
 <h3 id="ji-chu-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-bu-ju" title="基础布局" data-level="3" data-href="#ji-chu-bu-ju">¶</a>基础布局</h3>
@@ -86,12 +86,14 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 .bg-dark{
-  background-color: var(--color-primary-12);
+  background-color: var(--color-primary);
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="lie-de-jian-ge" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-jian-ge" title="列的间隔" data-level="3" data-href="#lie-de-jian-ge">¶</a>列的间隔</h3>
@@ -138,9 +140,11 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="zi-you-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-you-bu-ju" title="自由布局" data-level="3" data-href="#zi-you-bu-ju">¶</a>自由布局</h3>
@@ -199,9 +203,11 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="lie-de-pian-yi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-pian-yi" title="列的偏移" data-level="3" data-href="#lie-de-pian-yi">¶</a>列的偏移</h3>
@@ -253,6 +259,7 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
@@ -317,9 +324,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 &lt;/style&gt;
 </code></pre>
@@ -357,9 +366,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="lie-de-yin-cang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-yin-cang" title="列的隐藏" data-level="3" data-href="#lie-de-yin-cang">¶</a>列的隐藏</h3>
@@ -399,9 +410,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="row-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#row-api" title="Row Api" data-level="3" data-href="#row-api">¶</a>Row Api</h3>
@@ -544,6 +557,7 @@ export default {
 </template>
 <script>
 export default {
+  name: 'ComponentGrid',
   components: { GridDemo1: {}, GridDemo2: {}, GridDemo3: {}, GridDemo4: {}, GridDemo5: {
   data() {
     return {
@@ -572,12 +586,14 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   .bg-dark{
-    background-color: var(--color-primary-12);
+    background-color: var(--color-primary);
   }
   }
 .grid-demo2{  
@@ -595,9 +611,11 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   }
 .grid-demo3{  
@@ -615,9 +633,11 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   }
 .grid-demo4{  
@@ -635,6 +655,7 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   }
 .grid-demo5{  
@@ -646,9 +667,11 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   }
 .grid-demo6{  
@@ -666,9 +689,11 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   }
 .grid-demo7{  
@@ -686,9 +711,11 @@ export default {
   }
   .bg-base{
     background-color: var(--color-primary);
+    opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary-8);
+    background-color: var(--color-primary);
+    opacity:0.6;
   }
   }
 </style>
