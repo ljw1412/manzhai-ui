@@ -12,6 +12,8 @@ $color-text-secondary: #87898c !default;
 $color-text-placeholder: #b2b4b6 !default;
 $color-text-disabled: #c5c8ce !default;
 
+$color-border-base: rgba(0, 0, 0, 0.12) !default;
+
 $color-page-background: transparent !default;
 $color-card-background: #ffffff !default;
 
@@ -26,13 +28,22 @@ $font-size-xxxl: 24px;
 $font-weight-bold: 500;
 
 // Border
-$border-color-base: rgba(0, 0, 0, 0.12);
 $border-width-base: 1px;
 $border-radius-none: 0;
 $border-radius-sm: 2px;
 $border-radius-md: 4px;
 $border-radius-lg: 8px;
 $border-radius-max: 999px;
+
+// Padding
+$padding-base: 2px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 5;
+$padding-xl: $padding-base * 6;
+$padding-xl: $padding-base * 7;
+$padding-xl: $padding-base * 8;
 
 // Transition
 $transition: (
