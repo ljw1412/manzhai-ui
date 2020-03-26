@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-03-19 20:01</div>
+    <div class="update-datetime">文档更新时间：2020-03-25 17:29</div>
     <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -379,13 +379,23 @@ export default {
 </thead>
 <tbody>
 <tr>
+<td>open</td>
+<td>打开的回调</td>
+<td></td>
+</tr>
+<tr>
+<td>opend</td>
+<td>打开动画结束时的回调</td>
+<td></td>
+</tr>
+<tr>
 <td>close</td>
-<td>关闭事件</td>
+<td>关闭的回调</td>
 <td></td>
 </tr>
 <tr>
 <td>closed</td>
-<td>关闭结束事件</td>
+<td>关闭动画结束时的回调</td>
 <td></td>
 </tr>
 </tbody>
