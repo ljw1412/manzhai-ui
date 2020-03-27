@@ -1,0 +1,39 @@
+.mz-filter-section {
+  overflow-x: hidden;
+
+  &__label {
+    color: $color-text-regular;
+  }
+
+  &__content {
+    margin: 0 -4px;
+  }
+
+  &--right,
+  &--left {
+    display: flex;
+    .mz-filter-section {
+      &__label {
+        flex-shrink: 0;
+        line-height: 24px;
+        margin-right: 10px;
+      }
+
+      &__content {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &--right {
+    .mz-filter-section__label {
+      text-align: right;
+    }
+  }
+
+  &--top {
+    .mz-filter-section__label {
+      margin-bottom: 2px;
+    }
+  }
+}

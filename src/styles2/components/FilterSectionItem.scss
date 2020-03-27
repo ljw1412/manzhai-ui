@@ -1,0 +1,29 @@
+.mz-filter-section-item {
+  padding: $padding-xs;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+
+  &__label {
+    padding: $padding-base $padding-xs;
+    box-sizing: border-box;
+    color: $color-text-primary;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: $color-transition;
+  }
+
+  &:not(.is-outlined).is-checked {
+    .mz-filter-section-item__label {
+      color: $color-white;
+      background-color: $color-primary;
+    }
+  }
+
+  &.is-outlined.is-checked {
+    .mz-filter-section-item__label {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
