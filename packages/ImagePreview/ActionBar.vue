@@ -37,20 +37,3 @@ export default class MzImagePreviewActionBar extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-image-preview-action-bar {
-  z-index: 9996;
-  top: initial;
-  bottom: 0;
-  height: 50px;
-  background-color: rgba(30, 30, 30, 0.6);
-  display: flex;
-  .mz-image-preview-button {
-    width: 50px;
-    &.is-text {
-      width: 70px;
-    }
-  }
-}
-</style>

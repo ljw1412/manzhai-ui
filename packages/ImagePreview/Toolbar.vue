@@ -57,17 +57,3 @@ export default class MzImagePreviewToolbar extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-image-preview-toolbar {
-  z-index: 9995;
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  .mz-image-preview-button {
-    width: 40px;
-    height: 40px;
-  }
-}
-</style>

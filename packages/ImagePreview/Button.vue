@@ -36,14 +36,4 @@ export default class MzImagePreviewButton extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.mz-image-preview-button {
-  background-color: rgba(30, 30, 30, 0.6);
-  .mz-button {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    font-size: 20px;
-    color: #ffffff;
-  }
-}
 </style>
