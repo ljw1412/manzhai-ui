@@ -11,6 +11,7 @@
       <mz-mask class="mz-image-preview__bg"
         absolute
         color="rgba(30, 30, 30, 0.9)"
+        :visible="true"
         :z-index="0"></mz-mask>
       <!-- 工具栏 -->
       <m-toolbar :visible='isDisplayButtons || isDisplayThumbnail'

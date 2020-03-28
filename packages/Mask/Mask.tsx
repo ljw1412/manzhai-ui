@@ -5,7 +5,7 @@ import { addMask, removeMask } from './plugin'
 
 @Component
 export default class MzMask extends Vue {
-  @Model('input', { type: Boolean, default: true })
+  @Model('input', { type: Boolean })
   readonly visible!: boolean
   @Prop({ type: String, default: 'mz-fade' })
   readonly transition!: string
