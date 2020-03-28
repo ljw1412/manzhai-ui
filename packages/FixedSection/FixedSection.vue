@@ -43,8 +43,7 @@ export default class MzFixedSection extends BaseAttribute {
     const placeholderWrapper = (
       <div
         class="mz-fixed-section-wrapper"
-        style={{ height: this.isFixed ? this.offsetHeight + 'px' : undefined }}
-      >
+        style={{ height: this.isFixed ? this.offsetHeight + 'px' : undefined }}>
         {section}
       </div>
     )
@@ -148,21 +147,3 @@ export default class MzFixedSection extends BaseAttribute {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-fixed-section-wrapper {
-  box-sizing: border-box;
-}
-
-.mz-fixed-section {
-  box-sizing: border-box;
-  &.is-fixed,
-  &.is-fixed.is-sticky {
-    position: fixed;
-  }
-  &.is-sticky {
-    position: absolute;
-    width: 100%;
-  }
-}
-</style>
