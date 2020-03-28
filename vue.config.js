@@ -59,9 +59,9 @@ const config = {
       scss: {
         prependData: ({ resourcePath, rootContext }) => {
           const relativePath = relative(rootContext, resourcePath)
-          return relativePath.startsWith('packages/') ||
-            relativePath.startsWith('example/')
-            ? "\n@import '@/styles2/scss/core.scss';\n"
+          return relativePath.startsWith('packages') ||
+            relativePath.startsWith('example')
+            ? "@import '@/styles2/scss/core.scss';"
             : ''
         }
       }
