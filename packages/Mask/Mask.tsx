@@ -14,6 +14,8 @@ export default class MzMask extends Vue {
   readonly zIndex!: number
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop(Boolean)
+  readonly absolute!: boolean
   @Prop({ type: Function, default: (e: MouseEvent) => {} })
   readonly onClick!: (e: MouseEvent) => void
 
@@ -21,7 +23,7 @@ export default class MzMask extends Vue {
 
   render(h: CreateElement) {
     const data = {
-      class: ['mz-mask'],
+      class: ['mz-mask', 'mz-mask--absolute'],
       style: {
         zIndex: this.mZIndex
       },
