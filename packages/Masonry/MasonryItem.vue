@@ -23,6 +23,3 @@ export default class MzMasonryItem extends Vue {
   }
 }
 </script>
-
-<style lang="scss" >
-</style>

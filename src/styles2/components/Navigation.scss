@@ -1,0 +1,9 @@
+.mz-navigation {
+  .router-link-exact-active .mz-list-item--link {
+    @include foreground-active;
+    color: $color-primary;
+    .mz-list-item__title {
+      color: $color-primary;
+    }
+  }
+}

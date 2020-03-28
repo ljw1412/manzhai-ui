@@ -1,4 +1,3 @@
-import './Modal.scss'
 import { Component, Prop, Model, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzMask from '../Mask'

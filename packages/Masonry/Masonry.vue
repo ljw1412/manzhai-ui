@@ -87,23 +87,3 @@ export default class MzMasonry extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-masonry--flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  overflow: hidden;
-  .mz-masonry-queue {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 auto;
-  }
-}
-
-.mz-masonry--column-count {
-  .mz-masonry-item {
-    break-inside: avoid;
-  }
-}
-</style>

@@ -66,12 +66,3 @@ export default class MzList extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-list {
-  &__empty {
-    padding: 10px 0;
-    text-align: center;
-  }
-}
-</style>

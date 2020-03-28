@@ -33,3 +33,14 @@ $baseTheme: (
 );
 
 @include generateTheme($baseTheme);
+
+:root[data-theme='dark'] {
+  .mz-navigation {
+    .router-link-exact-active .mz-list-item--link {
+      color: var(--color-text-primary);
+      .mz-list-item__title {
+        color: var(--color-text-primary);
+      }
+    }
+  }
+}

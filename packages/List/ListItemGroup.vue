@@ -71,16 +71,3 @@ export default class MzListItemGroup extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-list-item-group {
-  & > &__children {
-    margin-left: 10px;
-  }
-
-  &__arrow {
-    transform-origin: center;
-    transition: transform 0.3s;
-  }
-}
-</style>

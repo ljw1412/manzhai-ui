@@ -13,11 +13,3 @@ export default class MzListGroup extends Vue {
   readonly label?: string
 }
 </script>
-
-<style lang="scss">
-.mz-list-group {
-  .mz-sub-header {
-    margin: 8px 0;
-  }
-}
-</style>
