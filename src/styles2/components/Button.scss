@@ -14,9 +14,10 @@
   user-select: none;
   transition-duration: 0.3s;
   transition-property: box-shadow, transform, opacity, background-color,
-    border-radius, color, border, background-color;
+    border-radius, color, border-color, background-color;
   transition-timing-function: map-get($transition, 'fast-out-slow-in');
   vertical-align: middle;
+  box-sizing: border-box;
 
   &::before {
     border-radius: inherit;
@@ -27,61 +28,40 @@
     z-index: 50;
   }
 
-  &:not(.mz-button--disabled) {
-    @include foreground;
-    will-change: box-shadow;
-    &:not(.mz-button--flat):active {
-      @include elevation(8);
-    }
-  }
-
-  &--only-background {
-    background-color: currentColor;
-    &::before,
-    .mz-ripple-wrapper .mz-ripple,
-    .mz-button__content {
-      color: #ffffff;
-    }
-  }
-
   &--round {
     border-radius: $border-radius-max;
     overflow: hidden;
   }
 
-  &--outlined {
-    border: 1px solid currentColor;
-    &.mz-button--disabled::after {
-      top: -1px;
-      left: -1px;
-      width: calc(100% + 2px);
-      height: calc(100% + 2px);
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    &.mz-button--default:not(.mz-button--flat):not(.mz-button--outlined) {
+      background-color: #f2f2f2;
     }
   }
 
-  &--disabled {
-    cursor: not-allowed;
-    &:not(.mz-button--only-background) {
-      background-color: rgba(0, 0, 0, 0.12);
-    }
-
-    &.mz-button--outlined,
-    &.mz-button--flat {
-      background-color: transparent;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(#f2f2f2, 0.6);
-      border-radius: inherit;
-    }
-    .mz-button__content {
-      opacity: 0.6;
+  @each $type, $color in (primary, $color-primary), (success, $color-success),
+    (warning, $color-warning), (danger, $color-danger),
+    (default, $color-text-primary)
+  {
+    &--#{$type} {
+      color: $color;
+      @if ($type!= 'default') {
+        background-color: $color;
+        &:not(.mz-button--flat):not(.mz-button--outlined) {
+          color: #ffffff;
+        }
+      }
+      border-color: $color;
+      &.mz-button--flat {
+        border-color: transparent;
+        background-color: transparent;
+      }
+      &.mz-button--outlined {
+        background-color: transparent;
+        border: 1px solid;
+      }
     }
   }
 

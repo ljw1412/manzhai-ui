@@ -1,7 +1,7 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import MzSize from '@/mixins/MzSize'
 import { CreateElement } from 'vue'
-import { getMzColor } from '@/utils/theme'
+import { getMzColor, colorInTypes } from '@/utils/theme'
 
 @Component
 export default class MzButton extends MzSize {
@@ -28,17 +28,18 @@ export default class MzButton extends MzSize {
   @Prop(String)
   readonly radius!: string
 
-  get onlyBackground() {
-    return getMzColor(this.color) && !getMzColor(this.textColor)
-  }
-
   get classes() {
+    let buttonTheme = ''
+    if (!this.color) {
+      buttonTheme = 'mz-button--default'
+    } else if (colorInTypes(this.color)) {
+      buttonTheme = `mz-button--${this.color}`
+    }
     return [
       'mz-button',
+      buttonTheme,
       this.mzSize,
       {
-        'mz-button--only-background':
-          this.onlyBackground && !this.outlined && !this.flat,
         'is-circle': this.circle,
         'mz-button--icon': this.icon,
         'mz-button--round': this.round,
@@ -51,13 +52,11 @@ export default class MzButton extends MzSize {
 
   get styles() {
     return {
-      color: getMzColor(this.color),
+      color: this.textColor,
+      backgroundColor: this.color,
+      borderColor: this.color,
       borderRadius: this.radius
     }
-  }
-
-  get contentStyles() {
-    return { color: getMzColor(this.textColor) }
   }
 
   render(h: CreateElement) {
@@ -73,8 +72,7 @@ export default class MzButton extends MzSize {
 
   renderContent() {
     const data = {
-      class: ['mz-button__content', 'flex-double-center'],
-      style: [this.contentStyles]
+      class: ['mz-button__content', 'flex-double-center']
     }
     return <span {...data}>{this.$slots.default}</span>
   }
