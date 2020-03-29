@@ -103,6 +103,21 @@ export default {
 ```
 :::
 
+### 自定义颜色
+
+我们为按钮预设了4种主要颜色，用户也可以根据需求修改按钮颜色。
+
+:::demo `color`属性控制背景颜色，预设了`primary`、`success`、`warning`、`danger`。`text-color`属性控制文字颜色。
+```html
+<div>
+  <mz-button color="orange">按钮</mz-button>
+  <mz-button text-color="blue">按钮</mz-button>
+  <mz-button color="#00a1d6" text-color="#c6e48b">按钮</mz-button>
+  <mz-button color="success" text-color="#fcba2a">按钮</mz-button>
+</div>
+```
+:::
+
 ### 按钮组
 
 以按钮组的方式出现，常用于多项类似操作。
@@ -138,7 +153,6 @@ export default {
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
-| type | 类型 | String | primary / success / warning / danger | - |
 | size | 尺寸 | String | large / small   | - |
 | disabled | 是否禁用状态 | Boolean | | |
 | icon | 是否图标状态	 | Boolean | | |
@@ -148,10 +162,9 @@ export default {
 | flat | 是否扁平按钮	 | Boolean | | |
 | round | 是否圆角按钮	 | Boolean | | |
 | native-type | 原生 type 属性 | String | button / submit / reset | 'button' |
-| font-color | 文字颜色 | String | | |
-| color | 背景颜色 | String | | |
-| border-color | 边框颜色 | String | | |
-| border-radius | 边框圆角 | String | | |
+| color | 背景颜色 | String | primary / success / warning / danger / Color in Css | |
+| text-color | 文字颜色 | String | | |
+| radius | 圆角大小 | String | | '4px' |
 
 #### 插槽
 
