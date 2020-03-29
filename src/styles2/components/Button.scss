@@ -55,11 +55,11 @@
       }
       border-color: $color;
       &.mz-button--flat {
-        border-color: transparent;
-        background-color: transparent;
+        border-color: transparent !important;
+        background-color: transparent !important;
       }
       &.mz-button--outlined {
-        background-color: transparent;
+        background-color: transparent !important;
         border: 1px solid;
       }
     }
