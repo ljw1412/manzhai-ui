@@ -5,8 +5,10 @@
   align-items: center;
 
   &__label {
-    padding: $padding-base $padding-xs;
+    padding: $padding-xs $padding-sm;
     box-sizing: border-box;
+    font-size: $font-size-md;
+    line-height: $font-size-md;
     color: $color-text-primary;
     background-color: transparent;
     border: 1px solid transparent;

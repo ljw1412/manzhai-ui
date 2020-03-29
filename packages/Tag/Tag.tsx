@@ -1,4 +1,3 @@
-import './Tag.scss'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzIcon from '../Icon/index'

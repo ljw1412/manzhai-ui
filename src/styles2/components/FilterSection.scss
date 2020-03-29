@@ -15,7 +15,8 @@
     .mz-filter-section {
       &__label {
         flex-shrink: 0;
-        line-height: 24px;
+        display: flex;
+        align-items: center;
         margin-right: 10px;
       }
 
@@ -28,6 +29,7 @@
   &--right {
     .mz-filter-section__label {
       text-align: right;
+      justify-content: flex-end;
     }
   }
 

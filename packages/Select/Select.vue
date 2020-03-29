@@ -158,30 +158,3 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
 }
 </script>
 
-<style lang="scss">
-.mz-select {
-  position: relative;
-
-  .mz-input__inner {
-    cursor: pointer;
-  }
-
-  &__search-input {
-    box-sizing: border-box;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 56px;
-    padding: 12px 16px 14px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    margin-top: 0;
-    font-size: var(--mz-input__input-font-size);
-    color: var(--mz-input__input-font-color);
-    caret-color: var(--mz-input__input-caret-color);
-  }
-}
-</style>

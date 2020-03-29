@@ -82,36 +82,3 @@ export default class MzTab extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-tab {
-  --mz-tab__font-color: var(--color-text-secondary);
-  --mz-tab__font-color--active: var(--color-primary);
-  --mz-tab__font-color--disabled: var(--color-text-placeholder);
-  position: relative;
-  user-select: none;
-  cursor: pointer;
-  height: 100%;
-  padding: 0 12px;
-  text-align: center;
-  z-index: 50;
-  color: var(--mz-tab__font-color);
-
-  &--grow {
-    flex: 1 0 auto;
-    max-width: none;
-  }
-
-  &--active {
-    color: var(--mz-tab__font-color--active);
-  }
-
-  &--disabled {
-    color: var(--mz-tab__font-color--disabled);
-  }
-}
-
-.mz-tab-panel {
-  color: var(--color-text-primary);
-}
-</style>
