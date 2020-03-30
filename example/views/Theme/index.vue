@@ -7,7 +7,7 @@
         :elevation="0"
         :key="color.name"
         :background="`var(${color.name})`"
-        :style="{color:color.fontColor}">{{color.name}} {{color.label}} {{color.hex}}</mz-card>
+        :style="{color:color.fontColor}">{{color.scssName}} {{color.label}} {{color.hex}}</mz-card>
     </div>
   </div>
 </template>
