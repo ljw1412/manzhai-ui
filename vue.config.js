@@ -61,7 +61,7 @@ const config = {
           const relativePath = relative(rootContext, resourcePath)
           return relativePath.startsWith('packages') ||
             relativePath.startsWith('example')
-            ? "@import '@/styles2/scss/core.scss';"
+            ? "@import '@/styles/scss/core.scss';"
             : ''
         }
       }
