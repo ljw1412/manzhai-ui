@@ -11,7 +11,6 @@
 <mz-tag>标签</mz-tag>
 <mz-tag color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
 <mz-tag color="var(--color-warning)" text-color="green">标签</mz-tag>
-<mz-tag color="">标签</mz-tag>
 ```
 :::
 
@@ -35,7 +34,7 @@
 
 :::demo `outlined`、`round`、`text`分别表示以边框模式，圆角模式，文字模式显示。
 ```html
-<mz-tag outlined color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
+<mz-tag outlined>标签</mz-tag>
 <mz-tag round color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
 <mz-tag round="left" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
 <mz-tag round="right" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
