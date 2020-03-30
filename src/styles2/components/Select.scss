@@ -1,4 +1,3 @@
-// TODO 等待Input修改
 .mz-select {
   position: relative;
 
@@ -19,8 +18,7 @@
     outline: none;
     font-size: 16px;
     margin-top: 0;
-    font-size: var(--mz-input__input-font-size);
-    color: var(--mz-input__input-font-color);
-    caret-color: var(--mz-input__input-caret-color);
+    color: $color-text-primary;
+    caret-color: inherit;
   }
 }
