@@ -1,12 +1,13 @@
 import { Component, Prop, Model, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzMask from '../Mask'
+import MzCard from '../Card/Card.vue'
 import MzMaskPlugin from '../Mask/plugin'
 import BaseAttribute from '@/mixins/BaseAttribute'
 import getZIndex from '@/utils/zindex'
 import { modalStack } from './plugin'
 
-@Component({ components: { MzMask } })
+@Component({ components: { MzMask, MzCard } })
 export default class MzModal extends BaseAttribute {
   @Model('input', { type: Boolean })
   readonly visible!: boolean
@@ -86,11 +87,11 @@ export default class MzModal extends BaseAttribute {
         }}>
         <div v-show={this.visible} {...warpperData}>
           {this.renderMask()}
-          <div {...modalData}>
+          <mz-card {...modalData}>
             {this.renderHeader()}
             {this.renderBody()}
             {this.renderFooter()}
-          </div>
+          </mz-card>
         </div>
       </transition>
     )
