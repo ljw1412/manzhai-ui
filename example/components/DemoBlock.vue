@@ -50,7 +50,7 @@ export default class DemoBlock extends Vue {
   position: relative;
   padding: 16px;
   padding-top: 36px;
-  background-color: var(--demo-block__background-color);
+  background-color: #fafafa;
 
   .example {
     color: var(--color-text-secondary);
@@ -66,7 +66,7 @@ export default class DemoBlock extends Vue {
     padding: 10px 20px;
     border: 1px solid var(--color-border-base);
     border-radius: 5px;
-    background-color: var(--demo-block__description-background-color);
+    background-color: #ffffff;
     margin-bottom: 10px;
     p {
       margin: 0 !important;
@@ -76,19 +76,20 @@ export default class DemoBlock extends Vue {
       margin: 0 4px;
       padding: 2px 3px;
       border-radius: 3px;
-      background-color: var(--demo-block__description-code-background-color);
-      color: var(--demo-block__description-code-color);
+      background-color: #e6effb;
+      color: #5e6d82;
       font-style: italic;
     }
   }
 
   .highlight {
     ::selection {
-      background-color: var(--demo-block__selection-color);
+      background-color: $color-primary;
+      opacity: 0.5;
     }
     .hljs,
     .hljs-subst {
-      color: var(--demo-block__highlight-color);
+      color: #333333;
     }
     .html {
       background-color: transparent;

@@ -43,6 +43,7 @@ export default class Topbar extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/theme/base.scss';
 #app-logo {
   padding: 0;
   margin-left: 5px;
@@ -66,12 +67,12 @@ export default class Topbar extends Vue {
       font-size: 16px;
       padding: 0 20px;
       a {
-        color: var(--app-topbar__navigation-font-color);
+        color: $topbar-navigation-text-color;
         &:hover {
-          color: var(--app-topbar__navigation-font-color--hover);
+          color: $topbar-navigation-text-color--hover;
         }
         &:active {
-          color: var(--app-topbar__navigation-font-color--active);
+          color: $topbar-navigation-text-color--active;
         }
       }
     }

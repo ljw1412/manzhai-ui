@@ -25,6 +25,7 @@ export default class APP extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+@import './styles/theme/base.scss';
 $topbar-height: 60px;
 $copyright-height: 20px;
 #app {
@@ -47,10 +48,10 @@ $copyright-height: 20px;
     line-height: $copyright-height;
     text-align: center;
     background-color: var(--color-primary);
-    color: var(--app-topbar__navigation-font-color);
+    color: $topbar-navigation-text-color;
     a {
       margin-left: 5px;
-      color: var(--app-topbar__navigation-font-color);
+      color: $topbar-navigation-text-color;
       &:hover {
         color: var(--color-primary-3);
       }
