@@ -77,6 +77,7 @@ function hyphenate(str, hyphenate = '-') {
   return str.replace(hyphenateRE, `${hyphenate}$1`).toLowerCase()
 }
 
+// 分隔转驼峰
 function capitalized(str) {
   return str.replace(/\b\w+\b/g, function(word) {
     return word.substring(0, 1).toUpperCase() + word.substring(1)
