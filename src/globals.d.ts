@@ -9,6 +9,10 @@ declare global {
 
   interface HTMLElement {
     _clickOutside?: EventListenerOrEventListenerObject
+    _onWindowResize?: {
+      callback: () => void
+      options?: boolean | AddEventListenerOptions
+    }
 
     _elevation?: number | string
 
