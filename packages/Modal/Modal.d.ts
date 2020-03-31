@@ -1,5 +1,6 @@
 export type ModalConfig = {
   title?: string
+  content?:any
   elevation?: number
   zIndex?: number
   width?: string

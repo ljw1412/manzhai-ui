@@ -15,6 +15,7 @@ window.addEventListener('keydown', function(event) {
 
 const defaultConfig = {
   title: '',
+  content: '',
   elevation: 15,
   zIndex: '',
   width: '500px',
