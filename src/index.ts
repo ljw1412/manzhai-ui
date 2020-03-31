@@ -1,6 +1,5 @@
 import './styles/index.scss'
 import { VueConstructor } from 'vue'
-import { InstallationOptions } from '../types/index'
 import { getCurrentTheme } from './utils/theme'
 import * as blanking from './utils/blanking'
 import mzEventBus from './bus'
@@ -54,6 +53,10 @@ import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
 import Tag from '../packages/Tag/index'
 // inject import
+
+interface InstallationOptions {
+  size?: string
+}
 
 const components: VueConstructor[] = [
   // inject component

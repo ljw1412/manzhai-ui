@@ -12,6 +12,9 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "./types",
+    "outDir": "./dist/src",
     "types": ["webpack-env"],
     "paths": {
       "@/*": ["src/*"],
