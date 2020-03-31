@@ -1,6 +1,6 @@
 <template>
   <div class="mz-select"
-    v-clickoutside="{
+    v-click-outside="{
       fn: onClickoutside,
       disabled: !isActive
     }"

@@ -1,6 +1,7 @@
 import './styles/index.scss'
 import { VueConstructor } from 'vue'
 import { getCurrentTheme } from './utils/theme'
+import { hyphenate } from './utils/string'
 import * as blanking from './utils/blanking'
 import mzEventBus from './bus'
 import * as directives from './directives'
@@ -121,7 +122,7 @@ const components: VueConstructor[] = [
  */
 function bindDirectives(Vue: VueConstructor) {
   Object.keys(directives).forEach(key => {
-    Vue.directive(key.toLowerCase(), (directives as Record<string, any>)[key])
+    Vue.directive(hyphenate(key), (directives as Record<string, any>)[key])
   })
 }
 

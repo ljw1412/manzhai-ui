@@ -1,5 +1,5 @@
 <template>
-  <div v-clickoutside="close"
+  <div v-click-outside="close"
     class="mz-dropdown">
     <slot></slot>
     <transition name="mz-fade">

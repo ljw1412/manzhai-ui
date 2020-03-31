@@ -1,7 +1,7 @@
 <template>
   <transition name="mz-fade">
     <mz-card v-show="mVisiable"
-      v-clickoutside="{
+      v-click-outside="{
         fn: close,
         disabled: isDisabledClickoutside
       }"
