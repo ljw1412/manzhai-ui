@@ -12,6 +12,11 @@
         color: $color-primary;
       }
     }
+    &--disabled.mz-button--primary.mz-button--outlined {
+      background-color: $color-text-disabled;
+      color: $color-text-disabled;
+      border-color: $color-text-disabled;
+    }
   }
 
   .mz-catalogue {

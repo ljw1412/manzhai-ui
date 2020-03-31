@@ -36,8 +36,13 @@
   &--disabled {
     cursor: not-allowed;
     opacity: 0.6;
-    &.mz-button--default:not(.mz-button--flat):not(.mz-button--outlined) {
+    &.mz-button--default {
       background-color: $color-text-disabled;
+      color: $color-text-disabled;
+      border-color: $color-text-disabled;
+      &:not(.mz-button--flat):not(.mz-button--outlined) {
+        color: $color-white;
+      }
     }
   }
 
