@@ -84,8 +84,7 @@ export default class DemoBlock extends Vue {
 
   .highlight {
     ::selection {
-      background-color: $color-primary;
-      opacity: 0.5;
+      background-color: $color-text-placeholder;
     }
     .hljs,
     .hljs-subst {
