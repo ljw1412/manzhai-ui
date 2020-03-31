@@ -18,6 +18,13 @@
         }
       },
       {
+        "label": "Resize",
+        "text": "大小变化",
+        "to": {
+          "name": "DirectiveResize"
+        }
+      },
+      {
         "label": "Ripple",
         "text": "涟漪效果",
         "to": {

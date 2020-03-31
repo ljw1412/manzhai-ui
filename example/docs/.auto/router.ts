@@ -26,6 +26,7 @@ import ComponentTabs from './Tabs.vue'
 import ComponentTag from './Tag.vue'
 import DirectiveBlanking from './Blanking.vue'
 import DirectiveElevation from './Elevation.vue'
+import DirectiveResize from './Resize.vue'
 import DirectiveRipple from './Ripple.vue'
 
 export default [
@@ -168,6 +169,11 @@ export default [
     path: 'elevation',
     name: 'DirectiveElevation',
     component: DirectiveElevation
+  },
+  {
+    path: 'resize',
+    name: 'DirectiveResize',
+    component: DirectiveResize
   },
   {
     path: 'ripple',
