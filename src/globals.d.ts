@@ -13,6 +13,7 @@ declare global {
       callback: () => void
       options?: boolean | AddEventListenerOptions
     }
+    _onElResize?: () => void
 
     _elevation?: number | string
 

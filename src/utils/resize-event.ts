@@ -8,7 +8,7 @@ const resizeHandler = function(entries: ResizeObserverEntry[]) {
     const listeners = entry.target.__resizeListeners__ || []
     if (listeners.length) {
       listeners.forEach((fn: Function) => {
-        fn()
+        fn(entry)
       })
     }
   }
