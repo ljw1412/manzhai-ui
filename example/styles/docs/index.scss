@@ -7,14 +7,14 @@
     right: 0;
     top: 0;
     font-size: 14px;
-    color: var(--color-text-regular);
+    color: $color-text-regular;
     z-index: 1;
     transition: opacity 0.2s;
   }
 
   p {
     font-size: 14px;
-    color: var(--color-text-regular);
+    color: $color-text-regular;
     line-height: 1.5em;
     margin: 1em 0;
   }
@@ -37,7 +37,7 @@
   .mz-document-header {
     position: relative;
     font-weight: 400;
-    color: var(--color-text-primary);
+    color: $color-text-primary;
     &:hover .mz-document-anchor {
       opacity: 0.4;
     }
@@ -47,14 +47,14 @@
     position: absolute;
     left: -20px;
     opacity: 0;
-    color: var(--color-primary);
+    color: $color-primary;
   }
 
   .mz-document-ul {
     li {
       position: relative;
       padding-left: 12px;
-      color: var(--color-text-primary);
+      color: $color-text-primary;
       & + li {
         margin-top: 5px;
       }
@@ -66,7 +66,7 @@
         width: 5px;
         height: 5px;
         transform: translateY(-50%);
-        background-color: var(--color-text-regular);
+        background-color: $color-text-regular;
       }
     }
   }
@@ -79,14 +79,14 @@
       td {
         text-align: left;
         padding: 16px 10px;
-        border-bottom: 1px solid var(--color-border-light);
+        border-bottom: 1px solid $color-border-base;
       }
       th {
         font-size: 13px;
-        color: var(--color-text-secondary);
+        color: $color-text-secondary;
       }
       td {
-        color: var(--color-text-primary);
+        color: $color-text-primary;
         font-size: 14px;
       }
     }

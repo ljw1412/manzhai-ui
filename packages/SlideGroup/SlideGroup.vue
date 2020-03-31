@@ -135,35 +135,3 @@ export default class MzSlideGroup extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-slide-group {
-  position: relative;
-
-  &--scrollable {
-    padding: 0 30px;
-  }
-
-  &__scroll {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  &__content {
-    transition: transform $primary-transition 0.15s;
-  }
-
-  &__control {
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    width: 30px;
-    height: 100%;
-    color: var(--color-text-primary);
-    &:active {
-      color: var(--color-text-regular);
-    }
-  }
-}
-</style>

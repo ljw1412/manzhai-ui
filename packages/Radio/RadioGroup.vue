@@ -64,19 +64,3 @@ export default class MzRadioGroup extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-radio-group {
-  display: inline-block;
-  &--block {
-    display: block;
-    &.mz-radio-group--button {
-      display: flex;
-      .mz-radio,
-      .mz-radio-button {
-        flex: 1 0 auto;
-      }
-    }
-  }
-}
-</style>

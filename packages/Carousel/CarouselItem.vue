@@ -44,11 +44,3 @@ export default class MzCarouselItem extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-carousel-item {
-  width: 100%;
-  height: 100%;
-  will-change: transform, width;
-}
-</style>

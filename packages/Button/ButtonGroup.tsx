@@ -1,4 +1,3 @@
-import './ButtonGroup.scss'
 import { Component, Vue } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 

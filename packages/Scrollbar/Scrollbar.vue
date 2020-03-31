@@ -45,8 +45,7 @@ export default class MzScrollbar extends Vue {
       <div
         ref="content"
         class="mz-scrollbar__content"
-        style={[this.contentStyles, contentStyles]}
-      >
+        style={[this.contentStyles, contentStyles]}>
         {this.$slots.default}
       </div>
     )
@@ -163,19 +162,3 @@ export default class MzScrollbar extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-scrollbar {
-  position: relative;
-  overflow: hidden;
-  &__content {
-    box-sizing: border-box;
-  }
-  &--always,
-  &:hover {
-    .mz-bar {
-      opacity: 0.75;
-    }
-  }
-}
-</style>

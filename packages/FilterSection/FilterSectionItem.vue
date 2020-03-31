@@ -62,30 +62,3 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-filter-section-item {
-  --mz-filter-section-item__label-color: var(--color-text-primary);
-  --mz-filter-section-item__background-color: transparent;
-  --mz-filter-section-item__border-color: transparent;
-
-  padding: 3px 5px;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  &__label {
-    box-sizing: border-box;
-    color: var(--mz-filter-section-item__label-color);
-    background-color: var(--mz-filter-section-item__background-color);
-    border: 1px solid var(--mz-filter-section-item__border-color);
-  }
-  &:not(.is-outlined).is-checked {
-    --mz-filter-section-item__label-color: #ffffff;
-    --mz-filter-section-item__background-color: var(--color-primary);
-  }
-  &.is-outlined.is-checked {
-    --mz-filter-section-item__label-color: var(--color-primary);
-    --mz-filter-section-item__border-color: var(--color-primary);
-  }
-}
-</style>

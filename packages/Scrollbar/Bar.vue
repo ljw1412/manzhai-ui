@@ -138,30 +138,3 @@ export default class MzBar extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-bar {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s linear;
-  &--x {
-    width: 100%;
-    left: 0;
-    bottom: 0;
-  }
-  &--y {
-    height: 100%;
-    top: 0;
-    right: 0;
-  }
-  &--drag {
-    opacity: 0.75 !important;
-  }
-  &__thumb {
-    background-color: var(--scrollbar-thumb-color);
-    &:active {
-      background-color: var(--scrollbar-thumb-color--active);
-    }
-  }
-}
-</style>

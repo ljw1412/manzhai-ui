@@ -1,4 +1,3 @@
-import './Tag.scss'
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzIcon from '../Icon/index'
@@ -36,8 +35,9 @@ export default class MzTag extends MzSize {
 
   get styles() {
     return {
-      '--mz-tag__bg-color': this.color,
-      '--mz-tag__color': this.textColor
+      borderColor: this.color,
+      backgroundColor: this.outlined || this.text ? '' : this.color,
+      color: this.outlined || this.text ? this.color : this.textColor
     }
   }
 

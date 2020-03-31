@@ -63,6 +63,3 @@ export default class MzFilterSectionGroup extends Mixins(FormElement) {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

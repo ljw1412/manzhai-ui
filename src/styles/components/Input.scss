@@ -1,0 +1,197 @@
+.mz-input {
+  color: $color-text-primary;
+
+  &__container {
+    position: relative;
+    height: 56px;
+    caret-color: currentColor;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: currentColor;
+    &--prepend {
+      left: 16px;
+    }
+    &--append {
+      right: 12px;
+    }
+  }
+
+  &__label {
+    pointer-events: none;
+    position: absolute;
+    left: 16px;
+    right: initial;
+    top: 50%;
+    color: $color-text-placeholder;
+    transform: translateY(-50%);
+    transform-origin: left center;
+    transition: transform 150ms map-get($transition, 'fast-in-fast-out'),
+      top 150ms map-get($transition, 'fast-in-fast-out'),
+      color 150ms map-get($transition, 'fast-in-fast-out'),
+      opacity 150ms map-get($transition, 'fast-in-fast-out');
+    opacity: 0.5;
+    &--above {
+      opacity: 1;
+      transform: translateY(25%) scale(0.75);
+      top: 0;
+    }
+    &--focused {
+      color: currentColor;
+    }
+  }
+
+  &__inner {
+    box-sizing: border-box;
+    font-size: $font-size-md;
+    color: $color-text-primary;
+    width: 100%;
+    height: 100%;
+    padding: 20px 16px 6px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid $color-border-base;
+    outline: none;
+    background: none;
+    appearance: none;
+    caret-color: inherit;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: transform 180ms map-get($transition, 'fast-in-fast-out'),
+      opacity 180ms map-get($transition, 'fast-in-fast-out');
+    opacity: 0;
+    z-index: 2;
+    background-color: currentColor;
+    &--active {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  &-outline {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    text-align: left;
+    pointer-events: none;
+    border-color: $color-border-base;
+    &__leading {
+      border-radius: 4px 0 0 4px;
+      border-left: 1px solid;
+      border-right: none;
+      width: 12px;
+    }
+    &__notch {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: calc(100% - 12px * 2);
+    }
+    &__trailing {
+      border-radius: 0 4px 4px 0;
+      border-left: none;
+      border-right: 1px solid;
+      flex-grow: 1;
+    }
+    &__leading,
+    &__notch,
+    &__trailing {
+      box-sizing: border-box;
+      height: 100%;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      pointer-events: none;
+      border-color: inherit;
+      transition: border-color 0.3s;
+    }
+  }
+
+  &__helper-line {
+    padding: 2px 16px;
+    color: $color-text-secondary;
+    font-size: 12px;
+  }
+
+  &--focused {
+    color: $color-primary;
+    .mz-input__helper-line {
+      color: currentColor;
+    }
+  }
+
+  &--error {
+    color: $color-danger !important;
+    .mz-input {
+      &__inner,
+      &__label,
+      &__helper-line,
+      &-outline {
+        color: currentColor;
+        border-color: currentColor;
+      }
+    }
+  }
+
+  &--prepend {
+    .mz-input__inner {
+      padding-left: 48px;
+    }
+    .mz-input__label {
+      left: 48px;
+    }
+  }
+
+  &--append {
+    .mz-input__inner {
+      padding-right: 48px;
+    }
+  }
+
+  &--outlined {
+    .mz-input {
+      &__inner {
+        padding-top: 12px;
+        padding-bottom: 14px;
+        border: none !important;
+      }
+      &__label--above {
+        transform: translateY(-50%) scale(0.75);
+        top: 0;
+      }
+    }
+  }
+
+  &--focused,
+  &--label-up,
+  &:not(.mz-input--empty) {
+    .mz-input-outline__notch {
+      border-top: none !important;
+    }
+  }
+  &--focused,
+  .mz-select--active & {
+    .mz-input-outline {
+      &__leading,
+      &__notch,
+      &__trailing {
+        border-width: 2px;
+        border-color: currentColor;
+      }
+    }
+  }
+}

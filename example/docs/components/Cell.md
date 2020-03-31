@@ -7,7 +7,8 @@
 :::demo 单元格允许多层嵌套。
 ```html
 <mz-cell-group
-  title="单元格组">
+  title="单元格组"
+  type="border">
   <mz-cell title="单元格1"
     desc="描述性文字">
     <mz-cell slot="child"
@@ -32,7 +33,7 @@
 
 ### 卡片样式单元格组
 
-:::demo `type="card"`切换卡片样式。
+:::demo `type`控制卡片样式，可选值有`card`、`border`。
 ```html
 <mz-cell-group
   title="单元格组"

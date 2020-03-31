@@ -43,6 +43,3 @@ export default class MzOption extends Mixins(FormElement) {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

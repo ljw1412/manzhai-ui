@@ -54,12 +54,14 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 .bg-dark{
-  background-color: var(--color-primary-12);
+  background-color: var(--color-primary);
 }
 </style>
 ```
@@ -96,9 +98,11 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 </style>
 ```
@@ -143,9 +147,11 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 </style>
 ```
@@ -186,6 +192,7 @@
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 </style>
 ```
@@ -236,9 +243,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 </style>
 ```
@@ -272,9 +281,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 </style>
 ```
@@ -309,9 +320,11 @@ export default {
 }
 .bg-base{
   background-color: var(--color-primary);
+  opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary-8);
+  background-color: var(--color-primary);
+  opacity:0.6;
 }
 </style>
 ```

@@ -1,8 +1,11 @@
-@import '../scss/index.scss';
-@import '../scss/theme.scss';
-@import './theme/default.scss';
-@import './theme/dark.scss';
-@import './elevation.scss';
-@import './base.scss';
+@import './common.scss';
 @import './reset.scss';
-@import './transition.scss';
+
+@supports (--test: 'test') {
+  @import './theme-preset.scss';
+  @import './scss/core.scss';
+  @import './transition.scss';
+  @import './base.scss';
+  @import './components/index.scss';
+  @import './theme-preset-dark.scss';
+}

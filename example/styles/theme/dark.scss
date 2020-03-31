@@ -4,6 +4,13 @@
   --demo-block__highlight-color: #ffffff;
   --demo-block__description-background-color: #303030;
 
+  ::-webkit-scrollbar {
+    background-color: rgba(255, 255, 255, 0.08);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+  }
+
   .demo-block {
     background-color: rgba(255, 255, 255, 0.1);
     .action .mz-icon:hover {

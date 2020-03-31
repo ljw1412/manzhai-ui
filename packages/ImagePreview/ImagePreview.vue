@@ -8,7 +8,11 @@
       }"
       :style="{zIndex: zIndex || mZIndex}">
       <!-- 背景 -->
-      <div class="mz-image-preview__bg"></div>
+      <mz-mask class="mz-image-preview__bg"
+        absolute
+        color="rgba(30, 30, 30, 0.9)"
+        :visible="true"
+        :z-index="0"></mz-mask>
       <!-- 工具栏 -->
       <m-toolbar :visible='isDisplayButtons || isDisplayThumbnail'
         :isPlay="isPlay"
@@ -357,144 +361,3 @@ export default class MzImagePreview extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-$thumbnails-block-width: 120px;
-
-.mz-image-preview {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  outline: none;
-  cursor: grab;
-  user-select: none;
-
-  &--drag {
-    cursor: grabbing;
-    .mz-image-preview {
-      &__image {
-        transition: none;
-      }
-    }
-  }
-
-  &--thumbnail {
-    .mz-image-preview {
-      &__watcher,
-      &__image {
-        width: calc(100% - #{$thumbnails-block-width});
-      }
-      &__arrow--next {
-        right: $thumbnails-block-width;
-      }
-    }
-    .mz-image-preview-action-bar {
-      left: calc(50% - #{$thumbnails-block-width/2});
-    }
-  }
-
-  &__bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgb(30, 30, 30);
-    opacity: 0.9;
-  }
-
-  &__thumbnails {
-    position: absolute;
-    right: 0;
-    width: $thumbnails-block-width;
-    height: 100%;
-    padding-top: 40px;
-    box-sizing: border-box;
-    background-color: rgba(30, 30, 30, 0.95);
-    z-index: 9994;
-    cursor: default;
-    transform-origin: right;
-    transition: transform 0.15s linear;
-    .mz-scrollbar {
-      height: 100%;
-    }
-
-    .thumbnail-wrapper {
-      cursor: pointer;
-      padding: 5px;
-      text-align: center;
-      color: #ccc;
-      transition: color 0.2s, background-color 0.2s;
-
-      &:not(.thumbnail-wrapper--active):hover {
-        background-color: rgba(255, 255, 255, 0.3);
-      }
-
-      &--active {
-        background-color: rgba(255, 255, 255, 0.5);
-        color: #333333;
-      }
-
-      img {
-        height: 110px;
-        width: 100%;
-      }
-      .thumbnail-title {
-        white-space: nowrap;
-      }
-    }
-  }
-
-  &__arrow {
-    z-index: 9993;
-    width: 34px;
-    height: 34px;
-    margin: 0 6px;
-    cursor: pointer;
-
-    &--next {
-      left: initial;
-      right: 0;
-      transition: right 0.15s linear;
-    }
-  }
-
-  &__watcher {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9992;
-  }
-
-  &__timer.mz-progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9997;
-    transition: all 0.05s;
-  }
-
-  &__image {
-    position: relative;
-    z-index: 9990;
-    width: 100%;
-    min-height: 100%;
-    transition: transform 0.15s linear;
-    img {
-      max-width: 100%;
-    }
-    &.height-first {
-      height: 100%;
-      width: initial;
-      img {
-        max-height: 100%;
-      }
-    }
-  }
-}
-</style>

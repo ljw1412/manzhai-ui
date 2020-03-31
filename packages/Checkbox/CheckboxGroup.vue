@@ -35,6 +35,3 @@ export default class MzCheckboxGroup extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-</style>

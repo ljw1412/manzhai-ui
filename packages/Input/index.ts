@@ -1,4 +1,4 @@
-import MzInput from './Input.vue'
+import MzInput from './Input'
 import { VueConstructor } from 'vue'
 
 MzInput.componentName = 'MzInput'

@@ -47,6 +47,29 @@ export default {
 ```
 :::
 
+### 选中铺满
+
+:::demo tabs的`active-bar-mode`表示当前选中的标签的底标模式，可选值`fill`，默认值`none~`。
+```html
+<mz-tabs v-model="value" active-bar-mode="fill">
+  <mz-tab v-for="index of 5"
+    :key="index"
+    :label="'Tab'+index"
+    :value="index">标签页{{index}}</mz-tab>
+</mz-tabs>
+
+<script>
+export default {
+  data() {
+    return {
+      value: 1
+    }
+  }
+}
+</script>
+```
+:::
+
 ### 标签滑动
 :::demo 当tabs下的tab超出显示范围，将以滚动显示进行显示。
 ```html
@@ -107,7 +130,7 @@ export default {
 |animation|是否有切换时的动画效果|Boolean|||
 |grow|是否平铺|Boolean|||
 |align|标签位置|String|'left' / 'center' / 'right'|'left'|
-|activeBarMode|活动条的样式|String|'fill' / 'none'|'none'|
+|active-bar-mode|活动条的样式|String|'fill' / 'none'|'none'|
 
 #### 插槽
 | 名称 | 说明 | 参数 |

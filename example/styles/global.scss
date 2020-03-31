@@ -1,5 +1,5 @@
 html {
-  background-color: var(--color-body-background);
+  background-color: $color-page-background;
 }
 html,
 body,
@@ -20,24 +20,26 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--color-text-primary);
+  color: $color-text-primary;
 }
 
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
+  background-color: rgba(0, 0, 0, 0.08);
   &:hover {
-    background-color: rgba(0, 0, 0, 0.09);
+    background-color: rgba(0, 0, 0, 0.12);
   }
   &-corner {
     background-color: transparent;
   }
   // 滚动条上的滚动滑块
   &-thumb {
-    background-color: var(--scrollbar-thumb-color);
+    background-color: $color-primary;
   }
   &-thumb:active {
-    background-color: var(--scrollbar-thumb-color--active);
+    background-color: $color-primary;
+    opacity: 0.5;
   }
 }
 

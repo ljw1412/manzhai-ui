@@ -1,0 +1,97 @@
+.mz-button {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: $color-text-primary;
+  border: none;
+  border-radius: $border-radius-md;
+  background-color: transparent;
+  outline: none;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform, opacity, background-color,
+    border-radius, color, border-color, background-color;
+  transition-timing-function: map-get($transition, 'fast-out-slow-in');
+  vertical-align: middle;
+  box-sizing: border-box;
+
+  &::before {
+    border-radius: inherit;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 50;
+  }
+
+  &--round {
+    border-radius: $border-radius-max;
+    overflow: hidden;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    &.mz-button--default {
+      background-color: $color-text-disabled;
+      color: $color-text-disabled;
+      border-color: $color-text-disabled;
+      &:not(.mz-button--flat):not(.mz-button--outlined) {
+        color: $color-white;
+      }
+    }
+  }
+
+  @each $type, $color in (primary, $color-primary), (success, $color-success),
+    (warning, $color-warning), (danger, $color-danger),
+    (default, $color-text-primary)
+  {
+    &--#{$type} {
+      color: $color;
+      @if ($type!= 'default') {
+        background-color: $color;
+        &:not(.mz-button--flat):not(.mz-button--outlined) {
+          color: #ffffff;
+        }
+      }
+      border-color: $color;
+      &.mz-button--flat {
+        border-color: transparent !important;
+        background-color: transparent !important;
+      }
+      &.mz-button--outlined {
+        background-color: transparent !important;
+        border: 1px solid;
+      }
+    }
+  }
+
+  /* prettier-ignore */
+  $size-options: (
+  // size: padding, height, fontsize
+    small: ( 6px, 24px, 12px ),
+    default : ( 12px, 30px, 14px ),
+    medium: ( 16px, 32px, 16px ),
+    large: ( 18px, 34px, 16px )
+  );
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      padding: 0 nth($arr, 1) + 1px;
+      height: nth($arr, 2);
+      line-height: nth($arr, 2);
+      font-size: nth($arr, 3);
+    }
+    &--outlined.mz-size--#{$size} {
+      padding: 0 nth($arr, 1);
+      line-height: nth($arr, 2) - 2px;
+    }
+    &--icon.mz-size--#{$size} {
+      padding: 0;
+      width: nth($arr, 2);
+    }
+  }
+}

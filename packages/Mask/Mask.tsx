@@ -1,4 +1,3 @@
-import './Mask.scss'
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import getZIndex from '@/utils/zindex'
@@ -10,10 +9,14 @@ export default class MzMask extends Vue {
   readonly visible!: boolean
   @Prop({ type: String, default: 'mz-fade' })
   readonly transition!: string
+  @Prop(String)
+  readonly color!: string
   @Prop(Number)
   readonly zIndex!: number
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop(Boolean)
+  readonly absolute!: boolean
   @Prop({ type: Function, default: (e: MouseEvent) => {} })
   readonly onClick!: (e: MouseEvent) => void
 
@@ -21,9 +24,10 @@ export default class MzMask extends Vue {
 
   render(h: CreateElement) {
     const data = {
-      class: ['mz-mask'],
+      class: ['mz-mask', { 'mz-mask--absolute': this.absolute }],
       style: {
-        zIndex: this.mZIndex
+        zIndex: this.mZIndex,
+        backgroundColor: this.color
       },
       on: Object.assign({ click: this.onClick }, this.$listeners)
     }
@@ -48,9 +52,9 @@ export default class MzMask extends Vue {
     }
   }
 
-  @Watch('zIndex')
+  @Watch('zIndex', { immediate: true })
   onZIndexChange(zIndex?: number) {
-    this.mZIndex = zIndex || getZIndex()
+    this.mZIndex = typeof zIndex === 'number' ? zIndex : getZIndex()
   }
 
   destroyed() {

@@ -46,19 +46,3 @@ export default class MzHeading extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-heading {
-  position: relative;
-  color: var(--color-text-primary);
-  .mz-anchor {
-    position: absolute;
-    top: 0;
-    left: -1em;
-    opacity: 0;
-  }
-  &:hover .mz-anchor {
-    opacity: 0.4;
-  }
-}
-</style>

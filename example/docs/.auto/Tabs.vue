@@ -1,6 +1,6 @@
 <template>
   <div class="component-tabs">
-    <div class="update-datetime">文档更新时间：2020-03-16 14:20</div>
+    <div class="update-datetime">文档更新时间：2020-03-30 18:19</div>
     <h2 id="tabs-biao-qian-ye" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tabs-biao-qian-ye" title="Tabs 标签页" data-level="2" data-href="#tabs-biao-qian-ye">¶</a>Tabs 标签页</h2>
 <p>按选项卡显示在对应内容。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -59,16 +59,44 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="biao-qian-hua-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-hua-dong" title="标签滑动" data-level="3" data-href="#biao-qian-hua-dong">¶</a>标签滑动</h3>
+</code></pre></template></demo-block><h3 id="xuan-zhong-pu-man" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xuan-zhong-pu-man" title="选中铺满" data-level="3" data-href="#xuan-zhong-pu-man">¶</a>选中铺满</h3>
 <demo-block>
         <template #example><tabs-demo3 inline-template><div class="tabs-demo3">
+  <mz-tabs v-model="value" active-bar-mode="fill">
+    <mz-tab v-for="index of 5"
+      :key="index"
+      :label="'Tab'+index"
+      :value="index">标签页{{index}}</mz-tab>
+  </mz-tabs>
+</div></tabs-demo3></template>
+        <template #description><p>tabs的<code>active-bar-mode</code>表示当前选中的标签的底标模式，可选值<code>fill</code>，默认值<code>none~</code>。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tabs v-model=&quot;value&quot; active-bar-mode=&quot;fill&quot;&gt;
+  &lt;mz-tab v-for=&quot;index of 5&quot;
+    :key=&quot;index&quot;
+    :label=&quot;'Tab'+index&quot;
+    :value=&quot;index&quot;&gt;标签页{{index}}&lt;/mz-tab&gt;
+&lt;/mz-tabs&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      value: 1
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="biao-qian-hua-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-hua-dong" title="标签滑动" data-level="3" data-href="#biao-qian-hua-dong">¶</a>标签滑动</h3>
+<demo-block>
+        <template #example><tabs-demo4 inline-template><div class="tabs-demo4">
   <mz-tabs v-model="value" grow>
     <mz-tab v-for="index of 30"
       :key="index"
       :label="'Tab'+index"
       :value="index">标签页{{index}}</mz-tab>
   </mz-tabs>
-</div></tabs-demo3></template>
+</div></tabs-demo4></template>
         <template #description><p>当tabs下的tab超出显示范围，将以滚动显示进行显示。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tabs v-model=&quot;value&quot; grow&gt;
@@ -89,7 +117,7 @@ export default {
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="biao-qian-shui-ping-wei-zhi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-shui-ping-wei-zhi" title="标签水平位置" data-level="3" data-href="#biao-qian-shui-ping-wei-zhi">¶</a>标签水平位置</h3>
 <demo-block>
-        <template #example><tabs-demo4 inline-template><div class="tabs-demo4">
+        <template #example><tabs-demo5 inline-template><div class="tabs-demo5">
   <mz-filter-section v-model="align" label="align:" label-position="left">
     <mz-filter-section-item v-for="item of alignList"
       :key="item"
@@ -102,7 +130,7 @@ export default {
       :label="'Tab'+index"
       :value="index">标签页{{index}}</mz-tab>
   </mz-tabs>
-</div></tabs-demo4></template>
+</div></tabs-demo5></template>
         <template #description><p><code>align</code> 属性控制标签的水平位置，可选值<code>left</code> 、 <code>center</code> 、 <code>right</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-filter-section v-model=&quot;align&quot; label=&quot;align:&quot; label-position=&quot;left&quot;&gt;
@@ -164,7 +192,7 @@ export default {
 <td>'left'</td>
 </tr>
 <tr>
-<td>activeBarMode</td>
+<td>active-bar-mode</td>
 <td>活动条的样式</td>
 <td>String</td>
 <td>'fill' / 'none'</td>
@@ -308,6 +336,12 @@ export default {
     }
   }
 }, TabsDemo4: {
+  data() {
+    return {
+      value: 1
+    }
+  }
+}, TabsDemo5: {
   data() {
     return {
       align: 'left',

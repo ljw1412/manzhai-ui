@@ -1,66 +1,3 @@
-.is-pointer {
-  cursor: pointer !important;
-}
-
-.is-not-allowed {
-  cursor: not-allowed !important;
-}
-
-.not-user-select {
-  user-select: none !important;
-}
-
-.is-circle {
-  border-radius: 50% !important;
-  overflow: hidden !important;
-}
-
-.color-transition {
-  transition: var(--color-transition);
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.flex-center-space-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex-double-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.absolute-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.absolute-vertical-center {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.absolute-horizontal-center {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .mz-hidden-input {
   opacity: 0;
   outline: none;
@@ -73,9 +10,32 @@
   margin: 0;
 }
 
+@for $z from 0 through 24 {
+  .mz-elevation-#{$z} {
+    @include elevation($z, $important: true);
+  }
+}
+
 $font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
 @for $i from 1 through 9 {
   .mz-level-#{$i} {
     font-size: nth($font-size-list, $i);
+  }
+}
+
+.mz-color-transition {
+  transition: $color-transition;
+}
+
+@each $type, $color in (primary, $color-primary), (success, $color-success),
+  (warning, $color-warning), (danger, $color-danger)
+{
+  .mz-#{$type} {
+    background-color: $color !important;
+    border-color: $color !important;
+  }
+
+  .mz-#{$type}--text {
+    color: $color !important;
   }
 }

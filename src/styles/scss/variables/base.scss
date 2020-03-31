@@ -1,0 +1,66 @@
+// Color Palette
+$color-white: #fff;
+$color-black: #000;
+$color-primary: #3f51b5 !default;
+$color-success: #43a047 !default;
+$color-warning: #ffc107 !default;
+$color-danger: #ed4014 !default;
+
+$color-text-primary: #24292e !default;
+$color-text-regular: #405458 !default;
+$color-text-secondary: #87898c !default;
+$color-text-placeholder: #b2b4b6 !default;
+$color-text-disabled: #c5c8ce !default;
+
+$color-border-base: rgba(0, 0, 0, 0.12) !default;
+
+$color-page-background: transparent !default;
+$color-card-background: #ffffff !default;
+
+// Font
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 22px;
+$font-size-xxxl: 24px;
+$font-weight-bold: 500;
+
+// Border
+$border-width-base: 1px;
+$border-radius-none: 0;
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-max: 999px;
+
+// Padding
+$padding-base: 2px;
+$padding-xs: $padding-base * 2;
+$padding-sm: $padding-base * 3;
+$padding-md: $padding-base * 4;
+$padding-lg: $padding-base * 5;
+$padding-xl: $padding-base * 6;
+$padding-xxl: $padding-base * 7;
+$padding-xxxl: $padding-base * 8;
+
+// Transition
+$transition: (
+  'fast-out-slow-in': cubic-bezier(0.4, 0, 0.2, 1),
+  'fast-in-slow-out': cubic-bezier(0, 0, 0.8, 0.8),
+  'linear-out-slow-in': cubic-bezier(0, 0, 0.2, 1),
+  'fast-out-linear-in': cubic-bezier(0.4, 0, 1, 1),
+  'ease-in-out': cubic-bezier(0.4, 0, 0.6, 1),
+  'fast-in-fast-out': cubic-bezier(0.25, 0.8, 0.25, 1),
+  'swing': cubic-bezier(0.25, 0.8, 0.5, 1)
+) !default;
+$primary-transition: 0.3s map-get($transition, 'swing') !default;
+$secondary-transition: 0.2s map-get($transition, 'ease-in-out') !default;
+$color-transition: background-color 0.3s linear, color 0.3s linear,
+  fill 0.3s linear, box-shadow 0.3s linear, border-color 0.3s linear;
+
+// Shadow
+$shadow-umbra-color: rgba(0, 0, 0, 0.2) !default;
+$shadow-penumbra-color: rgba(0, 0, 0, 0.14) !default;
+$shadow-ambient-color: rgba(0, 0, 0, 0.12) !default;

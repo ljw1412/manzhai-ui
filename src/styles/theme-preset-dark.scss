@@ -1,0 +1,144 @@
+:root[data-theme='dark'] {
+  .mz-anchor {
+    color: $color-white;
+  }
+
+  .mz-button {
+    &--primary {
+      color: $color-white;
+      background-color: $color-white;
+      border-color: $color-white;
+      &:not(.mz-button--flat):not(.mz-button--outlined) {
+        color: $color-primary;
+      }
+    }
+    &--disabled.mz-button--primary.mz-button--outlined {
+      background-color: $color-text-disabled;
+      color: $color-text-disabled;
+      border-color: $color-text-disabled;
+    }
+  }
+
+  .mz-catalogue {
+    .mz-catalogue-item {
+      &__text:hover {
+        color: $color-text-secondary;
+      }
+    }
+
+    .mz-catalogue-item--active,
+    &__sidebar .arrow {
+      color: $color-white;
+    }
+  }
+
+  .mz-checkbox {
+    &.indeterminate,
+    &.checked {
+      color: $color-white;
+    }
+
+    &.disabled {
+      opacity: 1 !important;
+      color: $color-text-disabled !important;
+    }
+
+    &__icon::after {
+      border-color: $color-primary;
+    }
+  }
+
+  .mz-filter-section-item.is-checked {
+    .mz-filter-section-item__label {
+      color: $color-primary;
+      background-color: $color-white;
+    }
+  }
+
+  .mz-input {
+    color: $color-white;
+  }
+
+  .mz-list-item {
+    color: $color-white;
+    &--active.mz-list-item--link .mz-list-item__title {
+      color: $color-white;
+    }
+  }
+
+  .mz-mask {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .mz-navigation {
+    .router-link-exact-active .mz-list-item--link {
+      color: $color-white;
+      .mz-list-item__title {
+        color: $color-white;
+      }
+    }
+  }
+
+  .mz-progress {
+    &__background,
+    &__buffer,
+    &__progress {
+      background-color: $color-white;
+    }
+    &--striped .mz-progress__progress {
+      background-image: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.25) 25%,
+        transparent 0,
+        transparent 50%,
+        rgba(0, 0, 0, 0.25) 0,
+        rgba(0, 0, 0, 0.25) 75%,
+        transparent 0,
+        transparent
+      );
+    }
+  }
+
+  .mz-radio {
+    &.checked {
+      color: $color-white;
+      &.disabled {
+        color: $color-text-disabled;
+      }
+    }
+  }
+
+  .mz-radio-button {
+    &.checked {
+      color: $color-primary;
+      background-color: $color-white;
+      &.disabled {
+        color: $color-white;
+        background-color: $color-text-disabled;
+      }
+    }
+  }
+
+  .mz-tabs {
+    &__active-bar {
+      background-color: $color-white;
+    }
+    &__nav--fill .mz-tab--active {
+      color: $color-primary;
+    }
+  }
+
+  .mz-tab--active {
+    color: $color-white;
+  }
+
+  .mz-tag {
+    border: 1px solid #555;
+    background-color: #555;
+    color: $color-white;
+    &--outlined,
+    &--text {
+      color: #555;
+    }
+  }
+}

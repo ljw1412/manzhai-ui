@@ -1,0 +1,99 @@
+.mz-list-item {
+  position: relative;
+  display: flex;
+  padding: 0 $padding-xxxl;
+  color: $color-text-regular;
+  &__content {
+    flex-grow: 1;
+    position: relative;
+    padding: $padding-xl 0;
+    z-index: 50;
+  }
+
+  &__title {
+    font-size: $font-size-md;
+    color: $color-text-regular;
+  }
+
+  &__text {
+    margin-top: 3px;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+  }
+
+  &__prefix,
+  &__suffix {
+    position: relative;
+    flex-shrink: 0;
+    margin: auto;
+  }
+
+  &--link {
+    cursor: pointer;
+    @include foreground;
+  }
+
+  @each $type, $radius in ('', 100px), ('left-', 100px 0 0 100px),
+    ('right-', 0 100px 100px 0), ('mini-', 5px)
+  {
+    &--#{$type}round {
+      overflow: hidden;
+      border-radius: $radius;
+      &::before {
+        border-radius: $radius;
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    .mz-list-item {
+      &__title,
+      &__text {
+        font-weight: bold;
+        color: $color-text-placeholder;
+      }
+      &:not(.mz-list-item--active) {
+        @include foreground-disabled;
+      }
+    }
+  }
+
+  &--active.mz-list-item--link {
+    @include foreground-active;
+    color: $color-primary;
+    .mz-list-item__title {
+      color: $color-primary;
+    }
+  }
+
+  &--large {
+    padding: 0 20px;
+    .mz-list-item {
+      &__content {
+        padding: 16px 0;
+      }
+      &__title {
+        font-size: 18px;
+      }
+      &__text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &--small {
+    padding: 0 12px;
+    .mz-list-item {
+      &__content {
+        padding: 8px 0;
+      }
+      &__title {
+        font-size: 14px;
+      }
+      &__text {
+        font-size: 12px;
+      }
+    }
+  }
+}

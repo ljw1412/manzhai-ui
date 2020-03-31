@@ -40,14 +40,3 @@ export default class MzIcon extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: top;
-  transition-duration: 0.3s;
-  transition-property: fill, background-color;
-  transition-timing-function: map-get($transition, 'fast-out-slow-in');
-}
-</style>

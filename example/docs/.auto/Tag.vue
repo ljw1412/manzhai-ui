@@ -1,6 +1,6 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-03-16 14:20</div>
+    <div class="update-datetime">文档更新时间：2020-03-30 18:36</div>
     <h2 id="tag-biao-qian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
 <p>进行标记和分类的小标签。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -10,14 +10,12 @@
   <mz-tag>标签</mz-tag>
   <mz-tag color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
   <mz-tag color="var(--color-warning)" text-color="green">标签</mz-tag>
-  <mz-tag color="">标签</mz-tag>
 </div></tag-demo1></template>
         <template #description><p><code>color</code>控制标签背景颜色,<code>text-color</code>控制标签文本颜色。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tag&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag color=&quot;var(--color-warning)&quot; text-color=&quot;green&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag color=&quot;&quot;&gt;标签&lt;/mz-tag&gt;
 </code></pre></template></demo-block><h3 id="chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#chi-cun" title="尺寸" data-level="3" data-href="#chi-cun">¶</a>尺寸</h3>
 <p>4种尺寸大小的标签。</p>
 <demo-block>
@@ -37,7 +35,7 @@
 <p>多种样式形态的标签。</p>
 <demo-block>
         <template #example><tag-demo3 inline-template><div class="tag-demo3">
-  <mz-tag outlined color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
+  <mz-tag outlined>标签</mz-tag>
   <mz-tag round color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
   <mz-tag round="left" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
   <mz-tag round="right" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
@@ -46,7 +44,7 @@
 </div></tag-demo3></template>
         <template #description><p><code>outlined</code>、<code>round</code>、<code>text</code>分别表示以边框模式，圆角模式，文字模式显示。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-tag outlined color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tag outlined&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag round color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag round=&quot;left&quot; color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag round=&quot;right&quot; color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;

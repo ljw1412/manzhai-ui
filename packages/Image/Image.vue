@@ -99,11 +99,3 @@ export default class MzImage extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-image {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-}
-</style>

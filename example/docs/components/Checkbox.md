@@ -138,6 +138,31 @@ export default{
 ```
 :::
 
+### 带有边框
+
+:::demo 设置`border`属性可以渲染为带有边框的多选框。
+
+```html
+<div>
+  <mz-checkbox v-model="value" border>选择项1</mz-checkbox>
+  <mz-checkbox v-model="value2" border>选择项2</mz-checkbox>
+  <mz-checkbox :input-value="true" border disabled>选择项3</mz-checkbox>
+  <mz-checkbox :input-value="false" border disabled>选择项4</mz-checkbox>
+</div>
+
+<script>
+export default{
+  data(){
+    return {
+      value: true,
+      value2: false
+    }
+  }
+}
+</script>
+```
+:::
+
 ### Checkbox API 
 
 #### 属性
