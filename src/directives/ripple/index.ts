@@ -6,7 +6,7 @@ function xy(el: HTMLElement, x: string, y: string) {
   el.style.top = y
 }
 
-export interface RippleOptions {
+interface RippleOptions {
   class?: string
   center?: boolean
   circle?: boolean
