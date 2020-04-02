@@ -36,6 +36,7 @@ import {
   ListGroup,
   ListItemGroup
 } from '../packages/List/index'
+import Loading from '../packages/Loading/index'
 import Mask from '../packages/Mask/index'
 import { Masonry, MasonryItem } from '../packages/Masonry/index'
 import Modal from '../packages/Modal/index'
@@ -91,6 +92,7 @@ const components: VueConstructor[] = [
   ListItem,
   ListGroup,
   ListItemGroup,
+  Loading,
   Mask,
   Masonry,
   MasonryItem,
@@ -220,6 +222,7 @@ export default {
   ListItem,
   ListGroup,
   ListItemGroup,
+  Loading,
   Mask,
   Masonry,
   Modal,
