@@ -28,5 +28,6 @@
   "example/docs/components/Mask.md": "a931cf458c9373d5f5b50c740e7065df",
   "example/docs/components/Modal.md": "a73dfd934a04a1ac35225cdaa23cf2b9",
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
-  "example/docs/directives/Resize.md": "89eedbecc9ae3cb66c589932f788d645"
+  "example/docs/directives/Resize.md": "89eedbecc9ae3cb66c589932f788d645",
+  "example/docs/components/Loading.md": "076a4005af674422124bfebc350010d5"
 }

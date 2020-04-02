@@ -164,6 +164,13 @@
         }
       },
       {
+        "label": "Loading",
+        "text": "加载",
+        "to": {
+          "name": "ComponentLoading"
+        }
+      },
+      {
         "label": "Mask",
         "text": "遮罩层",
         "to": {

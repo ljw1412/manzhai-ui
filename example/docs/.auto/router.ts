@@ -11,6 +11,7 @@ import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
 import ComponentImagePreview from './ImagePreview.vue'
+import ComponentLoading from './Loading.vue'
 import ComponentMask from './Mask.vue'
 import ComponentMasonry from './Masonry.vue'
 import ComponentModal from './Modal.vue'
@@ -94,6 +95,11 @@ export default [
     path: 'image-preview',
     name: 'ComponentImagePreview',
     component: ComponentImagePreview
+  },
+  {
+    path: 'loading',
+    name: 'ComponentLoading',
+    component: ComponentLoading
   },
   {
     path: 'mask',
