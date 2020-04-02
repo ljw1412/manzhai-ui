@@ -52,8 +52,7 @@ module.exports = class ComponentCreater {
   async createPackage() {
     const replaceList = [
       { key: /##hyphenatename##/g, value: 'mz-' + utils.hyphenate(this.name) },
-      { key: /##name##/g, value: 'Mz' + this.name },
-      { key: /##scoped##/g, value: '' }
+      { key: /##name##/g, value: 'Mz' + this.name }
     ]
     const vueStr = await utils.replaceTemplate('vue', replaceList)
     replaceList[1].value = this.name
@@ -65,6 +64,7 @@ module.exports = class ComponentCreater {
       { name: `${this.name}.vue`, content: vueStr },
       { name: 'index.ts', content: packageEntryStr }
     ])
+    await utils.saveFile('../../src/styles/components', `${this.name}.scss`, '')
   }
 
   // 创建文档
