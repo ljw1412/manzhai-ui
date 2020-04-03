@@ -7,9 +7,9 @@
   &__core {
     position: relative;
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    padding: 10px;
+    width: px2em(50px);
+    height: px2em(50px);
+    padding: px2em(10px);
     box-sizing: border-box;
   }
 
@@ -18,12 +18,13 @@
     width: 100%;
     height: 100%;
   }
+
   /* prettier-ignore */
   .four-color {
     .shape {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: px2em(10px);
+      height: px2em(10px);
       border-radius: 1px;
       &.shape1 {
         left: 0;
@@ -50,7 +51,7 @@
     &-2, &-4 {
       transform: rotate(10deg);
       .shape {
-        border-radius: 5px;
+        border-radius: 50%;
       }
     }
     &-2, &-3, &-4 {
@@ -58,29 +59,29 @@
     }
     &-3 {
       .shape1 {
-        border-top-left-radius: 10px;
+        border-top-left-radius: px2em(10px);
       }
       .shape2 {
-        border-top-right-radius: 10px;
+        border-top-right-radius: px2em(10px);
       }
       .shape3 {
-        border-bottom-left-radius: 10px;
+        border-bottom-left-radius: px2em(10px);
       }
       .shape4 {
-        border-bottom-right-radius: 10px;
+        border-bottom-right-radius: px2em(10px);
       }
     }
     &-5 .shape, &-7 .shape {
-      width: 15px;
-      height: 15px;
+      width: px2em(15px);
+      height: px2em(15px);
     }
     &-6 {
       animation: rotation 1.5s infinite;
     }
     &-6 .shape {
-      width: 12px;
-      height: 12px;
-      border-radius: 2px;
+      width: px2em(12px);
+      height: px2em(12px);
+      border-radius: px2em(2px);
     }
     &-7 {
       @keyframes loading-center-absolute {
@@ -154,7 +155,7 @@
       transform: translate(0, 0);
     }
     to {
-      transform: translate($translateX + px, $translateY + px);
+      transform: translate(px2em($translateX), px2em($translateY));
     }
   }
 }
@@ -165,13 +166,13 @@
       transform: translate(0, 0);
     }
     25% {
-      transform: translate($x25 + px, $y25 + px);
+      transform: translate(px2em($x25), px2em($y25));
     }
     50% {
-      transform: translate($x50 + px, $y50 + px);
+      transform: translate(px2em($x50), px2em($y50));
     }
     75% {
-      transform: translate($x75 + px, $y75 + px);
+      transform: translate(px2em($x75), px2em($y75));
     }
   }
 }
@@ -179,10 +180,10 @@
 @mixin animationTR($index, $sX, $sY, $sAngle, $eX, $eY, $eAngle) {
   @keyframes animation7shape#{$index} {
     25% {
-      transform: translate($sX + px, $sY + px) rotate($sAngle + deg);
+      transform: translate(px2em($sX), px2em($sY)) rotate($sAngle + deg);
     }
     100% {
-      transform: translate($eX + px, $eY + px) rotate($eAngle + deg);
+      transform: translate(px2em($eX), px2em($eY)) rotate($eAngle + deg);
     }
   }
 }
