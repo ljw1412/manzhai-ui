@@ -96,6 +96,7 @@ logger.error = (...args) => {
 }
 
 module.exports = {
+  getPathRelative: path.relative,
   getName,
   getParentName,
   getFileHash,

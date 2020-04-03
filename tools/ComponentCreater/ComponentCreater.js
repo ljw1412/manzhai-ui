@@ -3,7 +3,7 @@ const typeMap = {
   component: {
     dir: '../../example/docs/components',
     name: '组件',
-    commands: ['createPackage', 'createDocument', 'injectEntry']
+    commands: ['createPackage', 'createStyle', 'createDocument', 'injectEntry']
   },
   directive: {
     dir: '../../example/docs/directives',
@@ -13,6 +13,7 @@ const typeMap = {
 }
 const commandSuccessMsg = {
   createPackage: '=== 创建组件包结束 ===\n',
+  createStyle: '=== 创建组件样式文件结束 ===\n',
   createDocument: '=== 创建文档文件结束 ===\n',
   injectEntry: '=== 入口注入结束 ===\n'
 }
@@ -64,7 +65,18 @@ module.exports = class ComponentCreater {
       { name: `${this.name}.vue`, content: vueStr },
       { name: 'index.ts', content: packageEntryStr }
     ])
-    await utils.saveFile('../../src/styles/components', `${this.name}.scss`, '')
+  }
+
+  // 创建组件样式
+  async createStyle() {
+    const stylesDir = '../../src/styles/components'
+    await utils.saveFile(stylesDir, `${this.name}.scss`, '')
+    const styleFiles = await utils.listFiles(`${stylesDir}/!(index).scss`)
+    const scssImportContent =
+      styleFiles
+        .map(path => `@import './${utils.getPathRelative(stylesDir, path)}';`)
+        .join('\n') + '\n'
+    await utils.saveFile(stylesDir, 'index.scss', scssImportContent)
   }
 
   // 创建文档
