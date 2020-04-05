@@ -45,6 +45,13 @@
         }
       },
       {
+        "label": "Badge",
+        "text": "徽标数",
+        "to": {
+          "name": "ComponentBadge"
+        }
+      },
+      {
         "label": "Button",
         "text": "按钮",
         "to": {

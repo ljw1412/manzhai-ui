@@ -1,4 +1,5 @@
 import ComponentAnchor from './Anchor.vue'
+import ComponentBadge from './Badge.vue'
 import ComponentButton from './Button.vue'
 import ComponentCard from './Card.vue'
 import ComponentCarousel from './Carousel.vue'
@@ -35,6 +36,11 @@ export default [
     path: 'anchor',
     name: 'ComponentAnchor',
     component: ComponentAnchor
+  },
+  {
+    path: 'badge',
+    name: 'ComponentBadge',
+    component: ComponentBadge
   },
   {
     path: 'button',

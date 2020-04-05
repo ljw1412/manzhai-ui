@@ -165,6 +165,12 @@
       margin-left: 10px;
     }
   }
+
+  .component-badge {
+    .mz-badge + .mz-badge {
+      margin-left: 20px;
+    }
+  }
 }
 
 #demo-heading-scroll-container,
