@@ -6,6 +6,7 @@ import * as blanking from './utils/blanking'
 import mzEventBus from './bus'
 import * as directives from './directives'
 import Anchor from '../packages/Anchor/index'
+import Badge from '../packages/Badge/index'
 import { Button, ButtonGroup } from '../packages/Button/index'
 import Card from '../packages/Card/index'
 import {
@@ -63,6 +64,7 @@ interface InstallationOptions {
 const components: VueConstructor[] = [
   // inject component
   Anchor,
+  Badge,
   Button,
   ButtonGroup,
   Card,
@@ -193,6 +195,7 @@ export default {
   directives,
   // inject component
   Anchor,
+  Badge,
   Button,
   ButtonGroup,
   Card,
