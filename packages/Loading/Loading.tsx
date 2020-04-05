@@ -30,6 +30,7 @@ function getLoadingMask(
 
 export default Vue.extend({
   functional: true,
+  name: 'MzLoading',
   render(h, ctx: RenderContext) {
     const {
       mode = 1,
