@@ -13,6 +13,7 @@ function renderContent(ctx: RenderContext) {
 
 export default Vue.extend({
   functional: true,
+  name: 'MzState',
   render(h, ctx) {
     return <div class="mz-state">{renderContent(ctx)}</div>
   }
