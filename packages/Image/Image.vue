@@ -9,6 +9,8 @@ export default class MzImage extends Vue {
   @Prop(String)
   readonly src!: string
   @Prop(String)
+  readonly errorSrc!: string
+  @Prop(String)
   readonly width!: string
   @Prop(String)
   readonly height!: string
@@ -24,6 +26,7 @@ export default class MzImage extends Vue {
   naturalWidth: string = ''
   naturalHeight: string = ''
   preImageSrc: string = ''
+  error = false
 
   get mWidth() {
     return this.background ? this.width || this.naturalWidth : this.width
@@ -33,8 +36,16 @@ export default class MzImage extends Vue {
     return this.background ? this.height || this.naturalHeight : this.height
   }
 
+  get imageUrl() {
+    return this.error ? this.errorSrc : this.src
+  }
+
   render(h: CreateElement) {
-    const data: Record<string, any> = { class: ['mz-image'] }
+    const data: Record<string, any> = { class: ['mz-image', {}] }
+    if (this.error && !this.errorSrc && this.$slots.error) {
+      return this.renderError(data)
+    }
+
     return this.background
       ? this.renderBackground(data)
       : this.renderImage(data)
@@ -61,7 +72,7 @@ export default class MzImage extends Vue {
   renderBackground(data: Record<string, any>) {
     this.initBackgroundSize()
     data.style = {
-      backgroundImage: `url(${this.src})`,
+      backgroundImage: `url(${this.imageUrl})`,
       backgroundPosition: this.position,
       width: this.mWidth,
       height: this.mHeight
@@ -76,7 +87,7 @@ export default class MzImage extends Vue {
     Object.assign(data, {
       style: { objectFit: this.fit, objectPosition: this.position },
       attrs: {
-        src: this.src,
+        src: this.imageUrl,
         width: this.mWidth,
         height: this.mHeight,
         alt: this.alt,
@@ -90,11 +101,20 @@ export default class MzImage extends Vue {
     return <img {...data} />
   }
 
+  renderError(data: Record<string, any>) {
+    Object.assign(data, {
+      class: ['mz-image', 'mz-image--error'],
+      style: { width: this.mWidth, height: this.mHeight }
+    })
+    return <div {...data}>{this.$slots.error}</div>
+  }
+
   onLoad(e: Event) {
     this.$emit('load', ...arguments)
   }
 
   onError(e: Event | string) {
+    this.error = true
     this.$emit('error', ...arguments)
   }
 }
