@@ -81,6 +81,65 @@ export default {
 ```
 :::
 
+
+### 加载错误
+
+图片加载错误时，进行容错处理。
+
+:::demo 
+```html
+<p class="demo-font-size-14">不做处理：</p>
+<div>
+  <mz-image src="about:blank"
+    width="100px"
+    height='100px'>
+  </mz-image>
+  <mz-image background
+    src="about:blank"
+    width="100px"
+    height='100px'>
+  </mz-image>
+</div>
+
+<p class="demo-font-size-14">加载错误图片：</p>
+<div>
+  <mz-image src="about:blank"
+    :error-src="require('@example/static/image-error.jpg')"
+    width="100px"
+    height='100px'></mz-image>
+  <mz-image background
+    src="about:blank"
+    :error-src="require('@example/static/image-error.jpg')"
+    width="100px"
+    height='100px'></mz-image>
+</div>
+
+<p class="demo-font-size-14">加载错误插槽：</p>
+<div>
+  <mz-image src="about:blank"
+    width="100px"
+    height='100px'>
+    <template #error>加载错误</template>
+  </mz-image>
+  <mz-image background
+    src="about:blank"
+    width="100px"
+    height='100px'>
+    <template #error>加载错误</template>
+  </mz-image>
+</div>
+
+<style lang="scss">
+.mz-image {
+  border: 1px solid var(--color-border-base);
+}
+.mz-image {
+  margin: 10px;
+}
+</style>
+```
+:::
+
 ### API
 
 #### 属性
@@ -89,6 +148,7 @@ export default {
 | --- | --- | --- | --- | --- |
 |background|是否为背景|Boolean|||
 |src|图片源，同原生|String|||
+|error-src|错误时展示的图片地址|String|||
 |width|图片宽|String|||
 |height|图片高|String|||
 |fit|确定图片如何适应容器框|String|图片模式：fill / contain / cover / none / scale-down，背景模式：contain / cover||
@@ -108,3 +168,4 @@ export default {
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 |-|仅在背景模式有效，容器内容||
+|error|错误时展示的插槽，优先级低于属性`error-src`||

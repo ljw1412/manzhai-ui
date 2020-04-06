@@ -1,6 +1,6 @@
 <template>
   <div class="component-image">
-    <div class="update-datetime">文档更新时间：2020-03-22 11:25</div>
+    <div class="update-datetime">文档更新时间：2020-04-06 14:54</div>
     <h2 id="image-tu-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
 <p>显示图片或背景的容器。</p>
 <h3 id="ji-ben-yu-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
@@ -97,6 +97,101 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="jia-zai-cuo-wu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jia-zai-cuo-wu" title="加载错误" data-level="3" data-href="#jia-zai-cuo-wu">¶</a>加载错误</h3>
+<p>图片加载错误时，进行容错处理。</p>
+<demo-block>
+        <template #example><image-demo3 inline-template><div class="image-demo3">
+  <p class="demo-font-size-14">不做处理：</p>
+  <div>
+    <mz-image src="about:blank"
+      width="100px"
+      height='100px'>
+    </mz-image>
+    <mz-image background
+      src="about:blank"
+      width="100px"
+      height='100px'>
+    </mz-image>
+  </div>
+  
+  <p class="demo-font-size-14">加载错误图片：</p>
+  <div>
+    <mz-image src="about:blank"
+      :error-src="require('@example/static/image-error.jpg')"
+      width="100px"
+      height='100px'></mz-image>
+    <mz-image background
+      src="about:blank"
+      :error-src="require('@example/static/image-error.jpg')"
+      width="100px"
+      height='100px'></mz-image>
+  </div>
+  
+  <p class="demo-font-size-14">加载错误插槽：</p>
+  <div>
+    <mz-image src="about:blank"
+      width="100px"
+      height='100px'>
+      <template #error>加载错误</template>
+    </mz-image>
+    <mz-image background
+      src="about:blank"
+      width="100px"
+      height='100px'>
+      <template #error>加载错误</template>
+    </mz-image>
+  </div>
+</div></image-demo3></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;p class=&quot;demo-font-size-14&quot;&gt;不做处理：&lt;/p&gt;
+&lt;div&gt;
+  &lt;mz-image src=&quot;about:blank&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;
+  &lt;/mz-image&gt;
+  &lt;mz-image background
+    src=&quot;about:blank&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;
+  &lt;/mz-image&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;demo-font-size-14&quot;&gt;加载错误图片：&lt;/p&gt;
+&lt;div&gt;
+  &lt;mz-image src=&quot;about:blank&quot;
+    :error-src=&quot;require('@example/static/image-error.jpg')&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;&lt;/mz-image&gt;
+  &lt;mz-image background
+    src=&quot;about:blank&quot;
+    :error-src=&quot;require('@example/static/image-error.jpg')&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;&lt;/mz-image&gt;
+&lt;/div&gt;
+
+&lt;p class=&quot;demo-font-size-14&quot;&gt;加载错误插槽：&lt;/p&gt;
+&lt;div&gt;
+  &lt;mz-image src=&quot;about:blank&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;
+    &lt;template #error&gt;加载错误&lt;/template&gt;
+  &lt;/mz-image&gt;
+  &lt;mz-image background
+    src=&quot;about:blank&quot;
+    width=&quot;100px&quot;
+    height='100px'&gt;
+    &lt;template #error&gt;加载错误&lt;/template&gt;
+  &lt;/mz-image&gt;
+&lt;/div&gt;
+
+&lt;style lang=&quot;scss&quot;&gt;
+.mz-image {
+  border: 1px solid var(--color-border-base);
+}
+.mz-image {
+  margin: 10px;
+}
+&lt;/style&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -120,6 +215,13 @@ export default {
 <tr>
 <td>src</td>
 <td>图片源，同原生</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>error-src</td>
+<td>错误时展示的图片地址</td>
 <td>String</td>
 <td></td>
 <td></td>
@@ -205,6 +307,11 @@ export default {
 <td>仅在背景模式有效，容器内容</td>
 <td></td>
 </tr>
+<tr>
+<td>error</td>
+<td>错误时展示的插槽，优先级低于属性<code>error-src</code></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -227,7 +334,7 @@ export default {
       src: require('@example/static/image-star.jpg')
     }
   }
-} }
+}, ImageDemo3: {} }
 }
 </script>
 <style lang="scss">
@@ -240,6 +347,14 @@ export default {
   }
   }
 .image-demo2{  
+  .mz-image {
+    border: 1px solid var(--color-border-base);
+  }
+  .mz-image {
+    margin: 10px;
+  }
+  }
+.image-demo3{  
   .mz-image {
     border: 1px solid var(--color-border-base);
   }
