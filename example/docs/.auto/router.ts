@@ -15,6 +15,7 @@ import ComponentImagePreview from './ImagePreview.vue'
 import ComponentLoading from './Loading.vue'
 import ComponentMask from './Mask.vue'
 import ComponentMasonry from './Masonry.vue'
+import ComponentMaterialInput from './MaterialInput.vue'
 import ComponentModal from './Modal.vue'
 import ComponentNavigation from './Navigation.vue'
 import ComponentProgress from './Progress.vue'
@@ -116,6 +117,11 @@ export default [
     path: 'masonry',
     name: 'ComponentMasonry',
     component: ComponentMasonry
+  },
+  {
+    path: 'material-input',
+    name: 'ComponentMaterialInput',
+    component: ComponentMaterialInput
   },
   {
     path: 'modal',

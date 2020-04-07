@@ -157,13 +157,6 @@
         }
       },
       {
-        "label": "Input",
-        "text": "输入框",
-        "to": {
-          "name": "ComponentInput"
-        }
-      },
-      {
         "label": "List",
         "text": "列表",
         "to": {
@@ -189,6 +182,13 @@
         "text": "瀑布流布局",
         "to": {
           "name": "ComponentMasonry"
+        }
+      },
+      {
+        "label": "MaterialInput",
+        "text": "输入框(类material风格)",
+        "to": {
+          "name": "ComponentMaterialInput"
         }
       },
       {
