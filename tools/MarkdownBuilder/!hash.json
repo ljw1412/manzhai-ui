@@ -9,7 +9,7 @@
   "example/docs/components/FilterSection.md": "d25c5de5605ba7613d5d917fc933a0c5",
   "example/docs/components/FixedSection.md": "42d1be94efced3bf32490580050560be",
   "example/docs/components/Heading.md": "a04ad18f6ef8b26c90c2490425fc2e09",
-  "example/docs/components/Image.md": "a1922d2e92c5f131324555db85929922",
+  "example/docs/components/Image.md": "f6f6ad56be0f4bd5096d9fc2bd723266",
   "example/docs/components/Grid.md": "576d21fc0369b72eb83642083ec92aa7",
   "example/docs/components/ImagePreview.md": "6bdb0c39e1b68a2d791945e85c7f8ada",
   "example/docs/components/Masonry.md": "278a828d3e337ede94218f15668adaa4",
@@ -29,5 +29,7 @@
   "example/docs/components/Modal.md": "a73dfd934a04a1ac35225cdaa23cf2b9",
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
   "example/docs/directives/Resize.md": "89eedbecc9ae3cb66c589932f788d645",
-  "example/docs/components/Loading.md": "4b7199f13613920fe4d1d0bbef048707"
+  "example/docs/components/Loading.md": "cc14d95f39575ae6bfec56848dedce97",
+  "example/docs/components/Badge.md": "862f9acff32dc0e2bd6b104dc8fabc6e",
+  "example/docs/components/MaterialInput.md": "40a2d32fc70de0dcdd6ca6e95cbf91dc"
 }
