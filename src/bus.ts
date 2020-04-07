@@ -11,6 +11,10 @@ class MzBus extends Vue {
     changeTheme(val)
   }
 
+  beforeCreate() {
+    changeTheme(getCurrentTheme())
+  }
+
   created() {
     this.theme = getCurrentTheme()
   }
