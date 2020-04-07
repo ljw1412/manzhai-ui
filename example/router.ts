@@ -6,7 +6,6 @@ import DocsRouter from './docs/.auto/router'
 import ComponentDropdown from './views/Component/Dropdown.vue'
 import ComponentForm from './views/Component/Form.vue'
 import ComponentIcon from './views/Component/Icon.vue'
-import ComponentInput from './views/Component/Input.vue'
 import ComponentList from './views/Component/List.vue'
 import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
@@ -42,11 +41,6 @@ export default new Router({
           path: 'icon',
           name: 'ComponentIcon',
           component: ComponentIcon
-        },
-        {
-          path: 'input',
-          name: 'ComponentInput',
-          component: ComponentInput
         },
         {
           path: 'list',
