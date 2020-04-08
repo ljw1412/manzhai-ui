@@ -99,9 +99,13 @@ export default {
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-|data|导航数据|NavigationItem/NavigationItem[]|||
+|data|导航数据|[NavigationItem](#navigationitem)/NavigationItem[]|||
 |round|是否为圆角|Boolean|||
 | ripple | 点击涟漪效果 | Boolean / Object | | true |
+|auto-scroll|是否启动自动滑动|Boolean|||
+|auto-scroll-on-change|是否在改变时自动滑动(auto-scroll为true时有效)|Boolean||true|
+|scroll-behavior|滑动的行为|String|'smooth'/'auto'|'smooth'|
+
 
 #### NavigationItem
 |属性|说明|类型|
@@ -113,3 +117,9 @@ export default {
 |text|辅助文字|String|
 |to|跳转路由(同Vue-link的to)|RawLocation|
 |children|子菜单|NavigationItem[]|
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|导航选中状态改变时|(value:string)|

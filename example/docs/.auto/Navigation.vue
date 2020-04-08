@@ -1,6 +1,6 @@
 <template>
   <div class="component-navigation">
-    <div class="update-datetime">文档更新时间：2020-03-02 18:50</div>
+    <div class="update-datetime">文档更新时间：2020-04-08 13:06</div>
     <h2 id="dao-hang-cai-dan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#dao-hang-cai-dan" title="导航菜单" data-level="2" data-href="#dao-hang-cai-dan">¶</a>导航菜单</h2>
 <p>有站点导航功能的菜单。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -111,7 +111,7 @@ export default {
 <tr>
 <td>data</td>
 <td>导航数据</td>
-<td>NavigationItem/NavigationItem[]</td>
+<td><a href="#navigationitem">NavigationItem</a>/NavigationItem[]</td>
 <td></td>
 <td></td>
 </tr>
@@ -128,6 +128,27 @@ export default {
 <td>Boolean / Object</td>
 <td></td>
 <td>true</td>
+</tr>
+<tr>
+<td>auto-scroll</td>
+<td>是否启动自动滑动</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>auto-scroll-on-change</td>
+<td>是否在改变时自动滑动(auto-scroll为true时有效)</td>
+<td>Boolean</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>scroll-behavior</td>
+<td>滑动的行为</td>
+<td>String</td>
+<td>'smooth'/'auto'</td>
+<td>'smooth'</td>
 </tr>
 </tbody>
 </table>
@@ -175,6 +196,23 @@ export default {
 <td>children</td>
 <td>子菜单</td>
 <td>NavigationItem[]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>导航选中状态改变时</td>
+<td>(value:string)</td>
 </tr>
 </tbody>
 </table>

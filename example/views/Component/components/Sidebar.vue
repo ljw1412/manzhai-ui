@@ -1,7 +1,10 @@
 <template>
   <div id="sidebar">
     <mz-navigation :data="data"
-      round='mini'></mz-navigation>
+      auto-scroll
+      round='mini'
+      scroll-behavior="auto"
+      :auto-scroll-on-change="false"></mz-navigation>
   </div>
 </template>
 
