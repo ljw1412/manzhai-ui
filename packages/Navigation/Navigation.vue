@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
 import { CreateElement, VNodeData } from 'vue'
 import { RawLocation, NavigationGuard } from 'vue-router'
@@ -28,8 +28,34 @@ export default class MzNavigation extends Vue {
   readonly round!: boolean | 'left' | 'right' | 'mini'
   @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
+  @Prop(Boolean)
+  readonly autoScroll!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly autoScrollOnChange!: boolean
+  @Prop({ type: String, default: 'smooth' })
+  readonly scrollBehavior!: ScrollBehavior
+  @Ref('navigation')
+  readonly navigation!: HTMLDivElement
 
   value = ''
+
+  slide(value?: string) {
+    if (this.autoScroll && (this.autoScrollOnChange || value === 'init')) {
+      setTimeout(() => {
+        const active = this.navigation.querySelector('.router-link-active')
+        active &&
+          active.scrollIntoView({
+            block: 'center',
+            behavior: this.scrollBehavior
+          })
+      }, 0)
+    }
+  }
+
+  onChange(value: string) {
+    this.slide()
+    this.$emit('change', value)
+  }
 
   render(h: CreateElement) {
     if (!['object', 'array'].includes(typeOf(this.data)))
@@ -40,8 +66,10 @@ export default class MzNavigation extends Vue {
     const navItems = this.renderItem(data as NavigationItem[])
 
     return (
-      <div class="mz-navigation">
-        <mz-list gutter="5px">{navItems}</mz-list>
+      <div ref="navigation" class="mz-navigation">
+        <mz-list gutter="5px" on-change={this.onChange}>
+          {navItems}
+        </mz-list>
       </div>
     )
   }
@@ -70,14 +98,18 @@ export default class MzNavigation extends Vue {
           <mz-list-item-group {...baseProps}>{childrenItem}</mz-list-item-group>
         )
       }
+
       // 都没有的为普通列表元素
       const itemNode = <mz-list-item {...baseProps}></mz-list-item>
-      return item.to ? (
-        <router-link to={item.to}>{itemNode}</router-link>
-      ) : (
-        itemNode
-      )
+      if (item.to) {
+        return <router-link to={item.to}>{itemNode}</router-link>
+      }
+      return itemNode
     })
+  }
+
+  mounted() {
+    this.slide('init')
   }
 }
 </script>
