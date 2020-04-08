@@ -70,6 +70,17 @@
     background-color: rgba(255, 255, 255, 0.15);
   }
 
+  .mz-modal {
+    &--divider {
+      .mz-modal__header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .mz-modal__footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+  }
+
   .mz-navigation {
     .router-link-active .mz-list-item--link {
       color: $color-white;
