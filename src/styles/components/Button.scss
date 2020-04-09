@@ -19,9 +19,7 @@
   vertical-align: middle;
   box-sizing: border-box;
 
-  &::before {
-    border-radius: inherit;
-  }
+  @include foreground;
 
   &__content {
     position: relative;
@@ -36,6 +34,7 @@
   &--disabled {
     cursor: not-allowed;
     opacity: 0.6;
+    @include foreground-disabled;
     &.mz-button--default {
       background-color: $color-text-disabled;
       color: $color-text-disabled;
