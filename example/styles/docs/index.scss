@@ -175,6 +175,12 @@
       margin-left: 20px;
     }
   }
+
+  .component-input {
+    .mz-input + .mz-input {
+      margin-top: 10px;
+    }
+  }
 }
 
 #demo-heading-scroll-container,
