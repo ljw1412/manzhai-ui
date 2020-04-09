@@ -55,6 +55,17 @@
     }
   }
 
+  .mz-input {
+    &__container {
+      background-color: $color-black;
+      color: $color-white;
+
+      &.focused {
+        border-color: $color-white;
+      }
+    }
+  }
+
   .mz-material-input {
     color: $color-white;
   }

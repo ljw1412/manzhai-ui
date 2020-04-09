@@ -19,8 +19,11 @@
   display: flex;
 }
 
-.flex-wrap {
-  display: flex;
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap-wrap {
   flex-wrap: wrap;
 }
 
@@ -55,4 +58,10 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@each $align in (left, center, right) {
+  .text-align-#{$align} {
+    text-align: $align;
+  }
 }

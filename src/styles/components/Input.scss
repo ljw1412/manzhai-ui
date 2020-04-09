@@ -1,0 +1,86 @@
+.mz-input {
+  &__container {
+    position: relative;
+    background-color: $color-white;
+    color: $color-text-primary;
+    border-radius: $border-radius-md;
+    @include foreground;
+
+    &.focused {
+      border: 2px solid $color-primary;
+      margin: -2px;
+      @include foreground-disabled;
+    }
+
+    &.rounded {
+      border-radius: $border-radius-max;
+    }
+
+    &.disabled {
+      color: $color-text-disabled !important;
+      @include foreground-active;
+    }
+  }
+
+  &__prefix,
+  &__suffix {
+    display: inline-flex;
+    user-select: none;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__prefix {
+    margin-left: 6px;
+  }
+
+  &__suffix {
+    margin-right: 6px;
+  }
+
+  &__inner {
+    flex-grow: 1;
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    font-variant: tabular-nums;
+    font-feature-settings: 'tnum';
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    background: none;
+    appearance: none;
+    caret-color: inherit;
+  }
+
+  /* prettier-ignore */
+  $size-options: (
+    // size: padding, height, fontsize
+    small: ( $padding-xs, 24px, 12px ),
+    default : ( $padding-sm, 30px, 14px ),
+    medium: ( $padding-md, 36px, 16px ),
+    large: ( $padding-md, 36px, 16px )
+  );
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      .mz-input {
+        &__container {
+          height: nth($arr, 2);
+        }
+
+        &__container.rounded:not(.prefix):not(.suffix) .mz-input__inner {
+          padding: nth($arr, 1) nth($arr, 1) + 6px;
+        }
+
+        &__inner {
+          padding: nth($arr, 1) nth($arr, 1);
+          font-size: nth($arr, 3);
+        }
+      }
+    }
+  }
+}

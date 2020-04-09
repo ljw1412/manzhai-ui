@@ -9,6 +9,7 @@
     background-color: currentColor;
     opacity: 0;
     transition: opacity 0.1s;
+    border-radius: inherit;
   }
 
   &:hover::before {
