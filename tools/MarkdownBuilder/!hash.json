@@ -1,6 +1,6 @@
 {
   "example/docs/components/Anchor.md": "924a473fdbb086ebb9f42a3c2c085ddc",
-  "example/docs/components/Button.md": "dbab11cec43ce7371245410dd69b9626",
+  "example/docs/components/Button.md": "73df780db640c2364d1fab4fa830ba65",
   "example/docs/components/Card.md": "c5d0e86dc2548c7ac9f79f5361d0f218",
   "example/docs/components/Catalogue.md": "9ead314faeeaeb35bfef50c095e8518d",
   "example/docs/components/Carousel.md": "198554e680511651e2d66c1119bef34d",
@@ -23,7 +23,7 @@
   "example/docs/components/Switch.md": "44b49094ee836d0d0012ab12e7073b64",
   "example/docs/components/Tabs.md": "20baa1d0dc6c20ba1ce6141936f4a802",
   "example/docs/components/Tag.md": "d43b7ff2764b1dc9d0615f1d20881f8a",
-  "example/docs/directives/Ripple.md": "72bdd2971380eb66d4baaf42ad932f66",
+  "example/docs/directives/Ripple.md": "85f006327a270cd129658a6b2a94f75d",
   "example/docs/directives/Blanking.md": "376fdf2894e25aa034d763b5f5f5ac18",
   "example/docs/components/Mask.md": "a931cf458c9373d5f5b50c740e7065df",
   "example/docs/components/Modal.md": "a73dfd934a04a1ac35225cdaa23cf2b9",
@@ -32,5 +32,5 @@
   "example/docs/components/Loading.md": "cc14d95f39575ae6bfec56848dedce97",
   "example/docs/components/Badge.md": "862f9acff32dc0e2bd6b104dc8fabc6e",
   "example/docs/components/MaterialInput.md": "40a2d32fc70de0dcdd6ca6e95cbf91dc",
-  "example/docs/components/Input.md": "7ddfc120c055189b8c53ee22d410f02b"
+  "example/docs/components/Input.md": "f9763ef7d948e213f430b30205d7aa74"
 }

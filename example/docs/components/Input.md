@@ -70,14 +70,56 @@ export default {
 ```
 :::
 
+### 线条样式
+:::demo `outlined`属性控制是否使用线条显示。
+```html
+<mz-input v-model="value"
+  placeholder="请输入文字"
+  outlined
+  :rounded="rounded"
+  @focus="rounded = true"
+  @blur="rounded = false"></mz-input>
+
+<script>
+export default {
+  data() {
+    return {
+      rounded: false,
+      value: ''
+    }
+  }
+}
+</script>
+```
+:::
+
+### 阴影样式
+:::demo `shadow`属性控制是否使用阴影显示。
+```html
+<mz-input v-model="value"
+  placeholder="请输入文字"
+  shadow></mz-input>
+
+<script>
+export default {
+  data() {
+    return {
+      value: ''
+    }
+  }
+}
+</script>
+```
+:::
+
 ### 前后置内容
 :::demo `prefix`、`suffix`属性添加字符型的前置内容。你也可以使用同名插槽进行更多的扩展。
 ```html
-<mz-input v-model="username" placeholder="中">
+<mz-input v-model="username" placeholder="请输入用户名">
   <mz-icon name="md-person" slot="prefix"></mz-icon>
 </mz-input>
 
-<mz-input v-model="value" placeholder="中" prefix="￥"
+<mz-input v-model="value" placeholder="请输入金额" prefix="￥"
 suffix="RMB">
 </mz-input>
 
@@ -106,6 +148,27 @@ export default {
   data() {
     return {
       value: '禁用的输入框'
+    }
+  }
+}
+</script>
+```
+:::
+
+### 尾部按钮
+
+:::demo `end-button`属性控制显示尾部按钮。可以直接传一个String，或传递一个对象（属性与MzButton的props一致）。
+```html
+<mz-input v-model="value"
+  end-button="搜索"></mz-input>
+<mz-input v-model="value"
+  :end-button="{ value:'Search', color:'success' }"></mz-input>
+
+<script>
+export default {
+  data() {
+    return {
+      value: '搜索输入框'
     }
   }
 }
