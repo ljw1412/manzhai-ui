@@ -2,12 +2,13 @@ import { Component, Vue, Prop, Mixins, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzSize from '@/mixins/MzSize'
 import FormElement from '@/mixins/FormElement'
+import MzButton from '../Button/Button'
 
-@Component
+@Component({ components: { MzButton } })
 export default class MzInput extends Mixins(MzSize, FormElement) {
   @Prop([String, Number])
   readonly value!: string | number
-  @Prop(String)
+  @Prop({ type: String, default: 'text' })
   readonly type!: string
   @Prop(Boolean)
   readonly readonly!: boolean
@@ -29,6 +30,8 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   readonly outlined!: boolean
   @Prop(Boolean)
   readonly shadow!: boolean
+  @Prop({ type: [String, Object], default: '' })
+  readonly endButton!: string | MzButton
   @Ref('input')
   readonly inputRef!: HTMLInputElement
 
@@ -95,9 +98,38 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
     )
   }
 
+  renderEndButton() {
+    if (!this.endButton) return
+    let text = ''
+    if (typeof this.endButton === 'string') {
+      text = this.endButton
+    }
+    const data = {
+      class: ['mz-input__append'],
+      props: Object.assign(
+        { color: 'primary', value: text, round: this.rounded, size: this.size },
+        this.endButton
+      )
+    }
+
+    return <mz-button {...data}></mz-button>
+  }
+
   render(h: CreateElement) {
+    const classes = [
+      'mz-input',
+      this.mzSize,
+      {
+        append: this.$slots.append || this.endButton,
+        prepend: this.$slots.prepend
+      }
+    ]
     return (
-      <span class={['mz-input', this.mzSize]}>{this.renderContainer()}</span>
+      <span class={classes}>
+        {this.$slots.prepend}
+        {this.renderContainer()}
+        {this.$slots.append || this.renderEndButton()}
+      </span>
     )
   }
 
