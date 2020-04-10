@@ -1,16 +1,15 @@
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
 import MzSize from '@/mixins/MzSize'
 import { CreateElement } from 'vue'
-import { getMzColor, colorInTypes } from '@/utils/theme'
+import { colorInTypes } from '@/utils/theme'
+import FormElement from '@/mixins/FormElement'
 
 @Component
-export default class MzButton extends MzSize {
+export default class MzButton extends Mixins(MzSize, FormElement) {
   @Prop(String)
   readonly color!: string
   @Prop(String)
   readonly textColor!: string
-  @Prop(Boolean)
-  readonly disabled!: boolean
   @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop(Boolean)
@@ -74,6 +73,6 @@ export default class MzButton extends MzSize {
     const data = {
       class: ['mz-button__content', 'flex-double-center']
     }
-    return <span {...data}>{this.$slots.default}</span>
+    return <span {...data}>{this.$slots.default || this.value}</span>
   }
 }
