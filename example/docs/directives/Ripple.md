@@ -14,13 +14,11 @@
 
 使用`v-ripple`指令，传递一个Object。
 
--  value?: boolean  // 是否启用
+-  value: boolean  // 是否启用
  
--  center?: boolean // 是否以中心扩散
+-  center: boolean // 是否以中心扩散
  
--  class?: string // 涟漪元素的自定义class
- 
--  circle?: boolean // 是否为圆形的
+-  class: string // 涟漪元素的自定义class
 
 
 :::demo

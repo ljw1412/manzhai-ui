@@ -9,7 +9,6 @@ function xy(el: HTMLElement, x: string, y: string) {
 interface RippleOptions {
   class?: string
   center?: boolean
-  circle?: boolean
 }
 
 function isRippleEnabled(value: any): value is true {
@@ -109,7 +108,6 @@ function showRipple(e: MouseEvent) {
   if (!element || !element._ripple) return
 
   options.center = element._ripple.centered
-  options.circle = element._ripple.circle
   if (element._ripple.class) options.class = element._ripple.class
   ripple.create(e, element, options)
 }
@@ -152,9 +150,6 @@ function updateRipple(
   }
   if (value.class) {
     el._ripple.class = value.class
-  }
-  if (value.circle) {
-    el._ripple.circle = value.circle
   }
 
   if (enabled && !isEnabled) {
