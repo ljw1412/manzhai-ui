@@ -5,14 +5,28 @@
   &__container {
     position: relative;
     background-color: $color-white;
+    border-color: transparent;
     color: $color-text-primary;
     border-radius: $border-radius-md;
+    transition-property: border-radius, border-color, padding;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
     @include foreground;
 
     &.focused {
-      border: 2px solid $color-primary;
-      margin: -2px;
+      &:not(.outlined):not(.shadow) {
+        border: 2px solid $color-primary;
+        margin: -2px;
+      }
       @include foreground-disabled;
+    }
+
+    &.outlined {
+      border: 1px solid $color-border-base;
+      margin: -1px;
+      &.focused {
+        border-color: $color-primary;
+      }
     }
 
     &.rounded {
@@ -58,6 +72,7 @@
     background: none;
     appearance: none;
     caret-color: inherit;
+    transition: inherit;
   }
 
   /* prettier-ignore */

@@ -1,4 +1,4 @@
-import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
+import { Component, Vue, Prop, Mixins, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzSize from '@/mixins/MzSize'
 import FormElement from '@/mixins/FormElement'
@@ -25,6 +25,12 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   readonly prefix!: string
   @Prop(String)
   readonly suffix!: string
+  @Prop(Boolean)
+  readonly outlined!: boolean
+  @Prop(Boolean)
+  readonly shadow!: boolean
+  @Ref('input')
+  readonly inputRef!: HTMLInputElement
 
   isComposing = false
   focused = false
@@ -50,13 +56,19 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
           suffix,
           focused: this.focused,
           rounded: this.rounded,
-          disabled: this.disabled
+          outlined: this.outlined,
+          disabled: this.disabled,
+          shadow: this.shadow
         }
       ],
-      directives: [{ name: 'ripple', value: this.ripple }]
+      directives: [
+        { name: 'ripple', value: this.ripple },
+        { name: 'elevation', value: this.shadow ? (this.focused ? 5 : 1) : 0 }
+      ],
+      on: { click: () => this.inputRef.focus() }
     }
     return (
-      <div {...data}>
+      <span {...data}>
         {prefix}
         <input
           class="mz-input__inner"
@@ -79,12 +91,14 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
           on-change={this.onChange}
         />
         {suffix}
-      </div>
+      </span>
     )
   }
 
   render(h: CreateElement) {
-    return <div class={['mz-input', this.mzSize]}>{this.renderContainer()}</div>
+    return (
+      <span class={['mz-input', this.mzSize]}>{this.renderContainer()}</span>
+    )
   }
 
   onCompositionstart(event: CompositionEvent) {
