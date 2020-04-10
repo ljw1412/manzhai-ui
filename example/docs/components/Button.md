@@ -153,6 +153,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- |---|
+|value|按钮文字内容，可以使用默认插槽代替|String|||
 | size | 尺寸 | String | large / small   | - |
 | disabled | 是否禁用状态 | Boolean | | |
 | icon | 是否图标状态	 | Boolean | | |
@@ -170,4 +171,4 @@ export default {
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
-|-|按钮的内容||
+|默认|按钮的内容||

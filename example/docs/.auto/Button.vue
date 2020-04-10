@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-03-30 18:19</div>
+    <div class="update-datetime">文档更新时间：2020-04-10 16:59</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -233,6 +233,13 @@ export default {
 </thead>
 <tbody>
 <tr>
+<td>value</td>
+<td>按钮文字内容，可以使用默认插槽代替</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>size</td>
 <td>尺寸</td>
 <td>String</td>
@@ -329,7 +336,7 @@ export default {
 </thead>
 <tbody>
 <tr>
-<td>-</td>
+<td>默认</td>
 <td>按钮的内容</td>
 <td></td>
 </tr>
