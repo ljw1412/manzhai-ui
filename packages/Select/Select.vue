@@ -10,19 +10,23 @@
     }">
     <mz-input ref="input"
       outlined
-      :append-icon="arrowIcon"
       :value="searchFocus ? '' : current"
       :label="label"
+      :size="size"
       :readonly="true"
-      :label-up="true"
-      :is-focus="searchFocus"
-      @click.native="onClick"></mz-input>
-    <input v-if="search"
-      ref="searchInput"
-      class="mz-select__search-input mz-input"
-      v-model="filterText"
-      :placeholder="searchFocus ? current:''"
-      @focus="searchFocus = true" />
+      @click.native="onClick">
+      <mz-icon :name="arrowIcon"
+        slot="suffix"></mz-icon>
+    </mz-input>
+    <span class="mz-input mz-select__search-input"
+      :class="mzSize">
+      <input v-if="search"
+        ref="searchInput"
+        class="mz-input__inner"
+        v-model="filterText"
+        :placeholder="searchFocus ? current:''"
+        @focus="searchFocus = true" />
+    </span>
     <mz-dropdown-card :visiable.sync="isActive"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
       :width="width"
@@ -144,7 +148,7 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
     this.isActive = false
     setTimeout(() => {
       this.searchFocus = false
-    }, 300)
+    }, 200)
   }
 
   @Watch('searchFocus')
