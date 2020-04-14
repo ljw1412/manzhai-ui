@@ -30,8 +30,6 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   readonly outlined!: boolean
   @Prop(Boolean)
   readonly shadow!: boolean
-  @Prop({ type: [String, Object], default: '' })
-  readonly endButton!: string | MzButton
   @Ref('input')
   readonly inputRef!: HTMLInputElement
 
@@ -47,13 +45,39 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
     )
   }
 
-  renderContainer() {
+  renderInput() {
+    return (
+      <input
+        class="mz-input__inner"
+        ref="input"
+        attrs={this.$attrs}
+        value={this.value}
+        type={this.type}
+        name={this.name}
+        maxlength={this.maxlength}
+        placeholder={this.placeholder}
+        readonly={this.readonly}
+        disabled={this.disabled}
+        autocomplete={this.autocomplete}
+        on-compositionstart={this.onCompositionstart}
+        on-compositionupdate={this.onCompositionUpdate}
+        on-compositionend={this.onCompositionEnd}
+        on-input={this.onInput}
+        on-focus={this.onFocus}
+        on-blur={this.onBlur}
+        on-change={this.onChange}
+      />
+    )
+  }
+
+  render(h: CreateElement) {
     const prefix = this.renderIcon('prefix')
     const suffix = this.renderIcon('suffix')
 
     const data = {
       class: [
-        'mz-input__container flex align-items-center',
+        'mz-input flex align-items-center',
+        this.mzSize,
         {
           prefix,
           suffix,
@@ -73,62 +97,8 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
     return (
       <span {...data}>
         {prefix}
-        <input
-          class="mz-input__inner"
-          ref="input"
-          attrs={this.$attrs}
-          value={this.value}
-          type={this.type}
-          name={this.name}
-          maxlength={this.maxlength}
-          placeholder={this.placeholder}
-          readonly={this.readonly}
-          disabled={this.disabled}
-          autocomplete={this.autocomplete}
-          on-compositionstart={this.onCompositionstart}
-          on-compositionupdate={this.onCompositionUpdate}
-          on-compositionend={this.onCompositionEnd}
-          on-input={this.onInput}
-          on-focus={this.onFocus}
-          on-blur={this.onBlur}
-          on-change={this.onChange}
-        />
+        {this.renderInput()}
         {suffix}
-      </span>
-    )
-  }
-
-  renderEndButton() {
-    if (!this.endButton) return
-    let text = ''
-    if (typeof this.endButton === 'string') {
-      text = this.endButton
-    }
-    const data = {
-      class: ['mz-input__append'],
-      props: Object.assign(
-        { color: 'primary', value: text, round: this.rounded, size: this.size },
-        this.endButton
-      )
-    }
-
-    return <mz-button {...data}></mz-button>
-  }
-
-  render(h: CreateElement) {
-    const classes = [
-      'mz-input',
-      this.mzSize,
-      {
-        append: this.$slots.append || this.endButton,
-        prepend: this.$slots.prepend
-      }
-    ]
-    return (
-      <span class={classes}>
-        {this.$slots.prepend}
-        {this.renderContainer()}
-        {this.$slots.append || this.renderEndButton()}
       </span>
     )
   }

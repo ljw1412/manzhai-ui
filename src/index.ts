@@ -30,7 +30,7 @@ import Heading from '../packages/Heading/index'
 import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
 import ImagePreview from '../packages/ImagePreview/index'
-import Input from '../packages/Input/index'
+import { Input, InputGroup } from '../packages/Input/index'
 import {
   List,
   ListItem,
@@ -91,6 +91,7 @@ const components: VueConstructor[] = [
   Image,
   ImagePreview,
   Input,
+  InputGroup,
   List,
   ListItem,
   ListGroup,
@@ -223,6 +224,7 @@ export default {
   Image,
   ImagePreview,
   Input,
+  InputGroup,
   List,
   ListItem,
   ListGroup,
