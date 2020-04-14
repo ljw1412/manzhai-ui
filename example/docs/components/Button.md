@@ -75,29 +75,29 @@ export default {
 ```html
 <div>
   <mz-button color="primary" size="large">默认按钮</mz-button>
-  <mz-button color="primary" size="medium">默认按钮</mz-button>
   <mz-button color="primary">默认按钮</mz-button>
+  <mz-button color="primary" size="medium">默认按钮</mz-button>
   <mz-button color="primary" size="small">默认按钮</mz-button>
 </div>
 
 <div>
   <mz-button color="primary" outlined size="large">线条按钮</mz-button>
-  <mz-button color="primary" outlined size="medium">线条按钮</mz-button>
   <mz-button color="primary" outlined>线条按钮</mz-button>
+  <mz-button color="primary" outlined size="medium">线条按钮</mz-button>
   <mz-button color="primary" outlined size="small">线条按钮</mz-button>
 </div>
 
 <div>
   <mz-button color="primary" flat size="large">扁平按钮</mz-button>
-  <mz-button color="primary" flat size="medium">扁平按钮</mz-button>
   <mz-button color="primary" flat>扁平按钮</mz-button>
+  <mz-button color="primary" flat size="medium">扁平按钮</mz-button>
   <mz-button color="primary" flat size="small">扁平按钮</mz-button>
 </div>
 
 <div>
   <mz-button color="primary" round size="large">圆角按钮</mz-button>
-  <mz-button color="primary" round size="medium">圆角按钮</mz-button>
   <mz-button color="primary" round>圆角按钮</mz-button>
+  <mz-button color="primary" round size="medium">圆角按钮</mz-button>
   <mz-button color="primary" round size="small">圆角按钮</mz-button>
 </div>
 ```

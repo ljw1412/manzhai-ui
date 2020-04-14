@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-04-10 19:11</div>
+    <div class="update-datetime">文档更新时间：2020-04-14 13:59</div>
     <h2 id="input-shu-ru-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -46,30 +46,38 @@ export default {
         <template #example><input-demo3 inline-template><div class="input-demo3">
   <mz-input v-model="value" placeholder="小" size="small">
   </mz-input>
-  <mz-input v-model="value" placeholder="中">
+  <mz-input v-model="value" placeholder="中" size="medium">
+  </mz-input>
+  <mz-input v-model="value" placeholder="默认">
   </mz-input>
   <mz-input v-model="value" placeholder="大" size="large">
   </mz-input>
   
   <mz-input v-model="value" placeholder="小(圆角)" rounded size="small">
   </mz-input>
-  <mz-input v-model="value" placeholder="中(圆角)" rounded>
+  <mz-input v-model="value" placeholder="中(圆角)" rounded size="medium">
+  </mz-input>
+  <mz-input v-model="value" placeholder="默认(圆角)" rounded>
   </mz-input>
   <mz-input v-model="value" placeholder="大(圆角)" rounded size="large">
   </mz-input>
 </div></input-demo3></template>
-        <template #description><p><code>size</code>属性控制输入框的大小，可选值<code>small</code>、<code>large</code>。</p>
+        <template #description><p><code>size</code>属性控制输入框的大小，可选值<code>small</code>、<code>medium</code>、<code>(默认)</code>、<code>large</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;小&quot; size=&quot;small&quot;&gt;
 &lt;/mz-input&gt;
-&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;中&quot;&gt;
+&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;中&quot; size=&quot;medium&quot;&gt;
+&lt;/mz-input&gt;
+&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;默认&quot;&gt;
 &lt;/mz-input&gt;
 &lt;mz-input v-model=&quot;value&quot; placeholder=&quot;大&quot; size=&quot;large&quot;&gt;
 &lt;/mz-input&gt;
 
 &lt;mz-input v-model=&quot;value&quot; placeholder=&quot;小(圆角)&quot; rounded size=&quot;small&quot;&gt;
 &lt;/mz-input&gt;
-&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;中(圆角)&quot; rounded&gt;
+&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;中(圆角)&quot; rounded size=&quot;medium&quot;&gt;
+&lt;/mz-input&gt;
+&lt;mz-input v-model=&quot;value&quot; placeholder=&quot;默认(圆角)&quot; rounded&gt;
 &lt;/mz-input&gt;
 &lt;mz-input v-model=&quot;value&quot; placeholder=&quot;大(圆角)&quot; rounded size=&quot;large&quot;&gt;
 &lt;/mz-input&gt;

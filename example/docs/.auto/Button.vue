@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-04-10 16:59</div>
+    <div class="update-datetime">文档更新时间：2020-04-14 13:59</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -98,29 +98,29 @@ export default {
         <template #example><button-demo2 inline-template><div class="button-demo2">
   <div>
     <mz-button color="primary" size="large">默认按钮</mz-button>
-    <mz-button color="primary" size="medium">默认按钮</mz-button>
     <mz-button color="primary">默认按钮</mz-button>
+    <mz-button color="primary" size="medium">默认按钮</mz-button>
     <mz-button color="primary" size="small">默认按钮</mz-button>
   </div>
   
   <div>
     <mz-button color="primary" outlined size="large">线条按钮</mz-button>
-    <mz-button color="primary" outlined size="medium">线条按钮</mz-button>
     <mz-button color="primary" outlined>线条按钮</mz-button>
+    <mz-button color="primary" outlined size="medium">线条按钮</mz-button>
     <mz-button color="primary" outlined size="small">线条按钮</mz-button>
   </div>
   
   <div>
     <mz-button color="primary" flat size="large">扁平按钮</mz-button>
-    <mz-button color="primary" flat size="medium">扁平按钮</mz-button>
     <mz-button color="primary" flat>扁平按钮</mz-button>
+    <mz-button color="primary" flat size="medium">扁平按钮</mz-button>
     <mz-button color="primary" flat size="small">扁平按钮</mz-button>
   </div>
   
   <div>
     <mz-button color="primary" round size="large">圆角按钮</mz-button>
-    <mz-button color="primary" round size="medium">圆角按钮</mz-button>
     <mz-button color="primary" round>圆角按钮</mz-button>
+    <mz-button color="primary" round size="medium">圆角按钮</mz-button>
     <mz-button color="primary" round size="small">圆角按钮</mz-button>
   </div>
 </div></button-demo2></template>
@@ -128,29 +128,29 @@ export default {
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-button color=&quot;primary&quot; size=&quot;large&quot;&gt;默认按钮&lt;/mz-button&gt;
-  &lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot;&gt;默认按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;默认按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot;&gt;默认按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; size=&quot;small&quot;&gt;默认按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
   &lt;mz-button color=&quot;primary&quot; outlined size=&quot;large&quot;&gt;线条按钮&lt;/mz-button&gt;
-  &lt;mz-button color=&quot;primary&quot; outlined size=&quot;medium&quot;&gt;线条按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; outlined&gt;线条按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; outlined size=&quot;medium&quot;&gt;线条按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; outlined size=&quot;small&quot;&gt;线条按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
   &lt;mz-button color=&quot;primary&quot; flat size=&quot;large&quot;&gt;扁平按钮&lt;/mz-button&gt;
-  &lt;mz-button color=&quot;primary&quot; flat size=&quot;medium&quot;&gt;扁平按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; flat&gt;扁平按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; flat size=&quot;medium&quot;&gt;扁平按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; flat size=&quot;small&quot;&gt;扁平按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 
 &lt;div&gt;
   &lt;mz-button color=&quot;primary&quot; round size=&quot;large&quot;&gt;圆角按钮&lt;/mz-button&gt;
-  &lt;mz-button color=&quot;primary&quot; round size=&quot;medium&quot;&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; round&gt;圆角按钮&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot; round size=&quot;medium&quot;&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 </code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>

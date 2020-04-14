@@ -42,18 +42,22 @@ export default {
 
 提供了3种输入框大小。
 
-:::demo `size`属性控制输入框的大小，可选值`small`、`large`。
+:::demo `size`属性控制输入框的大小，可选值`small`、`medium`、`(默认)`、`large`。
 ```html
 <mz-input v-model="value" placeholder="小" size="small">
 </mz-input>
-<mz-input v-model="value" placeholder="中">
+<mz-input v-model="value" placeholder="中" size="medium">
+</mz-input>
+<mz-input v-model="value" placeholder="默认">
 </mz-input>
 <mz-input v-model="value" placeholder="大" size="large">
 </mz-input>
 
 <mz-input v-model="value" placeholder="小(圆角)" rounded size="small">
 </mz-input>
-<mz-input v-model="value" placeholder="中(圆角)" rounded>
+<mz-input v-model="value" placeholder="中(圆角)" rounded size="medium">
+</mz-input>
+<mz-input v-model="value" placeholder="默认(圆角)" rounded>
 </mz-input>
 <mz-input v-model="value" placeholder="大(圆角)" rounded size="large">
 </mz-input>
