@@ -86,13 +86,14 @@
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {
       height: nth($arr, 2);
+      line-height: nth($arr, 2);
 
       &.rounded:not(.prefix):not(.suffix) .mz-input__inner {
-        padding: nth($arr, 1) nth($arr, 1) + 6px;
+        padding: 0 nth($arr, 1) + 6px;
       }
 
       .mz-input__inner {
-        padding: nth($arr, 1) nth($arr, 1);
+        padding: 0 nth($arr, 1);
         font-size: nth($arr, 3);
       }
     }
