@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-04-14 13:59</div>
+    <div class="update-datetime">文档更新时间：2020-04-14 18:15</div>
     <h2 id="input-shu-ru-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -142,7 +142,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="qian-hou-zhi-nei-rong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhi-nei-rong" title="前后置内容" data-level="3" data-href="#qian-hou-zhi-nei-rong">¶</a>前后置内容</h3>
+</code></pre></template></demo-block><h3 id="qian-hou-zhui" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhui" title="前后缀" data-level="3" data-href="#qian-hou-zhui">¶</a>前后缀</h3>
 <demo-block>
         <template #example><input-demo6 inline-template><div class="input-demo6">
   <mz-input v-model="username" placeholder="请输入用户名">
@@ -193,26 +193,37 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="wei-bu-an-niu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#wei-bu-an-niu" title="尾部按钮" data-level="3" data-href="#wei-bu-an-niu">¶</a>尾部按钮</h3>
+</code></pre></template></demo-block><h3 id="shu-ru-kuang-zu-he" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shu-ru-kuang-zu-he" title="输入框组合" data-level="3" data-href="#shu-ru-kuang-zu-he">¶</a>输入框组合</h3>
 <demo-block>
         <template #example><input-demo8 inline-template><div class="input-demo8">
-  <mz-input v-model="value"
-    end-button="搜索"></mz-input>
-  <mz-input v-model="value"
-    :end-button="{ value:'Search', color:'success' }"></mz-input>
+  <mz-input-group>  
+    <mz-select v-model="protocol">
+      <mz-option value="http://"></mz-option>
+      <mz-option value="https://"></mz-option>
+      <mz-option value="ftp://"></mz-option>
+    </mz-select>
+    <mz-input v-model="value" outlined></mz-input> 
+    <mz-button color="primary">确定</mz-button>
+  </mz-input-group>
 </div></input-demo8></template>
-        <template #description><p><code>end-button</code>属性控制显示尾部按钮。可以直接传一个String，或传递一个对象（属性与MzButton的props一致）。</p>
-</template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-input v-model=&quot;value&quot;
-  end-button=&quot;搜索&quot;&gt;&lt;/mz-input&gt;
-&lt;mz-input v-model=&quot;value&quot;
-  :end-button=&quot;{ value:'Search', color:'success' }&quot;&gt;&lt;/mz-input&gt;
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-input-group&gt;  
+  &lt;mz-select v-model=&quot;protocol&quot;&gt;
+    &lt;mz-option value=&quot;http://&quot;&gt;&lt;/mz-option&gt;
+    &lt;mz-option value=&quot;https://&quot;&gt;&lt;/mz-option&gt;
+    &lt;mz-option value=&quot;ftp://&quot;&gt;&lt;/mz-option&gt;
+  &lt;/mz-select&gt;
+  &lt;mz-input v-model=&quot;value&quot; outlined&gt;&lt;/mz-input&gt; 
+  &lt;mz-button color=&quot;primary&quot;&gt;确定&lt;/mz-button&gt;
+&lt;/mz-input-group&gt;
+
 
 &lt;script&gt;
 export default {
   data() {
     return {
-      value: '搜索输入框'
+      protocol:'',
+      value: ''
     }
   }
 }
@@ -270,7 +281,8 @@ export default {
 }, InputDemo8: {
   data() {
     return {
-      value: '搜索输入框'
+      protocol:'',
+      value: ''
     }
   }
 } }

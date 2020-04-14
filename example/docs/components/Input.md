@@ -116,7 +116,7 @@ export default {
 ```
 :::
 
-### 前后置内容
+### 前后缀
 :::demo `prefix`、`suffix`属性添加字符型的前置内容。你也可以使用同名插槽进行更多的扩展。
 ```html
 <mz-input v-model="username" placeholder="请输入用户名">
@@ -159,20 +159,27 @@ export default {
 ```
 :::
 
-### 尾部按钮
+### 输入框组合
 
-:::demo `end-button`属性控制显示尾部按钮。可以直接传一个String，或传递一个对象（属性与MzButton的props一致）。
+:::demo
 ```html
-<mz-input v-model="value"
-  end-button="搜索"></mz-input>
-<mz-input v-model="value"
-  :end-button="{ value:'Search', color:'success' }"></mz-input>
+<mz-input-group>  
+  <mz-select v-model="protocol">
+    <mz-option value="http://"></mz-option>
+    <mz-option value="https://"></mz-option>
+    <mz-option value="ftp://"></mz-option>
+  </mz-select>
+  <mz-input v-model="value" outlined></mz-input> 
+  <mz-button color="primary">确定</mz-button>
+</mz-input-group>
+
 
 <script>
 export default {
   data() {
     return {
-      value: '搜索输入框'
+      protocol:'',
+      value: ''
     }
   }
 }

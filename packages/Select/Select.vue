@@ -18,10 +18,10 @@
       <mz-icon :name="arrowIcon"
         slot="suffix"></mz-icon>
     </mz-input>
-    <span class="mz-input mz-select__search-input"
+    <span v-if="search"
+      class="mz-input mz-select__search-input"
       :class="mzSize">
-      <input v-if="search"
-        ref="searchInput"
+      <input ref="searchInput"
         class="mz-input__inner"
         v-model="filterText"
         :placeholder="searchFocus ? current:''"
@@ -61,7 +61,7 @@ import {
   Mixins
 } from 'vue-property-decorator'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
-import MzInput from '../Input'
+import { MzInput } from '../Input'
 import MzSize from '@/mixins/MzSize'
 import FormElement from '@/mixins/FormElement'
 import { typeOf } from '@/utils/assist'
@@ -155,8 +155,10 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
   onSearchFocusChange(focus: boolean) {
     if (!focus) {
       this.filterText = ''
+      this.inputRef.focused = false
     } else {
       this.isActive = true
+      this.inputRef.focused = true
     }
   }
 }
