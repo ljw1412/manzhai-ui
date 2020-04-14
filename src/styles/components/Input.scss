@@ -112,10 +112,10 @@
   /* prettier-ignore */
   $size-options: (
     // size: padding, height, fontsize
-    small: ( $padding-xs, 24px, 12px ),
-    default : ( $padding-sm, 30px, 14px ),
-    medium: ( $padding-md, 32px, 16px ),
-    large: ( $padding-md, 34px, 16px )
+    small: ( $padding-xs, 26px, 12px ),
+    medium: ( $padding-sm, 30px, 12px ),
+    default: ( $padding-md, 32px, 14px ),
+    large: ( $padding-md, 36px, 14px )
   );
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {

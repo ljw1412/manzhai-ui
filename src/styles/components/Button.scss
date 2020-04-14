@@ -72,10 +72,10 @@
   /* prettier-ignore */
   $size-options: (
   // size: padding, height, fontsize
-    small: ( 6px, 24px, 12px ),
-    default : ( 12px, 30px, 14px ),
-    medium: ( 16px, 32px, 16px ),
-    large: ( 18px, 34px, 16px )
+    small: ( 6px, 26px, 12px ),
+    medium: ( 12px, 30px, 12px ),
+    default: ( 16px, 32px, 14px ),
+    large: ( 18px, 36px, 14px )
   );
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {
