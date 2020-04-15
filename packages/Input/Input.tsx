@@ -90,7 +90,7 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
       ],
       directives: [
         { name: 'ripple', value: this.ripple },
-        { name: 'elevation', value: this.shadow ? (this.focused ? 5 : 1) : 0 }
+        { name: 'elevation', value: this.shadow ? (this.focused ? 8 : 2) : 0 }
       ],
       on: { click: () => this.inputRef.focus() }
     }
