@@ -103,6 +103,30 @@ export default {
 ```
 :::
 
+### 紧凑按钮
+:::demo `dense`属性控制按钮内部文字到边距更近些。
+```html
+<mz-button color="primary" size="large">松</mz-button>
+<mz-button color="primary" size="large" dense>紧</mz-button>
+<mz-button color="primary">松</mz-button>
+<mz-button color="primary" dense>紧</mz-button>
+<mz-button color="primary" size="medium">松</mz-button>
+<mz-button color="primary" size="medium" dense>紧</mz-button>
+<mz-button color="primary" size="small">松</mz-button>
+<mz-button color="primary" size="small" dense>紧</mz-button>
+```
+:::
+
+### 按钮阴影
+:::demo `shadow`属性控制是否使用按钮阴影效果。
+```html
+<mz-button color="primary" size="large" shadow>按钮阴影</mz-button>
+<mz-button color="primary" shadow>按钮阴影</mz-button>
+<mz-button color="primary" size="medium" shadow>按钮阴影</mz-button>
+<mz-button color="primary" size="small" shadow>按钮阴影</mz-button>
+```
+:::
+
 ### 自定义颜色
 
 我们为按钮预设了4种主要颜色，用户也可以根据需求修改按钮颜色。
@@ -162,6 +186,8 @@ export default {
 | outlined | 是否线条按钮	 | Boolean | | |
 | flat | 是否扁平按钮	 | Boolean | | |
 | round | 是否圆角按钮	 | Boolean | | |
+| dense | 是否按钮文字紧凑	 | Boolean | | |
+| shadow | 是否使用按钮阴影效果	 | Boolean | | |
 | native-type | 原生 type 属性 | String | button / submit / reset | 'button' |
 | color | 背景颜色 | String | primary / success / warning / danger / Color in Css | |
 | text-color | 文字颜色 | String | | |

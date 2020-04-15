@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-04-14 13:59</div>
+    <div class="update-datetime">文档更新时间：2020-04-15 11:56</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -153,17 +153,53 @@ export default {
   &lt;mz-button color=&quot;primary&quot; round size=&quot;medium&quot;&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
+</code></pre></template></demo-block><h3 id="jin-cou-an-niu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-cou-an-niu" title="紧凑按钮" data-level="3" data-href="#jin-cou-an-niu">¶</a>紧凑按钮</h3>
+<demo-block>
+        <template #example><button-demo3 inline-template><div class="button-demo3">
+  <mz-button color="primary" size="large">松</mz-button>
+  <mz-button color="primary" size="large" dense>紧</mz-button>
+  <mz-button color="primary">松</mz-button>
+  <mz-button color="primary" dense>紧</mz-button>
+  <mz-button color="primary" size="medium">松</mz-button>
+  <mz-button color="primary" size="medium" dense>紧</mz-button>
+  <mz-button color="primary" size="small">松</mz-button>
+  <mz-button color="primary" size="small" dense>紧</mz-button>
+</div></button-demo3></template>
+        <template #description><p><code>dense</code>属性控制按钮内部文字到边距更近些。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;primary&quot; size=&quot;large&quot;&gt;松&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;large&quot; dense&gt;紧&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot;&gt;松&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; dense&gt;紧&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot;&gt;松&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot; dense&gt;紧&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;small&quot;&gt;松&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;small&quot; dense&gt;紧&lt;/mz-button&gt;
+</code></pre></template></demo-block><h3 id="an-niu-yin-ying" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-yin-ying" title="按钮阴影" data-level="3" data-href="#an-niu-yin-ying">¶</a>按钮阴影</h3>
+<demo-block>
+        <template #example><button-demo4 inline-template><div class="button-demo4">
+  <mz-button color="primary" size="large" shadow>按钮阴影</mz-button>
+  <mz-button color="primary" shadow>按钮阴影</mz-button>
+  <mz-button color="primary" size="medium" shadow>按钮阴影</mz-button>
+  <mz-button color="primary" size="small" shadow>按钮阴影</mz-button>
+</div></button-demo4></template>
+        <template #description><p><code>shadow</code>属性控制是否使用按钮阴影效果。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;primary&quot; size=&quot;large&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
+&lt;mz-button color=&quot;primary&quot; size=&quot;small&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
 </code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
 <p>我们为按钮预设了4种主要颜色，用户也可以根据需求修改按钮颜色。</p>
 <demo-block>
-        <template #example><button-demo3 inline-template><div class="button-demo3">
+        <template #example><button-demo5 inline-template><div class="button-demo5">
   <div>
     <mz-button color="orange">按钮</mz-button>
     <mz-button text-color="blue">按钮</mz-button>
     <mz-button color="#00a1d6" text-color="#c6e48b">按钮</mz-button>
     <mz-button color="success" text-color="#fcba2a">按钮</mz-button>
   </div>
-</div></button-demo3></template>
+</div></button-demo5></template>
         <template #description><p><code>color</code>属性控制背景颜色，预设了<code>primary</code>、<code>success</code>、<code>warning</code>、<code>danger</code>。<code>text-color</code>属性控制文字颜色。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
@@ -175,7 +211,7 @@ export default {
 </code></pre></template></demo-block><h3 id="an-niu-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-zu" title="按钮组" data-level="3" data-href="#an-niu-zu">¶</a>按钮组</h3>
 <p>以按钮组的方式出现，常用于多项类似操作。</p>
 <demo-block>
-        <template #example><button-demo4 inline-template><div class="button-demo4">
+        <template #example><button-demo6 inline-template><div class="button-demo6">
   <mz-button-group>
     <mz-button color="primary">按钮1</mz-button>
     <mz-button color="primary">按钮2</mz-button>
@@ -196,7 +232,7 @@ export default {
     <mz-button outlined round color="primary">按钮2</mz-button>
     <mz-button outlined round color="primary">按钮3</mz-button>
   </mz-button-group>
-</div></button-demo4></template>
+</div></button-demo6></template>
         <template #description><p>使用<code>mz-button-group</code>组件将按钮归为一个组。注意：插槽内只允许传入<code>mz-button</code>组件。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button-group&gt;
@@ -296,6 +332,20 @@ export default {
 <td></td>
 </tr>
 <tr>
+<td>dense</td>
+<td>是否按钮文字紧凑</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>shadow</td>
+<td>是否使用按钮阴影效果</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>native-type</td>
 <td>原生 type 属性</td>
 <td>String</td>
@@ -372,7 +422,7 @@ export default {
       return state
     }
   }
-}, ButtonDemo2: {}, ButtonDemo3: {}, ButtonDemo4: {} }
+}, ButtonDemo2: {}, ButtonDemo3: {}, ButtonDemo4: {}, ButtonDemo5: {}, ButtonDemo6: {} }
 }
 </script>
 <style lang="scss">
