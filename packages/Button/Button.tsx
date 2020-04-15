@@ -22,6 +22,10 @@ export default class MzButton extends Mixins(MzSize, FormElement) {
   readonly flat!: boolean
   @Prop(Boolean)
   readonly round!: boolean
+  @Prop(Boolean)
+  readonly dense!: boolean
+  @Prop(Boolean)
+  readonly shadow!: boolean
   @Prop({ type: String, default: 'button' })
   readonly nativeType!: string
   @Prop(String)
@@ -44,7 +48,9 @@ export default class MzButton extends Mixins(MzSize, FormElement) {
         'mz-button--round': this.round,
         'mz-button--flat': this.flat,
         'mz-button--outlined': this.outlined,
-        'mz-button--disabled': this.disabled
+        'mz-button--disabled': this.disabled,
+        'mz-button--dense': this.dense,
+        'mz-button--shadow': this.shadow
       }
     ]
   }

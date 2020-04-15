@@ -24,6 +24,19 @@
   &__content {
     position: relative;
     z-index: 50;
+    padding: 0 3px;
+  }
+
+  &--dense &__content {
+    padding: 0;
+  }
+
+  &--shadow:not(.mz-button--disabled) {
+    @include elevation(2);
+    will-change: box-shadow;
+    &:active {
+      @include elevation(8);
+    }
   }
 
   &--round {
@@ -73,9 +86,9 @@
   $size-options: (
   // size: padding, height, fontsize
     small: ( 6px, 26px, 12px ),
-    medium: ( 12px, 30px, 12px ),
-    default: ( 16px, 32px, 14px ),
-    large: ( 18px, 36px, 14px )
+    medium: ( 8px, 30px, 12px ),
+    default: ( 8px, 32px, 14px ),
+    large: ( 10px, 36px, 14px )
   );
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {
