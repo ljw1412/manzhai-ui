@@ -10,9 +10,4 @@ MzSelect.install = (Vue: VueConstructor) => {
   Vue.component(MzOption.componentName, MzOption)
 }
 
-export { 
-  MzSelect,
-   MzSelect as Select ,
-  MzOption,
-   MzOption as Option ,
-  }
+export { MzSelect, MzSelect as Select, MzOption, MzOption as Option }
