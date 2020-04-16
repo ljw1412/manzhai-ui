@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <mz-list-item-group value="test">
+    <!-- <mz-list-item-group value="test">
       <mz-list-item v-for="item of list"
         link
         :key="item.value"
@@ -34,14 +34,24 @@
     <mz-list-item v-for="item of list"
       :key="item.value"
       :value="item.value"
-      @click="onItemClick"></mz-list-item>
+      @click="onItemClick"></mz-list-item> -->
+    <m-list v-model="value">
+      <m-list-item></m-list-item>
+    </m-list>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import MList from '@packages/List/List'
+import MListItem from '@packages/List/ListItem'
 
-@Component
+@Component({
+  components: {
+    MList,
+    MListItem
+  }
+})
 export default class ComponentList extends Vue {
   value = '1'
   list = [
