@@ -27,7 +27,7 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   @Prop(String)
   readonly suffix!: string
   @Prop(Boolean)
-  readonly outlined!: boolean
+  readonly flat!: boolean
   @Prop(Boolean)
   readonly shadow!: boolean
   @Ref('input')
@@ -79,13 +79,13 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
         'mz-input flex align-items-center',
         this.mzSize,
         {
-          prefix,
-          suffix,
-          focused: this.focused,
-          rounded: this.rounded,
-          outlined: this.outlined,
-          disabled: this.disabled,
-          shadow: this.shadow
+          'has-prefix': prefix,
+          'has-suffix': suffix,
+          'is-focused': this.focused,
+          'is-rounded': this.rounded,
+          'is-disabled': this.disabled,
+          'is-shadow': this.shadow,
+          'is-flat': this.flat || this.shadow
         }
       ],
       directives: [

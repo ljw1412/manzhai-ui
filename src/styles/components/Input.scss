@@ -2,12 +2,9 @@
   position: relative;
   display: inline-flex;
   width: 100%;
-
-  position: relative;
-  width: 100%;
   box-sizing: border-box;
   background-color: $color-white;
-  border-color: transparent;
+  border: 1px solid $color-border-base;
   color: $color-text-primary;
   border-radius: $border-radius-md;
   transition-property: border-radius, border-color, padding, box-shadow;
@@ -15,45 +12,59 @@
   transition-timing-function: linear;
   @include foreground;
 
-  &.focused {
-    &:not(.outlined):not(.shadow) {
-      border: 2px solid $color-primary;
-      margin-left: -2px;
-    }
+  &.is-focused {
     @include foreground-disabled;
+    border-color: $color-primary;
   }
 
-  &.outlined {
-    border: 1px solid $color-border-base;
-    &.focused {
-      border-color: $color-primary;
-    }
+  &.is-disabled {
+    @include foreground-active;
+    color: $color-text-disabled !important;
+    cursor: not-allowed;
   }
 
-  &.rounded {
+  &.is-rounded {
     border-radius: $border-radius-max;
   }
 
-  &.disabled {
-    color: $color-text-disabled !important;
-    @include foreground-active;
+  &.is-flat {
+    border-width: 0px;
+    &.is-focused:not(.is-shadow) {
+      border-width: 2px;
+      margin-left: -2px;
+    }
   }
 
-  &__prefix,
-  &__suffix {
-    display: inline-flex;
-    user-select: none;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 10;
-  }
+  /* prettier-ignore */
+  $size-options: (
+    // size: padding, height, fontsize
+    small: ( $padding-sm, 26px, 12px ),
+    medium: ( $padding-sm, 30px, 12px ),
+    default: ( $padding-md, 32px, 14px ),
+    large: ( $padding-md, 36px, 14px )
+  );
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      height: nth($arr, 2);
+      line-height: nth($arr, 2);
 
-  &__prefix {
-    margin-left: 6px;
-  }
+      .mz-input__inner {
+        padding: 0 nth($arr, 1);
+        font-size: nth($arr, 3);
+      }
 
-  &__suffix {
-    margin-right: 6px;
+      &.is-rounded {
+        .mz-input__inner {
+          padding: 0 nth($arr, 1) + 6px;
+        }
+        &.prefix .mz-input__inner {
+          padding-left: nth($arr, 1);
+        }
+        &.suffix .mz-input__inner {
+          padding-right: nth($arr, 1);
+        }
+      }
+    }
   }
 
   &__inner {
@@ -73,29 +84,23 @@
     appearance: none;
     caret-color: inherit;
     transition: inherit;
+    cursor: inherit;
   }
 
-  /* prettier-ignore */
-  $size-options: (
-    // size: padding, height, fontsize
-    small: ( $padding-xs, 26px, 12px ),
-    medium: ( $padding-sm, 30px, 12px ),
-    default: ( $padding-md, 32px, 14px ),
-    large: ( $padding-md, 36px, 14px )
-  );
-  @each $size, $arr in $size-options {
-    &.mz-size--#{$size} {
-      height: nth($arr, 2);
-      line-height: nth($arr, 2);
+  &__prefix,
+  &__suffix {
+    display: inline-flex;
+    user-select: none;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
 
-      &.rounded:not(.prefix):not(.suffix) .mz-input__inner {
-        padding: 0 nth($arr, 1) + 6px;
-      }
+  &__prefix {
+    margin-left: 6px;
+  }
 
-      .mz-input__inner {
-        padding: 0 nth($arr, 1);
-        font-size: nth($arr, 3);
-      }
-    }
+  &__suffix {
+    margin-right: 6px;
   }
 }
