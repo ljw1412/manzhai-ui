@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-04-14 18:15</div>
+    <div class="update-datetime">文档更新时间：2020-04-16 11:15</div>
     <h2 id="input-shu-ru-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -91,30 +91,23 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="xian-tiao-yang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-tiao-yang-shi" title="线条样式" data-level="3" data-href="#xian-tiao-yang-shi">¶</a>线条样式</h3>
+</code></pre></template></demo-block><h3 id="bian-ping-yang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bian-ping-yang-shi" title="扁平样式" data-level="3" data-href="#bian-ping-yang-shi">¶</a>扁平样式</h3>
 <demo-block>
         <template #example><input-demo4 inline-template><div class="input-demo4">
   <mz-input v-model="value"
     placeholder="请输入文字"
-    outlined
-    :rounded="rounded"
-    @focus="rounded = true"
-    @blur="rounded = false"></mz-input>
+    flat></mz-input>
 </div></input-demo4></template>
-        <template #description><p><code>outlined</code>属性控制是否使用线条显示。</p>
+        <template #description><p><code>flat</code>属性控制是否使用扁平效果。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-input v-model=&quot;value&quot;
   placeholder=&quot;请输入文字&quot;
-  outlined
-  :rounded=&quot;rounded&quot;
-  @focus=&quot;rounded = true&quot;
-  @blur=&quot;rounded = false&quot;&gt;&lt;/mz-input&gt;
+  flat&gt;&lt;/mz-input&gt;
 
 &lt;script&gt;
 export default {
   data() {
     return {
-      rounded: false,
       value: ''
     }
   }
@@ -255,7 +248,6 @@ export default {
 }, InputDemo4: {
   data() {
     return {
-      rounded: false,
       value: ''
     }
   }

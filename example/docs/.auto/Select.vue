@@ -1,13 +1,13 @@
 <template>
   <div class="component-select">
-    <div class="update-datetime">文档更新时间：2020-03-19 20:01</div>
+    <div class="update-datetime">文档更新时间：2020-04-16 11:29</div>
     <h2 id="select-xuan-ze-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#select-xuan-ze-kuang" title="Select 选择框" data-level="2" data-href="#select-xuan-ze-kuang">¶</a>Select 选择框</h2>
 <p>下拉菜单选择器。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
 <demo-block>
         <template #example><select-demo1 inline-template><div class="select-demo1">
   <mz-select v-model="value" :list="list"></mz-select>
-  <mz-select v-model="value" label="目标">
+  <mz-select v-model="value" placeholder="目标">
     <mz-option v-for="item of list"
       :key="item.value"
       :value="item.value"
@@ -17,7 +17,7 @@
         <template #description><p>select的<code>list</code>属性与遍历option效果一致。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-select v-model=&quot;value&quot; :list=&quot;list&quot;&gt;&lt;/mz-select&gt;
-&lt;mz-select v-model=&quot;value&quot; label=&quot;目标&quot;&gt;
+&lt;mz-select v-model=&quot;value&quot; placeholder=&quot;目标&quot;&gt;
   &lt;mz-option v-for=&quot;item of list&quot;
     :key=&quot;item.value&quot;
     :value=&quot;item.value&quot;
@@ -86,6 +86,29 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="jin-yong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong" title="禁用" data-level="3" data-href="#jin-yong">¶</a>禁用</h3>
+<demo-block>
+        <template #example><select-demo4 inline-template><div class="select-demo4">
+  <mz-select v-model="value" :list="list" disabled search under></mz-select>
+</div></select-demo4></template>
+        <template #description><p><code>disabled</code>属性控制下拉框的禁用状态。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-select v-model=&quot;value&quot; :list=&quot;list&quot; disabled search under&gt;&lt;/mz-select&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      value: 1,
+      list: [
+        { value: 1, label: '甲' },
+        { value: 2, label: '乙' },
+        { value: 3, label: '丙' }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="select-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#select-api" title="Select API" data-level="3" data-href="#select-api">¶</a>Select API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -110,6 +133,20 @@ export default {
 <td>list</td>
 <td>选项列表</td>
 <td>Array</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>占位文本</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
+<td>Boolean</td>
 <td></td>
 <td></td>
 </tr>
@@ -256,6 +293,17 @@ export default {
     }
   }
 }, SelectDemo3: {
+  data() {
+    return {
+      value: 1,
+      list: [
+        { value: 1, label: '甲' },
+        { value: 2, label: '乙' },
+        { value: 3, label: '丙' }
+      ]
+    }
+  }
+}, SelectDemo4: {
   data() {
     return {
       value: 1,

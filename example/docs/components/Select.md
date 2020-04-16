@@ -6,7 +6,7 @@
 :::demo select的`list`属性与遍历option效果一致。
 ```html
 <mz-select v-model="value" :list="list"></mz-select>
-<mz-select v-model="value" label="目标">
+<mz-select v-model="value" placeholder="目标">
   <mz-option v-for="item of list"
     :key="item.value"
     :value="item.value"
@@ -78,12 +78,37 @@ export default {
 ```
 :::
 
+### 禁用
+
+:::demo `disabled`属性控制下拉框的禁用状态。
+```html
+<mz-select v-model="value" :list="list" disabled search under></mz-select>
+
+<script>
+export default {
+  data() {
+    return {
+      value: 1,
+      list: [
+        { value: 1, label: '甲' },
+        { value: 2, label: '乙' },
+        { value: 3, label: '丙' }
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
 ### Select API
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |value|绑定值|any|||
 |list|选项列表|Array|||
+|placeholder|占位文本|String|||
+|disabled|是否禁用|Boolean|||
 |valueName|列表中对象代表值的属性名称|String||'value'|
 |labelName|列表中对象代表值的标签名称|String||'label'|
 |search|是否有搜索|Boolean|||

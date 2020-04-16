@@ -74,21 +74,17 @@ export default {
 ```
 :::
 
-### 线条样式
-:::demo `outlined`属性控制是否使用线条显示。
+### 扁平样式
+:::demo `flat`属性控制是否使用扁平效果。
 ```html
 <mz-input v-model="value"
   placeholder="请输入文字"
-  outlined
-  :rounded="rounded"
-  @focus="rounded = true"
-  @blur="rounded = false"></mz-input>
+  flat></mz-input>
 
 <script>
 export default {
   data() {
     return {
-      rounded: false,
       value: ''
     }
   }
