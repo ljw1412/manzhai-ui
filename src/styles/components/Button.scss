@@ -28,7 +28,8 @@
   }
 
   &--dense &__content {
-    padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   &--shadow:not(.mz-button--disabled) {
@@ -84,26 +85,30 @@
 
   /* prettier-ignore */
   $size-options: (
-  // size: padding, height, fontsize
-    small: ( 6px, 26px, 12px ),
-    medium: ( 8px, 30px, 12px ),
-    default: ( 8px, 32px, 14px ),
-    large: ( 10px, 36px, 14px )
+  // size: padding,text-padding ,height, fontsize
+    small: ( 6px,2px, 26px, 12px ),
+    medium: ( 8px,3px, 30px, 12px ),
+    default: ( 8px,5px, 32px, 14px ),
+    large: ( 10px,5px, 36px, 14px )
   );
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {
       padding: 0 nth($arr, 1) + 1px;
-      height: nth($arr, 2);
-      line-height: nth($arr, 2);
-      font-size: nth($arr, 3);
+      height: nth($arr, 3);
+      line-height: nth($arr, 3);
+      font-size: nth($arr, 4);
     }
     &--outlined.mz-size--#{$size} {
       padding: 0 nth($arr, 1);
-      line-height: nth($arr, 2) - 2px;
+      line-height: nth($arr, 3) - 2px;
     }
     &--icon.mz-size--#{$size} {
       padding: 0;
-      width: nth($arr, 2);
+      width: nth($arr, 3);
+    }
+
+    &.mz-size--#{$size} &__content {
+      padding: 0 nth($arr, 2);
     }
   }
 }
