@@ -11,14 +11,15 @@
     <mz-input ref="input"
       outlined
       :value="searchFocus ? '' : current"
-      :label="label"
+      :placeholder="searchFocus ? '': placeholder"
       :size="size"
       :readonly="true"
+      :disabled="disabled"
       @click.native="onClick">
       <mz-icon :name="arrowIcon"
         slot="suffix"></mz-icon>
     </mz-input>
-    <span v-if="search"
+    <span v-if="!disabled && search"
       class="mz-input mz-select__search-input"
       :class="mzSize">
       <input ref="searchInput"
@@ -125,6 +126,7 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
   }
 
   onClick() {
+    if (this.disabled) return
     this.isActive = !this.isActive
   }
 
