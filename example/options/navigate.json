@@ -94,6 +94,13 @@
         }
       },
       {
+        "label": "Drawer",
+        "text": "抽屉",
+        "to": {
+          "name": "ComponentDrawer"
+        }
+      },
+      {
         "label": "Dropdown",
         "text": "下拉菜单",
         "to": {
