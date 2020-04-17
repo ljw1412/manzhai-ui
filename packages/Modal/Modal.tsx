@@ -32,8 +32,6 @@ export default class MzModal extends BaseAttribute {
   @Prop(Boolean)
   readonly divider!: boolean
   @Prop(Boolean)
-  readonly headless!: boolean
-  @Prop(Boolean)
   readonly appendToBody!: boolean
   @Prop(Boolean)
   readonly fullscreen!: boolean
@@ -50,6 +48,10 @@ export default class MzModal extends BaseAttribute {
 
   mZIndex = 1000
   maskZIndex = 1000
+
+  get headless() {
+    return !this.$slots.header && !this.title
+  }
 
   get classes() {
     return [
