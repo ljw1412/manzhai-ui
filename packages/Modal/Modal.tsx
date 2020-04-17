@@ -48,6 +48,7 @@ export default class MzModal extends BaseAttribute {
 
   mZIndex = 1000
   maskZIndex = 1000
+  isDisplayWrapper = false
 
   get headless() {
     return !this.$slots.header && !this.title
@@ -68,7 +69,13 @@ export default class MzModal extends BaseAttribute {
   render(h: CreateElement) {
     const warpperData = {
       class: ['mz-modal-wrapper'],
-      style: [{ zIndex: this.mZIndex }]
+      style: [
+        {
+          zIndex: this.mZIndex,
+          pointerEvents: this.maskAppendToBody ? 'none' : undefined
+        }
+      ],
+      directives: [{ name: 'show', value: this.isDisplayWrapper }]
     }
     const modalData = {
       class: this.classes,
@@ -77,29 +84,34 @@ export default class MzModal extends BaseAttribute {
         {
           width: this.fullscreen ? undefined : this.width,
           marginTop: this.top,
-          borderRaduis: this.radius
+          borderRaduis: this.radius,
+          zIndex: this.mZIndex
         }
       ],
-      directives: [{ name: 'elevation', value: this.elevation }]
+      directives: [
+        { name: 'elevation', value: this.elevation },
+        { name: 'show', value: this.visible }
+      ]
     }
     return (
-      <transition
-        name={this.transition}
-        on-after-enter={() => {
-          this.$emit('opend')
-        }}
-        on-after-leave={() => {
-          this.$emit('closed')
-        }}>
-        <div v-show={this.visible} {...warpperData}>
-          {this.renderMask()}
+      <div {...warpperData}>
+        {this.renderMask()}
+        <transition
+          name={this.transition}
+          on-after-enter={() => {
+            this.$emit('opend')
+          }}
+          on-after-leave={() => {
+            this.$emit('closed')
+            this.isDisplayWrapper = false
+          }}>
           <mz-card {...modalData}>
             {this.renderHeader()}
             {this.renderBody()}
             {this.renderFooter()}
           </mz-card>
-        </div>
-      </transition>
+        </transition>
+      </div>
     )
   }
 
@@ -169,6 +181,7 @@ export default class MzModal extends BaseAttribute {
   onVisibleChange(visible: boolean) {
     if (visible) {
       this.$emit('open')
+      this.isDisplayWrapper = true
       this.maskZIndex = this.zIndex ? this.zIndex - 1 : getZIndex()
       this.mZIndex = this.zIndex || getZIndex()
       this.appendToBody && document.body.appendChild(this.$el)
