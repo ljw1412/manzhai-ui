@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-04-17 09:41</div>
+    <div class="update-datetime">文档更新时间：2020-04-17 11:31</div>
     <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -29,9 +29,9 @@
   
   <mz-button color="danger"
     @click="visible3 = true">显示无头对话框</mz-button>
-  <mz-modal v-model="visible3" headless>这是无头对话框的内容</mz-modal>
+  <mz-modal v-model="visible3">这是无头对话框的内容</mz-modal>
 </div></modal-demo1></template>
-        <template #description><p><code>visible/v-model</code>属性控制对话框的显示隐藏。<code>divider</code>属性控制是否使用分割线分隔。<code>headless</code>属性控制是否不渲染对话框头部。</p>
+        <template #description><p><code>visible/v-model</code>属性控制对话框的显示隐藏。<code>divider</code>属性控制是否使用分割线分隔。不使用<code>title</code>属性且不用<code>title</code>插槽，将不渲染对话框头部。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;success&quot;
   @click=&quot;visible = true&quot;&gt;显示对话框&lt;/mz-button&gt;
@@ -56,7 +56,7 @@
 
 &lt;mz-button color=&quot;danger&quot;
   @click=&quot;visible3 = true&quot;&gt;显示无头对话框&lt;/mz-button&gt;
-&lt;mz-modal v-model=&quot;visible3&quot; headless&gt;这是无头对话框的内容&lt;/mz-modal&gt;
+&lt;mz-modal v-model=&quot;visible3&quot;&gt;这是无头对话框的内容&lt;/mz-modal&gt;
 
 &lt;script&gt;
 export default {
@@ -296,6 +296,13 @@ export default {
 <td></td>
 </tr>
 <tr>
+<td>content</td>
+<td>内容</td>
+<td>String/VNode</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>fullscreen</td>
 <td>是否全屏</td>
 <td>Boolean</td>
@@ -354,13 +361,6 @@ export default {
 <tr>
 <td>divider</td>
 <td>是否有分割线</td>
-<td>Boolean</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>headless</td>
-<td>是否无头</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
@@ -437,6 +437,33 @@ export default {
 <tr>
 <td>closed</td>
 <td>关闭动画结束时的回调</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>对话框头部</td>
+<td></td>
+</tr>
+<tr>
+<td>默认</td>
+<td>对话框内容</td>
+<td></td>
+</tr>
+<tr>
+<td>footer</td>
+<td>对话框底部</td>
 <td></td>
 </tr>
 </tbody>

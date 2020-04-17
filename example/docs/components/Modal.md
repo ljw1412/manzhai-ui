@@ -3,7 +3,7 @@
 模态对话框，悬浮于页面，引导用户进行相关操作。
 
 ### 基础用法
-:::demo `visible/v-model`属性控制对话框的显示隐藏。`divider`属性控制是否使用分割线分隔。`headless`属性控制是否不渲染对话框头部。
+:::demo `visible/v-model`属性控制对话框的显示隐藏。`divider`属性控制是否使用分割线分隔。不使用`title`属性且不用`title`插槽，将不渲染对话框头部。
 ```html
 <mz-button color="success"
   @click="visible = true">显示对话框</mz-button>
@@ -28,7 +28,7 @@
 
 <mz-button color="danger"
   @click="visible3 = true">显示无头对话框</mz-button>
-<mz-modal v-model="visible3" headless>这是无头对话框的内容</mz-modal>
+<mz-modal v-model="visible3">这是无头对话框的内容</mz-modal>
 
 <script>
 export default {
@@ -208,6 +208,7 @@ export default {
 | --- | --- | --- | --- | --- |
 |visible/v-modal|是否显示|Boolean|||
 |title|标题|String|||
+|content|内容|String/VNode|||
 |fullscreen|是否全屏|Boolean|||
 |elevation|阴影深度|Number||15|
 |zIndex|层级|Number|||
@@ -217,7 +218,6 @@ export default {
 |transition|对话框的显隐动画名称|String||'mz-zoom'|
 |outer-scroll|是否外滚动|Boolean|||
 |divider|是否有分割线|Boolean|||
-|headless|是否无头|Boolean|||
 |append-to-body|是否将对话框插入至 body 元素上|Boolean|||
 |mask|是否显示遮罩|Boolean||true|
 |mask-append-to-body|是否将遮罩插入至 body元素上|Boolean||true|
@@ -234,6 +234,13 @@ export default {
 |opend|打开动画结束时的回调||
 |close|关闭的回调||
 |closed|关闭动画结束时的回调||
+
+#### 插槽
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|header|对话框头部||
+| 默认 |对话框内容||
+|footer|对话框底部||
 
 #### $modal
 
