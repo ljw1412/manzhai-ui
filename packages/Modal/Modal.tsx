@@ -35,6 +35,8 @@ export default class MzModal extends BaseAttribute {
   readonly headless!: boolean
   @Prop(Boolean)
   readonly appendToBody!: boolean
+  @Prop(Boolean)
+  readonly fullscreen!: boolean
   @Prop({ type: Boolean, default: true })
   readonly mask!: boolean
   @Prop({ type: Boolean, default: true })
@@ -53,9 +55,10 @@ export default class MzModal extends BaseAttribute {
     return [
       'mz-modal',
       {
-        'mz-modal--divider': this.divider,
-        'mz-modal--headless': this.headless,
-        'mz-modal--inner-scroll': !this.outerScroll
+        'is-divider': this.divider,
+        'is-headless': this.headless,
+        'is-inner-scroll': !this.outerScroll,
+        'is-fullscreen': this.fullscreen
       }
     ]
   }
@@ -70,6 +73,7 @@ export default class MzModal extends BaseAttribute {
       style: [
         this.baseStyles,
         {
+          width: this.fullscreen ? undefined : this.width,
           marginTop: this.top,
           borderRaduis: this.radius
         }
