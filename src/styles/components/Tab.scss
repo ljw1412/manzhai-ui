@@ -26,3 +26,58 @@
 .mz-tab-panel {
   color: $color-text-primary;
 }
+
+.mz-tab {
+  &-x-transition,
+  &-x-reverse-transition,
+  &-y-transition,
+  &-y-reverse-transition {
+    &-enter-active,
+    &-leave-active {
+      transition: $primary-transition;
+    }
+    &-leave,
+    &-leave-to {
+      position: absolute !important;
+      top: 0;
+      width: 100%;
+    }
+  }
+  &-x-transition {
+    &-enter {
+      transform: translateX(100%);
+    }
+
+    &-leave-to {
+      transform: translateX(-100%);
+    }
+  }
+
+  &-x-reverse-transition {
+    &-enter {
+      transform: translateX(-100%);
+    }
+
+    &-leave-to {
+      transform: translateX(100%);
+    }
+  }
+  &-y-transition {
+    &-enter {
+      transform: translateY(100%);
+    }
+
+    &-leave-to {
+      transform: translateY(-100%);
+    }
+  }
+  &-y-reverse-transition {
+    &-enter {
+      transform: translateY(-100%);
+    }
+
+    &-leave-to {
+      transform: translateY(100%);
+    }
+  }
+}
