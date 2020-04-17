@@ -18,6 +18,7 @@ import { Catalogue, CatalogueItem } from '../packages/Catalogue/index'
 import { Cell, CellGroup } from '../packages/Cell/index'
 import { Checkbox, CheckboxGroup } from '../packages/Checkbox/index'
 import Col from '../packages/Col/index'
+import Drawer from '../packages/Drawer/index'
 import { Dropdown, DropdownCard } from '../packages/Dropdown/index'
 import Form from '../packages/Form/index'
 import {
@@ -79,6 +80,7 @@ const components: VueConstructor[] = [
   Checkbox,
   CheckboxGroup,
   Col,
+  Drawer,
   Dropdown,
   DropdownCard,
   Form,
@@ -212,6 +214,7 @@ export default {
   Checkbox,
   CheckboxGroup,
   Col,
+  Drawer,
   Dropdown,
   DropdownCard,
   Form,

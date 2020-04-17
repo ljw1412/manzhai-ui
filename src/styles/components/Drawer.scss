@@ -1,0 +1,103 @@
+$directions: left, right, top, bottom;
+
+@mixin drawer-animation($direction) {
+  @keyframes #{$direction}-drawer-in {
+    0% {
+      @if $direction == left {
+        transform: translate(-100%, 0px);
+      }
+
+      @if $direction == right {
+        transform: translate(100%, 0px);
+      }
+
+      @if $direction == top {
+        transform: translate(0px, -100%);
+      }
+
+      @if $direction == bottom {
+        transform: translate(0px, 100%);
+      }
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes #{$direction}-drawer-out {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      @if $direction == left {
+        transform: translate(-100%, 0px);
+      }
+
+      @if $direction == right {
+        transform: translate(100%, 0px);
+      }
+
+      @if $direction == top {
+        transform: translate(0px, -100%);
+      }
+
+      @if $direction == bottom {
+        transform: translate(0px, 100%);
+      }
+    }
+  }
+}
+
+@mixin animation($direction) {
+  &.is-#{$direction}.is-open {
+    animation: #{$direction}-drawer-in $primary-transition;
+  }
+  &.is-#{$direction} {
+    animation: #{$direction}-drawer-out $primary-transition;
+  }
+}
+
+@each $direction in $directions {
+  @include drawer-animation($direction);
+}
+
+.mz-drawer-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+.mz-drawer {
+  pointer-events: initial;
+  position: absolute;
+
+  @each $direction in $directions {
+    @include animation($direction);
+  }
+
+  &.is-left,
+  &.is-top {
+    top: 0;
+    left: 0;
+  }
+  &.is-right {
+    top: 0;
+    right: 0;
+  }
+  &.is-bottom {
+    left: 0;
+    bottom: 0;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
