@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-03-25 17:29</div>
+    <div class="update-datetime">文档更新时间：2020-04-17 09:41</div>
     <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -234,6 +234,40 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="quan-ping-dui-hua-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#quan-ping-dui-hua-kuang" title="全屏对话框" data-level="3" data-href="#quan-ping-dui-hua-kuang">¶</a>全屏对话框</h3>
+<demo-block>
+        <template #example><modal-demo5 inline-template><div class="modal-demo5">
+  <mz-button color="success"
+    @click="visible = true">全屏对话框</mz-button>
+  <mz-modal v-model="visible" title="对话框" fullscreen>
+    <div>Welcome to chaos world!</div>
+    <template #footer>
+      <mz-button flat color="primary"
+        @click="visible = false">关闭</mz-button>
+    </template>
+  </mz-modal>
+</div></modal-demo5></template>
+        <template #description><p><code>fullscreen</code>属性控制对话框是否全屏显示。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;success&quot;
+  @click=&quot;visible = true&quot;&gt;全屏对话框&lt;/mz-button&gt;
+&lt;mz-modal v-model=&quot;visible&quot; title=&quot;对话框&quot; fullscreen&gt;
+  &lt;div&gt;Welcome to chaos world!&lt;/div&gt;
+  &lt;template #footer&gt;
+    &lt;mz-button flat color=&quot;primary&quot;
+      @click=&quot;visible = false&quot;&gt;关闭&lt;/mz-button&gt;
+  &lt;/template&gt;
+&lt;/mz-modal&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -262,8 +296,15 @@ export default {
 <td></td>
 </tr>
 <tr>
+<td>fullscreen</td>
+<td>是否全屏</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>elevation</td>
-<td>深度</td>
+<td>阴影深度</td>
 <td>Number</td>
 <td></td>
 <td>15</td>
@@ -574,6 +615,12 @@ export default {
       }
       this.$snackbar.hide()
       done()
+    }
+  }
+}, ModalDemo5: {
+  data() {
+    return {
+      visible: false
     }
   }
 } }

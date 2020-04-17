@@ -174,6 +174,31 @@ export default {
 ```
 :::
 
+### 全屏对话框
+:::demo `fullscreen`属性控制对话框是否全屏显示。
+```html
+<mz-button color="success"
+  @click="visible = true">全屏对话框</mz-button>
+<mz-modal v-model="visible" title="对话框" fullscreen>
+  <div>Welcome to chaos world!</div>
+  <template #footer>
+    <mz-button flat color="primary"
+      @click="visible = false">关闭</mz-button>
+  </template>
+</mz-modal>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+</script>
+```
+:::
+
 
 ### API
 
@@ -183,7 +208,8 @@ export default {
 | --- | --- | --- | --- | --- |
 |visible/v-modal|是否显示|Boolean|||
 |title|标题|String|||
-|elevation|深度|Number||15|
+|fullscreen|是否全屏|Boolean|||
+|elevation|阴影深度|Number||15|
 |zIndex|层级|Number|||
 |width|宽度|String||'500px'|
 |top|对话框距离顶部的高度|String|||
