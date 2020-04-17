@@ -1,17 +1,5 @@
 import Modal from './Modal'
-import Stack from '@/classes/Stack'
 import { ModalConfig } from './Modal.d'
-
-export const modalStack = new Stack()
-
-window.addEventListener('keydown', function(event) {
-  if (event.keyCode === 27) {
-    const modal = modalStack.top()
-    if (modal && modal.closeOnPressEscape) {
-      modal.close()
-    }
-  }
-})
 
 const defaultConfig = {
   title: '',
