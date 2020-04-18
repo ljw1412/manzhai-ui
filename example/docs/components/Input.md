@@ -182,3 +182,44 @@ export default {
 </script>
 ```
 :::
+
+
+### API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|value/v-model|绑定值|String / Number|||
+|type|同原生 [type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)|String|||
+|name|原生属性|String|||
+|maxlength|原生属性，最大输入长度||||
+|readonly|原生属性|Boolean|||
+|disabled|是否禁用|Boolean|||
+|placeholder|输入框占位文本|String|||
+|autocomplete|原生属性，自动补全|String|'on'/'off'|'off'|
+| ripple | 点击涟漪效果 | Boolean / Object | | true |
+|rounded|是否为圆角效果|Boolean|||
+|flat|是否为扁平效果|Boolean|||
+|shadow|是否为阴影效果|Boolean|||
+|prefix|前缀内容，复杂内容请使用同名插槽|String|||
+|suffix|后缀内容，复杂内容请使用同名插槽|String|||
+| size | 尺寸 | String | small / medium / large   |  |
+
+
+#### 插槽
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|prefix|前缀||
+|suffix|后缀||
+
+
+#### 事件
+
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|input|输入事件|(value:string)|
+|focus|聚焦事件|(e:InputEvent)|
+|blur|失焦事件|(e:InputEvent)|
+|change|内容改变事件|(value:string)|
