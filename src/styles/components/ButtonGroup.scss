@@ -19,4 +19,10 @@
       border-bottom-left-radius: 0;
     }
   }
+
+  &.d-flex {
+    > .mz-button {
+      flex: 1 0 auto;
+    }
+  }
 }
