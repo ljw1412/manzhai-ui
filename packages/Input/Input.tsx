@@ -76,7 +76,7 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
 
     const data = {
       class: [
-        'mz-input flex align-items-center',
+        'mz-input d-inline-flex align-items-center',
         this.mzSize,
         {
           'has-prefix': prefix,
