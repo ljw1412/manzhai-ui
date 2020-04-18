@@ -168,10 +168,15 @@ export default {
   <mz-button outlined round color="primary">按钮2</mz-button>
   <mz-button outlined round color="primary">按钮3</mz-button>
 </mz-button-group>
+<mz-button-group block>
+  <mz-button color="primary">按钮1</mz-button>
+  <mz-button color="primary">按钮2</mz-button>
+  <mz-button color="primary">按钮3</mz-button>
+</mz-button-group>
 ```
 :::
 
-### API
+### Button API
 
 #### 属性
 
@@ -198,3 +203,12 @@ export default {
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
 |默认|按钮的内容||
+
+
+### ButtonGroup API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- |---|
+|block|是否铺满|Boolean|||

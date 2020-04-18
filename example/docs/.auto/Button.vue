@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-04-15 11:56</div>
+    <div class="update-datetime">文档更新时间：2020-04-18 14:59</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -212,6 +212,11 @@ export default {
 <p>以按钮组的方式出现，常用于多项类似操作。</p>
 <demo-block>
         <template #example><button-demo6 inline-template><div class="button-demo6">
+  <mz-button-group block>
+    <mz-button color="primary">按钮1</mz-button>
+    <mz-button color="primary">按钮2</mz-button>
+    <mz-button color="primary">按钮3</mz-button>
+  </mz-button-group>
   <mz-button-group>
     <mz-button color="primary">按钮1</mz-button>
     <mz-button color="primary">按钮2</mz-button>
@@ -235,7 +240,12 @@ export default {
 </div></button-demo6></template>
         <template #description><p>使用<code>mz-button-group</code>组件将按钮归为一个组。注意：插槽内只允许传入<code>mz-button</code>组件。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-button-group&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button-group block&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;按钮1&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;按钮2&lt;/mz-button&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;按钮3&lt;/mz-button&gt;
+&lt;/mz-button-group&gt;
+&lt;mz-button-group&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;按钮1&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;按钮2&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;按钮3&lt;/mz-button&gt;
@@ -255,7 +265,7 @@ export default {
   &lt;mz-button outlined round color=&quot;primary&quot;&gt;按钮2&lt;/mz-button&gt;
   &lt;mz-button outlined round color=&quot;primary&quot;&gt;按钮3&lt;/mz-button&gt;
 &lt;/mz-button-group&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+</code></pre></template></demo-block><h3 id="button-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#button-api" title="Button API" data-level="3" data-href="#button-api">¶</a>Button API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
@@ -388,6 +398,28 @@ export default {
 <tr>
 <td>默认</td>
 <td>按钮的内容</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="buttongroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#buttongroup-api" title="ButtonGroup API" data-level="3" data-href="#buttongroup-api">¶</a>ButtonGroup API</h3>
+<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>是否铺满</td>
+<td>Boolean</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
