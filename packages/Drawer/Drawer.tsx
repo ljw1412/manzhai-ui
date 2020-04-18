@@ -25,6 +25,12 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
   readonly divider!: boolean
   @Prop({ type: Boolean, default: true })
   readonly showClose!: boolean
+  @Prop([String, Object, Array])
+  readonly headerStyle!: any
+  @Prop([String, Object, Array])
+  readonly contentStyle!: any
+  @Prop([String, Object, Array])
+  readonly footerStyle!: any
 
   isDisplayWrapper = false
 
@@ -58,10 +64,15 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     }
 
     const drawerData = {
-      class: ['mz-drawer', `is-${this.placement}`, { 'is-open': this.visible }],
+      class: [
+        'mz-drawer',
+        `is-${this.placement}`,
+        { 'is-open': this.visible, 'is-divider': this.divider }
+      ],
       style: {
         width: this.isVertical ? '100%' : this.width,
         height: !this.isVertical ? '100%' : this.height,
+        borderRadius: this.radius,
         zIndex: this.mZIndex
         // transformOrigin: this.placement
       },
@@ -79,6 +90,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
             {this.renderClose()}
             {this.renderHeader()}
             {this.renderContent()}
+            {this.renderFooter()}
           </mz-card>
         </transition>
       </div>
@@ -89,7 +101,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     if (!this.showClose) return
 
     const data = {
-      class: ['mz-drawer__close', 'is-pointer'],
+      class: ['mz-drawer__close', 'is-pointer', 'mz-click-effect'],
       props: { name: 'md-close', size: 24 },
       on: {
         click: this.close
@@ -101,12 +113,27 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
   renderHeader() {
     if (!this.title && !this.$slots.title) return
     return (
-      <div class="mz-drawer__header">{this.$slots.title || this.title}</div>
+      <header class="mz-drawer__header" style={this.headerStyle}>
+        {this.$slots.title || this.title}
+      </header>
     )
   }
 
   renderContent() {
-    return <div class="mz-drawer__content">{this.$slots.default}</div>
+    return (
+      <section class="mz-drawer__content" style={this.contentStyle}>
+        {this.$slots.default}
+      </section>
+    )
+  }
+
+  renderFooter() {
+    if (!this.$slots.footer) return
+    return (
+      <footer class="mz-drawer__footer" style={this.footerStyle}>
+        {this.$slots.footer}
+      </footer>
+    )
   }
 
   @Watch('visible')

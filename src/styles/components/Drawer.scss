@@ -76,9 +76,42 @@ $directions: left, right, top, bottom;
 .mz-drawer {
   pointer-events: initial;
   position: absolute;
+  display: flex;
+  flex-direction: column;
 
   @each $direction in $directions {
     @include animation($direction);
+  }
+
+  &__header {
+    flex-shrink: 0;
+    position: relative;
+    padding: 16px 24px;
+    padding-right: 40px;
+  }
+
+  &__content {
+    height: 100%;
+    overflow: auto;
+    padding: 10px 24px;
+  }
+
+  &__footer {
+    padding: 16px 24px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    z-index: 1;
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 
   &.is-left,
@@ -95,9 +128,12 @@ $directions: left, right, top, bottom;
     bottom: 0;
   }
 
-  &__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  &.is-divider {
+    .mz-drawer__header {
+      border-bottom: 1px solid $color-border-base;
+    }
+    .mz-drawer__footer {
+      border-top: 1px solid $color-border-base;
+    }
   }
 }
