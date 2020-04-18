@@ -1,6 +1,3 @@
-@import './common.scss';
-@import './reset.scss';
-
 @supports (--test: 'test') {
   @import './theme-preset.scss';
   @import './scss/core.scss';
@@ -9,3 +6,5 @@
   @import './components/index.scss';
   @import './theme-preset-dark.scss';
 }
+@import './reset.scss';
+@import './common.scss';

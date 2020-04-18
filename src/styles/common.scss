@@ -1,3 +1,12 @@
+$display-values: none inline inline-block block table table-cell table-row flex
+  inline-flex grid;
+
+@each $value in $display-values {
+  .d-#{$value} {
+    display: $value;
+  }
+}
+
 .is-pointer {
   cursor: pointer !important;
 }
@@ -21,14 +30,6 @@
 .is-circle {
   border-radius: 50% !important;
   overflow: hidden !important;
-}
-
-.flex {
-  display: flex;
-}
-
-.inline-flex {
-  display: inline-flex;
 }
 
 .align-items-center {
