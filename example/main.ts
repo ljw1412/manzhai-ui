@@ -5,6 +5,7 @@ import manzhaiUI from '../src/index'
 import DemoBlock from './components/DemoBlock.vue'
 import hljs from 'highlight.js'
 
+import './styles/manzhai-variables.scss'
 import './styles/global.scss'
 import './styles/theme/index.scss'
 
