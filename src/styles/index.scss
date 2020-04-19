@@ -1,10 +1,9 @@
-@supports (--test: 'test') {
-  @import './theme-preset.scss';
-  @import './scss/core.scss';
-  @import './transition.scss';
-  @import './base.scss';
-  @import './components/index.scss';
-  @import './theme-preset-dark.scss';
-}
+@import './theme-preset.scss';
+@import './scss/core.scss';
+@import './transition.scss';
+@import './base.scss';
+@import './components/index.scss';
+@import './directives/ripple.scss';
+@import './theme-preset-dark.scss';
 @import './reset.scss';
 @import './common.scss';

@@ -167,12 +167,3 @@ export default class MzDropdown extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-dropdown {
-  display: inline-block;
-  &__card {
-    position: absolute;
-  }
-}
-</style>
