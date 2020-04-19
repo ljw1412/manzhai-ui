@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import manzhaiUI from '../src/index'
+import manzhaiUI from '../src/entry'
 import DemoBlock from './components/DemoBlock.vue'
 import hljs from 'highlight.js'
 
