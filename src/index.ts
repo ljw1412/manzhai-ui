@@ -1,4 +1,3 @@
-import './styles/index.scss'
 import { VueConstructor } from 'vue'
 import { getCurrentTheme } from './utils/theme'
 import { hyphenate } from './utils/string'
