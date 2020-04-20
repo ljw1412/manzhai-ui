@@ -199,6 +199,67 @@ export default {
 ```
 :::
 
+### 禁用点击弹窗关闭
+:::demo `close-on-click-mask`属性控制对话框是否允许点击遮罩关闭。
+```html
+<mz-button color="success"
+  @click="visible = true">显示对话框</mz-button>
+<mz-modal v-model="visible" title="对话框" :close-on-click-mask="false">
+  <div>Welcome to chaos world!</div>
+  <template #footer>
+    <mz-button flat color="primary"
+      @click="visible = false">关闭</mz-button>
+  </template>
+</mz-modal>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+</script>
+```
+:::
+
+### 更多动画
+:::demo `transition`属性控制对话框的过渡动画。默认`mz-zoom`。
+```html
+<span class="demo-font-size-14">动画：</span>
+<mz-radio-group v-model="transition"
+  class="d-inline-block"
+  style="margin:0 10px;">
+  <mz-radio value="mz-zoom">mz-zoom</mz-radio>
+  <mz-radio value="mz-zoom-in-in">mz-zoom-in-in</mz-radio>
+  <mz-radio value="mz-bounce">mz-bounce</mz-radio>
+</mz-radio-group>
+<mz-button color="success"
+  @click="visible = true">显示对话框</mz-button>
+<mz-modal v-model="visible" 
+  title="对话框"
+  :transition="transition">
+  <div>Welcome to chaos world!</div>
+  <template #footer>
+    <mz-button flat color="primary"
+      @click="visible = false">关闭</mz-button>
+  </template>
+</mz-modal>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false,
+      transition: 'mz-zoom'
+    }
+  }
+}
+</script>
+```
+:::
+
 
 ### API
 

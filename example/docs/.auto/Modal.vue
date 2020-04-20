@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-04-17 11:31</div>
+    <div class="update-datetime">文档更新时间：2020-04-20 21:50</div>
     <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -264,6 +264,95 @@ export default {
   data() {
     return {
       visible: false
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="jin-yong-dian-ji-dan-chuang-guan-bi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-dian-ji-dan-chuang-guan-bi" title="禁用点击弹窗关闭" data-level="3" data-href="#jin-yong-dian-ji-dan-chuang-guan-bi">¶</a>禁用点击弹窗关闭</h3>
+<demo-block>
+        <template #example><modal-demo6 inline-template><div class="modal-demo6">
+  <mz-button color="success"
+    @click="visible = true">显示对话框</mz-button>
+  <mz-modal v-model="visible" title="对话框" :close-on-click-mask="false">
+    <div>Welcome to chaos world!</div>
+    <template #footer>
+      <mz-button flat color="primary"
+        @click="visible = false">关闭</mz-button>
+    </template>
+  </mz-modal>
+</div></modal-demo6></template>
+        <template #description><p><code>close-on-click-mask</code>属性控制对话框是否允许点击遮罩关闭。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;success&quot;
+  @click=&quot;visible = true&quot;&gt;显示对话框&lt;/mz-button&gt;
+&lt;mz-modal v-model=&quot;visible&quot; title=&quot;对话框&quot; :close-on-click-mask=&quot;false&quot;&gt;
+  &lt;div&gt;Welcome to chaos world!&lt;/div&gt;
+  &lt;template #footer&gt;
+    &lt;mz-button flat color=&quot;primary&quot;
+      @click=&quot;visible = false&quot;&gt;关闭&lt;/mz-button&gt;
+  &lt;/template&gt;
+&lt;/mz-modal&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="geng-duo-dong-hua" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#geng-duo-dong-hua" title="更多动画" data-level="3" data-href="#geng-duo-dong-hua">¶</a>更多动画</h3>
+<demo-block>
+        <template #example><modal-demo7 inline-template><div class="modal-demo7">
+  <span class="demo-font-size-14">动画：</span>
+  <mz-radio-group v-model="transition"
+    class="d-inline-block"
+    style="margin:0 10px;">
+    <mz-radio value="mz-zoom">mz-zoom</mz-radio>
+    <mz-radio value="mz-zoom-in-in">mz-zoom-in-in</mz-radio>
+    <mz-radio value="mz-bounce">mz-bounce</mz-radio>
+  </mz-radio-group>
+  <mz-button color="success"
+    @click="visible = true">显示对话框</mz-button>
+  <mz-modal v-model="visible" 
+    title="对话框"
+    :transition="transition">
+    <div>Welcome to chaos world!</div>
+    <template #footer>
+      <mz-button flat color="primary"
+        @click="visible = false">关闭</mz-button>
+    </template>
+  </mz-modal>
+</div></modal-demo7></template>
+        <template #description><p><code>transition</code>属性控制对话框的过渡动画。默认<code>mz-zoom</code>。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;动画：&lt;/span&gt;
+&lt;mz-radio-group v-model=&quot;transition&quot;
+  class=&quot;d-inline-block&quot;
+  style=&quot;margin:0 10px;&quot;&gt;
+  &lt;mz-radio value=&quot;mz-zoom&quot;&gt;mz-zoom&lt;/mz-radio&gt;
+  &lt;mz-radio value=&quot;mz-zoom-in-in&quot;&gt;mz-zoom-in-in&lt;/mz-radio&gt;
+  &lt;mz-radio value=&quot;mz-bounce&quot;&gt;mz-bounce&lt;/mz-radio&gt;
+&lt;/mz-radio-group&gt;
+&lt;mz-button color=&quot;success&quot;
+  @click=&quot;visible = true&quot;&gt;显示对话框&lt;/mz-button&gt;
+&lt;mz-modal v-model=&quot;visible&quot; 
+  title=&quot;对话框&quot;
+  :transition=&quot;transition&quot;&gt;
+  &lt;div&gt;Welcome to chaos world!&lt;/div&gt;
+  &lt;template #footer&gt;
+    &lt;mz-button flat color=&quot;primary&quot;
+      @click=&quot;visible = false&quot;&gt;关闭&lt;/mz-button&gt;
+  &lt;/template&gt;
+&lt;/mz-modal&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      visible: false,
+      transition: 'mz-zoom'
     }
   }
 }
@@ -648,6 +737,19 @@ export default {
   data() {
     return {
       visible: false
+    }
+  }
+}, ModalDemo6: {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}, ModalDemo7: {
+  data() {
+    return {
+      visible: false,
+      transition: 'mz-zoom'
     }
   }
 } }
