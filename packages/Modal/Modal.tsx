@@ -28,6 +28,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   readonly fullscreen!: boolean
 
   isDisplayWrapper = false
+  isAnimated = false
 
   get headless() {
     return !this.$slots.header && !this.title
@@ -40,7 +41,8 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
         'is-divider': this.divider,
         'is-headless': this.headless,
         'is-inner-scroll': !this.outerScroll,
-        'is-fullscreen': this.fullscreen
+        'is-fullscreen': this.fullscreen,
+        'is-animated': this.isAnimated
       }
     ]
   }
@@ -51,7 +53,8 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
       style: [
         {
           zIndex: this.mZIndex,
-          pointerEvents: this.maskAppendToBody ? 'none' : undefined
+          pointerEvents: this.maskAppendToBody ? 'none' : undefined,
+          overflow: this.isAnimated || !this.visible ? 'hidden' : undefined
         }
       ],
       directives: [{ name: 'show', value: this.isDisplayWrapper }]
@@ -112,6 +115,13 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   renderFooter() {
     if (!this.$slots.footer) return
     return <div class="mz-modal__footer">{this.$slots.footer}</div>
+  }
+
+  handleMaskDisabledClick() {
+    this.isAnimated = true
+    setTimeout(() => {
+      this.isAnimated = false
+    }, 200)
   }
 
   @Watch('visible')

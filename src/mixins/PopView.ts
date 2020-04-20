@@ -46,8 +46,15 @@ export default class MzPopView extends Vue {
     }
   }
 
+  // 当遮罩点击禁用时，需重写
+  handleMaskDisabledClick() {}
+
   closeByMask() {
-    this.closeOnClickMask && this.close()
+    if (this.closeOnClickMask) {
+      this.close()
+    } else if (this.handleMaskDisabledClick) {
+      this.handleMaskDisabledClick()
+    }
   }
 
   hide(cancel?: any) {

@@ -60,4 +60,22 @@
     height: 100%;
     max-height: 100% !important;
   }
+
+  &.is-animated {
+    animation: animate-model 0.2s linear;
+  }
+}
+
+@keyframes animate-model {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
