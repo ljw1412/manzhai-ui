@@ -1,5 +1,6 @@
 .mz-list {
   &__empty {
+    color: $color-text-primary;
     padding: $padding-lg 0;
     text-align: center;
   }

@@ -23,8 +23,12 @@ export default class MzList extends MzSize {
   }
 
   render(h: CreateElement) {
+    const data = {
+      class: ['mz-list']
+    }
+
     return (
-      <div class="mz-list">
+      <div {...data}>
         {this.$slots.default}
         {this.renderEmpty()}
       </div>
