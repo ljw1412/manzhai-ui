@@ -13,6 +13,7 @@ import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
 import ComponentImagePreview from './ImagePreview.vue'
 import ComponentInput from './Input.vue'
+import ComponentList from './List.vue'
 import ComponentLoading from './Loading.vue'
 import ComponentMask from './Mask.vue'
 import ComponentMasonry from './Masonry.vue'
@@ -108,6 +109,11 @@ export default [
     path: 'input',
     name: 'ComponentInput',
     component: ComponentInput
+  },
+  {
+    path: 'list',
+    name: 'ComponentList',
+    component: ComponentList
   },
   {
     path: 'loading',
