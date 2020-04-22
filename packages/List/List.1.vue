@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
-import ListItem from './ListItem.vue'
+import ListItem from './ListItem.1.vue'
 @Component({
   provide() {
     return { mzList: this }

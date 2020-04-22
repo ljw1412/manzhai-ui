@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Inject, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import MzListItem from './ListItem.vue'
+import MzListItem from './ListItem.1.vue'
 import MzIcon from '../Icon/index'
 
 @Component({

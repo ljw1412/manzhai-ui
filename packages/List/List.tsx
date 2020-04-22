@@ -1,7 +1,7 @@
 import { Component, Prop, Provide } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzSize from '@/mixins/MzSize'
-import ListItem from './ListItem'
+import MzListItem from './ListItem'
 
 @Component({
   provide() {
@@ -16,7 +16,7 @@ export default class MzList extends MzSize {
   @Prop({ type: String, default: '无数据' })
   readonly emptyText!: string
 
-  itemList: ListItem[] = []
+  itemList: MzListItem[] = []
 
   get isEmpty() {
     return !this.itemList.length

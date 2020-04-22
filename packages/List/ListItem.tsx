@@ -20,7 +20,32 @@ export default class MzListItem extends Mixins(MzSize, FormElement) {
   readonly ripple!: boolean | object
 
   render(h: CreateElement) {
-    return <div class="mz-list-item"></div>
+    return (
+      <div class="mz-list-item">
+        {this.$slots.prefix && (
+          <div class="mz-list-item__prefix">{this.$slots.prefix}</div>
+        )}
+        {this.$slots.default || this.renderContent()}
+        {this.$slots.suffix && (
+          <div class="mz-list-item__suffix">{this.$slots.suffix}</div>
+        )}
+      </div>
+    )
+  }
+
+  renderContent() {
+    if (this.$slots.content) {
+      return <div class="mz-list-item__content">{this.$slots.content}</div>
+    }
+
+    return (
+      <div class="mz-list-item__content">
+        <div class="mz-list-item__title">
+          {this.$slots.title || this.label || this.value}
+        </div>
+        <div class="mz-list-item__text">{this.$slots.text || this.text}</div>
+      </div>
+    )
   }
 
   created() {

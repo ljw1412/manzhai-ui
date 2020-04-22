@@ -29,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Inject, Watch } from 'vue-property-decorator'
-import { MzList } from '.'
+import  MzList  from './List.1.vue'
 
 @Component
 export default class MzListItem extends Vue {
