@@ -5,8 +5,8 @@
 ### 基础用法
 :::demo
 ```html
-<m-list>
-  <m-list-item></m-list-item>
-</m-list>
+<mz-list>
+  <mz-list-item></mz-list-item>
+</mz-list>
 ```
 :::
