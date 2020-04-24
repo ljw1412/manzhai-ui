@@ -1,4 +1,3 @@
-import './ripple.scss'
 import { VNodeDirective, VNode } from 'vue'
 
 function xy(el: HTMLElement, x: string, y: string) {

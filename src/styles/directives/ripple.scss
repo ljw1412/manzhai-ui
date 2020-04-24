@@ -1,6 +1,4 @@
-:root {
-  --ripple-opacity: 0.3;
-}
+$ripple-opacity: 0.3;
 
 .mz-ripple-wrapper {
   border-radius: inherit;
@@ -29,7 +27,7 @@
 
     &-in {
       transform: scale(1);
-      opacity: var(--ripple-opacity, 0.15);
+      opacity: $ripple-opacity;
     }
 
     &-out {

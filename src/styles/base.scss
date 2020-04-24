@@ -39,3 +39,13 @@ $font-size-list: 32px 28px 24px 22px 20px 18px 16px 14px 12px;
     color: $color !important;
   }
 }
+
+.mz-click-effect {
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

@@ -135,9 +135,3 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   }
 }
 </script>
-
-<style lang="scss">
-.mz-dropdown-card {
-  position: absolute;
-}
-</style>

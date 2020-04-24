@@ -22,7 +22,7 @@ export default class MzTab extends Vue {
 
   get transitionName() {
     if (this.mzTabs && this.mzTabs.animation === false) return undefined
-    return this.reverse ? 'mz-x-reverse-transition' : 'mz-x-transition'
+    return this.reverse ? 'mz-tab-x-reverse-transition' : 'mz-tab-x-transition'
   }
 
   get grow() {

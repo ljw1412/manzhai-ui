@@ -1,6 +1,8 @@
-@import './common.scss';
-@import './reset.scss';
+// 兼容性样式
 @import './scss/core-compatibly.scss';
 @import './transition.scss';
 @import './base.scss';
 @import './components/index.scss';
+@import './directives/index.scss';
+@import './reset.scss';
+@import './common.scss';

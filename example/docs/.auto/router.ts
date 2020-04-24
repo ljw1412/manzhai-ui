@@ -6,6 +6,7 @@ import ComponentCarousel from './Carousel.vue'
 import ComponentCatalogue from './Catalogue.vue'
 import ComponentCell from './Cell.vue'
 import ComponentCheckbox from './Checkbox.vue'
+import ComponentDrawer from './Drawer.vue'
 import ComponentFilterSection from './FilterSection.vue'
 import ComponentFixedSection from './FixedSection.vue'
 import ComponentGrid from './Grid.vue'
@@ -74,6 +75,11 @@ export default [
     path: 'checkbox',
     name: 'ComponentCheckbox',
     component: ComponentCheckbox
+  },
+  {
+    path: 'drawer',
+    name: 'ComponentDrawer',
+    component: ComponentDrawer
   },
   {
     path: 'filter-section',

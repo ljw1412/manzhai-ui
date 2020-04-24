@@ -14,60 +14,6 @@
     transition: opacity $primary-transition;
   }
 }
-.mz {
-  &-x-transition,
-  &-x-reverse-transition,
-  &-y-transition,
-  &-y-reverse-transition {
-    &-enter-active,
-    &-leave-active {
-      transition: $primary-transition;
-    }
-    &-leave,
-    &-leave-to {
-      position: absolute !important;
-      top: 0;
-      width: 100%;
-    }
-  }
-  &-x-transition {
-    &-enter {
-      transform: translateX(100%);
-    }
-
-    &-leave-to {
-      transform: translateX(-100%);
-    }
-  }
-
-  &-x-reverse-transition {
-    &-enter {
-      transform: translateX(-100%);
-    }
-
-    &-leave-to {
-      transform: translateX(100%);
-    }
-  }
-  &-y-transition {
-    &-enter {
-      transform: translateY(100%);
-    }
-
-    &-leave-to {
-      transform: translateY(-100%);
-    }
-  }
-  &-y-reverse-transition {
-    &-enter {
-      transform: translateY(-100%);
-    }
-
-    &-leave-to {
-      transform: translateY(100%);
-    }
-  }
-}
 
 @each $type, $type2 in ('', 'scale'), ('-x', 'scaleX'), ('-y', 'scaleY') {
   .mz#{$type}-zoom {
@@ -86,5 +32,46 @@
       transform: #{'#{$type2}(1)'};
       opacity: 1;
     }
+  }
+}
+
+.mz-bounce-enter-active {
+  animation: mz-bounce-in 0.3s;
+}
+.mz-bounce-leave-active {
+  animation: mz-bounce-in 0.3s reverse;
+}
+@keyframes mz-bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.mz-zoom-in-in {
+  &-enter-active,
+  &-leave-active {
+    overflow: hidden;
+    transition: $primary-transition;
+  }
+  &-enter {
+    transform: scale(0);
+    opacity: 0.3;
+  }
+
+  &-leave-to {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+
+  &-enter-to,
+  &-leave {
+    transform: scale(1);
+    opacity: 1;
   }
 }

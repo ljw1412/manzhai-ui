@@ -7,11 +7,9 @@
   right: 0;
   overflow: auto;
   will-change: transform, opacity;
-  pointer-events: none;
 }
 
 .mz-modal {
-  pointer-events: auto;
   pointer-events: initial;
   margin: auto;
   &__header {
@@ -31,7 +29,7 @@
     }
   }
 
-  &--divider {
+  &.is-divider {
     .mz-modal__header {
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
@@ -40,13 +38,13 @@
     }
   }
 
-  &--headless {
+  &.is-headless {
     .mz-modal__body {
       padding-top: 20px;
     }
   }
 
-  &--inner-scroll {
+  &.is-inner-scroll {
     display: flex;
     flex-direction: column;
     max-height: 90%;
@@ -55,5 +53,29 @@
       overflow: auto;
       flex-grow: 1;
     }
+  }
+
+  &.is-fullscreen {
+    width: 100%;
+    height: 100%;
+    max-height: 100% !important;
+  }
+
+  &.is-animated {
+    animation: animate-model 0.2s linear;
+  }
+}
+
+@keyframes animate-model {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.05);
+  }
+
+  to {
+    transform: scale(1);
   }
 }
