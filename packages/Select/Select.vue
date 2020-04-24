@@ -85,6 +85,8 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
   readonly valueName!: string
   @Prop({ default: 'label' })
   readonly labelName!: string
+  @Prop(String)
+  readonly placeholder!: string
   @Prop(Boolean)
   readonly search!: boolean
   @Prop(Boolean)
