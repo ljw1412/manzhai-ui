@@ -21,6 +21,7 @@
   }
 
   &__title {
+    font-weight: 500;
     font-size: $font-size-md;
     color: $color-text-regular;
   }
@@ -94,17 +95,16 @@
   @each $size, $arr in $size-options {
     &:not(.is-custom).mz-size--#{$size} {
       padding: 0 nth($arr, 1);
+      line-height: 1.4;
       .mz-list-item {
         &__content {
           padding: nth($arr, 2) 0;
         }
         &__title {
           font-size: nth($arr, 3);
-          line-height: nth($arr, 3);
         }
         &__text {
           font-size: nth($arr, 4);
-          line-height: nth($arr, 4);
         }
       }
     }

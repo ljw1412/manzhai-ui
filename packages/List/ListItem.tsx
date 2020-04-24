@@ -32,7 +32,8 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
         this.mzList.value != undefined &&
         this.value === this.mzList.value,
       disabled: this.disabled || this.mzList.disabled,
-      clickable: this.clickable || this.mzList.isClickable
+      clickable: this.clickable || this.mzList.isClickable,
+      ripple: this.ripple || this.mzList.ripple
     }
   }
 

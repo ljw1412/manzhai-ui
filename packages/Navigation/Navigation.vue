@@ -11,7 +11,7 @@ interface NavigationItem {
   value: any
   group?: string
   icon?: string
-  label?: string
+  title?: string
   text?: string
   to?: RawLocation
   isCollapsed?: boolean
@@ -76,7 +76,7 @@ export default class MzNavigation extends Vue {
 
   renderItem(data: NavigationItem[]): any {
     return data.map(item => {
-      if (!item.value && !item.group) item.value = item.label
+      if (!item.value && !item.group) item.value = item.title
       const baseProps: VNodeData = {
         props: {
           ...item,

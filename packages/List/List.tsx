@@ -22,6 +22,8 @@ export default class MzList extends Mixins(MzSize, BaseAttribute) {
   readonly clickable!: boolean
   @Prop({ type: String, default: '无数据' })
   readonly emptyText!: string
+  @Prop([Boolean, Object])
+  readonly ripple!: boolean | object
 
   itemList: MzListItem[] = []
 
