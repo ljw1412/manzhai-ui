@@ -1,7 +1,7 @@
 <template>
   <mz-list-item class="mz-option"
     :value="value"
-    :title="label"
+    :title="label || value"
     :disabled="isDisabled"
     @click="onClick">
   </mz-list-item>

@@ -1,6 +1,6 @@
 <template>
   <div class="component-navigation">
-    <div class="update-datetime">文档更新时间：2020-04-08 13:06</div>
+    <div class="update-datetime">文档更新时间：2020-04-24 19:22</div>
     <h2 id="dao-hang-cai-dan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#dao-hang-cai-dan" title="导航菜单" data-level="2" data-href="#dao-hang-cai-dan">¶</a>导航菜单</h2>
 <p>有站点导航功能的菜单。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -22,19 +22,19 @@ export default {
           group: '组1',
           children: [
             {
-              label: '组1-1',
+              title: '组1-1',
               value: '1',
               children: [
                 {
-                  label: '组1-1-子菜单',
+                  title: '组1-1-子菜单',
                   value: 'subnav1',
                   children: [
                     {
-                      label: '组1-1-子菜单-子菜单',
+                      title: '组1-1-子菜单-子菜单',
                       value: 'subnav2',
                       children: [
                         {
-                          label: '组1-1-子菜单-子菜单-子菜单1',
+                          title: '组1-1-子菜单-子菜单-子菜单1',
                           value: 'subnav3'
                         }
                       ]
@@ -44,7 +44,7 @@ export default {
               ]
             },
             {
-              label: '组1-2',
+              title: '组1-2',
               value: '2'
             }
           ]
@@ -53,36 +53,36 @@ export default {
           group: '组2',
           children: [
             {
-              label: '组2-1',
+              title: '组2-1',
               value: '3',
               children: [
                 {
                   group: '组2-子组1',
                   children: [
                     {
-                      label: 'item1',
+                      title: 'item1',
                       children: [
                         {
                           group: '组2-子组1-子组1',
                           children: [
                             {
-                              label: 'item1-1'
+                              title: 'item1-1'
                             },
                             {
-                              label: 'item1-2'
+                              title: 'item1-2'
                             },
                             {
-                              label: 'item1-3'
+                              title: 'item1-3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      label: 'item2'
+                      title: 'item2'
                     },
                     {
-                      label: 'item3'
+                      title: 'item3'
                     }
                   ]
                 }
@@ -178,7 +178,7 @@ export default {
 <td>String</td>
 </tr>
 <tr>
-<td>label</td>
+<td>title</td>
 <td>标签名称</td>
 <td>String</td>
 </tr>
@@ -230,19 +230,19 @@ export default {
           group: '组1',
           children: [
             {
-              label: '组1-1',
+              title: '组1-1',
               value: '1',
               children: [
                 {
-                  label: '组1-1-子菜单',
+                  title: '组1-1-子菜单',
                   value: 'subnav1',
                   children: [
                     {
-                      label: '组1-1-子菜单-子菜单',
+                      title: '组1-1-子菜单-子菜单',
                       value: 'subnav2',
                       children: [
                         {
-                          label: '组1-1-子菜单-子菜单-子菜单1',
+                          title: '组1-1-子菜单-子菜单-子菜单1',
                           value: 'subnav3'
                         }
                       ]
@@ -252,7 +252,7 @@ export default {
               ]
             },
             {
-              label: '组1-2',
+              title: '组1-2',
               value: '2'
             }
           ]
@@ -261,36 +261,36 @@ export default {
           group: '组2',
           children: [
             {
-              label: '组2-1',
+              title: '组2-1',
               value: '3',
               children: [
                 {
                   group: '组2-子组1',
                   children: [
                     {
-                      label: 'item1',
+                      title: 'item1',
                       children: [
                         {
                           group: '组2-子组1-子组1',
                           children: [
                             {
-                              label: 'item1-1'
+                              title: 'item1-1'
                             },
                             {
-                              label: 'item1-2'
+                              title: 'item1-2'
                             },
                             {
-                              label: 'item1-3'
+                              title: 'item1-3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      label: 'item2'
+                      title: 'item2'
                     },
                     {
-                      label: 'item3'
+                      title: 'item3'
                     }
                   ]
                 }

@@ -17,19 +17,19 @@ export default {
           group: '组1',
           children: [
             {
-              label: '组1-1',
+              title: '组1-1',
               value: '1',
               children: [
                 {
-                  label: '组1-1-子菜单',
+                  title: '组1-1-子菜单',
                   value: 'subnav1',
                   children: [
                     {
-                      label: '组1-1-子菜单-子菜单',
+                      title: '组1-1-子菜单-子菜单',
                       value: 'subnav2',
                       children: [
                         {
-                          label: '组1-1-子菜单-子菜单-子菜单1',
+                          title: '组1-1-子菜单-子菜单-子菜单1',
                           value: 'subnav3'
                         }
                       ]
@@ -39,7 +39,7 @@ export default {
               ]
             },
             {
-              label: '组1-2',
+              title: '组1-2',
               value: '2'
             }
           ]
@@ -48,36 +48,36 @@ export default {
           group: '组2',
           children: [
             {
-              label: '组2-1',
+              title: '组2-1',
               value: '3',
               children: [
                 {
                   group: '组2-子组1',
                   children: [
                     {
-                      label: 'item1',
+                      title: 'item1',
                       children: [
                         {
                           group: '组2-子组1-子组1',
                           children: [
                             {
-                              label: 'item1-1'
+                              title: 'item1-1'
                             },
                             {
-                              label: 'item1-2'
+                              title: 'item1-2'
                             },
                             {
-                              label: 'item1-3'
+                              title: 'item1-3'
                             }
                           ]
                         }
                       ]
                     },
                     {
-                      label: 'item2'
+                      title: 'item2'
                     },
                     {
-                      label: 'item3'
+                      title: 'item3'
                     }
                   ]
                 }
@@ -113,7 +113,7 @@ export default {
 |value|选中后的值|any|
 |group|组名称，当有此属性，对象里只能接children|String|
 |icon|图标名称|String|
-|label|标签名称|String|
+|title|标签名称|String|
 |text|辅助文字|String|
 |to|跳转路由(同Vue-link的to)|RawLocation|
 |children|子菜单|NavigationItem[]|
