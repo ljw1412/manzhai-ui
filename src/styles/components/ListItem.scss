@@ -110,36 +110,6 @@
     }
   }
 
-  &--large {
-    padding: 0 20px;
-    .mz-list-item {
-      &__content {
-        padding: 16px 0;
-      }
-      &__title {
-        font-size: 18px;
-      }
-      &__text {
-        font-size: 16px;
-      }
-    }
-  }
-
-  &--small {
-    padding: 0 12px;
-    .mz-list-item {
-      &__content {
-        padding: 8px 0;
-      }
-      &__title {
-        font-size: 14px;
-      }
-      &__text {
-        font-size: 12px;
-      }
-    }
-  }
-
   > .mz-card {
     color: inherit;
     width: 100%;
