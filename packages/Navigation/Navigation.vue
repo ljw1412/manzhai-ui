@@ -5,8 +5,6 @@ import { CreateElement, VNodeData } from 'vue'
 import { RawLocation, NavigationGuard } from 'vue-router'
 import { typeOf } from '../../src/utils/assist'
 
-let tempValue = 0
-
 interface NavigationItem {
   value: any
   group?: string
@@ -36,8 +34,6 @@ export default class MzNavigation extends Vue {
   readonly scrollBehavior!: ScrollBehavior
   @Ref('navigation')
   readonly navigation!: HTMLDivElement
-
-  value = ''
 
   slide(value?: string) {
     if (this.autoScroll && (this.autoScrollOnChange || value === 'init')) {

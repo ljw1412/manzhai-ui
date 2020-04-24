@@ -1,12 +1,12 @@
-<script lang="tsx">
 import { Component, Vue, Prop, Inject, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import MzListItem from './ListItem.1.vue'
+import MzListItem from './ListItem'
 import MzIcon from '../Icon/index'
 
 @Component({
   components: {
-    MzListItem
+    MzListItem,
+    MzIcon
   }
 })
 export default class MzListItemGroup extends Vue {
@@ -15,12 +15,12 @@ export default class MzListItemGroup extends Vue {
   @Prop()
   readonly value!: any
   @Prop(String)
-  readonly label!: string
+  readonly title!: string
   @Prop(String)
   readonly text!: string
   @Prop([Boolean, String])
   readonly round!: boolean | 'left' | 'right' | 'mini'
-  @Prop({ type: [Boolean, Object], default: true })
+  @Prop([Boolean, Object])
   readonly ripple!: boolean | object
   @Prop({ type: Boolean, default: true })
   readonly notAllowSelected!: boolean
@@ -38,7 +38,7 @@ export default class MzListItemGroup extends Vue {
   render(h: CreateElement) {
     const listItemProps = {
       props: {
-        link: true,
+        clickable: true,
         active: this.hasActiveStyle && this.isOpen,
         ...this.$props
       },
@@ -70,4 +70,3 @@ export default class MzListItemGroup extends Vue {
     )
   }
 }
-</script>

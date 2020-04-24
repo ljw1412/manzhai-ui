@@ -1,7 +1,7 @@
 import MzList from './List'
 import MzListItem from './ListItem'
-import MzListGroup from './ListGroup.vue'
-import MzListItemGroup from './ListItemGroup.vue'
+import MzListGroup from './ListGroup'
+import MzListItemGroup from './ListItemGroup'
 import { VueConstructor } from 'vue'
 
 MzList.componentName = 'MzList'

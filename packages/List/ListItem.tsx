@@ -6,7 +6,7 @@ import MzTsxVue from '@/mixins/MzTsxVue'
 
 @Component
 export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
-  @Inject({ from: 'mzList', default: () => {} })
+  @Inject({ from: 'mzList', default: () => ({}) })
   readonly mzList!: MzList
   @Prop()
   readonly value!: any
@@ -32,7 +32,7 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
         this.mzList.value != undefined &&
         this.value === this.mzList.value,
       disabled: this.disabled || this.mzList.disabled,
-      clickable: this.clickable || this.mzList.isClickable,
+      clickable: this.clickable || this.mzList.isClickable || false,
       ripple: this.ripple || this.mzList.ripple
     }
   }
