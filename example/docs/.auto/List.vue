@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-04-24 17:45</div>
+    <div class="update-datetime">文档更新时间：2020-04-24 18:16</div>
     <h2 id="list-lie-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -274,6 +274,93 @@ export default {
   margin-left: 10px;
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="qian-tao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-tao" title="嵌套" data-level="3" data-href="#qian-tao">¶</a>嵌套</h3>
+<demo-block>
+        <template #example><list-demo8 inline-template><div class="list-demo8">
+  <mz-card width="300px">
+    <mz-list divider clickable>
+      <mz-list-item-group title="列表组">
+        <mz-list-item v-for="item of list"
+          :key="item.value"
+          :title="item.title"
+          :item="item"></mz-list-item>
+      </mz-list-item-group>
+      <mz-list-item-group title="列表组2">
+        <mz-list-group label="标签名称">
+          <mz-list-item v-for="item of list"
+            :key="item.value"
+            :title="item.title"
+            :item="item"></mz-list-item>
+        </mz-list-group>
+      </mz-list-item-group>
+      <mz-list-item-group title="多层嵌套">
+        <mz-list-item v-for="item of list"
+          :key="item.value"
+          :title="item.title"
+          :item="item"></mz-list-item>
+        <mz-list-item-group title="多层嵌套+">
+          <mz-list-item v-for="item of list"
+            :key="item.value"
+            :title="item.title"
+            :item="item"></mz-list-item>
+        </mz-list-item-group>
+      </mz-list-item-group>
+      <mz-list-item v-for="item of list"
+        :key="item.value"
+        :title="item.title"
+        :item="item"></mz-list-item>
+    </mz-list>
+  </mz-card>
+</div></list-demo8></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot;&gt;
+  &lt;mz-list divider clickable&gt;
+    &lt;mz-list-item-group title=&quot;列表组&quot;&gt;
+      &lt;mz-list-item v-for=&quot;item of list&quot;
+        :key=&quot;item.value&quot;
+        :title=&quot;item.title&quot;
+        :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
+    &lt;/mz-list-item-group&gt;
+    &lt;mz-list-item-group title=&quot;列表组2&quot;&gt;
+      &lt;mz-list-group label=&quot;标签名称&quot;&gt;
+        &lt;mz-list-item v-for=&quot;item of list&quot;
+          :key=&quot;item.value&quot;
+          :title=&quot;item.title&quot;
+          :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
+      &lt;/mz-list-group&gt;
+    &lt;/mz-list-item-group&gt;
+    &lt;mz-list-item-group title=&quot;多层嵌套&quot;&gt;
+      &lt;mz-list-item v-for=&quot;item of list&quot;
+        :key=&quot;item.value&quot;
+        :title=&quot;item.title&quot;
+        :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
+      &lt;mz-list-item-group title=&quot;多层嵌套+&quot;&gt;
+        &lt;mz-list-item v-for=&quot;item of list&quot;
+          :key=&quot;item.value&quot;
+          :title=&quot;item.title&quot;
+          :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
+      &lt;/mz-list-item-group&gt;
+    &lt;/mz-list-item-group&gt;
+    &lt;mz-list-item v-for=&quot;item of list&quot;
+      :key=&quot;item.value&quot;
+      :title=&quot;item.title&quot;
+      :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
+  &lt;/mz-list&gt;
+&lt;/mz-card&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      list: [
+        { title: '测试 1', value: '1' },
+        { title: '测试 2', value: '2' },
+        { title: '测试 3', value: '3' }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="list-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#list-api" title="List API" data-level="3" data-href="#list-api">¶</a>List API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -588,6 +675,16 @@ export default {
   data() {
     return {
       sizeList: ['small','medium','','large']
+    }
+  }
+}, ListDemo8: {
+  data() {
+    return {
+      list: [
+        { title: '测试 1', value: '1' },
+        { title: '测试 2', value: '2' },
+        { title: '测试 3', value: '3' }
+      ]
     }
   }
 } }

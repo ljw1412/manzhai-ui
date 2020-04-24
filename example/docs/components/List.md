@@ -197,6 +197,61 @@ export default {
 ```
 :::
 
+### 嵌套
+
+:::demo
+```html
+<mz-card width="300px">
+  <mz-list divider clickable>
+    <mz-list-item-group title="列表组">
+      <mz-list-item v-for="item of list"
+        :key="item.value"
+        :title="item.title"
+        :item="item"></mz-list-item>
+    </mz-list-item-group>
+    <mz-list-item-group title="列表组2">
+      <mz-list-group label="标签名称">
+        <mz-list-item v-for="item of list"
+          :key="item.value"
+          :title="item.title"
+          :item="item"></mz-list-item>
+      </mz-list-group>
+    </mz-list-item-group>
+    <mz-list-item-group title="多层嵌套">
+      <mz-list-item v-for="item of list"
+        :key="item.value"
+        :title="item.title"
+        :item="item"></mz-list-item>
+      <mz-list-item-group title="多层嵌套+">
+        <mz-list-item v-for="item of list"
+          :key="item.value"
+          :title="item.title"
+          :item="item"></mz-list-item>
+      </mz-list-item-group>
+    </mz-list-item-group>
+    <mz-list-item v-for="item of list"
+      :key="item.value"
+      :title="item.title"
+      :item="item"></mz-list-item>
+  </mz-list>
+</mz-card>
+
+<script>
+export default {
+  data() {
+    return {
+      list: [
+        { title: '测试 1', value: '1' },
+        { title: '测试 2', value: '2' },
+        { title: '测试 3', value: '3' }
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
 
 ### List API 
 
