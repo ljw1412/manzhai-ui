@@ -67,7 +67,11 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
       on: {
         click: (e: MouseEvent) => {
           if (this.mzList.handleItemClick) {
-            this.mzList.handleItemClick(this.value, this.item)
+            this.mzList.handleItemClick(
+              this.value,
+              this.item,
+              this.state.disabled
+            )
           }
           if (this.state.disabled) return
           this.$emit('click', e)

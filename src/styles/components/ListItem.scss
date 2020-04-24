@@ -63,14 +63,14 @@
   &.is-disabled {
     cursor: not-allowed;
     color: $color-text-placeholder !important;
+    &:not(.is-active) {
+      @include foreground-disabled;
+    }
     .mz-list-item {
       &__title,
       &__text {
         font-weight: bold;
         color: $color-text-placeholder;
-      }
-      &:not(.is-active) {
-        @include foreground-disabled;
       }
     }
   }
@@ -141,6 +141,7 @@
   }
 
   > .mz-card {
+    color: inherit;
     width: 100%;
   }
 }
