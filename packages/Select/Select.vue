@@ -44,7 +44,7 @@
             :data="item"
             :key="item[valueName]"
             :value="item[valueName]"
-            :label="item[labelName] || item[valueName]"
+            :title="item[labelName] || item[valueName]"
             @click="onItemClick"></mz-list-item>
         </slot>
       </mz-list>
