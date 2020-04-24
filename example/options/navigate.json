@@ -4,28 +4,28 @@
     "type": "directive",
     "children": [
       {
-        "label": "Blanking",
+        "title": "Blanking",
         "text": "选择性显示",
         "to": {
           "name": "DirectiveBlanking"
         }
       },
       {
-        "label": "Elevation",
+        "title": "Elevation",
         "text": "海拔",
         "to": {
           "name": "DirectiveElevation"
         }
       },
       {
-        "label": "Resize",
+        "title": "Resize",
         "text": "大小变化",
         "to": {
           "name": "DirectiveResize"
         }
       },
       {
-        "label": "Ripple",
+        "title": "Ripple",
         "text": "涟漪效果",
         "to": {
           "name": "DirectiveRipple"
@@ -38,252 +38,252 @@
     "type": "component",
     "children": [
       {
-        "label": "Anchor",
+        "title": "Anchor",
         "text": "锚点",
         "to": {
           "name": "ComponentAnchor"
         }
       },
       {
-        "label": "Badge",
+        "title": "Badge",
         "text": "徽标数",
         "to": {
           "name": "ComponentBadge"
         }
       },
       {
-        "label": "Button",
+        "title": "Button",
         "text": "按钮",
         "to": {
           "name": "ComponentButton"
         }
       },
       {
-        "label": "Card",
+        "title": "Card",
         "text": "卡片",
         "to": {
           "name": "ComponentCard"
         }
       },
       {
-        "label": "Carousel",
+        "title": "Carousel",
         "text": "轮播",
         "to": {
           "name": "ComponentCarousel"
         }
       },
       {
-        "label": "Catalogue",
+        "title": "Catalogue",
         "text": "目录",
         "to": {
           "name": "ComponentCatalogue"
         }
       },
       {
-        "label": "Cell",
+        "title": "Cell",
         "text": "单元",
         "to": {
           "name": "ComponentCell"
         }
       },
       {
-        "label": "Checkbox",
+        "title": "Checkbox",
         "text": "多选框",
         "to": {
           "name": "ComponentCheckbox"
         }
       },
       {
-        "label": "Drawer",
+        "title": "Drawer",
         "text": "抽屉",
         "to": {
           "name": "ComponentDrawer"
         }
       },
       {
-        "label": "Dropdown",
+        "title": "Dropdown",
         "text": "下拉菜单",
         "to": {
           "name": "ComponentDropdown"
         }
       },
       {
-        "label": "FilterSection",
+        "title": "FilterSection",
         "text": "筛选项",
         "to": {
           "name": "ComponentFilterSection"
         }
       },
       {
-        "label": "FixedSection",
+        "title": "FixedSection",
         "text": "固定项",
         "to": {
           "name": "ComponentFixedSection"
         }
       },
       {
-        "label": "Form",
+        "title": "Form",
         "text": "表单",
         "to": {
           "name": "ComponentForm"
         }
       },
       {
-        "label": "Grid",
+        "title": "Grid",
         "text": "栅格",
         "to": {
           "name": "ComponentGrid"
         }
       },
       {
-        "label": "Heading",
+        "title": "Heading",
         "text": "标题",
         "to": {
           "name": "ComponentHeading"
         }
       },
       {
-        "label": "Icon",
+        "title": "Icon",
         "text": "图标",
         "to": {
           "name": "ComponentIcon"
         }
       },
       {
-        "label": "Image",
+        "title": "Image",
         "text": "图片",
         "to": {
           "name": "ComponentImage"
         }
       },
       {
-        "label": "ImagePreview",
+        "title": "ImagePreview",
         "text": "图片预览",
         "to": {
           "name": "ComponentImagePreview"
         }
       },
       {
-        "label": "Input",
+        "title": "Input",
         "text": "输入框",
         "to": {
           "name": "ComponentInput"
         }
       },
       {
-        "label": "List",
+        "title": "List",
         "text": "列表",
         "to": {
           "name": "ComponentList"
         }
       },
       {
-        "label": "Loading",
+        "title": "Loading",
         "text": "加载",
         "to": {
           "name": "ComponentLoading"
         }
       },
       {
-        "label": "Mask",
+        "title": "Mask",
         "text": "遮罩层",
         "to": {
           "name": "ComponentMask"
         }
       },
       {
-        "label": "Masonry",
+        "title": "Masonry",
         "text": "瀑布流布局",
         "to": {
           "name": "ComponentMasonry"
         }
       },
       {
-        "label": "MaterialInput",
+        "title": "MaterialInput",
         "text": "输入框(类material风格)",
         "to": {
           "name": "ComponentMaterialInput"
         }
       },
       {
-        "label": "Modal",
+        "title": "Modal",
         "text": "对话框",
         "to": {
           "name": "ComponentModal"
         }
       },
       {
-        "label": "Navigation",
+        "title": "Navigation",
         "text": "导航",
         "to": {
           "name": "ComponentNavigation"
         }
       },
       {
-        "label": "Progress",
+        "title": "Progress",
         "text": "进度条",
         "to": {
           "name": "ComponentProgress"
         }
       },
       {
-        "label": "Radio",
+        "title": "Radio",
         "text": "单选框",
         "to": {
           "name": "ComponentRadio"
         }
       },
       {
-        "label": "Scrollbar",
+        "title": "Scrollbar",
         "text": "滚动条",
         "to": {
           "name": "ComponentScrollbar"
         }
       },
       {
-        "label": "Select",
+        "title": "Select",
         "text": "选择框",
         "to": {
           "name": "ComponentSelect"
         }
       },
       {
-        "label": "Snackbar",
+        "title": "Snackbar",
         "text": "消息条",
         "to": {
           "name": "ComponentSnackbar"
         }
       },
       {
-        "label": "State",
+        "title": "State",
         "text": "状态变化",
         "to": {
           "name": "ComponentState"
         }
       },
       {
-        "label": "Switch",
+        "title": "Switch",
         "text": "开关",
         "to": {
           "name": "ComponentSwitch"
         }
       },
       {
-        "label": "Table",
+        "title": "Table",
         "text": "表格",
         "to": {
           "name": "ComponentTable"
         }
       },
       {
-        "label": "Tabs",
+        "title": "Tabs",
         "text": "标签页",
         "to": {
           "name": "ComponentTabs"
         }
       },
       {
-        "label": "Tag",
+        "title": "Tag",
         "text": "标签",
         "to": {
           "name": "ComponentTag"

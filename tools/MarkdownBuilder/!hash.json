@@ -1,6 +1,6 @@
 {
   "example/docs/components/Anchor.md": "924a473fdbb086ebb9f42a3c2c085ddc",
-  "example/docs/components/Button.md": "43b9d938319b9565ce1b160c3c9e6ba0",
+  "example/docs/components/Button.md": "d4d1afcbab11892bb93ba308491b420f",
   "example/docs/components/Card.md": "c5d0e86dc2548c7ac9f79f5361d0f218",
   "example/docs/components/Catalogue.md": "9ead314faeeaeb35bfef50c095e8518d",
   "example/docs/components/Carousel.md": "198554e680511651e2d66c1119bef34d",
@@ -26,13 +26,13 @@
   "example/docs/directives/Ripple.md": "85f006327a270cd129658a6b2a94f75d",
   "example/docs/directives/Blanking.md": "376fdf2894e25aa034d763b5f5f5ac18",
   "example/docs/components/Mask.md": "a931cf458c9373d5f5b50c740e7065df",
-  "example/docs/components/Modal.md": "2c04deb8f64d2af131724d2494c1cee1",
+  "example/docs/components/Modal.md": "0895b6c6df13c7fa7315db0dbfc54361",
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
   "example/docs/directives/Resize.md": "89eedbecc9ae3cb66c589932f788d645",
   "example/docs/components/Loading.md": "cc14d95f39575ae6bfec56848dedce97",
   "example/docs/components/Badge.md": "862f9acff32dc0e2bd6b104dc8fabc6e",
   "example/docs/components/MaterialInput.md": "40a2d32fc70de0dcdd6ca6e95cbf91dc",
-  "example/docs/components/Input.md": "a6b5f67ffc8e396c6e58360e62c3854a",
-  "example/docs/components/List.md": "a111c8c07de924315ec943cc55979c52",
-  "example/docs/components/Drawer.md": "49d88dba8331719e7c93b855f66fb062"
+  "example/docs/components/Input.md": "06833145be5c983d2ecb4b5ac4ff1652",
+  "example/docs/components/List.md": "cb72f42c40022ab9a17f6381814ae184",
+  "example/docs/components/Drawer.md": "0e9a27d99f5397dda3e2edd9d8fc1374"
 }
