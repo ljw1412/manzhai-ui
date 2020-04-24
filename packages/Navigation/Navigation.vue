@@ -67,7 +67,7 @@ export default class MzNavigation extends Vue {
 
     return (
       <div ref="navigation" class="mz-navigation">
-        <mz-list gutter="5px" on-change={this.onChange}>
+        <mz-list clickable gutter="5px" on-change={this.onChange}>
           {navItems}
         </mz-list>
       </div>
@@ -81,7 +81,7 @@ export default class MzNavigation extends Vue {
         props: {
           ...item,
           round: this.round,
-          link: true,
+          clickable: true,
           ripple: this.ripple
         }
       }

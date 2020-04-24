@@ -74,7 +74,7 @@
 
   .mz-list-item {
     color: $color-white;
-    &--active.mz-list-item--link .mz-list-item__title {
+    &.is-active.is-clickable .mz-list-item__title {
       color: $color-white;
     }
   }
@@ -90,7 +90,7 @@
   }
 
   .mz-navigation {
-    .router-link-active .mz-list-item--link {
+    .router-link-active .mz-list-item.is-clickable {
       color: $color-white;
       .mz-list-item__title {
         color: $color-white;

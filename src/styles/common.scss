@@ -7,6 +7,10 @@ $display-values: none inline inline-block block table table-cell table-row flex
   }
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .is-pointer {
   cursor: pointer !important;
 }

@@ -1,5 +1,5 @@
 .mz-navigation {
-  .router-link-active .mz-list-item--link {
+  .router-link-active .mz-list-item.is-clickable {
     @include foreground-active;
     color: $color-primary;
     .mz-list-item__title {
