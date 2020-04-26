@@ -15,7 +15,7 @@
             :data="item"
             :key="item[valueName]"
             :value="item[valueName]"
-            :label="item[labelName] || item[valueName]"></mz-list-item>
+            :title="item[labelName] || item[valueName]"></mz-list-item>
         </mz-list>
       </mz-card>
     </transition>
