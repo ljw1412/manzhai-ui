@@ -55,6 +55,7 @@ import State from '../packages/State/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
 import Tag from '../packages/Tag/index'
+import Tooltip from '../packages/Tooltip/index'
 import MaterialInput from '../packages/MaterialInput/index'
 // inject import
 
@@ -121,6 +122,7 @@ const components: VueConstructor[] = [
   Tab,
   Table,
   Tag,
+  Tooltip,
   MaterialInput
 ]
 
@@ -255,5 +257,6 @@ export default {
   Tab,
   Table,
   Tag,
+  Tooltip,
   MaterialInput
 }

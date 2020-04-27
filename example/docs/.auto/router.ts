@@ -30,6 +30,7 @@ import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
 import ComponentTabs from './Tabs.vue'
 import ComponentTag from './Tag.vue'
+import ComponentTooltip from './Tooltip.vue'
 import DirectiveBlanking from './Blanking.vue'
 import DirectiveElevation from './Elevation.vue'
 import DirectiveResize from './Resize.vue'
@@ -195,6 +196,11 @@ export default [
     path: 'tag',
     name: 'ComponentTag',
     component: ComponentTag
+  },
+  {
+    path: 'tooltip',
+    name: 'ComponentTooltip',
+    component: ComponentTooltip
   },
   {
     path: 'blanking',

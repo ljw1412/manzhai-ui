@@ -288,6 +288,13 @@
         "to": {
           "name": "ComponentTag"
         }
+      },
+      {
+        "label": "Tooltip",
+        "text": "提示文字",
+        "to": {
+          "name": "ComponentTooltip"
+        }
       }
     ]
   }
