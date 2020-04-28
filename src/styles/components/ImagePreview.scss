@@ -84,7 +84,7 @@ $thumbnails-block-width: 120px;
     cursor: pointer;
 
     &--next {
-      left: initial;
+      left: initial !important;
       right: 0;
       transition: right 0.15s linear;
     }
@@ -129,7 +129,7 @@ $thumbnails-block-width: 120px;
 
 .mz-image-preview-action-bar {
   z-index: 9996;
-  top: initial;
+  top: initial !important;
   bottom: 0;
   height: 50px;
   background-color: rgba(30, 30, 30, 0.6);
