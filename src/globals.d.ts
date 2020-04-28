@@ -25,6 +25,11 @@ declare global {
       touched?: boolean
       isTouch?: boolean
     }
+
+    _hover?: {
+      mouseenter?: () => void
+      mouseleave?: () => void
+    }
   }
 }
 
