@@ -290,7 +290,7 @@
         }
       },
       {
-        "label": "Tooltip",
+        "title": "Tooltip",
         "text": "提示文字",
         "to": {
           "name": "ComponentTooltip"

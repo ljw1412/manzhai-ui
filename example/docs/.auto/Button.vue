@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-04-18 15:34</div>
+    <div class="update-datetime">文档更新时间：2020-04-28 13:13</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -377,11 +377,25 @@ export default {
 <td></td>
 </tr>
 <tr>
+<td>border-color</td>
+<td>边框颜色，不传默认使用文字颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>radius</td>
 <td>圆角大小</td>
 <td>String</td>
 <td></td>
 <td>'4px'</td>
+</tr>
+<tr>
+<td>width</td>
+<td>宽度</td>
+<td>String</td>
+<td>---</td>
+<td>---</td>
 </tr>
 </tbody>
 </table>

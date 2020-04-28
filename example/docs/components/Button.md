@@ -196,7 +196,9 @@ export default {
 | native-type | 原生 type 属性 | String | button / submit / reset | 'button' |
 | color | 背景颜色 | String | primary / success / warning / danger / Color in Css | |
 | text-color | 文字颜色 | String | | |
+| border-color | 边框颜色，不传默认使用文字颜色 | String | | |
 | radius | 圆角大小 | String | | '4px' |
+| width | 宽度 | String | --- |---|
 
 #### 插槽
 
