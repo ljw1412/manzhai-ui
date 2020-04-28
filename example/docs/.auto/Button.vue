@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-04-28 13:13</div>
+    <div class="update-datetime">文档更新时间：2020-04-28 17:25</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-ben-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
@@ -198,15 +198,19 @@ export default {
     <mz-button text-color="blue">按钮</mz-button>
     <mz-button color="#00a1d6" text-color="#c6e48b">按钮</mz-button>
     <mz-button color="success" text-color="#fcba2a">按钮</mz-button>
+    <mz-button outlined text-color="#fcba2a">按钮</mz-button>
+    <mz-button outlined text-color="#fcba2a" border-color="blue">按钮</mz-button>
   </div>
 </div></button-demo5></template>
-        <template #description><p><code>color</code>属性控制背景颜色，预设了<code>primary</code>、<code>success</code>、<code>warning</code>、<code>danger</code>。<code>text-color</code>属性控制文字颜色。</p>
+        <template #description><p><code>color</code>属性控制背景颜色，预设了<code>primary</code>、<code>success</code>、<code>warning</code>、<code>danger</code>。<code>text-color</code>属性控制文字颜色。<code>border-color</code>属性控制边框颜色(仅在outlined下有效)，默认会取文字颜色。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
   &lt;mz-button color=&quot;orange&quot;&gt;按钮&lt;/mz-button&gt;
   &lt;mz-button text-color=&quot;blue&quot;&gt;按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;#00a1d6&quot; text-color=&quot;#c6e48b&quot;&gt;按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;success&quot; text-color=&quot;#fcba2a&quot;&gt;按钮&lt;/mz-button&gt;
+  &lt;mz-button outlined text-color=&quot;#fcba2a&quot;&gt;按钮&lt;/mz-button&gt;
+  &lt;mz-button outlined text-color=&quot;#fcba2a&quot; border-color=&quot;blue&quot;&gt;按钮&lt;/mz-button&gt;
 &lt;/div&gt;
 </code></pre></template></demo-block><h3 id="an-niu-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-zu" title="按钮组" data-level="3" data-href="#an-niu-zu">¶</a>按钮组</h3>
 <p>以按钮组的方式出现，常用于多项类似操作。</p>

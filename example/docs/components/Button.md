@@ -131,13 +131,15 @@ export default {
 
 我们为按钮预设了4种主要颜色，用户也可以根据需求修改按钮颜色。
 
-:::demo `color`属性控制背景颜色，预设了`primary`、`success`、`warning`、`danger`。`text-color`属性控制文字颜色。
+:::demo `color`属性控制背景颜色，预设了`primary`、`success`、`warning`、`danger`。`text-color`属性控制文字颜色。`border-color`属性控制边框颜色(仅在outlined下有效)，默认会取文字颜色。
 ```html
 <div>
   <mz-button color="orange">按钮</mz-button>
   <mz-button text-color="blue">按钮</mz-button>
   <mz-button color="#00a1d6" text-color="#c6e48b">按钮</mz-button>
   <mz-button color="success" text-color="#fcba2a">按钮</mz-button>
+  <mz-button outlined text-color="#fcba2a">按钮</mz-button>
+  <mz-button outlined text-color="#fcba2a" border-color="blue">按钮</mz-button>
 </div>
 ```
 :::
