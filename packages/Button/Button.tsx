@@ -3,13 +3,18 @@ import MzSize from '@/mixins/MzSize'
 import { CreateElement } from 'vue'
 import { colorInTypes } from '@/utils/theme'
 import FormElement from '@/mixins/FormElement'
+import BaseAttribute from '@/mixins/BaseAttribute'
+
+const MixinClass = Mixins(MzSize, FormElement, BaseAttribute)
 
 @Component
-export default class MzButton extends Mixins(MzSize, FormElement) {
+export default class MzButton extends MixinClass {
   @Prop(String)
   readonly color!: string
   @Prop(String)
   readonly textColor!: string
+  @Prop(String)
+  readonly borderColor!: string
   @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop(Boolean)
@@ -57,9 +62,10 @@ export default class MzButton extends Mixins(MzSize, FormElement) {
 
   get styles() {
     return {
+      ...this.baseStyles,
       color: this.textColor,
       backgroundColor: this.color,
-      borderColor: this.color,
+      borderColor: this.borderColor || this.textColor,
       borderRadius: this.radius
     }
   }
