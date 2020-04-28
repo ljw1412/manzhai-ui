@@ -1,4 +1,4 @@
-import MzTooltip from './Tooltip.vue'
+import MzTooltip from './Tooltip'
 import { VueConstructor } from 'vue'
 
 MzTooltip.componentName = 'MzTooltip'
