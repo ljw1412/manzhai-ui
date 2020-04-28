@@ -95,7 +95,7 @@ module.exports = class ComponentCreater {
     }
     const componentChildren = componentGroup.children
     componentChildren.push({
-      label: this.name,
+      title: this.name,
       text: this.nameCN,
       to: { name: `${utils.capitalized(this.type)}${this.name}` }
     })
