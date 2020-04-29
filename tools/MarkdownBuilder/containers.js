@@ -23,4 +23,18 @@ module.exports = md => {
       return '</demo-block>'
     }
   })
+
+  md.use(mdContainer, 'vue', {
+    validate(params) {
+      return params.trim().match(/^vue\s*(.*)$/)
+    },
+    render(tokens, idx) {
+      if (tokens[idx].nesting === 1) {
+        const content =
+          tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : ''
+        return `<!--example~${content}~example-->`
+      }
+      return ''
+    }
+  })
 }
