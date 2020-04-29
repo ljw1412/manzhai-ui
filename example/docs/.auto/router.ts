@@ -12,6 +12,7 @@ import ComponentFixedSection from './FixedSection.vue'
 import ComponentForm from './Form.vue'
 import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
+import ComponentIcon from './Icon.vue'
 import ComponentImage from './Image.vue'
 import ComponentImagePreview from './ImagePreview.vue'
 import ComponentInput from './Input.vue'
@@ -108,6 +109,11 @@ export default [
     path: 'heading',
     name: 'ComponentHeading',
     component: ComponentHeading
+  },
+  {
+    path: 'icon',
+    name: 'ComponentIcon',
+    component: ComponentIcon
   },
   {
     path: 'image',

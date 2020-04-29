@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
 import DocsRouter from './docs/.auto/router'
 import ComponentDropdown from './views/Component/Dropdown.vue'
-import ComponentIcon from './views/Component/Icon.vue'
+// import ComponentIcon from './views/Component/Icon.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -28,12 +28,12 @@ export default new Router({
           path: 'dropdown',
           name: 'ComponentDropdown',
           component: ComponentDropdown
-        },
-        {
-          path: 'icon',
-          name: 'ComponentIcon',
-          component: ComponentIcon
         }
+        // {
+        //   path: 'icon',
+        //   name: 'ComponentIcon',
+        //   component: ComponentIcon
+        // }
       ]
     },
     {

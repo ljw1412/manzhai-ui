@@ -13,6 +13,12 @@
 :::
 
 ### 所有图标
+:::vue
+```html
+<icon-grid></icon-grid>
+```
+:::
+
 
 ### API
 

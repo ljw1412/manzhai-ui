@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import manzhaiUI from '../src/index'
 import DemoBlock from './components/DemoBlock.vue'
+import IconGrid from './views/Component/components/IconGrid.vue'
 import hljs from 'highlight.js'
 
 import './styles/manzhai-variables.scss'
@@ -12,6 +13,7 @@ import './styles/theme/index.scss'
 Vue.use(manzhaiUI)
 
 Vue.component('demo-block', DemoBlock)
+Vue.component('icon-grid', IconGrid)
 
 router.afterEach(route => {
   Vue.nextTick(() => {
