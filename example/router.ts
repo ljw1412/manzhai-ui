@@ -4,9 +4,7 @@ import Home from './views/Home.vue'
 import Component from './views/Component/index.vue'
 import DocsRouter from './docs/.auto/router'
 import ComponentDropdown from './views/Component/Dropdown.vue'
-import ComponentForm from './views/Component/Form.vue'
 import ComponentIcon from './views/Component/Icon.vue'
-import ComponentTable from './views/Component/Table.vue'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -32,19 +30,9 @@ export default new Router({
           component: ComponentDropdown
         },
         {
-          path: 'form',
-          name: 'ComponentForm',
-          component: ComponentForm
-        },
-        {
           path: 'icon',
           name: 'ComponentIcon',
           component: ComponentIcon
-        },
-        {
-          path: 'table',
-          name: 'ComponentTable',
-          component: ComponentTable
         }
       ]
     },

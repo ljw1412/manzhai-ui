@@ -9,6 +9,7 @@ import ComponentCheckbox from './Checkbox.vue'
 import ComponentDrawer from './Drawer.vue'
 import ComponentFilterSection from './FilterSection.vue'
 import ComponentFixedSection from './FixedSection.vue'
+import ComponentForm from './Form.vue'
 import ComponentGrid from './Grid.vue'
 import ComponentHeading from './Heading.vue'
 import ComponentImage from './Image.vue'
@@ -28,6 +29,7 @@ import ComponentSelect from './Select.vue'
 import ComponentSnackbar from './Snackbar.vue'
 import ComponentState from './State.vue'
 import ComponentSwitch from './Switch.vue'
+import ComponentTable from './Table.vue'
 import ComponentTabs from './Tabs.vue'
 import ComponentTag from './Tag.vue'
 import ComponentTooltip from './Tooltip.vue'
@@ -91,6 +93,11 @@ export default [
     path: 'fixed-section',
     name: 'ComponentFixedSection',
     component: ComponentFixedSection
+  },
+  {
+    path: 'form',
+    name: 'ComponentForm',
+    component: ComponentForm
   },
   {
     path: 'grid',
@@ -186,6 +193,11 @@ export default [
     path: 'switch',
     name: 'ComponentSwitch',
     component: ComponentSwitch
+  },
+  {
+    path: 'table',
+    name: 'ComponentTable',
+    component: ComponentTable
   },
   {
     path: 'tabs',

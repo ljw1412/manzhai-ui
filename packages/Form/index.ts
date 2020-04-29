@@ -1,10 +1,10 @@
-import MzMzForm from './Form.vue'
+import MzForm from './Form.vue'
 import { VueConstructor } from 'vue'
 
-MzMzForm.componentName = 'MzMzForm'
+MzForm.componentName = 'MzForm'
 
-MzMzForm.install = (Vue: VueConstructor) => {
-  Vue.component(MzMzForm.componentName, MzMzForm)
+MzForm.install = (Vue: VueConstructor) => {
+  Vue.component(MzForm.componentName, MzForm)
 }
 
-export default MzMzForm
+export default MzForm
