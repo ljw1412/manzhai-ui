@@ -1,3 +1,4 @@
+// 渐变
 .mz-fade {
   &-enter,
   &-leave-to {
@@ -15,6 +16,7 @@
   }
 }
 
+// 缩放
 @each $type, $type2 in ('', 'scale'), ('-x', 'scaleX'), ('-y', 'scaleY') {
   .mz#{$type}-zoom {
     &-enter-active,
@@ -35,6 +37,63 @@
   }
 }
 
+// 界面平移
+.mz-view {
+  &-x-translate,
+  &-x-reverse-translate,
+  &-y-translate,
+  &-y-reverse-translate {
+    &-enter-active,
+    &-leave-active {
+      transition: $primary-transition;
+    }
+    &-leave,
+    &-leave-to {
+      position: absolute !important;
+      top: 0;
+      width: 100%;
+    }
+  }
+  &-x-translate {
+    &-enter {
+      transform: translateX(100%);
+    }
+
+    &-leave-to {
+      transform: translateX(-100%);
+    }
+  }
+
+  &-x-reverse-translate {
+    &-enter {
+      transform: translateX(-100%);
+    }
+
+    &-leave-to {
+      transform: translateX(100%);
+    }
+  }
+  &-y-translate {
+    &-enter {
+      transform: translateY(100%);
+    }
+
+    &-leave-to {
+      transform: translateY(-100%);
+    }
+  }
+  &-y-reverse-translate {
+    &-enter {
+      transform: translateY(-100%);
+    }
+
+    &-leave-to {
+      transform: translateY(100%);
+    }
+  }
+}
+
+// 弹跳进出
 .mz-bounce-enter-active {
   animation: mz-bounce-in 0.3s;
 }
@@ -53,6 +112,7 @@
   }
 }
 
+// 放大进入放大退出
 .mz-zoom-in-in {
   &-enter-active,
   &-leave-active {

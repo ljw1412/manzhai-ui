@@ -27,10 +27,11 @@ export default class MzCarouselItem extends Vue {
     if (this.mzCarousel) {
       if (this.mzCarousel.initing) return null
       const direction = this.mzCarousel.vertical ? 'y' : 'x'
-      transition = this.mzCarousel.transition || `mz-${direction}-transition`
+      transition =
+        this.mzCarousel.transition || `mz-view-${direction}-translate`
       reverseTransition =
         this.mzCarousel.reverseTransition ||
-        `mz-${direction}-reverse-transition`
+        `mz-view-${direction}-reverse-translate`
     }
     return this.reverse ? reverseTransition : transition
   }
