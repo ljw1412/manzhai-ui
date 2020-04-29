@@ -43,6 +43,7 @@ export default class DocIconGrid extends Vue {
 
   coypCode(item: string) {
     copyText(`<mz-icon name="${item}"></mz-icon>`)
+    this.$snackbar.show({ text: `图标 ${item} 代码复制成功`, timeout: 2000 })
   }
 }
 </script>
