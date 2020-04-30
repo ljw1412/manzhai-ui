@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Stack from '@/classes/Stack'
 
 let zIndex = 1000
-export const modalStack = new Stack()
+let idSeed = 1
 
 if (!Vue.prototype.$isServer) {
   window.addEventListener('keydown', function(event) {
     if (event.keyCode === 27) {
-      const modal = modalStack.top()
+      const modal = PopupManager.modalStack.top()
       if (modal && modal.closeOnPressEscape) {
         modal.close()
       }
@@ -19,6 +19,7 @@ const instances: Record<string, any> = {}
 
 const PopupManager = {
   zIndex,
+  popupId: 'popup-' + idSeed,
   modalStack: new Stack(),
 
   bind(id: string, instance: any) {
@@ -36,9 +37,16 @@ const PopupManager = {
 }
 
 // 每次获取zIndex后，zIndex会自增
-Object.defineProperty(PopupManager, 'zIndex', {
-  get() {
-    return zIndex++
+Object.defineProperties(PopupManager, {
+  zIndex: {
+    get() {
+      return zIndex++
+    }
+  },
+  popupId: {
+    get() {
+      return 'popup-' + idSeed++
+    }
   }
 })
 

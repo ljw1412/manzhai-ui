@@ -2,7 +2,6 @@ import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
 import MzMask from '@packages/Mask'
 import MzMaskPlugin from '@packages/Mask/plugin'
 import PopupManager from '@/utils/popup-manager'
-import { modalStack } from '@/utils/popup-manager'
 
 @Component({ components: { MzMask } })
 export default class MzPopView extends Vue {
@@ -23,6 +22,7 @@ export default class MzPopView extends Vue {
   @Prop({ type: Function })
   readonly beforeClose!: (done: any) => void | Promise<any>
 
+  _popupId = PopupManager.popupId
   mZIndex = 1000
   maskZIndex = 1000
 
@@ -82,11 +82,20 @@ export default class MzPopView extends Vue {
       this.maskZIndex = this.zIndex ? this.zIndex - 1 : PopupManager.zIndex
       this.mZIndex = this.zIndex || PopupManager.zIndex
       this.appendToBody && document.body.appendChild(this.$el)
-      modalStack.push(this)
+      PopupManager.modalStack.push(this)
     } else {
-      modalStack.stack.remove(this)
+      PopupManager.modalStack.stack.remove(this)
     }
     if (this.mask && this.maskAppendToBody) this.displayBodyMask(visible)
+  }
+
+  beforeMount() {
+    PopupManager.bind(this._popupId, this)
+  }
+
+  beforeDestroy() {
+    PopupManager.unbind(this._popupId)
+    if (this.mask && this.maskAppendToBody) this.displayBodyMask(false)
   }
 
   destroyed() {
