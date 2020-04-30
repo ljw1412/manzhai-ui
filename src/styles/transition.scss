@@ -135,3 +135,29 @@
     opacity: 1;
   }
 }
+
+// 不同方向的进出
+@each $direction in (up, down, left, right) {
+  @each $state, $selector in (enter from, leave to) {
+    .mz-slide-#{$direction}-#{$state}-active {
+      animation: mz-slide-#{$direction}-#{$state} 0.3s both ease-out;
+    }
+
+    @keyframes mz-slide-#{$direction}-#{$state} {
+      #{$selector} {
+        @if $direction == up {
+          transform: translate3d(0, 100%, 0);
+        }
+        @if $direction == down {
+          transform: translate3d(0, -100%, 0);
+        }
+        @if $direction == left {
+          transform: translate3d(-100%, 0, 0);
+        }
+        @if $direction == right {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+    }
+  }
+}
