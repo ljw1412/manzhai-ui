@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-04-20 21:50</div>
+    <div class="update-datetime">文档更新时间：2020-04-30 15:05</div>
     <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -268,7 +268,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong-dian-ji-dan-chuang-guan-bi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-dian-ji-dan-chuang-guan-bi" title="禁用点击弹窗关闭" data-level="3" data-href="#jin-yong-dian-ji-dan-chuang-guan-bi">¶</a>禁用点击弹窗关闭</h3>
+</code></pre></template></demo-block><h3 id="jin-yong-dian-ji-zhe-zhao-guan-bi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-dian-ji-zhe-zhao-guan-bi" title="禁用点击遮罩关闭" data-level="3" data-href="#jin-yong-dian-ji-zhe-zhao-guan-bi">¶</a>禁用点击遮罩关闭</h3>
 <demo-block>
         <template #example><modal-demo6 inline-template><div class="modal-demo6">
   <mz-button color="success"
@@ -312,6 +312,8 @@ export default {
     <mz-radio value="mz-zoom">mz-zoom</mz-radio>
     <mz-radio value="mz-zoom-in-in">mz-zoom-in-in</mz-radio>
     <mz-radio value="mz-bounce">mz-bounce</mz-radio>
+    <mz-radio value="mz-slide-up">mz-slide-up</mz-radio>
+    <mz-radio value="mz-slide-down">mz-slide-down</mz-radio>
   </mz-radio-group>
   <mz-button color="success"
     @click="visible = true">显示对话框</mz-button>
@@ -334,6 +336,8 @@ export default {
   &lt;mz-radio value=&quot;mz-zoom&quot;&gt;mz-zoom&lt;/mz-radio&gt;
   &lt;mz-radio value=&quot;mz-zoom-in-in&quot;&gt;mz-zoom-in-in&lt;/mz-radio&gt;
   &lt;mz-radio value=&quot;mz-bounce&quot;&gt;mz-bounce&lt;/mz-radio&gt;
+  &lt;mz-radio value=&quot;mz-slide-up&quot;&gt;mz-slide-up&lt;/mz-radio&gt;
+  &lt;mz-radio value=&quot;mz-slide-down&quot;&gt;mz-slide-down&lt;/mz-radio&gt;
 &lt;/mz-radio-group&gt;
 &lt;mz-button color=&quot;success&quot;
   @click=&quot;visible = true&quot;&gt;显示对话框&lt;/mz-button&gt;

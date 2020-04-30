@@ -199,7 +199,7 @@ export default {
 ```
 :::
 
-### 禁用点击弹窗关闭
+### 禁用点击遮罩关闭
 :::demo `close-on-click-mask`属性控制对话框是否允许点击遮罩关闭。
 ```html
 <mz-button color="success"
