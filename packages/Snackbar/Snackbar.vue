@@ -32,7 +32,7 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { MzButton } from '../Button'
 import { SnackbarPlacementTypes } from './Snackbar'
 import { COLOR_TYPES } from '@/constants'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 
 @Component({
   components: {
@@ -66,7 +66,7 @@ export default class MzSnackbar extends Vue {
   readonly zIndex!: number
 
   timer: number | null = null
-  mZIndex = getZIndex()
+  mZIndex = PopupManager.zIndex
 
   get placementList() {
     if (!/^(top|bottom|center)(-start|-end)?$/g.test(this.placement)) {
@@ -133,7 +133,7 @@ export default class MzSnackbar extends Vue {
       this.timer = null
     }
     if (val) {
-      this.mZIndex = getZIndex()
+      this.mZIndex = PopupManager.zIndex
       if (this.timeout) {
         this.timer = setTimeout(() => {
           this.$emit('input', false)

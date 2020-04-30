@@ -1,6 +1,6 @@
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 import { addMask, removeMask } from './plugin'
 
 @Component
@@ -44,7 +44,7 @@ export default class MzMask extends Vue {
   onVisibleChange(visible: boolean) {
     if (visible) {
       this.appendToBody && this.$el && document.body.appendChild(this.$el)
-      this.mZIndex = this.zIndex || getZIndex()
+      this.mZIndex = this.zIndex || PopupManager.zIndex
       addMask(this)
     } else if (this.appendToBody && this.$el && this.$el.parentNode) {
       this.$el.parentNode.removeChild(this.$el)
@@ -54,7 +54,7 @@ export default class MzMask extends Vue {
 
   @Watch('zIndex', { immediate: true })
   onZIndexChange(zIndex?: number) {
-    this.mZIndex = typeof zIndex === 'number' ? zIndex : getZIndex()
+    this.mZIndex = typeof zIndex === 'number' ? zIndex : PopupManager.zIndex
   }
 
   destroyed() {

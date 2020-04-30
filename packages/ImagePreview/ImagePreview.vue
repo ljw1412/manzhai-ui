@@ -94,7 +94,7 @@ import MButton from './Button.vue'
 import MToolbar from './Toolbar.vue'
 import MActionBar from './ActionBar.vue'
 import { MzProgress } from '../Progress/index'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 import MouseDrag from '@/classes/MouseDrag'
 import { ImageItem } from './ImagePreview'
 
@@ -129,7 +129,7 @@ export default class MzImagePreview extends Vue {
 
   rendered = false
   mIndex = 0
-  mZIndex = getZIndex()
+  mZIndex = PopupManager.zIndex
   imageMode = 'width'
   zoom = 1
   mouseDrag = new MouseDrag(0, 0, 0, true)
@@ -298,7 +298,7 @@ export default class MzImagePreview extends Vue {
       const index = this.mImages.findIndex(item => item.url === this.current)
       ~index && (this.mIndex = index)
     }
-    !this.zIndex && (this.mZIndex = getZIndex())
+    !this.zIndex && (this.mZIndex = PopupManager.zIndex)
     // 如果设置将其添加到body上
     this.appendToBody && document.body.appendChild(this.$el)
     window.addEventListener('keydown', this.handleKeydown, false)

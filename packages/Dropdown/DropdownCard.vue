@@ -22,7 +22,7 @@ import {
   Watch,
   Mixins
 } from 'vue-property-decorator'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 import BaseAttribute from '../../src/mixins/BaseAttribute'
 
 @Component
@@ -120,7 +120,7 @@ export default class MzDropdownCard extends Mixins(BaseAttribute) {
   @Watch('mVisiable', { immediate: true })
   onVisiableChange(val: boolean) {
     if (val) {
-      this.mZIndex = getZIndex()
+      this.mZIndex = PopupManager.zIndex
       if (this.containerElement && !this.isAddContainer) {
         this.containerElement.appendChild(this.$el)
         this.isAddContainer = true

@@ -31,7 +31,7 @@ import {
   Ref,
   Watch
 } from 'vue-property-decorator'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
 import Popper from 'popper.js'
@@ -72,7 +72,7 @@ export default class MzDropdown extends Vue {
 
   isAddBody = false
   mVisiable = false
-  mZIndex = getZIndex()
+  mZIndex = PopupManager.zIndex
   mPopper?: Popper
   reference?: HTMLElement
 
@@ -103,7 +103,7 @@ export default class MzDropdown extends Vue {
   changeVisiable() {
     if (this.disabled) return
     this.mVisiable = !this.mVisiable
-    if (this.mVisiable) this.mZIndex = getZIndex()
+    if (this.mVisiable) this.mZIndex = PopupManager.zIndex
     if (this.mPopper) this.mPopper.update()
   }
 

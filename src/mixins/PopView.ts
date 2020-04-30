@@ -1,7 +1,7 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
 import MzMask from '@packages/Mask'
 import MzMaskPlugin from '@packages/Mask/plugin'
-import getZIndex from '@/utils/zindex'
+import PopupManager from '@/utils/popup-manager'
 import { modalStack } from '@/utils/popup-manager'
 
 @Component({ components: { MzMask } })
@@ -79,8 +79,8 @@ export default class MzPopView extends Vue {
   onPopVisibleChange(visible: boolean) {
     if (visible) {
       this.$emit('open')
-      this.maskZIndex = this.zIndex ? this.zIndex - 1 : getZIndex()
-      this.mZIndex = this.zIndex || getZIndex()
+      this.maskZIndex = this.zIndex ? this.zIndex - 1 : PopupManager.zIndex
+      this.mZIndex = this.zIndex || PopupManager.zIndex
       this.appendToBody && document.body.appendChild(this.$el)
       modalStack.push(this)
     } else {
