@@ -29,6 +29,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
 
   isDisplayWrapper = false
   isAnimated = false
+  animateTimer = 0
 
   get headless() {
     return !this.$slots.header && !this.title
@@ -119,9 +120,10 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
 
   handleMaskDisabledClick() {
     this.isAnimated = true
-    setTimeout(() => {
+    clearTimeout(this.animateTimer)
+    this.animateTimer = setTimeout(() => {
       this.isAnimated = false
-    }, 200)
+    }, 150)
   }
 
   @Watch('visible')
