@@ -124,7 +124,7 @@ async function generateRouter(moduleList) {
     .join('\n')}`
   const routerList = moduleList.map(
     ({ name, type }) => `  {
-    path: '${utils.hyphenate(name)}',
+    path: '${utils.hyphenate(type + name)}',
     name: '${type}${name}',
     component: ${type}${name}
   }`
