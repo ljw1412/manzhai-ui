@@ -1,5 +1,5 @@
-import Vue, { VNode, PluginFunction } from 'vue'
-import { SnackbarPluginOptions } from 'packages/Snackbar/Snackbar'
+import { PluginFunction } from 'vue'
+import { Instance } from 'tippy.js'
 
 declare global {
   interface Element {
@@ -30,6 +30,8 @@ declare global {
       mouseenter?: () => void
       mouseleave?: () => void
     }
+
+    _tippy?: Instance
   }
 }
 
