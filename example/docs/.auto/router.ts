@@ -36,6 +36,7 @@ import ComponentTag from './Tag.vue'
 import ComponentTooltip from './Tooltip.vue'
 import DirectiveBlanking from './Blanking.vue'
 import DirectiveElevation from './Elevation.vue'
+import DirectiveHover from './Hover.vue'
 import DirectiveResize from './Resize.vue'
 import DirectiveRipple from './Ripple.vue'
 
@@ -229,6 +230,11 @@ export default [
     path: 'elevation',
     name: 'DirectiveElevation',
     component: DirectiveElevation
+  },
+  {
+    path: 'hover',
+    name: 'DirectiveHover',
+    component: DirectiveHover
   },
   {
     path: 'resize',

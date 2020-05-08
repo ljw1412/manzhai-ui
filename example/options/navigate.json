@@ -30,6 +30,13 @@
         "to": {
           "name": "DirectiveRipple"
         }
+      },
+      {
+        "title": "Hover",
+        "text": "悬浮",
+        "to": {
+          "name": "DirectiveHover"
+        }
       }
     ]
   },
