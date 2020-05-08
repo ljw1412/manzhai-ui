@@ -2,7 +2,7 @@
 
 有站点导航功能的菜单。
 
-### 基本用法
+### 基础用法
 :::demo 
 ```html
 <mz-navigation :data="data"

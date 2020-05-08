@@ -2,7 +2,7 @@
 
 简单快速实现瀑布流布局效果。
 
-### 基本用法
+### 基础用法
 :::demo masonry的`gutter`属性控制块与块之间的间隔。
 ```html
 <mz-masonry :gutter="5">

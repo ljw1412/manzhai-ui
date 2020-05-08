@@ -2,7 +2,7 @@
 
 表示两种相互对立的状态间的开关选择器。
 
-### 基本用法
+### 基础用法
 :::demo `circle`属性可以控制滑块是否为圆形。`disabled`属性可以控制开关是否禁用。
 ```html
 <mz-switch v-model="value"></mz-switch>

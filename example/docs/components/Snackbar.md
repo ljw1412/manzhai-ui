@@ -2,7 +2,7 @@
 
 用于页面中展示消息。
 
-### 基本用法
+### 基础用法
 ::: demo 消息条默认显示5秒。
 ```html
 <mz-snackbar v-model="isShow" text="这是一条测试消息。"></mz-snackbar>

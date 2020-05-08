@@ -127,7 +127,7 @@ export default {
 
 ### 与锚点联动
 
-配合 [锚点(Anchor)组件](anchor) 使用效果更好。
+配合 [锚点(Anchor)组件](component-anchor) 使用效果更好。
 
 :::demo 将 catalogue 设置`target`(自动匹配的锚点class名称)，与 anchor 设置`class`保持一致。这样可以避免锚点出现互串的情况。anchor 的`title`属性值，会作为目录元素的标题。
 ```html

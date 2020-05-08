@@ -37,6 +37,13 @@
         "to": {
           "name": "DirectiveHover"
         }
+      },
+      {
+        "title": "Tooltip",
+        "text": "提示文字",
+        "to": {
+          "name": "DirectiveTooltip"
+        }
       }
     ]
   },

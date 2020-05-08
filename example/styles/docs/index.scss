@@ -1,6 +1,9 @@
 #page-component-content {
   [class^='component-'] {
     position: relative;
+    > p a {
+      color: #409eff;
+    }
   }
   .update-datetime {
     position: absolute;

@@ -2,7 +2,7 @@
 
 下拉菜单选择器。
 
-### 基本用法
+### 基础用法
 :::demo select的`list`属性与遍历option效果一致。
 ```html
 <mz-select v-model="value" :list="list"></mz-select>
