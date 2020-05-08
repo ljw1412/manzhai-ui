@@ -34,7 +34,7 @@ import {
 import PopupManager from '@/utils/popup-manager'
 import { MzList, MzListItem, MzListGroup } from '../List/index'
 import MzCard from '../Card/index'
-import Popper from 'popper.js'
+import { createPopper, Placement, Instance } from '@popperjs/core'
 import { typeOf } from '../../src/utils/assist'
 
 @Component({
@@ -50,7 +50,7 @@ export default class MzDropdown extends Vue {
   @Prop({ default: 'label' })
   readonly labelName!: string
   @Prop({ default: 'bottom' })
-  readonly placement!: Popper.Placement
+  readonly placement!: Placement
   @Prop({ default: 'small' })
   readonly size!: string
   @Prop(Boolean)
@@ -73,7 +73,7 @@ export default class MzDropdown extends Vue {
   isAddBody = false
   mVisiable = false
   mZIndex = PopupManager.zIndex
-  mPopper?: Popper
+  mPopper?: Instance
   reference?: HTMLElement
 
   get cardStyles() {
@@ -117,7 +117,8 @@ export default class MzDropdown extends Vue {
       this.reference = this.$slots.default[0].elm as HTMLElement
     }
     if (this.reference) {
-      this.mPopper = new Popper(this.reference, this.popper.$el, {
+      // @ts-ignore
+      this.mPopper = createPopper(this.reference, this.popper.$el, {
         placement: this.placement
       })
       this.reference.addEventListener('click', this.changeVisiable, false)
