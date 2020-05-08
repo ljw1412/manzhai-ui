@@ -27,7 +27,7 @@ import { MzCatalogue } from '../../../packages/Catalogue'
     Sidebar
   }
 })
-export default class PageComponent extends Vue {
+export default class PageDocs extends Vue {
   @Ref('catalogue')
   readonly catalogueRef!: MzCatalogue
 

@@ -15,7 +15,7 @@
           <mz-button color="success"
             size="large"
             width="100px"
-            @click="$router.push({name:'pageComponent'})">快速入门</mz-button>
+            @click="$router.push({name:'pageDocs'})">快速入门</mz-button>
           <mz-button outlined
             size="large"
             text-color="#ffffff"

@@ -19,8 +19,8 @@ export default new Router({
       component: Home
     },
     {
-      path: '/component',
-      name: 'pageComponent',
+      path: '/docs',
+      name: 'pageDocs',
       component: Component,
       children: [
         ...DocsRouter,

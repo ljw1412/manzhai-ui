@@ -31,7 +31,7 @@ export default class Topbar extends Vue {
   isDark = this.$getCurrentTheme() === 'dark'
   navigations = [
     { label: '指南', route: { name: 'pageGuide' } },
-    { label: '组件', route: { name: 'pageComponent' } },
+    { label: '文档', route: { name: 'pageDocs' } },
     { label: '主题', route: { name: 'pageTheme' } }
   ]
 

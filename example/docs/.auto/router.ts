@@ -39,210 +39,211 @@ import DirectiveElevation from './Elevation.vue'
 import DirectiveHover from './Hover.vue'
 import DirectiveResize from './Resize.vue'
 import DirectiveRipple from './Ripple.vue'
+import DirectiveTooltip from './Tooltip.vue'
 
 export default [
   {
-    path: 'anchor',
+    path: 'component-anchor',
     name: 'ComponentAnchor',
     component: ComponentAnchor
   },
   {
-    path: 'badge',
+    path: 'component-badge',
     name: 'ComponentBadge',
     component: ComponentBadge
   },
   {
-    path: 'button',
+    path: 'component-button',
     name: 'ComponentButton',
     component: ComponentButton
   },
   {
-    path: 'card',
+    path: 'component-card',
     name: 'ComponentCard',
     component: ComponentCard
   },
   {
-    path: 'carousel',
+    path: 'component-carousel',
     name: 'ComponentCarousel',
     component: ComponentCarousel
   },
   {
-    path: 'catalogue',
+    path: 'component-catalogue',
     name: 'ComponentCatalogue',
     component: ComponentCatalogue
   },
   {
-    path: 'cell',
+    path: 'component-cell',
     name: 'ComponentCell',
     component: ComponentCell
   },
   {
-    path: 'checkbox',
+    path: 'component-checkbox',
     name: 'ComponentCheckbox',
     component: ComponentCheckbox
   },
   {
-    path: 'drawer',
+    path: 'component-drawer',
     name: 'ComponentDrawer',
     component: ComponentDrawer
   },
   {
-    path: 'filter-section',
+    path: 'component-filter-section',
     name: 'ComponentFilterSection',
     component: ComponentFilterSection
   },
   {
-    path: 'fixed-section',
+    path: 'component-fixed-section',
     name: 'ComponentFixedSection',
     component: ComponentFixedSection
   },
   {
-    path: 'form',
+    path: 'component-form',
     name: 'ComponentForm',
     component: ComponentForm
   },
   {
-    path: 'grid',
+    path: 'component-grid',
     name: 'ComponentGrid',
     component: ComponentGrid
   },
   {
-    path: 'heading',
+    path: 'component-heading',
     name: 'ComponentHeading',
     component: ComponentHeading
   },
   {
-    path: 'icon',
+    path: 'component-icon',
     name: 'ComponentIcon',
     component: ComponentIcon
   },
   {
-    path: 'image',
+    path: 'component-image',
     name: 'ComponentImage',
     component: ComponentImage
   },
   {
-    path: 'image-preview',
+    path: 'component-image-preview',
     name: 'ComponentImagePreview',
     component: ComponentImagePreview
   },
   {
-    path: 'input',
+    path: 'component-input',
     name: 'ComponentInput',
     component: ComponentInput
   },
   {
-    path: 'list',
+    path: 'component-list',
     name: 'ComponentList',
     component: ComponentList
   },
   {
-    path: 'loading',
+    path: 'component-loading',
     name: 'ComponentLoading',
     component: ComponentLoading
   },
   {
-    path: 'mask',
+    path: 'component-mask',
     name: 'ComponentMask',
     component: ComponentMask
   },
   {
-    path: 'masonry',
+    path: 'component-masonry',
     name: 'ComponentMasonry',
     component: ComponentMasonry
   },
   {
-    path: 'material-input',
+    path: 'component-material-input',
     name: 'ComponentMaterialInput',
     component: ComponentMaterialInput
   },
   {
-    path: 'modal',
+    path: 'component-modal',
     name: 'ComponentModal',
     component: ComponentModal
   },
   {
-    path: 'navigation',
+    path: 'component-navigation',
     name: 'ComponentNavigation',
     component: ComponentNavigation
   },
   {
-    path: 'progress',
+    path: 'component-progress',
     name: 'ComponentProgress',
     component: ComponentProgress
   },
   {
-    path: 'radio',
+    path: 'component-radio',
     name: 'ComponentRadio',
     component: ComponentRadio
   },
   {
-    path: 'scrollbar',
+    path: 'component-scrollbar',
     name: 'ComponentScrollbar',
     component: ComponentScrollbar
   },
   {
-    path: 'select',
+    path: 'component-select',
     name: 'ComponentSelect',
     component: ComponentSelect
   },
   {
-    path: 'snackbar',
+    path: 'component-snackbar',
     name: 'ComponentSnackbar',
     component: ComponentSnackbar
   },
   {
-    path: 'state',
+    path: 'component-state',
     name: 'ComponentState',
     component: ComponentState
   },
   {
-    path: 'switch',
+    path: 'component-switch',
     name: 'ComponentSwitch',
     component: ComponentSwitch
   },
   {
-    path: 'table',
+    path: 'component-table',
     name: 'ComponentTable',
     component: ComponentTable
   },
   {
-    path: 'tabs',
+    path: 'component-tabs',
     name: 'ComponentTabs',
     component: ComponentTabs
   },
   {
-    path: 'tag',
+    path: 'component-tag',
     name: 'ComponentTag',
     component: ComponentTag
   },
   {
-    path: 'tooltip',
+    path: 'component-tooltip',
     name: 'ComponentTooltip',
     component: ComponentTooltip
   },
   {
-    path: 'blanking',
+    path: 'directive-blanking',
     name: 'DirectiveBlanking',
     component: DirectiveBlanking
   },
   {
-    path: 'elevation',
+    path: 'directive-elevation',
     name: 'DirectiveElevation',
     component: DirectiveElevation
   },
   {
-    path: 'hover',
+    path: 'directive-hover',
     name: 'DirectiveHover',
     component: DirectiveHover
   },
   {
-    path: 'resize',
+    path: 'directive-resize',
     name: 'DirectiveResize',
     component: DirectiveResize
   },
   {
-    path: 'ripple',
+    path: 'directive-ripple',
     name: 'DirectiveRipple',
     component: DirectiveRipple
   }
