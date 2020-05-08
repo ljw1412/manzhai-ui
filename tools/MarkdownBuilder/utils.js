@@ -120,7 +120,9 @@ async function generateDocVue(moduleName, content, blocks) {
 async function generateRouter(moduleList) {
   console.log('正在生成路由中……')
   let content = `${moduleList
-    .map(({ name, type }) => `import ${type}${name} from './${name}.vue'`)
+    .map(
+      ({ name, type }) => `import ${type}${name} from './${type + name}.vue'`
+    )
     .join('\n')}`
   const routerList = moduleList.map(
     ({ name, type }) => `  {
