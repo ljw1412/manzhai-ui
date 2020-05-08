@@ -31,7 +31,7 @@ declare global {
       mouseleave?: () => void
     }
 
-    _tippy?: Instance
+    _tooltip?: Instance
   }
 }
 
