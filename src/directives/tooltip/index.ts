@@ -1,16 +1,57 @@
 import { VNodeDirective, VNode } from 'vue'
 import tippy from 'tippy.js'
 
+const triggers = ['hover', 'focus', 'click']
+
+const themeNames = ['light', 'light-border', 'material', 'translucent']
+
+const placements = [
+  'top',
+  'top-start',
+  'top-end',
+  'right',
+  'right-start',
+  'right-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+  'left',
+  'left-start',
+  'left-end'
+]
+
+// 获取那一类属性的唯一值
+function getUniqueProp(modifiers: Record<string, any> = {}, list: any[] = []) {
+  for (const name of list) {
+    if (modifiers[name]) return name
+  }
+  return ''
+}
+
+function getTrigger(modifiers: Record<string, any> = {}) {
+  const list = Object.keys(modifiers).filter(item => triggers.includes(item))
+  return list.join(' ').replace('hover', 'mouseenter') || 'mouseenter'
+}
+
 function updataTippy(el: HTMLElement, binding: VNodeDirective) {
-  if (binding.value === binding.oldValue) return
-  if (el._tooltip) el._tooltip.destroy()
-  let options = { content: '' }
+  if (!el._tooltip) el._tooltip = tippy(el, {})
+  const { modifiers = {} } = binding
+  const trigger = getTrigger(modifiers)
+
+  let options = {
+    trigger,
+    content: '',
+    hideOnClick: trigger === 'click',
+    arrow: modifiers.arrow,
+    theme: getUniqueProp(modifiers, themeNames),
+    placement: getUniqueProp(modifiers, placements) || 'top'
+  }
   if (typeof binding.value === 'string') {
     options.content = binding.value
   } else if (typeof binding.value === 'object') {
     options = binding.value
   }
-  el._tooltip = tippy(el, options)
+  el._tooltip.setProps(options)
 }
 
 export const Tooltip = {
