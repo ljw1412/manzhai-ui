@@ -5,6 +5,7 @@ const containers = require('./containers')
 const rewriteFence = require('./fence')
 const rewriteHeading = require('./heading')
 const rewriteUl = require('./ul')
+const rewriteLink = require('./link')
 
 const chain = new Chain()
 
@@ -31,5 +32,6 @@ const markdown = chain.toMd()
 rewriteHeading(markdown)
 rewriteFence(markdown)
 rewriteUl(markdown)
+rewriteLink(markdown)
 
 module.exports = markdown
