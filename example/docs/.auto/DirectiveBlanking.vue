@@ -1,6 +1,6 @@
 <template>
-  <div class="component-blanking">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+  <div class="directive-blanking">
+    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
     <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
 <p>根据本地存储条件控制组件是否需要显示的指令。</p>
 <h3 id="shi-yong-chang-jing" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>

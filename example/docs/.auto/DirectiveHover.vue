@@ -1,6 +1,6 @@
 <template>
-  <div class="component-hover">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+  <div class="directive-hover">
+    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
     <h2 id="hover-xuan-fu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#hover-xuan-fu" title="Hover 悬浮" data-level="2" data-href="#hover-xuan-fu">¶</a>Hover 悬浮</h2>
 <p>基于 <code>mouseenter</code>,<code>mouseleave</code>事件提供悬浮状态。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>

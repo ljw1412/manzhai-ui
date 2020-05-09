@@ -1,6 +1,6 @@
 <template>
-  <div class="component-elevation">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+  <div class="directive-elevation">
+    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
     <h2 id="elevation-hai-ba" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#elevation-hai-ba" title="Elevation 海拔" data-level="2" data-href="#elevation-hai-ba">¶</a>Elevation 海拔</h2>
 <p>根据不同海拔给绑定元素增加阴影。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>

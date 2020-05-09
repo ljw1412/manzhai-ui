@@ -1,6 +1,6 @@
 <template>
-  <div class="component-ripple">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+  <div class="directive-ripple">
+    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
     <h2 id="ripple-lian-yi-xiao-guo" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#ripple-lian-yi-xiao-guo" title="Ripple 涟漪效果" data-level="2" data-href="#ripple-lian-yi-xiao-guo">¶</a>Ripple 涟漪效果</h2>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>使用<code>v-ripple</code>指令，传递一个Boolean类型来控制是否使用。</p>
