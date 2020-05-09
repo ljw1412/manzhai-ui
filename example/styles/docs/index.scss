@@ -1,8 +1,17 @@
 #page-component-content {
-  [class^='component-'] {
+  [class^='component-'],
+  [class^='directive-'] {
     position: relative;
     > p a {
       color: #409eff;
+    }
+    > h3 {
+      font-size: 24px;
+      margin: 55px 0 20px;
+    }
+    > h4 {
+      font-size: 20px;
+      margin: 20px 0 12px;
     }
   }
   .update-datetime {
@@ -25,16 +34,6 @@
   h2 {
     font-size: 28px;
     margin: 0;
-  }
-
-  [class^='component-'] > h3 {
-    font-size: 24px;
-    margin: 55px 0 20px;
-  }
-
-  [class^='component-'] > h4 {
-    font-size: 20px;
-    margin: 20px 0 12px;
   }
 
   .mz-document-header {
@@ -166,10 +165,13 @@
       margin-top: 20px;
     }
   }
-
+  .directive-tooltip,
   .component-tag {
-    .mz-tag + .mz-tag {
-      margin-left: 10px;
+    .mz-tag {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
