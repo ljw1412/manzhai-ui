@@ -119,19 +119,17 @@ async function generateDocVue(moduleName, content, blocks) {
 // 构建路由
 async function generateRouter(moduleList) {
   console.log('正在生成路由中……')
-  let content = `${moduleList
-    .map(
-      ({ name, type }) => `import ${type}${name} from './${type + name}.vue'`
-    )
-    .join('\n')}`
-  const routerList = moduleList.map(
-    ({ name, type }) => `  {
-    path: '${utils.hyphenate(type + name)}',
-    name: '${type}${name}',
-    component: ${type}${name}
+  let content = ''
+  const routerList = moduleList.map(({ name, type }) => {
+    name = type + name
+    const hyphenateName = utils.hyphenate(name)
+    return `  {
+    path: '${hyphenateName}',
+    name: '${name}',
+    component: () => import(/* webpackChunkName: "documents" */ './${name}.vue')
   }`
-  )
-  content += `\n\nexport default [\n${routerList.join(',\n')}\n]\n`
+  })
+  content += `export default [\n${routerList.join(',\n')}\n]\n`
   await utils.saveFiles(basePath, [{ name: 'router.ts', content }])
 }
 
