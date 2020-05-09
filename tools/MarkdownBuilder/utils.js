@@ -27,7 +27,7 @@ function stripScript(content) {
 }
 
 // 提取示例
-function extractTemplate(content, moduleName) {
+function extractTemplate(content, moduleName, type) {
   const blocks = []
   const Regx = /<!--example~[\s\S]+?~example-->/g
   let i = 0
@@ -51,7 +51,7 @@ function extractTemplate(content, moduleName) {
   })
   const datetime = moment().format('YYYY-MM-DD HH:mm')
   content = `<template>
-  <div class="${utils.hyphenate(`Component${moduleName}`)}">
+  <div class="${utils.hyphenate(type + moduleName)}">
     <div class="update-datetime">文档更新时间：${datetime}</div>
     ${content}
   </div>

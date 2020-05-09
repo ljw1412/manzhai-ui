@@ -18,7 +18,7 @@ const utils = Object.assign({}, require('./utils'), require('../utils'))
         HashChangeMap[path] = hash
         console.log(chalk.yellow('[文档有修改]'), path)
         let doc = md.render(await utils.readFile(path))
-        let { content, blocks } = utils.extractTemplate(doc, name)
+        let { content, blocks } = utils.extractTemplate(doc, name, type)
         await utils.generateDocVueFile(type + name, content, blocks)
       }
       moduleList.push({ name, type })
