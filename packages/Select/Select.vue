@@ -30,7 +30,7 @@
     </span>
     <mz-dropdown-card :visiable.sync="isActive"
       :dropdownMatchReferenceWidth="dropdownMatchSelectWidth"
-      :width="width"
+      :min-width="minWidth"
       :reference="inputRef"
       :placement="under?'bottom':undefined"
       :container="appendToBody? 'body' : null">
@@ -105,7 +105,7 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
   isActive = false
   left = ''
   top = ''
-  width = '100px'
+  minWidth = '100px'
   filterText = ''
   searchFocus = false
 
