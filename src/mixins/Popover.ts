@@ -3,6 +3,18 @@ import 'tippy.js/themes/light.css'
 import 'tippy.js/themes/light-border.css'
 import 'tippy.js/themes/material.css'
 import 'tippy.js/themes/translucent.css'
+import 'tippy.js/animations/shift-away.css'
+import 'tippy.js/animations/shift-away-subtle.css'
+import 'tippy.js/animations/shift-away-extreme.css'
+import 'tippy.js/animations/shift-toward.css'
+import 'tippy.js/animations/shift-toward-subtle.css'
+import 'tippy.js/animations/shift-toward-extreme.css'
+import 'tippy.js/animations/scale.css'
+import 'tippy.js/animations/scale-subtle.css'
+import 'tippy.js/animations/scale-extreme.css'
+import 'tippy.js/animations/perspective.css'
+import 'tippy.js/animations/perspective-subtle.css'
+import 'tippy.js/animations/perspective-extreme.css'
 import tippy, {
   followCursor,
   Placement,
@@ -14,6 +26,11 @@ import PopupManager from '@/utils/popup-manager'
 
 function getTrigger(trigger: string) {
   return trigger === 'hover' ? 'mouseenter' : trigger
+}
+
+// 如果属性值包含boolan和其他类型，对''字符串认为是true。
+function getMayBeBoolean(prop: any) {
+  return prop === '' ? true : prop
 }
 
 @Component
@@ -60,16 +77,17 @@ export default class Popover extends Vue {
   initPopover(el?: MultipleTargets, content?: Element) {
     if (!el || !el.length) return
     this.destroyPopovers()
+
     this.popovers = tippy(el, {
       trigger: getTrigger(this.trigger),
       plugins: [followCursor],
       theme: this.theme,
       placement: this.placement,
       animation: this.animation,
-      arrow: this.arrow,
+      arrow: getMayBeBoolean(this.arrow),
       content: content || this.content,
       followCursor: this.followCursor,
-      interactive: this.interactive,
+      interactive: getMayBeBoolean(this.interactive),
       maxWidth: this.maxWidth,
       offset: this.offset,
       zIndex: this.zIndex,
