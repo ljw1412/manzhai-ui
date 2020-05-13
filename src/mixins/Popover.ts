@@ -21,7 +21,7 @@ import tippy, {
   Instance,
   MultipleTargets
 } from 'tippy.js'
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import PopupManager from '@/utils/popup-manager'
 
 function getTrigger(trigger: string) {
@@ -35,6 +35,8 @@ function getMayBeBoolean(prop: any) {
 
 @Component
 export default class Popover extends Vue {
+  @Prop({ type: Boolean })
+  readonly visible!: boolean
   @Prop({ type: String, default: 'top' })
   readonly placement!: Placement
   @Prop({ type: [String, Boolean], default: 'fade' })
@@ -53,12 +55,12 @@ export default class Popover extends Vue {
   readonly offset!: [number, number]
   @Prop({ default: () => document.body })
   readonly appendTo!: 'parent' | Element | ((ref: Element) => Element)
-  @Prop({ default: '' })
+  @Prop({ default: 'sync' })
   readonly theme!: string
   @Prop({ type: String, default: 'hover' })
   readonly trigger!: 'hover' | 'click' | 'focus' | 'manual'
   @Prop({ type: [Boolean, String], default: true })
-  readonly hideOnClick!: boolean | 'toogle'
+  readonly hideOnClick!: boolean | 'toggle'
   @Prop()
   readonly zIndex!: number
 
@@ -74,6 +76,14 @@ export default class Popover extends Vue {
     this.popovers.forEach(popover => popover.destroy())
   }
 
+  updateProps(instance: Instance) {
+    if (!this.zIndex) instance.setProps({ zIndex: PopupManager.zIndex })
+    if (this.theme === 'sync')
+      instance.setProps({
+        theme: this.$mzEventBus.theme === 'dark' ? 'light' : ''
+      })
+  }
+
   initPopover(el?: MultipleTargets, content?: Element) {
     if (!el || !el.length) return
     this.destroyPopovers()
@@ -84,6 +94,7 @@ export default class Popover extends Vue {
       theme: this.theme,
       placement: this.placement,
       animation: this.animation,
+      hideOnClick: this.hideOnClick,
       arrow: getMayBeBoolean(this.arrow),
       content: content || this.content,
       followCursor: this.followCursor,
@@ -96,7 +107,7 @@ export default class Popover extends Vue {
       onCreate: this.$$emit('create'),
       onDestroy: this.$$emit('destroy'),
       onShow: instance => {
-        if (!this.zIndex) instance.setProps({ zIndex: PopupManager.zIndex })
+        this.updateProps(instance)
         this.$$emit('show')(instance)
       },
       onShown: this.$$emit('shown'),
@@ -105,5 +116,14 @@ export default class Popover extends Vue {
       onTrigger: this.$$emit('trigger'),
       onUntrigger: this.$$emit('untrigger')
     })
+  }
+
+  @Watch('visible')
+  onVisibleChange(visible: boolean) {
+    if (visible) {
+      this.popovers.forEach(popover => popover.show())
+    } else {
+      this.popovers.forEach(popover => popover.hide())
+    }
   }
 }

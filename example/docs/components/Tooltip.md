@@ -86,6 +86,44 @@
 ```
 :::
 
+### 触发方式
+:::demo `trigger`属性控制触发方式，默认值`hover`，可选值`hover`、`click`、`focus`、`manual`。`hide-on-click`属性控制触发逻辑，`true`:点击外部会隐藏，`false`:点击外部不会隐藏，`'toggle'`:点击自己显示和隐藏。
+```html
+<mz-tooltip content="鼠标悬停触发" trigger="hover">
+  <mz-button color="primary">hover</mz-button>
+</mz-tooltip>
+<mz-tooltip content="鼠标点击触发" trigger="click">
+  <mz-button color="primary">click</mz-button>
+</mz-tooltip>
+<mz-tooltip content="鼠标聚焦触发" trigger="focus">
+  <mz-button color="primary">focus</mz-button>
+</mz-tooltip>
+
+<mz-tooltip content="手动触发" trigger="manual"
+  :visible="visible" :hide-on-click="false">
+  <span color="primary">manual</span>
+</mz-tooltip>
+<mz-switch v-model="visible"></mz-switch>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+</script>
+
+<style>
+.mz-button{
+  margin: 5px;
+  width: 60px;
+}
+</style>
+```
+:::
+
 ### 显示箭头
 :::demo 设置`arrow`属性控制是否显示箭头，类型`Boolean`、`String`(base64Image)、`SVGElement`。
 ```html
@@ -189,6 +227,76 @@
 .mz-button{
   margin: 5px;
   width: 160px;
+}
+</style>
+```
+:::
+
+### 与内容交互
+
+:::demo `interactive`属性控制是否允许你进行内容交互。
+```html
+<mz-tooltip interactive content="你可以对提示文字内容进行交互">
+  <mz-button color="primary">interactive</mz-button>
+</mz-tooltip>
+```
+:::
+
+### 位置偏离
+
+:::demo `offset`属性控制位置偏移量，格式是`[skidding, distance]`，这两个值的类型都是`number`，默认值`[0, 10]`。
+```html
+<mz-tooltip content="提示文字">
+  <mz-button color="primary">[0, 10]</mz-button>
+</mz-tooltip>
+
+<mz-tooltip :offset="[20, 5]" content="提示文字">
+  <mz-button color="primary">[20, 5]</mz-button>
+</mz-tooltip>
+
+<mz-tooltip :offset="[10, 20]" content="提示文字">
+  <mz-button color="primary">[10, 20]</mz-button>
+</mz-tooltip>
+
+<style>
+.mz-button{
+  margin: 5px;
+  width: 100px;
+}
+</style>
+```
+:::
+
+### 主题
+
+默认提供了5种主题样式，您也可以[自定义主题样式](**_blank**https://atomiks.github.io/tippyjs/v6/themes/#creating-a-theme)。
+
+:::demo
+```html
+<mz-tooltip content="默认主题">
+  <mz-button color="primary">默认主题</mz-button>
+</mz-tooltip>
+
+<mz-tooltip content="light" theme="light">
+  <mz-button color="primary">light</mz-button>
+</mz-tooltip>
+
+<mz-tooltip content="light-border" theme="light-border">
+  <mz-button color="primary">light-border</mz-button>
+</mz-tooltip>
+
+<mz-tooltip content="material" theme="material">
+  <mz-button color="primary">material</mz-button>
+</mz-tooltip>
+
+<mz-tooltip content="translucent" theme="translucent">
+  <mz-button color="primary">translucent</mz-button>
+</mz-tooltip>
+
+<style>
+.mz-button{
+  margin: 5px;
+  width: 90px;
 }
 </style>
 ```

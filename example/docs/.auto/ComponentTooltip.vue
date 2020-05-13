@@ -1,6 +1,6 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-12 19:31</div>
+    <div class="update-datetime">文档更新时间：2020-05-13 19:12</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
@@ -135,13 +135,66 @@
   height: 40px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="xian-shi-jian-tou" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-shi-jian-tou" title="显示箭头" data-level="3" data-href="#xian-shi-jian-tou">¶</a>显示箭头</h3>
+</code></pre></template></demo-block><h3 id="chu-fa-fang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#chu-fa-fang-shi" title="触发方式" data-level="3" data-href="#chu-fa-fang-shi">¶</a>触发方式</h3>
 <demo-block>
         <template #example><tooltip-demo2 inline-template><div class="tooltip-demo2">
+  <mz-tooltip content="鼠标悬停触发" trigger="hover">
+    <mz-button color="primary">hover</mz-button>
+  </mz-tooltip>
+  <mz-tooltip content="鼠标点击触发" trigger="click">
+    <mz-button color="primary">click</mz-button>
+  </mz-tooltip>
+  <mz-tooltip content="鼠标聚焦触发" trigger="focus">
+    <mz-button color="primary">focus</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip content="手动触发" trigger="manual"
+    :visible="visible" :hide-on-click="false">
+    <span color="primary">manual</span>
+  </mz-tooltip>
+  <mz-switch v-model="visible"></mz-switch>
+</div></tooltip-demo2></template>
+        <template #description><p><code>trigger</code>属性控制触发方式，默认值<code>hover</code>，可选值<code>hover</code>、<code>click</code>、<code>focus</code>、<code>manual</code>。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip content=&quot;鼠标悬停触发&quot; trigger=&quot;hover&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;hover&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+&lt;mz-tooltip content=&quot;鼠标点击触发&quot; trigger=&quot;click&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;click&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+&lt;mz-tooltip content=&quot;鼠标聚焦触发&quot; trigger=&quot;focus&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;focus&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip content=&quot;手动触发&quot; trigger=&quot;manual&quot;
+  :visible=&quot;visible&quot; :hide-on-click=&quot;false&quot;&gt;
+  &lt;span color=&quot;primary&quot;&gt;manual&lt;/span&gt;
+&lt;/mz-tooltip&gt;
+&lt;mz-switch v-model=&quot;visible&quot;&gt;&lt;/mz-switch&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+.mz-button{
+  margin: 5px;
+  width: 60px;
+}
+&lt;/style&gt;
+</code></pre></template></demo-block><h3 id="xian-shi-jian-tou" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-shi-jian-tou" title="显示箭头" data-level="3" data-href="#xian-shi-jian-tou">¶</a>显示箭头</h3>
+<demo-block>
+        <template #example><tooltip-demo3 inline-template><div class="tooltip-demo3">
   <mz-tooltip arrow content="带箭头的提示文字">
     <mz-button color="primary">按钮</mz-button>
   </mz-tooltip>
-</div></tooltip-demo2></template>
+</div></tooltip-demo3></template>
         <template #description><p>设置<code>arrow</code>属性控制是否显示箭头，类型<code>Boolean</code>、<code>String</code>(base64Image)、<code>SVGElement</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip arrow content=&quot;带箭头的提示文字&quot;&gt;
@@ -150,7 +203,7 @@
 </code></pre></template></demo-block><h3 id="dong-hua-xiao-guo" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dong-hua-xiao-guo" title="动画效果" data-level="3" data-href="#dong-hua-xiao-guo">¶</a>动画效果</h3>
 <p>另外提供了4类动画效果。您也可以<a href="https://atomiks.github.io/tippyjs/v6/animations/#custom-animations" target="_blank">自定义动画</a>。</p>
 <demo-block>
-        <template #example><tooltip-demo3 inline-template><div class="tooltip-demo3">
+        <template #example><tooltip-demo4 inline-template><div class="tooltip-demo4">
   <div>
     <mz-tooltip content="fade 动画效果">
       <mz-button color="primary">fade(默认)</mz-button>
@@ -204,7 +257,7 @@
       <mz-button color="primary">perspective-extreme</mz-button>
     </mz-tooltip>
   </div>
-</div></tooltip-demo3></template>
+</div></tooltip-demo4></template>
         <template #description><p><code>animation</code>属性控制动画效果，类型<code>Boolean / String</code>，默认值<code>fade</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div&gt;
@@ -269,7 +322,7 @@
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="zhui-sui-shu-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhui-sui-shu-biao" title="追随鼠标" data-level="3" data-href="#zhui-sui-shu-biao">¶</a>追随鼠标</h3>
 <demo-block>
-        <template #example><tooltip-demo4 inline-template><div class="tooltip-demo4">
+        <template #example><tooltip-demo5 inline-template><div class="tooltip-demo5">
   <mz-tooltip follow-cursor content="true">
     <mz-button color="primary">followCursor: true</mz-button>
   </mz-tooltip>
@@ -286,7 +339,7 @@
   <mz-tooltip follow-cursor="initial" content="initial">
     <mz-button color="primary">followCursor: initial</mz-button>
   </mz-tooltip>
-</div></tooltip-demo4></template>
+</div></tooltip-demo5></template>
         <template #description><p><code>follow-cursor</code>属性控制鼠标追随情况。默认值<code>false</code>，可选值<code>true</code>: 启用、<code>false</code>: 禁用、<code>horizontal</code>: 水平、<code>vertical</code>: 垂直、<code>initial</code>: 第一次鼠标触及的位置。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip follow-cursor content=&quot;true&quot;&gt;
@@ -312,13 +365,117 @@
   width: 160px;
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="yu-nei-rong-jiao-hu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-nei-rong-jiao-hu" title="与内容交互" data-level="3" data-href="#yu-nei-rong-jiao-hu">¶</a>与内容交互</h3>
+<demo-block>
+        <template #example><tooltip-demo6 inline-template><div class="tooltip-demo6">
+  <mz-tooltip interactive content="你可以对提示文字内容进行交互">
+    <mz-button color="primary">interactive</mz-button>
+  </mz-tooltip>
+</div></tooltip-demo6></template>
+        <template #description><p><code>interactive</code>属性控制是否允许你进行内容交互。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip interactive content=&quot;你可以对提示文字内容进行交互&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;interactive&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+</code></pre></template></demo-block><h3 id="wei-zhi-pian-chi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#wei-zhi-pian-chi" title="位置偏离" data-level="3" data-href="#wei-zhi-pian-chi">¶</a>位置偏离</h3>
+<demo-block>
+        <template #example><tooltip-demo7 inline-template><div class="tooltip-demo7">
+  <mz-tooltip content="提示文字">
+    <mz-button color="primary">[0, 10]</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip :offset="[20, 5]" content="提示文字">
+    <mz-button color="primary">[20, 5]</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip :offset="[10, 20]" content="提示文字">
+    <mz-button color="primary">[10, 20]</mz-button>
+  </mz-tooltip>
+</div></tooltip-demo7></template>
+        <template #description><p><code>offset</code>属性控制位置偏移量，格式是<code>[skidding, distance]</code>，这两个值的类型都是<code>number</code>，默认值<code>[0, 10]</code>。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip content=&quot;提示文字&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;[0, 10]&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip :offset=&quot;[20, 5]&quot; content=&quot;提示文字&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;[20, 5]&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip :offset=&quot;[10, 20]&quot; content=&quot;提示文字&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;[10, 20]&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;style&gt;
+.mz-button{
+  margin: 5px;
+  width: 100px;
+}
+&lt;/style&gt;
+</code></pre></template></demo-block><h3 id="zhu-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhu-ti" title="主题" data-level="3" data-href="#zhu-ti">¶</a>主题</h3>
+<p>默认提供了5种主题样式，您也可以<a href="https://atomiks.github.io/tippyjs/v6/themes/#creating-a-theme" target="_blank">自定义主题样式</a>。</p>
+<demo-block>
+        <template #example><tooltip-demo8 inline-template><div class="tooltip-demo8">
+  <mz-tooltip content="默认主题">
+    <mz-button color="primary">默认主题</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip content="light" theme="light">
+    <mz-button color="primary">light</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip content="light-border" theme="light-border">
+    <mz-button color="primary">light-border</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip content="material" theme="material">
+    <mz-button color="primary">material</mz-button>
+  </mz-tooltip>
+  
+  <mz-tooltip content="translucent" theme="translucent">
+    <mz-button color="primary">translucent</mz-button>
+  </mz-tooltip>
+</div></tooltip-demo8></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip content=&quot;默认主题&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;默认主题&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip content=&quot;light&quot; theme=&quot;light&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;light&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip content=&quot;light-border&quot; theme=&quot;light-border&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;light-border&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip content=&quot;material&quot; theme=&quot;material&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;material&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;mz-tooltip content=&quot;translucent&quot; theme=&quot;translucent&quot;&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;translucent&lt;/mz-button&gt;
+&lt;/mz-tooltip&gt;
+
+&lt;style&gt;
+.mz-button{
+  margin: 5px;
+  width: 90px;
+}
+&lt;/style&gt;
 </code></pre></template></demo-block>
   </div>
 </template>
 <script>
 export default {
   name: 'ComponentComponentTooltip',
-  components: { TooltipDemo1: {}, TooltipDemo2: {}, TooltipDemo3: {}, TooltipDemo4: {} }
+  components: { TooltipDemo1: {}, TooltipDemo2: {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}, TooltipDemo3: {}, TooltipDemo4: {}, TooltipDemo5: {}, TooltipDemo6: {}, TooltipDemo7: {}, TooltipDemo8: {} }
 }
 </script>
 <style lang="scss">
@@ -348,16 +505,34 @@ export default {
     height: 40px;
   }
   }
-.tooltip-demo3{  
+.tooltip-demo2{  
   .mz-button{
     margin: 5px;
-    width: 160px;
+    width: 60px;
   }
   }
 .tooltip-demo4{  
   .mz-button{
     margin: 5px;
     width: 160px;
+  }
+  }
+.tooltip-demo5{  
+  .mz-button{
+    margin: 5px;
+    width: 160px;
+  }
+  }
+.tooltip-demo7{  
+  .mz-button{
+    margin: 5px;
+    width: 100px;
+  }
+  }
+.tooltip-demo8{  
+  .mz-button{
+    margin: 5px;
+    width: 90px;
   }
   }
 </style>

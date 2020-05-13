@@ -22,6 +22,7 @@
     "serve": "vue-cli-service serve",
     "build": "node tools/MarkdownBuilder/index.js && vue-cli-service build",
     "report": "vue-cli-service build --report",
+    "debug": "node --inspect node_modules/.bin/vue-cli-service serve",
     "build:ui": "vue-cli-service build --target lib --dest lib ./src/entry.ts --mode ui && rimraf ./lib/demo.html",
     "report:ui": "vue-cli-service build --target lib --dest lib --report ./src/entry.ts --mode ui",
     "creater": "cd tools/ComponentCreater && node index.js",

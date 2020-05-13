@@ -1,5 +1,6 @@
 import { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
+import MzBus from './bus'
 
 declare global {
   interface Element {
@@ -39,7 +40,7 @@ declare module 'vue/types/vue' {
   interface Vue {
     $changeTheme: (name: string) => void
     $getCurrentTheme: () => string
-    $mzEventBus: Vue
+    $mzEventBus: typeof MzBus
   }
   interface VueConstructor<V extends Vue = Vue> {
     install: PluginFunction<Vue>
