@@ -7,8 +7,8 @@ import IconGrid from './views/Docs/components/IconGrid.vue'
 import hljs from './utils/hljs'
 
 import './styles/manzhai-variables.scss'
-import './styles/global.scss'
 import './styles/theme/index.scss'
+import './styles/global.scss'
 
 Vue.use(manzhaiUI)
 

@@ -42,7 +42,7 @@ export default class Topbar extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../styles/theme/base.scss';
 #app-logo {
   padding: 0;

@@ -24,10 +24,8 @@ import Topbar from './components/Topbar.vue'
 export default class APP extends Vue {}
 </script>
 
-<style lang="scss" scoped>
-@import './styles/theme/base.scss';
-$topbar-height: 60px;
-$copyright-height: 20px;
+<style lang="scss">
+@import '@example/styles/theme/base.scss';
 #app {
   height: 100%;
   overflow: hidden;
