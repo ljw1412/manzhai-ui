@@ -1,6 +1,6 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-13 19:12</div>
+    <div class="update-datetime">文档更新时间：2020-05-13 19:17</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
@@ -154,7 +154,7 @@
   </mz-tooltip>
   <mz-switch v-model="visible"></mz-switch>
 </div></tooltip-demo2></template>
-        <template #description><p><code>trigger</code>属性控制触发方式，默认值<code>hover</code>，可选值<code>hover</code>、<code>click</code>、<code>focus</code>、<code>manual</code>。</p>
+        <template #description><p><code>trigger</code>属性控制触发方式，默认值<code>hover</code>，可选值<code>hover</code>、<code>click</code>、<code>focus</code>、<code>manual</code>。<code>hide-on-click</code>属性控制触发逻辑，<code>true</code>:点击外部会隐藏，<code>false</code>:点击外部不会隐藏，<code>'toggle'</code>:点击自己显示和隐藏。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip content=&quot;鼠标悬停触发&quot; trigger=&quot;hover&quot;&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;hover&lt;/mz-button&gt;
