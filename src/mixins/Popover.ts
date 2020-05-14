@@ -21,6 +21,7 @@ import tippy, {
   Instance,
   MultipleTargets
 } from 'tippy.js'
+import { VNode } from 'Vue'
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import PopupManager from '@/utils/popup-manager'
 
@@ -55,7 +56,7 @@ export default class Popover extends Vue {
   readonly offset!: [number, number]
   @Prop({ default: () => document.body })
   readonly appendTo!: 'parent' | Element | ((ref: Element) => Element)
-  @Prop({ default: 'sync' })
+  @Prop({ type: String, default: 'reverse' })
   readonly theme!: string
   @Prop({ type: String, default: 'hover' })
   readonly trigger!: 'hover' | 'click' | 'focus' | 'manual'
@@ -65,6 +66,14 @@ export default class Popover extends Vue {
   readonly zIndex!: number
 
   popovers: Instance[] = []
+  forceProps: Record<string, any> = {}
+
+  virtualVM = new Vue({
+    data: { node: {} },
+    render(h) {
+      return this.node as VNode
+    }
+  }).$mount()
 
   $$emit(event: string) {
     return (...args: any[]) => {
@@ -76,12 +85,25 @@ export default class Popover extends Vue {
     this.popovers.forEach(popover => popover.destroy())
   }
 
+  // 更新Props
   updateProps(instance: Instance) {
     if (!this.zIndex) instance.setProps({ zIndex: PopupManager.zIndex })
-    if (this.theme === 'sync')
+    const isDark = this.$mzEventBus.theme === 'dark'
+    if (this.theme === 'reverse') {
       instance.setProps({
-        theme: this.$mzEventBus.theme === 'dark' ? 'light' : ''
+        theme: isDark ? 'light' : ''
       })
+    } else if (this.theme === 'same') {
+      instance.setProps({
+        theme: isDark ? '' : 'light'
+      })
+    }
+  }
+
+  updateForceProps() {
+    this.popovers.forEach(popover => {
+      popover.setProps(this.forceProps)
+    })
   }
 
   initPopover(el?: MultipleTargets, content?: Element) {
@@ -122,6 +144,7 @@ export default class Popover extends Vue {
       onTrigger: this.$$emit('trigger'),
       onUntrigger: this.$$emit('untrigger')
     })
+    this.updateForceProps()
     this.visible && this.handleVisibleChange(this.visible)
   }
 
@@ -132,5 +155,30 @@ export default class Popover extends Vue {
     } else {
       this.popovers.forEach(popover => popover.hide())
     }
+  }
+
+  created() {
+    const { content } = this.$slots
+    if (content && content.length) {
+      this.virtualVM.node = content[0]
+    }
+  }
+
+  mounted() {
+    this.virtualVM.$nextTick(() => {
+      const { default: defaultSlots, content } = this.$slots
+      let reference, contentEl
+      if (defaultSlots) {
+        reference = defaultSlots.map(vnode => vnode.elm) as Element[]
+      }
+      if (content && content.length) {
+        contentEl = content[0].elm as Element
+      }
+      this.initPopover(reference, contentEl)
+    })
+  }
+
+  beforeDestroy() {
+    this.virtualVM && this.virtualVM.$destroy()
   }
 }

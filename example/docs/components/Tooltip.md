@@ -318,7 +318,7 @@ export default {
 |maxWidth|最大宽度|Number / String|'none'|350|
 |offset|偏移|Array|[skidding, distance]|[0, 10]|
 |appendTo|添加至父级|String / Element|'parent' / `(CSS selector)` |document.body|
-|theme|主题|String|sync / light / light-border / material / translucent|'sync'|
+|theme|主题|String|reverse / same / light / light-border / material / translucent|'reverse'|
 |trigger|触发方式|String|'hover' | 'click' | 'focus' | 'manual'|'hover'|
 |hideOnClick|点击触发是否隐藏|Boolean / String|'toggle'|true|
 |zIndex|同原生层级|Number|||
