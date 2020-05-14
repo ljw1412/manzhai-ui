@@ -1,6 +1,6 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-14 10:21</div>
+    <div class="update-datetime">文档更新时间：2020-05-14 10:42</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
@@ -500,7 +500,7 @@ export default {
 <tr>
 <td>arrow</td>
 <td>是否显示箭头或箭头的样式</td>
-<td>Boolean/String/SVGElement</td>
+<td>Boolean / String / SVGElement</td>
 <td></td>
 <td>false</td>
 </tr>
@@ -514,7 +514,7 @@ export default {
 <tr>
 <td>follow-cursor</td>
 <td>跟随鼠标</td>
-<td>Boolean/String</td>
+<td>Boolean / String</td>
 <td>horizontal / vertical / initial</td>
 <td>false</td>
 </tr>
@@ -528,7 +528,7 @@ export default {
 <tr>
 <td>maxWidth</td>
 <td>最大宽度</td>
-<td>Number/String</td>
+<td>Number / String</td>
 <td>'none'</td>
 <td>350</td>
 </tr>
@@ -542,7 +542,7 @@ export default {
 <tr>
 <td>appendTo</td>
 <td>添加至父级</td>
-<td>String/Element</td>
+<td>String / Element</td>
 <td>'parent' / <code>(CSS selector)</code></td>
 <td>document.body</td>
 </tr>
@@ -563,7 +563,7 @@ export default {
 <tr>
 <td>hideOnClick</td>
 <td>点击触发是否隐藏</td>
-<td>Boolean/String</td>
+<td>Boolean / String</td>
 <td>'toggle'</td>
 <td>true</td>
 </tr>
