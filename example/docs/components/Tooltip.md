@@ -333,7 +333,7 @@ export default {
 *instance* 指 tippy 的实例。
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
-|change|显示状态变化|(visible:boolean)|
+|visible-change|显示状态变化|(visible:boolean)|
 |create|提示气泡创建事件|(instance)|
 |mount|提示气泡装载事件|(instance)|
 |destroy|提示气泡销毁事件|(instance)|

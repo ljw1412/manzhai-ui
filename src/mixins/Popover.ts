@@ -35,7 +35,7 @@ function getMayBeBoolean(prop: any) {
 
 @Component
 export default class Popover extends Vue {
-  @Model('change', { type: Boolean })
+  @Model('visible-change', { type: Boolean })
   readonly visible!: boolean
   @Prop({ type: String, default: 'top' })
   readonly placement!: Placement
@@ -111,12 +111,12 @@ export default class Popover extends Vue {
         this.$$emit('show')(instance)
       },
       onShown: instance => {
-        this.$emit('change', true)
+        this.$emit('visible-change', true)
         this.$$emit('shown')(instance)
       },
       onHide: this.$$emit('hide'),
       onHidden: instance => {
-        this.$emit('change', false)
+        this.$emit('visible-change', false)
         this.$$emit('hidden')(instance)
       },
       onTrigger: this.$$emit('trigger'),

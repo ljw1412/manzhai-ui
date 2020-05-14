@@ -1,6 +1,6 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-14 10:42</div>
+    <div class="update-datetime">文档更新时间：2020-05-14 11:40</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
@@ -610,7 +610,7 @@ export default {
 </thead>
 <tbody>
 <tr>
-<td>change</td>
+<td>visible-change</td>
 <td>显示状态变化</td>
 <td>(visible:boolean)</td>
 </tr>
