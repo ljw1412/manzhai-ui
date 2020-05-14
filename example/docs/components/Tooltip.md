@@ -302,6 +302,20 @@ export default {
 ```
 :::
 
+### 自定义内容
+::: demo
+```html
+<mz-tooltip>
+  <mz-button color="primary">自定义内容</mz-button>
+  <div slot="content" style="width:160px;text-align:center">
+    <h2>Tooltip</h2>
+    <p>欢迎使用tooltip!</p>
+    <p>L('ω')┘三└('ω')｣</p>
+  </div>
+</mz-tooltip>
+```
+:::
+
 ### API
 
 #### 属性

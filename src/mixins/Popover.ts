@@ -75,14 +75,17 @@ export default class Popover extends Vue {
     }
   }).$mount()
 
+  initContent() {
+    const { content } = this.$slots
+    if (content && content.length) {
+      this.virtualVM.node = content[0]
+    }
+  }
+
   $$emit(event: string) {
     return (...args: any[]) => {
       this.$emit(event, ...args)
     }
-  }
-
-  destroyPopovers() {
-    this.popovers.forEach(popover => popover.destroy())
   }
 
   // 更新Props
@@ -148,6 +151,10 @@ export default class Popover extends Vue {
     this.visible && this.handleVisibleChange(this.visible)
   }
 
+  destroyPopovers() {
+    this.popovers.forEach(popover => popover.destroy())
+  }
+
   @Watch('visible')
   handleVisibleChange(visible: boolean) {
     if (visible) {
@@ -158,10 +165,7 @@ export default class Popover extends Vue {
   }
 
   created() {
-    const { content } = this.$slots
-    if (content && content.length) {
-      this.virtualVM.node = content[0]
-    }
+    this.initContent()
   }
 
   mounted() {

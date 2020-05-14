@@ -1,6 +1,6 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-14 12:20</div>
+    <div class="update-datetime">文档更新时间：2020-05-14 12:31</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
@@ -463,6 +463,27 @@ export default {
   width: 90px;
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="zi-ding-yi-nei-rong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-nei-rong" title="自定义内容" data-level="3" data-href="#zi-ding-yi-nei-rong">¶</a>自定义内容</h3>
+<demo-block>
+        <template #example><tooltip-demo9 inline-template><div class="tooltip-demo9">
+  <mz-tooltip>
+    <mz-button color="primary">自定义内容</mz-button>
+    <div slot="content" style="width:160px;text-align:center">
+      <h2>Tooltip</h2>
+      <p>欢迎使用tooltip!</p>
+      <p>L('ω')┘三└('ω')｣</p>
+    </div>
+  </mz-tooltip>
+</div></tooltip-demo9></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip&gt;
+  &lt;mz-button color=&quot;primary&quot;&gt;自定义内容&lt;/mz-button&gt;
+  &lt;div slot=&quot;content&quot; style=&quot;width:160px;text-align:center&quot;&gt;
+    &lt;h2&gt;Tooltip&lt;/h2&gt;
+    &lt;p&gt;欢迎使用tooltip!&lt;/p&gt;
+    &lt;p&gt;L('ω')┘三└('ω')｣&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/mz-tooltip&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -673,7 +694,7 @@ export default {
       visible: false
     }
   }
-}, TooltipDemo3: {}, TooltipDemo4: {}, TooltipDemo5: {}, TooltipDemo6: {}, TooltipDemo7: {}, TooltipDemo8: {} }
+}, TooltipDemo3: {}, TooltipDemo4: {}, TooltipDemo5: {}, TooltipDemo6: {}, TooltipDemo7: {}, TooltipDemo8: {}, TooltipDemo9: {} }
 }
 </script>
 <style lang="scss">
