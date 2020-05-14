@@ -1,4 +1,5 @@
 .mz-navigation {
+  overflow: hidden;
   .router-link-active .mz-list-item.is-clickable {
     @include foreground-active;
     color: $color-primary;

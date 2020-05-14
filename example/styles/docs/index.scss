@@ -213,25 +213,22 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .menu-icon {
+    display: block !important;
+  }
+
   .app-topbar__navigation {
+    margin-left: 40px;
     li {
       padding: 0 10px;
     }
   }
 
-  // #sidebar {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   z-index: 100;
-  //   background-color: #fff;
-  //   &::before {
-  //     content: '';
-  //     display: block;
-  //     height: $topbar-height;
-  //   }
-  // }
+  #sidebar {
+    width: 100% !important;
+    padding-top: $topbar-height !important;
+    overflow-y: hidden !important;
+  }
 
   #page-component {
     > .mz-catalogue {

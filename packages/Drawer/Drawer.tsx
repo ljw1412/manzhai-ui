@@ -136,6 +136,13 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     )
   }
 
+  mounted() {
+    if (this.visible) {
+      this.onPopVisibleChange(this.visible)
+      this.onVisibleChange(this.visible)
+    }
+  }
+
   @Watch('visible')
   onVisibleChange(visible: boolean) {
     if (visible) {

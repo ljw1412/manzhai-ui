@@ -53,19 +53,31 @@ export default class MzNavigation extends Vue {
     this.$emit('change', value)
   }
 
+  onItemClick() {
+    this.$emit('item-click', ...arguments)
+  }
+
   render(h: CreateElement) {
     if (!['object', 'array'].includes(typeOf(this.data)))
       throw new TypeError('请传入正确的导航栏格式!')
 
     const data = typeOf(this.data) === 'object' ? [this.data] : this.data
+    const listData = {
+      props: {
+        clickable: true,
+        gutter: '5px',
+        on: {
+          change: this.onChange,
+          itemClick: this.onItemClick
+        }
+      }
+    }
 
     const navItems = this.renderItem(data as NavigationItem[])
 
     return (
       <div ref="navigation" class="mz-navigation">
-        <mz-list clickable gutter="5px" on-change={this.onChange}>
-          {navItems}
-        </mz-list>
+        <mz-list {...listData}>{navItems}</mz-list>
       </div>
     )
   }

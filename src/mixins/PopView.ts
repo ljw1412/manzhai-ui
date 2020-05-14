@@ -46,7 +46,7 @@ export default class MzPopView extends Vue {
     }
   }
 
-  // 当遮罩点击禁用时，需重写
+  // 当遮罩点击禁用时(需使用的地方重写方法)
   handleMaskDisabledClick() {}
 
   closeByMask() {

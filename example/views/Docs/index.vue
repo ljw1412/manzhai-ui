@@ -1,7 +1,15 @@
 <template>
   <div class="page-component"
     id="page-component">
-    <sidebar></sidebar>
+    <sidebar ref="sidebar"></sidebar>
+    <div class="menu-icon">
+      <mz-button icon
+        radius="0"
+        @click="$refs.sidebar.visible=true">
+        <mz-icon name="md-menu"
+          size="20"></mz-icon>
+      </mz-button>
+    </div>
     <mz-catalogue ref="catalogue"
       scroll-smooth
       sidebar
@@ -38,7 +46,19 @@ export default class PageDocs extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import '@example/styles/theme/base.scss';
+.menu-icon {
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  z-index: 100;
+  display: none;
+  .mz-button {
+    color: $topbar-navigation-text-color;
+  }
+}
+
 #page-component {
   display: flex;
   height: 100%;
