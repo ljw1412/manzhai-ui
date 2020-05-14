@@ -1,5 +1,6 @@
 import { VNodeDirective, VNode } from 'vue'
 import tippy from 'tippy.js'
+import $MzBus from '@/bus'
 
 const triggers = ['hover', 'focus', 'click']
 
@@ -28,6 +29,13 @@ function getUniqueProp(modifiers: Record<string, any> = {}, list: any[] = []) {
   return ''
 }
 
+// 同步夜间模式功能
+function getTheme(modifiers: Record<string, any> = {}) {
+  const result = getUniqueProp(modifiers, themeNames)
+  if (result) return result
+  return $MzBus.theme === 'dark' ? 'light' : ''
+}
+
 function getTrigger(modifiers: Record<string, any> = {}) {
   const list = Object.keys(modifiers).filter(item => triggers.includes(item))
   return list.join(' ').replace('hover', 'mouseenter') || 'mouseenter'
@@ -43,7 +51,7 @@ function updataTippy(el: HTMLElement, binding: VNodeDirective) {
     content: '',
     hideOnClick: trigger === 'click',
     arrow: modifiers.arrow,
-    theme: getUniqueProp(modifiers, themeNames),
+    theme: getTheme(modifiers),
     placement: getUniqueProp(modifiers, placements) || 'top'
   }
   if (typeof binding.value === 'string') {
