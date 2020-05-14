@@ -62,6 +62,8 @@ export default class Popover extends Vue {
   readonly trigger!: 'hover' | 'click' | 'focus' | 'manual'
   @Prop({ type: [Boolean, String], default: true })
   readonly hideOnClick!: boolean | 'toggle'
+  @Prop({ type: String, default: 'tooltip' })
+  readonly role!: string
   @Prop()
   readonly zIndex!: number
 
@@ -114,6 +116,7 @@ export default class Popover extends Vue {
     this.destroyPopovers()
 
     this.popovers = tippy(el, {
+      role: this.role,
       trigger: getTrigger(this.trigger),
       plugins: [followCursor],
       theme: this.theme,

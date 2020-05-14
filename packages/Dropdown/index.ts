@@ -1,4 +1,4 @@
-import MzDropdown from './Dropdown.vue'
+import MzDropdown from './Dropdown'
 import MzDropdownCard from './DropdownCard.vue'
 import { VueConstructor } from 'vue'
 

@@ -20,17 +20,7 @@ export default new Router({
       name: 'pageDocs',
       component: () =>
         import(/* webpackChunkName: "documents" */ './views/Docs/index.vue'),
-      children: [
-        ...DocsRouter,
-        {
-          path: 'dropdown',
-          name: 'ComponentDropdown',
-          component: () =>
-            import(
-              /* webpackChunkName: "documents" */ './views/Docs/Dropdown.vue'
-            )
-        }
-      ]
+      children: DocsRouter
     },
     {
       path: '/guide',

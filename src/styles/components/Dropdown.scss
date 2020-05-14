@@ -1,8 +1,5 @@
-.mz-dropdown {
-  display: inline-block;
-  &__card {
-    position: absolute;
-  }
+.tippy-box[role='dropdown'] .tippy-content {
+  padding: initial;
 }
 
 .mz-dropdown-card {
