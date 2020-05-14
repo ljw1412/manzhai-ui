@@ -21,7 +21,7 @@ import tippy, {
   Instance,
   MultipleTargets
 } from 'tippy.js'
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import PopupManager from '@/utils/popup-manager'
 
 function getTrigger(trigger: string) {
@@ -35,7 +35,7 @@ function getMayBeBoolean(prop: any) {
 
 @Component
 export default class Popover extends Vue {
-  @Prop({ type: Boolean })
+  @Model('change', { type: Boolean })
   readonly visible!: boolean
   @Prop({ type: String, default: 'top' })
   readonly placement!: Placement
@@ -110,16 +110,23 @@ export default class Popover extends Vue {
         this.updateProps(instance)
         this.$$emit('show')(instance)
       },
-      onShown: this.$$emit('shown'),
+      onShown: instance => {
+        this.$emit('change', true)
+        this.$$emit('shown')(instance)
+      },
       onHide: this.$$emit('hide'),
-      onHidden: this.$$emit('hidden'),
+      onHidden: instance => {
+        this.$emit('change', false)
+        this.$$emit('hidden')(instance)
+      },
       onTrigger: this.$$emit('trigger'),
       onUntrigger: this.$$emit('untrigger')
     })
+    this.visible && this.handleVisibleChange(this.visible)
   }
 
   @Watch('visible')
-  onVisibleChange(visible: boolean) {
+  handleVisibleChange(visible: boolean) {
     if (visible) {
       this.popovers.forEach(popover => popover.show())
     } else {
