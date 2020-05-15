@@ -199,6 +199,32 @@
       margin-bottom: 10px;
     }
   }
+
+  .component-layout {
+    .layout-type {
+      text-align: center;
+      .mz-header,
+      .mz-main,
+      .mz-aside,
+      .mz-footer {
+        background-color: $color-primary;
+        color: #ffffff;
+      }
+      .mz-header,
+      .mz-footer {
+        opacity: 0.7;
+        line-height: 64px;
+      }
+      .mz-aside {
+        opacity: 0.8;
+        line-height: 160px;
+      }
+      .mz-main {
+        opacity: 0.9;
+        line-height: 160px;
+      }
+    }
+  }
 }
 
 #demo-heading-scroll-container,

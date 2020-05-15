@@ -31,6 +31,7 @@ import Icon from '../packages/Icon/index'
 import Image from '../packages/Image/index'
 import ImagePreview from '../packages/ImagePreview/index'
 import { Input, InputGroup } from '../packages/Input/index'
+import Layout from '../packages/Layout/index'
 import {
   List,
   ListItem,
@@ -94,6 +95,7 @@ const components: VueConstructor[] = [
   ImagePreview,
   Input,
   InputGroup,
+  Layout,
   List,
   ListItem,
   ListGroup,
@@ -142,11 +144,10 @@ function bindDirectives(Vue: VueConstructor) {
  */
 function bindComponents(Vue: VueConstructor) {
   components.forEach(component => {
-    Vue.component(component.componentName, component)
+    // 如果包含install方法则在Vue原型中注册组件
+    component.install && Vue.use(component)
     // 如果包含插件则在Vue原型中注册
-    if (component.plugin) {
-      component.plugin(Vue)
-    }
+    component.plugin && component.plugin(Vue)
   })
 }
 
@@ -229,6 +230,7 @@ export default {
   ImagePreview,
   Input,
   InputGroup,
+  Layout,
   List,
   ListItem,
   ListGroup,

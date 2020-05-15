@@ -95,6 +95,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentInput.vue')
   },
   {
+    path: 'component-layout',
+    name: 'ComponentLayout',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentLayout.vue')
+  },
+  {
     path: 'component-list',
     name: 'ComponentList',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentList.vue')
