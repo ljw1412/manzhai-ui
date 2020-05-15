@@ -116,7 +116,7 @@
       },
       {
         "title": "Dropdown",
-        "text": "下拉菜单",
+        "text": "下拉框",
         "to": {
           "name": "ComponentDropdown"
         }
@@ -308,6 +308,13 @@
         "text": "提示文字",
         "to": {
           "name": "ComponentTooltip"
+        }
+      },
+      {
+        "title": "Layout",
+        "text": "布局",
+        "to": {
+          "name": "ComponentLayout"
         }
       }
     ]
