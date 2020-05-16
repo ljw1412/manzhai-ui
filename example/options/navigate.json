@@ -185,6 +185,13 @@
         }
       },
       {
+        "title": "Layout",
+        "text": "布局",
+        "to": {
+          "name": "ComponentLayout"
+        }
+      },
+      {
         "title": "List",
         "text": "列表",
         "to": {
@@ -308,13 +315,6 @@
         "text": "提示文字",
         "to": {
           "name": "ComponentTooltip"
-        }
-      },
-      {
-        "title": "Layout",
-        "text": "布局",
-        "to": {
-          "name": "ComponentLayout"
         }
       }
     ]
