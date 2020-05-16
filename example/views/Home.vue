@@ -42,7 +42,7 @@ export default class Home extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .container {
   background: linear-gradient(
     to bottom,

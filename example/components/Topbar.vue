@@ -48,12 +48,14 @@ export default class Topbar extends Vue {
   padding: 0;
   margin-left: 5px;
   margin-right: 20px;
+  line-height: 1;
 }
 
 .app-topbar {
   user-select: none;
-  box-sizing: border-box;
-  padding: 10px 15px;
+  padding: 18px 15px;
+  line-height: 28px;
+  height: 28px;
   &__logo {
     line-height: 24px;
     font-size: 24px;

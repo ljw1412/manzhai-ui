@@ -1,15 +1,19 @@
 <template>
-  <div id="app">
-    <topbar id="topbar"></topbar>
-    <div id="content">
+  <mz-layout id="app">
+    <mz-header id="topbar">
+      <topbar></topbar>
+    </mz-header>
+
+    <mz-main id="content">
       <router-view></router-view>
-    </div>
-    <!-- <div id="copyright">
+    </mz-main>
+
+    <!-- <mz-footer id="copyright">
       <span></span>
       <a href="http://www.beian.miit.gov.cn"
         target="_blank"></a>
-    </div> -->
-  </div>
+    </mz-footer> -->
+  </mz-layout>
 </template>
 
 <script lang="ts">
@@ -30,14 +34,9 @@ export default class APP extends Vue {}
   height: 100%;
   overflow: hidden;
   #topbar {
-    height: $topbar-height;
     background-color: $color-primary;
     box-shadow: 0 -4px 10px $color-primary;
     transition: all 0.3s;
-  }
-  #content {
-    height: calc(100% - #{$topbar-height});
-    // height: calc(100% - #{$topbar-height + $copyright-height});
   }
   #copyright {
     position: relative;
