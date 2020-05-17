@@ -5,7 +5,7 @@ import PopupManager from '@/utils/popup-manager'
 
 @Component({ components: { MzMask } })
 export default class MzPopView extends Vue {
-  @Model('input', { type: Boolean })
+  @Model('visible:change', { type: Boolean })
   readonly visible!: boolean
   @Prop(Number)
   readonly zIndex!: number
@@ -59,7 +59,7 @@ export default class MzPopView extends Vue {
 
   hide(cancel?: any) {
     if (cancel !== false) {
-      this.$emit('input', false)
+      this.$emit('visible:change', false)
       this.$emit('close')
     }
   }
