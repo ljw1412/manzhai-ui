@@ -31,9 +31,14 @@ const defaultOptions = {
   background: ''
 }
 
-function createLoadingCore(type: string, mode: string) {
+function createLoadingCore(options: LoadingDirectiveOptions) {
+  const { type, mode, text, textColor } = options
+  const loadingWrapper = document.createElement('span')
+  loadingWrapper.className = 'mz-loading__wrapper'
+
   const loading = document.createElement('span')
   loading.className = 'mz-loading__core'
+
   const loadingCore = document.createElement('span')
   loadingCore.className = `mz-loading__icon ${type} ${type}-${mode}`
   for (let i = 1; i <= 4; i++) {
@@ -42,14 +47,22 @@ function createLoadingCore(type: string, mode: string) {
     loadingCore.appendChild(shape)
   }
   loading.appendChild(loadingCore)
-  return loading
+  loadingWrapper.appendChild(loading)
+  if (text) {
+    const tip = document.createElement('div')
+    tip.innerHTML = text
+    tip.style.color = textColor
+    tip.className = 'mz-loading__text'
+    loadingWrapper.appendChild(tip)
+  }
+  return loadingWrapper
 }
 
 function createLoading(options: LoadingDirectiveOptions) {
   const el = document.createElement('div')
-  el.className = 'mz-quick-loading'
+  el.className = 'mz-quick-loading mz-loading'
   el.style.cssText = `background-color:${options.background}`
-  el.appendChild(createLoadingCore(options.type, options.mode))
+  el.appendChild(createLoadingCore(options))
   return el
 }
 
