@@ -1,4 +1,5 @@
 import { VNodeDirective, VNode } from 'vue'
+import { safeElementPosition } from '@/utils/dom'
 
 function xy(el: HTMLElement, x: string, y: string) {
   el.style.left = x
@@ -115,14 +116,6 @@ function hideRipple(e: Event) {
   const element = e.currentTarget as HTMLElement
   if (!element) return
   ripple.remove(element)
-}
-
-function safeElementPosition(el: HTMLElement) {
-  const computedStyle = window.getComputedStyle(el)
-  if (computedStyle && computedStyle.position === 'static') {
-    el.style.position = 'relative'
-    el.dataset.previousPosition = 'static'
-  }
 }
 
 function removeListeners(el: HTMLElement) {

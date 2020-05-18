@@ -78,9 +78,16 @@ function hyphenate(str, hyphenate = '-') {
 }
 
 // 分隔转驼峰
-function capitalized(str) {
-  return str.replace(/\b\w+\b/g, function(word) {
-    return word.substring(0, 1).toUpperCase() + word.substring(1)
+function capitalized(str, lower = false) {
+  let first = true
+  return str.replace(/\b\w+\b[-_]?/g, function(word) {
+    word = word.replace(/[-_]/g, '')
+    let initial = word.substring(0, 1).toUpperCase()
+    if (lower && first) {
+      initial = initial.toLowerCase()
+      first = false
+    }
+    return initial + word.substring(1)
   })
 }
 

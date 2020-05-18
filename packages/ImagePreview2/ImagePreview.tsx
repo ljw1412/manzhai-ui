@@ -1,4 +1,4 @@
-import { Component, Model, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzPopView from '@/mixins/PopView'
 

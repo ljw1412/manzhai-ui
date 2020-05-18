@@ -1,6 +1,7 @@
 import { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
 import MzBus from './bus'
+import { LoadingDirective } from './directives/loading'
 
 declare global {
   interface Element {
@@ -33,6 +34,7 @@ declare global {
     }
 
     _tooltip?: Instance
+    _loading?: LoadingDirective
   }
 }
 
