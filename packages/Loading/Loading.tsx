@@ -61,7 +61,7 @@ export default Vue.extend({
       )
     }
 
-    const data = {
+    const data = Object.assign({}, ctx.data, {
       class: [
         'mz-loading',
         {
@@ -69,11 +69,10 @@ export default Vue.extend({
           'mz-loading--icon': !slot,
           'mz-loading--waiting': loading
         },
-        ctx.data.staticClass,
         ctx.data.class
-      ],
-      style: [ctx.data.staticStyle, ctx.data.style]
-    }
+      ]
+    })
+
     return (
       <div {...data}>
         {iconVNode}
