@@ -66,7 +66,7 @@ export default class Popover extends Vue {
   readonly role!: string
   @Prop({ type: [Number, Array], default: 0 })
   readonly delay!: number | [number | null, number | null]
-  @Prop({ type: [Number, Array], default: [300, 250] })
+  @Prop({ type: [Number, Array], default: () => [300, 250] })
   readonly duration!: number | [number | null, number | null]
   @Prop()
   readonly zIndex!: number

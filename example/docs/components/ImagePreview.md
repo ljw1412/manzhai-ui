@@ -7,7 +7,7 @@
 :::demo `images`传递图片列表。
 ```html
 <mz-button @click="visible = true">预览</mz-button>
-<mz-image-preview :visible.sync="visible"
+<mz-image-preview v-model="visible"
   :images="images"></mz-image-preview>
 
 <script>
@@ -26,103 +26,40 @@ export default {
 ```
 :::
 
-### 缩略图
+### 功能布局
 
-有缩略图列表，支持按图切换。
+ImagePreview内置了一些功能。
 
-:::demo `thumbnail`控制是否显示缩略图。
+:::demo `layout`属性控制布局的展示效果，可选值`zoom`, `play`, `fullscreen`, `download`, `thumbnail`，多个布局以英文逗号或者空格分隔。
 ```html
-<mz-button @click="visible = true">预览</mz-button>
-<mz-image-preview thumbnail :visible.sync="visible"
+<mz-image-preview v-model="visible"
+  :layout="layout"
   :images="images"></mz-image-preview>
+<mz-checkbox-group v-model="checkList">
+  <mz-checkbox value="zoom">zoom</mz-checkbox>
+  <mz-checkbox value="play">play</mz-checkbox>
+  <mz-checkbox value="fullscreen">fullscreen</mz-checkbox>
+  <mz-checkbox value="download">download</mz-checkbox>
+  <mz-checkbox value="thumbnail">thumbnail</mz-checkbox>
+</mz-checkbox-group>
+<mz-button color="primary" @click="visible = true">预览</mz-button>
 
 <script>
 export default {
   data (){
     return {
       visible: false,
+      checkList: ['zoom' ,'play' ,'fullscreen' ,'download' ,'thumbnail'],
       images: [
         'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
         require('@example/static/image-star.jpg')
       ]
     }
-  }
-}
-</script>
-```
-:::
+  },
 
-### 可播放
-
-能够定时播放。
-
-:::demo `playable`控制是否能够自动轮播。
-```html
-<mz-button @click="visible = true">预览</mz-button>
-<mz-image-preview playable :visible.sync="visible"
-  :images="images"></mz-image-preview>
-
-<script>
-export default {
-  data (){
-    return {
-      visible: false,
-      images: [
-        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@example/static/image-star.jpg')
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
-### 循环预览
-
-最后一张的下一张为第一张。
-
-:::demo `loop`控制是否能够循环切换。
-```html
-<mz-button @click="visible = true">预览</mz-button>
-<mz-image-preview loop :visible.sync="visible"
-  :images="images"></mz-image-preview>
-
-<script>
-export default {
-  data (){
-    return {
-      visible: false,
-      images: [
-        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@example/static/image-star.jpg')
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
-### 图片操作栏
-
-对图片进行缩放的操作栏。
-
-:::demo `actionbar`控制是否显示操作栏。
-```html
-<mz-button @click="visible = true">预览</mz-button>
-<mz-image-preview actionbar :visible.sync="visible"
-  :images="images"></mz-image-preview>
-
-<script>
-export default {
-  data (){
-    return {
-      visible: false,
-      images: [
-        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
-        require('@example/static/image-star.jpg')
-      ]
+  computed:{
+    layout(){
+      return this.checkList.join(' ')
     }
   }
 }
