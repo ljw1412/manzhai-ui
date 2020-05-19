@@ -27,13 +27,15 @@ function generator(options: GeneratorOptions) {
         })
       }
 
-      const data = Object.assign({}, ctx.data, {
+      const data = {
         class: [
           hyphenate(options.name),
-          ctx.data.class,
-          { 'has-aside': hasSider }
-        ]
-      })
+          { 'has-aside': hasSider },
+          ctx.data.staticClass,
+          ctx.data.class
+        ],
+        style: [ctx.data.staticStyle, ctx.data.style]
+      }
 
       return <Tag {...data}>{defaultSlots}</Tag>
     }

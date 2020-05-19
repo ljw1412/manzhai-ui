@@ -68,8 +68,11 @@ export default Vue.extend({
           'mz-loading--inline': inline,
           'mz-loading--icon': !slot,
           'mz-loading--waiting': loading
-        }
-      ]
+        },
+        ctx.data.staticClass,
+        ctx.data.class
+      ],
+      style: [ctx.data.staticStyle, ctx.data.style]
     }
     return (
       <div {...data}>
