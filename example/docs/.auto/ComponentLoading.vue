@@ -1,6 +1,6 @@
 <template>
   <div class="component-loading">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-19 11:00</div>
     <h2 id="loading-jia-zai" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
 <p>用于页面和区块的加载中状态。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -41,13 +41,14 @@ export default {
 <demo-block>
         <template #example><loading-demo3 inline-template><div class="loading-demo3">
   <mz-switch v-model="loading"></mz-switch>
-  <mz-loading :loading="loading" tip="正在加载中">
+  <mz-loading :loading="loading" text="正在加载中">
     <div class="height-200">我是内容</div>
   </mz-loading>
 </div></loading-demo3></template>
-        <template #description></template>
+        <template #description><p><code>text</code>属性设置加载时的文字。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-switch v-model=&quot;loading&quot;&gt;&lt;/mz-switch&gt;
-&lt;mz-loading :loading=&quot;loading&quot; tip=&quot;正在加载中&quot;&gt;
+&lt;mz-loading :loading=&quot;loading&quot; text=&quot;正在加载中&quot;&gt;
   &lt;div class=&quot;height-200&quot;&gt;我是内容&lt;/div&gt;
 &lt;/mz-loading&gt;
 
@@ -102,21 +103,21 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>tip</td>
+<td>text</td>
 <td>加载时的文案</td>
 <td>String</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>tipColor</td>
+<td>text-color</td>
 <td>文案的颜色</td>
 <td>String</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td>maskColor</td>
+<td>background</td>
 <td>遮罩的颜色</td>
 <td>String</td>
 <td></td>

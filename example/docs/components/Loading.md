@@ -40,10 +40,10 @@ export default {
 
 自定义加载时的文案。
 
-:::demo
+:::demo `text`属性设置加载时的文字。
 ```html
 <mz-switch v-model="loading"></mz-switch>
-<mz-loading :loading="loading" tip="正在加载中">
+<mz-loading :loading="loading" text="正在加载中">
   <div class="height-200">我是内容</div>
 </mz-loading>
 
@@ -69,9 +69,9 @@ export default {
 |mode|加载图标的类型下的多种效果|Number|`four-color`:`1-7`|1|
 |loading|是否为加载状态|Boolean|||
 |inline|是否为行内元素|Boolean|||
-|tip|加载时的文案|String|||
-|tipColor|文案的颜色|String|||
-|maskColor|遮罩的颜色|String|||
+|text|加载时的文案|String|||
+|text-color|文案的颜色|String|||
+|background|遮罩的颜色|String|||
 
 
 #### 插槽

@@ -37,9 +37,9 @@ export default Vue.extend({
       type = 'four-color',
       loading = false,
       inline,
-      tip,
-      tipColor,
-      maskColor
+      text,
+      textColor,
+      background
     } = ctx.props
     const slot = ctx.slots().default
     let iconVNode = renderCore(h, type, mode)
@@ -47,13 +47,13 @@ export default Vue.extend({
     if (slot) {
       iconVNode = getLoadingMask(
         h,
-        { visible: loading, color: maskColor, absolute: true, zIndex: 500 },
+        { visible: loading, color: background, absolute: true, zIndex: 500 },
         [
           <div class="absolute-center">
             {iconVNode}
-            {tip && (
-              <div class="mz-loading__text" style={{ color: tipColor }}>
-                {tip}
+            {text && (
+              <div class="mz-loading__text" style={{ color: textColor }}>
+                {text}
               </div>
             )}
           </div>
