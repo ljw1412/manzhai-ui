@@ -18,7 +18,7 @@
   "example/docs/components/Heading.md": "0a3d53c51f194ab29456221e74c33552",
   "example/docs/components/Mask.md": "a931cf458c9373d5f5b50c740e7065df",
   "example/docs/components/Masonry.md": "5ed23b9957b92b6c4ed9ef87821d4eed",
-  "example/docs/components/Loading.md": "cc14d95f39575ae6bfec56848dedce97",
+  "example/docs/components/Loading.md": "f85a8e65da91610abf404636a944a06c",
   "example/docs/components/MaterialInput.md": "40a2d32fc70de0dcdd6ca6e95cbf91dc",
   "example/docs/components/Grid.md": "576d21fc0369b72eb83642083ec92aa7",
   "example/docs/components/Input.md": "06833145be5c983d2ecb4b5ac4ff1652",
@@ -42,5 +42,6 @@
   "example/docs/directives/Tooltip.md": "a92595f8c80c1ad205a94c7647a6d984",
   "example/docs/components/Tooltip.md": "fb1387f621b092c810512c60a94b3bfa",
   "example/docs/components/Dropdown.md": "e4e8d23e89431652ea2a615432477178",
-  "example/docs/components/Layout.md": "0764edcd37823f21557da400d97bbab0"
+  "example/docs/components/Layout.md": "fef5a25c590c5d6d5a6f97714f554438",
+  "example/docs/directives/Loading.md": "3b3c1efb2cfffe0a4f1490af123524e6"
 }

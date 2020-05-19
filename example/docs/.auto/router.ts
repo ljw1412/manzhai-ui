@@ -205,6 +205,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './DirectiveHover.vue')
   },
   {
+    path: 'directive-loading',
+    name: 'DirectiveLoading',
+    component: () => import(/* webpackChunkName: "documents" */ './DirectiveLoading.vue')
+  },
+  {
     path: 'directive-resize',
     name: 'DirectiveResize',
     component: () => import(/* webpackChunkName: "documents" */ './DirectiveResize.vue')

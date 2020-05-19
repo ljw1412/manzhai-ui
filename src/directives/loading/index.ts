@@ -1,18 +1,16 @@
-import { DirectiveFunction } from 'vue'
+import Vue, { DirectiveFunction, VueConstructor } from 'vue'
 import { capitalized } from '@/utils/string'
 import { safeElementPosition } from '@/utils/dom'
+import MzLoading from '@packages/Loading'
 
 export interface LoadingDirectiveOptions {
+  isDirective: boolean
+  loading: boolean
   text: string
   mode: string
   type: string
   textColor: string
   background: string
-}
-
-export interface LoadingDirective {
-  el: HTMLElement
-  options: LoadingDirectiveOptions
 }
 
 const LOADING_ATTRS = [
@@ -28,74 +26,64 @@ const defaultOptions = {
   mode: '1',
   type: 'four-color',
   textColor: '',
-  background: ''
+  background: 'rgba(255, 255, 255, 0.9)'
 }
 
-function createLoadingCore(options: LoadingDirectiveOptions) {
-  const { type, mode, text, textColor } = options
-  const loadingWrapper = document.createElement('span')
-  loadingWrapper.className = 'mz-loading__wrapper'
-
-  const loading = document.createElement('span')
-  loading.className = 'mz-loading__core'
-
-  const loadingCore = document.createElement('span')
-  loadingCore.className = `mz-loading__icon ${type} ${type}-${mode}`
-  for (let i = 1; i <= 4; i++) {
-    const shape = document.createElement('i')
-    shape.className = `shape shape${i}`
-    loadingCore.appendChild(shape)
-  }
-  loading.appendChild(loadingCore)
-  loadingWrapper.appendChild(loading)
-  if (text) {
-    const tip = document.createElement('div')
-    tip.innerHTML = text
-    tip.style.color = textColor
-    tip.className = 'mz-loading__text'
-    loadingWrapper.appendChild(tip)
-  }
-  return loadingWrapper
+// 与默认属性合并
+function getOptions(el: HTMLElement) {
+  return LOADING_ATTRS.reduce(
+    (obj: Record<string, any>, item) => {
+      const name = capitalized(
+        item.replace(/mz-loading-/, ''),
+        true
+      ) as keyof typeof defaultOptions
+      obj[name] = el.getAttribute(item) || defaultOptions[name]
+      return obj
+    },
+    { loading: false, isDirective: true }
+  ) as LoadingDirectiveOptions
 }
 
-function createLoading(options: LoadingDirectiveOptions) {
-  const el = document.createElement('div')
-  el.className = 'mz-quick-loading mz-loading'
-  el.style.cssText = `background-color:${options.background}`
-  el.appendChild(createLoadingCore(options))
-  return el
+function renderLoading(options: LoadingDirectiveOptions) {
+  return new Vue({
+    data() {
+      return { options }
+    },
+    render: function(h) {
+      // @ts-ignore
+      return h(MzLoading, { props: this.options, class: 'mz-quick-loading' })
+    }
+  }).$mount()
 }
 
 export const Loading: DirectiveFunction = function(el, binding) {
   if (binding.oldValue === binding.value) return
-
-  const options = LOADING_ATTRS.reduce((obj: Record<string, any>, item) => {
-    const name = capitalized(
-      item.replace(/mz-loading-/, ''),
-      true
-    ) as keyof typeof defaultOptions
-    obj[name] = el.getAttribute(item) || defaultOptions[name]
-    return obj
-  }, {}) as LoadingDirectiveOptions
-
-  let loadingEl =
-    !el._loading || !el._loading.el ? createLoading(options) : el._loading.el
-
-  el.appendChild(loadingEl)
-  if (binding.value) {
-    loadingEl.style.display = 'block'
-    setTimeout(() => {
-      safeElementPosition(el)
-    }, 0)
+  const options = getOptions(el)
+  let vm: any
+  if (el._loadingVM) {
+    vm = el._loadingVM
   } else {
-    loadingEl.style.display = 'none'
-    if (el.dataset.previousPosition) {
-      el.style.position = el.dataset.previousPosition
-      delete el.dataset.previousPosition
-    }
+    vm = renderLoading(options)
+    el._loadingVM = vm
+    el.appendChild(vm.$el)
   }
 
-  el._loading = { el: loadingEl, options }
+  if (binding.value) {
+    vm.options.loading = true
+    vm.$el.style.display = 'block'
+    setTimeout(() => {
+      safeElementPosition(el)
+    }, 20)
+  } else {
+    vm.options.loading = false
+    setTimeout(() => {
+      vm.$el.style.display = 'none'
+      if (el.dataset.previousPosition) {
+        el.style.position = el.dataset.previousPosition
+        delete el.dataset.previousPosition
+      }
+    }, 300)
+  }
 }
 
 export default Loading

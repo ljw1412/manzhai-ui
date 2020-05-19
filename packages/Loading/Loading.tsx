@@ -33,9 +33,10 @@ export default Vue.extend({
   name: 'MzLoading',
   render(h, ctx: RenderContext) {
     const {
+      isDirective = false,
+      loading = false,
       mode = 1,
       type = 'four-color',
-      loading = false,
       inline,
       text,
       textColor,
@@ -44,7 +45,7 @@ export default Vue.extend({
     const slot = ctx.slots().default
     let iconVNode = renderCore(h, type, mode)
 
-    if (slot) {
+    if (slot || isDirective) {
       iconVNode = getLoadingMask(
         h,
         { visible: loading, color: background, absolute: true, zIndex: 500 },
@@ -66,7 +67,7 @@ export default Vue.extend({
         'mz-loading',
         {
           'mz-loading--inline': inline,
-          'mz-loading--icon': !slot,
+          'mz-loading--icon': !slot && !isDirective,
           'mz-loading--waiting': loading
         },
         ctx.data.class

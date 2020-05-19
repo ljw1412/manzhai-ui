@@ -1,4 +1,4 @@
-import { PluginFunction } from 'vue'
+import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
 import MzBus from './bus'
 import { LoadingDirective } from './directives/loading'
@@ -35,6 +35,7 @@ declare global {
 
     _tooltip?: Instance
     _loading?: LoadingDirective
+    _loadingVM?: Vue
   }
 }
 
