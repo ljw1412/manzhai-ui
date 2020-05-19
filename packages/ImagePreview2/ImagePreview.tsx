@@ -1,5 +1,6 @@
 import { Component, Prop, PropSync, Watch } from 'vue-property-decorator'
 import { CreateElement, VNodeData } from 'vue'
+import MouseDrag from '@/classes/MouseDrag'
 import MzPopView from '@/mixins/PopView'
 import MzButton from '@packages/Button/Button'
 import MzIcon from '@packages/Icon/Icon.vue'
@@ -34,9 +35,12 @@ export default class MzImagePreview extends MzPopView {
   readonly indexSync!: number
 
   mIndex = 0
+  scale = 1
   playing = false
   fullscreen = false
   thumbnail = false
+  heightPriority = false
+  mouseDrag = new MouseDrag(0, 0, 0, true)
 
   get mImages(): ImageItem[] {
     return this.images
@@ -51,7 +55,7 @@ export default class MzImagePreview extends MzPopView {
       .filter(image => !!image.url)
   }
 
-  getCurrentImage() {
+  get currentImage() {
     return this.mImages[this.mIndex] || {}
   }
 
@@ -143,18 +147,44 @@ export default class MzImagePreview extends MzPopView {
   }
 
   readerContent() {
-    return <main></main>
+    const data = {
+      class: [
+        'mz-image-preview-image',
+        { 'height-first': this.heightPriority }
+      ],
+      key: this.currentImage.url,
+      style: {
+        transform: `translate(${this.mouseDrag.x}px,${this.mouseDrag.y}px) scale(${this.scale})`
+      }
+    }
+
+    return (
+      <main on-mousedown={(e: MouseEvent) => this.mouseDrag.start(e)}>
+        <transition name="mz-fade">
+          <div {...data}>
+            <img
+              draggable="false"
+              src={this.currentImage.url}
+              on-load={this.handleImageLoad}
+            />
+          </div>
+        </transition>
+      </main>
+    )
   }
 
   readerFooter() {
     if (!this.layoutState.thumbnail) return
     return (
       <footer class={{ 'hide-thumbnail': !this.thumbnail }}>
-        {this.renderActionBtn({
-          icon: 'md-images',
-          title: '缩略图',
-          name: 'thumbnail'
-        })}
+        <div class="mz-image-preview-title-wrp">
+          {this.renderActionBtn({
+            icon: 'md-images',
+            title: '缩略图',
+            name: 'thumbnail'
+          })}
+          <div class="mz-image-preview-title">{this.currentImage.title}</div>
+        </div>
         <div class="mz-image-preview-thumbnails">
           {this.mImages.map((image, index) => {
             const data = {
@@ -184,13 +214,12 @@ export default class MzImagePreview extends MzPopView {
 
   render(h: CreateElement) {
     const data: VNodeData = {
-      class: {},
-      style: { zIndex: this.mZIndex },
-      directives: [{ name: 'show', value: this.visible }]
+      class: ['mz-image-preview', { 'is-dragging': this.mouseDrag.moving }],
+      style: { zIndex: this.mZIndex }
     }
     return (
       <transition name="mz-fade">
-        <div class="mz-image-preview" {...data}>
+        <div v-show={this.visible} {...data}>
           {this.renderHeader()}
           {this.readerContent()}
           {this.readerFooter()}
@@ -210,11 +239,21 @@ export default class MzImagePreview extends MzPopView {
     }
   }
 
+  handleImageLoad(e: Event) {}
+
   @Watch('visible')
   onImagePreviewVisible(visible: boolean) {
     if (visible) {
+      this.mouseDrag.reset()
       this.mIndex = this.indexSync
       this.thumbnail = this.layoutState.thumbnail
+      this.scale = 1
     }
+  }
+
+  @Watch('mIndex')
+  onIndexChange(index: number) {
+    this.mouseDrag.reset()
+    this.scale = 1
   }
 }

@@ -51,7 +51,7 @@ export default {
       visible: false,
       checkList: ['zoom' ,'play' ,'fullscreen' ,'download' ,'thumbnail'],
       images: [
-        'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',
+        {url:'https://cn.bing.com/th?id=OHR.FlowingClouds_ZH-CN0721854476_UHD.jpg&rf=LaDigue_UHD.jpg&pid=hp&w=1920&h=1080&rs=1&c=4',title:'测试图片1'},
         require('@example/static/image-star.jpg')
       ]
     }
