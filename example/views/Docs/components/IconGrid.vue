@@ -11,7 +11,8 @@
         :key="index"
         class="icon-grid__cell flex-double-center is-pointer"
         @click="coypCode(item)">
-        <mz-icon :name="item"
+        <mz-icon v-tooltip="{content: item, placement: 'bottom'}"
+          :name="item"
           size="40px"></mz-icon>
       </div>
     </div>

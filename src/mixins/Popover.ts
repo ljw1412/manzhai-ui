@@ -64,6 +64,10 @@ export default class Popover extends Vue {
   readonly hideOnClick!: boolean | 'toggle'
   @Prop({ type: String, default: 'tooltip' })
   readonly role!: string
+  @Prop({ type: [Number, Array], default: 0 })
+  readonly delay!: number | [number | null, number | null]
+  @Prop({ type: [Number, Array], default: [300, 250] })
+  readonly duration!: number | [number | null, number | null]
   @Prop()
   readonly zIndex!: number
 
@@ -116,6 +120,8 @@ export default class Popover extends Vue {
     this.destroyPopovers()
 
     this.popovers = tippy(el, {
+      delay: this.delay,
+      duration: this.duration,
       role: this.role,
       trigger: getTrigger(this.trigger),
       plugins: [followCursor],

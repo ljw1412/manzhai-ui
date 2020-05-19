@@ -13,6 +13,8 @@ export default class MzPopView extends Vue {
   readonly appendToBody!: boolean
   @Prop({ type: Boolean, default: true })
   readonly mask!: boolean
+  @Prop(String)
+  readonly maskColor!: string
   @Prop({ type: Boolean, default: true })
   readonly maskAppendToBody!: boolean
   @Prop({ type: Boolean, default: true })
@@ -67,6 +69,7 @@ export default class MzPopView extends Vue {
   displayBodyMask(visible: boolean) {
     if (visible) {
       MzMaskPlugin.show({
+        color: this.maskColor,
         zIndex: this.maskZIndex,
         onClick: this.closeByMask
       })

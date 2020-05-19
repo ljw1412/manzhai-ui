@@ -1,6 +1,12 @@
 import Mask from './Mask'
-import { MaskConfig } from './Mask.d'
 import Stack from '@/classes/Stack'
+
+export type MaskConfig = {
+  color?: string
+  zIndex?: number
+  transition?: string
+  onClick?: (e: MouseEvent) => void
+}
 
 const maskList: Mask[] = []
 // 全局的遮罩的栈
