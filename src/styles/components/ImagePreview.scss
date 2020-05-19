@@ -64,6 +64,22 @@ $mz-image-preview-thumbnails-height: 120px;
   border-radius: 0;
 }
 
+.mz-image-preview-button--previous,
+.mz-image-preview-button--next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.mz-image-preview-button--previous {
+  left: 10px;
+}
+
+.mz-image-preview-button--next {
+  right: 10px;
+}
+
 .mz-image-preview-image {
   display: flex;
   width: 100%;

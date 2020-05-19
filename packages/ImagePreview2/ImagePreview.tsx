@@ -32,7 +32,7 @@ export default class MzImagePreview extends MzPopView {
   @Prop({ type: String, default: '#000' })
   readonly maskColor!: string
   @PropSync('index', { type: Number, default: 0 })
-  readonly indexSync!: number
+  indexSync!: number
 
   mIndex = 0
   scale = 1
@@ -117,6 +117,23 @@ export default class MzImagePreview extends MzPopView {
       },
       { title: '关闭', icon: 'md-close', name: 'close', display: true }
     ].filter(item => item.display)
+  }
+
+  get arrows() {
+    return [
+      {
+        title: '上一页',
+        icon: 'md-arrow-back',
+        name: 'previous',
+        display: true
+      },
+      {
+        title: '下一页',
+        name: 'next',
+        icon: 'md-arrow-forward',
+        display: true
+      }
+    ]
   }
 
   renderActionBtn({ icon, title, name }: ActionItem) {
@@ -212,6 +229,10 @@ export default class MzImagePreview extends MzPopView {
     )
   }
 
+  renderArrows() {
+    return this.arrows.map(item => this.renderActionBtn(item))
+  }
+
   render(h: CreateElement) {
     const data: VNodeData = {
       class: ['mz-image-preview', { 'is-dragging': this.mouseDrag.moving }],
@@ -220,6 +241,7 @@ export default class MzImagePreview extends MzPopView {
     return (
       <transition name="mz-fade">
         <div v-show={this.visible} {...data}>
+          {this.renderArrows()}
           {this.renderHeader()}
           {this.readerContent()}
           {this.readerFooter()}
@@ -235,6 +257,13 @@ export default class MzImagePreview extends MzPopView {
         break
       case 'thumbnail':
         this.thumbnail = !this.thumbnail
+        break
+      case 'previous':
+        this.mIndex = this.indexSync = (this.mIndex + 1) % this.mImages.length
+        break
+      case 'next':
+        this.mIndex = this.indexSync =
+          (this.mIndex - 1 + this.mImages.length) % this.mImages.length
         break
     }
   }
