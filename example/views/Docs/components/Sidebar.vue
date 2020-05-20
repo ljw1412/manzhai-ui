@@ -21,7 +21,7 @@ export default class Sidebar extends Vue {
           mask: this.isMini,
           contentStyle: { padding: 0 }
         },
-        on: { input: (val: boolean) => (this.visible = val) }
+        on: { 'visible:change': (val: boolean) => (this.visible = val) }
       }
       return <mz-drawer {...drawerData}>{sidebar}</mz-drawer>
     }

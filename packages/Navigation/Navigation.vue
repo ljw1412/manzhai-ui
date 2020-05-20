@@ -65,11 +65,11 @@ export default class MzNavigation extends Vue {
     const listData = {
       props: {
         clickable: true,
-        gutter: '5px',
-        on: {
-          change: this.onChange,
-          itemClick: this.onItemClick
-        }
+        gutter: '5px'
+      },
+      on: {
+        change: this.onChange,
+        itemClick: this.onItemClick
       }
     }
 
