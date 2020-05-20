@@ -17,6 +17,7 @@ interface ActionItem {
   icon: string
   name: string
   display?: boolean
+  disabled?: boolean
 }
 
 const LAYOUT_TYPES = ['zoom', 'play', 'fullscreen', 'download', 'thumbnail']
@@ -33,6 +34,8 @@ export default class MzImagePreview extends MzPopView {
   readonly maskColor!: string
   @PropSync('index', { type: Number, default: 0 })
   indexSync!: number
+  @Prop({ type: Boolean, default: false })
+  readonly closeOnClickMask!: boolean
 
   mIndex = 0
   scale = 1
@@ -75,14 +78,16 @@ export default class MzImagePreview extends MzPopView {
       {
         title: '缩小',
         icon: 'md-remove-circle-outline',
-        name: 'zoom-in',
-        display: this.layoutState.zoom
+        name: 'zoom-out',
+        display: this.layoutState.zoom,
+        disabled: this.scale <= this.zoom[0]
       },
       {
         title: '放大',
         icon: 'md-add-circle-outline',
-        name: 'zoon-out',
-        display: this.layoutState.zoom
+        name: 'zoom-in',
+        display: this.layoutState.zoom,
+        disabled: this.scale >= this.zoom[1]
       },
       {
         title: '全屏',
@@ -136,7 +141,7 @@ export default class MzImagePreview extends MzPopView {
     ]
   }
 
-  renderActionBtn({ icon, title, name }: ActionItem) {
+  renderActionBtn({ icon, title, name, disabled }: ActionItem) {
     return (
       <mz-tooltip
         key={name}
@@ -144,6 +149,8 @@ export default class MzImagePreview extends MzPopView {
         offset={[0, 5]}
         followCursor="horizontal">
         <mz-button
+          flat={true}
+          disabled={disabled}
           class={`mz-image-preview-button mz-image-preview-button--${name}`}
           on-click={() => this.action(name)}>
           <mz-icon name={icon}></mz-icon>
@@ -250,6 +257,13 @@ export default class MzImagePreview extends MzPopView {
     )
   }
 
+  zoomImage(offset: number) {
+    this.scale = Math.max(
+      Math.min(this.scale + offset, this.zoom[1]),
+      this.zoom[0]
+    )
+  }
+
   action(name: string) {
     switch (name) {
       case 'close':
@@ -257,6 +271,12 @@ export default class MzImagePreview extends MzPopView {
         break
       case 'thumbnail':
         this.thumbnail = !this.thumbnail
+        break
+      case 'zoom-in':
+        this.zoomImage(0.1)
+        break
+      case 'zoom-out':
+        this.zoomImage(-0.1)
         break
       case 'previous':
         this.mIndex = this.indexSync = (this.mIndex + 1) % this.mImages.length
@@ -268,7 +288,11 @@ export default class MzImagePreview extends MzPopView {
     }
   }
 
-  handleImageLoad(e: Event) {}
+  handleImageLoad(e: Event) {
+    const img = e.target as HTMLImageElement
+    // 当高宽比小于2时，让图片在页面中完全展示
+    this.heightPriority = img.naturalHeight / img.naturalWidth < 2
+  }
 
   @Watch('visible')
   onImagePreviewVisible(visible: boolean) {
