@@ -98,7 +98,9 @@ export default class MzPopView extends Vue {
 
   beforeDestroy() {
     PopupManager.unbind(this._popupId)
-    if (this.mask && this.maskAppendToBody) this.displayBodyMask(false)
+    if (this.visible && this.mask && this.maskAppendToBody) {
+      this.displayBodyMask(false)
+    }
   }
 
   destroyed() {
