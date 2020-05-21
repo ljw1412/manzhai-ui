@@ -1,38 +1,34 @@
-import ImagePreview from './ImagePreview.vue'
-import { ImagePreviewConfig } from './ImagePreview'
+import ImagePreview from './ImagePreview'
 
 let instance: any
 
 const initInstance = () => {
   if (!instance) {
     instance = new ImagePreview({ el: document.createElement('div') })
-    instance.$on('update:visible', (val: boolean) => {
+    // document.body.appendChild(instance.$el)
+    instance.$on('visible:change', (val: boolean) => {
       instance.visible = val
     })
   }
 }
 
-function baseConfig() {
-  return {
-    thumbnail: true,
-    playable: true,
-    actionbar: true,
-    loop: true,
-    appendToBody: true
-  }
+const baseConfig = {
+  appendToBody: true,
+  layout: 'zoom play fullscreen download thumbnail'
 }
 
-function show(config?: ImagePreviewConfig) {
+function show(config?: Record<string, any>) {
   initInstance()
   if (config) {
-    config = Object.assign(baseConfig(), config)
+    config = Object.assign({}, baseConfig, config)
     for (let prop in config) {
       if (Object.prototype.hasOwnProperty.call(config, prop)) {
-        instance[prop as keyof ImagePreviewConfig] =
-          config[prop as keyof ImagePreviewConfig]
+        instance[prop] = config[prop]
       }
     }
   }
+  console.log(instance)
+
   instance.visible = true
 }
 

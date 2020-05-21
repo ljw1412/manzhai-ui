@@ -1,4 +1,4 @@
-import MzImagePreview from './ImagePreview.vue'
+import MzImagePreview from './ImagePreview'
 import MzImagePreviewPlugin from './plugin'
 import { VueConstructor } from 'vue'
 
