@@ -1,6 +1,6 @@
 <template>
   <div class="component-image-preview">
-    <div class="update-datetime">文档更新时间：2020-05-21 19:22</div>
+    <div class="update-datetime">文档更新时间：2020-05-21 19:24</div>
     <h2 id="imagepreview-tu-pian-yu-lan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
 <p>以页面全屏的形式预览图片。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -167,14 +167,14 @@ export default {
 </tr>
 <tr>
 <td>append-to-body</td>
-<td>是否将对话框插入至 body 元素上</td>
+<td>是否插入至 body 元素上</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>close-on-press-escape</td>
-<td>是否可通过按下 ESC 键关闭对话框</td>
+<td>是否可通过按下 ESC 键关闭</td>
 <td>Boolean</td>
 <td></td>
 <td>true</td>

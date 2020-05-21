@@ -106,8 +106,8 @@ export default {
 |zoom|缩放|Number[]|[min,max]| [0.1, 4]|
 |mask-color|遮罩颜色|String||'#000'|
 |z-index|同原生 z-index|Number|||
-|append-to-body|是否将对话框插入至 body 元素上|Boolean|||
-|close-on-press-escape|	是否可通过按下 ESC 键关闭对话框|Boolean||true|
+|append-to-body|是否插入至 body 元素上|Boolean|||
+|close-on-press-escape|	是否可通过按下 ESC 键关闭|Boolean||true|
 |before-close|关闭前的回调|(done)=>void / Promise|||
 
 #### 事件
