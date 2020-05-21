@@ -22,7 +22,8 @@ $mz-image-preview-thumbnails-height: 120px;
 
   > header,
   > main,
-  > footer {
+  > footer,
+  > .mz-progress {
     position: absolute;
     left: 0;
     width: 100%;
@@ -37,7 +38,6 @@ $mz-image-preview-thumbnails-height: 120px;
     height: $mz-image-preview-header-height;
     padding-left: 20px;
     z-index: 10;
-    // background-color: rgba(33, 33, 33, 0.8);
   }
 
   > main {
@@ -52,6 +52,10 @@ $mz-image-preview-thumbnails-height: 120px;
     bottom: 0;
     z-index: 10;
     transition: transform 0.2s;
+  }
+  > .mz-progress {
+    top: 0;
+    z-index: 20;
   }
 }
 

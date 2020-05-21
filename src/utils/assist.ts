@@ -1,3 +1,5 @@
+export function noop() {}
+
 export function typeOf(obj: any) {
   const toString = Object.prototype.toString
   const map: any = {
@@ -61,5 +63,28 @@ export function debounce(fn: Function, wait: number = 0) {
       // @ts-ignore
       fn.call(this, arguments)
     }, wait)
+  }
+}
+
+export function isFullScreen() {
+  return (
+    /* prettier-ignore */
+    // @ts-ignore
+    document.fullScreen || document.isFullScreen || document.mozIsFullScreen || document.webkitIsFullScreen || false
+  )
+}
+
+export function fullScreen(isFullScreen: boolean = true) {
+  if (isFullScreen) {
+    const el = document.documentElement
+    /* prettier-ignore */
+    // @ts-ignore
+    const requestFullscreen = el.requestFullscreen || el.mozRequestFullScreen || el.webkitRequestFullscreen || el.msRequestFullscreen || noop
+    requestFullscreen.call(el)
+  } else {
+    /* prettier-ignore */
+    // @ts-ignore
+    const exitFullscreen = document.exitFullscreen || document.msExitFullscreen || document.mozCancelFullScreen || document.webkitCancelFullScreen
+    exitFullscreen.call(document)
   }
 }

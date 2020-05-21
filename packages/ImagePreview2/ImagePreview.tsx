@@ -1,7 +1,9 @@
 import { Component, Prop, PropSync, Watch } from 'vue-property-decorator'
 import { CreateElement, VNodeData } from 'vue'
+import { fullScreen } from '@/utils/assist'
 import MouseDrag from '@/classes/MouseDrag'
 import MzPopView from '@/mixins/PopView'
+import MzProgress from '@packages/Progress/Progress.vue'
 import MzButton from '@packages/Button/Button'
 import MzIcon from '@packages/Icon/Icon.vue'
 import MzImage from '@packages/Image/Image.vue'
@@ -22,7 +24,7 @@ interface ActionItem {
 
 const LAYOUT_TYPES = ['zoom', 'play', 'fullscreen', 'download', 'thumbnail']
 
-@Component({ components: { MzButton, MzIcon, MzImage } })
+@Component({ components: { MzButton, MzIcon, MzImage, MzProgress } })
 export default class MzImagePreview extends MzPopView {
   @Prop({ type: Array, default: () => [] })
   readonly images!: (string | ImageItem)[]
@@ -39,11 +41,13 @@ export default class MzImagePreview extends MzPopView {
 
   mIndex = 0
   scale = 1
+  timeCount = 0
   playing = false
   fullscreen = false
   thumbnail = false
   heightPriority = false
   mouseDrag = new MouseDrag(0, 0, 0, true)
+  playTimer: number | null = null
 
   get mImages(): ImageItem[] {
     return this.images
@@ -139,6 +143,15 @@ export default class MzImagePreview extends MzPopView {
         display: true
       }
     ]
+  }
+
+  renderProgress() {
+    if (!this.layoutState.play) return null
+    const data = {
+      props: { value: this.timeCount },
+      directives: [{ name: 'show', value: this.playing }]
+    }
+    return <mz-progress {...data}></mz-progress>
   }
 
   renderActionBtn({ icon, title, name, disabled }: ActionItem) {
@@ -248,6 +261,7 @@ export default class MzImagePreview extends MzPopView {
     return (
       <transition name="mz-fade">
         <div v-show={this.visible} {...data}>
+          {this.renderProgress()}
           {this.renderArrows()}
           {this.renderHeader()}
           {this.readerContent()}
@@ -278,6 +292,20 @@ export default class MzImagePreview extends MzPopView {
       case 'zoom-out':
         this.zoomImage(-0.1)
         break
+      case 'maximize':
+        fullScreen(true)
+        this.fullscreen = true
+        break
+      case 'unmaximize':
+        fullScreen(false)
+        this.fullscreen = false
+        break
+      case 'play':
+        this.playing = true
+        break
+      case 'pause':
+        this.playing = false
+        break
       case 'previous':
         this.mIndex = this.indexSync = (this.mIndex + 1) % this.mImages.length
         break
@@ -294,6 +322,12 @@ export default class MzImagePreview extends MzPopView {
     this.heightPriority = img.naturalHeight / img.naturalWidth < 2
   }
 
+  clearPlayTimer() {
+    this.playTimer && clearInterval(this.playTimer)
+    this.timeCount = 0
+    this.playing = false
+  }
+
   @Watch('visible')
   onImagePreviewVisible(visible: boolean) {
     if (visible) {
@@ -301,6 +335,8 @@ export default class MzImagePreview extends MzPopView {
       this.mIndex = this.indexSync
       this.thumbnail = this.layoutState.thumbnail
       this.scale = 1
+    } else {
+      this.clearPlayTimer()
     }
   }
 
@@ -308,5 +344,20 @@ export default class MzImagePreview extends MzPopView {
   onIndexChange(index: number) {
     this.mouseDrag.reset()
     this.scale = 1
+  }
+
+  @Watch('playing')
+  onPlayChange(isPlay: boolean) {
+    if (isPlay) {
+      this.playTimer = setInterval(() => {
+        if (this.timeCount === 100) {
+          this.timeCount = 0
+          this.action('next')
+        }
+        this.timeCount++
+      }, 100)
+    } else {
+      this.clearPlayTimer()
+    }
   }
 }
