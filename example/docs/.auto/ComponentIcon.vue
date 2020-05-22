@@ -1,8 +1,15 @@
 <template>
   <div class="component-icon">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-22 16:17</div>
     <h2 id="icon-tu-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#icon-tu-biao" title="Icon 图标" data-level="2" data-href="#icon-tu-biao">¶</a>Icon 图标</h2>
-<p>基于 <a href="https://ionicons.com">ionicons</a> 的图标库。</p>
+<p>基于 <a href="https://ionicons.com">ionicons@5</a> 的图标库。</p>
+<h3 id="an-zhuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-zhuang" title="安装" data-level="3" data-href="#an-zhuang">¶</a>安装</h3>
+<p>第一步：拉取图标依赖。</p>
+<pre><code>npm i @ljw1412/icon
+</code></pre>
+<p>第二步：在项目入口文件引入依赖。</p>
+<pre><code class="language-js">import '@ljw1412/icon'
+</code></pre>
 <h3 id="shi-yong-fang-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-fang-fa" title="使用方法" data-level="3" data-href="#shi-yong-fang-fa">¶</a>使用方法</h3>
 <demo-block>
         <template #example><icon-demo1 inline-template><div class="icon-demo1">

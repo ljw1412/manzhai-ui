@@ -32,6 +32,7 @@
     "test:common": "vue-cli-service test:unit ./tests/common/**/*.spec.ts"
   },
   "dependencies": {
+    "@ljw1412/icon": "^0.0.4",
     "core-js": "^3.6.4",
     "glob": "^7.1.6",
     "resize-observer-polyfill": "^1.5.1",

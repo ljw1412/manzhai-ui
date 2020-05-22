@@ -1,6 +1,21 @@
 ## Icon 图标
 
-基于 [ionicons](https://ionicons.com) 的图标库。
+基于 [ionicons@5](https://ionicons.com) 的图标库。
+
+### 安装
+
+第一步：拉取图标依赖。
+
+```
+npm i @ljw1412/icon
+```
+
+第二步：在项目入口文件引入依赖。
+
+```js
+import '@ljw1412/icon'
+```
+
 
 ### 使用方法
 

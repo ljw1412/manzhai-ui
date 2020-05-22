@@ -1,11 +1,12 @@
 <template>
   <div class="icon-grid-wrapper">
     <mz-tabs v-model="iconType"
-      align="right">
-      <mz-tab value="ios"></mz-tab>
-      <mz-tab value="md"></mz-tab>
+      align="center">
+      <mz-tab value="outline"></mz-tab>
+      <mz-tab value="filled"></mz-tab>
+      <mz-tab value="sharp"></mz-tab>
+      <mz-tab value="logo"></mz-tab>
     </mz-tabs>
-    <mz-sub-header>图标</mz-sub-header>
     <div class="icon-grid">
       <div v-for="(item, index) of iconList"
         :key="index"
@@ -13,15 +14,6 @@
         @click="coypCode(item)">
         <mz-icon v-tooltip="{content: item, placement: 'bottom'}"
           :name="item"
-          size="40px"></mz-icon>
-      </div>
-    </div>
-    <mz-sub-header>logo</mz-sub-header>
-    <div class="icon-grid">
-      <div v-for="item of icons.logo"
-        :key="item"
-        class="icon-grid__cell flex-double-center">
-        <mz-icon :name="item"
           size="40px"></mz-icon>
       </div>
     </div>
@@ -35,7 +27,7 @@ import { copyText } from '@example/utils/string'
 
 @Component
 export default class DocIconGrid extends Vue {
-  iconType: 'md' | 'ios' = 'md'
+  iconType: 'outline' | 'filled' | 'sharp' | 'logo' = 'outline'
   icons = icons
 
   get iconList() {

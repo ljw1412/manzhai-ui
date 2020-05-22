@@ -811,6 +811,11 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@ljw1412/icon@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@ljw1412/icon/-/icon-0.0.4.tgz#f5d79ff578fabbd50116891210052258e12fb616"
+  integrity sha512-k9I/FFOHNpQyrsc6lf+NYMOOTBexZ6FPMFHtRgZ7VI7YRPH71rfI2TJLoa7R4m/vMzxREjKdGgjucqTpU5u9Mw==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

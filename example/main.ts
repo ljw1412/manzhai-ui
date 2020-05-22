@@ -5,6 +5,7 @@ import manzhaiUI from '../src/index'
 import DemoBlock from './components/DemoBlock.vue'
 import IconGrid from './views/Docs/components/IconGrid.vue'
 import hljs from './utils/hljs'
+import '@ljw1412/icon'
 
 import './styles/manzhai-variables.scss'
 import './styles/theme/index.scss'

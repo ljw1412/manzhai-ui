@@ -151,16 +151,6 @@ function bindComponents(Vue: VueConstructor) {
   })
 }
 
-/**
- * 图标注册
- */
-function registerIcon() {
-  const svgs = require.context('@/icons', false, /\.svg$/)
-  const requireAll = (requireContext: __WebpackModuleApi.RequireContext) =>
-    requireContext.keys().map(requireContext)
-  requireAll(svgs)
-}
-
 const inject = () => {
   Array.prototype.remove = function(item) {
     const index = this.indexOf(item)
@@ -194,7 +184,6 @@ const install = function(
   injectVuePrototype(Vue, options)
   bindDirectives(Vue)
   bindComponents(Vue)
-  registerIcon()
 }
 
 export default {
