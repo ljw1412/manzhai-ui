@@ -42,7 +42,6 @@ function getTrigger(modifiers: Record<string, any> = {}) {
 }
 
 function updataTippy(el: HTMLElement, binding: VNodeDirective) {
-  if (!el._tooltip) el._tooltip = tippy(el, {})
   const { modifiers = {} } = binding
   const trigger = getTrigger(modifiers)
 
@@ -59,20 +58,30 @@ function updataTippy(el: HTMLElement, binding: VNodeDirective) {
   } else if (typeof binding.value === 'object') {
     options = binding.value
   }
-  el._tooltip.setProps(options)
+  el._tooltip!.setProps(options)
+}
+
+function initTippy(el: HTMLElement, binding: VNodeDirective) {
+  if (!el._tooltip) el._tooltip = tippy(el, {})
+  el._tooltip.setProps({
+    onShow: instance => {
+      instance.setProps({ theme: getTheme(binding.modifiers) })
+    }
+  })
 }
 
 export const Tooltip = {
   bind: (el: HTMLElement, binding: VNodeDirective, node: VNode) => {
+    initTippy(el, binding)
+    updataTippy(el, binding)
+  },
+  update: (el: HTMLElement, binding: VNodeDirective) => {
     updataTippy(el, binding)
   },
   unbind: (el: HTMLElement) => {
     if (!el._tooltip) return
     el._tooltip.destroy()
     delete el._tooltip
-  },
-  update: (el: HTMLElement, binding: VNodeDirective) => {
-    updataTippy(el, binding)
   }
 }
 
