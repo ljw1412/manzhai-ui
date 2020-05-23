@@ -1,5 +1,14 @@
 <template>
   <div class="icon-grid-wrapper">
+    <div style="padding:10px 20%;">
+      <mz-input v-model="keyword"
+        shadow
+        size="large"
+        placeholder="请输入关键词">
+        <mz-icon name="search"
+          slot="prefix"></mz-icon>
+      </mz-input>
+    </div>
     <mz-tabs v-model="iconType"
       align="center">
       <mz-tab value="outline"></mz-tab>
@@ -29,9 +38,10 @@ import { copyText } from '@example/utils/string'
 export default class DocIconGrid extends Vue {
   iconType: 'outline' | 'filled' | 'sharp' | 'logo' = 'outline'
   icons = icons
+  keyword = ''
 
   get iconList() {
-    return this.icons[this.iconType]
+    return this.icons[this.iconType].filter(name => name.includes(this.keyword))
   }
 
   coypCode(item: string) {
