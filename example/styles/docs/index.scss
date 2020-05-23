@@ -113,9 +113,6 @@
   }
 
   .component-anchor {
-    [class^='anchor-demo'] {
-      padding: 0 20px;
-    }
     .anchor-demo2 {
       padding: 10px 0;
     }
@@ -141,9 +138,6 @@
     [class^='card-demo'] {
       .mz-button + .mz-button {
         margin-left: 10px;
-      }
-      .mz-card {
-        margin: 20px 0;
       }
     }
   }

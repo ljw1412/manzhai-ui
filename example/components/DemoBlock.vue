@@ -1,10 +1,20 @@
 <template>
-  <mz-row ref="demoBlock"
-    class="demo-block">
-    <mz-col class="example">
+  <mz-card ref="demoBlock"
+    class="demo-card"
+    :class="{'demo-card--unfold':isDisplayCode}"
+    outlined>
+    <div class="example">
       <slot name="example"></slot>
-    </mz-col>
-    <mz-col v-show="isDisplayCode"
+    </div>
+    <mz-button v-tooltip.bottom="isDisplayCode ? '折叠代码' : '查看代码'"
+      class="action"
+      radius="0"
+      @click="onCodeIconClick">
+      <mz-icon class="is-pointer"
+        :size="22"
+        :name="isDisplayCode?'code-working':'code'"></mz-icon>
+    </mz-button>
+    <div v-show="isDisplayCode"
       class="source-code">
       <div v-if="$slots.description"
         class="description">
@@ -13,14 +23,8 @@
       <div class="highlight">
         <slot name="highlight"></slot>
       </div>
-    </mz-col>
-    <div class="action">
-      <mz-icon class="is-pointer"
-        :size="22"
-        :name="isDisplayCode?'code-working':'code'"
-        @click="onCodeIconClick"></mz-icon>
     </div>
-  </mz-row>
+  </mz-card>
 </template>
 
 <script lang="ts">
@@ -46,19 +50,24 @@ export default class DemoBlock extends Vue {
 </script>
 
 <style lang="scss">
-.demo-block {
+.demo-card {
   position: relative;
-  padding: 16px;
-  padding-top: 36px;
+  padding-bottom: 0;
   background-color: #fafafa;
+  border-radius: $border-radius-md;
 
   .example {
+    padding: 16px;
     color: var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-border-base);
+  }
+
+  .action {
+    width: 100%;
   }
 
   .source-code {
-    margin-top: 20px;
-    padding-top: 20px;
+    padding: 16px;
     border-top: 1px solid var(--color-border-base);
   }
 
@@ -93,22 +102,6 @@ export default class DemoBlock extends Vue {
     .html {
       background-color: transparent;
       padding: 10px 20px;
-    }
-  }
-
-  .action {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    color: var(--demo-block__highlight-color);
-    z-index: 100;
-    .mz-icon {
-      &:hover {
-        color: var(--color-primary);
-      }
-      &:active {
-        opacity: 0.5;
-      }
     }
   }
 }
