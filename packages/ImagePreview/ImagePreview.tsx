@@ -1,6 +1,7 @@
 import { Component, Prop, PropSync, Watch } from 'vue-property-decorator'
 import { CreateElement, VNodeData } from 'vue'
 import { fullScreen } from '@/utils/assist'
+import { saveAs } from 'file-saver'
 import MouseDrag from '@/classes/MouseDrag'
 import MzPopView from '@/mixins/PopView'
 import MzProgress from '@packages/Progress/Progress.vue'
@@ -305,6 +306,9 @@ export default class MzImagePreview extends MzPopView {
         break
       case 'pause':
         this.playing = false
+        break
+      case 'download':
+        saveAs(this.currentImage.url, this.currentImage.title)
         break
       case 'previous':
         this.mIndex = this.indexSync = (this.mIndex + 1) % this.mImages.length
