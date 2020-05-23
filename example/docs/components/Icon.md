@@ -43,4 +43,5 @@ import '@ljw1412/icon'
 | --- | --- | --- | --- | --- |
 |name|图标名称|String|||
 |size|大小|Number||16|
-|color|颜色|String|||
+|color|填充颜色|String||'currentColor'|
+|stroke|线条颜色|String||填充颜色 或 'currentColor'|

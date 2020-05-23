@@ -10,11 +10,10 @@
     <div class="icon-grid">
       <div v-for="(item, index) of iconList"
         :key="index"
+        v-tooltip="{content: item, placement: 'bottom',interactive:true}"
         class="icon-grid__cell flex-double-center is-pointer"
         @click="coypCode(item)">
-        <mz-icon v-tooltip="{content: item, placement: 'bottom'}"
-          :name="item"
-          color="green"
+        <mz-icon :name="item"
           size="40px"></mz-icon>
       </div>
     </div>

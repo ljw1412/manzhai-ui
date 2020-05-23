@@ -1,6 +1,6 @@
 <template>
   <div class="component-icon">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:00</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:58</div>
     <h2 id="icon-tu-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#icon-tu-biao" title="Icon 图标" data-level="2" data-href="#icon-tu-biao">¶</a>Icon 图标</h2>
 <p>基于 <a href="https://ionicons.com">ionicons@5</a> 的图标库。</p>
 <h3 id="an-zhuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-zhuang" title="安装" data-level="3" data-href="#an-zhuang">¶</a>安装</h3>
@@ -53,10 +53,17 @@
 </tr>
 <tr>
 <td>color</td>
-<td>颜色</td>
+<td>填充颜色</td>
 <td>String</td>
 <td></td>
+<td>'currentColor'</td>
+</tr>
+<tr>
+<td>stroke</td>
+<td>线条颜色</td>
+<td>String</td>
 <td></td>
+<td>填充颜色 或 'currentColor'</td>
 </tr>
 </tbody>
 </table>
