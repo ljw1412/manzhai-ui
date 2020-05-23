@@ -1,9 +1,9 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
-    <h2 id="tag-biao-qian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="tag-biao-qian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
 <p>进行标记和分类的小标签。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>可以自定义标签颜色。</p>
 <demo-block>
         <template #example><tag-demo1 inline-template><div class="tag-demo1">
@@ -16,7 +16,7 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-tag&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag color=&quot;var(--color-warning)&quot; text-color=&quot;green&quot;&gt;标签&lt;/mz-tag&gt;
-</code></pre></template></demo-block><h3 id="chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#chi-cun" title="尺寸" data-level="3" data-href="#chi-cun">¶</a>尺寸</h3>
+</code></pre></template></demo-block><h3 id="chi-cun" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#chi-cun" title="尺寸" data-level="3" data-href="#chi-cun">¶</a>尺寸</h3>
 <p>4种尺寸大小的标签。</p>
 <demo-block>
         <template #example><tag-demo2 inline-template><div class="tag-demo2">
@@ -31,7 +31,7 @@
 &lt;mz-tag size=&quot;medium&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag size=&quot;large&quot;&gt;标签&lt;/mz-tag&gt;
-</code></pre></template></demo-block><h3 id="xing-tai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xing-tai" title="形态" data-level="3" data-href="#xing-tai">¶</a>形态</h3>
+</code></pre></template></demo-block><h3 id="xing-tai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xing-tai" title="形态" data-level="3" data-href="#xing-tai">¶</a>形态</h3>
 <p>多种样式形态的标签。</p>
 <demo-block>
         <template #example><tag-demo3 inline-template><div class="tag-demo3">
@@ -50,7 +50,7 @@
 &lt;mz-tag round=&quot;right&quot; color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag text color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag outlined round color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-</code></pre></template></demo-block><h3 id="ke-zeng-shan-de-biao-qian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ke-zeng-shan-de-biao-qian" title="可增删的标签" data-level="3" data-href="#ke-zeng-shan-de-biao-qian">¶</a>可增删的标签</h3>
+</code></pre></template></demo-block><h3 id="ke-zeng-shan-de-biao-qian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-zeng-shan-de-biao-qian" title="可增删的标签" data-level="3" data-href="#ke-zeng-shan-de-biao-qian">¶</a>可增删的标签</h3>
 <p>支持动态新增和删除标签</p>
 <demo-block>
         <template #example><tag-demo4 inline-template><div class="tag-demo4">
@@ -94,7 +94,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="qian-hou-zhi-nei-rong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhi-nei-rong" title="前后置内容" data-level="3" data-href="#qian-hou-zhi-nei-rong">¶</a>前后置内容</h3>
+</code></pre></template></demo-block><h3 id="qian-hou-zhi-nei-rong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhi-nei-rong" title="前后置内容" data-level="3" data-href="#qian-hou-zhi-nei-rong">¶</a>前后置内容</h3>
 <p>在标签内容前后插入其它内容。</p>
 <demo-block>
         <template #example><tag-demo5 inline-template><div class="tag-demo5">
@@ -117,8 +117,8 @@ export default {
   标签
   &lt;mz-icon slot=&quot;suffix&quot; name=&quot;flask&quot;&gt;&lt;/mz-icon&gt;
 &lt;/mz-tag&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -174,7 +174,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -201,7 +201,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

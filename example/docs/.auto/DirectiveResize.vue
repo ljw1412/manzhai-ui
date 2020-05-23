@@ -1,9 +1,9 @@
 <template>
   <div class="directive-resize">
-    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
-    <h2 id="resize-da-xiao-bian-hua" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#resize-da-xiao-bian-hua" title="Resize 大小变化" data-level="2" data-href="#resize-da-xiao-bian-hua">¶</a>Resize 大小变化</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="resize-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#resize-da-xiao-bian-hua" title="Resize 大小变化" data-level="2" data-href="#resize-da-xiao-bian-hua">¶</a>Resize 大小变化</h2>
 <p>当界面大小发生变化时，调用指定的函数。</p>
-<h3 id="jian-tingwindow-da-xiao-bian-hua" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jian-tingwindow-da-xiao-bian-hua" title="监听Window大小变化" data-level="3" data-href="#jian-tingwindow-da-xiao-bian-hua">¶</a>监听Window大小变化</h3>
+<h3 id="jian-tingwindow-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jian-tingwindow-da-xiao-bian-hua" title="监听Window大小变化" data-level="3" data-href="#jian-tingwindow-da-xiao-bian-hua">¶</a>监听Window大小变化</h3>
 <p>使用<code>v-resize</code>指令监听window的大小变化</p>
 <demo-block>
         <template #example><resize-demo1 inline-template><div class="resize-demo1">
@@ -30,7 +30,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jian-ting-yuan-su-da-xiao-bian-hua" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jian-ting-yuan-su-da-xiao-bian-hua" title="监听元素大小变化" data-level="3" data-href="#jian-ting-yuan-su-da-xiao-bian-hua">¶</a>监听元素大小变化</h3>
+</code></pre></template></demo-block><h3 id="jian-ting-yuan-su-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jian-ting-yuan-su-da-xiao-bian-hua" title="监听元素大小变化" data-level="3" data-href="#jian-ting-yuan-su-da-xiao-bian-hua">¶</a>监听元素大小变化</h3>
 <p>使用<code>v-el-resize</code>指令监听元素的大小变化</p>
 <demo-block>
         <template #example><resize-demo2 inline-template><div class="resize-demo2">

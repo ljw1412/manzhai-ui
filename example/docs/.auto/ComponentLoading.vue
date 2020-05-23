@@ -1,9 +1,9 @@
 <template>
   <div class="component-loading">
-    <div class="update-datetime">文档更新时间：2020-05-19 11:00</div>
-    <h2 id="loading-jia-zai" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="loading-jia-zai" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
 <p>用于页面和区块的加载中状态。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>以单纯的加载图标模式显示。</p>
 <demo-block>
         <template #example><loading-demo1 inline-template><div class="loading-demo1">
@@ -11,7 +11,7 @@
 </div></loading-demo1></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-loading v-for=&quot;i of 7&quot; :mode=&quot;i&quot; :key=&quot;i&quot;&gt;&lt;/mz-loading&gt;
-</code></pre></template></demo-block><h3 id="zuo-wei-kuai-de-jia-zai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zuo-wei-kuai-de-jia-zai" title="作为块的加载" data-level="3" data-href="#zuo-wei-kuai-de-jia-zai">¶</a>作为块的加载</h3>
+</code></pre></template></demo-block><h3 id="zuo-wei-kuai-de-jia-zai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zuo-wei-kuai-de-jia-zai" title="作为块的加载" data-level="3" data-href="#zuo-wei-kuai-de-jia-zai">¶</a>作为块的加载</h3>
 <p>有内容嵌套再内部。</p>
 <demo-block>
         <template #example><loading-demo2 inline-template><div class="loading-demo2">
@@ -36,7 +36,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-wen-an" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-wen-an" title="自定义文案" data-level="3" data-href="#zi-ding-yi-wen-an">¶</a>自定义文案</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-wen-an" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-wen-an" title="自定义文案" data-level="3" data-href="#zi-ding-yi-wen-an">¶</a>自定义文案</h3>
 <p>自定义加载时的文案。</p>
 <demo-block>
         <template #example><loading-demo3 inline-template><div class="loading-demo3">
@@ -61,8 +61,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -125,7 +125,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

@@ -1,9 +1,9 @@
 <template>
   <div class="component-cell">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="cell-dan-yuan-ge" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#cell-dan-yuan-ge" title="Cell 单元格" data-level="2" data-href="#cell-dan-yuan-ge">¶</a>Cell 单元格</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="cell-dan-yuan-ge" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#cell-dan-yuan-ge" title="Cell 单元格" data-level="2" data-href="#cell-dan-yuan-ge">¶</a>Cell 单元格</h2>
 <p>单元列表效果。</p>
-<h3 id="dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao" title="单元格组及单元格嵌套" data-level="3" data-href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao">¶</a>单元格组及单元格嵌套</h3>
+<h3 id="dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao" title="单元格组及单元格嵌套" data-level="3" data-href="#dan-yuan-ge-zu-ji-dan-yuan-ge-qian-tao">¶</a>单元格组及单元格嵌套</h3>
 <demo-block>
         <template #example><cell-demo1 inline-template><div class="cell-demo1">
   <mz-cell-group
@@ -53,7 +53,7 @@
     desc=&quot;描述性文字&quot;&gt;
   &lt;/mz-cell&gt;
 &lt;/mz-cell-group&gt;
-</code></pre></template></demo-block><h3 id="qia-pian-yang-shi-dan-yuan-ge-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qia-pian-yang-shi-dan-yuan-ge-zu" title="卡片样式单元格组" data-level="3" data-href="#qia-pian-yang-shi-dan-yuan-ge-zu">¶</a>卡片样式单元格组</h3>
+</code></pre></template></demo-block><h3 id="qia-pian-yang-shi-dan-yuan-ge-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qia-pian-yang-shi-dan-yuan-ge-zu" title="卡片样式单元格组" data-level="3" data-href="#qia-pian-yang-shi-dan-yuan-ge-zu">¶</a>卡片样式单元格组</h3>
 <demo-block>
         <template #example><cell-demo2 inline-template><div class="cell-demo2">
   <mz-cell-group
@@ -81,7 +81,7 @@
     desc=&quot;描述性文字&quot;&gt;
   &lt;/mz-cell&gt;
 &lt;/mz-cell-group&gt;
-</code></pre></template></demo-block><h3 id="kai-guan-dan-yuan-ge" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#kai-guan-dan-yuan-ge" title="开关单元格" data-level="3" data-href="#kai-guan-dan-yuan-ge">¶</a>开关单元格</h3>
+</code></pre></template></demo-block><h3 id="kai-guan-dan-yuan-ge" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#kai-guan-dan-yuan-ge" title="开关单元格" data-level="3" data-href="#kai-guan-dan-yuan-ge">¶</a>开关单元格</h3>
 <p>含有Switch组件的单元格</p>
 <demo-block>
         <template #example><cell-demo3 inline-template><div class="cell-demo3">
@@ -140,8 +140,8 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="cell-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#cell-api" title="Cell API" data-level="3" data-href="#cell-api">¶</a>Cell API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="cell-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#cell-api" title="Cell API" data-level="3" data-href="#cell-api">¶</a>Cell API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -190,7 +190,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -227,8 +227,8 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cellgroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#cellgroup-api" title="CellGroup API" data-level="3" data-href="#cellgroup-api">¶</a>CellGroup API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="cellgroup-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#cellgroup-api" title="CellGroup API" data-level="3" data-href="#cellgroup-api">¶</a>CellGroup API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -256,7 +256,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao-2" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="3" data-href="#cha-cao-2">¶</a>插槽</h3>
+<h3 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="3" data-href="#cha-cao-2">¶</a>插槽</h3>
 <table>
 <thead>
 <tr>

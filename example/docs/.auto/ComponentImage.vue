@@ -1,9 +1,9 @@
 <template>
   <div class="component-image">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="image-tu-pian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="image-tu-pian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
 <p>显示图片或背景的容器。</p>
-<h3 id="ji-ben-yu-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
+<h3 id="ji-ben-yu-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
 <p>既可以作为图片显示，也可以作为背景显示。</p>
 <demo-block>
         <template #example><image-demo1 inline-template><div class="image-demo1">
@@ -43,7 +43,7 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="tu-pian-diao-zheng" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#tu-pian-diao-zheng" title="图片调整" data-level="3" data-href="#tu-pian-diao-zheng">¶</a>图片调整</h3>
+</code></pre></template></demo-block><h3 id="tu-pian-diao-zheng" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#tu-pian-diao-zheng" title="图片调整" data-level="3" data-href="#tu-pian-diao-zheng">¶</a>图片调整</h3>
 <p>可以调整图片的适应容器的情况和图片的位置。</p>
 <demo-block>
         <template #example><image-demo2 inline-template><div class="image-demo2">
@@ -97,7 +97,7 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="jia-zai-cuo-wu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jia-zai-cuo-wu" title="加载错误" data-level="3" data-href="#jia-zai-cuo-wu">¶</a>加载错误</h3>
+</code></pre></template></demo-block><h3 id="jia-zai-cuo-wu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jia-zai-cuo-wu" title="加载错误" data-level="3" data-href="#jia-zai-cuo-wu">¶</a>加载错误</h3>
 <p>图片加载错误时，进行容错处理。</p>
 <demo-block>
         <template #example><image-demo3 inline-template><div class="image-demo3">
@@ -192,8 +192,8 @@ export default {
   margin: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -270,7 +270,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -292,7 +292,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

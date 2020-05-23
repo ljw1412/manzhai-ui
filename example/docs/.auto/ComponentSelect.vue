@@ -1,9 +1,9 @@
 <template>
   <div class="component-select">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="select-xuan-ze-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#select-xuan-ze-kuang" title="Select 选择框" data-level="2" data-href="#select-xuan-ze-kuang">¶</a>Select 选择框</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="select-xuan-ze-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#select-xuan-ze-kuang" title="Select 选择框" data-level="2" data-href="#select-xuan-ze-kuang">¶</a>Select 选择框</h2>
 <p>下拉菜单选择器。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><select-demo1 inline-template><div class="select-demo1">
   <mz-select v-model="value" :list="list"></mz-select>
@@ -38,7 +38,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="tong-kuan-xia-la-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#tong-kuan-xia-la-kuang" title="同宽下拉框" data-level="3" data-href="#tong-kuan-xia-la-kuang">¶</a>同宽下拉框</h3>
+</code></pre></template></demo-block><h3 id="tong-kuan-xia-la-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#tong-kuan-xia-la-kuang" title="同宽下拉框" data-level="3" data-href="#tong-kuan-xia-la-kuang">¶</a>同宽下拉框</h3>
 <p>使下拉框与选择框一样宽。</p>
 <demo-block>
         <template #example><select-demo2 inline-template><div class="select-demo2">
@@ -62,7 +62,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="dai-sou-suo-gong-neng-de-xuan-ze-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dai-sou-suo-gong-neng-de-xuan-ze-kuang" title="带搜索功能的选择框" data-level="3" data-href="#dai-sou-suo-gong-neng-de-xuan-ze-kuang">¶</a>带搜索功能的选择框</h3>
+</code></pre></template></demo-block><h3 id="dai-sou-suo-gong-neng-de-xuan-ze-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dai-sou-suo-gong-neng-de-xuan-ze-kuang" title="带搜索功能的选择框" data-level="3" data-href="#dai-sou-suo-gong-neng-de-xuan-ze-kuang">¶</a>带搜索功能的选择框</h3>
 <p>选择框能够搜索快速找到选项。</p>
 <demo-block>
         <template #example><select-demo3 inline-template><div class="select-demo3">
@@ -86,7 +86,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong" title="禁用" data-level="3" data-href="#jin-yong">¶</a>禁用</h3>
+</code></pre></template></demo-block><h3 id="jin-yong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-yong" title="禁用" data-level="3" data-href="#jin-yong">¶</a>禁用</h3>
 <demo-block>
         <template #example><select-demo4 inline-template><div class="select-demo4">
   <mz-select v-model="value" :list="list" disabled search under></mz-select>
@@ -109,8 +109,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="select-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#select-api" title="Select API" data-level="3" data-href="#select-api">¶</a>Select API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="select-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#select-api" title="Select API" data-level="3" data-href="#select-api">¶</a>Select API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -194,7 +194,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -211,8 +211,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="option-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#option-api" title="Option API" data-level="3" data-href="#option-api">¶</a>Option API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="option-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#option-api" title="Option API" data-level="3" data-href="#option-api">¶</a>Option API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -247,7 +247,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<h4 id="shi-jian-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

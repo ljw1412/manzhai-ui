@@ -1,9 +1,9 @@
 <template>
   <div class="component-mask">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="mask-zhe-zhao-ceng" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#mask-zhe-zhao-ceng" title="Mask 遮罩层" data-level="2" data-href="#mask-zhe-zhao-ceng">¶</a>Mask 遮罩层</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="mask-zhe-zhao-ceng" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#mask-zhe-zhao-ceng" title="Mask 遮罩层" data-level="2" data-href="#mask-zhe-zhao-ceng">¶</a>Mask 遮罩层</h2>
 <p>创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><mask-demo1 inline-template><div class="mask-demo1">
   <mz-mask :visible="visible"
@@ -27,7 +27,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="shi-yong-zhi-ling" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-zhi-ling" title="使用指令" data-level="3" data-href="#shi-yong-zhi-ling">¶</a>使用指令</h3>
+</code></pre></template></demo-block><h3 id="shi-yong-zhi-ling" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-zhi-ling" title="使用指令" data-level="3" data-href="#shi-yong-zhi-ling">¶</a>使用指令</h3>
 <p>引入 Mask 组件后，会自动在 Vue 的 prototype 上挂载 $mask 方法，在所有组件内部都可以直接调用此方法。</p>
 <p>它包含<code>show</code>和<code>hide</code>两个方法。</p>
 <demo-block>
@@ -48,8 +48,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -91,7 +91,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -108,7 +108,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="mask" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#mask" title="$mask" data-level="4" data-href="#mask">¶</a>$mask</h4>
+<h4 id="mask" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#mask" title="$mask" data-level="4" data-href="#mask">¶</a>$mask</h4>
 <p>包含：</p>
 <ul class="mz-document-ul">
 <li>$mask.show(MaskConfig)</li>

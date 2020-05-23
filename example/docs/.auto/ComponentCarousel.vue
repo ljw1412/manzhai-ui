@@ -1,9 +1,9 @@
 <template>
   <div class="component-carousel">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="carousel-lun-bo" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#carousel-lun-bo" title="Carousel 轮播" data-level="2" data-href="#carousel-lun-bo">¶</a>Carousel 轮播</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="carousel-lun-bo" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#carousel-lun-bo" title="Carousel 轮播" data-level="2" data-href="#carousel-lun-bo">¶</a>Carousel 轮播</h2>
 <p>在一个容器内循环播放内容。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>进行定时轮播。</p>
 <demo-block>
         <template #example><carousel-demo1 inline-template><div class="carousel-demo1">
@@ -50,7 +50,7 @@
     &lt;/mz-carousel&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="jian-tou" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jian-tou" title="箭头" data-level="3" data-href="#jian-tou">¶</a>箭头</h3>
+</code></pre></template></demo-block><h3 id="jian-tou" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jian-tou" title="箭头" data-level="3" data-href="#jian-tou">¶</a>箭头</h3>
 <p>轮播的手动切换箭头。</p>
 <demo-block>
         <template #example><carousel-demo2 inline-template><div class="carousel-demo2">
@@ -95,7 +95,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zhi-shi-qi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhi-shi-qi" title="指示器" data-level="3" data-href="#zhi-shi-qi">¶</a>指示器</h3>
+</code></pre></template></demo-block><h3 id="zhi-shi-qi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhi-shi-qi" title="指示器" data-level="3" data-href="#zhi-shi-qi">¶</a>指示器</h3>
 <p>轮播内置了多种样式的指示器。</p>
 <demo-block>
         <template #example><carousel-demo3 inline-template><div class="carousel-demo3">
@@ -154,7 +154,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zhi-shi-qi-yan-se-zi-ding-yi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhi-shi-qi-yan-se-zi-ding-yi" title="指示器颜色自定义" data-level="3" data-href="#zhi-shi-qi-yan-se-zi-ding-yi">¶</a>指示器颜色自定义</h3>
+</code></pre></template></demo-block><h3 id="zhi-shi-qi-yan-se-zi-ding-yi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhi-shi-qi-yan-se-zi-ding-yi" title="指示器颜色自定义" data-level="3" data-href="#zhi-shi-qi-yan-se-zi-ding-yi">¶</a>指示器颜色自定义</h3>
 <p>用户可以自定义指示器的颜色。</p>
 <demo-block>
         <template #example><carousel-demo4 inline-template><div class="carousel-demo4">
@@ -193,7 +193,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-zhi-shi-qi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-zhi-shi-qi" title="自定义指示器" data-level="3" data-href="#zi-ding-yi-zhi-shi-qi">¶</a>自定义指示器</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-zhi-shi-qi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-zhi-shi-qi" title="自定义指示器" data-level="3" data-href="#zi-ding-yi-zhi-shi-qi">¶</a>自定义指示器</h3>
 <p>可以自由扩展的指示器。</p>
 <demo-block>
         <template #example><carousel-demo5 inline-template><div class="carousel-demo5">
@@ -311,7 +311,7 @@ export default {
   color: #000;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="shou-dong-mo-shi-he-bu-xun-huan" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shou-dong-mo-shi-he-bu-xun-huan" title="手动模式和不循环" data-level="3" data-href="#shou-dong-mo-shi-he-bu-xun-huan">¶</a>手动模式和不循环</h3>
+</code></pre></template></demo-block><h3 id="shou-dong-mo-shi-he-bu-xun-huan" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shou-dong-mo-shi-he-bu-xun-huan" title="手动模式和不循环" data-level="3" data-href="#shou-dong-mo-shi-he-bu-xun-huan">¶</a>手动模式和不循环</h3>
 <p>进行定时轮播。</p>
 <demo-block>
         <template #example><carousel-demo6 inline-template><div class="carousel-demo6">
@@ -330,8 +330,8 @@ export default {
   &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
   &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
 &lt;/mz-carousel&gt;
-</code></pre></template></demo-block><h3 id="carousel-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#carousel-api" title="Carousel API" data-level="3" data-href="#carousel-api">¶</a>Carousel API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="carousel-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#carousel-api" title="Carousel API" data-level="3" data-href="#carousel-api">¶</a>Carousel API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -436,7 +436,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -453,7 +453,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="fang-fa" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#fang-fa" title="方法" data-level="4" data-href="#fang-fa">¶</a>方法</h4>
+<h4 id="fang-fa" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#fang-fa" title="方法" data-level="4" data-href="#fang-fa">¶</a>方法</h4>
 <table>
 <thead>
 <tr>
@@ -470,7 +470,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -492,8 +492,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="carouselitem-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#carouselitem-api" title="CarouselItem API" data-level="3" data-href="#carouselitem-api">¶</a>CarouselItem API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="carouselitem-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#carouselitem-api" title="CarouselItem API" data-level="3" data-href="#carouselitem-api">¶</a>CarouselItem API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -514,7 +514,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -531,8 +531,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="carouselindicator-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#carouselindicator-api" title="CarouselIndicator API" data-level="3" data-href="#carouselindicator-api">¶</a>CarouselIndicator API</h3>
-<h4 id="shu-xing-3" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-3" title="属性" data-level="4" data-href="#shu-xing-3">¶</a>属性</h4>
+<h3 id="carouselindicator-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#carouselindicator-api" title="CarouselIndicator API" data-level="3" data-href="#carouselindicator-api">¶</a>CarouselIndicator API</h3>
+<h4 id="shu-xing-3" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-3" title="属性" data-level="4" data-href="#shu-xing-3">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

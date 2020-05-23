@@ -19,11 +19,14 @@
     <div class="icon-grid">
       <div v-for="(item, index) of iconList"
         :key="index"
-        v-tooltip="{content: item, placement: 'bottom',interactive:true}"
-        class="icon-grid__cell flex-double-center is-pointer"
-        @click="coypCode(item)">
-        <mz-icon :name="item"
-          size="40px"></mz-icon>
+        class="icon-grid__cell">
+        <div v-tooltip="{content: item, placement: 'bottom',interactive:true}"
+          class="flex-double-center is-pointer"
+          style="height:100%"
+          @click="coypCode(item)">
+          <mz-icon size="40px"
+            :name="item"></mz-icon>
+        </div>
       </div>
     </div>
   </div>

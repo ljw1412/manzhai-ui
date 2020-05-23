@@ -1,9 +1,9 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
-    <h2 id="input-shu-ru-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="input-shu-ru-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><input-demo1 inline-template><div class="input-demo1">
   <mz-input v-model="value" placeholder="请输入文字"></mz-input>
@@ -20,7 +20,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
+</code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
 <demo-block>
         <template #example><input-demo2 inline-template><div class="input-demo2">
   <mz-input v-model="value" placeholder="请输入文字" rounded>
@@ -40,7 +40,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
 <p>提供了3种输入框大小。</p>
 <demo-block>
         <template #example><input-demo3 inline-template><div class="input-demo3">
@@ -91,7 +91,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bian-ping-yang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bian-ping-yang-shi" title="扁平样式" data-level="3" data-href="#bian-ping-yang-shi">¶</a>扁平样式</h3>
+</code></pre></template></demo-block><h3 id="bian-ping-yang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bian-ping-yang-shi" title="扁平样式" data-level="3" data-href="#bian-ping-yang-shi">¶</a>扁平样式</h3>
 <demo-block>
         <template #example><input-demo4 inline-template><div class="input-demo4">
   <mz-input v-model="value"
@@ -113,7 +113,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="yin-ying-yang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yin-ying-yang-shi" title="阴影样式" data-level="3" data-href="#yin-ying-yang-shi">¶</a>阴影样式</h3>
+</code></pre></template></demo-block><h3 id="yin-ying-yang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yin-ying-yang-shi" title="阴影样式" data-level="3" data-href="#yin-ying-yang-shi">¶</a>阴影样式</h3>
 <demo-block>
         <template #example><input-demo5 inline-template><div class="input-demo5">
   <mz-input v-model="value"
@@ -135,7 +135,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="qian-hou-zhui" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhui" title="前后缀" data-level="3" data-href="#qian-hou-zhui">¶</a>前后缀</h3>
+</code></pre></template></demo-block><h3 id="qian-hou-zhui" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhui" title="前后缀" data-level="3" data-href="#qian-hou-zhui">¶</a>前后缀</h3>
 <demo-block>
         <template #example><input-demo6 inline-template><div class="input-demo6">
   <mz-input v-model="username" placeholder="请输入用户名">
@@ -166,7 +166,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong" title="禁用" data-level="3" data-href="#jin-yong">¶</a>禁用</h3>
+</code></pre></template></demo-block><h3 id="jin-yong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-yong" title="禁用" data-level="3" data-href="#jin-yong">¶</a>禁用</h3>
 <demo-block>
         <template #example><input-demo7 inline-template><div class="input-demo7">
   <mz-input v-model="value" disabled></mz-input>
@@ -186,7 +186,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="shu-ru-kuang-zu-he" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shu-ru-kuang-zu-he" title="输入框组合" data-level="3" data-href="#shu-ru-kuang-zu-he">¶</a>输入框组合</h3>
+</code></pre></template></demo-block><h3 id="shu-ru-kuang-zu-he" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shu-ru-kuang-zu-he" title="输入框组合" data-level="3" data-href="#shu-ru-kuang-zu-he">¶</a>输入框组合</h3>
 <demo-block>
         <template #example><input-demo8 inline-template><div class="input-demo8">
   <mz-input-group>  
@@ -221,8 +221,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -341,7 +341,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -363,7 +363,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

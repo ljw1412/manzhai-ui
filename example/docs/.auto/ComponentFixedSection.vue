@@ -1,9 +1,9 @@
 <template>
   <div class="component-fixed-section">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="fixedsection-gu-ding-xiang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#fixedsection-gu-ding-xiang" title="FixedSection 固定项" data-level="2" data-href="#fixedsection-gu-ding-xiang">¶</a>FixedSection 固定项</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="fixedsection-gu-ding-xiang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#fixedsection-gu-ding-xiang" title="FixedSection 固定项" data-level="2" data-href="#fixedsection-gu-ding-xiang">¶</a>FixedSection 固定项</h2>
 <p>一个固定块或者与滚动联动的粘性效果。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><fixed-section-demo1 inline-template><div class="fixed-section-demo1">
   <mz-button @click="fixed = !fixed">{{fixed?'关闭固定':'开启固定'}}</mz-button>
@@ -23,7 +23,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="nian-xing-kuai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#nian-xing-kuai" title="粘性块" data-level="3" data-href="#nian-xing-kuai">¶</a>粘性块</h3>
+</code></pre></template></demo-block><h3 id="nian-xing-kuai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#nian-xing-kuai" title="粘性块" data-level="3" data-href="#nian-xing-kuai">¶</a>粘性块</h3>
 <demo-block>
         <template #example><fixed-section-demo2 inline-template><div class="fixed-section-demo2">
   <div id="sticky-scroll-wrapper" style="height:300px;overflow-y:scroll;">
@@ -64,8 +64,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -156,7 +156,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

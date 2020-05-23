@@ -1,9 +1,9 @@
 <template>
   <div class="component-anchor">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="anchor-mao-dian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="anchor-mao-dian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#anchor-mao-dian" title="Anchor 锚点" data-level="2" data-href="#anchor-mao-dian">¶</a>Anchor 锚点</h2>
 <p>用于布置锚点指定位置。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>基础锚点的用法。</p>
 <demo-block>
         <template #example><anchor-demo1 inline-template><div class="anchor-demo1">
@@ -18,7 +18,7 @@
   &lt;mz-anchor href=&quot;#a-anchor-1&quot; /&gt;
   &lt;span id=&quot;a-anchor-1&quot;&gt;锚点-1&lt;/span&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian" title="隐蔽式锚点" data-level="3" data-href="#yin-bi-shi-mao-dian">¶</a>隐蔽式锚点</h3>
+</code></pre></template></demo-block><h3 id="yin-bi-shi-mao-dian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yin-bi-shi-mao-dian" title="隐蔽式锚点" data-level="3" data-href="#yin-bi-shi-mao-dian">¶</a>隐蔽式锚点</h3>
 <p>不可见的锚点。</p>
 <demo-block>
         <template #example><anchor-demo2 inline-template><div class="anchor-demo2">
@@ -27,7 +27,7 @@
         <template #description><p><code>invisible</code>属性来控制锚点的可见性。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-anchor href=&quot;#anchor-invisible&quot; title=&quot;不可见锚点-1&quot; invisible&gt;&lt;/mz-anchor&gt;
-</code></pre></template></demo-block><h3 id="yu-mu-lu-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-mu-lu-lian-dong" title="与目录联动" data-level="3" data-href="#yu-mu-lu-lian-dong">¶</a>与目录联动</h3>
+</code></pre></template></demo-block><h3 id="yu-mu-lu-lian-dong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yu-mu-lu-lian-dong" title="与目录联动" data-level="3" data-href="#yu-mu-lu-lian-dong">¶</a>与目录联动</h3>
 <p>配合 <a href="component-catalogue">目录(Catalogue)组件</a> 使用效果更好。</p>
 <demo-block>
         <template #example><anchor-demo3 inline-template><div class="anchor-demo3">
@@ -96,8 +96,8 @@
       target=&quot;.demo-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

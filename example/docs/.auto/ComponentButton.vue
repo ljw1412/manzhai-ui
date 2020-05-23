@@ -1,9 +1,9 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
-    <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="button-an-niu" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>基础按钮的用法。</p>
 <demo-block>
         <template #example><button-demo1 inline-template><div class="button-demo1">
@@ -92,7 +92,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="an-niu-chi-cun" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-chi-cun" title="按钮尺寸" data-level="3" data-href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
+</code></pre></template></demo-block><h3 id="an-niu-chi-cun" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#an-niu-chi-cun" title="按钮尺寸" data-level="3" data-href="#an-niu-chi-cun">¶</a>按钮尺寸</h3>
 <p>我们为按钮提供了4种大小尺寸，根据场景选择合适的按钮尺寸。</p>
 <demo-block>
         <template #example><button-demo2 inline-template><div class="button-demo2">
@@ -153,7 +153,7 @@ export default {
   &lt;mz-button color=&quot;primary&quot; round size=&quot;medium&quot;&gt;圆角按钮&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot; round size=&quot;small&quot;&gt;圆角按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="jin-cou-an-niu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-cou-an-niu" title="紧凑按钮" data-level="3" data-href="#jin-cou-an-niu">¶</a>紧凑按钮</h3>
+</code></pre></template></demo-block><h3 id="jin-cou-an-niu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-cou-an-niu" title="紧凑按钮" data-level="3" data-href="#jin-cou-an-niu">¶</a>紧凑按钮</h3>
 <demo-block>
         <template #example><button-demo3 inline-template><div class="button-demo3">
   <mz-button color="primary" size="large">松</mz-button>
@@ -175,7 +175,7 @@ export default {
 &lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot; dense&gt;紧&lt;/mz-button&gt;
 &lt;mz-button color=&quot;primary&quot; size=&quot;small&quot;&gt;松&lt;/mz-button&gt;
 &lt;mz-button color=&quot;primary&quot; size=&quot;small&quot; dense&gt;紧&lt;/mz-button&gt;
-</code></pre></template></demo-block><h3 id="an-niu-yin-ying" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-yin-ying" title="按钮阴影" data-level="3" data-href="#an-niu-yin-ying">¶</a>按钮阴影</h3>
+</code></pre></template></demo-block><h3 id="an-niu-yin-ying" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#an-niu-yin-ying" title="按钮阴影" data-level="3" data-href="#an-niu-yin-ying">¶</a>按钮阴影</h3>
 <demo-block>
         <template #example><button-demo4 inline-template><div class="button-demo4">
   <mz-button color="primary" size="large" shadow>按钮阴影</mz-button>
@@ -189,7 +189,7 @@ export default {
 &lt;mz-button color=&quot;primary&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
 &lt;mz-button color=&quot;primary&quot; size=&quot;medium&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
 &lt;mz-button color=&quot;primary&quot; size=&quot;small&quot; shadow&gt;按钮阴影&lt;/mz-button&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
 <p>我们为按钮预设了4种主要颜色，用户也可以根据需求修改按钮颜色。</p>
 <demo-block>
         <template #example><button-demo5 inline-template><div class="button-demo5">
@@ -212,7 +212,7 @@ export default {
   &lt;mz-button outlined text-color=&quot;#fcba2a&quot;&gt;按钮&lt;/mz-button&gt;
   &lt;mz-button outlined text-color=&quot;#fcba2a&quot; border-color=&quot;blue&quot;&gt;按钮&lt;/mz-button&gt;
 &lt;/div&gt;
-</code></pre></template></demo-block><h3 id="an-niu-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-zu" title="按钮组" data-level="3" data-href="#an-niu-zu">¶</a>按钮组</h3>
+</code></pre></template></demo-block><h3 id="an-niu-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#an-niu-zu" title="按钮组" data-level="3" data-href="#an-niu-zu">¶</a>按钮组</h3>
 <p>以按钮组的方式出现，常用于多项类似操作。</p>
 <demo-block>
         <template #example><button-demo6 inline-template><div class="button-demo6">
@@ -269,8 +269,8 @@ export default {
   &lt;mz-button color=&quot;primary&quot;&gt;按钮2&lt;/mz-button&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;按钮3&lt;/mz-button&gt;
 &lt;/mz-button-group&gt;
-</code></pre></template></demo-block><h3 id="button-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#button-api" title="Button API" data-level="3" data-href="#button-api">¶</a>Button API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="button-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#button-api" title="Button API" data-level="3" data-href="#button-api">¶</a>Button API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -403,7 +403,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -420,8 +420,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="buttongroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#buttongroup-api" title="ButtonGroup API" data-level="3" data-href="#buttongroup-api">¶</a>ButtonGroup API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="buttongroup-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#buttongroup-api" title="ButtonGroup API" data-level="3" data-href="#buttongroup-api">¶</a>ButtonGroup API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

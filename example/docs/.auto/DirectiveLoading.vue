@@ -1,10 +1,10 @@
 <template>
   <div class="directive-loading">
-    <div class="update-datetime">文档更新时间：2020-05-19 14:24</div>
-    <h2 id="loading-jia-zai" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="loading-jia-zai" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
 <p>加载数据时显示动效。</p>
 <p><strong>如果出现样式问题，请使用<a href="component-loading">MzLoading组件</a>。</strong></p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><loading-demo1 inline-template><div class="loading-demo1">
   <mz-button color="primary" @click="load">加载</mz-button>
@@ -53,7 +53,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="can-shu-pei-zhi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#can-shu-pei-zhi" title="参数配置" data-level="3" data-href="#can-shu-pei-zhi">¶</a>参数配置</h3>
+</code></pre></template></demo-block><h3 id="can-shu-pei-zhi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#can-shu-pei-zhi" title="参数配置" data-level="3" data-href="#can-shu-pei-zhi">¶</a>参数配置</h3>
 <demo-block>
         <template #example><loading-demo2 inline-template><div class="loading-demo2">
   <span class="demo-font-size-14">加载开关：</span>

@@ -1,9 +1,9 @@
 <template>
   <div class="component-scrollbar">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="scrollbar-gun-dong-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#scrollbar-gun-dong-tiao" title="Scrollbar 滚动条" data-level="2" data-href="#scrollbar-gun-dong-tiao">¶</a>Scrollbar 滚动条</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="scrollbar-gun-dong-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#scrollbar-gun-dong-tiao" title="Scrollbar 滚动条" data-level="2" data-href="#scrollbar-gun-dong-tiao">¶</a>Scrollbar 滚动条</h2>
 <p>用HTML实现原生滚动条效果。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><scrollbar-demo1 inline-template><div class="scrollbar-demo1">
   <mz-scrollbar style="height:200px;">
@@ -20,7 +20,7 @@
   &lt;/div&gt;
   &lt;p v-for=&quot;i of 10&quot; :key=&quot;i&quot;&gt;段落{{i}}&lt;/p&gt;
 &lt;/mz-scrollbar&gt;
-</code></pre></template></demo-block><h3 id="zi-dong-yin-cang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-dong-yin-cang" title="自动隐藏" data-level="3" data-href="#zi-dong-yin-cang">¶</a>自动隐藏</h3>
+</code></pre></template></demo-block><h3 id="zi-dong-yin-cang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-dong-yin-cang" title="自动隐藏" data-level="3" data-href="#zi-dong-yin-cang">¶</a>自动隐藏</h3>
 <p>不悬停时隐藏。</p>
 <demo-block>
         <template #example><scrollbar-demo2 inline-template><div class="scrollbar-demo2">
@@ -39,8 +39,8 @@
   &lt;/div&gt;
   &lt;p v-for=&quot;i of 10&quot; :key=&quot;i&quot;&gt;段落{{i}}&lt;/p&gt;
 &lt;/mz-scrollbar&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

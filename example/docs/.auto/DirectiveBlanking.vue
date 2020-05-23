@@ -1,9 +1,9 @@
 <template>
   <div class="directive-blanking">
-    <div class="update-datetime">文档更新时间：2020-05-09 15:07</div>
-    <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
 <p>根据本地存储条件控制组件是否需要显示的指令。</p>
-<h3 id="shi-yong-chang-jing" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>
+<h3 id="shi-yong-chang-jing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>
 <p>类似向导提示功能，当用户完成流程后，下一次进入将不在显示。</p>
 <p>使用<code>vm.$blanking.setState</code>修改缓存中的隐藏情况。</p>
 <p>使用<code>vm.$blanking.getState</code>查看缓存中某个索引的隐藏情况。</p>
@@ -66,7 +66,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="kuo-zhan-shi-yong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#kuo-zhan-shi-yong" title="扩展使用" data-level="3" data-href="#kuo-zhan-shi-yong">¶</a>扩展使用</h3>
+</code></pre></template></demo-block><h3 id="kuo-zhan-shi-yong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#kuo-zhan-shi-yong" title="扩展使用" data-level="3" data-href="#kuo-zhan-shi-yong">¶</a>扩展使用</h3>
 <demo-block>
         <template #example><blanking-demo2 inline-template><div class="blanking-demo2">
   <mz-snackbar v-model="show"

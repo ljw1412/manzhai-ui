@@ -1,9 +1,9 @@
 <template>
   <div class="component-masonry">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="masonry-pu-bu-liu-bu-ju" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#masonry-pu-bu-liu-bu-ju" title="Masonry 瀑布流布局" data-level="2" data-href="#masonry-pu-bu-liu-bu-ju">¶</a>Masonry 瀑布流布局</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="masonry-pu-bu-liu-bu-ju" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#masonry-pu-bu-liu-bu-ju" title="Masonry 瀑布流布局" data-level="2" data-href="#masonry-pu-bu-liu-bu-ju">¶</a>Masonry 瀑布流布局</h2>
 <p>简单快速实现瀑布流布局效果。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><masonry-demo1 inline-template><div class="masonry-demo1">
   <mz-masonry :gutter="5">
@@ -40,7 +40,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="yongcolumn-count-shi-xian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yongcolumn-count-shi-xian" title="用column-count实现" data-level="3" data-href="#yongcolumn-count-shi-xian">¶</a>用column-count实现</h3>
+</code></pre></template></demo-block><h3 id="yongcolumn-count-shi-xian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yongcolumn-count-shi-xian" title="用column-count实现" data-level="3" data-href="#yongcolumn-count-shi-xian">¶</a>用column-count实现</h3>
 <demo-block>
         <template #example><masonry-demo2 inline-template><div class="masonry-demo2">
   <mz-masonry :gutter="5" mode="column-count">
@@ -77,7 +77,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="pu-bu-liu-tiao-shu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#pu-bu-liu-tiao-shu" title="瀑布流条数" data-level="3" data-href="#pu-bu-liu-tiao-shu">¶</a>瀑布流条数</h3>
+</code></pre></template></demo-block><h3 id="pu-bu-liu-tiao-shu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#pu-bu-liu-tiao-shu" title="瀑布流条数" data-level="3" data-href="#pu-bu-liu-tiao-shu">¶</a>瀑布流条数</h3>
 <demo-block>
         <template #example><masonry-demo3 inline-template><div class="masonry-demo3">
   <div style="margin-bottom:10px;">
@@ -146,8 +146,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

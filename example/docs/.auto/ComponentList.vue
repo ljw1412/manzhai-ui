@@ -1,9 +1,9 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
-    <h2 id="list-lie-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="list-lie-biao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><list-demo1 inline-template><div class="list-demo1">
   <mz-card width="300px" class="m-auto">
@@ -28,7 +28,7 @@
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
-</code></pre></template></demo-block><h3 id="fen-ge-xian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#fen-ge-xian" title="分割线" data-level="3" data-href="#fen-ge-xian">¶</a>分割线</h3>
+</code></pre></template></demo-block><h3 id="fen-ge-xian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#fen-ge-xian" title="分割线" data-level="3" data-href="#fen-ge-xian">¶</a>分割线</h3>
 <demo-block>
         <template #example><list-demo2 inline-template><div class="list-demo2">
   <mz-card width="300px" class="m-auto">
@@ -54,7 +54,7 @@
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
-</code></pre></template></demo-block><h3 id="ke-yi-dian-ji" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ke-yi-dian-ji" title="可以点击" data-level="3" data-href="#ke-yi-dian-ji">¶</a>可以点击</h3>
+</code></pre></template></demo-block><h3 id="ke-yi-dian-ji" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-yi-dian-ji" title="可以点击" data-level="3" data-href="#ke-yi-dian-ji">¶</a>可以点击</h3>
 <demo-block>
         <template #example><list-demo3 inline-template><div class="list-demo3">
   <mz-card width="300px" class="m-auto">
@@ -80,7 +80,7 @@
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
-</code></pre></template></demo-block><h3 id="lie-biao-yuan-su-jian-ge" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-biao-yuan-su-jian-ge" title="列表元素间隔" data-level="3" data-href="#lie-biao-yuan-su-jian-ge">¶</a>列表元素间隔</h3>
+</code></pre></template></demo-block><h3 id="lie-biao-yuan-su-jian-ge" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#lie-biao-yuan-su-jian-ge" title="列表元素间隔" data-level="3" data-href="#lie-biao-yuan-su-jian-ge">¶</a>列表元素间隔</h3>
 <demo-block>
         <template #example><list-demo4 inline-template><div class="list-demo4">
   <mz-list width="300px" class="m-auto" gutter="10px">
@@ -105,7 +105,7 @@
   margin: auto;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="jin-yong-lie-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-lie-biao" title="禁用列表" data-level="3" data-href="#jin-yong-lie-biao">¶</a>禁用列表</h3>
+</code></pre></template></demo-block><h3 id="jin-yong-lie-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-yong-lie-biao" title="禁用列表" data-level="3" data-href="#jin-yong-lie-biao">¶</a>禁用列表</h3>
 <demo-block>
         <template #example><list-demo5 inline-template><div class="list-demo5">
   <mz-card width="300px">
@@ -158,7 +158,7 @@
   margin-left: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="ke-xuan-ze-de-lie-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ke-xuan-ze-de-lie-biao" title="可选择的列表" data-level="3" data-href="#ke-xuan-ze-de-lie-biao">¶</a>可选择的列表</h3>
+</code></pre></template></demo-block><h3 id="ke-xuan-ze-de-lie-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-xuan-ze-de-lie-biao" title="可选择的列表" data-level="3" data-href="#ke-xuan-ze-de-lie-biao">¶</a>可选择的列表</h3>
 <demo-block>
         <template #example><list-demo6 inline-template><div class="list-demo6">
   <mz-list v-model="value" 
@@ -227,7 +227,7 @@ export default {
   margin: auto;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
 <demo-block>
         <template #example><list-demo7 inline-template><div class="list-demo7">
   <mz-card v-for="size of sizeList"
@@ -274,7 +274,7 @@ export default {
   margin-left: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="qian-tao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-tao" title="嵌套" data-level="3" data-href="#qian-tao">¶</a>嵌套</h3>
+</code></pre></template></demo-block><h3 id="qian-tao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qian-tao" title="嵌套" data-level="3" data-href="#qian-tao">¶</a>嵌套</h3>
 <demo-block>
         <template #example><list-demo8 inline-template><div class="list-demo8">
   <mz-card width="300px">
@@ -361,8 +361,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="list-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#list-api" title="List API" data-level="3" data-href="#list-api">¶</a>List API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="list-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#list-api" title="List API" data-level="3" data-href="#list-api">¶</a>List API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -467,7 +467,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -484,7 +484,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -506,8 +506,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="listitem-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#listitem-api" title="ListItem API" data-level="3" data-href="#listitem-api">¶</a>ListItem API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="listitem-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#listitem-api" title="ListItem API" data-level="3" data-href="#listitem-api">¶</a>ListItem API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -584,7 +584,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -626,7 +626,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<h4 id="shi-jian-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

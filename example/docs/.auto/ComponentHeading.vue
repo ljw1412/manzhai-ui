@@ -1,9 +1,9 @@
 <template>
   <div class="component-heading">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="heading-biao-ti" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti" title="Heading 标题" data-level="2" data-href="#heading-biao-ti">¶</a>Heading 标题</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="heading-biao-ti" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti" title="Heading 标题" data-level="2" data-href="#heading-biao-ti">¶</a>Heading 标题</h2>
 <p>有着不同级别的标题。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>标题的基础用法。</p>
 <demo-block>
         <template #example><heading-demo1 inline-template><div class="heading-demo1">
@@ -27,7 +27,7 @@
 &lt;mz-heading :level=&quot;7&quot;&gt;Heading 7&lt;/mz-heading&gt;
 &lt;mz-heading :level=&quot;8&quot;&gt;Heading 8&lt;/mz-heading&gt;
 &lt;mz-heading :level=&quot;9&quot;&gt;Heading 9&lt;/mz-heading&gt;
-</code></pre></template></demo-block><h3 id="mao-dian-biao-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti" title="锚点标题" data-level="3" data-href="#mao-dian-biao-ti">¶</a>锚点标题</h3>
+</code></pre></template></demo-block><h3 id="mao-dian-biao-ti" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti" title="锚点标题" data-level="3" data-href="#mao-dian-biao-ti">¶</a>锚点标题</h3>
 <p>带锚点的标题。</p>
 <demo-block>
         <template #example><heading-demo2 inline-template><div class="heading-demo2">
@@ -52,7 +52,7 @@
 &lt;mz-heading id=&quot;heading-7&quot; :level=&quot;7&quot; anchor&gt;Heading 7&lt;/mz-heading&gt;
 &lt;mz-heading id=&quot;heading-8&quot; :level=&quot;8&quot; anchor&gt;Heading 8&lt;/mz-heading&gt;
 &lt;mz-heading id=&quot;heading-9&quot; :level=&quot;9&quot; anchor&gt;Heading 9&lt;/mz-heading&gt;
-</code></pre></template></demo-block><h3 id="mao-dian-biao-ti-yu-mu-lu-lian-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti-yu-mu-lu-lian-dong" title="锚点标题与目录联动" data-level="3" data-href="#mao-dian-biao-ti-yu-mu-lu-lian-dong">¶</a>锚点标题与目录联动</h3>
+</code></pre></template></demo-block><h3 id="mao-dian-biao-ti-yu-mu-lu-lian-dong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti-yu-mu-lu-lian-dong" title="锚点标题与目录联动" data-level="3" data-href="#mao-dian-biao-ti-yu-mu-lu-lian-dong">¶</a>锚点标题与目录联动</h3>
 <p>带锚点的标题。配合 <a href="catalogue">目录(Catalogue)组件</a> 使用。</p>
 <demo-block>
         <template #example><heading-demo3 inline-template><div class="heading-demo3">
@@ -119,7 +119,7 @@
       target=&quot;.heading-anchor&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="kou-shi-xin-fei-de-mao-dian-biao-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#kou-shi-xin-fei-de-mao-dian-biao-ti" title="口是心非的锚点标题" data-level="3" data-href="#kou-shi-xin-fei-de-mao-dian-biao-ti">¶</a>口是心非的锚点标题</h3>
+</code></pre></template></demo-block><h3 id="kou-shi-xin-fei-de-mao-dian-biao-ti" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#kou-shi-xin-fei-de-mao-dian-biao-ti" title="口是心非的锚点标题" data-level="3" data-href="#kou-shi-xin-fei-de-mao-dian-biao-ti">¶</a>口是心非的锚点标题</h3>
 <demo-block>
         <template #example><heading-demo4 inline-template><div class="heading-demo4">
   <mz-row>
@@ -159,7 +159,7 @@
       target=&quot;.heading-anchor-2&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="mao-dian-biao-ti-mao-dian-bu-ke-jian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti-mao-dian-bu-ke-jian" title="锚点标题(锚点不可见)" data-level="3" data-href="#mao-dian-biao-ti-mao-dian-bu-ke-jian">¶</a>锚点标题(锚点不可见)</h3>
+</code></pre></template></demo-block><h3 id="mao-dian-biao-ti-mao-dian-bu-ke-jian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#mao-dian-biao-ti-mao-dian-bu-ke-jian" title="锚点标题(锚点不可见)" data-level="3" data-href="#mao-dian-biao-ti-mao-dian-bu-ke-jian">¶</a>锚点标题(锚点不可见)</h3>
 <p>带锚点的标题，但锚点是隐藏的。</p>
 <demo-block>
         <template #example><heading-demo5 inline-template><div class="heading-demo5">
@@ -220,8 +220,8 @@
       target=&quot;.heading-anchor-3&quot;&gt;&lt;/mz-catalogue&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -270,7 +270,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

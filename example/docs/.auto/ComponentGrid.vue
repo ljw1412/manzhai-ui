@@ -1,9 +1,9 @@
 <template>
   <div class="component-grid">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="grid-zha-ge-bu-ju" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#grid-zha-ge-bu-ju" title="Grid 栅格布局" data-level="2" data-href="#grid-zha-ge-bu-ju">¶</a>Grid 栅格布局</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="grid-zha-ge-bu-ju" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#grid-zha-ge-bu-ju" title="Grid 栅格布局" data-level="2" data-href="#grid-zha-ge-bu-ju">¶</a>Grid 栅格布局</h2>
 <p>按照 24 等分的原则进行划分。</p>
-<h3 id="ji-chu-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-bu-ju" title="基础布局" data-level="3" data-href="#ji-chu-bu-ju">¶</a>基础布局</h3>
+<h3 id="ji-chu-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-bu-ju" title="基础布局" data-level="3" data-href="#ji-chu-bu-ju">¶</a>基础布局</h3>
 <p>固定等分的基础栅格布局。</p>
 <demo-block>
         <template #example><grid-demo1 inline-template><div class="grid-demo1">
@@ -96,7 +96,7 @@
   background-color: var(--color-primary);
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="lie-de-jian-ge" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-jian-ge" title="列的间隔" data-level="3" data-href="#lie-de-jian-ge">¶</a>列的间隔</h3>
+</code></pre></template></demo-block><h3 id="lie-de-jian-ge" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#lie-de-jian-ge" title="列的间隔" data-level="3" data-href="#lie-de-jian-ge">¶</a>列的间隔</h3>
 <demo-block>
         <template #example><grid-demo2 inline-template><div class="grid-demo2">
   <mz-row :gutter="16">
@@ -147,7 +147,7 @@
   opacity:0.6;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="zi-you-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-you-bu-ju" title="自由布局" data-level="3" data-href="#zi-you-bu-ju">¶</a>自由布局</h3>
+</code></pre></template></demo-block><h3 id="zi-you-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-you-bu-ju" title="自由布局" data-level="3" data-href="#zi-you-bu-ju">¶</a>自由布局</h3>
 <p>栅格的一行分为24等分，那么我们就可以自由分配进行复杂的布局。</p>
 <demo-block>
         <template #example><grid-demo3 inline-template><div class="grid-demo3">
@@ -210,7 +210,7 @@
   opacity:0.6;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="lie-de-pian-yi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-pian-yi" title="列的偏移" data-level="3" data-href="#lie-de-pian-yi">¶</a>列的偏移</h3>
+</code></pre></template></demo-block><h3 id="lie-de-pian-yi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#lie-de-pian-yi" title="列的偏移" data-level="3" data-href="#lie-de-pian-yi">¶</a>列的偏移</h3>
 <p>支持偏移指定的列数。</p>
 <demo-block>
         <template #example><grid-demo4 inline-template><div class="grid-demo4">
@@ -262,7 +262,7 @@
   opacity:0.8;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
+</code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
 <p>通过<code>flex</code>布局来对行内列元素进行对齐。</p>
 <demo-block>
         <template #example><grid-demo5 inline-template><div class="grid-demo5">
@@ -332,7 +332,7 @@ export default {
 }
 &lt;/style&gt;
 </code></pre>
-</demo-block><h3 id="xiang-ying-shi-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xiang-ying-shi-bu-ju" title="响应式布局" data-level="3" data-href="#xiang-ying-shi-bu-ju">¶</a>响应式布局</h3>
+</demo-block><h3 id="xiang-ying-shi-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xiang-ying-shi-bu-ju" title="响应式布局" data-level="3" data-href="#xiang-ying-shi-bu-ju">¶</a>响应式布局</h3>
 <p>参考 Bootstrap 的 响应式设计，预设了五个响应尺寸：<code>xs</code>、<code>sm</code>、<code>md</code>、<code>lg</code>和<code>xl</code>。</p>
 <demo-block>
         <template #example><grid-demo6 inline-template><div class="grid-demo6">
@@ -373,7 +373,7 @@ export default {
   opacity:0.6;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="lie-de-yin-cang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#lie-de-yin-cang" title="列的隐藏" data-level="3" data-href="#lie-de-yin-cang">¶</a>列的隐藏</h3>
+</code></pre></template></demo-block><h3 id="lie-de-yin-cang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#lie-de-yin-cang" title="列的隐藏" data-level="3" data-href="#lie-de-yin-cang">¶</a>列的隐藏</h3>
 <p>在某些情况下，隐藏部分列。</p>
 <demo-block>
         <template #example><grid-demo7 inline-template><div class="grid-demo7">
@@ -417,8 +417,8 @@ export default {
   opacity:0.6;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="row-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#row-api" title="Row Api" data-level="3" data-href="#row-api">¶</a>Row Api</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="row-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#row-api" title="Row Api" data-level="3" data-href="#row-api">¶</a>Row Api</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -467,8 +467,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="col-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#col-api" title="Col Api" data-level="3" data-href="#col-api">¶</a>Col Api</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="col-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#col-api" title="Col Api" data-level="3" data-href="#col-api">¶</a>Col Api</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

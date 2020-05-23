@@ -1,9 +1,9 @@
 <template>
   <div class="component-radio">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="radio-xuan-ze-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#radio-xuan-ze-kuang" title="Radio 选择框" data-level="2" data-href="#radio-xuan-ze-kuang">¶</a>Radio 选择框</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="radio-xuan-ze-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#radio-xuan-ze-kuang" title="Radio 选择框" data-level="2" data-href="#radio-xuan-ze-kuang">¶</a>Radio 选择框</h2>
 <p>在一组选项中进行单选。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><radio-demo1 inline-template><div class="radio-demo1">
   <div class="demo-font-size-14">当前值：{{value}}</div>
@@ -33,7 +33,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="xuan-xiang-fen-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xuan-xiang-fen-zu" title="选项分组" data-level="3" data-href="#xuan-xiang-fen-zu">¶</a>选项分组</h3>
+</code></pre></template></demo-block><h3 id="xuan-xiang-fen-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xuan-xiang-fen-zu" title="选项分组" data-level="3" data-href="#xuan-xiang-fen-zu">¶</a>选项分组</h3>
 <demo-block>
         <template #example><radio-demo2 inline-template><div class="radio-demo2">
   <mz-radio-group name="radio-group-1"
@@ -75,7 +75,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bian-kuang-xuan-xiang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bian-kuang-xuan-xiang" title="边框选项" data-level="3" data-href="#bian-kuang-xuan-xiang">¶</a>边框选项</h3>
+</code></pre></template></demo-block><h3 id="bian-kuang-xuan-xiang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bian-kuang-xuan-xiang" title="边框选项" data-level="3" data-href="#bian-kuang-xuan-xiang">¶</a>边框选项</h3>
 <demo-block>
         <template #example><radio-demo3 inline-template><div class="radio-demo3">
   <mz-radio-group name="radio-group-3"
@@ -128,7 +128,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="an-niu-xuan-xiang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-niu-xuan-xiang" title="按钮选项" data-level="3" data-href="#an-niu-xuan-xiang">¶</a>按钮选项</h3>
+</code></pre></template></demo-block><h3 id="an-niu-xuan-xiang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#an-niu-xuan-xiang" title="按钮选项" data-level="3" data-href="#an-niu-xuan-xiang">¶</a>按钮选项</h3>
 <demo-block>
         <template #example><radio-demo4 inline-template><div class="radio-demo4">
   <div>
@@ -188,8 +188,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="radio-radiobutton-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#radio-radiobutton-api" title="Radio&amp;RadioButton API" data-level="3" data-href="#radio-radiobutton-api">¶</a>Radio&amp;RadioButton API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="radio-radiobutton-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#radio-radiobutton-api" title="Radio&amp;RadioButton API" data-level="3" data-href="#radio-radiobutton-api">¶</a>Radio&amp;RadioButton API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -252,7 +252,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -269,8 +269,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="radiogroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#radiogroup-api" title="RadioGroup API" data-level="3" data-href="#radiogroup-api">¶</a>RadioGroup API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="radiogroup-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#radiogroup-api" title="RadioGroup API" data-level="3" data-href="#radiogroup-api">¶</a>RadioGroup API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -326,7 +326,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

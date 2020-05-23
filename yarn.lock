@@ -811,10 +811,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@ljw1412/icon@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@ljw1412/icon/-/icon-0.0.5.tgz#d9017f5296c5f4ab4fb9b14853c0b7fdc0739cd3"
-  integrity sha512-0tYnCenQ/dIevPYXuUlvu3nNhaohpCkGnjQQghUV+GJVMCbr94+fzSYnm4gaciwguUeXhnRxID/KZMT+Ed8QrQ==
+"@ljw1412/icon@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@ljw1412/icon/-/icon-0.0.6.tgz#eda5a157bbd674d57eb2938abcd690cd6dd565cf"
+  integrity sha512-nvYHHpGY+MUyojTZmSbau2UBbRxRCr1tkvzuqwCpBDJIEiE4pwoSKN/Gbr9fDsMYTFhcSsz3KXPRrOTfo+6mcw==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

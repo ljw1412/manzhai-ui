@@ -1,9 +1,9 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="filtersection-shai-xuan-xiang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="filtersection-shai-xuan-xiang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
 <p>用于筛选条件的选择。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><filter-section-demo1 inline-template><div class="filter-section-demo1">
   <div class="demo-font-size-14">当前值：{{ value }}</div>
@@ -39,7 +39,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="xian-tiao-xiao-guo" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-tiao-xiao-guo" title="线条效果" data-level="3" data-href="#xian-tiao-xiao-guo">¶</a>线条效果</h3>
+</code></pre></template></demo-block><h3 id="xian-tiao-xiao-guo" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xian-tiao-xiao-guo" title="线条效果" data-level="3" data-href="#xian-tiao-xiao-guo">¶</a>线条效果</h3>
 <demo-block>
         <template #example><filter-section-demo2 inline-template><div class="filter-section-demo2">
   <div class="demo-font-size-14">当前值：{{value}}</div>
@@ -70,7 +70,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
+</code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
 <p>根据具体目标和制约因素，选择最佳的标签对齐方式。</p>
 <demo-block>
         <template #example><filter-section-demo3 inline-template><div class="filter-section-demo3">
@@ -114,7 +114,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="duo-xuan-mo-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#duo-xuan-mo-shi" title="多选模式" data-level="3" data-href="#duo-xuan-mo-shi">¶</a>多选模式</h3>
+</code></pre></template></demo-block><h3 id="duo-xuan-mo-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#duo-xuan-mo-shi" title="多选模式" data-level="3" data-href="#duo-xuan-mo-shi">¶</a>多选模式</h3>
 <p>可以选择多个选择项。</p>
 <demo-block>
         <template #example><filter-section-demo4 inline-template><div class="filter-section-demo4">
@@ -141,7 +141,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="shai-xuan-xiang-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shai-xuan-xiang-zu" title="筛选项组" data-level="3" data-href="#shai-xuan-xiang-zu">¶</a>筛选项组</h3>
+</code></pre></template></demo-block><h3 id="shai-xuan-xiang-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shai-xuan-xiang-zu" title="筛选项组" data-level="3" data-href="#shai-xuan-xiang-zu">¶</a>筛选项组</h3>
 <p>有多个筛选项组成的选项组，由父级进行结果管理。</p>
 <demo-block>
         <template #example><filter-section-demo5 inline-template><div class="filter-section-demo5">
@@ -188,7 +188,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-xuan-zhong-xiao-guo" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-xuan-zhong-xiao-guo" title="自定义选中效果" data-level="3" data-href="#zi-ding-yi-xuan-zhong-xiao-guo">¶</a>自定义选中效果</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-xuan-zhong-xiao-guo" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-xuan-zhong-xiao-guo" title="自定义选中效果" data-level="3" data-href="#zi-ding-yi-xuan-zhong-xiao-guo">¶</a>自定义选中效果</h3>
 <demo-block>
         <template #example><filter-section-demo6 inline-template><div class="filter-section-demo6">
   <div class="demo-font-size-14">当前值：{{value}}</div>
@@ -233,8 +233,8 @@ export default {
   }
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="filtersection-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#filtersection-api" title="FilterSection API" data-level="3" data-href="#filtersection-api">¶</a>FilterSection API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="filtersection-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#filtersection-api" title="FilterSection API" data-level="3" data-href="#filtersection-api">¶</a>FilterSection API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -297,7 +297,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -314,7 +314,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -336,8 +336,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="filtersectionitem-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#filtersectionitem-api" title="FilterSectionItem API" data-level="3" data-href="#filtersectionitem-api">¶</a>FilterSectionItem API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="filtersectionitem-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#filtersectionitem-api" title="FilterSectionItem API" data-level="3" data-href="#filtersectionitem-api">¶</a>FilterSectionItem API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -393,7 +393,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<h4 id="shi-jian-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -410,7 +410,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="zuo-yong-yu-cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#zuo-yong-yu-cha-cao" title="作用域插槽" data-level="4" data-href="#zuo-yong-yu-cha-cao">¶</a>作用域插槽</h4>
+<h4 id="zuo-yong-yu-cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#zuo-yong-yu-cha-cao" title="作用域插槽" data-level="4" data-href="#zuo-yong-yu-cha-cao">¶</a>作用域插槽</h4>
 <table>
 <thead>
 <tr>
@@ -427,8 +427,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="filtersectiongroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#filtersectiongroup-api" title="FilterSectionGroup API" data-level="3" data-href="#filtersectiongroup-api">¶</a>FilterSectionGroup API</h3>
-<h4 id="shu-xing-3" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-3" title="属性" data-level="4" data-href="#shu-xing-3">¶</a>属性</h4>
+<h3 id="filtersectiongroup-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#filtersectiongroup-api" title="FilterSectionGroup API" data-level="3" data-href="#filtersectiongroup-api">¶</a>FilterSectionGroup API</h3>
+<h4 id="shu-xing-3" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-3" title="属性" data-level="4" data-href="#shu-xing-3">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -456,7 +456,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-3" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-3" title="事件" data-level="4" data-href="#shi-jian-3">¶</a>事件</h4>
+<h4 id="shi-jian-3" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-3" title="事件" data-level="4" data-href="#shi-jian-3">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -473,7 +473,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

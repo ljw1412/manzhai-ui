@@ -1,9 +1,9 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="modal-dui-hua-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><modal-demo1 inline-template><div class="modal-demo1">
   <mz-button color="success"
@@ -69,7 +69,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="nei-wai-gun-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#nei-wai-gun-dong" title="内外滚动" data-level="3" data-href="#nei-wai-gun-dong">¶</a>内外滚动</h3>
+</code></pre></template></demo-block><h3 id="nei-wai-gun-dong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#nei-wai-gun-dong" title="内外滚动" data-level="3" data-href="#nei-wai-gun-dong">¶</a>内外滚动</h3>
 <p>提供了两种滚动条效果。</p>
 <demo-block>
         <template #example><modal-demo2 inline-template><div class="modal-demo2">
@@ -126,7 +126,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="qian-tao-de-dui-hua-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-tao-de-dui-hua-kuang" title="嵌套的对话框" data-level="3" data-href="#qian-tao-de-dui-hua-kuang">¶</a>嵌套的对话框</h3>
+</code></pre></template></demo-block><h3 id="qian-tao-de-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qian-tao-de-dui-hua-kuang" title="嵌套的对话框" data-level="3" data-href="#qian-tao-de-dui-hua-kuang">¶</a>嵌套的对话框</h3>
 <p>对话框内触发内部对话框显示。</p>
 <demo-block>
         <template #example><modal-demo3 inline-template><div class="modal-demo3">
@@ -184,7 +184,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="guan-bi-lan-jie" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#guan-bi-lan-jie" title="关闭拦截" data-level="3" data-href="#guan-bi-lan-jie">¶</a>关闭拦截</h3>
+</code></pre></template></demo-block><h3 id="guan-bi-lan-jie" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#guan-bi-lan-jie" title="关闭拦截" data-level="3" data-href="#guan-bi-lan-jie">¶</a>关闭拦截</h3>
 <demo-block>
         <template #example><modal-demo4 inline-template><div class="modal-demo4">
   <mz-button color="success"
@@ -234,7 +234,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="quan-ping-dui-hua-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#quan-ping-dui-hua-kuang" title="全屏对话框" data-level="3" data-href="#quan-ping-dui-hua-kuang">¶</a>全屏对话框</h3>
+</code></pre></template></demo-block><h3 id="quan-ping-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#quan-ping-dui-hua-kuang" title="全屏对话框" data-level="3" data-href="#quan-ping-dui-hua-kuang">¶</a>全屏对话框</h3>
 <demo-block>
         <template #example><modal-demo5 inline-template><div class="modal-demo5">
   <mz-button color="success"
@@ -268,7 +268,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong-dian-ji-zhe-zhao-guan-bi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-dian-ji-zhe-zhao-guan-bi" title="禁用点击遮罩关闭" data-level="3" data-href="#jin-yong-dian-ji-zhe-zhao-guan-bi">¶</a>禁用点击遮罩关闭</h3>
+</code></pre></template></demo-block><h3 id="jin-yong-dian-ji-zhe-zhao-guan-bi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-yong-dian-ji-zhe-zhao-guan-bi" title="禁用点击遮罩关闭" data-level="3" data-href="#jin-yong-dian-ji-zhe-zhao-guan-bi">¶</a>禁用点击遮罩关闭</h3>
 <demo-block>
         <template #example><modal-demo6 inline-template><div class="modal-demo6">
   <mz-button color="success"
@@ -302,7 +302,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="geng-duo-dong-hua" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#geng-duo-dong-hua" title="更多动画" data-level="3" data-href="#geng-duo-dong-hua">¶</a>更多动画</h3>
+</code></pre></template></demo-block><h3 id="geng-duo-dong-hua" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#geng-duo-dong-hua" title="更多动画" data-level="3" data-href="#geng-duo-dong-hua">¶</a>更多动画</h3>
 <demo-block>
         <template #example><modal-demo7 inline-template><div class="modal-demo7">
   <span class="demo-font-size-14">动画：</span>
@@ -357,8 +357,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -498,7 +498,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -530,7 +530,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -557,7 +557,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="modal" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#modal" title="$modal" data-level="4" data-href="#modal">¶</a>$modal</h4>
+<h4 id="modal" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#modal" title="$modal" data-level="4" data-href="#modal">¶</a>$modal</h4>
 <p>包含：</p>
 <ul class="mz-document-ul">
 <li>$modal(ModalConfig)</li>

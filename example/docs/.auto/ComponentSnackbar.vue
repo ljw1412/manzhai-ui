@@ -1,9 +1,9 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="snackbar-xiao-xi-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="snackbar-xiao-xi-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><snackbar-demo1 inline-template><div class="snackbar-demo1">
   <mz-snackbar v-model="isShow" text="这是一条测试消息。"></mz-snackbar>
@@ -23,7 +23,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="shou-dong-guan-bi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shou-dong-guan-bi" title="手动关闭" data-level="3" data-href="#shou-dong-guan-bi">¶</a>手动关闭</h3>
+</code></pre></template></demo-block><h3 id="shou-dong-guan-bi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shou-dong-guan-bi" title="手动关闭" data-level="3" data-href="#shou-dong-guan-bi">¶</a>手动关闭</h3>
 <p>使用手动模式关闭消息框。</p>
 <demo-block>
         <template #example><snackbar-demo2 inline-template><div class="snackbar-demo2">
@@ -52,7 +52,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="duo-xing-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#duo-xing-bu-ju" title="多行布局" data-level="3" data-href="#duo-xing-bu-ju">¶</a>多行布局</h3>
+</code></pre></template></demo-block><h3 id="duo-xing-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#duo-xing-bu-ju" title="多行布局" data-level="3" data-href="#duo-xing-bu-ju">¶</a>多行布局</h3>
 <demo-block>
         <template #example><snackbar-demo3 inline-template><div class="snackbar-demo3">
   <mz-snackbar v-model="isShow"
@@ -82,7 +82,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="gu-ding-he-wei-zhi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#gu-ding-he-wei-zhi" title="固定和位置" data-level="3" data-href="#gu-ding-he-wei-zhi">¶</a>固定和位置</h3>
+</code></pre></template></demo-block><h3 id="gu-ding-he-wei-zhi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#gu-ding-he-wei-zhi" title="固定和位置" data-level="3" data-href="#gu-ding-he-wei-zhi">¶</a>固定和位置</h3>
 <p>让消息框在全局固定位置显示。</p>
 <demo-block>
         <template #example><snackbar-demo4 inline-template><div class="snackbar-demo4">
@@ -129,7 +129,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="quan-ju-fang-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#quan-ju-fang-fa" title="全局方法" data-level="3" data-href="#quan-ju-fang-fa">¶</a>全局方法</h3>
+</code></pre></template></demo-block><h3 id="quan-ju-fang-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#quan-ju-fang-fa" title="全局方法" data-level="3" data-href="#quan-ju-fang-fa">¶</a>全局方法</h3>
 <p>ManZhai 为 Vue.prototype 添加了全局方法 $snackbar。因此在 vue instance 中可以采用本页面中的方式调用 Message。</p>
 <demo-block>
         <template #example><snackbar-demo5 inline-template><div class="snackbar-demo5">
@@ -158,8 +158,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

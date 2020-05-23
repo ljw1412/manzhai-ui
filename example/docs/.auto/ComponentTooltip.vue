@@ -1,10 +1,10 @@
 <template>
   <div class="component-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-14 12:31</div>
-    <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="tooltip-ti-shi-wen-zi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>常用于用户使用鼠标与元素交互时，显示的对被交互元素起提示作用的信息。</p>
 <p>基于开源项目<a href="https://github.com/atomiks/tippyjs" target="_blank"><code>Tippy.js</code></a>。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><tooltip-demo1 inline-template><div class="tooltip-demo1">
   <div class="box">
@@ -135,7 +135,7 @@
   height: 40px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="chu-fa-fang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#chu-fa-fang-shi" title="触发方式" data-level="3" data-href="#chu-fa-fang-shi">¶</a>触发方式</h3>
+</code></pre></template></demo-block><h3 id="chu-fa-fang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#chu-fa-fang-shi" title="触发方式" data-level="3" data-href="#chu-fa-fang-shi">¶</a>触发方式</h3>
 <demo-block>
         <template #example><tooltip-demo2 inline-template><div class="tooltip-demo2">
   <mz-tooltip content="鼠标悬停触发" trigger="hover">
@@ -188,7 +188,7 @@ export default {
   width: 60px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="xian-shi-jian-tou" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xian-shi-jian-tou" title="显示箭头" data-level="3" data-href="#xian-shi-jian-tou">¶</a>显示箭头</h3>
+</code></pre></template></demo-block><h3 id="xian-shi-jian-tou" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xian-shi-jian-tou" title="显示箭头" data-level="3" data-href="#xian-shi-jian-tou">¶</a>显示箭头</h3>
 <demo-block>
         <template #example><tooltip-demo3 inline-template><div class="tooltip-demo3">
   <mz-tooltip arrow content="带箭头的提示文字">
@@ -200,7 +200,7 @@ export default {
         <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip arrow content=&quot;带箭头的提示文字&quot;&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;按钮&lt;/mz-button&gt;
 &lt;/mz-tooltip&gt;
-</code></pre></template></demo-block><h3 id="dong-hua-xiao-guo" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dong-hua-xiao-guo" title="动画效果" data-level="3" data-href="#dong-hua-xiao-guo">¶</a>动画效果</h3>
+</code></pre></template></demo-block><h3 id="dong-hua-xiao-guo" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dong-hua-xiao-guo" title="动画效果" data-level="3" data-href="#dong-hua-xiao-guo">¶</a>动画效果</h3>
 <p>另外提供了4类动画效果。您也可以<a href="https://atomiks.github.io/tippyjs/v6/animations/#custom-animations" target="_blank">自定义动画</a>。</p>
 <demo-block>
         <template #example><tooltip-demo4 inline-template><div class="tooltip-demo4">
@@ -320,7 +320,7 @@ export default {
   width: 160px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="zhui-sui-shu-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhui-sui-shu-biao" title="追随鼠标" data-level="3" data-href="#zhui-sui-shu-biao">¶</a>追随鼠标</h3>
+</code></pre></template></demo-block><h3 id="zhui-sui-shu-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhui-sui-shu-biao" title="追随鼠标" data-level="3" data-href="#zhui-sui-shu-biao">¶</a>追随鼠标</h3>
 <demo-block>
         <template #example><tooltip-demo5 inline-template><div class="tooltip-demo5">
   <mz-tooltip follow-cursor content="true">
@@ -365,7 +365,7 @@ export default {
   width: 160px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="yu-nei-rong-jiao-hu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yu-nei-rong-jiao-hu" title="与内容交互" data-level="3" data-href="#yu-nei-rong-jiao-hu">¶</a>与内容交互</h3>
+</code></pre></template></demo-block><h3 id="yu-nei-rong-jiao-hu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yu-nei-rong-jiao-hu" title="与内容交互" data-level="3" data-href="#yu-nei-rong-jiao-hu">¶</a>与内容交互</h3>
 <demo-block>
         <template #example><tooltip-demo6 inline-template><div class="tooltip-demo6">
   <mz-tooltip interactive content="你可以对提示文字内容进行交互">
@@ -377,7 +377,7 @@ export default {
         <template #highlight><pre v-pre><code class="html">&lt;mz-tooltip interactive content=&quot;你可以对提示文字内容进行交互&quot;&gt;
   &lt;mz-button color=&quot;primary&quot;&gt;interactive&lt;/mz-button&gt;
 &lt;/mz-tooltip&gt;
-</code></pre></template></demo-block><h3 id="wei-zhi-pian-chi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#wei-zhi-pian-chi" title="位置偏离" data-level="3" data-href="#wei-zhi-pian-chi">¶</a>位置偏离</h3>
+</code></pre></template></demo-block><h3 id="wei-zhi-pian-chi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#wei-zhi-pian-chi" title="位置偏离" data-level="3" data-href="#wei-zhi-pian-chi">¶</a>位置偏离</h3>
 <demo-block>
         <template #example><tooltip-demo7 inline-template><div class="tooltip-demo7">
   <mz-tooltip content="提示文字">
@@ -412,7 +412,7 @@ export default {
   width: 100px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="zhu-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhu-ti" title="主题" data-level="3" data-href="#zhu-ti">¶</a>主题</h3>
+</code></pre></template></demo-block><h3 id="zhu-ti" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhu-ti" title="主题" data-level="3" data-href="#zhu-ti">¶</a>主题</h3>
 <p>默认提供了5种主题样式，您也可以<a href="https://atomiks.github.io/tippyjs/v6/themes/#creating-a-theme" target="_blank">自定义主题样式</a>。</p>
 <demo-block>
         <template #example><tooltip-demo8 inline-template><div class="tooltip-demo8">
@@ -463,7 +463,7 @@ export default {
   width: 90px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-nei-rong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-nei-rong" title="自定义内容" data-level="3" data-href="#zi-ding-yi-nei-rong">¶</a>自定义内容</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-nei-rong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-nei-rong" title="自定义内容" data-level="3" data-href="#zi-ding-yi-nei-rong">¶</a>自定义内容</h3>
 <demo-block>
         <template #example><tooltip-demo9 inline-template><div class="tooltip-demo9">
   <mz-tooltip>
@@ -484,8 +484,8 @@ export default {
     &lt;p&gt;L('ω')┘三└('ω')｣&lt;/p&gt;
   &lt;/div&gt;
 &lt;/mz-tooltip&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -597,7 +597,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -619,7 +619,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <p><em>instance</em> 指 tippy 的实例。</p>
 <table>
 <thead>

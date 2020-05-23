@@ -1,9 +1,9 @@
 <template>
   <div class="component-checkbox">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="checkbox-duo-xuan-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#checkbox-duo-xuan-kuang" title="Checkbox 多选框" data-level="2" data-href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="checkbox-duo-xuan-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#checkbox-duo-xuan-kuang" title="Checkbox 多选框" data-level="2" data-href="#checkbox-duo-xuan-kuang">¶</a>Checkbox 多选框</h2>
 <p>在数个选项中进行多选。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>单独使用可以表示两种状态。</p>
 <demo-block>
         <template #example><checkbox-demo1 inline-template><div class="checkbox-demo1">
@@ -39,7 +39,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="jin-yong-zhuang-tai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-yong-zhuang-tai" title="禁用状态" data-level="3" data-href="#jin-yong-zhuang-tai">¶</a>禁用状态</h3>
+</code></pre></template></demo-block><h3 id="jin-yong-zhuang-tai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-yong-zhuang-tai" title="禁用状态" data-level="3" data-href="#jin-yong-zhuang-tai">¶</a>禁用状态</h3>
 <p>多选框不可用状态。</p>
 <demo-block>
         <template #example><checkbox-demo2 inline-template><div class="checkbox-demo2">
@@ -65,7 +65,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="duo-xuan-kuang-zu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#duo-xuan-kuang-zu" title="多选框组" data-level="3" data-href="#duo-xuan-kuang-zu">¶</a>多选框组</h3>
+</code></pre></template></demo-block><h3 id="duo-xuan-kuang-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#duo-xuan-kuang-zu" title="多选框组" data-level="3" data-href="#duo-xuan-kuang-zu">¶</a>多选框组</h3>
 <p>适用于多个勾选框绑定到同一个数组的情景，通过是否勾选来表示这一组选项中选中的项。</p>
 <demo-block>
         <template #example><checkbox-demo3 inline-template><div class="checkbox-demo3">
@@ -102,7 +102,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-que-ding-zhuang-tai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-zhuang-tai" title="不确定状态" data-level="3" data-href="#bu-que-ding-zhuang-tai">¶</a>不确定状态</h3>
+</code></pre></template></demo-block><h3 id="bu-que-ding-zhuang-tai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-zhuang-tai" title="不确定状态" data-level="3" data-href="#bu-que-ding-zhuang-tai">¶</a>不确定状态</h3>
 <p><code>indeterminate</code> 属性用以表示 checkbox 的不确定状态，一般用于实现全选的效果</p>
 <demo-block>
         <template #example><checkbox-demo4 inline-template><div class="checkbox-demo4">
@@ -161,7 +161,7 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="dai-you-bian-kuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dai-you-bian-kuang" title="带有边框" data-level="3" data-href="#dai-you-bian-kuang">¶</a>带有边框</h3>
+</code></pre></template></demo-block><h3 id="dai-you-bian-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dai-you-bian-kuang" title="带有边框" data-level="3" data-href="#dai-you-bian-kuang">¶</a>带有边框</h3>
 <demo-block>
         <template #example><checkbox-demo5 inline-template><div class="checkbox-demo5">
   <div>
@@ -190,8 +190,8 @@ export default{
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="checkbox-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#checkbox-api" title="Checkbox API" data-level="3" data-href="#checkbox-api">¶</a>Checkbox API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="checkbox-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#checkbox-api" title="Checkbox API" data-level="3" data-href="#checkbox-api">¶</a>Checkbox API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -275,7 +275,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -292,7 +292,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -309,8 +309,8 @@ export default{
 </tr>
 </tbody>
 </table>
-<h3 id="checkboxgroup-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#checkboxgroup-api" title="CheckboxGroup API" data-level="3" data-href="#checkboxgroup-api">¶</a>CheckboxGroup API</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="checkboxgroup-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#checkboxgroup-api" title="CheckboxGroup API" data-level="3" data-href="#checkboxgroup-api">¶</a>CheckboxGroup API</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -331,7 +331,7 @@ export default{
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<h4 id="shi-jian-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

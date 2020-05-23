@@ -1,8 +1,8 @@
 <template>
   <div class="component-material-input">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
-    <h2 id="materialinput-shu-ru-kuang-leimaterial-feng-ge" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#materialinput-shu-ru-kuang-leimaterial-feng-ge" title="MaterialInput 输入框(类material风格)" data-level="2" data-href="#materialinput-shu-ru-kuang-leimaterial-feng-ge">¶</a>MaterialInput 输入框(类material风格)</h2>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="materialinput-shu-ru-kuang-leimaterial-feng-ge" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#materialinput-shu-ru-kuang-leimaterial-feng-ge" title="MaterialInput 输入框(类material风格)" data-level="2" data-href="#materialinput-shu-ru-kuang-leimaterial-feng-ge">¶</a>MaterialInput 输入框(类material风格)</h2>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><material-input-demo1 inline-template><div class="material-input-demo1">
   <mz-material-input v-model="value" placeholder="请输入关键词"></mz-material-input>
@@ -20,7 +20,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bian-kuang-yang-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bian-kuang-yang-shi" title="边框样式" data-level="3" data-href="#bian-kuang-yang-shi">¶</a>边框样式</h3>
+</code></pre></template></demo-block><h3 id="bian-kuang-yang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bian-kuang-yang-shi" title="边框样式" data-level="3" data-href="#bian-kuang-yang-shi">¶</a>边框样式</h3>
 <demo-block>
         <template #example><material-input-demo2 inline-template><div class="material-input-demo2">
   <mz-material-input v-model="value" 
@@ -40,7 +40,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="biao-qian-ming-cheng" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-ming-cheng" title="标签名称" data-level="3" data-href="#biao-qian-ming-cheng">¶</a>标签名称</h3>
+</code></pre></template></demo-block><h3 id="biao-qian-ming-cheng" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-qian-ming-cheng" title="标签名称" data-level="3" data-href="#biao-qian-ming-cheng">¶</a>标签名称</h3>
 <demo-block>
         <template #example><material-input-demo3 inline-template><div class="material-input-demo3">
   <mz-material-input v-model="value" label="姓名">
@@ -65,7 +65,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="ti-shi-yu-cuo-wu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ti-shi-yu-cuo-wu" title="提示与错误" data-level="3" data-href="#ti-shi-yu-cuo-wu">¶</a>提示与错误</h3>
+</code></pre></template></demo-block><h3 id="ti-shi-yu-cuo-wu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ti-shi-yu-cuo-wu" title="提示与错误" data-level="3" data-href="#ti-shi-yu-cuo-wu">¶</a>提示与错误</h3>
 <demo-block>
         <template #example><material-input-demo4 inline-template><div class="material-input-demo4">
   <mz-material-input v-model="value" 
@@ -108,7 +108,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="qian-hou-zhi-tu-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhi-tu-biao" title="前后置图标" data-level="3" data-href="#qian-hou-zhi-tu-biao">¶</a>前后置图标</h3>
+</code></pre></template></demo-block><h3 id="qian-hou-zhi-tu-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#qian-hou-zhi-tu-biao" title="前后置图标" data-level="3" data-href="#qian-hou-zhi-tu-biao">¶</a>前后置图标</h3>
 <demo-block>
         <template #example><material-input-demo5 inline-template><div class="material-input-demo5">
   <mz-material-input v-model="value" 
@@ -143,7 +143,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zi-shu-tong-ji" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-shu-tong-ji" title="字数统计" data-level="3" data-href="#zi-shu-tong-ji">¶</a>字数统计</h3>
+</code></pre></template></demo-block><h3 id="zi-shu-tong-ji" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-shu-tong-ji" title="字数统计" data-level="3" data-href="#zi-shu-tong-ji">¶</a>字数统计</h3>
 <demo-block>
         <template #example><material-input-demo6 inline-template><div class="material-input-demo6">
   <mz-material-input v-model="value"
@@ -177,8 +177,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -332,7 +332,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

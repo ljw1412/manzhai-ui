@@ -1,9 +1,9 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="progress-jin-du-tiao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="progress-jin-du-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><progress-demo1 inline-template><div class="progress-demo1">
   <mz-progress v-model="value"></mz-progress>
@@ -46,7 +46,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="huan-chong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#huan-chong" title="缓冲" data-level="3" data-href="#huan-chong">¶</a>缓冲</h3>
+</code></pre></template></demo-block><h3 id="huan-chong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#huan-chong" title="缓冲" data-level="3" data-href="#huan-chong">¶</a>缓冲</h3>
 <p>显示缓存进度的进度条。</p>
 <demo-block>
         <template #example><progress-demo2 inline-template><div class="progress-demo2">
@@ -74,7 +74,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-que-ding-jin-du" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-jin-du" title="不确定进度" data-level="3" data-href="#bu-que-ding-jin-du">¶</a>不确定进度</h3>
+</code></pre></template></demo-block><h3 id="bu-que-ding-jin-du" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-jin-du" title="不确定进度" data-level="3" data-href="#bu-que-ding-jin-du">¶</a>不确定进度</h3>
 <p>使用动画效果表示不确定当前进度。</p>
 <demo-block>
         <template #example><progress-demo3 inline-template><div class="progress-demo3">
@@ -91,7 +91,7 @@ export default {
 &lt;mz-progress indeterminate color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
-</code></pre></template></demo-block><h3 id="bu-que-ding-jin-du-jiao-ti" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-jin-du-jiao-ti" title="不确定进度(交替)" data-level="3" data-href="#bu-que-ding-jin-du-jiao-ti">¶</a>不确定进度(交替)</h3>
+</code></pre></template></demo-block><h3 id="bu-que-ding-jin-du-jiao-ti" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-jin-du-jiao-ti" title="不确定进度(交替)" data-level="3" data-href="#bu-que-ding-jin-du-jiao-ti">¶</a>不确定进度(交替)</h3>
 <p>可以用来表示来回的等待状态。</p>
 <demo-block>
         <template #example><progress-demo4 inline-template><div class="progress-demo4">
@@ -108,7 +108,7 @@ export default {
 &lt;mz-progress indeterminate alternate color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate alternate color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate alternate color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
-</code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
+</code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
 <p>带圆角样式的进度条。</p>
 <demo-block>
         <template #example><progress-demo5 inline-template><div class="progress-demo5">
@@ -130,7 +130,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
+</code></pre></template></demo-block><h3 id="zi-ding-yi-yan-se" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-yan-se" title="自定义颜色" data-level="3" data-href="#zi-ding-yi-yan-se">¶</a>自定义颜色</h3>
 <p>用户可以根据自己的需求自定义进度条的颜色。</p>
 <demo-block>
         <template #example><progress-demo6 inline-template><div class="progress-demo6">
@@ -158,7 +158,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="ban-ma-wen" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ban-ma-wen" title="斑马纹" data-level="3" data-href="#ban-ma-wen">¶</a>斑马纹</h3>
+</code></pre></template></demo-block><h3 id="ban-ma-wen" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ban-ma-wen" title="斑马纹" data-level="3" data-href="#ban-ma-wen">¶</a>斑马纹</h3>
 <demo-block>
         <template #example><progress-demo7 inline-template><div class="progress-demo7">
   <mz-progress v-model="value" 
@@ -191,8 +191,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

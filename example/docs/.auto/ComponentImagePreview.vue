@@ -1,9 +1,9 @@
 <template>
   <div class="component-image-preview">
-    <div class="update-datetime">文档更新时间：2020-05-21 19:24</div>
-    <h2 id="imagepreview-tu-pian-yu-lan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="imagepreview-tu-pian-yu-lan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
 <p>以页面全屏的形式预览图片。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><image-preview-demo1 inline-template><div class="image-preview-demo1">
   <mz-button @click="visible = true">预览</mz-button>
@@ -29,7 +29,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="gong-neng-bu-ju" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#gong-neng-bu-ju" title="功能布局" data-level="3" data-href="#gong-neng-bu-ju">¶</a>功能布局</h3>
+</code></pre></template></demo-block><h3 id="gong-neng-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#gong-neng-bu-ju" title="功能布局" data-level="3" data-href="#gong-neng-bu-ju">¶</a>功能布局</h3>
 <p>ImagePreview内置了一些功能。</p>
 <demo-block>
         <template #example><image-preview-demo2 inline-template><div class="image-preview-demo2">
@@ -79,7 +79,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="shi-yong-zhi-ling-xing-shi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-zhi-ling-xing-shi" title="使用指令形式" data-level="3" data-href="#shi-yong-zhi-ling-xing-shi">¶</a>使用指令形式</h3>
+</code></pre></template></demo-block><h3 id="shi-yong-zhi-ling-xing-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-zhi-ling-xing-shi" title="使用指令形式" data-level="3" data-href="#shi-yong-zhi-ling-xing-shi">¶</a>使用指令形式</h3>
 <p>使用$imagePreview指令进行控制预览。</p>
 <demo-block>
         <template #example><image-preview-demo3 inline-template><div class="image-preview-demo3">
@@ -103,8 +103,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -188,7 +188,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

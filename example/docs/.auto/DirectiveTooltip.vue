@@ -1,9 +1,9 @@
 <template>
   <div class="directive-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
-    <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="tooltip-ti-shi-wen-zi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>简单的提示文字处理，如果要进行自定义请使用组件<a href="component-tooltip">Tooltip</a></p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><tooltip-demo1 inline-template><div class="tooltip-demo1">
   <mz-button v-tooltip="'文字'">按钮</mz-button>
@@ -11,7 +11,7 @@
         <template #description><p><code>v-tooltip</code>直接传入字符串。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button v-tooltip=&quot;'文字'&quot;&gt;按钮&lt;/mz-button&gt;
-</code></pre></template></demo-block><h3 id="jin-jie-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#jin-jie-yong-fa" title="进阶用法" data-level="3" data-href="#jin-jie-yong-fa">¶</a>进阶用法</h3>
+</code></pre></template></demo-block><h3 id="jin-jie-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jin-jie-yong-fa" title="进阶用法" data-level="3" data-href="#jin-jie-yong-fa">¶</a>进阶用法</h3>
 <p>您也可以向<code>v-tooltip</code>传入一个对象，对象的<a href="https://atomiks.github.io/tippyjs/v6/all-props/" target="_blank">属性</a>。</p>
 <demo-block>
         <template #example><tooltip-demo2 inline-template><div class="tooltip-demo2">
@@ -110,7 +110,7 @@ a:hover{
   display: inline-block;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="xiu-shi-fu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xiu-shi-fu" title="修饰符" data-level="3" data-href="#xiu-shi-fu">¶</a>修饰符</h3>
+</code></pre></template></demo-block><h3 id="xiu-shi-fu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xiu-shi-fu" title="修饰符" data-level="3" data-href="#xiu-shi-fu">¶</a>修饰符</h3>
 <p><strong>主题:</strong> <code>light</code>, <code>light-border</code>, <code>material</code>, <code>translucent</code></p>
 <p><strong>箭头:</strong> <code>arrow</code></p>
 <p><strong>触发:</strong> <code>hover</code>, <code>focus</code>, <code>click</code></p>

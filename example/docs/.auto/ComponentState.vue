@@ -1,9 +1,9 @@
 <template>
   <div class="component-state">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
-    <h2 id="state-zhuang-tai-bian-hua" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#state-zhuang-tai-bian-hua" title="State 状态变化" data-level="2" data-href="#state-zhuang-tai-bian-hua">¶</a>State 状态变化</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="state-zhuang-tai-bian-hua" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#state-zhuang-tai-bian-hua" title="State 状态变化" data-level="2" data-href="#state-zhuang-tai-bian-hua">¶</a>State 状态变化</h2>
 <p>根据状态显示不同内容</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>根据状态切换呈现的内容。</p>
 <demo-block>
         <template #example><state-demo1 inline-template><div class="state-demo1">
@@ -67,7 +67,7 @@ export default {
   margin-top: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="duo-zhuang-tai" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#duo-zhuang-tai" title="多状态" data-level="3" data-href="#duo-zhuang-tai">¶</a>多状态</h3>
+</code></pre></template></demo-block><h3 id="duo-zhuang-tai" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#duo-zhuang-tai" title="多状态" data-level="3" data-href="#duo-zhuang-tai">¶</a>多状态</h3>
 <p>同时呈现多状态的内容。</p>
 <demo-block>
         <template #example><state-demo2 inline-template><div class="state-demo2">
@@ -126,8 +126,8 @@ export default {
   }
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -148,7 +148,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>

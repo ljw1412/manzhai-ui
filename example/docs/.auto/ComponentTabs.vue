@@ -1,9 +1,9 @@
 <template>
   <div class="component-tabs">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
-    <h2 id="tabs-biao-qian-ye" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tabs-biao-qian-ye" title="Tabs 标签页" data-level="2" data-href="#tabs-biao-qian-ye">¶</a>Tabs 标签页</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="tabs-biao-qian-ye" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tabs-biao-qian-ye" title="Tabs 标签页" data-level="2" data-href="#tabs-biao-qian-ye">¶</a>Tabs 标签页</h2>
 <p>按选项卡显示在对应内容。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><tabs-demo1 inline-template><div class="tabs-demo1">
   <mz-tabs v-model="value">
@@ -31,7 +31,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="biao-qian-ping-pu" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-ping-pu" title="标签平铺" data-level="3" data-href="#biao-qian-ping-pu">¶</a>标签平铺</h3>
+</code></pre></template></demo-block><h3 id="biao-qian-ping-pu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-qian-ping-pu" title="标签平铺" data-level="3" data-href="#biao-qian-ping-pu">¶</a>标签平铺</h3>
 <demo-block>
         <template #example><tabs-demo2 inline-template><div class="tabs-demo2">
   <mz-tabs v-model="value" grow>
@@ -59,7 +59,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="xuan-zhong-pu-man" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xuan-zhong-pu-man" title="选中铺满" data-level="3" data-href="#xuan-zhong-pu-man">¶</a>选中铺满</h3>
+</code></pre></template></demo-block><h3 id="xuan-zhong-pu-man" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xuan-zhong-pu-man" title="选中铺满" data-level="3" data-href="#xuan-zhong-pu-man">¶</a>选中铺满</h3>
 <demo-block>
         <template #example><tabs-demo3 inline-template><div class="tabs-demo3">
   <mz-tabs v-model="value" active-bar-mode="fill">
@@ -87,7 +87,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="biao-qian-hua-dong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-hua-dong" title="标签滑动" data-level="3" data-href="#biao-qian-hua-dong">¶</a>标签滑动</h3>
+</code></pre></template></demo-block><h3 id="biao-qian-hua-dong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-qian-hua-dong" title="标签滑动" data-level="3" data-href="#biao-qian-hua-dong">¶</a>标签滑动</h3>
 <demo-block>
         <template #example><tabs-demo4 inline-template><div class="tabs-demo4">
   <mz-tabs v-model="value" grow>
@@ -115,7 +115,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="biao-qian-shui-ping-wei-zhi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#biao-qian-shui-ping-wei-zhi" title="标签水平位置" data-level="3" data-href="#biao-qian-shui-ping-wei-zhi">¶</a>标签水平位置</h3>
+</code></pre></template></demo-block><h3 id="biao-qian-shui-ping-wei-zhi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-qian-shui-ping-wei-zhi" title="标签水平位置" data-level="3" data-href="#biao-qian-shui-ping-wei-zhi">¶</a>标签水平位置</h3>
 <demo-block>
         <template #example><tabs-demo5 inline-template><div class="tabs-demo5">
   <mz-filter-section v-model="align" label="align:" label-position="left">
@@ -157,8 +157,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="tabs-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#tabs-api" title="Tabs Api" data-level="3" data-href="#tabs-api">¶</a>Tabs Api</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="tabs-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#tabs-api" title="Tabs Api" data-level="3" data-href="#tabs-api">¶</a>Tabs Api</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -200,7 +200,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
+<h4 id="cha-cao" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="4" data-href="#cha-cao">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -217,7 +217,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
 <table>
 <thead>
 <tr>
@@ -234,8 +234,8 @@ export default {
 </tr>
 </tbody>
 </table>
-<h3 id="tab-api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#tab-api" title="Tab Api" data-level="3" data-href="#tab-api">¶</a>Tab Api</h3>
-<h4 id="shu-xing-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
+<h3 id="tab-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#tab-api" title="Tab Api" data-level="3" data-href="#tab-api">¶</a>Tab Api</h3>
+<h4 id="shu-xing-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing-2" title="属性" data-level="4" data-href="#shu-xing-2">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -277,7 +277,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="cha-cao-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
+<h4 id="cha-cao-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#cha-cao-2" title="插槽" data-level="4" data-href="#cha-cao-2">¶</a>插槽</h4>
 <table>
 <thead>
 <tr>
@@ -294,7 +294,7 @@ export default {
 </tr>
 </tbody>
 </table>
-<h4 id="shi-jian-2" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
+<h4 id="shi-jian-2" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian-2" title="事件" data-level="4" data-href="#shi-jian-2">¶</a>事件</h4>
 <table>
 <thead>
 <tr>

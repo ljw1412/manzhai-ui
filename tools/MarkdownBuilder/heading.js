@@ -5,8 +5,8 @@ module.exports = md => {
   }
   md.renderer.rules.heading_open = (tokens, idx, options, env, self) => {
     token = tokens[idx]
-    token.attrJoin('class', 'mz-header')
-    token.attrJoin('class', 'mz-document-header')
+    token.attrJoin('class', 'mz-heading')
+    token.attrJoin('class', 'mz-document-heading')
     token.attrJoin('data-level', token.tag.replace('h', ''))
     const nextToken = tokens[idx + 1]
     if (nextToken && nextToken.type === 'inline' && nextToken.children) {

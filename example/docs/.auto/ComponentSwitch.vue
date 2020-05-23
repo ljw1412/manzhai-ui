@@ -1,9 +1,9 @@
 <template>
   <div class="component-switch">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
-    <h2 id="switch-kai-guan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#switch-kai-guan" title="Switch 开关" data-level="2" data-href="#switch-kai-guan">¶</a>Switch 开关</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="switch-kai-guan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#switch-kai-guan" title="Switch 开关" data-level="2" data-href="#switch-kai-guan">¶</a>Switch 开关</h2>
 <p>表示两种相互对立的状态间的开关选择器。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><switch-demo1 inline-template><div class="switch-demo1">
   <mz-switch v-model="value"></mz-switch>
@@ -27,7 +27,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
 <p>提供了3种不同的开关大小。</p>
 <demo-block>
         <template #example><switch-demo2 inline-template><div class="switch-demo2">
@@ -50,7 +50,7 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="zhuang-tai-tu-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#zhuang-tai-tu-biao" title="状态图标" data-level="3" data-href="#zhuang-tai-tu-biao">¶</a>状态图标</h3>
+</code></pre></template></demo-block><h3 id="zhuang-tai-tu-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhuang-tai-tu-biao" title="状态图标" data-level="3" data-href="#zhuang-tai-tu-biao">¶</a>状态图标</h3>
 <demo-block>
         <template #example><switch-demo3 inline-template><div class="switch-demo3">
   <mz-switch v-model="value" 
@@ -74,8 +74,8 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>

@@ -1,9 +1,9 @@
 <template>
   <div class="component-badge">
-    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
-    <h2 id="badge-hui-biao-shu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#badge-hui-biao-shu" title="Badge 徽标数" data-level="2" data-href="#badge-hui-biao-shu">¶</a>Badge 徽标数</h2>
+    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <h2 id="badge-hui-biao-shu" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#badge-hui-biao-shu" title="Badge 徽标数" data-level="2" data-href="#badge-hui-biao-shu">¶</a>Badge 徽标数</h2>
 <p>主要用于提醒用户点击的角标。</p>
-<h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><badge-demo1 inline-template><div class="badge-demo1">
   <mz-badge :count="10">
@@ -33,7 +33,7 @@
 &lt;mz-badge :count=&quot;8&quot; textColor=&quot;orange&quot;&gt;
   &lt;mz-button color=&quot;primary&quot; size=&quot;large&quot;&gt;消息&lt;/mz-button&gt;
 &lt;/mz-badge&gt;
-</code></pre></template></demo-block><h3 id="feng-ding-shu-zi" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#feng-ding-shu-zi" title="封顶数字" data-level="3" data-href="#feng-ding-shu-zi">¶</a>封顶数字</h3>
+</code></pre></template></demo-block><h3 id="feng-ding-shu-zi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#feng-ding-shu-zi" title="封顶数字" data-level="3" data-href="#feng-ding-shu-zi">¶</a>封顶数字</h3>
 <demo-block>
         <template #example><badge-demo2 inline-template><div class="badge-demo2">
   <mz-badge :count="100">
@@ -51,7 +51,7 @@
 &lt;mz-badge :count=&quot;100&quot; :overflow-count=&quot;9&quot;&gt;
   &lt;mz-icon name=&quot;notifications&quot; :size=&quot;24&quot;&gt;&lt;/mz-icon&gt;
 &lt;/mz-badge&gt;
-</code></pre></template></demo-block><h3 id="xiao-hong-dian" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#xiao-hong-dian" title="小红点" data-level="3" data-href="#xiao-hong-dian">¶</a>小红点</h3>
+</code></pre></template></demo-block><h3 id="xiao-hong-dian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xiao-hong-dian" title="小红点" data-level="3" data-href="#xiao-hong-dian">¶</a>小红点</h3>
 <p>没有具体的数字。</p>
 <demo-block>
         <template #example><badge-demo3 inline-template><div class="badge-demo3">
@@ -70,7 +70,7 @@
 &lt;mz-badge :count=&quot;8&quot; dot&gt;
   &lt;mz-button color=&quot;primary&quot; size=&quot;large&quot;&gt;消息&lt;/mz-button&gt;
 &lt;/mz-badge&gt;
-</code></pre></template></demo-block><h3 id="dan-du-shi-yong" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#dan-du-shi-yong" title="单独使用" data-level="3" data-href="#dan-du-shi-yong">¶</a>单独使用</h3>
+</code></pre></template></demo-block><h3 id="dan-du-shi-yong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dan-du-shi-yong" title="单独使用" data-level="3" data-href="#dan-du-shi-yong">¶</a>单独使用</h3>
 <p>不包裹任何元素即是独立使用。</p>
 <demo-block>
         <template #example><badge-demo4 inline-template><div class="badge-demo4">
@@ -80,8 +80,8 @@
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-badge :count=&quot;10&quot;&gt;&lt;/mz-badge&gt;
 &lt;mz-badge :count=&quot;10&quot; dot&gt;&lt;/mz-badge&gt;
-</code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
-<h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -137,7 +137,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="cha-cao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="3" data-href="#cha-cao">¶</a>插槽</h3>
+<h3 id="cha-cao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#cha-cao" title="插槽" data-level="3" data-href="#cha-cao">¶</a>插槽</h3>
 <table>
 <thead>
 <tr>
