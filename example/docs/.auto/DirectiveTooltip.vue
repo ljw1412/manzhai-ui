@@ -1,6 +1,6 @@
 <template>
   <div class="directive-tooltip">
-    <div class="update-datetime">文档更新时间：2020-05-09 17:05</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
     <h2 id="tooltip-ti-shi-wen-zi" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
 <p>简单的提示文字处理，如果要进行自定义请使用组件<a href="component-tooltip">Tooltip</a></p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -19,7 +19,7 @@
     <mz-col style="width: 80px; text-align: center;">
       <a v-tooltip="options" target="_blank"
         href="https://atomiks.github.io/tippyjs/v6/all-props/">
-        <mz-icon name="md-cog" size="26"></mz-icon>
+        <mz-icon name="cog" size="26"></mz-icon>
         <div>更多属性</div>
       </a>
     </mz-col>
@@ -50,7 +50,7 @@
   &lt;mz-col style=&quot;width: 80px; text-align: center;&quot;&gt;
     &lt;a v-tooltip=&quot;options&quot; target=&quot;_blank&quot;
       href=&quot;https://atomiks.github.io/tippyjs/v6/all-props/&quot;&gt;
-      &lt;mz-icon name=&quot;md-cog&quot; size=&quot;26&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon name=&quot;cog&quot; size=&quot;26&quot;&gt;&lt;/mz-icon&gt;
       &lt;div&gt;更多属性&lt;/div&gt;
     &lt;/a&gt;
   &lt;/mz-col&gt;

@@ -1,6 +1,6 @@
 <template>
   <div class="component-switch">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
     <h2 id="switch-kai-guan" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#switch-kai-guan" title="Switch 开关" data-level="2" data-href="#switch-kai-guan">¶</a>Switch 开关</h2>
 <p>表示两种相互对立的状态间的开关选择器。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -55,15 +55,15 @@ export default {
         <template #example><switch-demo3 inline-template><div class="switch-demo3">
   <mz-switch v-model="value" 
     size="large"
-    active-icon="md-moon" 
-    inactive-icon="md-sunny"></mz-switch>
+    active-icon="moon" 
+    inactive-icon="sunny"></mz-switch>
 </div></switch-demo3></template>
         <template #description><p><code>active-icon</code>为开关开启的图标，<code>inactive-icon</code>为开关关闭的图标。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-switch v-model=&quot;value&quot; 
   size=&quot;large&quot;
-  active-icon=&quot;md-moon&quot; 
-  inactive-icon=&quot;md-sunny&quot;&gt;&lt;/mz-switch&gt;
+  active-icon=&quot;moon&quot; 
+  inactive-icon=&quot;sunny&quot;&gt;&lt;/mz-switch&gt;
 
 &lt;script&gt;
 export default {

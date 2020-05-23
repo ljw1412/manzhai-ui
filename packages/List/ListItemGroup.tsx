@@ -54,7 +54,7 @@ export default class MzListItemGroup extends Vue {
         <mz-list-item {...listItemProps}>
           <mz-icon
             slot="suffix"
-            name="md-arrow-dropdown"
+            name="chevron-down"
             class="mz-list-item-group__arrow"
             style={{ transform: `rotateZ(${this.arrowRotate})` }}></mz-icon>
         </mz-list-item>

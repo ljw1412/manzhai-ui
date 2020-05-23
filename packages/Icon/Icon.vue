@@ -13,6 +13,9 @@ export default class MzIcon extends Vue {
   @Prop(String)
   readonly color!: string
 
+  @Prop(String)
+  readonly stroke!: string
+
   get iconName() {
     return `#icon-${this.name}`
   }
@@ -32,7 +35,11 @@ export default class MzIcon extends Vue {
     const iconProps = {
       class: 'mz-icon',
       style: this.svgStyles,
-      attrs: { 'aria-hidden': true, fill: this.color || 'currentColor' },
+      attrs: {
+        'aria-hidden': true,
+        fill: this.color || 'currentColor',
+        stroke: this.stroke || this.color || 'currentColor'
+      },
       on: this.$listeners
     }
 

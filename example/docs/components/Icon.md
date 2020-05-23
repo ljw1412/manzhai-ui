@@ -21,9 +21,9 @@ import '@ljw1412/icon'
 
 :::demo
 ```html
-<mz-icon name="md-sunny"></mz-icon>
-<mz-icon name="md-moon"></mz-icon>
-<mz-icon name="md-lock"></mz-icon>
+<mz-icon name="airplane-outline"></mz-icon>
+<mz-icon name="alarm-outline"></mz-icon>
+<mz-icon name="american-football-outline"></mz-icon>
 ```
 :::
 

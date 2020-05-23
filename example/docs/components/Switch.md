@@ -50,8 +50,8 @@ export default {
 ```html
 <mz-switch v-model="value" 
   size="large"
-  active-icon="md-moon" 
-  inactive-icon="md-sunny"></mz-switch>
+  active-icon="moon" 
+  inactive-icon="sunny"></mz-switch>
 
 <script>
 export default {

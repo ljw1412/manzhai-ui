@@ -33,7 +33,7 @@
     :round="state.round"
     circle 
     icon>
-    <mz-icon name="md-alarm"size="20px"></mz-icon>
+    <mz-icon name="alarm"size="20px"></mz-icon>
   </mz-button>
 </div>
 

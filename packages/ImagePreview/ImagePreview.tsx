@@ -81,50 +81,50 @@ export default class MzImagePreview extends MzPopView {
     return [
       {
         title: '缩小',
-        icon: 'md-remove-circle-outline',
+        icon: 'remove-circle-outline',
         name: 'zoom-out',
         display: this.layoutState.zoom,
         disabled: this.scale <= this.zoom[0]
       },
       {
         title: '放大',
-        icon: 'md-add-circle-outline',
+        icon: 'add-circle-outline',
         name: 'zoom-in',
         display: this.layoutState.zoom,
         disabled: this.scale >= this.zoom[1]
       },
       {
         title: '全屏',
-        icon: 'md-expand',
+        icon: 'expand',
         name: 'maximize',
         display: this.layoutState.fullscreen && !this.fullscreen
       },
       {
         title: '还原屏幕',
-        icon: 'md-contract',
+        icon: 'contract',
         name: 'unmaximize',
         display: this.layoutState.fullscreen && this.fullscreen
       },
 
       {
         title: '播放',
-        icon: 'md-play',
+        icon: 'play',
         name: 'play',
         display: this.layoutState.play && !this.playing
       },
       {
         title: '暂停',
-        icon: 'md-pause',
+        icon: 'pause',
         name: 'pause',
         display: this.layoutState.play && this.playing
       },
       {
         title: '下载',
-        icon: 'md-download',
+        icon: 'download',
         name: 'download',
         display: this.layoutState.download
       },
-      { title: '关闭', icon: 'md-close', name: 'close', display: true }
+      { title: '关闭', icon: 'close', name: 'close', display: true }
     ].filter(item => item.display)
   }
 
@@ -132,14 +132,14 @@ export default class MzImagePreview extends MzPopView {
     return [
       {
         title: '上一页',
-        icon: 'md-arrow-back',
+        icon: 'arrow-back',
         name: 'previous',
         display: true
       },
       {
         title: '下一页',
         name: 'next',
-        icon: 'md-arrow-forward',
+        icon: 'arrow-forward',
         display: true
       }
     ]
@@ -216,7 +216,7 @@ export default class MzImagePreview extends MzPopView {
       <footer class={{ 'hide-thumbnail': !this.thumbnail }}>
         <div class="mz-image-preview-title-wrp">
           {this.renderActionBtn({
-            icon: 'md-images',
+            icon: 'images',
             title: '缩略图',
             name: 'thumbnail'
           })}

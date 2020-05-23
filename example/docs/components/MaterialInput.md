@@ -97,8 +97,8 @@ export default {
 ```html
 <mz-material-input v-model="value" 
   label="密码"
-  prepend-icon="md-key"
-  append-icon="md-eye"
+  prepend-icon="key"
+  append-icon="eye"
   :type="type"
   @append-icon-click="displayPassword"></mz-material-input>
 

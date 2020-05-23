@@ -89,12 +89,12 @@ export default {
 :::demo `prefix`、`suffix`使用前后置插槽在标签名称前后插入内容。
 ```html
 <mz-tag>
-  <mz-icon slot="prefix" name="md-bookmark"></mz-icon>
+  <mz-icon slot="prefix" name="bookmark"></mz-icon>
   标签
 </mz-tag>
 <mz-tag>
   标签
-  <mz-icon slot="suffix" name="md-flask"></mz-icon>
+  <mz-icon slot="suffix" name="flask"></mz-icon>
 </mz-tag>
 ```
 :::

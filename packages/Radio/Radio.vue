@@ -55,7 +55,7 @@ export default class MzRadio extends Mixins(FormElement) {
   }
 
   get icon() {
-    return this.checked ? 'md-radio-button-on' : 'md-radio-button-off'
+    return this.checked ? 'radio-button-on' : 'radio-button-off'
   }
 
   get radioClasses() {

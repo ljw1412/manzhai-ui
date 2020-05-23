@@ -14,6 +14,7 @@
         @click="coypCode(item)">
         <mz-icon v-tooltip="{content: item, placement: 'bottom'}"
           :name="item"
+          color="green"
           size="40px"></mz-icon>
       </div>
     </div>

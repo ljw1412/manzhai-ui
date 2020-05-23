@@ -19,7 +19,7 @@
   <mz-col style="width: 80px; text-align: center;">
     <a v-tooltip="options" target="_blank"
       href="https://atomiks.github.io/tippyjs/v6/all-props/">
-      <mz-icon name="md-cog" size="26"></mz-icon>
+      <mz-icon name="cog" size="26"></mz-icon>
       <div>更多属性</div>
     </a>
   </mz-col>

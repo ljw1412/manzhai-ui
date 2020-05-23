@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
     <h2 id="input-shu-ru-kuang" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -139,7 +139,7 @@ export default {
 <demo-block>
         <template #example><input-demo6 inline-template><div class="input-demo6">
   <mz-input v-model="username" placeholder="请输入用户名">
-    <mz-icon name="md-person" slot="prefix"></mz-icon>
+    <mz-icon name="person" slot="prefix"></mz-icon>
   </mz-input>
   
   <mz-input v-model="value" placeholder="请输入金额" prefix="￥"
@@ -149,7 +149,7 @@ export default {
         <template #description><p><code>prefix</code>、<code>suffix</code>属性添加字符型的前置内容。你也可以使用同名插槽进行更多的扩展。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-input v-model=&quot;username&quot; placeholder=&quot;请输入用户名&quot;&gt;
-  &lt;mz-icon name=&quot;md-person&quot; slot=&quot;prefix&quot;&gt;&lt;/mz-icon&gt;
+  &lt;mz-icon name=&quot;person&quot; slot=&quot;prefix&quot;&gt;&lt;/mz-icon&gt;
 &lt;/mz-input&gt;
 
 &lt;mz-input v-model=&quot;value&quot; placeholder=&quot;请输入金额&quot; prefix=&quot;￥&quot;

@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:28</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
     <h2 id="button-an-niu" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
 <p>实现常用的按钮功能。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -31,7 +31,7 @@
       :round="state.round"
       circle 
       icon>
-      <mz-icon name="md-alarm"size="20px"></mz-icon>
+      <mz-icon name="alarm"size="20px"></mz-icon>
     </mz-button>
   </div>
 </div></button-demo1></template>
@@ -61,7 +61,7 @@
     :round=&quot;state.round&quot;
     circle 
     icon&gt;
-    &lt;mz-icon name=&quot;md-alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
+    &lt;mz-icon name=&quot;alarm&quot;size=&quot;20px&quot;&gt;&lt;/mz-icon&gt;
   &lt;/mz-button&gt;
 &lt;/div&gt;
 

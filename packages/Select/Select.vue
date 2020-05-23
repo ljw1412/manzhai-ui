@@ -124,7 +124,7 @@ export default class MzSelect extends Mixins(MzSize, FormElement) {
   }
 
   get arrowIcon() {
-    return this.isActive ? 'md-arrow-dropup' : 'md-arrow-dropdown'
+    return this.isActive ? 'chevron-up' : 'chevron-down'
   }
 
   onClick() {

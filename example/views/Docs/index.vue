@@ -6,7 +6,7 @@
       <mz-button icon
         radius="0"
         @click="$refs.sidebar.visible=true">
-        <mz-icon name="md-menu"
+        <mz-icon name="menu"
           size="20"></mz-icon>
       </mz-button>
     </div>

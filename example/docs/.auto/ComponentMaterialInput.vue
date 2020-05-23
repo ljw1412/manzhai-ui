@@ -1,6 +1,6 @@
 <template>
   <div class="component-material-input">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
     <h2 id="materialinput-shu-ru-kuang-leimaterial-feng-ge" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#materialinput-shu-ru-kuang-leimaterial-feng-ge" title="MaterialInput 输入框(类material风格)" data-level="2" data-href="#materialinput-shu-ru-kuang-leimaterial-feng-ge">¶</a>MaterialInput 输入框(类material风格)</h2>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
@@ -113,8 +113,8 @@ export default {
         <template #example><material-input-demo5 inline-template><div class="material-input-demo5">
   <mz-material-input v-model="value" 
     label="密码"
-    prepend-icon="md-key"
-    append-icon="md-eye"
+    prepend-icon="key"
+    append-icon="eye"
     :type="type"
     @append-icon-click="displayPassword"></mz-material-input>
 </div></material-input-demo5></template>
@@ -122,8 +122,8 @@ export default {
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-material-input v-model=&quot;value&quot; 
   label=&quot;密码&quot;
-  prepend-icon=&quot;md-key&quot;
-  append-icon=&quot;md-eye&quot;
+  prepend-icon=&quot;key&quot;
+  append-icon=&quot;eye&quot;
   :type=&quot;type&quot;
   @append-icon-click=&quot;displayPassword&quot;&gt;&lt;/mz-material-input&gt;
 

@@ -1,6 +1,6 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:10</div>
     <h2 id="tag-biao-qian" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
 <p>进行标记和分类的小标签。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -99,23 +99,23 @@ export default {
 <demo-block>
         <template #example><tag-demo5 inline-template><div class="tag-demo5">
   <mz-tag>
-    <mz-icon slot="prefix" name="md-bookmark"></mz-icon>
+    <mz-icon slot="prefix" name="bookmark"></mz-icon>
     标签
   </mz-tag>
   <mz-tag>
     标签
-    <mz-icon slot="suffix" name="md-flask"></mz-icon>
+    <mz-icon slot="suffix" name="flask"></mz-icon>
   </mz-tag>
 </div></tag-demo5></template>
         <template #description><p><code>prefix</code>、<code>suffix</code>使用前后置插槽在标签名称前后插入内容。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tag&gt;
-  &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-bookmark&quot;&gt;&lt;/mz-icon&gt;
+  &lt;mz-icon slot=&quot;prefix&quot; name=&quot;bookmark&quot;&gt;&lt;/mz-icon&gt;
   标签
 &lt;/mz-tag&gt;
 &lt;mz-tag&gt;
   标签
-  &lt;mz-icon slot=&quot;suffix&quot; name=&quot;md-flask&quot;&gt;&lt;/mz-icon&gt;
+  &lt;mz-icon slot=&quot;suffix&quot; name=&quot;flask&quot;&gt;&lt;/mz-icon&gt;
 &lt;/mz-tag&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
 <h4 id="shu-xing" class="mz-header mz-document-header" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>

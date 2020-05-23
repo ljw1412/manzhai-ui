@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-05-08 19:26</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:06</div>
     <h2 id="list-lie-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -9,10 +9,10 @@
   <mz-card width="300px" class="m-auto">
     <mz-list>
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item title="666666" text="可以的">
-        <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+        <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
       </mz-list-item>
     </mz-list>
   </mz-card>
@@ -21,10 +21,10 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot; class=&quot;m-auto&quot;&gt;
   &lt;mz-list&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item title=&quot;666666&quot; text=&quot;可以的&quot;&gt;
-      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;md-rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
@@ -34,10 +34,10 @@
   <mz-card width="300px" class="m-auto">
     <mz-list divider>
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item title="?????" text="被墙了o(╥﹏╥)o">
-        <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+        <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
       </mz-list-item>
     </mz-list>
   </mz-card>
@@ -47,10 +47,10 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot; class=&quot;m-auto&quot;&gt;
   &lt;mz-list divider&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item title=&quot;?????&quot; text=&quot;被墙了o(╥﹏╥)o&quot;&gt;
-      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;md-rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
@@ -60,10 +60,10 @@
   <mz-card width="300px" class="m-auto">
     <mz-list clickable>
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item title="666666" text="可以的">
-        <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+        <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
       </mz-list-item>
     </mz-list>
   </mz-card>
@@ -73,10 +73,10 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot; class=&quot;m-auto&quot;&gt;
   &lt;mz-list clickable&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item title=&quot;666666&quot; text=&quot;可以的&quot;&gt;
-      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;md-rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
@@ -111,7 +111,7 @@
   <mz-card width="300px">
     <mz-list disabled>
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item title="5555555" text="被禁用不可以">
       </mz-list-item>
@@ -121,7 +121,7 @@
   <mz-card width="300px">
     <mz-list>
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item disabled title="5555555" text="被禁用不可以">
       </mz-list-item>
@@ -133,7 +133,7 @@
         <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot;&gt;
   &lt;mz-list disabled&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item title=&quot;5555555&quot; text=&quot;被禁用不可以&quot;&gt;
     &lt;/mz-list-item&gt;
@@ -143,7 +143,7 @@
 &lt;mz-card width=&quot;300px&quot;&gt;
   &lt;mz-list&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item disabled title=&quot;5555555&quot; text=&quot;被禁用不可以&quot;&gt;
     &lt;/mz-list-item&gt;
@@ -234,10 +234,10 @@ export default {
      width="200px" :key="size">
     <mz-list :size="size">
       <mz-list-item title="所有人" text="来个火箭">
-        <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+        <mz-icon slot="prefix" name="at" size="30"></mz-icon>
       </mz-list-item>
       <mz-list-item title="666666" text="可以的">
-        <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+        <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
       </mz-list-item>
     </mz-list>
   </mz-card>
@@ -248,10 +248,10 @@ export default {
    width=&quot;200px&quot; :key=&quot;size&quot;&gt;
   &lt;mz-list :size=&quot;size&quot;&gt;
     &lt;mz-list-item title=&quot;所有人&quot; text=&quot;来个火箭&quot;&gt;
-      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;md-at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;prefix&quot; name=&quot;at&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
     &lt;mz-list-item title=&quot;666666&quot; text=&quot;可以的&quot;&gt;
-      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;md-rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
+      &lt;mz-icon slot=&quot;suffix&quot; name=&quot;rocket&quot; size=&quot;30&quot;&gt;&lt;/mz-icon&gt;
     &lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;

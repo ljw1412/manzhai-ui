@@ -1,6 +1,6 @@
 <template>
   <div class="component-icon">
-    <div class="update-datetime">文档更新时间：2020-05-22 16:17</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 12:00</div>
     <h2 id="icon-tu-biao" class="mz-header mz-document-header" data-level="2"><a class="mz-document-anchor" href="#icon-tu-biao" title="Icon 图标" data-level="2" data-href="#icon-tu-biao">¶</a>Icon 图标</h2>
 <p>基于 <a href="https://ionicons.com">ionicons@5</a> 的图标库。</p>
 <h3 id="an-zhuang" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#an-zhuang" title="安装" data-level="3" data-href="#an-zhuang">¶</a>安装</h3>
@@ -13,14 +13,14 @@
 <h3 id="shi-yong-fang-fa" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#shi-yong-fang-fa" title="使用方法" data-level="3" data-href="#shi-yong-fang-fa">¶</a>使用方法</h3>
 <demo-block>
         <template #example><icon-demo1 inline-template><div class="icon-demo1">
-  <mz-icon name="md-sunny"></mz-icon>
-  <mz-icon name="md-moon"></mz-icon>
-  <mz-icon name="md-lock"></mz-icon>
+  <mz-icon name="airplane-outline"></mz-icon>
+  <mz-icon name="alarm-outline"></mz-icon>
+  <mz-icon name="american-football-outline"></mz-icon>
 </div></icon-demo1></template>
         <template #description></template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-icon name=&quot;md-sunny&quot;&gt;&lt;/mz-icon&gt;
-&lt;mz-icon name=&quot;md-moon&quot;&gt;&lt;/mz-icon&gt;
-&lt;mz-icon name=&quot;md-lock&quot;&gt;&lt;/mz-icon&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;mz-icon name=&quot;airplane-outline&quot;&gt;&lt;/mz-icon&gt;
+&lt;mz-icon name=&quot;alarm-outline&quot;&gt;&lt;/mz-icon&gt;
+&lt;mz-icon name=&quot;american-football-outline&quot;&gt;&lt;/mz-icon&gt;
 </code></pre></template></demo-block><h3 id="suo-you-tu-biao" class="mz-header mz-document-header" data-level="3"><a class="mz-document-anchor" href="#suo-you-tu-biao" title="所有图标" data-level="3" data-href="#suo-you-tu-biao">¶</a>所有图标</h3>
 <icon-demo2 inline-template><div class="icon-demo2">
   <icon-grid></icon-grid>

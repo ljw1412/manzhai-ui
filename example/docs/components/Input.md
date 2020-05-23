@@ -116,7 +116,7 @@ export default {
 :::demo `prefix`、`suffix`属性添加字符型的前置内容。你也可以使用同名插槽进行更多的扩展。
 ```html
 <mz-input v-model="username" placeholder="请输入用户名">
-  <mz-icon name="md-person" slot="prefix"></mz-icon>
+  <mz-icon name="person" slot="prefix"></mz-icon>
 </mz-input>
 
 <mz-input v-model="value" placeholder="请输入金额" prefix="￥"

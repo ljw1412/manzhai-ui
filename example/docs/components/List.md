@@ -8,10 +8,10 @@
 <mz-card width="300px" class="m-auto">
   <mz-list>
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item title="666666" text="可以的">
-      <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+      <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
     </mz-list-item>
   </mz-list>
 </mz-card>
@@ -24,10 +24,10 @@
 <mz-card width="300px" class="m-auto">
   <mz-list divider>
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item title="?????" text="被墙了o(╥﹏╥)o">
-      <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+      <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
     </mz-list-item>
   </mz-list>
 </mz-card>
@@ -40,10 +40,10 @@
 <mz-card width="300px" class="m-auto">
   <mz-list clickable>
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item title="666666" text="可以的">
-      <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+      <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
     </mz-list-item>
   </mz-list>
 </mz-card>
@@ -76,7 +76,7 @@
 <mz-card width="300px">
   <mz-list disabled>
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item title="5555555" text="被禁用不可以">
     </mz-list-item>
@@ -86,7 +86,7 @@
 <mz-card width="300px">
   <mz-list>
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item disabled title="5555555" text="被禁用不可以">
     </mz-list-item>
@@ -168,10 +168,10 @@ export default {
    width="200px" :key="size">
   <mz-list :size="size">
     <mz-list-item title="所有人" text="来个火箭">
-      <mz-icon slot="prefix" name="md-at" size="30"></mz-icon>
+      <mz-icon slot="prefix" name="at" size="30"></mz-icon>
     </mz-list-item>
     <mz-list-item title="666666" text="可以的">
-      <mz-icon slot="suffix" name="md-rocket" size="30"></mz-icon>
+      <mz-icon slot="suffix" name="rocket" size="30"></mz-icon>
     </mz-list-item>
   </mz-list>
 </mz-card>

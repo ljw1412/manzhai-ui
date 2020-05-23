@@ -17,7 +17,7 @@
     <div class="action">
       <mz-icon class="is-pointer"
         :size="22"
-        :name="isDisplayCode?'md-code-working':'md-code'"
+        :name="isDisplayCode?'code-working':'code'"
         @click="onCodeIconClick"></mz-icon>
     </div>
   </mz-row>

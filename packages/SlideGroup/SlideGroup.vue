@@ -4,6 +4,11 @@ import { CreateElement } from 'vue'
 import { addResizeListener, removeResizeListener } from '@/utils/resize-event'
 import { throttle, debounce } from '@/utils/assist'
 
+const iconMap = {
+  left: 'caret-back',
+  right: 'caret-forward'
+}
+
 @Component
 export default class MzSlideGroup extends Vue {
   @Ref('scroll')
@@ -79,7 +84,9 @@ export default class MzSlideGroup extends Vue {
       }
       return (
         <div {...data}>
-          <mz-icon name={`md-arrow-drop${item}`} size="30px"></mz-icon>
+          <mz-icon
+            name={iconMap[item as 'left' | 'right']}
+            size="20px"></mz-icon>
         </div>
       )
     })
