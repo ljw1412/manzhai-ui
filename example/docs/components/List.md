@@ -104,7 +104,7 @@
 ```
 :::
 
-### 可选择的列表
+### 可点击的列表
 :::demo 当`list`有`value/v-model`属性时，进入选择模式，且`list-item`的`value`属性不能为`undefined`，使用`list-item`的`item`属性传入任意相关数据。
 ```html
 <mz-list v-model="value" 

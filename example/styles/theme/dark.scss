@@ -7,10 +7,6 @@
   }
 
   .demo-card {
-    .action .mz-icon:hover {
-      color: #ffffff;
-      opacity: 0.8;
-    }
     .highlight {
       ::selection {
         background-color: $color-text-secondary;

@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-05-23 15:31</div>
     <h2 id="list-lie-biao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -158,7 +158,7 @@
   margin-left: 10px;
 }
 &lt;/style&gt;
-</code></pre></template></demo-block><h3 id="ke-xuan-ze-de-lie-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-xuan-ze-de-lie-biao" title="可选择的列表" data-level="3" data-href="#ke-xuan-ze-de-lie-biao">¶</a>可选择的列表</h3>
+</code></pre></template></demo-block><h3 id="ke-dian-ji-de-lie-biao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-dian-ji-de-lie-biao" title="可点击的列表" data-level="3" data-href="#ke-dian-ji-de-lie-biao">¶</a>可点击的列表</h3>
 <demo-block>
         <template #example><list-demo6 inline-template><div class="list-demo6">
   <mz-list v-model="value" 

@@ -97,11 +97,11 @@ export default class DemoBlock extends Vue {
     }
     .hljs,
     .hljs-subst {
+      white-space: pre-wrap;
       color: #333333;
     }
     .html {
       background-color: transparent;
-      padding: 10px 20px;
     }
   }
 }

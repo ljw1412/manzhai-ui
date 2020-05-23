@@ -19,7 +19,8 @@
       container="#page-component-content"
       target=".mz-document-anchor"
       :offset="{top:'80px',right:'20px'}"></mz-catalogue>
-    <div id="page-component-content">
+    <div id="page-component-content"
+      :key="$route.name">
       <router-view></router-view>
     </div>
   </div>
