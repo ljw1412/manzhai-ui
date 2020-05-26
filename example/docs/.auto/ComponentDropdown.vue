@@ -1,9 +1,9 @@
 <template>
   <div class="component-dropdown">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-05-26 12:27</div>
     <h2 id="dropdown-xia-la-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#dropdown-xia-la-kuang" title="Dropdown 下拉框" data-level="2" data-href="#dropdown-xia-la-kuang">¶</a>Dropdown 下拉框</h2>
 <p>点击元素，弹出下拉框。</p>
-<h3 id="ji-ben-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yong-fa" title="基本用法" data-level="3" data-href="#ji-ben-yong-fa">¶</a>基本用法</h3>
+<h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <p>默认插槽为下拉框触发者，content插槽作为下拉框的内容。</p>
 <p>此组件只会将下拉框与触发者进行绑定，而不会额外渲染 DOM 元素。</p>
 <demo-block>

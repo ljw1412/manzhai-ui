@@ -175,6 +175,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentTable.vue')
   },
   {
+    path: 'component-table-simple',
+    name: 'ComponentTableSimple',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentTableSimple.vue')
+  },
+  {
     path: 'component-tabs',
     name: 'ComponentTabs',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentTabs.vue')

@@ -55,6 +55,7 @@ import Snackbar from '../packages/Snackbar/index'
 import State from '../packages/State/index'
 import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
+import TableSimple from '../packages/TableSimple/index'
 import Tag from '../packages/Tag/index'
 import Tooltip from '../packages/Tooltip/index'
 import MaterialInput from '../packages/MaterialInput/index'
@@ -123,6 +124,7 @@ const components: VueConstructor[] = [
   Tabs,
   Tab,
   Table,
+  TableSimple,
   Tag,
   Tooltip,
   MaterialInput
@@ -247,6 +249,7 @@ export default {
   Tabs,
   Tab,
   Table,
+  TableSimple,
   Tag,
   Tooltip,
   MaterialInput

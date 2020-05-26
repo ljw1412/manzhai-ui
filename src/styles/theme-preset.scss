@@ -15,6 +15,8 @@ $baseTheme: (
     color-border-base: #{$color-border-base},
     color-page-background: #{$color-page-background},
     color-card-background: #{$color-card-background},
+    color-thead-background: #{$color-thead-background},
+    color-tr-hover-background: #{$color-tr-hover-background},
     shadow-umbra-color: #{$shadow-umbra-color},
     shadow-penumbra-color: #{$shadow-penumbra-color},
     shadow-ambient-color: #{$shadow-ambient-color}
@@ -28,7 +30,9 @@ $baseTheme: (
     color-text-disabled: #405458,
     color-border-base: rgba(255, 255, 255, 0.12),
     color-page-background: #16161a,
-    color-card-background: #1e1e24
+    color-card-background: #1e1e24,
+    color-thead-background: #0c0c0c,
+    color-tr-hover-background: #ffffff
   )
 );
 

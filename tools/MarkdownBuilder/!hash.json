@@ -6,7 +6,7 @@
   "example/docs/components/Anchor.md": "842168e3d662de92ceccf029fa6eb5af",
   "example/docs/components/Drawer.md": "0e9a27d99f5397dda3e2edd9d8fc1374",
   "example/docs/components/Catalogue.md": "eb2afed549dce7b3ed4a34b32db57a71",
-  "example/docs/components/Dropdown.md": "e4e8d23e89431652ea2a615432477178",
+  "example/docs/components/Dropdown.md": "6560ee2a106f4c1855bb663cc2dec58e",
   "example/docs/components/FilterSection.md": "d25c5de5605ba7613d5d917fc933a0c5",
   "example/docs/components/FixedSection.md": "42d1be94efced3bf32490580050560be",
   "example/docs/components/Cell.md": "0b04cd73e8f2d8419cfecde1168bbcf3",
@@ -43,5 +43,6 @@
   "example/docs/directives/Resize.md": "89eedbecc9ae3cb66c589932f788d645",
   "example/docs/directives/Ripple.md": "85f006327a270cd129658a6b2a94f75d",
   "example/docs/directives/Tooltip.md": "8ee925e3b3952783c5ab2db0b4c86f59",
-  "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5"
+  "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
+  "example/docs/components/TableSimple.md": "4fddc838ab75ad9ffeb344899c12ead0"
 }

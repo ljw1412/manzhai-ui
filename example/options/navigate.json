@@ -323,6 +323,13 @@
         "to": {
           "name": "ComponentTooltip"
         }
+      },
+      {
+        "title": "TableSimple",
+        "text": "表格(简易版)",
+        "to": {
+          "name": "ComponentTableSimple"
+        }
       }
     ]
   }
