@@ -100,8 +100,8 @@ module.exports = class ComponentCreater {
       to: { name: `${utils.capitalized(this.type)}${this.name}` }
     })
     componentChildren.sort((a, b) => {
-      if (a.label > b.label) return 1
-      if (a.label < b.label) return -1
+      if (a.title > b.title) return 1
+      if (a.title < b.title) return -1
       return 0
     })
     await utils.saveFiles(`../../example/options`, [
