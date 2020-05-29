@@ -1,6 +1,6 @@
 <template>
   <div class="component-table-simple">
-    <div class="update-datetime">文档更新时间：2020-05-26 15:37</div>
+    <div class="update-datetime">文档更新时间：2020-05-29 17:01</div>
     <h2 id="tablesimple-biao-ge-jian-yi-ban" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tablesimple-biao-ge-jian-yi-ban" title="TableSimple 表格(简易版)" data-level="2" data-href="#tablesimple-biao-ge-jian-yi-ban">¶</a>TableSimple 表格(简易版)</h2>
 <p>快速构建简单的表格。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -82,7 +82,78 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block>
+</code></pre></template></demo-block><h3 id="biao-dan-he-bing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-dan-he-bing" title="表单合并" data-level="3" data-href="#biao-dan-he-bing">¶</a>表单合并</h3>
+<p>只支持行合并。</p>
+<demo-block>
+        <template #example><table-simple-demo4 inline-template><div class="table-simple-demo4">
+  <mz-table-simple :data="data" header>
+  </mz-table-simple>
+</div></table-simple-demo4></template>
+        <template #description><p>当一个值后面跟着null，那么那个单元格会与这个值合并。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-table-simple :data=&quot;data&quot; header&gt;
+&lt;/mz-table-simple&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      data:[
+        ['标题',null,null],
+        ['甲','乙'],
+        ['丙','丁','戊'],
+        [null,'丁','戊'],
+        ['丙',null,'戊'],
+        ['丙','丁',null]
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>表格数据</td>
+<td>[(Object|String)[]]</td>
+<td></td>
+<td>[]</td>
+</tr>
+<tr>
+<td>header</td>
+<td>是否有表头，如果为<code>true</code>,data[0]的数据将会作为表头</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>autoComplete</td>
+<td>是否自动补全,会以表格最大长度行作为标准补齐表格</td>
+<td>Boolean</td>
+<td></td>
+<td>true</td>
+</tr>
+<tr>
+<td>align</td>
+<td>文字对齐方向</td>
+<td>String</td>
+<td>left / center / right</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
   </div>
 </template>
 <script>
@@ -122,6 +193,19 @@ export default {
         [{ value: '2018'},{ value: '庚申'}],
         [{ value: '2019'},{ value: '己亥'}],
         [{ value: '2020'},{ value: '庚子'}],   
+      ]
+    }
+  }
+}, TableSimpleDemo4: {
+  data() {
+    return {
+      data:[
+        ['标题',null,null],
+        ['甲','乙'],
+        ['丙','丁','戊'],
+        [null,'丁','戊'],
+        ['丙',null,'戊'],
+        ['丙','丁',null]
       ]
     }
   }

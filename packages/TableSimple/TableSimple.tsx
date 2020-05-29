@@ -49,8 +49,8 @@ export default class MzTableSimple extends Vue {
       <tr class="mz-table-tr">
         {trData.map(item => {
           return (
-            <Tag class={`mz-table-${Tag}`}>
-              <span>{this.getItem(item, Tag)}</span>
+            <Tag class={`mz-table-${Tag}`} colspan={item.span}>
+              <span>{this.getItem(item.data, Tag)}</span>
             </Tag>
           )
         })}
@@ -66,13 +66,25 @@ export default class MzTableSimple extends Vue {
   }
 
   getTableData() {
-    if (!this.autoComplete) return this.data
-    return this.data.map(item => {
-      const list = []
-      for (let i = 0; i < this.maxLength; i++) {
-        list.push(item[i])
+    return this.data.map(list => {
+      const newList = []
+      if (Array.isArray(list)) {
+        let count = 1
+        for (let i = this.maxLength - 1; i >= 0; i--) {
+          const item = list[i]
+          if (item === null) {
+            if (i === 0) {
+              newList.unshift({ span: count, data: undefined })
+              count = 1
+            }
+            count++
+          } else if (this.autoComplete || item) {
+            newList.unshift({ span: count, data: item })
+            count = 1
+          }
+        }
       }
-      return list
+      return newList
     })
   }
 }

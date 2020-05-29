@@ -78,3 +78,43 @@ export default {
 </script>
 ```
 :::
+
+
+### 表单合并
+
+只支持行合并。
+
+:::demo 当一个值后面跟着null，那么那个单元格会与这个值合并。
+```html
+<mz-table-simple :data="data" header>
+</mz-table-simple>
+
+<script>
+export default {
+  data() {
+    return {
+      data:[
+        ['标题',null,null],
+        ['甲','乙'],
+        ['丙','丁','戊'],
+        [null,'丁','戊'],
+        ['丙',null,'戊'],
+        ['丙','丁',null]
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
+### API
+
+#### 属性
+
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|data|表格数据|[(Object\|String)[]]||[]|
+|header|是否有表头，如果为`true`,data[0]的数据将会作为表头|Boolean|||
+|autoComplete|是否自动补全,会以表格最大长度行作为标准补齐表格|Boolean||true|
+|align|文字对齐方向|String|left / center / right||'center'|
