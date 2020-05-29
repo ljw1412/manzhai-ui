@@ -1,5 +1,8 @@
-.tippy-box[role='dropdown'] .tippy-content {
-  padding: initial;
+.tippy-box[role='dropdown'] {
+  overflow: hidden;
+  .tippy-content {
+    padding: initial;
+  }
 }
 
 .mz-dropdown-card {
