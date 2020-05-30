@@ -1,5 +1,6 @@
 <template>
-  <mz-list-item class="mz-option"
+  <mz-list-item ref="option"
+    class="mz-option"
     :value="value"
     :title="label || value"
     :disabled="isDisabled"
@@ -8,26 +9,49 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins, Inject } from 'vue-property-decorator'
-import { MzSelect } from '.'
+import {
+  Component,
+  Vue,
+  Mixins,
+  Inject,
+  Watch,
+  Ref
+} from 'vue-property-decorator'
+import MzSelect from './Select2.vue'
 import FormElement from '../../src/mixins/FormElement'
+import MzListItem from '../List/ListItem'
 
 @Component
 export default class MzOption extends Mixins(FormElement) {
   @Inject({ from: 'mzSelect', default: null })
   readonly mzSelect!: MzSelect
+  @Ref('option')
+  readonly optionRef!: MzListItem
+
+  get active() {
+    return !!this.mzSelect && this.mzSelect.mValue === this.value
+  }
+
+  get optionData() {
+    return { value: this.value, label: this.label || this.value }
+  }
 
   get isDisabled() {
     return this.disabled || (!!this.mzSelect && this.mzSelect.disabled)
   }
 
-  onClick(value: any, data: any) {
+  onClick() {
     if (this.isDisabled) return
-    this.$emit('click', value, data)
-    if (this.mzSelect) {
-      this.mzSelect.onValueChange(value, data)
-      this.mzSelect.onItemClick(value, data)
-    }
+    this.$emit('click', this.optionData)
+  }
+
+  @Watch('active', { immediate: true })
+  handleActiveChange(val: boolean) {
+    this.$nextTick(() => {
+      if (val && this.mzSelect) {
+        this.mzSelect.handleOptionChange(this.optionData)
+      }
+    })
   }
 
   created() {

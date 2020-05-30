@@ -21,7 +21,7 @@ import tippy, {
   Instance,
   MultipleTargets
 } from 'tippy.js'
-import { VNode } from 'Vue'
+import { CreateElement, VNodeChildren } from 'Vue'
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import PopupManager from '@/utils/popup-manager'
 
@@ -68,24 +68,19 @@ export default class Popover extends Vue {
   readonly delay!: number | [number | null, number | null]
   @Prop({ type: [Number, Array], default: () => [300, 250] })
   readonly duration!: number | [number | null, number | null]
+  @Prop(Boolean)
+  readonly disabled!: boolean
   @Prop()
   readonly zIndex!: number
 
   popovers: Instance[] = []
   forceProps: Record<string, any> = {}
 
-  virtualVM = new Vue({
-    data: { node: {} },
-    render(h) {
-      return this.node as VNode
-    }
-  }).$mount()
-
-  initContent() {
-    const { content } = this.$slots
-    if (content && content.length) {
-      this.virtualVM.node = content[0]
-    }
+  render(h: CreateElement): any {
+    return h('span', [
+      this.$slots.default,
+      this.$slots.content
+    ] as VNodeChildren)
   }
 
   $$emit(event: string) {
@@ -141,6 +136,7 @@ export default class Popover extends Vue {
       onCreate: this.$$emit('create'),
       onDestroy: this.$$emit('destroy'),
       onShow: instance => {
+        if (this.disabled) return false
         this.updateProps(instance)
         this.$$emit('show')(instance)
       },
@@ -173,25 +169,17 @@ export default class Popover extends Vue {
     }
   }
 
-  created() {
-    this.initContent()
-  }
-
   mounted() {
-    this.virtualVM.$nextTick(() => {
-      const { default: defaultSlots, content } = this.$slots
-      let reference, contentEl
-      if (defaultSlots) {
-        reference = defaultSlots.map(vnode => vnode.elm) as Element[]
-      }
-      if (content && content.length) {
-        contentEl = content[0].elm as Element
-      }
-      this.initPopover(reference, contentEl)
-    })
-  }
+    const { default: defaultSlots, content } = this.$slots
+    let reference, contentEl
+    if (defaultSlots) {
+      reference = defaultSlots.map(vnode => vnode.elm) as Element[]
+    }
+    if (content && content.length) {
+      console.log(content)
 
-  beforeDestroy() {
-    this.virtualVM && this.virtualVM.$destroy()
+      contentEl = content[0].elm as Element
+    }
+    this.initPopover(reference, contentEl)
   }
 }

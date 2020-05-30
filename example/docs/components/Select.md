@@ -5,8 +5,43 @@
 ### 基础用法
 :::demo select的`list`属性与遍历option效果一致。
 ```html
-<mz-select v-model="value" :list="list"></mz-select>
 <mz-select v-model="value" placeholder="目标">
+  <mz-option v-for="item of list"
+    :key="item.value"
+    :value="item.value"
+    :label="item.label"></mz-option>
+</mz-select>
+
+<script>
+export default {
+  data() {
+    return {
+      value: '',
+      list: [
+        { value: 1, label: '甲' },
+        { value: 2, label: '乙' },
+        { value: 3, label: '丙' }
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
+### 禁用
+
+:::demo `disabled`属性控制下拉框的禁用状态。
+```html
+<mz-select v-model="value" placeholder="目标">
+  <mz-option v-for="item of list"
+    :disabled="item.disabled"
+    :key="item.value"
+    :value="item.value"
+    :label="item.label"></mz-option>
+</mz-select>
+
+<mz-select v-model="value" placeholder="目标" :disabled="true">
   <mz-option v-for="item of list"
     :key="item.value"
     :value="item.value"
@@ -30,96 +65,22 @@ export default {
 ```
 :::
 
-### 同宽下拉框
-
-使下拉框与选择框一样宽。
-:::demo `dropdownMatchSelectWidth`属性控制下拉框是否与选择框同宽。
-```html
-<mz-select v-model="value" :list="list" dropdownMatchSelectWidth></mz-select>
-
-<script>
-export default {
-  data() {
-    return {
-      value: 1,
-      list: [
-        { value: 1, label: '甲' },
-        { value: 2, label: '乙' },
-        { value: 3, label: '丙' }
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
-### 带搜索功能的选择框
-选择框能够搜索快速找到选项。
-
-:::demo `search`属性控制选择框能否搜索。`under`属性控制下拉框不会遮住选择框。
-```html
-<mz-select v-model="value" :list="list" dropdownMatchSelectWidth search under></mz-select>
-
-<script>
-export default {
-  data() {
-    return {
-      value: 1,
-      list: [
-        { value: 1, label: '甲' },
-        { value: 2, label: '乙' },
-        { value: 3, label: '丙' }
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
-### 禁用
-
-:::demo `disabled`属性控制下拉框的禁用状态。
-```html
-<mz-select v-model="value" :list="list" disabled search under></mz-select>
-
-<script>
-export default {
-  data() {
-    return {
-      value: 1,
-      list: [
-        { value: 1, label: '甲' },
-        { value: 2, label: '乙' },
-        { value: 3, label: '丙' }
-      ]
-    }
-  }
-}
-</script>
-```
-:::
-
 ### Select API
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |value|绑定值|any|||
-|list|选项列表|Array|||
 |placeholder|占位文本|String|||
-|disabled|是否禁用|Boolean|||
-|valueName|列表中对象代表值的属性名称|String||'value'|
-|labelName|列表中对象代表值的标签名称|String||'label'|
-|search|是否有搜索|Boolean|||
-|dropdownMatchSelectWidth|是否与选择框同宽|Boolean|||
-|appendToBody|是否将下拉框置入body下|Boolean|||
-|under|是否将下拉框显示在选择框下方|Boolean|||
+|filterable|是否筛选|Boolean|||
+|arrow|是否显示箭头|Boolean|||
+| size | 尺寸 | String | small / medium / large   |  |
+|animation|动画效果|String|同Tooltip的animation|'shift-away-subtle'|
+
 
 #### 事件
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
-|change|选择项选中状态变化|(value: any,item:Object)|
+|change|选择项选中状态变化|(value: any)|
 
 ### Option API
 #### 属性
@@ -133,4 +94,4 @@ export default {
 
 | 名称 | 说明 | 参数 |
 | --- | --- | --- |
-|click|选项点击事件|(value: any,item:Object)|
+|click|选项点击事件|({value: any,label:string})|
