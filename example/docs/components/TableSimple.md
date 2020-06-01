@@ -47,7 +47,7 @@ export default {
 
 进行简单的自定义样式。
 
-:::demo
+:::demo 使用作用域插槽`th`、`td`，对头部和内容进行自定义布局。`插槽 prop` 的值是一个对象，其中`item`代表你传入的数据。
 ```html
 <mz-table-simple :data="data" header>
   <template #th="{item}">{{item}}</template>
@@ -79,6 +79,51 @@ export default {
 ```
 :::
 
+### 高亮悬浮行
+
+:::demo `hover`属性控制表格行是否悬浮效果。
+```html
+<mz-table-simple :data="data" header hover></mz-table-simple>
+
+<script>
+export default {
+  data() {
+    return {
+      data:[
+        ['年份', '天干地支'],
+        ['2018', '庚申'],
+        ['2019', '己亥'],
+        ['2020', '庚子'],  
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
+### 边框
+
+:::demo `border`属性控制是否显示边框。
+```html
+<mz-table-simple :data="data" header border></mz-table-simple>
+
+<script>
+export default {
+  data() {
+    return {
+      data:[
+        ['年份', '天干地支'],
+        ['2018', '庚申'],
+        ['2019', '己亥'],
+        ['2020', '庚子'],  
+      ]
+    }
+  }
+}
+</script>
+```
+:::
 
 ### 表单合并
 
@@ -86,7 +131,7 @@ export default {
 
 :::demo 当一个值后面跟着null，那么那个单元格会与这个值合并。
 ```html
-<mz-table-simple :data="data" header>
+<mz-table-simple :data="data" header border>
 </mz-table-simple>
 
 <script>
@@ -116,5 +161,7 @@ export default {
 | --- | --- | --- | --- | --- |
 |data|表格数据|[(Object\|String)[]]||[]|
 |header|是否有表头，如果为`true`,data[0]的数据将会作为表头|Boolean|||
+|hover|表格行是否悬浮效果|Boolean|||
+|border|表格是否显示边框|Boolean|||
 |autoComplete|是否自动补全,会以表格最大长度行作为标准补齐表格|Boolean||true|
 |align|文字对齐方向|String|left / center / right||'center'|

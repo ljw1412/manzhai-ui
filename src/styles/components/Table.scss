@@ -1,10 +1,12 @@
 .mz-table {
   width: 100%;
   border-collapse: separate;
+  box-sizing: border-box;
 
   &-th,
   &-td {
     position: relative;
+    box-sizing: border-box;
     > span {
       position: relative;
       z-index: 20;
@@ -25,9 +27,9 @@
     transition: background 0.3s ease, color 0.3s ease;
   }
 
-  &-tbody > tr:hover {
-    td {
-      &::before {
+  &.allow-hover {
+    .mz-table-tbody > tr:hover {
+      td::before {
         content: '';
         position: absolute;
         top: 0;
@@ -38,6 +40,17 @@
         z-index: 0;
         opacity: 0.15;
       }
+    }
+  }
+
+  &.is-border {
+    border: 1px solid $color-border-base;
+    .mz-table-tr:not(:last-child) > .mz-table-td {
+      border-bottom: 1px solid $color-border-base;
+    }
+    .mz-table-td:not(:last-child),
+    .mz-table-th:not(:last-child) {
+      border-right: 1px solid $color-border-base;
     }
   }
 }

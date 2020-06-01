@@ -7,6 +7,10 @@ export default class MzTableSimple extends Vue {
   readonly data!: [any[]]
   @Prop(Boolean)
   readonly header!: boolean
+  @Prop(Boolean)
+  readonly hover!: boolean
+  @Prop(Boolean)
+  readonly border!: boolean
   @Prop({ type: String, default: 'center' })
   readonly align!: string
   @Prop({ type: Boolean, default: true })
@@ -27,7 +31,10 @@ export default class MzTableSimple extends Vue {
         cellpadding="0"
         cellspacing="0"
         border="0"
-        class="mz-table mz-table-simple"
+        class={[
+          'mz-table mz-table-simple',
+          { 'allow-hover': this.hover, 'is-border': this.border }
+        ]}
         style={{ 'text-align': this.align }}>
         {headerData && (
           <thead class="mz-table-thead">
