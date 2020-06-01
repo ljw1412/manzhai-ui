@@ -38,6 +38,8 @@ function getMayBeBoolean(prop: any) {
 export default class Popover extends Vue {
   @Model('visible-change', { type: Boolean })
   readonly visible!: boolean
+  @Prop({ type: String, default: 'span' })
+  readonly tag!: string
   @Prop({ type: String, default: 'top' })
   readonly placement!: Placement
   @Prop({ type: [String, Boolean], default: 'fade' })
@@ -77,7 +79,7 @@ export default class Popover extends Vue {
   forceProps: Record<string, any> = {}
 
   render(h: CreateElement): any {
-    return h('span', [
+    return h(this.tag, [
       this.$slots.default,
       this.$slots.content
     ] as VNodeChildren)
