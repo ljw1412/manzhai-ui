@@ -1,30 +1,30 @@
 <template>
-  <div class="mz-select">
-    <mz-dropdown ref="dropdown"
-      :arrow="arrow"
-      :animation="animation"
+  <mz-dropdown ref="dropdown"
+    class="mz-select"
+    tag="div"
+    :arrow="arrow"
+    :animation="animation"
+    :disabled="disabled"
+    :offset="arrow? undefined : [0, 0]"
+    @show="handleDropdownShow"
+    @hide="active = false">
+    <mz-input ref="input"
+      :value="text"
+      :placeholder="placeholder"
       :disabled="disabled"
-      :offset="arrow? undefined : [0, 0]"
-      @show="handleDropdownShow"
-      @hide="active = false">
-      <mz-input ref="input"
-        :value="text"
-        :placeholder="placeholder"
-        :disabled="disabled"
-        readonly>
-        <mz-icon :name="this.active ? 'chevron-up' : 'chevron-down'"
-          slot="suffix"></mz-icon>
-      </mz-input>
+      readonly>
+      <mz-icon :name="this.active ? 'chevron-up' : 'chevron-down'"
+        slot="suffix"></mz-icon>
+    </mz-input>
 
-      <mz-list v-model="mValue"
-        slot="content"
-        clickable
-        :size="size"
-        :width="dropdownWidth">
-        <slot></slot>
-      </mz-list>
-    </mz-dropdown>
-  </div>
+    <mz-list v-model="mValue"
+      slot="content"
+      clickable
+      :size="size"
+      :width="dropdownWidth">
+      <slot></slot>
+    </mz-list>
+  </mz-dropdown>
 </template>
 
 <script lang="ts">
