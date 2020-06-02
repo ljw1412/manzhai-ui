@@ -1,0 +1,52 @@
+.mz-rate {
+  display: inline-block;
+  line-height: 1;
+}
+
+.mz-rate-content {
+  display: inline-block;
+}
+
+.mz-rate-star {
+  position: relative;
+  display: inline-block;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.mz-rate-content:not(.hover) {
+  .mz-rate-star-first,
+  .mz-rate-star-second {
+    &.is-active {
+      color: $color-primary;
+    }
+  }
+}
+
+.mz-rate-star-first,
+.mz-rate-star-second {
+  cursor: pointer;
+  color: #e8e8e8;
+  transition: all 0.3s;
+  user-select: none;
+  &.is-hover {
+    color: $color-primary;
+  }
+}
+
+.mz-rate-star-first {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mz-rate-text {
+  margin-left: 10px;
+  vertical-align: top;
+  color: var(--color-text-primary);
+}

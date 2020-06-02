@@ -45,6 +45,7 @@ import Modal from '../packages/Modal/index'
 import Navigation from '../packages/Navigation/index'
 import { Progress, ProgressCircle } from '../packages/Progress/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
+import Rate from '../packages/Rate/index'
 import Row from '../packages/Row/index'
 import { Select, Option } from '../packages/Select/index'
 import SubHeader from '../packages/SubHeader/index'
@@ -113,6 +114,7 @@ const components: VueConstructor[] = [
   Radio,
   RadioButton,
   RadioGroup,
+  Rate,
   Row,
   Select,
   SubHeader,
@@ -238,6 +240,7 @@ export default {
   Radio,
   RadioButton,
   RadioGroup,
+  Rate,
   Row,
   Select,
   SubHeader,

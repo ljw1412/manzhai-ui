@@ -27,7 +27,7 @@
     }
 
     .mz-catalogue-item--active,
-    &__sidebar .arrow {
+    &__sidebar .indicator {
       color: $color-white;
     }
   }
@@ -134,6 +134,25 @@
       &.disabled {
         color: $color-white;
         background-color: $color-text-disabled;
+      }
+    }
+  }
+
+  .mz-rate {
+    .mz-rate-content:not(.hover) {
+      .mz-rate-star-first,
+      .mz-rate-star-second {
+        &.is-active {
+          color: $color-white;
+        }
+      }
+    }
+
+    .mz-rate-star-first,
+    .mz-rate-star-second {
+      color: #555;
+      &.is-hover {
+        color: $color-white;
       }
     }
   }

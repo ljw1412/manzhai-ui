@@ -262,6 +262,13 @@
         }
       },
       {
+        "title": "Rate",
+        "text": "评分",
+        "to": {
+          "name": "ComponentRate"
+        }
+      },
+      {
         "title": "Scrollbar",
         "text": "滚动条",
         "to": {

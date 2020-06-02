@@ -145,6 +145,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentRadio.vue')
   },
   {
+    path: 'component-rate',
+    name: 'ComponentRate',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentRate.vue')
+  },
+  {
     path: 'component-scrollbar',
     name: 'ComponentScrollbar',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentScrollbar.vue')
