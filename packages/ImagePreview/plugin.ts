@@ -27,8 +27,6 @@ function show(config?: Record<string, any>) {
       }
     }
   }
-  console.log(instance)
-
   instance.visible = true
 }
 

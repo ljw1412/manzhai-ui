@@ -18,6 +18,7 @@
       max-height="300px"
       container="#page-component-content"
       target=".mz-document-anchor"
+      :key="'catalogue'+$route.name"
       :offset="{top:'80px',right:'20px'}"></mz-catalogue>
     <div id="page-component-content"
       :key="$route.name">

@@ -60,7 +60,8 @@ export default class MzCatalogue extends BaseAttribute {
   anchorList: HTMLLinkElement[] = []
   activeIndex = -1
   targetIndex = -1
-  arrowTop = 0
+  indicatorTop = 0
+  indicatorHeight = 0
 
   get flatCatalogue() {
     if (!this.anchorList.length) return []
@@ -158,14 +159,12 @@ export default class MzCatalogue extends BaseAttribute {
         }}>
         {this.activeIndex !== -1 && (
           <div
-            class="arrow"
+            class="indicator"
             style={{
-              top: this.arrowTop + 'px',
+              top: this.indicatorTop + 'px',
+              height: this.indicatorHeight + 'px',
               color: this.sidebarArrowColor
-            }}>
-            <div class="square"></div>
-            <div class="triangle"></div>
-          </div>
+            }}></div>
         )}
       </div>
     )
@@ -178,22 +177,30 @@ export default class MzCatalogue extends BaseAttribute {
     if (!list) return null
     return list.map(item => {
       const data = {
-        props: { ...item, level, scrollSmooth: this.scrollSmooth },
+        props: {
+          ...item,
+          level,
+          scrollSmooth: this.scrollSmooth
+        },
         on: {
-          actived: (top: number) => {
+          actived: (top: number, height: number) => {
             const contentRect = this.contentRef.getBoundingClientRect()
 
-            this.arrowTop = top - contentRect.top - 7
+            this.indicatorTop = top - contentRect.top
+            this.indicatorHeight = height
             if (this.scrollRef) {
               const scrollViewCenter =
                 (this.scrollRef.$el as HTMLElement).offsetHeight / 2
-              this.scrollRef.translateTo('y', this.arrowTop - scrollViewCenter)
+              this.scrollRef.translateTo(
+                'y',
+                this.indicatorTop - scrollViewCenter
+              )
             }
           }
         }
       }
       return (
-        <mz-catalogue-item {...data}>
+        <mz-catalogue-item {...data} key={level + item.target}>
           {this.renderItem(item.children, level + 1)}
         </mz-catalogue-item>
       )

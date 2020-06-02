@@ -178,8 +178,6 @@ export default class Popover extends Vue {
       reference = defaultSlots.map(vnode => vnode.elm) as Element[]
     }
     if (content && content.length) {
-      console.log(content)
-
       contentEl = content[0].elm as Element
     }
     this.initPopover(reference, contentEl)

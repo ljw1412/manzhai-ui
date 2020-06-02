@@ -56,8 +56,6 @@ const showNextSnackbar = () => {
         instance[prop as keyof SnackbarPluginOptions] = options[prop]
       }
     }
-    console.log(options)
-
     if (options.buttonClick) {
       instance.$on('buttonClick', options.buttonClick.bind(Snackbar))
     }
