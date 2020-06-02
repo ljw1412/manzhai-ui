@@ -811,10 +811,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@ljw1412/icon@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@ljw1412/icon/-/icon-0.0.6.tgz#eda5a157bbd674d57eb2938abcd690cd6dd565cf"
-  integrity sha512-nvYHHpGY+MUyojTZmSbau2UBbRxRCr1tkvzuqwCpBDJIEiE4pwoSKN/Gbr9fDsMYTFhcSsz3KXPRrOTfo+6mcw==
+"@ljw1412/ionicons-sprite@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@ljw1412/ionicons-sprite/-/ionicons-sprite-1.0.0.tgz#73fe8069849389f3777a797ed471ac266dd38dce"
+  integrity sha512-avaAsdqR2Q0nzRXr+p6qg+l8KyRdksUHc5C+CCkLHj+L2kMWDQ1sNDK0iIdZEwsdYHoNYHazvp5TZeeRyY7Few==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

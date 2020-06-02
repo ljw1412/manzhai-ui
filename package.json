@@ -1,6 +1,6 @@
 {
   "name": "manzhai-ui",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "author": "ljw1412",
   "bugs": {
@@ -32,7 +32,6 @@
     "test:common": "vue-cli-service test:unit ./tests/common/**/*.spec.ts"
   },
   "dependencies": {
-    "@ljw1412/icon": "^0.0.6",
     "@types/file-saver": "^2.0.1",
     "core-js": "^3.6.4",
     "file-saver": "^2.0.2",
@@ -44,6 +43,7 @@
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
+    "@ljw1412/ionicons-sprite": "^1.0.0",
     "@types/chai": "^4.2.8",
     "@types/highlight.js": "^9.12.3",
     "@types/mocha": "^5.2.7",
