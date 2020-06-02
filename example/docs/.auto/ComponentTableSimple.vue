@@ -1,6 +1,6 @@
 <template>
   <div class="component-table-simple">
-    <div class="update-datetime">文档更新时间：2020-06-01 16:54</div>
+    <div class="update-datetime">文档更新时间：2020-06-02 15:34</div>
     <h2 id="tablesimple-biao-ge-jian-yi-ban" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tablesimple-biao-ge-jian-yi-ban" title="TableSimple 表格(简易版)" data-level="2" data-href="#tablesimple-biao-ge-jian-yi-ban">¶</a>TableSimple 表格(简易版)</h2>
 <p>快速构建简单的表格。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -106,11 +106,34 @@ export default {
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bian-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bian-kuang" title="边框" data-level="3" data-href="#bian-kuang">¶</a>边框</h3>
+</code></pre></template></demo-block><h3 id="xian-tiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#xian-tiao" title="线条" data-level="3" data-href="#xian-tiao">¶</a>线条</h3>
 <demo-block>
         <template #example><table-simple-demo5 inline-template><div class="table-simple-demo5">
-  <mz-table-simple :data="data" header border></mz-table-simple>
+  <mz-table-simple :data="data" header lined></mz-table-simple>
 </div></table-simple-demo5></template>
+        <template #description><p><code>lined</code>是否每行以线条分隔</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-table-simple :data=&quot;data&quot; header lined&gt;&lt;/mz-table-simple&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      data:[
+        ['年份', '天干地支'],
+        ['2018', '庚申'],
+        ['2019', '己亥'],
+        ['2020', '庚子'],  
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="bian-kuang" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bian-kuang" title="边框" data-level="3" data-href="#bian-kuang">¶</a>边框</h3>
+<demo-block>
+        <template #example><table-simple-demo6 inline-template><div class="table-simple-demo6">
+  <mz-table-simple :data="data" header border></mz-table-simple>
+</div></table-simple-demo6></template>
         <template #description><p><code>border</code>属性控制是否显示边框。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-table-simple :data=&quot;data&quot; header border&gt;&lt;/mz-table-simple&gt;
@@ -132,10 +155,10 @@ export default {
 </code></pre></template></demo-block><h3 id="biao-dan-he-bing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#biao-dan-he-bing" title="表单合并" data-level="3" data-href="#biao-dan-he-bing">¶</a>表单合并</h3>
 <p>只支持行合并。</p>
 <demo-block>
-        <template #example><table-simple-demo6 inline-template><div class="table-simple-demo6">
+        <template #example><table-simple-demo7 inline-template><div class="table-simple-demo7">
   <mz-table-simple :data="data" header border>
   </mz-table-simple>
-</div></table-simple-demo6></template>
+</div></table-simple-demo7></template>
         <template #description><p>当一个值后面跟着null，那么那个单元格会与这个值合并。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-table-simple :data=&quot;data&quot; header border&gt;
@@ -194,6 +217,13 @@ export default {
 <tr>
 <td>border</td>
 <td>表格是否显示边框</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>lined</td>
+<td>表格是否每行以线条分隔</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
@@ -280,6 +310,17 @@ export default {
     }
   }
 }, TableSimpleDemo6: {
+  data() {
+    return {
+      data:[
+        ['年份', '天干地支'],
+        ['2018', '庚申'],
+        ['2019', '己亥'],
+        ['2020', '庚子'],  
+      ]
+    }
+  }
+}, TableSimpleDemo7: {
   data() {
     return {
       data:[

@@ -43,6 +43,12 @@
     }
   }
 
+  &.is-lined {
+    .mz-table-tr:not(:last-child) > .mz-table-td {
+      border-bottom: 1px solid $color-border-base;
+    }
+  }
+
   &.is-border {
     border: 1px solid $color-border-base;
     .mz-table-tr:not(:last-child) > .mz-table-td {

@@ -102,6 +102,29 @@ export default {
 ```
 :::
 
+### 线条
+
+:::demo `lined`是否每行以线条分隔
+```html
+<mz-table-simple :data="data" header lined></mz-table-simple>
+
+<script>
+export default {
+  data() {
+    return {
+      data:[
+        ['年份', '天干地支'],
+        ['2018', '庚申'],
+        ['2019', '己亥'],
+        ['2020', '庚子'],  
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
 ### 边框
 
 :::demo `border`属性控制是否显示边框。
@@ -163,5 +186,6 @@ export default {
 |header|是否有表头，如果为`true`,data[0]的数据将会作为表头|Boolean|||
 |hover|表格行是否悬浮效果|Boolean|||
 |border|表格是否显示边框|Boolean|||
+|lined|表格是否每行以线条分隔|Boolean|||
 |autoComplete|是否自动补全,会以表格最大长度行作为标准补齐表格|Boolean||true|
 |align|文字对齐方向|String|left / center / right||'center'|
