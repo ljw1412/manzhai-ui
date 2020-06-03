@@ -16,11 +16,12 @@
     position: relative;
     display: inline-block;
     height: 100%;
-    color: #e8e8e8;
     transition: all 0.3s;
-    &.is-active {
-      color: #f7ba2a;
-    }
+  }
+
+  &--readonly &__decimal,
+  &__star.is-half &__decimal {
+    opacity: 1;
   }
 
   &__decimal {
@@ -31,12 +32,8 @@
     height: 100%;
     z-index: 1;
     overflow: hidden;
-    color: #f7ba2a;
     opacity: 0;
     transition: all 0.3s;
-    &.is-active {
-      opacity: 1;
-    }
   }
 
   &__text {
@@ -44,5 +41,6 @@
     line-height: 1em;
     margin-left: 10px;
     color: $color-text-primary;
+    transition: all 0.3s;
   }
 }

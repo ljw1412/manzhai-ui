@@ -138,25 +138,6 @@
     }
   }
 
-  .mz-rate {
-    .mz-rate-content:not(.hover) {
-      .mz-rate-star-first,
-      .mz-rate-star-second {
-        &.is-active {
-          color: $color-white;
-        }
-      }
-    }
-
-    .mz-rate-star-first,
-    .mz-rate-star-second {
-      color: #555;
-      &.is-hover {
-        color: $color-white;
-      }
-    }
-  }
-
   .mz-tabs {
     &__active-bar {
       background-color: $color-white;
