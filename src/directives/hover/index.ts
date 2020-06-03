@@ -2,14 +2,14 @@ import { VNodeDirective } from 'vue/types/umd'
 
 const noop = () => {}
 
-const mouseenter = (el: HTMLElement, fn: Function) => () => {
+const mouseenter = (el: HTMLElement, fn: Function) => (e: MouseEvent) => {
   el.classList.add('hover')
-  fn()
+  fn(e)
 }
 
-const mouseleave = (el: HTMLElement, fn: Function) => () => {
+const mouseleave = (el: HTMLElement, fn: Function) => (e: MouseEvent) => {
   el.classList.remove('hover')
-  fn()
+  fn(e)
 }
 
 export const Hover = {

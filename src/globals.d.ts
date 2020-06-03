@@ -28,8 +28,8 @@ declare global {
     }
 
     _hover?: {
-      mouseenter?: () => void
-      mouseleave?: () => void
+      mouseenter?: (e: MouseEvent) => void
+      mouseleave?: (e: MouseEvent) => void
     }
 
     _tooltip?: Instance
