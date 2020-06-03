@@ -180,6 +180,8 @@ export default {
 
 
 ### API
+
+#### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |value/v-model|绑定值|Number|||
@@ -194,4 +196,7 @@ export default {
 |void-color|图标未选中颜色|String||'#E8E8E8'|
 |text-color|评分文案颜色|String / (val: number) => string||''|
 
-
+#### 事件
+| 名称 | 说明 | 参数 |
+| --- | --- | --- |
+|change|评分的变化|(value: number)|

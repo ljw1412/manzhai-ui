@@ -1,6 +1,6 @@
 <template>
   <div class="component-rate">
-    <div class="update-datetime">文档更新时间：2020-06-03 16:31</div>
+    <div class="update-datetime">文档更新时间：2020-06-03 16:41</div>
     <h2 id="rate-ping-fen" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#rate-ping-fen" title="Rate 评分" data-level="2" data-href="#rate-ping-fen">¶</a>Rate 评分</h2>
 <p>评分组件。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -197,6 +197,7 @@ export default {
 }
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
+<h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
 <thead>
 <tr>
@@ -284,6 +285,23 @@ export default {
 <td>String / (val: number) =&gt; string</td>
 <td></td>
 <td>''</td>
+</tr>
+</tbody>
+</table>
+<h4 id="shi-jian" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shi-jian" title="事件" data-level="4" data-href="#shi-jian">¶</a>事件</h4>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>change</td>
+<td>评分的变化</td>
+<td>(value: number)</td>
 </tr>
 </tbody>
 </table>
