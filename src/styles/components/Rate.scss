@@ -12,6 +12,15 @@
     cursor: pointer;
   }
 
+  &__text {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1em;
+    margin-left: 10px;
+    color: $color-text-primary;
+    transition: all 0.3s;
+  }
+
   &__star {
     position: relative;
     display: inline-block;
@@ -36,14 +45,6 @@
     z-index: 1;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.3s;
-  }
-
-  &__text {
-    font-size: 0.8em;
-    line-height: 1em;
-    margin-left: 10px;
-    color: $color-text-primary;
     transition: all 0.3s;
   }
 }
