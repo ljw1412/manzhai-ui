@@ -248,6 +248,13 @@
         }
       },
       {
+        "title": "Pagination",
+        "text": "分页",
+        "to": {
+          "name": "ComponentPagination"
+        }
+      },
+      {
         "title": "Progress",
         "text": "进度条",
         "to": {

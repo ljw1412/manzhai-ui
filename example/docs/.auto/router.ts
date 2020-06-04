@@ -135,6 +135,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentNavigation.vue')
   },
   {
+    path: 'component-pagination',
+    name: 'ComponentPagination',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentPagination.vue')
+  },
+  {
     path: 'component-progress',
     name: 'ComponentProgress',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentProgress.vue')

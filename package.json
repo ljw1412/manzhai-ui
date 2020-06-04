@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@types/file-saver": "^2.0.1",
+    "color": "^3.1.2",
     "core-js": "^3.6.4",
     "file-saver": "^2.0.2",
     "glob": "^7.1.6",
