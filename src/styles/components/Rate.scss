@@ -4,6 +4,9 @@
   user-select: none;
   &--readonly > &__stars {
     cursor: default;
+    .mz-rate__star:hover {
+      transform: none;
+    }
   }
 
   &__stars {
