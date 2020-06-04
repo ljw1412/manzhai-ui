@@ -21,7 +21,8 @@ const config = {
     resolve: {
       alias: {
         '@packages': resolve('packages'),
-        '@example': resolve('example')
+        '@example': resolve('example'),
+        'manzhai-ui': resolve('.')
       }
     },
     performance: {

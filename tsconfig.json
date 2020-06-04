@@ -17,6 +17,7 @@
     "outDir": "./dist/src",
     "types": ["webpack-env"],
     "paths": {
+      "manzhai-ui/*": ["./*"],
       "@/*": ["src/*"],
       "@packages/*": ["packages/*"],
       "@example/*": ["example/*"]
