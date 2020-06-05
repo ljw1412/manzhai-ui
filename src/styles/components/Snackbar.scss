@@ -6,10 +6,12 @@
   --mz-snackbar__max-width: none;
   --mz-snackbar__font-color: #ffffff;
 
+  display: flex;
   width: 100%;
   pointer-events: none;
 
   &__wrapper {
+    margin: auto;
     pointer-events: auto;
     min-width: 100%;
     background-color: $color-snackbar-default;
@@ -77,12 +79,14 @@
     // transform: translate(-50%, -50%);
   }
 
-  &--start {
-    justify-content: flex-start;
+  &--start > .mz-snackbar__wrapper {
+    margin-left: 0;
+    margin-right: auto;
   }
 
-  &--end {
-    justify-content: flex-end;
+  &--end > .mz-snackbar__wrapper {
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 

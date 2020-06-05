@@ -1,6 +1,6 @@
 <template>
   <div class="component-input">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-05 11:53</div>
     <h2 id="input-shu-ru-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#input-shu-ru-kuang" title="Input 输入框" data-level="2" data-href="#input-shu-ru-kuang">¶</a>Input 输入框</h2>
 <p>通过鼠标或键盘输入内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -258,7 +258,7 @@ export default {
 <tr>
 <td>maxlength</td>
 <td>原生属性，最大输入长度</td>
-<td></td>
+<td>String/Number</td>
 <td></td>
 <td></td>
 </tr>

@@ -11,7 +11,7 @@ export type SnackbarPlacementTypes =
   | 'bottom-end'
 
 export interface SnackbarPluginOptions {
-  value?: boolean
+  visible?: boolean
   fixed?: boolean
   text?: string
   timeout?: number

@@ -139,9 +139,9 @@ export default {
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
+|visible/v-model|绑定值，是否显示|Boolean|||
 |absolute|是否绝对定位|Boolean|||
 |fixed|是否固定定位|Boolean|||
-|value|绑定值，是否显示|Boolean|||
 |timeout|延迟关闭时间，为0时不关闭|Number||5000|
 |color|背景颜色|String|primary / success / warning / danger 或同原生background-color属性值||
 |fontColor|文字颜色|String|||

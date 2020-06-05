@@ -193,7 +193,7 @@ export default {
 |value/v-model|绑定值|String / Number|||
 |type|同原生 [type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types)|String|||
 |name|原生属性|String|||
-|maxlength|原生属性，最大输入长度||||
+|maxlength|原生属性，最大输入长度|String/Number|||
 |readonly|原生属性|Boolean|||
 |disabled|是否禁用|Boolean|||
 |placeholder|输入框占位文本|String|||

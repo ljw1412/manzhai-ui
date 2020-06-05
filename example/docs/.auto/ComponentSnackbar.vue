@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-05 11:53</div>
     <h2 id="snackbar-xiao-xi-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -172,6 +172,13 @@ export default {
 </thead>
 <tbody>
 <tr>
+<td>visible/v-model</td>
+<td>绑定值，是否显示</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>absolute</td>
 <td>是否绝对定位</td>
 <td>Boolean</td>
@@ -181,13 +188,6 @@ export default {
 <tr>
 <td>fixed</td>
 <td>是否固定定位</td>
-<td>Boolean</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>value</td>
-<td>绑定值，是否显示</td>
 <td>Boolean</td>
 <td></td>
 <td></td>

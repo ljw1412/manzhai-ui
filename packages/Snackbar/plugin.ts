@@ -8,7 +8,7 @@ let instance: SnackbarConstructor
 let currentSnackbar
 
 const defaultConfig = {
-  value: false,
+  visible: false,
   fixed: false,
   text: '',
   timeout: 5000,
@@ -39,8 +39,8 @@ const initInstance = () => {
     instance = new MzSnackbar({
       el: document.createElement('div')
     })
-    instance.$on('input', (val: boolean) => {
-      instance.value = val
+    instance.$on('visible:change', (val: boolean) => {
+      instance.visible = val
     })
   }
   Object.assign(instance, defaultConfig)

@@ -1,7 +1,7 @@
 <template>
   <transition :name="transitionName">
-    <div v-if="value"
-      class="mz-snackbar flex-double-center"
+    <div v-if="visible"
+      class="mz-snackbar"
       :class="snackbarClasses"
       :style="snackbarStyles">
       <div class="mz-snackbar__wrapper"
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
+import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { MzButton } from '../Button'
 import { SnackbarPlacementTypes } from './Snackbar'
 import { COLOR_TYPES } from '@/constants'
@@ -40,12 +40,12 @@ import PopupManager from '@/utils/popup-manager'
   }
 })
 export default class MzSnackbar extends Vue {
+  @Model('visible:change', { type: Boolean, default: true })
+  readonly visible!: boolean
   @Prop(Boolean)
   readonly absolute!: boolean
   @Prop(Boolean)
   readonly fixed!: boolean
-  @Prop({ type: Boolean, default: true })
-  readonly value!: boolean
   @Prop({ type: Number, default: 5000 })
   readonly timeout!: number
   @Prop(String)
@@ -120,14 +120,14 @@ export default class MzSnackbar extends Vue {
   }
 
   show() {
-    this.$emit('input', false)
+    this.$emit('visible:change', false)
     this.$nextTick(() => {
-      this.$emit('input', true)
+      this.$emit('visible:change', true)
     })
   }
 
-  @Watch('value')
-  onValueChange(val: boolean) {
+  @Watch('visible')
+  onVisibleChange(val: boolean) {
     if (this.timer) {
       clearTimeout(this.timer)
       this.timer = null
@@ -136,7 +136,7 @@ export default class MzSnackbar extends Vue {
       this.mZIndex = PopupManager.zIndex
       if (this.timeout) {
         this.timer = setTimeout(() => {
-          this.$emit('input', false)
+          this.$emit('visible:change', false)
         }, this.timeout)
       }
     }

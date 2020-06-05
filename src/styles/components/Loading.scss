@@ -3,6 +3,9 @@
   &--icon,
   &--inline {
     display: inline-block;
+    .mz-loading__core {
+      vertical-align: middle;
+    }
   }
 
   &--waiting {
