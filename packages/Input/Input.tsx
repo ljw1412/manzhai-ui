@@ -121,6 +121,14 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
     this.$emit('input', (event.target as HTMLInputElement).value)
   }
 
+  focus() {
+    this.inputRef && this.inputRef.focus()
+  }
+
+  blur() {
+    this.inputRef && this.inputRef.blur()
+  }
+
   onFocus(event: InputEvent) {
     this.focused = true
     this.$emit('focus', event)
