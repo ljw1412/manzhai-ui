@@ -1,6 +1,6 @@
 <template>
   <div class="component-dropdown">
-    <div class="update-datetime">文档更新时间：2020-05-30 18:21</div>
+    <div class="update-datetime">文档更新时间：2020-06-09 17:22</div>
     <h2 id="dropdown-xia-la-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#dropdown-xia-la-kuang" title="Dropdown 下拉框" data-level="2" data-href="#dropdown-xia-la-kuang">¶</a>Dropdown 下拉框</h2>
 <p>点击元素，弹出下拉框。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -53,6 +53,13 @@
 <tr>
 <td>visible/v-model</td>
 <td>当前显示状态</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>是否禁用</td>
 <td>Boolean</td>
 <td></td>
 <td></td>
