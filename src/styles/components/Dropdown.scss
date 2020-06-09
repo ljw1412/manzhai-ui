@@ -1,7 +1,10 @@
-.tippy-box[role='dropdown'] .tippy-content {
-  padding: initial;
-  overflow: hidden;
-  border-radius: inherit;
+.tippy-box[role='dropdown'] {
+  outline: none;
+  > .tippy-content {
+    padding: initial;
+    overflow: hidden;
+    border-radius: inherit;
+  }
 }
 
 .mz-dropdown-card {
