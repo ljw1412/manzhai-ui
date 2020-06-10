@@ -1,5 +1,15 @@
 .mz-pagination {
   position: relative;
+  font-weight: 700;
+  &.is-outlined {
+    .mz-page-prev,
+    .mz-page-next {
+      margin: 0 5px;
+    }
+    > .mz-pagination-pager > .mz-button + .mz-button {
+      margin-left: 5px;
+    }
+  }
 }
 
 .mz-pagination-pager {
@@ -11,4 +21,16 @@
   font-size: 0;
   padding: 0;
   margin: 0;
+}
+
+.mz-pagination-total {
+  vertical-align: middle;
+  margin-right: 10px;
+  font-size: 14px;
+  color: $color-text-secondary;
+  font-weight: normal;
+}
+
+.mz-page-number {
+  font-weight: inherit;
 }

@@ -98,6 +98,13 @@
     }
   }
 
+  .mz-pagination {
+    [class*='mz-page-quick-'],
+    .mz-page-number:not(.active) {
+      color: $color-text-placeholder;
+    }
+  }
+
   .mz-progress {
     &__background,
     &__buffer,

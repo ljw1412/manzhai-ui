@@ -3,8 +3,11 @@ import { CreateElement, VNodeData } from 'vue'
 import MzButton from 'manzhai-ui/packages/Button/Button'
 import MzIcon from 'manzhai-ui/packages/Icon/Icon.vue'
 import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import MzPager from './Pager'
 
-@Component({ components: { MzButton, MzIcon } })
+const CHEVRON_ICON = { prev: 'chevron-back', next: 'chevron-forward' }
+
+@Component({ components: { MzButton, MzIcon, MzPager } })
 export default class MzPagination extends MzSize {
   @Model('index:change', { type: Number, default: 1 })
   readonly index!: number
@@ -20,8 +23,14 @@ export default class MzPagination extends MzSize {
     validator: val => (val | 0) === val && val > 4 && val < 20 && val % 2 === 1
   })
   readonly max!: number
-
-  quickIcon = { prev: 'ellipsis-horizontal', next: 'ellipsis-horizontal' }
+  @Prop(Boolean)
+  readonly outlined!: boolean
+  @Prop(Boolean)
+  readonly circle!: boolean
+  @Prop(Boolean)
+  readonly disabled!: boolean
+  @Prop({ type: String, default: '共%d条' })
+  readonly totalText!: string
 
   get mPageCount() {
     if (typeof this.total === 'number') {
@@ -32,115 +41,68 @@ export default class MzPagination extends MzSize {
     return 0
   }
 
-  get halfPagerCount() {
-    return (this.max - 1) / 2
+  get totalTextFormat() {
+    return this.totalText.replace(/%d/g, this.total + '')
   }
 
-  get exceed() {
-    return this.mPageCount > this.max
-  }
-
-  get displayQuickPrev() {
-    return this.exceed && Number(this.index) > this.max - this.halfPagerCount
-  }
-
-  get displayQuickNext() {
-    return (
-      this.exceed && Number(this.index) < this.mPageCount - this.halfPagerCount
-    )
-  }
-
-  get pagers() {
-    const currentPage = Number(this.index)
-    const list = []
-    let start = 2
-    let count = this.mPageCount
-    if (this.displayQuickPrev && !this.displayQuickNext) {
-      start = this.mPageCount - (this.max - 2)
-    } else if (!this.displayQuickPrev && this.displayQuickNext) {
-      count = this.max
-    } else if (this.displayQuickPrev && this.displayQuickNext) {
-      const offset = Math.floor(this.max / 2) - 1
-      start = currentPage - offset
-      count = currentPage + offset + 1
+  get buttonProp() {
+    return {
+      icon: true,
+      size: this.size,
+      circle: this.circle,
+      flat: !this.outlined,
+      outlined: this.outlined,
+      disabled: this.disabled
     }
-    for (let i = start; i < count; i++) {
-      list.push(i)
-    }
-    return list
-  }
-
-  render(h: CreateElement) {
-    return <div class="mz-pagination">{this.renderPagers()}</div>
-  }
-
-  renderPagerNumber(num: number) {
-    const active = this.index === num
-    const data: VNodeData = {
-      props: { flat: true, icon: true },
-      class: ['mz-page-number', { active }],
-      on: {
-        click: () => {
-          this.handlePageChange(num)
-        }
-      }
-    }
-    if (active) {
-      Object.assign(data.props, { color: 'primary', flat: false })
-    }
-    return <mz-button {...data}>{num}</mz-button>
-  }
-
-  renderPagerQuick(type: 'prev' | 'next') {
-    const data: VNodeData = {
-      props: { flat: true, icon: true },
-      class: [`mz-page-${type}`],
-      directives: [
-        {
-          name: 'hover',
-          value: {
-            enter: () => {
-              this.quickIcon[type] =
-                type === 'prev' ? 'play-back' : 'play-forward'
-            },
-            leave: () => {
-              this.quickIcon[type] = 'ellipsis-horizontal'
-            }
-          }
-        }
-      ],
-      on: {
-        click: () => {
-          if (type === 'prev') {
-            this.handlePageChange(this.pagers[0] - 1)
-          } else {
-            this.handlePageChange(this.pagers[this.pagers.length - 1] + 1)
-          }
-        }
-      }
-    }
-    return (
-      <mz-button {...data}>
-        <mz-icon name={this.quickIcon[type]}></mz-icon>
-      </mz-button>
-    )
-  }
-
-  renderPagers() {
-    if (!this.mPageCount) return
-    return (
-      <div class="mz-pagination-pager">
-        {this.renderPagerNumber(1)}
-        {this.displayQuickPrev && this.renderPagerQuick('prev')}
-        {this.pagers.map(i => this.renderPagerNumber(i))}
-        {this.displayQuickNext && this.renderPagerQuick('next')}
-        {this.renderPagerNumber(this.mPageCount)}
-      </div>
-    )
   }
 
   handlePageChange(num: number) {
     this.$emit('change', num)
     this.$emit('index:change', num)
+  }
+
+  renderController(type: 'prev' | 'next') {
+    const isPrev = type === 'prev'
+    const disabled = isPrev ? this.index === 1 : this.index === this.mPageCount
+    const data = {
+      class: `mz-page-${type}`,
+      props: { ...this.buttonProp, disabled: this.disabled || disabled },
+      on: {
+        click: () => {
+          this.handlePageChange(this.index + (isPrev ? -1 : 1))
+        }
+      }
+    }
+    return (
+      <mz-button {...data}>
+        <mz-icon name={CHEVRON_ICON[type]}></mz-icon>
+      </mz-button>
+    )
+  }
+
+  renderTotal() {
+    if (!this.total && !this.$slots.total) return
+    return (
+      <span class="mz-pagination-total">
+        {this.$slots.total || this.totalTextFormat}
+      </span>
+    )
+  }
+
+  render(h: CreateElement) {
+    return (
+      <div class={['mz-pagination', { 'is-outlined': this.outlined }]}>
+        {this.renderTotal()}
+        {this.renderController('prev')}
+        <mz-pager
+          index={this.index}
+          pageCount={this.mPageCount}
+          max={this.max}
+          size={this.size}
+          buttonProp={this.buttonProp}
+          on-change={this.handlePageChange}></mz-pager>
+        {this.renderController('next')}
+      </div>
+    )
   }
 }
