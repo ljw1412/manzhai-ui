@@ -5,15 +5,17 @@
 :::demo
 ```html
 <mz-pagination v-model="index" 
-  :page-size="size" :total="total"></mz-pagination>
+  :page-size="10" :total="70"></mz-pagination>
+
+<mz-pagination v-model="index2" 
+  :page-size="10" :total="198"></mz-pagination>
 
 <script>
 export default {
   data (){
     return {
       index: 1,
-      size: 10,
-      total: 200
+      index2: 1
     }
   }
 }

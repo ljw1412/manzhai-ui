@@ -19,7 +19,9 @@ export default class MzPagination extends MzSize {
     default: 7,
     validator: val => (val | 0) === val && val > 4 && val < 20 && val % 2 === 1
   })
-  readonly pagerCount!: number
+  readonly max!: number
+
+  quickIcon = { prev: 'ellipsis-horizontal', next: 'ellipsis-horizontal' }
 
   get mPageCount() {
     if (typeof this.total === 'number') {
@@ -27,27 +29,45 @@ export default class MzPagination extends MzSize {
     } else if (typeof this.pageCount === 'number') {
       return Math.max(1, Math.ceil(this.pageCount))
     }
-    return null
+    return 0
+  }
+
+  get halfPagerCount() {
+    return (this.max - 1) / 2
+  }
+
+  get exceed() {
+    return this.mPageCount > this.max
   }
 
   get displayQuickPrev() {
-    const pagerCount = this.pagerCount
-    const halfPagerCount = (pagerCount - 1) / 2
-
-    const currentPage = Number(this.index)
-    const pageCount = Number(this.mPageCount)
-
-    return pageCount > pagerCount && currentPage > pagerCount - halfPagerCount
+    return this.exceed && Number(this.index) > this.max - this.halfPagerCount
   }
 
   get displayQuickNext() {
-    const pagerCount = this.pagerCount
-    const halfPagerCount = (pagerCount - 1) / 2
+    return (
+      this.exceed && Number(this.index) < this.mPageCount - this.halfPagerCount
+    )
+  }
 
+  get pagers() {
     const currentPage = Number(this.index)
-    const pageCount = Number(this.mPageCount)
-
-    return pageCount > pagerCount && currentPage < pagerCount - halfPagerCount
+    const list = []
+    let start = 2
+    let count = this.mPageCount
+    if (this.displayQuickPrev && !this.displayQuickNext) {
+      start = this.mPageCount - (this.max - 2)
+    } else if (!this.displayQuickPrev && this.displayQuickNext) {
+      count = this.max
+    } else if (this.displayQuickPrev && this.displayQuickNext) {
+      const offset = Math.floor(this.max / 2) - 1
+      start = currentPage - offset
+      count = currentPage + offset + 1
+    }
+    for (let i = start; i < count; i++) {
+      list.push(i)
+    }
+    return list
   }
 
   render(h: CreateElement) {
@@ -58,16 +78,50 @@ export default class MzPagination extends MzSize {
     const active = this.index === num
     const data: VNodeData = {
       props: { flat: true, icon: true },
-      class: ['page-number', { active }],
-      key: num
+      class: ['mz-page-number', { active }],
+      on: {
+        click: () => {
+          this.handlePageChange(num)
+        }
+      }
+    }
+    if (active) {
+      Object.assign(data.props, { color: 'primary', flat: false })
     }
     return <mz-button {...data}>{num}</mz-button>
   }
 
-  renderPagerIcon(icon: string) {
+  renderPagerQuick(type: 'prev' | 'next') {
+    const data: VNodeData = {
+      props: { flat: true, icon: true },
+      class: [`mz-page-${type}`],
+      directives: [
+        {
+          name: 'hover',
+          value: {
+            enter: () => {
+              this.quickIcon[type] =
+                type === 'prev' ? 'play-back' : 'play-forward'
+            },
+            leave: () => {
+              this.quickIcon[type] = 'ellipsis-horizontal'
+            }
+          }
+        }
+      ],
+      on: {
+        click: () => {
+          if (type === 'prev') {
+            this.handlePageChange(this.pagers[0] - 1)
+          } else {
+            this.handlePageChange(this.pagers[this.pagers.length - 1] + 1)
+          }
+        }
+      }
+    }
     return (
-      <mz-button flat icon class="page-number">
-        <mz-icon name={icon}></mz-icon>
+      <mz-button {...data}>
+        <mz-icon name={this.quickIcon[type]}></mz-icon>
       </mz-button>
     )
   }
@@ -77,8 +131,16 @@ export default class MzPagination extends MzSize {
     return (
       <div class="mz-pagination-pager">
         {this.renderPagerNumber(1)}
+        {this.displayQuickPrev && this.renderPagerQuick('prev')}
+        {this.pagers.map(i => this.renderPagerNumber(i))}
+        {this.displayQuickNext && this.renderPagerQuick('next')}
         {this.renderPagerNumber(this.mPageCount)}
       </div>
     )
+  }
+
+  handlePageChange(num: number) {
+    this.$emit('change', num)
+    this.$emit('index:change', num)
   }
 }
