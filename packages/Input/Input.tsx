@@ -20,6 +20,12 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   readonly autocomplete!: 'on' | 'off'
   @Prop([String, Number])
   readonly maxlength!: string | number
+  @Prop()
+  readonly max!: any
+  @Prop()
+  readonly min!: any
+  @Prop()
+  readonly step!: any
   @Prop(Boolean)
   readonly rounded!: boolean
   @Prop(String)
@@ -54,6 +60,9 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
         value={this.value}
         type={this.type}
         name={this.name}
+        max={this.max}
+        min={this.min}
+        step={this.step}
         maxlength={this.maxlength}
         placeholder={this.placeholder}
         readonly={this.readonly}

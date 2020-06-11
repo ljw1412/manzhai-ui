@@ -13,7 +13,7 @@
   "example/docs/components/Checkbox.md": "47d124b70d02a6affe1e75443846888e",
   "example/docs/components/Grid.md": "576d21fc0369b72eb83642083ec92aa7",
   "example/docs/components/Form.md": "ab07fae13e8b286087d73e246df0f45f",
-  "example/docs/components/Input.md": "92205546bf1080a1076a498ce1f9c4be",
+  "example/docs/components/Input.md": "e0b57f63d531335d3ab99100d96e71be",
   "example/docs/components/ImagePreview.md": "962ee6a165a24888768b3c31b19ca5ed",
   "example/docs/components/Layout.md": "fef5a25c590c5d6d5a6f97714f554438",
   "example/docs/components/Icon.md": "a35798c5270d2a5b27a7e8906ae798c2",
@@ -46,5 +46,5 @@
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
   "example/docs/components/TableSimple.md": "353b18a1d1c9163cf638f023e21f8de3",
   "example/docs/components/Rate.md": "975d4540faeac536fa978f728b1910b6",
-  "example/docs/components/Pagination.md": "253458c5ac721e3c2266f8ae31ceaac4"
+  "example/docs/components/Pagination.md": "79a833f91c2b467f26a12d7681e7da29"
 }
