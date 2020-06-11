@@ -9,10 +9,11 @@
     @show="handleDropdownShow"
     @hide="active = false">
     <mz-input ref="input"
+      readonly
       :value="text"
       :placeholder="placeholder"
       :disabled="disabled"
-      readonly>
+      :size="size">
       <mz-icon :name="this.active ? 'chevron-up' : 'chevron-down'"
         slot="suffix"></mz-icon>
     </mz-input>

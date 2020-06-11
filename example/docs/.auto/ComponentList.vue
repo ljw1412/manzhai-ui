@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-05-23 15:31</div>
+    <div class="update-datetime">文档更新时间：2020-06-11 17:17</div>
     <h2 id="list-lie-biao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -242,7 +242,7 @@ export default {
     </mz-list>
   </mz-card>
 </div></list-demo7></template>
-        <template #description><p><code>size</code>属性控制输入框的大小，可选值<code>small</code>、<code>medium</code>、<code>(默认)</code>、<code>large</code>。</p>
+        <template #description><p><code>size</code>属性控制列表的大小，可选值<code>small</code>、<code>medium</code>、<code>(默认)</code>、<code>large</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-card v-for=&quot;size of sizeList&quot;
    width=&quot;200px&quot; :key=&quot;size&quot;&gt;

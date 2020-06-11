@@ -3,9 +3,17 @@
   white-space: nowrap;
   padding: 2px 5px;
   font-weight: 700;
-  > * {
-    vertical-align: middle;
+
+  &.is-right {
+    text-align: right;
   }
+
+  &.is-separate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &.is-outlined {
     .mz-page-prev,
     .mz-page-next {
@@ -25,6 +33,7 @@
   font-size: 0;
   padding: 0;
   margin: 0;
+  vertical-align: middle;
 }
 
 .mz-pagination-total,
@@ -33,6 +42,7 @@
   font-size: 14px;
   color: $color-text-secondary;
   font-weight: normal;
+  vertical-align: middle;
 }
 
 .mz-page-number {
@@ -42,6 +52,7 @@
 .mz-pagination-sizes {
   width: 120px;
   margin: 0 5px;
+  vertical-align: middle;
   .mz-input__inner {
     text-align: center;
   }

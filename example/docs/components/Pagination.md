@@ -75,7 +75,7 @@ export default {
 :::
 
 ### 自定义布局
-:::demo 通过`layout`可以自由设定分页组件的布局。可选值`prev`,`next`,`sizes`,`pager`,`jumper`,`total`。
+:::demo 通过`layout`可以自由设定分页组件的布局。可选值`prev`,`next`,`sizes`,`pager`,`jumper`,`total`,`|`。
 ```html
 <span class="demo-font-size-14">带总数</span>
 <mz-pagination 
@@ -87,7 +87,7 @@ export default {
 <mz-pagination 
   v-model="index2" 
   :layout="['sizes','prev', 'pager', 'next']"
-  :page-size="10" 
+  :page-size.sync="pageSize2"
   :total="100"></mz-pagination>
 <span class="demo-font-size-14">跳转到指定页数</span>
 <mz-pagination 
@@ -99,7 +99,7 @@ export default {
 <mz-pagination 
   v-model="index4" 
   :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
-  :page-size="10" 
+  :page-size.sync="pageSize4" 
   :total="100"></mz-pagination>
 
 <script>
@@ -108,8 +108,10 @@ export default {
     return {
       index: 1,
       index2: 1,
+      pageSize2:10,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize4:10,
     }
   }
 }
@@ -117,21 +119,47 @@ export default {
 ```
 :::
 
+### 左右布局
+:::demo 在`layout`属性中，使用`|`符号分隔左右。
+```html
+<mz-pagination 
+  v-model="index" 
+  :layout="['|', 'total', 'prev', 'pager', 'next']"
+  :page-size="10" 
+  :total="100"></mz-pagination>
+
+<mz-pagination 
+  v-model="index" 
+  :layout="['total', '|', 'prev', 'pager', 'next']"
+  :page-size="10" 
+  :total="100"></mz-pagination>
+
+<mz-pagination 
+  v-model="index" 
+  :layout="['prev', 'pager', 'next', '|', 'total' , 'jumper']"
+  :page-size="10" 
+  :total="100"></mz-pagination>
+```
+:::
 
 ### 不同大小
-:::demo
+:::demo `size`属性控制分页组件的大小，可选值`small`、`medium`、`(默认)`、`large`。
 ```html
 <mz-pagination v-model="index" size="small"
-  :page-size="10" :total="100"></mz-pagination>
+  :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+  :page-size.sync="pageSize1" :total="100"></mz-pagination>
 
 <mz-pagination v-model="index2" size="medium"
-  :page-size="10" :total="100"></mz-pagination>
+  :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+  :page-size.sync="pageSize2" :total="100"></mz-pagination>
 
-<mz-pagination v-model="index3" 
-  :page-size="10" :total="100"></mz-pagination>
+<mz-pagination v-model="index3"
+  :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+  :page-size.sync="pageSize3" :total="100"></mz-pagination>
 
 <mz-pagination v-model="index4" size="large"
-  :page-size="10" :total="100"></mz-pagination>
+  :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+  :page-size.sync="pageSize4" :total="100"></mz-pagination>
 
 <script>
 export default {
@@ -140,7 +168,11 @@ export default {
       index: 1,
       index2: 1,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize1: 10,
+      pageSize2: 10,
+      pageSize3: 10,
+      pageSize4: 10
     }
   }
 }
@@ -162,7 +194,7 @@ export default {
 |outlined|是否使用边框模式|Boolean|||
 |circle|是否为圆型|Boolean|||
 |disabled|是否禁用|Boolean|||
-|layout|布局|string[]|`prev`,`next`,`sizes`,`pager`,`jumper`,`total`|['prev', 'pager', 'next']|
+|layout|布局|string[]|`prev`,`next`,`sizes`,`pager`,`jumper`,`total`,`|`|['prev', 'pager', 'next']|
 |totalText|总数文案|String||'共 %d 条'|
 |sizeText|每页显示数量的文案|String||'%d 条/页'|
 

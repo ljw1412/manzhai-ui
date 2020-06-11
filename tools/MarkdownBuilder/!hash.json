@@ -20,7 +20,7 @@
   "example/docs/components/Loading.md": "f85a8e65da91610abf404636a944a06c",
   "example/docs/components/Masonry.md": "5ed23b9957b92b6c4ed9ef87821d4eed",
   "example/docs/components/Heading.md": "0a3d53c51f194ab29456221e74c33552",
-  "example/docs/components/List.md": "9bdabce37ba990c58c9bfa20249800bb",
+  "example/docs/components/List.md": "68b317d46cca0ac91126a10cff694c13",
   "example/docs/components/MaterialInput.md": "fab6d28d8f0e5f4c35767846ce46d317",
   "example/docs/components/Navigation.md": "31180bd3b23a57e31945e64bd8057b4d",
   "example/docs/components/Modal.md": "3cf3afccc10337da710416f0f483ce24",
@@ -46,5 +46,5 @@
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
   "example/docs/components/TableSimple.md": "353b18a1d1c9163cf638f023e21f8de3",
   "example/docs/components/Rate.md": "975d4540faeac536fa978f728b1910b6",
-  "example/docs/components/Pagination.md": "79a833f91c2b467f26a12d7681e7da29"
+  "example/docs/components/Pagination.md": "6f410d3ee1fd2942c9bd4e010e83a658"
 }

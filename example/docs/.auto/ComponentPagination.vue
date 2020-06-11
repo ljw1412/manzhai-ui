@@ -1,6 +1,6 @@
 <template>
   <div class="component-pagination">
-    <div class="update-datetime">文档更新时间：2020-06-11 15:43</div>
+    <div class="update-datetime">文档更新时间：2020-06-11 17:49</div>
     <h2 id="pagination-fen-ye" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#pagination-fen-ye" title="Pagination 分页" data-level="2" data-href="#pagination-fen-ye">¶</a>Pagination 分页</h2>
 <p>以分页的形式，展示大量的数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -103,7 +103,7 @@ export default {
   <mz-pagination 
     v-model="index2" 
     :layout="['sizes','prev', 'pager', 'next']"
-    :page-size="10" 
+    :page-size.sync="pageSize2"
     :total="100"></mz-pagination>
   <span class="demo-font-size-14">跳转到指定页数</span>
   <mz-pagination 
@@ -115,10 +115,10 @@ export default {
   <mz-pagination 
     v-model="index4" 
     :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
-    :page-size="10" 
+    :page-size.sync="pageSize4" 
     :total="100"></mz-pagination>
 </div></pagination-demo4></template>
-        <template #description><p>通过<code>layout</code>可以自由设定分页组件的布局。可选值<code>prev</code>,<code>next</code>,<code>sizes</code>,<code>pager</code>,<code>jumper</code>,<code>total</code>。</p>
+        <template #description><p>通过<code>layout</code>可以自由设定分页组件的布局。可选值<code>prev</code>,<code>next</code>,<code>sizes</code>,<code>pager</code>,<code>jumper</code>,<code>total</code>,<code>|</code>。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;带总数&lt;/span&gt;
 &lt;mz-pagination 
@@ -130,7 +130,7 @@ export default {
 &lt;mz-pagination 
   v-model=&quot;index2&quot; 
   :layout=&quot;['sizes','prev', 'pager', 'next']&quot;
-  :page-size=&quot;10&quot; 
+  :page-size.sync=&quot;pageSize2&quot;
   :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 &lt;span class=&quot;demo-font-size-14&quot;&gt;跳转到指定页数&lt;/span&gt;
 &lt;mz-pagination 
@@ -142,7 +142,7 @@ export default {
 &lt;mz-pagination 
   v-model=&quot;index4&quot; 
   :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;
-  :page-size=&quot;10&quot; 
+  :page-size.sync=&quot;pageSize4&quot; 
   :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 
 &lt;script&gt;
@@ -151,39 +151,90 @@ export default {
     return {
       index: 1,
       index2: 1,
+      pageSize2:10,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize4:10,
     }
   }
 }
 &lt;/script&gt;
-</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+</code></pre></template></demo-block><h3 id="zuo-you-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zuo-you-bu-ju" title="左右布局" data-level="3" data-href="#zuo-you-bu-ju">¶</a>左右布局</h3>
 <demo-block>
         <template #example><pagination-demo5 inline-template><div class="pagination-demo5">
+  <mz-pagination 
+    v-model="index" 
+    :layout="['|', 'total', 'prev', 'pager', 'next']"
+    :page-size="10" 
+    :total="100"></mz-pagination>
+  
+  <mz-pagination 
+    v-model="index" 
+    :layout="['total', '|', 'prev', 'pager', 'next']"
+    :page-size="10" 
+    :total="100"></mz-pagination>
+  
+  <mz-pagination 
+    v-model="index" 
+    :layout="['prev', 'pager', 'next', '|', 'total' , 'jumper']"
+    :page-size="10" 
+    :total="100"></mz-pagination>
+</div></pagination-demo5></template>
+        <template #description><p>在<code>layout</code>属性中，使用<code>|</code>符号分隔左右。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-pagination 
+  v-model=&quot;index&quot; 
+  :layout=&quot;['|', 'total', 'prev', 'pager', 'next']&quot;
+  :page-size=&quot;10&quot; 
+  :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+
+&lt;mz-pagination 
+  v-model=&quot;index&quot; 
+  :layout=&quot;['total', '|', 'prev', 'pager', 'next']&quot;
+  :page-size=&quot;10&quot; 
+  :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+
+&lt;mz-pagination 
+  v-model=&quot;index&quot; 
+  :layout=&quot;['prev', 'pager', 'next', '|', 'total' , 'jumper']&quot;
+  :page-size=&quot;10&quot; 
+  :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+<demo-block>
+        <template #example><pagination-demo6 inline-template><div class="pagination-demo6">
   <mz-pagination v-model="index" size="small"
-    :page-size="10" :total="100"></mz-pagination>
+    :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+    :page-size.sync="pageSize1" :total="100"></mz-pagination>
   
   <mz-pagination v-model="index2" size="medium"
-    :page-size="10" :total="100"></mz-pagination>
+    :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+    :page-size.sync="pageSize2" :total="100"></mz-pagination>
   
-  <mz-pagination v-model="index3" 
-    :page-size="10" :total="100"></mz-pagination>
+  <mz-pagination v-model="index3"
+    :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+    :page-size.sync="pageSize3" :total="100"></mz-pagination>
   
   <mz-pagination v-model="index4" size="large"
-    :page-size="10" :total="100"></mz-pagination>
-</div></pagination-demo5></template>
-        <template #description></template>
+    :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
+    :page-size.sync="pageSize4" :total="100"></mz-pagination>
+</div></pagination-demo6></template>
+        <template #description><p><code>size</code>属性控制分页组件的大小，可选值<code>small</code>、<code>medium</code>、<code>(默认)</code>、<code>large</code>。</p>
+</template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-pagination v-model=&quot;index&quot; size=&quot;small&quot;
-  :page-size=&quot;10&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+  :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;
+  :page-size.sync=&quot;pageSize1&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 
 &lt;mz-pagination v-model=&quot;index2&quot; size=&quot;medium&quot;
-  :page-size=&quot;10&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+  :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;
+  :page-size.sync=&quot;pageSize2&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 
-&lt;mz-pagination v-model=&quot;index3&quot; 
-  :page-size=&quot;10&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+&lt;mz-pagination v-model=&quot;index3&quot;
+  :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;
+  :page-size.sync=&quot;pageSize3&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 
 &lt;mz-pagination v-model=&quot;index4&quot; size=&quot;large&quot;
-  :page-size=&quot;10&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
+  :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;
+  :page-size.sync=&quot;pageSize4&quot; :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
 
 &lt;script&gt;
 export default {
@@ -192,7 +243,11 @@ export default {
       index: 1,
       index2: 1,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize1: 10,
+      pageSize2: 10,
+      pageSize3: 10,
+      pageSize4: 10
     }
   }
 }
@@ -277,7 +332,7 @@ export default {
 <td>layout</td>
 <td>布局</td>
 <td>string[]</td>
-<td><code>prev</code>,<code>next</code>,<code>sizes</code>,<code>pager</code>,<code>jumper</code>,<code>total</code></td>
+<td><code>prev</code>,<code>next</code>,<code>sizes</code>,<code>pager</code>,<code>jumper</code>,<code>total</code>,<code>|</code></td>
 <td>['prev', 'pager', 'next']</td>
 </tr>
 <tr>
@@ -360,17 +415,23 @@ export default {
     return {
       index: 1,
       index2: 1,
+      pageSize2:10,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize4:10,
     }
   }
-}, PaginationDemo5: {
+}, PaginationDemo5: {}, PaginationDemo6: {
   data (){
     return {
       index: 1,
       index2: 1,
       index3: 1,
-      index4: 1
+      index4: 1,
+      pageSize1: 10,
+      pageSize2: 10,
+      pageSize3: 10,
+      pageSize4: 10
     }
   }
 } }

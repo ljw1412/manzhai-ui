@@ -162,7 +162,7 @@ export default {
 
 ### 不同大小
 
-:::demo `size`属性控制输入框的大小，可选值`small`、`medium`、`(默认)`、`large`。
+:::demo `size`属性控制列表的大小，可选值`small`、`medium`、`(默认)`、`large`。
 ```html
 <mz-card v-for="size of sizeList"
    width="200px" :key="size">

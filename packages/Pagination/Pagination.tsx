@@ -75,13 +75,6 @@ export default class MzPagination extends MzSize {
     }
   }
 
-  get renderItems() {
-    return this.layout.map(key => {
-      const render = this.renderStore[key]
-      return render && render()
-    })
-  }
-
   handlePageChange(num: number) {
     this.jumpNum = num
     this.$emit('change', num)
@@ -182,12 +175,45 @@ export default class MzPagination extends MzSize {
     )
   }
 
+  renderPaginationItems(list: string[]) {
+    return list.map(key => {
+      const render = this.renderStore[key]
+      return render && render()
+    })
+  }
+
   render(h: CreateElement) {
-    return (
-      <div class={['mz-pagination', { 'is-outlined': this.outlined }]}>
-        {this.renderItems}
-      </div>
-    )
+    let left: any[] = []
+    let right: any[] = []
+    const index = this.layout.indexOf('|')
+    if (index === -1) {
+      left = this.renderPaginationItems(this.layout)
+    } else if (index === 0) {
+      right = this.renderPaginationItems(this.layout.slice(1))
+    } else {
+      left = this.renderPaginationItems(this.layout.slice(0, index))
+      right = this.renderPaginationItems(this.layout.slice(index + 1))
+    }
+    let paginationItems: any[] = [left, right]
+    const isSeparate = left.length && right.length
+    const isRight = left.length === 0
+    if (isSeparate) {
+      paginationItems = [
+        <div class="mz-pagination-left">{left}</div>,
+        <div class="mz-pagination-right">{right}</div>
+      ]
+    }
+    const data = {
+      class: [
+        'mz-pagination',
+        {
+          'is-outlined': this.outlined,
+          'is-right': isRight,
+          'is-separate': isSeparate
+        }
+      ]
+    }
+    return <div {...data}>{paginationItems}</div>
   }
 
   mounted() {
