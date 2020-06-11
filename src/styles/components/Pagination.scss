@@ -1,6 +1,11 @@
 .mz-pagination {
   position: relative;
+  white-space: nowrap;
+  padding: 2px 5px;
   font-weight: 700;
+  > * {
+    vertical-align: middle;
+  }
   &.is-outlined {
     .mz-page-prev,
     .mz-page-next {
@@ -17,15 +22,14 @@
   user-select: none;
   list-style: none;
   display: inline-block;
-  vertical-align: top;
   font-size: 0;
   padding: 0;
   margin: 0;
 }
 
-.mz-pagination-total {
-  vertical-align: middle;
-  margin-right: 10px;
+.mz-pagination-total,
+.mz-pagination-jumper {
+  margin: 0 5px;
   font-size: 14px;
   color: $color-text-secondary;
   font-weight: normal;
@@ -33,4 +37,27 @@
 
 .mz-page-number {
   font-weight: inherit;
+}
+
+.mz-pagination-sizes {
+  width: 120px;
+  margin: 0 5px;
+  .mz-input__inner {
+    text-align: center;
+  }
+}
+
+.mz-pagination-jumper .mz-input {
+  margin: 0 3px;
+  width: 40px;
+  input {
+    text-align: center;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
 }
