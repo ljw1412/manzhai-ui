@@ -8,9 +8,30 @@ const queue = new Queue()
 let instance: any
 let currentSnackbar
 
+function addCloseBtn() {
+  const h = instance.$createElement
+  instance.$slots.suffix = [
+    h(
+      MzButton,
+      { props: { textColor: '#fff', size: 'small', icon: true, circle: true } },
+      [
+        h(MzIcon, {
+          props: { name: 'close', size: 20 },
+          on: {
+            click: () => {
+              instance.visible = false
+            }
+          }
+        })
+      ]
+    )
+  ]
+}
+
 function initInstance() {
   if (!instance) {
     instance = new MzSnackbar({ el: document.createElement('div') })
+    addCloseBtn()
     instance.$on('visible:change', (val: boolean) => {
       instance.visible = val
     })
