@@ -1,5 +1,5 @@
 import Mask from './Mask'
-import Stack from '@/classes/Stack'
+import Stack from 'manzhai-ui/src/classes/Stack'
 
 export type MaskConfig = {
   color?: string

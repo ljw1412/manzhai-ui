@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { typeOf } from '../../src/utils/assist'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
 
 @Component
 export default class MzSubHeader extends Vue {

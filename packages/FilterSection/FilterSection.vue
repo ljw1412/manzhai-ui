@@ -22,10 +22,11 @@ import {
   Inject,
   Watch
 } from 'vue-property-decorator'
-import BaseAttribute from '../../src/mixins/BaseAttribute'
-import FormElement from '../../src/mixins/FormElement'
-import { typeOf } from '../../src/utils/assist'
-import { FilterSectionItem, MzFilterSectionGroup } from '.'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import MzFilterSectionGroup from './FilterSectionGroup.vue'
+import MzFilterSectionItem from './FilterSectionItem.vue'
 
 @Component({
   provide() {
@@ -46,7 +47,7 @@ export default class MzFilterSection extends Mixins(FormElement) {
   @Prop(Boolean)
   readonly multiple!: boolean
 
-  itemList: FilterSectionItem[] = []
+  itemList: MzFilterSectionItem[] = []
   mValue: any = null
 
   get sectionValue() {

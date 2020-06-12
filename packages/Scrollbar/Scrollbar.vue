@@ -1,18 +1,14 @@
 <script lang="tsx">
 import { Component, Vue, Ref, Prop, Watch } from 'vue-property-decorator'
-import MzBar from './Bar.vue'
+import { CreateElement } from 'vue'
 import {
   addResizeListener,
   removeResizeListener
-} from '../../src/utils/resize-event'
-import { CreateElement } from 'vue'
-import { on, off } from '../../src/utils/dom'
+} from 'manzhai-ui/src/utils/resize-event'
+import { on, off } from 'manzhai-ui/src/utils/dom'
+import MzBar from './Bar.vue'
 
-@Component({
-  components: {
-    MzBar
-  }
-})
+@Component({ components: { MzBar } })
 export default class MzScrollbar extends Vue {
   @Prop({ type: String, default: '15px' })
   readonly barSize!: string

@@ -11,9 +11,9 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Inject, Mixins } from 'vue-property-decorator'
-import { MzFilterSection } from '.'
-import FormElement from '../../src/mixins/FormElement'
-import { typeOf } from '../../src/utils/assist'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import MzFilterSection from './FilterSection.vue'
 
 @Component
 export default class MzFilterSectionItem extends Mixins(FormElement) {

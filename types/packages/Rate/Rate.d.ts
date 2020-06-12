@@ -1,0 +1,33 @@
+import { Vue } from 'vue-property-decorator';
+import { CreateElement, VNodeData } from 'vue';
+export default class MzRate extends Vue {
+    readonly value: number;
+    readonly max: number;
+    readonly size: number;
+    readonly allowHalf: boolean;
+    readonly readonly: boolean;
+    readonly showText: boolean;
+    readonly format: (val: number) => any;
+    readonly icon: string | ((val: number) => string);
+    readonly color: string | ((val: number) => string);
+    readonly voidColor: string;
+    readonly textColor: string | ((val: number) => string);
+    isHover: boolean;
+    hoverValue: number;
+    mValue: number;
+    get integral(): number;
+    get decimal(): number;
+    get ratio(): number;
+    get currentValue(): number;
+    get text(): any;
+    get activeColor(): string;
+    get finalTextColor(): string;
+    get finalIcon(): string;
+    render(h: CreateElement): JSX.Element;
+    renderStars(): JSX.Element;
+    renderDecimalStar(index: number): JSX.Element | undefined;
+    renderIcon(): JSX.Element;
+    addStarListener(data: VNodeData | undefined, value: number, stop?: boolean): VNodeData;
+    getValue(val: number): number;
+    onValueChange(val: number): void;
+}

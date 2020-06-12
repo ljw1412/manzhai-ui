@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
-import { MzCarousel } from '.'
+import MzCarousel from './Carousel.vue'
 
 @Component
 export default class MzCarouselItem extends Vue {

@@ -1,5 +1,5 @@
 import { VNodeDirective, VNode } from 'vue'
-import { safeElementPosition } from '@/utils/dom'
+import { safeElementPosition } from 'manzhai-ui/src/utils/dom'
 
 function xy(el: HTMLElement, x: string, y: string) {
   el.style.left = x

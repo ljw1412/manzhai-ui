@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
-import BaseAttribute from '../../src/mixins/BaseAttribute'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 
 @Component
 export default class MzCard extends Mixins(BaseAttribute) {

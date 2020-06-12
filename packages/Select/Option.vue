@@ -17,8 +17,8 @@ import {
   Watch,
   Ref
 } from 'vue-property-decorator'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
 import MzSelect from './Select.vue'
-import FormElement from '../../src/mixins/FormElement'
 import MzListItem from '../List/ListItem'
 
 @Component

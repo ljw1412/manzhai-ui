@@ -30,10 +30,11 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { MzButton } from '../Button'
-import { SnackbarPlacementTypes } from './Snackbar'
-import { COLOR_TYPES } from '@/constants'
-import PopupManager from '@/utils/popup-manager'
+import { SnackbarPlacementTypes } from '.'
+import { COLOR_TYPES } from 'manzhai-ui/src/constants'
+import PopupManager from 'manzhai-ui/src/utils/popup-manager'
 
+// TODO: rebuild
 @Component({
   components: {
     MzButton

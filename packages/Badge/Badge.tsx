@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { extendProps } from '@/utils/vue-helper'
+import { extendProps } from 'manzhai-ui/src/utils/vue-helper'
 import { CreateElement } from 'vue/types/umd'
 
 function initProps(props: Record<string, any>) {

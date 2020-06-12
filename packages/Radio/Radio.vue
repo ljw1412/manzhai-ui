@@ -28,8 +28,8 @@ import {
   Inject,
   Mixins
 } from 'vue-property-decorator'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
 import MzRadioGroup from './RadioGroup.vue'
-import FormElement from '@/mixins/FormElement'
 
 @Component
 export default class MzRadio extends Mixins(FormElement) {

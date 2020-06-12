@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { MzRadio } from '.'
+import MzRadio from './Radio.vue'
 
 @Component
 export default class MzRadioButton extends MzRadio {}

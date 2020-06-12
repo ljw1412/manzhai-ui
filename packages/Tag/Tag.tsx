@@ -1,7 +1,7 @@
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import MzIcon from '../Icon/index'
-import MzSize from '@/mixins/MzSize'
+import MzIcon from '../Icon/Icon.vue'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
 
 @Component({ components: { MzIcon } })
 export default class MzTag extends MzSize {

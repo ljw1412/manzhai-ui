@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { Component, Vue, Inject, Prop } from 'vue-property-decorator'
-import { MzCarousel } from '.'
+import MzCarousel from './Carousel.vue'
 import { CreateElement } from 'vue'
 
 export type PlacementTypes = 'top' | 'bottom' | 'left' | 'right' | 'outside'

@@ -1,0 +1,34 @@
+import { Placement, Instance, MultipleTargets } from 'tippy.js';
+import { CreateElement } from 'Vue';
+import { Vue } from 'vue-property-decorator';
+export default class Popover extends Vue {
+    readonly visible: boolean;
+    readonly tag: string;
+    readonly placement: Placement;
+    readonly animation: string | boolean;
+    readonly arrow: boolean | string | SVGElement | DocumentFragment;
+    readonly content: string;
+    readonly followCursor: boolean | 'horizontal' | 'vertical' | 'initial';
+    readonly interactive: boolean;
+    readonly maxWidth: number | 'none';
+    readonly offset: [number, number];
+    readonly appendTo: 'parent' | Element | ((ref: Element) => Element);
+    readonly theme: string;
+    readonly trigger: 'hover' | 'click' | 'focus' | 'manual';
+    readonly hideOnClick: boolean | 'toggle';
+    readonly role: string;
+    readonly delay: number | [number | null, number | null];
+    readonly duration: number | [number | null, number | null];
+    readonly disabled: boolean;
+    readonly zIndex: number;
+    popovers: Instance[];
+    forceProps: Record<string, any>;
+    render(h: CreateElement): any;
+    $$emit(event: string): (...args: any[]) => void;
+    updateProps(instance: Instance): void;
+    updateForceProps(): void;
+    initPopover(el?: MultipleTargets, content?: Element): void;
+    destroyPopovers(): void;
+    handleVisibleChange(visible: boolean): void;
+    mounted(): void;
+}

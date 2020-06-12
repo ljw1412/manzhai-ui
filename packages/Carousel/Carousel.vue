@@ -1,6 +1,6 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
-import BaseAttribute from '@/mixins/BaseAttribute'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 import MzCarouselItem from './CarouselItem.vue'
 import MzCarouselIndicator, { PlacementTypes } from './CarouselIndicator.vue'
 import { CreateElement } from 'vue'

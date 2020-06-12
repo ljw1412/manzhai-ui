@@ -1,7 +1,7 @@
 import { DirectiveBinding } from 'vue/types/options'
 import { VNode } from 'vue'
-import { typeOf } from '@/utils/assist'
-import { getState, setState } from '@/utils/blanking'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import { getState, setState } from 'manzhai-ui/src/utils/blanking'
 
 export const Blanking = {
   bind(el: HTMLElement, binding: DirectiveBinding, vnode: VNode) {

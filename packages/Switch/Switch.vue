@@ -20,14 +20,11 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Ref, Mixins } from 'vue-property-decorator'
-import MzSize from '@/mixins/MzSize'
-import FormElement from '@/mixins/FormElement'
-import MzIcon from '../Icon/index'
-@Component({
-  components: {
-    MzIcon
-  }
-})
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import MzIcon from '../Icon/Icon.vue'
+
+@Component({ components: { MzIcon } })
 export default class MzSwitch extends Mixins(MzSize, FormElement) {
   @Prop(Boolean)
   readonly value!: boolean

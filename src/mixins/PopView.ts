@@ -1,7 +1,7 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
-import MzMask from '@packages/Mask'
-import MzMaskPlugin from '@packages/Mask/plugin'
-import PopupManager from '@/utils/popup-manager'
+import MzMask from 'manzhai-ui/packages/Mask'
+import MzMaskPlugin from 'manzhai-ui/packages/Mask/plugin'
+import PopupManager from 'manzhai-ui/src/utils/popup-manager'
 
 @Component({ components: { MzMask } })
 export default class MzPopView extends Vue {

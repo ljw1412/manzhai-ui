@@ -1,7 +1,13 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { hyphenate } from '@/utils/string'
-import { LayoutConstructor } from '.'
-import { CreateElement, VNode } from 'vue'
+import { hyphenate } from 'manzhai-ui/src/utils/string'
+import { CreateElement, VNode, VueConstructor } from 'vue'
+
+interface LayoutConstructor extends VueConstructor {
+  Header: VueConstructor
+  Footer: VueConstructor
+  Main: VueConstructor
+  Aside: VueConstructor
+}
 
 interface GeneratorOptions {
   name: string

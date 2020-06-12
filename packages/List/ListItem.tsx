@@ -1,8 +1,8 @@
 import { Component, Inject, Prop, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import MzTsxVue from 'manzhai-ui/src/mixins/MzTsxVue'
 import MzList from './List'
-import MzSize from '@/mixins/MzSize'
-import MzTsxVue from '@/mixins/MzTsxVue'
 
 @Component
 export default class MzListItem extends Mixins(MzSize, MzTsxVue) {

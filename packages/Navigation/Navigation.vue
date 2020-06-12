@@ -1,9 +1,9 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
-import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
 import { CreateElement, VNodeData } from 'vue'
 import { RawLocation, NavigationGuard } from 'vue-router'
-import { typeOf } from '../../src/utils/assist'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
 
 interface NavigationItem {
   value: any
@@ -16,9 +16,7 @@ interface NavigationItem {
   children?: NavigationItem[]
 }
 
-@Component({
-  components: { MzList, MzListItem, MzListGroup }
-})
+@Component({ components: { MzList, MzListItem, MzListGroup } })
 export default class MzNavigation extends Vue {
   @Prop({ default: () => [] })
   readonly data!: NavigationItem | NavigationItem[]

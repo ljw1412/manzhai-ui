@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Inject } from 'vue-property-decorator'
-import { MzMasonry } from '.'
+import MzMasonry from './Masonry.vue'
 
 @Component
 export default class MzMasonryItem extends Vue {

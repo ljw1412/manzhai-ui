@@ -1,5 +1,8 @@
-import { VNodeDirective } from 'vue/types/umd'
-import { addResizeListener, removeResizeListener } from '@/utils/resize-event'
+import { VNodeDirective } from 'vue'
+import {
+  addResizeListener,
+  removeResizeListener
+} from 'manzhai-ui/src/utils/resize-event'
 
 export const ElResize = {
   inserted(el: HTMLElement, binding: VNodeDirective) {

@@ -1,6 +1,6 @@
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import PopupManager from '@/utils/popup-manager'
+import PopupManager from 'manzhai-ui/src/utils/popup-manager'
 import { addMask, removeMask } from './plugin'
 
 @Component

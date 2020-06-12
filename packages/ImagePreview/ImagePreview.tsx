@@ -1,13 +1,13 @@
 import { Component, Prop, PropSync, Watch } from 'vue-property-decorator'
 import { CreateElement, VNodeData } from 'vue'
-import { fullScreen } from '@/utils/assist'
 import { saveAs } from 'file-saver'
-import MouseDrag from '@/classes/MouseDrag'
-import MzPopView from '@/mixins/PopView'
-import MzProgress from '@packages/Progress/Progress.vue'
-import MzButton from '@packages/Button/Button'
-import MzIcon from '@packages/Icon/Icon.vue'
-import MzImage from '@packages/Image/Image.vue'
+import { fullScreen } from 'manzhai-ui/src/utils/assist'
+import MouseDrag from 'manzhai-ui/src/classes/MouseDrag'
+import MzPopView from 'manzhai-ui/src/mixins/PopView'
+import MzProgress from 'manzhai-ui/packages/Progress/Progress.vue'
+import MzButton from 'manzhai-ui/packages/Button/Button'
+import MzIcon from 'manzhai-ui/packages/Icon/Icon.vue'
+import MzImage from 'manzhai-ui/packages/Image/Image.vue'
 
 interface ImageItem {
   url: string

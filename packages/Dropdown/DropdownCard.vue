@@ -22,8 +22,8 @@ import {
   Watch,
   Mixins
 } from 'vue-property-decorator'
-import PopupManager from '@/utils/popup-manager'
-import BaseAttribute from '../../src/mixins/BaseAttribute'
+import PopupManager from 'manzhai-ui/src/utils/popup-manager'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 
 @Component
 export default class MzDropdownCard extends Mixins(BaseAttribute) {

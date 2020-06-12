@@ -1,4 +1,4 @@
-import { VNodeDirective } from 'vue/types/umd'
+import { VNodeDirective } from 'vue'
 
 interface ResizeVNodeDirective extends VNodeDirective {
   value?: () => void

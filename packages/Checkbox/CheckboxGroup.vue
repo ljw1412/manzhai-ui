@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { MzCheckbox } from '.'
+import MzCheckbox from './Checkbox.vue'
 
 @Component({
   provide() {

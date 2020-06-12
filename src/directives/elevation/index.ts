@@ -1,4 +1,4 @@
-import { VNodeDirective, VNode } from 'vue'
+import { VNodeDirective } from 'vue'
 
 function elevation(z: string | number) {
   return `mz-elevation-${z}`

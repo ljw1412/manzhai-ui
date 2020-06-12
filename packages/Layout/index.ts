@@ -1,13 +1,6 @@
 import Layout from './Layout'
 import { VueConstructor } from 'vue'
 
-export interface LayoutConstructor extends VueConstructor {
-  Header: VueConstructor
-  Footer: VueConstructor
-  Main: VueConstructor
-  Aside: VueConstructor
-}
-
 Layout.componentName = 'MzLayout'
 Layout.Header.componentName = 'MzHeader'
 Layout.Footer.componentName = 'MzFooter'
@@ -22,4 +15,4 @@ Layout.install = (Vue: VueConstructor) => {
   Vue.component(Layout.Aside.componentName, Layout.Aside)
 }
 
-export default Layout
+export default Layout as VueConstructor

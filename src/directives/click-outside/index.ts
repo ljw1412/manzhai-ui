@@ -1,5 +1,5 @@
 import { DirectiveBinding } from 'vue/types/options'
-import { typeOf } from '@/utils/assist'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
 
 const documentHandler = (el: HTMLElement, value: any) => (e: Event) => {
   if (el.contains(e.target as Node)) return

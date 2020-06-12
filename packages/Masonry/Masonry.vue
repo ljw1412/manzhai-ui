@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement, VNode } from 'vue'
-import { MzMasonryItem } from '.'
+import MzMasonryItem from './MasonryItem.vue'
 
 @Component({
   provide() {

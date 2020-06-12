@@ -1,9 +1,9 @@
 import { Component, Prop, Watch, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import BaseAttribute from '@/mixins/BaseAttribute'
-import MzCard from '../Card/index'
-import MzIcon from '../Icon/index'
-import MzPopView from '@/mixins/PopView'
+import MzPopView from 'manzhai-ui/src/mixins/PopView'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
+import MzCard from '../Card/Card.vue'
+import MzIcon from '../Icon/Icon.vue'
 
 @Component({ components: { MzCard, MzIcon } })
 export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {

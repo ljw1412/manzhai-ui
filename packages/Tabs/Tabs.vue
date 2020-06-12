@@ -1,8 +1,8 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch, Ref } from 'vue-property-decorator'
+import { CreateElement, VNode } from 'vue'
 import MzTab from './Tab.vue'
 import MzSlideGroup from '../SlideGroup'
-import { CreateElement, VNode } from 'vue'
 
 @Component({
   provide() {

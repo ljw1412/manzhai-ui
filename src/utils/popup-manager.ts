@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Stack from '@/classes/Stack'
+import Stack from 'manzhai-ui/src/classes/Stack'
 
 let zIndex = 1000
 let idSeed = 1

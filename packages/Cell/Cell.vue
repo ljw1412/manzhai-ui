@@ -37,13 +37,9 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch, Emit } from 'vue-property-decorator'
-import MzSwitch from '../Switch/index'
+import MzSwitch from '../Switch/Switch.vue'
 
-@Component({
-  components: {
-    MzSwitch
-  }
-})
+@Component({ components: { MzSwitch } })
 export default class MzCell extends Vue {
   @Prop(String)
   readonly title!: string

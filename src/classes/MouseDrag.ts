@@ -1,4 +1,4 @@
-import { only } from '@/utils/object'
+import { only } from 'manzhai-ui/src/utils/object'
 
 export default class MzMouseDrag {
   initialX!: number

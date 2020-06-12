@@ -1,23 +1,11 @@
-import {
-  Component,
-  Vue,
-  Prop,
-  Ref,
-  Mixins,
-  Watch
-} from 'vue-property-decorator'
+import { Component, Prop, Ref, Mixins } from 'vue-property-decorator'
+import { CreateElement } from 'vue'
 import MzIcon from '../Icon/index'
 import MzImage from '../Image/index'
-import MzSize from '@/mixins/MzSize'
-import FormElement from '@/mixins/FormElement'
-import { CreateElement } from 'vue'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
 
-@Component({
-  components: {
-    MzIcon,
-    MzImage
-  }
-})
+@Component({ components: { MzIcon, MzImage } })
 export default class MzMaterialInput extends Mixins(MzSize, FormElement) {
   @Prop([String, Number])
   readonly value!: string | number

@@ -38,8 +38,8 @@ import {
   Model,
   Inject
 } from 'vue-property-decorator'
-import FormElement from '@/mixins/FormElement'
-import { MzCheckboxGroup } from '.'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import MzCheckboxGroup from './CheckboxGroup.vue'
 
 @Component
 export default class MzCheckbox extends Mixins(FormElement) {

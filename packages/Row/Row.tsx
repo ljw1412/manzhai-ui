@@ -1,4 +1,3 @@
-<script lang="tsx">
 import { Component, Vue, Prop, Provide } from 'vue-property-decorator'
 import { CreateElement, VNodeChildren } from 'vue'
 
@@ -57,4 +56,3 @@ export default class MzRow extends Vue {
     )
   }
 }
-</script>

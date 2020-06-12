@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import { on, off } from '../../src/utils/dom'
+import { on, off } from 'manzhai-ui/src/utils/dom'
 
 @Component
 export default class MzBar extends Vue {

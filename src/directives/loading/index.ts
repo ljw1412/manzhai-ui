@@ -1,7 +1,7 @@
-import Vue, { DirectiveFunction, VueConstructor } from 'vue'
-import { capitalized } from '@/utils/string'
-import { safeElementPosition } from '@/utils/dom'
-import MzLoading from '@packages/Loading'
+import Vue, { DirectiveFunction } from 'vue'
+import { capitalized } from 'manzhai-ui/src/utils/string'
+import { safeElementPosition } from 'manzhai-ui/src/utils/dom'
+import MzLoading from 'manzhai-ui/packages/Loading'
 
 export interface LoadingDirectiveOptions {
   isDirective: boolean

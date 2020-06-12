@@ -1,8 +1,8 @@
 import { Component, Prop, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 import MzListItem from './ListItem'
-import MzSize from '@/mixins/MzSize'
-import BaseAttribute from '@/mixins/BaseAttribute'
 
 @Component({
   provide() {

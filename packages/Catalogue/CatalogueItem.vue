@@ -18,7 +18,7 @@ import {
   Ref,
   Inject
 } from 'vue-property-decorator'
-import { scrollIntoView } from '../../src/utils/dom'
+import { scrollIntoView } from 'manzhai-ui/src/utils/dom'
 import MzCatalogue from './Catalogue.vue'
 
 @Component

@@ -30,8 +30,8 @@
 
 <script lang="ts">
 import { Component, Mixins, Prop, Ref } from 'vue-property-decorator'
-import FormElement from '@/mixins/FormElement'
-import MzSize from '@/mixins/MzSize'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
 import MzOption from './Option.vue'
 import MzInput from '../Input/Input'
 import MzDropdown from '../Dropdown/Dropdown'

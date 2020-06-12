@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement, VNodeChildren } from 'vue'
-import MzAnchor from '../Anchor/index'
+import MzAnchor from '../Anchor/Anchor'
 
 @Component
 export default class MzHeading extends Vue {

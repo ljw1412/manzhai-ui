@@ -6,10 +6,10 @@
 
 <script lang="ts">
 import { Component, Vue, Mixins, Prop, Watch } from 'vue-property-decorator'
-import BaseAttribute from '../../src/mixins/BaseAttribute'
-import FormElement from '../../src/mixins/FormElement'
-import { MzFilterSection } from '.'
-import { typeOf } from '../../src/utils/assist'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import MzFilterSection from './FilterSection.vue'
 
 @Component({
   provide() {

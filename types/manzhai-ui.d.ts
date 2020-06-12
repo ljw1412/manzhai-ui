@@ -1,5 +1,7 @@
 import { VueConstructor } from 'vue'
 
+export * from './src/index'
+
 export interface InstallationOptions {
   size?: string
 }

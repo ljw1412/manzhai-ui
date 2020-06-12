@@ -1,4 +1,4 @@
-import MzRow from './Row.vue'
+import MzRow from './Row'
 import { VueConstructor } from 'vue'
 
 MzRow.componentName = 'MzRow'

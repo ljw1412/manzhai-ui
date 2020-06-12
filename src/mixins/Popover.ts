@@ -6,7 +6,7 @@ import tippy, {
 } from 'tippy.js'
 import { CreateElement, VNodeChildren } from 'Vue'
 import { Component, Vue, Prop, Watch, Model } from 'vue-property-decorator'
-import PopupManager from '@/utils/popup-manager'
+import PopupManager from 'manzhai-ui/src/utils/popup-manager'
 
 function getTrigger(trigger: string) {
   return trigger === 'hover' ? 'mouseenter' : trigger

@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import BaseAttribute from '@/mixins/BaseAttribute'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 
 @Component
 export default class MzFixedSection extends BaseAttribute {

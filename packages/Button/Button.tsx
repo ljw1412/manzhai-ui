@@ -1,9 +1,9 @@
 import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
-import MzSize from '@/mixins/MzSize'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
 import { CreateElement } from 'vue'
-import { colorInTypes } from '@/utils/theme'
-import FormElement from '@/mixins/FormElement'
-import BaseAttribute from '@/mixins/BaseAttribute'
+import { colorInTypes } from 'manzhai-ui/src/utils/theme'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 
 const MixinClass = Mixins(MzSize, FormElement, BaseAttribute)
 

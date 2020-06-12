@@ -1,6 +1,6 @@
 import { VNodeDirective, VNode } from 'vue'
 import tippy from 'tippy.js'
-import $MzBus from '@/bus'
+import $MzBus from 'manzhai-ui/src/bus'
 
 const triggers = ['hover', 'focus', 'click']
 

@@ -1,5 +1,5 @@
 import Vue, { RenderContext } from 'vue'
-import { only } from '@/utils/object'
+import { only } from 'manzhai-ui/src/utils/object'
 
 function renderContent(ctx: RenderContext) {
   const value = ctx.props.value

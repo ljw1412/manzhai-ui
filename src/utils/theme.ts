@@ -1,4 +1,4 @@
-import { COLOR_TYPES } from '@/constants/index'
+import { COLOR_TYPES } from '../constants/index'
 /**
  * 切换根节点上的主体名称 (data-theme)
  * @param name 主题名称

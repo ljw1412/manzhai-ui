@@ -1,8 +1,11 @@
 <script lang="tsx">
 import { Component, Vue, Ref, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { addResizeListener, removeResizeListener } from '@/utils/resize-event'
-import { throttle, debounce } from '@/utils/assist'
+import {
+  addResizeListener,
+  removeResizeListener
+} from 'manzhai-ui/src/utils/resize-event'
+import { throttle, debounce } from 'manzhai-ui/src/utils/assist'
 
 const iconMap = {
   left: 'caret-back',

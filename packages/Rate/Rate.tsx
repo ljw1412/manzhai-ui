@@ -1,8 +1,6 @@
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator'
-import { CreateElement } from 'vue'
-
+import { CreateElement, VNodeData } from 'vue'
 import MzIcon from '../Icon/Icon.vue'
-import { VNodeData } from 'vue/types/umd'
 
 @Component({ components: { MzIcon } })
 export default class MzRate extends Vue {

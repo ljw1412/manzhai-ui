@@ -1,6 +1,6 @@
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { scrollIntoView } from '../../src/utils/dom'
+import { scrollIntoView } from 'manzhai-ui/src/utils/dom'
 
 @Component
 export default class MzAnchor extends Vue {

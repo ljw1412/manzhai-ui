@@ -1,8 +1,8 @@
 <script lang="tsx">
 import { Component, Vue, Prop, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { typeOf } from '../../src/utils/assist'
-import BaseAttribute from '../../src/mixins/BaseAttribute'
+import { typeOf } from 'manzhai-ui/src/utils/assist'
+import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 import MzCatalogueItem from './CatalogueItem.vue'
 import MzScrollbar from '../Scrollbar'
 

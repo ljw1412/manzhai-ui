@@ -1,7 +1,7 @@
 <script lang="tsx">
 import { Component, Vue, Inject, Prop } from 'vue-property-decorator'
 import { CreateElement, VNode } from 'vue'
-import { MzTabs } from '.'
+import MzTabs from './Tabs.vue'
 
 @Component
 export default class MzTab extends Vue {

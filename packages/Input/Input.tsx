@@ -1,7 +1,7 @@
 import { Component, Vue, Prop, Mixins, Ref } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import MzSize from '@/mixins/MzSize'
-import FormElement from '@/mixins/FormElement'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import FormElement from 'manzhai-ui/src/mixins/FormElement'
 import MzButton from '../Button/Button'
 
 @Component({ components: { MzButton } })

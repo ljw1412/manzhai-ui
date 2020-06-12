@@ -1,6 +1,6 @@
 import { Component, Prop } from 'vue-property-decorator'
 import { Placement } from 'tippy.js'
-import Popover from '@/mixins/Popover'
+import Popover from 'manzhai-ui/src/mixins/Popover'
 
 @Component
 export default class MzDropdown extends Popover {
