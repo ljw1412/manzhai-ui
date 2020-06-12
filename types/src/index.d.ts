@@ -13,6 +13,7 @@ import Modal from '../packages/Modal/index';
 import Pagination from '../packages/Pagination/index';
 import Rate from '../packages/Rate/index';
 import Row from '../packages/Row/index';
+import Snackbar from '../packages/Snackbar/index';
 import TableSimple from '../packages/TableSimple/index';
 import Tag from '../packages/Tag/index';
 import Tooltip from '../packages/Tooltip/index';
@@ -77,7 +78,7 @@ declare const _default: {
     Switch: VueConstructor<Card>;
     Scrollbar: VueConstructor<Card>;
     SildeGroup: VueConstructor<Card>;
-    Snackbar: VueConstructor<Card>;
+    Snackbar: typeof Snackbar;
     State: import("vue/types/vue").ExtendedVue<Card, {}, {}, {}, Record<never, any>>;
     Tabs: VueConstructor<Card>;
     Tab: VueConstructor<Card>;

@@ -1,0 +1,30 @@
+import { CreateElement } from 'vue';
+import MzSize from 'manzhai-ui/src/mixins/MzSize';
+export default class MzSnackbar extends MzSize {
+    readonly visible: boolean;
+    readonly placement: 'top' | 'top-start' | 'top-end' | 'center' | 'bottom' | 'bottom-start' | 'bottom-end';
+    readonly type: string;
+    readonly timeout: number;
+    readonly icon: string;
+    readonly color: string;
+    readonly content: string;
+    readonly textColor: string;
+    readonly fixed: boolean;
+    readonly absolute: boolean;
+    readonly vertical: boolean;
+    readonly appendToBody: boolean;
+    readonly offset: [number, number];
+    readonly zIndex: number;
+    readonly radius: string;
+    timer: number | null;
+    mZIndex: number | null;
+    get placementList(): string[];
+    get transitionName(): "mz-zoom" | "mz-y-zoom";
+    get offsetStyles(): Record<string, any>;
+    renderMain(): JSX.Element;
+    render(h: CreateElement): JSX.Element;
+    initZIndex(): void;
+    initTimer(visible: boolean): void;
+    handleVisibleChange(visible: boolean): void;
+    destroyed(): void;
+}
