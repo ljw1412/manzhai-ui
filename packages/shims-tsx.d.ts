@@ -14,3 +14,12 @@ declare global {
     remove: (item: T) => boolean
   }
 }
+
+declare module 'vue/types/vue' {
+  interface Vue {
+    $snackbar: {
+      show: (options: Record<string, any>) => void
+      close: () => {}
+    }
+  }
+}

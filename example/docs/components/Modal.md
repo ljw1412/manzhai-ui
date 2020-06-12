@@ -161,7 +161,7 @@ export default {
       this.count++
       if(this.count < 5){
         this.$snackbar.show({
-          text: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
+          content: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
         })
         return
       }

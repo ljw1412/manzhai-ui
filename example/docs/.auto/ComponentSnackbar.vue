@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-06-12 17:47</div>
+    <div class="update-datetime">文档更新时间：2020-06-12 19:17</div>
     <h2 id="snackbar-xiao-xi-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -176,7 +176,7 @@ export default {
 }
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="quan-ju-fang-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#quan-ju-fang-fa" title="全局方法" data-level="3" data-href="#quan-ju-fang-fa">¶</a>全局方法</h3>
-<p>ManZhai 为 Vue.prototype 添加了全局方法 $snackbar。因此在 vue instance 中可以采用本页面中的方式调用 Message。</p>
+<p>ManZhai 为 Vue.prototype 添加了全局方法 $snackbar。因此在 vue instance 中可以采用本页面中的方式调用 Snackbar。</p>
 <demo-block>
         <template #example><snackbar-demo6 inline-template><div class="snackbar-demo6">
   <mz-button @click="onClick">显示</mz-button>

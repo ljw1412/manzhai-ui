@@ -1,70 +1,49 @@
 import Vue from 'vue'
-import MzSnackbar from './Snackbar.vue'
+import MzSnackbar from './Snackbar'
+import MzButton from 'manzhai-ui/packages/Button/Button'
+import MzIcon from 'manzhai-ui/packages/Icon/Icon.vue'
 import Queue from 'manzhai-ui/src/classes/Queue'
-import { SnackbarPluginOptions, SnackbarConstructor } from './Snackbar'
 
 const queue = new Queue()
-let instance: SnackbarConstructor
+let instance: any
 let currentSnackbar
 
-const defaultConfig = {
-  visible: false,
-  fixed: false,
-  text: '',
-  timeout: 5000,
-  color: undefined,
-  buttonText: undefined,
-  buttonProps: undefined,
-  buttonClick: undefined,
-  vertical: false,
-  placement: 'bottom',
-  zIndex: undefined
-}
-
-const Snackbar = {
-  show: (options: SnackbarPluginOptions) => {
-    if (Vue.prototype.$isServer) return
-    options.fixed = true
-    queue.push({ options })
-
-    showNextSnackbar()
-  },
-
-  hide: () => {
-    initInstance()
-  }
-}
-const initInstance = () => {
+function initInstance() {
   if (!instance) {
-    instance = new MzSnackbar({
-      el: document.createElement('div')
-    })
+    instance = new MzSnackbar({ el: document.createElement('div') })
     instance.$on('visible:change', (val: boolean) => {
       instance.visible = val
     })
   }
-  Object.assign(instance, defaultConfig)
+  instance.visible = false
+  instance.fixed = true
+  instance.appendToBody = true
 }
 
-const showNextSnackbar = () => {
+function showNextSnackbar() {
   initInstance()
   if (!queue.isEmpty()) {
     currentSnackbar = queue.pop()
     let options = currentSnackbar.options
     for (let prop in options) {
       if (Object.prototype.hasOwnProperty.call(options, prop)) {
-        instance[prop as keyof SnackbarPluginOptions] = options[prop]
+        instance[prop] = options[prop]
       }
     }
-    if (options.buttonClick) {
-      instance.$on('buttonClick', options.buttonClick.bind(Snackbar))
-    }
 
-    document.body.appendChild(instance.$el)
     Vue.nextTick(() => {
-      instance.show()
+      instance.visible = true
     })
   }
 }
 
-export default Snackbar
+function show(options: Record<string, any> = {}) {
+  queue.push({ options })
+  showNextSnackbar()
+}
+
+function hide() {
+  initInstance()
+}
+
+export default { show, hide }

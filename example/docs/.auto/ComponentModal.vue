@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-12 19:17</div>
     <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -224,7 +224,7 @@ export default {
       this.count++
       if(this.count &lt; 5){
         this.$snackbar.show({
-          text: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
+          content: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
         })
         return
       }
@@ -725,7 +725,7 @@ export default {
       this.count++
       if(this.count < 5){
         this.$snackbar.show({
-          text: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
+          content: `还要尝试${5 - this.count}次才会关闭 (*￣︶￣)*`
         })
         return
       }
