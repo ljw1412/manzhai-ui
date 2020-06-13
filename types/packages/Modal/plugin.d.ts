@@ -9,7 +9,6 @@ interface ModalConfig {
     transition?: string;
     outerScroll?: boolean;
     divider?: boolean;
-    headless?: boolean;
     appendToBody?: boolean;
     mask?: boolean;
     maskAppendToBody?: boolean;

@@ -319,7 +319,6 @@ export default {
 |transition|对话框的显隐动画名称|String||'mz-zoom'|
 |outer-scroll|是否外滚动|Boolean|||
 |divider|是否有分割线|Boolean|||
-|headless|是否无头|Boolean|||
 |mask|是否显示遮罩|Boolean||true|
 |close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
 |before-close|关闭前的回调|(done)=>void / Promise|||

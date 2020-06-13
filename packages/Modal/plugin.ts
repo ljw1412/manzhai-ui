@@ -11,7 +11,6 @@ interface ModalConfig {
   transition?: string
   outerScroll?: boolean
   divider?: boolean
-  headless?: boolean
   appendToBody?: boolean
   mask?: boolean
   maskAppendToBody?: boolean
@@ -31,7 +30,6 @@ const defaultConfig = {
   transition: 'mz-zoom',
   outerScroll: false,
   divider: false,
-  headless: false,
   appendToBody: true,
   mask: true,
   maskAppendToBody: true,
