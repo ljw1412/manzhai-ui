@@ -28,7 +28,6 @@
 .mz-pagination-pager {
   position: relative;
   user-select: none;
-  list-style: none;
   display: inline-block;
   font-size: 0;
   padding: 0;
@@ -42,7 +41,6 @@
   font-size: 14px;
   color: $color-text-secondary;
   font-weight: normal;
-  vertical-align: middle;
 }
 
 .mz-page-number {
@@ -52,7 +50,6 @@
 .mz-pagination-sizes {
   width: 120px;
   margin: 0 5px;
-  vertical-align: middle;
   .mz-input__inner {
     text-align: center;
   }

@@ -7,15 +7,7 @@
   margin-right: 20px;
   transition: $color-transition;
   white-space: nowrap;
-
-  &__label {
-    position: relative;
-    vertical-align: middle;
-    margin-left: 5px;
-    font-size: $font-size-sm;
-    line-height: 1;
-    z-index: 1;
-  }
+  font-size: 0;
 
   &__icon {
     position: relative;
@@ -24,7 +16,7 @@
     height: $font-size-md;
     box-sizing: border-box;
     border: 1px solid currentColor;
-    vertical-align: middle;
+    vertical-align: bottom;
     z-index: 1;
     &::before {
       content: ' ';
@@ -51,6 +43,15 @@
       transition: transform 0.15s ease-in 0.05s;
       transform-origin: center;
     }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: $font-size-sm;
+    line-height: $font-size-md;
+    z-index: 1;
   }
 
   &.indeterminate,

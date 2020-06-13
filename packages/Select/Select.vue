@@ -48,7 +48,7 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
   readonly placeholder!: string
   @Prop(Boolean)
   readonly filterable!: boolean
-  @Prop({ type: String, default: 'medium' })
+  @Prop(String)
   readonly size!: string
   @Prop(Boolean)
   readonly arrow!: boolean

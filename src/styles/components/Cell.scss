@@ -27,6 +27,9 @@
 
     &--switch {
       padding-left: 20px;
+      .mz-switch {
+        vertical-align: middle;
+      }
     }
   }
 

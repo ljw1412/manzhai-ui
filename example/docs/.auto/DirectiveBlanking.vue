@@ -1,6 +1,6 @@
 <template>
   <div class="directive-blanking">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-13 14:41</div>
     <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
 <p>根据本地存储条件控制组件是否需要显示的指令。</p>
 <h3 id="shi-yong-chang-jing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>
@@ -11,10 +11,12 @@
         <template #example><blanking-demo1 inline-template><div class="blanking-demo1">
   <mz-snackbar v-model="show"
     v-blanking="blanking-demo-1"
-    text="这是一条测试消息。" 
-    buttonText="关闭"
-    :timeout="0"
-    @buttonClick="close"></mz-snackbar>
+    content="这是一条测试消息。"
+    :timeout="0">
+    <template #suffix>
+      <mz-button color="#fff" @click="close">关闭</mz-button>
+    </template>  
+  </mz-snackbar>
   <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
   <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
   <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
@@ -23,10 +25,12 @@
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-snackbar v-model=&quot;show&quot;
   v-blanking=&quot;blanking-demo-1&quot;
-  text=&quot;这是一条测试消息。&quot; 
-  buttonText=&quot;关闭&quot;
-  :timeout=&quot;0&quot;
-  @buttonClick=&quot;close&quot;&gt;&lt;/mz-snackbar&gt;
+  content=&quot;这是一条测试消息。&quot;
+  :timeout=&quot;0&quot;&gt;
+  &lt;template #suffix&gt;
+    &lt;mz-button color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
+  &lt;/template&gt;  
+&lt;/mz-snackbar&gt;
 &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
 &lt;mz-button color=&quot;success&quot; @click=&quot;flush(false)&quot;&gt;刷新页面&lt;/mz-button&gt;
 &lt;mz-button color=&quot;danger&quot; @click=&quot;flush(true)&quot;&gt;重置状态&lt;/mz-button&gt;
@@ -74,10 +78,12 @@ export default {
       key: 'blanking-demo-2',
       display: show
     }"
-    text="这是一条测试消息。" 
-    buttonText="关闭"
-    :timeout="0"
-    @buttonClick="close"></mz-snackbar>
+    content="这是一条测试消息。"
+    :timeout="0">
+    <template #suffix>
+      <mz-button color="#fff" @click="close">关闭</mz-button>
+    </template>  
+  </mz-snackbar>
   <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
   <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
   <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
@@ -89,10 +95,12 @@ export default {
     key: 'blanking-demo-2',
     display: show
   }&quot;
-  text=&quot;这是一条测试消息。&quot; 
-  buttonText=&quot;关闭&quot;
-  :timeout=&quot;0&quot;
-  @buttonClick=&quot;close&quot;&gt;&lt;/mz-snackbar&gt;
+  content=&quot;这是一条测试消息。&quot;
+  :timeout=&quot;0&quot;&gt;
+  &lt;template #suffix&gt;
+    &lt;mz-button color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
+  &lt;/template&gt;  
+&lt;/mz-snackbar&gt;
 &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
 &lt;mz-button color=&quot;success&quot; @click=&quot;flush(false)&quot;&gt;刷新页面&lt;/mz-button&gt;
 &lt;mz-button color=&quot;danger&quot; @click=&quot;flush(true)&quot;&gt;重置状态&lt;/mz-button&gt;

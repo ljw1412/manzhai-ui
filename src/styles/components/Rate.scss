@@ -10,9 +10,10 @@
   }
 
   &__stars {
+    cursor: pointer;
     position: relative;
     display: inline-block;
-    cursor: pointer;
+    vertical-align: middle;
   }
 
   &__text {

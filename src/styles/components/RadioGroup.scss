@@ -1,6 +1,7 @@
 .mz-radio-group {
   display: inline-block;
-  vertical-align: middle;
+  font-size: 0;
+
   &--block {
     display: block;
     &.mz-radio-group--button {

@@ -16,7 +16,7 @@
   transition-property: box-shadow, transform, opacity, background-color,
     border-radius, color, border-color, background-color;
   transition-timing-function: map-get($transition, 'fast-out-slow-in');
-  vertical-align: middle;
+  // vertical-align: middle;
   box-sizing: border-box;
 
   @include foreground;
@@ -109,6 +109,7 @@
     &--icon.mz-size--#{$size} {
       padding: 0;
       width: nth($arr, 3);
+      vertical-align: middle;
     }
 
     &.mz-size--#{$size} &__content {

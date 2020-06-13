@@ -1,6 +1,7 @@
 .mz-progress {
   position: relative;
   overflow: hidden;
+  vertical-align: middle;
   transition: 0.2s cubic-bezier(0.4, 0, 0.6, 1);
 
   &__background,
