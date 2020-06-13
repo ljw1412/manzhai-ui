@@ -1,6 +1,11 @@
 import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
 import MzBus from './bus'
+import blanking from 'manzhai-ui/src/directives/blanking/index'
+import MzImagePreviewPlugin from 'manzhai-ui/packages/Modal/plugin'
+import MzMaskPlugin from 'manzhai-ui/packages/Mask/plugin'
+import MzModalPlugin from 'manzhai-ui/packages/Modal/plugin'
+import MzSnackbarPlugin from 'manzhai-ui/packages/Snackbar/plugin'
 import 'resize-observer-polyfill'
 
 declare global {
@@ -47,10 +52,11 @@ declare module 'vue/types/vue' {
     $changeTheme: (name: string) => void
     $getCurrentTheme: () => string
     $mzEventBus: typeof MzBus
-    $snackbar: {
-      show: (options: Record<string, any>) => void
-      close: () => {}
-    }
+    $snackbar: typeof MzSnackbarPlugin
+    $imagePreview: typeof MzImagePreviewPlugin
+    $modal: typeof MzModalPlugin
+    $mask: typeof MzMaskPlugin
+    $blanking: typeof blanking
   }
   interface VueConstructor<V extends Vue = Vue> {
     install: PluginFunction<Vue>
