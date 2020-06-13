@@ -46,19 +46,20 @@ function initInstance(config?: ModalConfig) {
   const inputEvent = (val: boolean) => {
     instance.visible = val
     if (val === false) {
-      instance.$off('input', inputEvent)
+      instance.$off('visible:change', inputEvent)
       setTimeout(() => {
         instance && instance.$destroy()
       }, 1000)
     }
   }
-  instance.$on('input', inputEvent)
+  instance.$on('visible:change', inputEvent)
   return instance
 }
 
 function modal(config?: ModalConfig) {
   const instance = initInstance(config)
   instance.visible = true
+  return instance
 }
 
 export default modal

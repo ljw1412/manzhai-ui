@@ -16,5 +16,5 @@ interface ModalConfig {
     closeOnPressEscape?: boolean;
     beforeClose?: (done: any) => void | Promise<any>;
 }
-declare function modal(config?: ModalConfig): void;
+declare function modal(config?: ModalConfig): any;
 export default modal;
