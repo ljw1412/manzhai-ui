@@ -1,8 +1,13 @@
 import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
 import MzBus from './bus'
+import 'resize-observer-polyfill'
 
 declare global {
+  interface Array<T> {
+    remove: (item: T) => boolean
+  }
+
   interface Element {
     __resizeListeners__?: Function[]
     __ro__?: ResizeObserver
@@ -42,6 +47,10 @@ declare module 'vue/types/vue' {
     $changeTheme: (name: string) => void
     $getCurrentTheme: () => string
     $mzEventBus: typeof MzBus
+    $snackbar: {
+      show: (options: Record<string, any>) => void
+      close: () => {}
+    }
   }
   interface VueConstructor<V extends Vue = Vue> {
     install: PluginFunction<Vue>
