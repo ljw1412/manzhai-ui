@@ -10,6 +10,7 @@
 }
 
 .mz-modal {
+  position: relative;
   pointer-events: initial;
   margin: auto;
   &__header {
@@ -27,6 +28,24 @@
     .mz-button + .mz-button {
       margin-left: 10px;
     }
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 16px;
+    z-index: 1;
+    &:hover {
+      opacity: 0.75;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__close + &__header {
+    padding-right: 48px;
   }
 
   &.is-divider {

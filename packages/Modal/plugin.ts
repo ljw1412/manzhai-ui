@@ -1,4 +1,5 @@
 import Modal from './Modal'
+import MzButton from 'manzhai-ui/packages/Button/Button'
 
 interface ModalConfig {
   title?: string
@@ -9,6 +10,7 @@ interface ModalConfig {
   top?: string
   radius?: string
   transition?: string
+  showClose?: boolean
   outerScroll?: boolean
   divider?: boolean
   appendToBody?: boolean
@@ -61,5 +63,30 @@ function modal(config?: ModalConfig) {
   instance.visible = true
   return instance
 }
+
+modal.alert = function(message: string, title: string, close: Function) {
+  const instance = modal({
+    title,
+    content: message,
+    showClose: false,
+    closeOnClickMask: false
+  })
+  instance.$slots.footer = [
+    instance.$createElement(
+      MzButton,
+      {
+        props: { color: 'primary' },
+        on: { click: () => (instance.visible = false) }
+      },
+      '确定'
+    )
+  ]
+  return instance
+}
+
+// TODO
+modal.confirm = function(config?: ModalConfig) {}
+
+modal.prompt = function(config?: ModalConfig) {}
 
 export default modal

@@ -13,15 +13,17 @@ function addCloseBtn() {
   instance.$slots.suffix = [
     h(
       MzButton,
-      { props: { textColor: '#fff', size: 'small', icon: true, circle: true } },
+      {
+        props: { textColor: '#fff', size: 'small', icon: true, circle: true },
+        on: {
+          click: () => {
+            instance.visible = false
+          }
+        }
+      },
       [
         h(MzIcon, {
-          props: { name: 'close', size: 20 },
-          on: {
-            click: () => {
-              instance.visible = false
-            }
-          }
+          props: { name: 'close', size: 20 }
         })
       ]
     )

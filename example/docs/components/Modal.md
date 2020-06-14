@@ -11,7 +11,7 @@
   <div>Welcome to chaos world!</div>
   <template #footer>
     <mz-button flat color="primary"
-      @click="visible = false">关闭</mz-button>
+      @click="visible = false">呦吼</mz-button>
   </template>
 </mz-modal>
 
@@ -22,7 +22,7 @@
   <div>全てはシュタインズゲートの选択だ</div>
   <template #footer>
     <mz-button flat color="primary"
-      @click="visible2 = false">关闭</mz-button>
+      @click="visible2 = false">是的</mz-button>
   </template>
 </mz-modal>
 
@@ -61,7 +61,7 @@ export default {
   <div v-for="i of 100">Welcome to chaos world!</div>
   <template #footer>
     <mz-button flat color="primary"
-      @click="visible = false">关闭</mz-button>
+      @click="visible = false">哇哦</mz-button>
   </template>
 </mz-modal>
 
@@ -260,6 +260,35 @@ export default {
 ```
 :::
 
+### 快捷调用
+
+ManZhai 为 Vue.prototype 添加了全局方法 `$modal`方法。
+:::demo
+```html
+<!-- alert -->
+<mz-button @click="alert">Alert</mz-button>
+
+<script>
+export default {
+  methods: {
+    close(message) { 
+      this.$snackbar.show({
+        placement: 'bottom',
+        timeout: 0
+      })
+    },
+    
+    alert() {
+      this.$modal.alert('我是内容','Alert 标题', () => {
+        this.close('Alert关闭成功')
+      })
+    }
+  }
+}
+</script>
+
+```
+:::
 
 ### API
 
@@ -307,6 +336,7 @@ export default {
 
 包含：
 - $modal(ModalConfig)
+- $modal.alert(message, title, closeCallback)
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |

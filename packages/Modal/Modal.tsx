@@ -26,6 +26,8 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   readonly divider!: boolean
   @Prop(Boolean)
   readonly fullscreen!: boolean
+  @Prop({ type: Boolean, default: true })
+  readonly showClose!: boolean
 
   isDisplayWrapper = false
   isAnimated = false
@@ -89,6 +91,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
             this.isDisplayWrapper = false
           }}>
           <mz-card {...modalData}>
+            {this.renderClose()}
             {this.renderHeader()}
             {this.renderBody()}
             {this.renderFooter()}
@@ -96,6 +99,19 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
         </transition>
       </div>
     )
+  }
+
+  renderClose() {
+    if (!this.showClose || this.headless) return
+
+    const data = {
+      class: ['mz-modal__close', 'is-pointer', 'mz-click-effect'],
+      props: { name: 'close', size: 24 },
+      on: {
+        click: this.close
+      }
+    }
+    return <mz-icon {...data}></mz-icon>
   }
 
   renderHeader() {

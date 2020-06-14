@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-06-13 17:51</div>
+    <div class="update-datetime">文档更新时间：2020-06-14 13:04</div>
     <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -12,7 +12,7 @@
     <div>Welcome to chaos world!</div>
     <template #footer>
       <mz-button flat color="primary"
-        @click="visible = false">关闭</mz-button>
+        @click="visible = false">呦吼</mz-button>
     </template>
   </mz-modal>
   
@@ -23,7 +23,7 @@
     <div>全てはシュタインズゲートの选択だ</div>
     <template #footer>
       <mz-button flat color="primary"
-        @click="visible2 = false">关闭</mz-button>
+        @click="visible2 = false">是的</mz-button>
     </template>
   </mz-modal>
   
@@ -39,7 +39,7 @@
   &lt;div&gt;Welcome to chaos world!&lt;/div&gt;
   &lt;template #footer&gt;
     &lt;mz-button flat color=&quot;primary&quot;
-      @click=&quot;visible = false&quot;&gt;关闭&lt;/mz-button&gt;
+      @click=&quot;visible = false&quot;&gt;呦吼&lt;/mz-button&gt;
   &lt;/template&gt;
 &lt;/mz-modal&gt;
 
@@ -50,7 +50,7 @@
   &lt;div&gt;全てはシュタインズゲートの选択だ&lt;/div&gt;
   &lt;template #footer&gt;
     &lt;mz-button flat color=&quot;primary&quot;
-      @click=&quot;visible2 = false&quot;&gt;关闭&lt;/mz-button&gt;
+      @click=&quot;visible2 = false&quot;&gt;是的&lt;/mz-button&gt;
   &lt;/template&gt;
 &lt;/mz-modal&gt;
 
@@ -83,7 +83,7 @@ export default {
     <div v-for="i of 100">Welcome to chaos world!</div>
     <template #footer>
       <mz-button flat color="primary"
-        @click="visible = false">关闭</mz-button>
+        @click="visible = false">哇哦</mz-button>
     </template>
   </mz-modal>
 </div></modal-demo2></template>
@@ -99,7 +99,7 @@ export default {
   &lt;div v-for=&quot;i of 100&quot;&gt;Welcome to chaos world!&lt;/div&gt;
   &lt;template #footer&gt;
     &lt;mz-button flat color=&quot;primary&quot;
-      @click=&quot;visible = false&quot;&gt;关闭&lt;/mz-button&gt;
+      @click=&quot;visible = false&quot;&gt;哇哦&lt;/mz-button&gt;
   &lt;/template&gt;
 &lt;/mz-modal&gt;
 
@@ -357,6 +357,36 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="kuai-jie-diao-yong" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#kuai-jie-diao-yong" title="快捷调用" data-level="3" data-href="#kuai-jie-diao-yong">¶</a>快捷调用</h3>
+<p>ManZhai 为 Vue.prototype 添加了全局方法 <code>$modal</code>方法。</p>
+<demo-block>
+        <template #example><modal-demo8 inline-template><div class="modal-demo8">
+  <!-- alert -->
+  <mz-button @click="alert">Alert</mz-button>
+</div></modal-demo8></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;!-- alert --&gt;
+&lt;mz-button @click=&quot;alert&quot;&gt;Alert&lt;/mz-button&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    close(message) { 
+      this.$snackbar.show({
+        placement: 'bottom',
+        timeout: 0
+      })
+    },
+    
+    alert() {
+      this.$modal.alert('我是内容','Alert 标题', () =&gt; {
+        this.close('Alert关闭成功')
+      })
+    }
+  }
+}
+&lt;/script&gt;
+
 </code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -561,6 +591,7 @@ export default {
 <p>包含：</p>
 <ul class="mz-document-ul">
 <li>$modal(ModalConfig)</li>
+<li>$modal.alert(message, title, closeCallback)</li>
 </ul>
 <table>
 <thead>
@@ -743,6 +774,21 @@ export default {
     return {
       visible: false,
       transition: 'mz-zoom'
+    }
+  }
+}, ModalDemo8: {
+  methods: {
+    close(message) { 
+      this.$snackbar.show({
+        placement: 'bottom',
+        timeout: 0
+      })
+    },
+    
+    alert() {
+      this.$modal.alert('我是内容','Alert 标题', () => {
+        this.close('Alert关闭成功')
+      })
     }
   }
 } }
