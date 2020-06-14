@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-06-14 13:04</div>
+    <div class="update-datetime">文档更新时间：2020-06-14 19:06</div>
     <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -363,25 +363,28 @@ export default {
         <template #example><modal-demo8 inline-template><div class="modal-demo8">
   <!-- alert -->
   <mz-button @click="alert">Alert</mz-button>
+  <mz-button @click="confirm">Confirm</mz-button>
 </div></modal-demo8></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;!-- alert --&gt;
 &lt;mz-button @click=&quot;alert&quot;&gt;Alert&lt;/mz-button&gt;
+&lt;mz-button @click=&quot;confirm&quot;&gt;Confirm&lt;/mz-button&gt;
 
 &lt;script&gt;
 export default {
   methods: {
     close(message) { 
-      this.$snackbar.show({
-        placement: 'bottom',
-        timeout: 0
-      })
+      this.$snackbar.show({content: message, placement: 'bottom'})
     },
     
     alert() {
       this.$modal.alert('我是内容','Alert 标题', () =&gt; {
         this.close('Alert关闭成功')
       })
+    },
+    
+    confirm() {
+      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
     }
   }
 }
@@ -590,9 +593,12 @@ export default {
 <h4 id="modal" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#modal" title="$modal" data-level="4" data-href="#modal">¶</a>$modal</h4>
 <p>包含：</p>
 <ul class="mz-document-ul">
-<li>$modal(ModalConfig)</li>
-<li>$modal.alert(message, title, closeCallback)</li>
+<li>$modal(ModalConfig) : Modal</li>
+<li>$modal.alert(message, title, closeCallback) : Modal</li>
+<li>$modal.confirm(ConfirmModalConfig) : Promise&lt;Modal&gt;</li>
 </ul>
+<br/>
+<p><strong>ModalConfig</strong></p>
 <table>
 <thead>
 <tr>
@@ -690,6 +696,37 @@ export default {
 </tr>
 </tbody>
 </table>
+<br/>
+<p><strong>ConfirmModalConfig</strong></p>
+<p>继承 <em>ModalConfig</em> 所有属性外，还有以下属性。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>可选值</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cancelButton</td>
+<td>取消按钮</td>
+<td>String/FooterButton</td>
+<td></td>
+<td>{ text: '取消' }</td>
+</tr>
+<tr>
+<td>confirmButton</td>
+<td>确定按钮</td>
+<td>String/FooterButton</td>
+<td></td>
+<td>{ text: '确定', color: 'primary' }</td>
+</tr>
+</tbody>
+</table>
+<p>* FooterButton 格式 <strong><code>{ text: string; color?: string; textColor?: string }</code></strong></p>
 
   </div>
 </template>
@@ -779,16 +816,17 @@ export default {
 }, ModalDemo8: {
   methods: {
     close(message) { 
-      this.$snackbar.show({
-        placement: 'bottom',
-        timeout: 0
-      })
+      this.$snackbar.show({content: message, placement: 'bottom'})
     },
     
     alert() {
       this.$modal.alert('我是内容','Alert 标题', () => {
         this.close('Alert关闭成功')
       })
+    },
+    
+    confirm() {
+      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
     }
   }
 } }

@@ -21,6 +21,17 @@ interface ModalConfig {
   beforeClose?: (done: any) => void | Promise<any>
 }
 
+interface FooterButton {
+  text: string
+  color?: string
+  textColor?: string
+}
+
+interface ConfirmModalConfig extends ModalConfig {
+  cancelButton?: string | FooterButton
+  confirmButton?: string | FooterButton
+}
+
 const defaultConfig = {
   title: '',
   content: '',
@@ -38,6 +49,16 @@ const defaultConfig = {
   closeOnClickMask: true,
   closeOnPressEscape: true,
   beforeClose: undefined
+}
+
+function createMzButton(
+  instance: any,
+  text: string = '',
+  props: Record<string, any>,
+  click: Function
+) {
+  const h = instance.$createElement
+  return h(MzButton, { props, on: { click } }, text)
 }
 
 function initInstance(config?: ModalConfig) {
@@ -71,22 +92,59 @@ modal.alert = function(message: string, title: string, close: Function) {
     showClose: false,
     closeOnClickMask: false
   })
+  const onClick = () => {
+    instance.visible = false
+    if (close && typeof close === 'function') close()
+  }
   instance.$slots.footer = [
-    instance.$createElement(
-      MzButton,
-      {
-        props: { color: 'primary' },
-        on: { click: () => (instance.visible = false) }
-      },
-      '确定'
-    )
+    createMzButton(instance, '确定', { color: 'primary' }, onClick)
   ]
   return instance
 }
 
-// TODO
-modal.confirm = function(config?: ModalConfig) {}
+modal.confirm = function(config: ConfirmModalConfig = {}) {
+  const cancelBtn = { text: '取消', color: undefined, textColor: undefined }
+  const confirmBtn = { text: '确定', color: 'primary', textColor: undefined }
+  const { cancelButton, confirmButton } = config
+  if (typeof cancelButton === 'string') {
+    cancelBtn.text = cancelButton
+  } else if (typeof cancelButton === 'object') {
+    Object.assign(cancelBtn, cancelButton)
+  }
+  if (typeof confirmButton === 'string') {
+    confirmBtn.text = confirmButton
+  } else if (typeof confirmButton === 'object') {
+    Object.assign(confirmBtn, confirmButton)
+  }
 
+  return new Promise((resolve, reject) => {
+    const instance = modal(config)
+    instance.showClose = false
+    instance.closeOnClickMask = false
+    instance.$slots.footer = [
+      createMzButton(
+        instance,
+        cancelBtn.text,
+        { color: cancelBtn.color, textColor: cancelBtn.textColor },
+        () => {
+          instance.visible = false
+          reject(instance)
+        }
+      ),
+      createMzButton(
+        instance,
+        confirmBtn.text,
+        { color: confirmBtn.color, textColor: confirmBtn.textColor },
+        () => {
+          instance.visible = false
+          resolve(instance)
+        }
+      )
+    ]
+  })
+}
+
+// TODO
 modal.prompt = function(config?: ModalConfig) {}
 
 export default modal

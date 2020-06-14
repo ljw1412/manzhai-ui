@@ -267,21 +267,23 @@ ManZhai 为 Vue.prototype 添加了全局方法 `$modal`方法。
 ```html
 <!-- alert -->
 <mz-button @click="alert">Alert</mz-button>
+<mz-button @click="confirm">Confirm</mz-button>
 
 <script>
 export default {
   methods: {
     close(message) { 
-      this.$snackbar.show({
-        placement: 'bottom',
-        timeout: 0
-      })
+      this.$snackbar.show({content: message, placement: 'bottom'})
     },
     
     alert() {
       this.$modal.alert('我是内容','Alert 标题', () => {
         this.close('Alert关闭成功')
       })
+    },
+    
+    confirm() {
+      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
     }
   }
 }
@@ -335,8 +337,13 @@ export default {
 #### $modal
 
 包含：
-- $modal(ModalConfig)
-- $modal.alert(message, title, closeCallback)
+- $modal(ModalConfig) : Modal
+- $modal.alert(message, title, closeCallback) : Modal
+- $modal.confirm(ConfirmModalConfig) : Promise\<Modal\>
+
+<br/>
+
+**ModalConfig**
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
@@ -352,3 +359,15 @@ export default {
 |mask|是否显示遮罩|Boolean||true|
 |close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
 |before-close|关闭前的回调|(done)=>void / Promise|||
+
+<br/>
+
+**ConfirmModalConfig**
+
+继承 *ModalConfig* 所有属性外，还有以下属性。
+| 参数 | 说明 | 类型 | 可选值 |默认值|
+| --- | --- | --- | --- | --- |
+|cancelButton|取消按钮|String/FooterButton|| { text: '取消' }|
+|confirmButton|确定按钮|String/FooterButton||{ text: '确定', color: 'primary' }|
+
+ \* FooterButton 格式 **`{ text: string; color?: string; textColor?: string }`**
