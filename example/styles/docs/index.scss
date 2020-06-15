@@ -38,12 +38,12 @@
     margin: 0;
   }
 
-  .mz-document-header {
+  .mz-document-heading {
     position: relative;
     font-weight: 400;
     color: $color-text-primary;
     &:hover .mz-document-anchor {
-      opacity: 0.4;
+      opacity: 1;
     }
   }
 
