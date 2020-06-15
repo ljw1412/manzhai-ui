@@ -13,6 +13,7 @@ export default class MzModal extends MzModal_base {
     readonly outerScroll: boolean;
     readonly divider: boolean;
     readonly fullscreen: boolean;
+    readonly showClose: boolean;
     isDisplayWrapper: boolean;
     isAnimated: boolean;
     animateTimer: number;
@@ -25,6 +26,7 @@ export default class MzModal extends MzModal_base {
         'is-animated': boolean;
     })[];
     render(h: CreateElement): JSX.Element;
+    renderClose(): JSX.Element | undefined;
     renderHeader(): JSX.Element | undefined;
     renderBody(): JSX.Element;
     renderFooter(): JSX.Element | undefined;
