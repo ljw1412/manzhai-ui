@@ -1,6 +1,6 @@
 import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
-import MzBus from './bus'
+import MzBus from './src/bus'
 import blanking from './src/directives/blanking/index'
 import MzImagePreviewPlugin from './packages/Modal/plugin'
 import MzMaskPlugin from './packages/Mask/plugin'

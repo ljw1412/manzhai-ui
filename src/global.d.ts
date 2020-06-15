@@ -1,6 +1,6 @@
 import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
-import MzBus from './bus'
+import MzBus from 'manzhai-ui/src/bus'
 import blanking from 'manzhai-ui/src/directives/blanking/index'
 import MzImagePreviewPlugin from 'manzhai-ui/packages/Modal/plugin'
 import MzMaskPlugin from 'manzhai-ui/packages/Mask/plugin'
