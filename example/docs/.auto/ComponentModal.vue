@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-06-14 19:06</div>
+    <div class="update-datetime">文档更新时间：2020-06-15 14:41</div>
     <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -364,11 +364,15 @@ export default {
   <!-- alert -->
   <mz-button @click="alert">Alert</mz-button>
   <mz-button @click="confirm">Confirm</mz-button>
+  <mz-button @click="prompt">Prompt</mz-button>
+  <mz-button @click="promptWithRule">带校验的Prompt</mz-button>
 </div></modal-demo8></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;!-- alert --&gt;
 &lt;mz-button @click=&quot;alert&quot;&gt;Alert&lt;/mz-button&gt;
 &lt;mz-button @click=&quot;confirm&quot;&gt;Confirm&lt;/mz-button&gt;
+&lt;mz-button @click=&quot;prompt&quot;&gt;Prompt&lt;/mz-button&gt;
+&lt;mz-button @click=&quot;promptWithRule&quot;&gt;带校验的Prompt&lt;/mz-button&gt;
 
 &lt;script&gt;
 export default {
@@ -378,13 +382,40 @@ export default {
     },
     
     alert() {
-      this.$modal.alert('我是内容','Alert 标题', () =&gt; {
-        this.close('Alert关闭成功')
+      this.$modal.alert('我是内容','Alert 标题', 
+      { 
+        callback:() =&gt; { this.close('Alert关闭成功') }
       })
     },
     
     confirm() {
-      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
+      this.$modal.confirm({
+        title: 'Confirm 标题',
+        content: '内容',
+        cancel: {callback: () =&gt; { this.close('Confirm 取消') }},
+        confirm: {callback: () =&gt; { this.close('Confirm 确认') }} 
+      })
+    },
+
+    prompt(){
+      this.$modal.prompt({
+        title: 'Prompt 标题',
+        content:'内容' 
+      })
+      .then(value=&gt;this.close(`结果：'${value}'`))
+    },
+
+    promptWithRule(){
+      this.$modal.prompt({
+        title: 'Prompt 带校验',
+        content:'请输入5个字',
+        rules: {
+          test:/^.{5,}$/,
+          message: '不少于5个字符!'
+        } 
+      })
+      .then(value=&gt;this.close(`结果：'${value}'`))
+      .catch(()=&gt;{})
     }
   }
 }
@@ -593,141 +624,67 @@ export default {
 <h4 id="modal" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#modal" title="$modal" data-level="4" data-href="#modal">¶</a>$modal</h4>
 <p>包含：</p>
 <ul class="mz-document-ul">
-<li>$modal(ModalConfig) : Modal</li>
-<li>$modal.alert(message, title, closeCallback) : Modal</li>
-<li>$modal.confirm(ConfirmModalConfig) : Promise&lt;Modal&gt;</li>
+<li>$modal(ModalConfig): Modal</li>
+<li>$modal.alert(message, title, FooterButton): Promise</li>
+<li>$modal.confirm(ModalConfigWithButton): Promise</li>
+<li>$modal.prompt(PromptModalConfig): Promise</li>
+</ul>
+<br/>
+<div style="padding-left: 20px; font-size: 14px;">
+<p><strong>FooterButton</strong></p>
+<p>你可以直接传入 <code>String</code> 类型或对象。</p>
+<p>对象属性如下:</p>
+<ul class="mz-document-ul">
+<li>text &lt;String&gt; 按钮文案</li>
+<li>color &lt;String&gt; 背景颜色</li>
+<li>textColor &lt;String&gt; 文字颜色</li>
+<li>callback &lt;Function&gt; 点击后的回调</li>
 </ul>
 <br/>
 <p><strong>ModalConfig</strong></p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-<th>类型</th>
-<th>可选值</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>标题</td>
-<td>String</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>content</td>
-<td>内容</td>
-<td>String/VNode</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>elevation</td>
-<td>深度</td>
-<td>Number</td>
-<td></td>
-<td>15</td>
-</tr>
-<tr>
-<td>width</td>
-<td>宽度</td>
-<td>String</td>
-<td></td>
-<td>'500px'</td>
-</tr>
-<tr>
-<td>top</td>
-<td>对话框距离顶部的高度</td>
-<td>String</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>radius</td>
-<td>对话框的圆角大小</td>
-<td>String</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>transition</td>
-<td>对话框的显隐动画名称</td>
-<td>String</td>
-<td></td>
-<td>'mz-zoom'</td>
-</tr>
-<tr>
-<td>outer-scroll</td>
-<td>是否外滚动</td>
-<td>Boolean</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>divider</td>
-<td>是否有分割线</td>
-<td>Boolean</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>mask</td>
-<td>是否显示遮罩</td>
-<td>Boolean</td>
-<td></td>
-<td>true</td>
-</tr>
-<tr>
-<td>close-on-click-mask</td>
-<td>是否可以通过点击遮罩关闭对话框</td>
-<td>Boolean</td>
-<td></td>
-<td>true</td>
-</tr>
-<tr>
-<td>before-close</td>
-<td>关闭前的回调</td>
-<td>(done)=&gt;void / Promise</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<ul class="mz-document-ul">
+<li>title &lt;String&gt; 标题</li>
+<li>content &lt;String|VNode&gt; 内容</li>
+<li>elevation &lt;Number&gt; 深度 (15)</li>
+<li>width &lt;String&gt; 宽度 ('500px')</li>
+<li>top &lt;String&gt; 对话框距离顶部的高度</li>
+<li>radius &lt;String&gt; 对话框的圆角大小</li>
+<li>transition &lt;String&gt; 对话框的显隐动画名称 ('mz-zoom')</li>
+<li>outer-scroll &lt;Boolean&gt; 是否外滚动</li>
+<li>divider &lt;Boolean&gt; 是否有分割线</li>
+<li>mask &lt;Boolean&gt; 是否显示遮罩 (true)</li>
+<li>close-on-click-mask &lt;Boolean&gt; 是否可以通过点击遮罩关闭对话框 (true)</li>
+<li>before-close &lt;(done)=&gt;void / Promise&gt; 关闭前的回调</li>
+</ul>
 <br/>
-<p><strong>ConfirmModalConfig</strong></p>
+<p><strong>ModalConfigWithButton</strong></p>
 <p>继承 <em>ModalConfig</em> 所有属性外，还有以下属性。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>说明</th>
-<th>类型</th>
-<th>可选值</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cancelButton</td>
-<td>取消按钮</td>
-<td>String/FooterButton</td>
-<td></td>
-<td>{ text: '取消' }</td>
-</tr>
-<tr>
-<td>confirmButton</td>
-<td>确定按钮</td>
-<td>String/FooterButton</td>
-<td></td>
-<td>{ text: '确定', color: 'primary' }</td>
-</tr>
-</tbody>
-</table>
-<p>* FooterButton 格式 <strong><code>{ text: string; color?: string; textColor?: string }</code></strong></p>
-
+<ul class="mz-document-ul">
+<li>cancel &lt;FooterButton&gt; 取消按钮
+<ul class="mz-document-ul">
+<li>默认值: { text: '取消' }</li>
+</ul>
+</li>
+<li>confirm &lt;FooterButton&gt; 确定按钮
+<ul class="mz-document-ul">
+<li>默认值: { text: '确定', color: 'primary' }</li>
+</ul>
+</li>
+</ul>
+<br/>
+<p><strong>PromptModalConfig</strong></p>
+<p>继承 <em>ModalConfigWithButton</em> 所有属性外，还有以下属性。</p>
+<ul class="mz-document-ul">
+<li>defaultValue &lt;String&gt; 默认值</li>
+<li>rules 输入框文字规则
+<ul class="mz-document-ul">
+<li>(value: string) =&gt; boolean</li>
+<li>{ test: RegExp; message: string }</li>
+<li>Array&lt; <em>{test: RegExp; message: string}</em> &gt;</li>
+</ul>
+</li>
+</ul>
+</div>
   </div>
 </template>
 <script>
@@ -820,13 +777,40 @@ export default {
     },
     
     alert() {
-      this.$modal.alert('我是内容','Alert 标题', () => {
-        this.close('Alert关闭成功')
+      this.$modal.alert('我是内容','Alert 标题', 
+      { 
+        callback:() => { this.close('Alert关闭成功') }
       })
     },
     
     confirm() {
-      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
+      this.$modal.confirm({
+        title: 'Confirm 标题',
+        content: '内容',
+        cancel: {callback: () => { this.close('Confirm 取消') }},
+        confirm: {callback: () => { this.close('Confirm 确认') }} 
+      })
+    },
+
+    prompt(){
+      this.$modal.prompt({
+        title: 'Prompt 标题',
+        content:'内容' 
+      })
+      .then(value=>this.close(`结果：'${value}'`))
+    },
+
+    promptWithRule(){
+      this.$modal.prompt({
+        title: 'Prompt 带校验',
+        content:'请输入5个字',
+        rules: {
+          test:/^.{5,}$/,
+          message: '不少于5个字符!'
+        } 
+      })
+      .then(value=>this.close(`结果：'${value}'`))
+      .catch(()=>{})
     }
   }
 } }

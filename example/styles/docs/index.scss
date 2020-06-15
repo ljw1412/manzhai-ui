@@ -55,23 +55,11 @@
   }
 
   .mz-document-ul {
+    list-style: initial;
+    margin-left: 10px;
     li {
-      position: relative;
-      padding-left: 12px;
       color: $color-text-primary;
-      & + li {
-        margin-top: 5px;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 5px;
-        height: 5px;
-        transform: translateY(-50%);
-        background-color: $color-text-regular;
-      }
+      margin: 8px 0 10px 10px;
     }
   }
 
