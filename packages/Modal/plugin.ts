@@ -229,7 +229,7 @@ function vaildValue(value: string, rules?: PromptRule) {
 }
 
 // 输入弹窗
-modal.prompt = function(config: PromptModalConfig = {}) {
+modal.prompt = function(config: PromptModalConfig = {}): Promise<string> {
   const { cancelBtn, confirmBtn } = getModalButton(config)
   const { content, defaultValue = '', rules } = config
   return new Promise((resolve, reject) => {

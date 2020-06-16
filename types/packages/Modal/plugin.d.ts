@@ -40,6 +40,6 @@ declare function modal(config?: ModalConfig): any;
 declare namespace modal {
     var alert: (message: string, title: string, btn?: string | FooterButton | undefined) => Promise<unknown>;
     var confirm: (config?: ModalConfigWithButton) => Promise<unknown>;
-    var prompt: (config?: PromptModalConfig) => Promise<unknown>;
+    var prompt: (config?: PromptModalConfig) => Promise<string>;
 }
 export default modal;
