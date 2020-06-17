@@ -17,6 +17,8 @@ interface ModalConfig {
   divider?: boolean
   appendToBody?: boolean
   mask?: boolean
+  maskBlur?: string
+  maskColor?: string
   maskAppendToBody?: boolean
   closeOnClickMask?: boolean
   closeOnPressEscape?: boolean
