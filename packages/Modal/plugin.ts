@@ -110,16 +110,11 @@ function initInstance(config?: ModalConfig) {
   Object.assign(instance, defaultConfig, config)
   instance.visible = false
 
-  const inputEvent = (val: boolean) => {
-    instance.visible = val
-    if (val === false) {
-      instance.$off('visible:change', inputEvent)
-      setTimeout(() => {
-        instance && instance.$destroy()
-      }, 1000)
-    }
+  const closedEvent = () => {
+    instance.$off('closed', closedEvent)
+    instance && instance.$destroy()
   }
-  instance.$on('visible:change', inputEvent)
+  instance.$on('closed', closedEvent)
   return instance
 }
 
@@ -190,9 +185,11 @@ modal.confirm = function(config: ModalConfigWithButton = {}) {
   const { cancelBtn, confirmBtn } = getModalButton(config)
 
   return new Promise((resolve, reject) => {
-    const instance = modal(config)
-    instance.showClose = false
-    instance.closeOnClickMask = false
+    const instance = modal({
+      showClose: false,
+      closeOnClickMask: false,
+      ...config
+    })
     instance.$slots.footer = [
       createMzButton(instance, cancelBtn, () => {
         instance.visible = false
@@ -233,9 +230,11 @@ modal.prompt = function(config: PromptModalConfig = {}): Promise<string> {
   const { cancelBtn, confirmBtn } = getModalButton(config)
   const { content, defaultValue = '', rules } = config
   return new Promise((resolve, reject) => {
-    const instance = modal(config)
-    instance.showClose = false
-    instance.closeOnClickMask = false
+    const instance = modal({
+      showClose: false,
+      closeOnClickMask: false,
+      ...config
+    })
     const inputVNode = instance.$createElement(MzInputWrapper, {
       style: { 'margin-top': '10px' }
     })
