@@ -105,6 +105,7 @@ export default {
 |index.sync|当前下标|Number||0|
 |zoom|缩放|Number[]|[min,max]| [0.1, 4]|
 |mask-color|遮罩颜色|String||'#000'|
+|mask-blur|遮罩背景模糊度|String|||
 |z-index|同原生 z-index|Number|||
 |append-to-body|是否插入至 body 元素上|Boolean|||
 |close-on-press-escape|	是否可通过按下 ESC 键关闭|Boolean||true|

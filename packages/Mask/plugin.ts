@@ -5,6 +5,7 @@ export type MaskConfig = {
   color?: string
   zIndex?: number
   transition?: string
+  blur?: string
   onClick?: (e: MouseEvent) => void
 }
 

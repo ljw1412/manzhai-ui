@@ -135,6 +135,8 @@ export default {
 |append-to-body|是否将对话框插入至 body 元素上|Boolean|||
 |showClose|是否关闭按钮|Boolean||true|
 |mask|是否显示遮罩|Boolean||true|
+|mask-color|遮罩背景颜色|String|||
+|mask-blur|遮罩背景模糊度|String|||
 |mask-append-to-body|是否将遮罩插入至 body元素上|Boolean||true|
 |close-on-click-mask|是否可以通过点击遮罩关闭抽屉|Boolean||true|
 |close-on-press-escape|	是否可通过按下 ESC 键关闭抽屉|Boolean||true|

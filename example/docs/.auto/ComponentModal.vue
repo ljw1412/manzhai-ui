@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-06-15 14:41</div>
+    <div class="update-datetime">文档更新时间：2020-06-17 15:08</div>
     <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
 <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -531,6 +531,20 @@ export default {
 <td>Boolean</td>
 <td></td>
 <td>true</td>
+</tr>
+<tr>
+<td>mask-color</td>
+<td>遮罩背景颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mask-blur</td>
+<td>遮罩背景模糊度</td>
+<td>String</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>mask-append-to-body</td>

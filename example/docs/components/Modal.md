@@ -341,6 +341,8 @@ export default {
 |divider|是否有分割线|Boolean|||
 |append-to-body|是否将对话框插入至 body 元素上|Boolean|||
 |mask|是否显示遮罩|Boolean||true|
+|mask-color|遮罩背景颜色|String|||
+|mask-blur|遮罩背景模糊度|String|||
 |mask-append-to-body|是否将遮罩插入至 body元素上|Boolean||true|
 |close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
 |close-on-press-escape|	是否可通过按下 ESC 键关闭对话框|Boolean||true|
