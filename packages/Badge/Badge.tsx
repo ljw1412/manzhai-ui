@@ -1,6 +1,5 @@
-import Vue from 'vue'
+import Vue, { CreateElement } from 'vue'
 import { extendProps } from 'manzhai-ui/src/utils/vue-helper'
-import { CreateElement } from 'vue/types/umd'
 
 function initProps(props: Record<string, any>) {
   const defaultProps = {

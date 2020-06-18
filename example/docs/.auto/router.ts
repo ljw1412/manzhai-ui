@@ -50,6 +50,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentDropdown.vue')
   },
   {
+    path: 'component-dropdown-menu',
+    name: 'ComponentDropdownMenu',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentDropdownMenu.vue')
+  },
+  {
     path: 'component-filter-section',
     name: 'ComponentFilterSection',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentFilterSection.vue')

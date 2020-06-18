@@ -129,6 +129,13 @@
         }
       },
       {
+        "title": "DropdownMenu",
+        "text": "下拉菜单",
+        "to": {
+          "name": "ComponentDropdownMenu"
+        }
+      },
+      {
         "title": "FilterSection",
         "text": "筛选项",
         "to": {

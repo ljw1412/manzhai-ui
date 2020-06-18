@@ -46,5 +46,6 @@
   "example/docs/directives/Elevation.md": "76032ab9c1b66c53c6936e94af7f73f5",
   "example/docs/components/TableSimple.md": "353b18a1d1c9163cf638f023e21f8de3",
   "example/docs/components/Rate.md": "975d4540faeac536fa978f728b1910b6",
-  "example/docs/components/Pagination.md": "6f410d3ee1fd2942c9bd4e010e83a658"
+  "example/docs/components/Pagination.md": "6f410d3ee1fd2942c9bd4e010e83a658",
+  "example/docs/components/DropdownMenu.md": "c0ac3addd93d35e92547b9ea1a1ab924"
 }
