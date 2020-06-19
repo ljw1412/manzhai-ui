@@ -10,7 +10,7 @@
       :style="baseStyles">
       <slot name="header"></slot>
       <mz-list clickable
-        size="medium"
+        :size="size"
         @item-click="handleMenuSelect">
         <mz-list-item v-for="(item, index) of data"
           :item="item"
@@ -55,13 +55,17 @@ export interface MenuItem {
 export default class MzDropdownMenu extends BaseAttribute {
   @Prop({ type: Array, default: () => [] })
   readonly data!: MenuItem[]
+  @Prop({ type: String, default: 'medium' })
+  readonly size!: string
 
   visible = false
 
   handleMenuSelect(value: any, item: any, disabled: boolean) {
     if (!disabled) {
-      this.$emit('action', value, item)
       this.visible = false
+      this.$nextTick(() => {
+        this.$emit('action', value, item)
+      })
     }
     this.$emit('select', ...arguments)
   }

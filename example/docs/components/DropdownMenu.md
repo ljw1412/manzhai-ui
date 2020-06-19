@@ -127,7 +127,7 @@ export default {
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |list|菜单列表|MenuItem||[]|
-
+|size|尺寸|String| small / medium / large ||
 **MenuItem**
 
 - value \<String> 行为值
