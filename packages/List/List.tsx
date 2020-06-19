@@ -80,7 +80,6 @@ export default class MzList extends Mixins(MzSize, BaseAttribute) {
   }
 
   handleItemClick(value: any, item: any, disabled: boolean) {
-    this.$emit('itemClick', value, item, disabled)
     this.$emit('item-click', value, item, disabled)
   }
 }

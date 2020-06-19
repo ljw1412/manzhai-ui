@@ -37,3 +37,4 @@
 | --- | --- | --- | --- | --- |
 |bar-size|条的大小|String||'15px'|
 |always|是否一直显示|Boolean||true|
+|placeholder|滚动条是否有占位|Boolean|||
