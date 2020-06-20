@@ -48,10 +48,14 @@ export default class MzListItemGroup extends Vue {
         }
       }
     }
+    console.log(this.$slots.prefix)
 
     return (
       <div class="mz-list-item-group">
         <mz-list-item {...listItemProps}>
+          {this.$slots.prefix && (
+            <template slot="prefix">{this.$slots.prefix}</template>
+          )}
           <mz-icon
             slot="suffix"
             name="chevron-down"

@@ -4,6 +4,7 @@ import { CreateElement, VNodeData } from 'vue'
 import { RawLocation, NavigationGuard } from 'vue-router'
 import { typeOf } from 'manzhai-ui/src/utils/assist'
 import { MzList, MzListItem, MzListGroup, MzListItemGroup } from '../List/index'
+import MzIcon from '../Icon/Icon.vue'
 
 interface NavigationItem {
   value: any
@@ -16,7 +17,7 @@ interface NavigationItem {
   children?: NavigationItem[]
 }
 
-@Component({ components: { MzList, MzListItem, MzListGroup } })
+@Component({ components: { MzList, MzListItem, MzListGroup, MzIcon } })
 export default class MzNavigation extends Vue {
   @Prop({ default: () => [] })
   readonly data!: NavigationItem | NavigationItem[]
@@ -97,16 +98,25 @@ export default class MzNavigation extends Vue {
         return <mz-list-group label={item.group}>{groupItems}</mz-list-group>
       }
 
+      const renderPrefix = item.icon && (
+        <mz-icon slot="prefix" name={item.icon}></mz-icon>
+      )
+
       // 没有 group 有 children 的认为是列表元素组模式(即可展开组模式)
       if (item.children) {
         const childrenItem = this.renderItem(item.children)
         return (
-          <mz-list-item-group {...baseProps}>{childrenItem}</mz-list-item-group>
+          <mz-list-item-group {...baseProps}>
+            {renderPrefix}
+            {childrenItem}
+          </mz-list-item-group>
         )
       }
 
       // 都没有的为普通列表元素
-      const itemNode = <mz-list-item {...baseProps}></mz-list-item>
+      const itemNode = (
+        <mz-list-item {...baseProps}>{renderPrefix}</mz-list-item>
+      )
       if (item.to) {
         return <router-link to={item.to}>{itemNode}</router-link>
       }

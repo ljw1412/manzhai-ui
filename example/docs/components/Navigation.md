@@ -17,6 +17,7 @@ export default {
           group: '组1',
           children: [
             {
+              icon: 'pricetags-outline',
               title: '组1-1',
               value: '1',
               children: [
