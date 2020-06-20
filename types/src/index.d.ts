@@ -4,7 +4,7 @@ import Anchor from '../packages/Anchor/index';
 import { Button, ButtonGroup } from '../packages/Button/index';
 import Card from '../packages/Card/index';
 import Drawer from '../packages/Drawer/index';
-import { Dropdown } from '../packages/Dropdown/index';
+import Dropdown from '../packages/Dropdown/index';
 import ImagePreview from '../packages/ImagePreview/index';
 import { Input, InputGroup } from '../packages/Input/index';
 import { List, ListItem, ListGroup, ListItemGroup } from '../packages/List/index';
@@ -41,7 +41,7 @@ declare const _default: {
     Col: VueConstructor<Card>;
     Drawer: typeof Drawer;
     Dropdown: typeof Dropdown;
-    DropdownCard: VueConstructor<Card>;
+    DropdownMenu: VueConstructor<Card>;
     Form: VueConstructor<Card>;
     FilterSection: VueConstructor<Card>;
     FilterSectionGroup: VueConstructor<Card>;

@@ -3,6 +3,7 @@ export declare type MaskConfig = {
     color?: string;
     zIndex?: number;
     transition?: string;
+    blur?: string;
     onClick?: (e: MouseEvent) => void;
 };
 declare function show(config?: MaskConfig): void;

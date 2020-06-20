@@ -8,6 +8,8 @@ export default class MzDropdown extends Popover {
   readonly placement!: Placement
   @Prop({ type: [String, Boolean], default: 'shift-away' })
   readonly animation!: string | boolean
+  @Prop({ type: String, default: 'click' })
+  readonly trigger!: 'hover' | 'click' | 'focus' | 'manual'
   @Prop({ type: String, default: 'same' })
   readonly theme!: string
   @Prop({ type: String, default: 'none' })
@@ -17,9 +19,7 @@ export default class MzDropdown extends Popover {
 
   forceProps = {
     role: 'dropdown',
-    trigger: 'click',
     followCursor: false,
-    hideOnClick: true,
     interactive: true
   }
 }

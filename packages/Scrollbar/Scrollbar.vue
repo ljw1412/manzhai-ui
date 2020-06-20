@@ -14,6 +14,8 @@ export default class MzScrollbar extends Vue {
   readonly barSize!: string
   @Prop({ type: Boolean, default: true })
   readonly always!: boolean
+  @Prop(Boolean)
+  readonly placeholder!: boolean
 
   @Ref('wrapper')
   wrapperRef!: HTMLElement
@@ -48,10 +50,10 @@ export default class MzScrollbar extends Vue {
 
     const bar = [this.barY, this.barX].map(item => {
       if (item.scrollSize > item.viewSize) {
-        if (item.type === 'x') {
+        if (item.type === 'x' && this.placeholder) {
           contentStyles.paddingBottom = item.barSize
         }
-        if (item.type === 'y') {
+        if (item.type === 'y' && this.placeholder) {
           contentStyles.paddingRight = item.barSize
         }
         const data = {

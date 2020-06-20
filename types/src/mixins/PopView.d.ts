@@ -5,6 +5,7 @@ export default class MzPopView extends Vue {
     readonly appendToBody: boolean;
     readonly mask: boolean;
     readonly maskColor: string;
+    readonly maskBlur: string;
     readonly maskAppendToBody: boolean;
     readonly closeOnClickMask: boolean;
     readonly closeOnPressEscape: boolean;

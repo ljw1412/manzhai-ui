@@ -1,6 +1,6 @@
 <template>
   <div class="component-image-preview">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-17 15:08</div>
     <h2 id="imagepreview-tu-pian-yu-lan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#imagepreview-tu-pian-yu-lan" title="ImagePreview 图片预览" data-level="2" data-href="#imagepreview-tu-pian-yu-lan">¶</a>ImagePreview 图片预览</h2>
 <p>以页面全屏的形式预览图片。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -157,6 +157,13 @@ export default {
 <td>String</td>
 <td></td>
 <td>'#000'</td>
+</tr>
+<tr>
+<td>mask-blur</td>
+<td>遮罩背景模糊度</td>
+<td>String</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>z-index</td>

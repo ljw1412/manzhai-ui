@@ -41,9 +41,22 @@ export default class PageDocs extends Vue {
   @Ref('catalogue')
   readonly catalogueRef!: MzCatalogue
 
+  scrollToHashPosition() {
+    const hash = location.hash
+    if (hash) {
+      const el = document.querySelector(hash)
+      if (el) el.scrollIntoView()
+    }
+  }
+
+  mounted() {
+    this.scrollToHashPosition()
+  }
+
   @Watch('$route.name')
   onRouteNameChange(val: string) {
     this.$nextTick(this.catalogueRef.initCatalogue)
+    this.$nextTick(this.scrollToHashPosition)
   }
 }
 </script>

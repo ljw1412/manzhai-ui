@@ -1,6 +1,6 @@
 <template>
   <div class="component-scrollbar">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-19 11:45</div>
     <h2 id="scrollbar-gun-dong-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#scrollbar-gun-dong-tiao" title="Scrollbar 滚动条" data-level="2" data-href="#scrollbar-gun-dong-tiao">¶</a>Scrollbar 滚动条</h2>
 <p>用HTML实现原生滚动条效果。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -65,6 +65,13 @@
 <td>Boolean</td>
 <td></td>
 <td>true</td>
+</tr>
+<tr>
+<td>placeholder</td>
+<td>滚动条是否有占位</td>
+<td>Boolean</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>

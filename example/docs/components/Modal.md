@@ -268,6 +268,8 @@ ManZhai 为 Vue.prototype 添加了全局方法 `$modal`方法。
 <!-- alert -->
 <mz-button @click="alert">Alert</mz-button>
 <mz-button @click="confirm">Confirm</mz-button>
+<mz-button @click="prompt">Prompt</mz-button>
+<mz-button @click="promptWithRule">带校验的Prompt</mz-button>
 
 <script>
 export default {
@@ -277,13 +279,40 @@ export default {
     },
     
     alert() {
-      this.$modal.alert('我是内容','Alert 标题', () => {
-        this.close('Alert关闭成功')
+      this.$modal.alert('我是内容','Alert 标题', 
+      { 
+        callback:() => { this.close('Alert关闭成功') }
       })
     },
     
     confirm() {
-      this.$modal.confirm({title: 'Confirm 标题', content:'内容' })
+      this.$modal.confirm({
+        title: 'Confirm 标题',
+        content: '内容',
+        cancel: {callback: () => { this.close('Confirm 取消') }},
+        confirm: {callback: () => { this.close('Confirm 确认') }} 
+      })
+    },
+
+    prompt(){
+      this.$modal.prompt({
+        title: 'Prompt 标题',
+        content:'内容' 
+      })
+      .then(value=>this.close(`结果：'${value}'`))
+    },
+
+    promptWithRule(){
+      this.$modal.prompt({
+        title: 'Prompt 带校验',
+        content:'请输入5个字',
+        rules: {
+          test:/^.{5,}$/,
+          message: '不少于5个字符!'
+        } 
+      })
+      .then(value=>this.close(`结果：'${value}'`))
+      .catch(()=>{})
     }
   }
 }
@@ -312,6 +341,8 @@ export default {
 |divider|是否有分割线|Boolean|||
 |append-to-body|是否将对话框插入至 body 元素上|Boolean|||
 |mask|是否显示遮罩|Boolean||true|
+|mask-color|遮罩背景颜色|String|||
+|mask-blur|遮罩背景模糊度|String|||
 |mask-append-to-body|是否将遮罩插入至 body元素上|Boolean||true|
 |close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
 |close-on-press-escape|	是否可通过按下 ESC 键关闭对话框|Boolean||true|
@@ -337,37 +368,64 @@ export default {
 #### $modal
 
 包含：
-- $modal(ModalConfig) : Modal
-- $modal.alert(message, title, closeCallback) : Modal
-- $modal.confirm(ConfirmModalConfig) : Promise\<Modal\>
+- $modal(ModalConfig): Modal
+- $modal.alert(message, title, FooterButton): Promise
+- $modal.confirm(ModalConfigWithButton): Promise
+- $modal.prompt(PromptModalConfig): Promise
+
+<br/>
+
+<div style="padding-left: 20px; font-size: 14px;">
+
+**FooterButton**
+
+你可以直接传入 `String` 类型或对象。
+
+对象属性如下:
+
+- text \<String> 按钮文案
+- color \<String> 背景颜色
+- textColor \<String> 文字颜色
+- callback \<Function> 点击后的回调
 
 <br/>
 
 **ModalConfig**
 
-| 参数 | 说明 | 类型 | 可选值 |默认值|
-| --- | --- | --- | --- | --- |
-|title|标题|String|||
-|content|内容|String/VNode|||
-|elevation|深度|Number||15|
-|width|宽度|String||'500px'|
-|top|对话框距离顶部的高度|String|||
-|radius|对话框的圆角大小|String|||
-|transition|对话框的显隐动画名称|String||'mz-zoom'|
-|outer-scroll|是否外滚动|Boolean|||
-|divider|是否有分割线|Boolean|||
-|mask|是否显示遮罩|Boolean||true|
-|close-on-click-mask|是否可以通过点击遮罩关闭对话框|Boolean||true|
-|before-close|关闭前的回调|(done)=>void / Promise|||
+- title \<String> 标题
+- content \<String|VNode> 内容
+- elevation \<Number> 深度 (15)
+- width \<String> 宽度 ('500px')
+- top \<String> 对话框距离顶部的高度
+- radius \<String> 对话框的圆角大小
+- transition \<String> 对话框的显隐动画名称 ('mz-zoom')
+- outer-scroll \<Boolean> 是否外滚动
+- divider \<Boolean> 是否有分割线
+- mask \<Boolean> 是否显示遮罩 (true)
+- close-on-click-mask \<Boolean> 是否可以通过点击遮罩关闭对话框 (true)
+- before-close \<(done)=>void / Promise> 关闭前的回调
 
 <br/>
 
-**ConfirmModalConfig**
+**ModalConfigWithButton**
 
 继承 *ModalConfig* 所有属性外，还有以下属性。
-| 参数 | 说明 | 类型 | 可选值 |默认值|
-| --- | --- | --- | --- | --- |
-|cancelButton|取消按钮|String/FooterButton|| { text: '取消' }|
-|confirmButton|确定按钮|String/FooterButton||{ text: '确定', color: 'primary' }|
 
- \* FooterButton 格式 **`{ text: string; color?: string; textColor?: string }`**
+- cancel \<FooterButton> 取消按钮
+  - 默认值: { text: '取消' }
+- confirm \<FooterButton> 确定按钮
+  - 默认值: { text: '确定', color: 'primary' }
+
+<br/>
+
+**PromptModalConfig**
+
+继承 *ModalConfigWithButton* 所有属性外，还有以下属性。
+
+- defaultValue \<String> 默认值
+- rules 输入框文字规则
+  - (value: string) => boolean
+  - { test: RegExp; message: string }
+  - Array< _{test: RegExp; message: string}_ >
+
+</div>

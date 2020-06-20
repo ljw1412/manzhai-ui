@@ -1,6 +1,6 @@
 <template>
   <div class="component-drawer">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-17 15:14</div>
     <h2 id="drawer-chou-ti" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#drawer-chou-ti" title="Drawer 抽屉" data-level="2" data-href="#drawer-chou-ti">¶</a>Drawer 抽屉</h2>
 <p>屏幕边缘滑出的浮层面板。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -276,6 +276,20 @@ export default {
 <td>Boolean</td>
 <td></td>
 <td>true</td>
+</tr>
+<tr>
+<td>mask-color</td>
+<td>遮罩背景颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mask-blur</td>
+<td>遮罩背景模糊度</td>
+<td>String</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>mask-append-to-body</td>

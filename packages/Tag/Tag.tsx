@@ -45,7 +45,7 @@ export default class MzTag extends MzSize {
     if (!this.closable) return null
     const data = {
       class: ['mz-tag__close', 'is-pointer'],
-      props: { name: 'close-circle' },
+      props: { name: 'close-circle-outline' },
       on: {
         click: () => {
           this.$emit('close')

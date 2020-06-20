@@ -17,6 +17,8 @@ export default class MzMask extends Vue {
   readonly appendToBody!: boolean
   @Prop(Boolean)
   readonly absolute!: boolean
+  @Prop(String)
+  readonly blur!: string
   @Prop({ type: Function, default: (e: MouseEvent) => {} })
   readonly onClick!: (e: MouseEvent) => void
 
@@ -27,7 +29,8 @@ export default class MzMask extends Vue {
       class: ['mz-mask', { 'mz-mask--absolute': this.absolute }],
       style: {
         zIndex: this.mZIndex,
-        backgroundColor: this.color
+        backgroundColor: this.color,
+        backdropFilter: this.blur ? `blur(${this.blur})` : undefined
       },
       on: Object.assign({ click: this.onClick }, this.$listeners)
     }

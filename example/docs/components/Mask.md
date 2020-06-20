@@ -8,7 +8,27 @@
 <mz-mask :visible="visible"
   @click="visible = false"></mz-mask>
 <mz-button color="success"
-  @click="visible = true">显示遮罩</mz-button>
+  @click="visible = true">普通遮罩</mz-button>
+
+<script>
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+</script>
+```
+:::
+
+### 背景模糊
+:::demo `blur`属性控制背景模糊度。
+```html
+<mz-mask :visible="visible" blur="3px"
+  @click="visible = false"></mz-mask>
+<mz-button color="success"
+  @click="visible = true">带背景模糊的遮罩</mz-button>
 
 <script>
 export default {
@@ -52,6 +72,7 @@ export default {
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |visible|是否显示|Boolean|||
+|blur|背景模糊度|String|||
 |transition|动画效果|String||'mz-fade'|
 |zIndex|界面层级|Number|||
 |appendToBody|是否添加到body元素下|Boolean|||
@@ -70,8 +91,9 @@ export default {
 
 MaskConfig 为 object，具体属性如下：
 
-| 参数 | 说明 | 类型 | 可选值 |默认值|
-| --- | --- | --- | --- | --- |
-|transition|动画效果|String||'mz-fade'|
-|zIndex|界面层级|Number|||
-|onClick|点击事件|function(e)|||
+| 参数 | 说明 | 类型 |默认值|
+| --- | --- | --- | --- |
+|transition|动画效果|String|'mz-fade'|
+|blur|背景模糊度|String||
+|zIndex|界面层级|Number||
+|onClick|点击事件|function(e)||

@@ -1,11 +1,11 @@
 import Vue, { PluginFunction } from 'vue'
 import { Instance } from 'tippy.js'
-import MzBus from 'manzhai-ui/src/bus'
-import blanking from 'manzhai-ui/src/directives/blanking/index'
-import MzImagePreviewPlugin from 'manzhai-ui/packages/Modal/plugin'
-import MzMaskPlugin from 'manzhai-ui/packages/Mask/plugin'
-import MzModalPlugin from 'manzhai-ui/packages/Modal/plugin'
-import MzSnackbarPlugin from 'manzhai-ui/packages/Snackbar/plugin'
+import MzBus from './src/bus'
+import blanking from './src/directives/blanking/index'
+import MzImagePreviewPlugin from './packages/Modal/plugin'
+import MzMaskPlugin from './packages/Mask/plugin'
+import MzModalPlugin from './packages/Modal/plugin'
+import MzSnackbarPlugin from './packages/Snackbar/plugin'
 import 'resize-observer-polyfill'
 
 declare global {

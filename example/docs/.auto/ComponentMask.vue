@@ -1,6 +1,6 @@
 <template>
   <div class="component-mask">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-17 14:59</div>
     <h2 id="mask-zhe-zhao-ceng" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#mask-zhe-zhao-ceng" title="Mask 遮罩层" data-level="2" data-href="#mask-zhe-zhao-ceng">¶</a>Mask 遮罩层</h2>
 <p>创建一个遮罩层，用于强调特定的页面元素，并阻止用户进行其他操作。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -9,14 +9,38 @@
   <mz-mask :visible="visible"
     @click="visible = false"></mz-mask>
   <mz-button color="success"
-    @click="visible = true">显示遮罩</mz-button>
+    @click="visible = true">普通遮罩</mz-button>
 </div></mask-demo1></template>
         <template #description><p><code>visible</code>属性控制遮罩的显示和隐藏。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-mask :visible=&quot;visible&quot;
   @click=&quot;visible = false&quot;&gt;&lt;/mz-mask&gt;
 &lt;mz-button color=&quot;success&quot;
-  @click=&quot;visible = true&quot;&gt;显示遮罩&lt;/mz-button&gt;
+  @click=&quot;visible = true&quot;&gt;普通遮罩&lt;/mz-button&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="bei-jing-mo-hu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bei-jing-mo-hu" title="背景模糊" data-level="3" data-href="#bei-jing-mo-hu">¶</a>背景模糊</h3>
+<demo-block>
+        <template #example><mask-demo2 inline-template><div class="mask-demo2">
+  <mz-mask :visible="visible" blur="3px"
+    @click="visible = false"></mz-mask>
+  <mz-button color="success"
+    @click="visible = true">带背景模糊的遮罩</mz-button>
+</div></mask-demo2></template>
+        <template #description><p><code>blur</code>属性控制背景模糊度。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-mask :visible=&quot;visible&quot; blur=&quot;3px&quot;
+  @click=&quot;visible = false&quot;&gt;&lt;/mz-mask&gt;
+&lt;mz-button color=&quot;success&quot;
+  @click=&quot;visible = true&quot;&gt;带背景模糊的遮罩&lt;/mz-button&gt;
 
 &lt;script&gt;
 export default {
@@ -31,10 +55,10 @@ export default {
 <p>引入 Mask 组件后，会自动在 Vue 的 prototype 上挂载 $mask 方法，在所有组件内部都可以直接调用此方法。</p>
 <p>它包含<code>show</code>和<code>hide</code>两个方法。</p>
 <demo-block>
-        <template #example><mask-demo2 inline-template><div class="mask-demo2">
+        <template #example><mask-demo3 inline-template><div class="mask-demo3">
   <mz-button color="success"
     @click="show">显示遮罩</mz-button>
-</div></mask-demo2></template>
+</div></mask-demo3></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-button color=&quot;success&quot;
   @click=&quot;show&quot;&gt;显示遮罩&lt;/mz-button&gt;
@@ -65,6 +89,13 @@ export default {
 <td>visible</td>
 <td>是否显示</td>
 <td>Boolean</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>blur</td>
+<td>背景模糊度</td>
+<td>String</td>
 <td></td>
 <td></td>
 </tr>
@@ -121,7 +152,6 @@ export default {
 <th>参数</th>
 <th>说明</th>
 <th>类型</th>
-<th>可选值</th>
 <th>默认值</th>
 </tr>
 </thead>
@@ -130,21 +160,24 @@ export default {
 <td>transition</td>
 <td>动画效果</td>
 <td>String</td>
-<td></td>
 <td>'mz-fade'</td>
+</tr>
+<tr>
+<td>blur</td>
+<td>背景模糊度</td>
+<td>String</td>
+<td></td>
 </tr>
 <tr>
 <td>zIndex</td>
 <td>界面层级</td>
 <td>Number</td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>onClick</td>
 <td>点击事件</td>
 <td>function(e)</td>
-<td></td>
 <td></td>
 </tr>
 </tbody>
@@ -162,6 +195,12 @@ export default {
     }
   }
 }, MaskDemo2: {
+  data() {
+    return {
+      visible: false
+    }
+  }
+}, MaskDemo3: {
   methods: {
     show(){
       this.$mask.show({ onClick: () => this.$mask.hide() })
