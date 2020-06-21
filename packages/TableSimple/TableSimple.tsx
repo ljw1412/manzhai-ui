@@ -63,7 +63,7 @@ export default class MzTableSimple extends Vue {
         {trData.map(item => {
           return (
             <Tag class={`mz-table-${Tag}`} colspan={item.span}>
-              <span>{this.getItem(item.data, Tag)}</span>
+              <span>{this.getItem(item.data, Tag, trData)}</span>
             </Tag>
           )
         })}
@@ -71,9 +71,9 @@ export default class MzTableSimple extends Vue {
     )
   }
 
-  getItem(item: any, Tag: 'th' | 'td') {
+  getItem(item: any, Tag: 'th' | 'td', row: any[]) {
     if (this.$scopedSlots[Tag] && item) {
-      item = this.$scopedSlots[Tag]!({ item })
+      item = this.$scopedSlots[Tag]!({ item, row })
     }
     return item
   }
