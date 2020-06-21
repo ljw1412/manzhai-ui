@@ -19,6 +19,7 @@
     color: var(--color-text-primary);
   }
   &__body {
+    word-break: break-all;
     padding: 10px 24px 20px;
     color: var(--color-text-regular);
   }
