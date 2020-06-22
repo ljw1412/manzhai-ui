@@ -24,6 +24,7 @@ import {
 } from 'vue-property-decorator'
 import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
 import { typeOf } from 'manzhai-ui/src/utils/assist'
 import MzFilterSectionGroup from './FilterSectionGroup.vue'
 import MzFilterSectionItem from './FilterSectionItem.vue'
@@ -33,7 +34,7 @@ import MzFilterSectionItem from './FilterSectionItem.vue'
     return { mzFilterSection: this }
   }
 })
-export default class MzFilterSection extends Mixins(FormElement) {
+export default class MzFilterSection extends Mixins(FormElement, MzSize) {
   @Inject({ from: 'mzFilterSectionGroup', default: null })
   readonly group!: MzFilterSectionGroup
   @Prop(String)
@@ -45,6 +46,8 @@ export default class MzFilterSection extends Mixins(FormElement) {
   @Prop(Boolean)
   readonly outlined!: boolean
   @Prop(Boolean)
+  readonly background!:boolean
+  @Prop(Boolean)
   readonly multiple!: boolean
 
   itemList: MzFilterSectionItem[] = []
@@ -52,6 +55,12 @@ export default class MzFilterSection extends Mixins(FormElement) {
 
   get sectionValue() {
     return this.group ? this.mValue : this.value
+  }
+
+  get mSize() {
+    return !this.size && this.group && this.group.size
+      ? this.group.mzSize
+      : this.mzSize
   }
 
   set sectionValue(value: any) {
@@ -71,7 +80,7 @@ export default class MzFilterSection extends Mixins(FormElement) {
   }
 
   get sectionClasses() {
-    const classes: (Record<string, any> | string)[] = []
+    const classes: (Record<string, any> | string)[] = [this.mSize]
     if (['top', 'left', 'right'].includes(this.labelPosition)) {
       classes.push(`mz-filter-section--${this.labelPosition}`)
     }

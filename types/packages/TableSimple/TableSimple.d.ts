@@ -11,7 +11,7 @@ export default class MzTableSimple extends Vue {
     get maxLength(): number;
     render(h: CreateElement): JSX.Element;
     renderTr(trData: any[], Tag?: 'th' | 'td'): JSX.Element;
-    getItem(item: any, Tag: 'th' | 'td'): any;
+    getItem(item: any, Tag: 'th' | 'td', row: any[]): any;
     getTableData(): {
         span: number;
         data: any;

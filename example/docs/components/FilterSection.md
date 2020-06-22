@@ -58,6 +58,31 @@ export default {
 ```
 :::
 
+### 背景效果
+
+:::demo `background`用来控制是否以背景模式显示选中的效果。
+```html
+<div class="demo-font-size-14">当前值：{{value}}</div>
+<mz-filter-section v-model="value" label="漫画类型" background>
+  <mz-filter-section-item v-for="type of typeList"
+    :key="type"
+    :value="type"
+    :label="type"></mz-filter-section-item>
+</mz-filter-section>
+
+<script>
+export default {
+  data() {
+    return {
+      value: '全部',
+      typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
+    }
+  }
+}
+</script>
+```
+:::
+
 ### 对齐方式
 
 根据具体目标和制约因素，选择最佳的标签对齐方式。
@@ -88,6 +113,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.mz-filter-section-item{
+  min-width: 48px;
+}
+</style>
 ```
 :::
 
@@ -182,6 +213,39 @@ export default {
   }
 }
 </style>
+```
+:::
+
+### 不同大小
+
+:::demo `size`属性控制显示大小。
+```html
+<mz-filter-section v-for="size of sizes" :key="size"
+  v-model="value" label="产地：" :size="size"
+  label-position="right" label-width="100px">
+  <mz-filter-section-item v-for="country of countries"
+    :key="country.value"
+    :value="country.value">{{ country.label }}</mz-filter-section-item>
+</mz-filter-section>
+
+<script>
+export default {
+  data() {
+    return {
+      sizes:['small', undefined, 'large'],
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
+  }
+}
+</script>
 ```
 :::
 

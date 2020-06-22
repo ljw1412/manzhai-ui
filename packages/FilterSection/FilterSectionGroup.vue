@@ -8,6 +8,7 @@
 import { Component, Vue, Mixins, Prop, Watch } from 'vue-property-decorator'
 import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
 import { typeOf } from 'manzhai-ui/src/utils/assist'
 import MzFilterSection from './FilterSection.vue'
 
@@ -16,7 +17,7 @@ import MzFilterSection from './FilterSection.vue'
     return { mzFilterSectionGroup: this }
   }
 })
-export default class MzFilterSectionGroup extends Mixins(FormElement) {
+export default class MzFilterSectionGroup extends Mixins(FormElement, MzSize) {
   @Prop({ type: Object, default: () => ({}) })
   readonly value!: Record<string, any>
   @Prop(Boolean)

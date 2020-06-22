@@ -2,6 +2,8 @@
   overflow-x: hidden;
 
   &__label {
+    font-size: $font-size-sm;
+    line-height: $font-size-sm;
     color: $color-text-regular;
   }
 
@@ -16,7 +18,7 @@
       &__label {
         flex-shrink: 0;
         display: flex;
-        align-items: center;
+        padding: 8px 0;
         margin-right: 10px;
       }
 
@@ -35,7 +37,18 @@
 
   &--top {
     .mz-filter-section__label {
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.mz-filter-section.mz-size--small {
+  &.mz-filter-section {
+    &--right,
+    &--left {
+      .mz-filter-section__label {
+        padding: 7px 0;
+      }
     }
   }
 }

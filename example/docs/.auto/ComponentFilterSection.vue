@@ -1,6 +1,6 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-06-22 15:48</div>
     <h2 id="filtersection-shai-xuan-xiang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
 <p>用于筛选条件的选择。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -70,10 +70,41 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="bei-jing-xiao-guo" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bei-jing-xiao-guo" title="背景效果" data-level="3" data-href="#bei-jing-xiao-guo">¶</a>背景效果</h3>
+<demo-block>
+        <template #example><filter-section-demo3 inline-template><div class="filter-section-demo3">
+  <div class="demo-font-size-14">当前值：{{value}}</div>
+  <mz-filter-section v-model="value" label="漫画类型" background>
+    <mz-filter-section-item v-for="type of typeList"
+      :key="type"
+      :value="type"
+      :label="type"></mz-filter-section-item>
+  </mz-filter-section>
+</div></filter-section-demo3></template>
+        <template #description><p><code>background</code>用来控制是否以背景模式显示选中的效果。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+&lt;mz-filter-section v-model=&quot;value&quot; label=&quot;漫画类型&quot; background&gt;
+  &lt;mz-filter-section-item v-for=&quot;type of typeList&quot;
+    :key=&quot;type&quot;
+    :value=&quot;type&quot;
+    :label=&quot;type&quot;&gt;&lt;/mz-filter-section-item&gt;
+&lt;/mz-filter-section&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      value: '全部',
+      typeList: [&quot;全部&quot;, &quot;爆笑&quot;, &quot;热血&quot;, &quot;冒险&quot;, &quot;科幻&quot;, &quot;魔幻&quot;, &quot;玄幻&quot;, &quot;校园&quot;, &quot;推理&quot;, &quot;萌系&quot;, &quot;穿越&quot;, &quot;后宫&quot;, &quot;都市&quot;, &quot;恋爱&quot;, &quot;武侠&quot;, &quot;格斗&quot;, &quot;战争&quot;, &quot;历史&quot;, &quot;同人&quot;, &quot;竞技&quot;, &quot;励志&quot;, &quot;治愈&quot;, &quot;机甲&quot;, &quot;纯爱&quot;, &quot;美食&quot;, &quot;血腥&quot;, &quot;僵尸&quot;, &quot;恶搞&quot;, &quot;虐心&quot;, &quot;生活&quot;, &quot;动作&quot;, &quot;惊险&quot;, &quot;唯美&quot;, &quot;震撼&quot;, &quot;复仇&quot;, &quot;侦探&quot;, &quot;其它&quot;, &quot;脑洞&quot;, &quot;奇幻&quot;, &quot;宫斗&quot;, &quot;运动&quot;, &quot;青春&quot;, &quot;灵异&quot;, &quot;古风&quot;, &quot;权谋&quot;, &quot;节操&quot;, &quot;明星&quot;, &quot;暗黑&quot;, &quot;社会&quot;, &quot;浪漫&quot;, &quot;栏目&quot;]
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="dui-qi-fang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dui-qi-fang-shi" title="对齐方式" data-level="3" data-href="#dui-qi-fang-shi">¶</a>对齐方式</h3>
 <p>根据具体目标和制约因素，选择最佳的标签对齐方式。</p>
 <demo-block>
-        <template #example><filter-section-demo3 inline-template><div class="filter-section-demo3">
+        <template #example><filter-section-demo4 inline-template><div class="filter-section-demo4">
   <div style="margin-bottom:10px">
     <span>标签位置：</span>
     <mz-radio-group v-model="position" name="position">
@@ -87,7 +118,7 @@ export default {
     <mz-filter-section-item 
       v-for="i of 12" :key="i" :value="i">{{i}}月</mz-filter-section-item>
   </mz-filter-section>
-</div></filter-section-demo3></template>
+</div></filter-section-demo4></template>
         <template #description><p><code>label-position</code>用来控制选择项的标签的位置，可选值为<code>top</code>、<code>left</code>、<code>right</code>。属性值<code>label-width</code>控制标签的宽度。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div style=&quot;margin-bottom:10px&quot;&gt;
@@ -114,17 +145,23 @@ export default {
   }
 }
 &lt;/script&gt;
+
+&lt;style&gt;
+.mz-filter-section-item{
+  min-width: 48px;
+}
+&lt;/style&gt;
 </code></pre></template></demo-block><h3 id="duo-xuan-mo-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#duo-xuan-mo-shi" title="多选模式" data-level="3" data-href="#duo-xuan-mo-shi">¶</a>多选模式</h3>
 <p>可以选择多个选择项。</p>
 <demo-block>
-        <template #example><filter-section-demo4 inline-template><div class="filter-section-demo4">
+        <template #example><filter-section-demo5 inline-template><div class="filter-section-demo5">
   <div class="demo-font-size-14">当前值：{{value}}</div>
   <mz-filter-section v-model="value" label="类型1：" multiple>
     <mz-filter-section-item v-for="i of 10"
       :key="i"
       :value="i">选项{{i}}</mz-filter-section-item>
   </mz-filter-section>
-</div></filter-section-demo4></template>
+</div></filter-section-demo5></template>
         <template #description><p><code>multiple</code>用来控制是不是多选。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
@@ -144,7 +181,7 @@ export default {
 </code></pre></template></demo-block><h3 id="shai-xuan-xiang-zu" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shai-xuan-xiang-zu" title="筛选项组" data-level="3" data-href="#shai-xuan-xiang-zu">¶</a>筛选项组</h3>
 <p>有多个筛选项组成的选项组，由父级进行结果管理。</p>
 <demo-block>
-        <template #example><filter-section-demo5 inline-template><div class="filter-section-demo5">
+        <template #example><filter-section-demo6 inline-template><div class="filter-section-demo6">
   <div class="demo-font-size-14">当前值：{{groupValue}}</div>
   <mz-filter-section-group v-model="groupValue">
     <mz-filter-section name="type1"
@@ -161,7 +198,7 @@ export default {
         :value="i">选项{{i}}</mz-filter-section-item>
     </mz-filter-section>
   </mz-filter-section-group>
-</div></filter-section-demo5></template>
+</div></filter-section-demo6></template>
         <template #description><p>filterSection的<code>name</code>属性是该选项组的中筛选项的唯一标识。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{groupValue}}&lt;/div&gt;
@@ -190,7 +227,7 @@ export default {
 &lt;/script&gt;
 </code></pre></template></demo-block><h3 id="zi-ding-yi-xuan-zhong-xiao-guo" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zi-ding-yi-xuan-zhong-xiao-guo" title="自定义选中效果" data-level="3" data-href="#zi-ding-yi-xuan-zhong-xiao-guo">¶</a>自定义选中效果</h3>
 <demo-block>
-        <template #example><filter-section-demo6 inline-template><div class="filter-section-demo6">
+        <template #example><filter-section-demo7 inline-template><div class="filter-section-demo7">
   <div class="demo-font-size-14">当前值：{{value}}</div>
   <mz-filter-section v-model="value" label="类型1：" custom>
     <mz-filter-section-item custom
@@ -199,7 +236,7 @@ export default {
         :class="{'is-item-checked':checked}">选项{{i}}</div>
     </mz-filter-section-item>
   </mz-filter-section>
-</div></filter-section-demo6></template>
+</div></filter-section-demo7></template>
         <template #description><p>filterSectionItem 的<code>custom</code>属性如果是true，可以关闭默认的选中效果。通过<code>slot-scope</code>可以获得当前选择项的选中状态情况。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
@@ -233,6 +270,45 @@ export default {
   }
 }
 &lt;/style&gt;
+</code></pre></template></demo-block><h3 id="bu-tong-da-xiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-tong-da-xiao" title="不同大小" data-level="3" data-href="#bu-tong-da-xiao">¶</a>不同大小</h3>
+<demo-block>
+        <template #example><filter-section-demo8 inline-template><div class="filter-section-demo8">
+  <mz-filter-section v-for="size of sizes" :key="size"
+    v-model="value" label="产地：" :size="size"
+    label-position="right" label-width="100px">
+    <mz-filter-section-item v-for="country of countries"
+      :key="country.value"
+      :value="country.value">{{ country.label }}</mz-filter-section-item>
+  </mz-filter-section>
+</div></filter-section-demo8></template>
+        <template #description><p><code>size</code>属性控制显示大小。</p>
+</template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-filter-section v-for=&quot;size of sizes&quot; :key=&quot;size&quot;
+  v-model=&quot;value&quot; label=&quot;产地：&quot; :size=&quot;size&quot;
+  label-position=&quot;right&quot; label-width=&quot;100px&quot;&gt;
+  &lt;mz-filter-section-item v-for=&quot;country of countries&quot;
+    :key=&quot;country.value&quot;
+    :value=&quot;country.value&quot;&gt;{{ country.label }}&lt;/mz-filter-section-item&gt;
+&lt;/mz-filter-section&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      sizes:['small', undefined, 'large'],
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="filtersection-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#filtersection-api" title="FilterSection API" data-level="3" data-href="#filtersection-api">¶</a>FilterSection API</h3>
 <h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -520,27 +596,54 @@ export default {
 }, FilterSectionDemo3: {
   data() {
     return {
-      value: '',
-      position: 'top' 
+      value: '全部',
+      typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
     }
   }
 }, FilterSectionDemo4: {
   data() {
-    return { value: [] }
+    return {
+      value: '',
+      position: 'top' 
+    }
   }
 }, FilterSectionDemo5: {
   data() {
-    return { groupValue: null }
+    return { value: [] }
   }
 }, FilterSectionDemo6: {
   data() {
+    return { groupValue: null }
+  }
+}, FilterSectionDemo7: {
+  data() {
     return { value: 1 }
+  }
+}, FilterSectionDemo8: {
+  data() {
+    return {
+      sizes:['small', undefined, 'large'],
+      value: 'All',
+      countries: [
+        { label: '全部', value: 'All' },
+        { label: '中国', value: 'China' },
+        { label: '日本', value: 'Janpan' },
+        { label: '新加坡', value: 'Singapore' },
+        { label: '美国', value: 'America' },
+        { label: '英国', value: 'England' },
+      ]
+    }
   }
 } }
 }
 </script>
 <style lang="scss">
-.filter-section-demo6{  
+.filter-section-demo4{  
+  .mz-filter-section-item{
+    min-width: 48px;
+  }
+  }
+.filter-section-demo7{  
   .is-item-checked{
     position: relative;
     &::after {

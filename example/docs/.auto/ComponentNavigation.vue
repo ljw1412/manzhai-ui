@@ -1,6 +1,6 @@
 <template>
   <div class="component-navigation">
-    <div class="update-datetime">文档更新时间：2020-06-20 16:16</div>
+    <div class="update-datetime">文档更新时间：2020-06-22 15:04</div>
     <h2 id="dao-hang-cai-dan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#dao-hang-cai-dan" title="导航菜单" data-level="2" data-href="#dao-hang-cai-dan">¶</a>导航菜单</h2>
 <p>有站点导航功能的菜单。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>

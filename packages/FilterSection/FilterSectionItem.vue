@@ -24,6 +24,8 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   @Prop(Boolean)
   readonly outlined!: boolean
   @Prop(Boolean)
+  readonly background!: boolean
+  @Prop(Boolean)
   readonly custom!: boolean
   @Prop()
   readonly labelStyle!: any
@@ -34,11 +36,16 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
     return (this.section && this.section.outlined) || this.outlined
   }
 
+  get isBackground() {
+    return (this.section && this.section.background) || this.background
+  }
+
   get itemClass() {
     const classes = { 'is-pointer': !this.disabled, 'is-custom': this.custom }
     if (!this.custom) {
       Object.assign(classes, {
         'is-outlined': this.isOutlined,
+        'is-background': this.isBackground,
         'is-checked': this.checked
       })
     }

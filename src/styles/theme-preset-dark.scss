@@ -48,10 +48,29 @@
     }
   }
 
-  .mz-filter-section-item.is-checked {
-    .mz-filter-section-item__label {
-      color: $color-primary;
-      background-color: $color-white;
+  .mz-filter-section-item {
+    &__label {
+      color: $color-text-secondary;
+    }
+
+    &.is-checked {
+      .mz-filter-section-item__label {
+        color: $color-white;
+      }
+
+      &.is-outlined {
+        .mz-filter-section-item__label {
+          border-color: $color-white;
+        }
+      }
+
+      &.is-background {
+        .mz-filter-section-item__label {
+          color: $color-primary;
+          border-color: $color-white;
+          background-color: $color-white;
+        }
+      }
     }
   }
 
