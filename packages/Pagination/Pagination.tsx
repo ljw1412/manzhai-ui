@@ -77,8 +77,8 @@ export default class MzPagination extends MzSize {
 
   handlePageChange(num: number) {
     this.jumpNum = num
-    this.$emit('change', num)
     this.$emit('index:change', num)
+    this.$emit('change', num)
   }
 
   renderPager() {
