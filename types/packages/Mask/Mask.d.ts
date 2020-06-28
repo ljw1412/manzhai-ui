@@ -7,6 +7,7 @@ export default class MzMask extends Vue {
     readonly zIndex: number;
     readonly appendToBody: boolean;
     readonly absolute: boolean;
+    readonly bgMode: boolean;
     readonly blur: string;
     readonly onClick: (e: MouseEvent) => void;
     mZIndex: number;

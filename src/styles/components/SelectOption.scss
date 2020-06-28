@@ -1,0 +1,9 @@
+.mz-option {
+  &.is-hover::before {
+    opacity: 0.3;
+  }
+
+  &:not(.is-hover)::before {
+    opacity: 0 !important;
+  }
+}

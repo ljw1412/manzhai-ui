@@ -1,6 +1,7 @@
 <template>
   <mz-list-item ref="option"
     class="mz-option"
+    :class="{'is-hover': isHover}"
     :value="value"
     :title="label || value"
     :disabled="isDisabled"
@@ -27,6 +28,8 @@ export default class MzOption extends Mixins(FormElement) {
   readonly mzSelect!: MzSelect
   @Ref('option')
   readonly optionRef!: MzListItem
+
+  isHover = false
 
   get active() {
     return !!this.mzSelect && this.mzSelect.mValue === this.value

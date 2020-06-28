@@ -2,18 +2,23 @@
   <mz-dropdown ref="dropdown"
     class="mz-select"
     tag="div"
+    v-model="active"
     :arrow="arrow"
     :animation="animation"
     :disabled="disabled"
     :offset="arrow? undefined : [0, 0]"
-    @show="handleDropdownShow"
-    @hide="active = false">
+    @show="handleDropdownShow">
     <mz-input ref="input"
       readonly
       :value="text"
       :placeholder="placeholder"
       :disabled="disabled"
-      :size="size">
+      :size="size"
+      @keydown.native.tab="active = false"
+      @keydown.native.esc.stop.prevent="active = false"
+      @keydown.native.up.prevent="handleSwitchOption('prev')"
+      @keydown.native.down.prevent="handleSwitchOption('next')"
+      @keydown.native.enter.prevent="handleEnter">
       <mz-icon :name="this.active ? 'chevron-up' : 'chevron-down'"
         slot="suffix"></mz-icon>
     </mz-input>
@@ -66,6 +71,7 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
   text = ''
   active = false
   dropdownWidth = ''
+  hoverIndex = -1
 
   get mValue() {
     return this.value
@@ -76,19 +82,51 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
     this.$emit('change', val)
   }
 
+  get activeIndex() {
+    return this.optionList.findIndex(item => item.active)
+  }
+
   handleDropdownShow() {
-    this.active = true
     const inputEl = this.inputRef.$el as HTMLElement
     this.dropdownWidth = inputEl.offsetWidth + 'px'
+    this.hoverIndex = this.activeIndex
+    this.updateHoverState()
+    this.active = true
+  }
+
+  handleEnter() {
+    if (this.active && this.hoverIndex !== -1) {
+      const option = this.optionList[this.hoverIndex]
+      option.handleActiveChange(true)
+    }
+    this.active = !this.active
+  }
+
+  handleSwitchOption(to: 'prev' | 'next') {
+    if (!this.active) {
+      this.active = true
+      return
+    }
+
+    const len = this.optionList.length
+    if (this.hoverIndex === -1 && to === 'prev') {
+      this.hoverIndex = len - 1
+    } else {
+      this.hoverIndex = (this.hoverIndex + len + (to === 'prev' ? -1 : 1)) % len
+    }
+    this.updateHoverState()
+  }
+
+  updateHoverState() {
+    this.optionList.forEach((option, index) => {
+      option.isHover = index === this.hoverIndex
+    })
   }
 
   handleOptionChange({ value, label }: { value: string; label: string }) {
     this.text = label
     this.mValue = value
-    this.dropdownRef.handleVisibleChange(false)
+    this.active = false
   }
 }
 </script>
-
-<style lang="scss">
-</style>
