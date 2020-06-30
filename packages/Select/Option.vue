@@ -49,6 +49,15 @@ export default class MzOption extends Mixins(FormElement) {
     this.mzSelect && this.mzSelect.handleOptionChange(this.optionData)
   }
 
+  @Watch('active')
+  handleActiveChange(val: boolean) {
+    this.$nextTick(() => {
+      if (val && this.mzSelect) {
+        this.mzSelect.handleOptionChange(this.optionData)
+      }
+    })
+  }
+
   created() {
     if (this.mzSelect) {
       this.mzSelect.optionList.push(this)
