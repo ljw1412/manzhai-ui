@@ -125,7 +125,6 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
 
   handleOptionChange({ value, label }: { value: string; label: string }) {
     this.text = label
-    this.mValue = value
     this.active = false
   }
 }
