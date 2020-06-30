@@ -117,7 +117,7 @@ export default class MzPaginationPager extends Vue {
         {this.displayQuickPrev && this.renderPagerQuick('prev')}
         {this.pagers.map(i => this.renderPagerNumber(i))}
         {this.displayQuickNext && this.renderPagerQuick('next')}
-        {this.renderPagerNumber(this.pageCount)}
+        {this.pageCount > 1 && this.renderPagerNumber(this.pageCount)}
       </div>
     )
   }

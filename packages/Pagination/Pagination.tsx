@@ -95,7 +95,7 @@ export default class MzPagination extends MzSize {
 
   renderController(type: 'prev' | 'next') {
     const isPrev = type === 'prev'
-    const disabled = isPrev ? this.index === 1 : this.index === this.mPageCount
+    const disabled = isPrev ? this.index <= 1 : this.index >= this.mPageCount
     const data = {
       class: `mz-page-${type}`,
       props: { ...this.buttonProp, disabled: this.disabled || disabled },
@@ -115,7 +115,7 @@ export default class MzPagination extends MzSize {
   }
 
   renderTotal() {
-    if (!this.total && !this.$slots.total) return
+    if (this.total === undefined && !this.$slots.total) return
     return (
       <span class="mz-pagination-total">
         {this.$slots.total || this.totalTextFormat}
