@@ -97,7 +97,8 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
   handleEnter() {
     if (this.active && this.hoverIndex !== -1) {
       const option = this.optionList[this.hoverIndex]
-      option.handleActiveChange(true)
+      this.text = option.label
+      this.mValue = option.value
     }
     this.active = !this.active
   }
@@ -123,8 +124,8 @@ export default class MzSelect extends Mixins(FormElement, MzSize) {
     })
   }
 
-  handleOptionChange({ value, label }: { value: string; label: string }) {
-    this.text = label
+  handleOptionChange(data: Record<string, any>) {
+    this.text = data.label
     this.active = false
   }
 }

@@ -46,20 +46,13 @@ export default class MzOption extends Mixins(FormElement) {
   onClick() {
     if (this.isDisabled) return
     this.$emit('click', this.optionData)
-  }
-
-  @Watch('active', { immediate: true })
-  handleActiveChange(val: boolean) {
-    this.$nextTick(() => {
-      if (val && this.mzSelect) {
-        this.mzSelect.handleOptionChange(this.optionData)
-      }
-    })
+    this.mzSelect && this.mzSelect.handleOptionChange(this.optionData)
   }
 
   created() {
     if (this.mzSelect) {
       this.mzSelect.optionList.push(this)
+      this.active && this.mzSelect.handleOptionChange(this.optionData)
     }
   }
 
