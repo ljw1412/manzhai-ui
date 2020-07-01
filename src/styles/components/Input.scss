@@ -12,6 +12,10 @@
   transition-timing-function: linear;
   @include foreground;
 
+  &:not(.is-disabled)::before {
+    color: #999;
+  }
+
   &.is-focused {
     @include foreground-disabled;
     border-color: $color-primary;
