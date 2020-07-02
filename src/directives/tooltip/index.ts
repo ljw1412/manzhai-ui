@@ -65,6 +65,7 @@ function initTippy(el: HTMLElement, binding: VNodeDirective) {
   if (!el._tooltip) el._tooltip = tippy(el, {})
   el._tooltip.setProps({
     onShow: instance => {
+      if (!instance.props.content) return false
       instance.setProps({ theme: getTheme(binding.modifiers) })
     }
   })

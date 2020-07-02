@@ -3,7 +3,7 @@
 简单的提示文字处理，如果要进行自定义请使用组件[Tooltip](component-tooltip)
 
 ### 基础用法
-:::demo `v-tooltip`直接传入字符串。
+:::demo `v-tooltip`直接传入字符串。如果内容为假值则不显示。
 ```html
 <mz-button v-tooltip="'文字'">按钮</mz-button>
 ```
