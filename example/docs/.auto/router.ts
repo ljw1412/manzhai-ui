@@ -205,6 +205,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentTag.vue')
   },
   {
+    path: 'component-textarea',
+    name: 'ComponentTextarea',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentTextarea.vue')
+  },
+  {
     path: 'component-tooltip',
     name: 'ComponentTooltip',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentTooltip.vue')

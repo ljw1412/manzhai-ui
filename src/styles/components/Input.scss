@@ -83,12 +83,14 @@
     height: 100%;
     border-radius: 0;
     border: none;
-    outline: none;
     background: none;
     appearance: none;
     caret-color: inherit;
     transition: inherit;
     cursor: inherit;
+    &:focus {
+      outline: none;
+    }
   }
 
   &__prefix,

@@ -346,6 +346,13 @@
         }
       },
       {
+        "title": "Textarea",
+        "text": "多行输入框",
+        "to": {
+          "name": "ComponentTextarea"
+        }
+      },
+      {
         "title": "Tooltip",
         "text": "提示文字",
         "to": {

@@ -60,6 +60,7 @@ import { Tabs, Tab } from '../packages/Tabs/index'
 import Table from '../packages/Table/index'
 import TableSimple from '../packages/TableSimple/index'
 import Tag from '../packages/Tag/index'
+import Textarea from '../packages/Textarea/index'
 import Tooltip from '../packages/Tooltip/index'
 import MaterialInput from '../packages/MaterialInput/index'
 // inject import
@@ -131,6 +132,7 @@ const components: VueConstructor[] = [
   Table,
   TableSimple,
   Tag,
+  Textarea,
   Tooltip,
   MaterialInput
 ]
@@ -258,6 +260,7 @@ export default {
   Table,
   TableSimple,
   Tag,
+  Textarea,
   Tooltip,
   MaterialInput
 }
