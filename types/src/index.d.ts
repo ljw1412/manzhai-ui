@@ -16,6 +16,7 @@ import Row from '../packages/Row/index';
 import Snackbar from '../packages/Snackbar/index';
 import TableSimple from '../packages/TableSimple/index';
 import Tag from '../packages/Tag/index';
+import Textarea from '../packages/Textarea/index';
 import Tooltip from '../packages/Tooltip/index';
 import MaterialInput from '../packages/MaterialInput/index';
 interface InstallationOptions {
@@ -85,6 +86,7 @@ declare const _default: {
     Table: VueConstructor<Card>;
     TableSimple: typeof TableSimple;
     Tag: typeof Tag;
+    Textarea: typeof Textarea;
     Tooltip: typeof Tooltip;
     MaterialInput: typeof MaterialInput;
 };

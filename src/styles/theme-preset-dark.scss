@@ -77,10 +77,7 @@
   .mz-input {
     background-color: $color-black;
     color: $color-white;
-
-    &.is-outlined {
-      border-color: rgba(255, 255, 255, 0.6);
-    }
+    border: 1px solid #666666;
 
     &.is-focused {
       border-color: $color-white;
@@ -89,6 +86,18 @@
 
   .mz-material-input {
     color: $color-white;
+  }
+
+  .mz-textarea {
+    &__inner {
+      background-color: $color-black;
+      color: $color-white;
+      border: 1px solid #666666;
+
+      &:focus {
+        border-color: $color-white;
+      }
+    }
   }
 
   .mz-list-item {

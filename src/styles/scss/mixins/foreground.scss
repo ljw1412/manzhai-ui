@@ -1,4 +1,4 @@
-@mixin foreground {
+@mixin foreground($color: currentColor) {
   &::before {
     content: '';
     position: absolute;
@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: currentColor;
+    background-color: $color;
     opacity: 0;
     transition: opacity 0.1s;
     border-radius: inherit;

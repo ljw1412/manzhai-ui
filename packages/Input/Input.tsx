@@ -1,25 +1,13 @@
-import { Component, Vue, Prop, Mixins, Ref } from 'vue-property-decorator'
+import { Component, Prop, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzSize from 'manzhai-ui/src/mixins/MzSize'
-import FormElement from 'manzhai-ui/src/mixins/FormElement'
+import InputField from 'manzhai-ui/src/mixins/InputField'
 import MzButton from '../Button/Button'
 
 @Component({ components: { MzButton } })
-export default class MzInput extends Mixins(MzSize, FormElement) {
-  @Prop([String, Number])
-  readonly value!: string | number
+export default class MzInput extends Mixins(MzSize, InputField) {
   @Prop({ type: String, default: 'text' })
   readonly type!: string
-  @Prop(Boolean)
-  readonly readonly!: boolean
-  @Prop(String)
-  readonly placeholder!: string
-  @Prop([Boolean, Object])
-  readonly ripple!: boolean | object
-  @Prop({ type: String, default: 'off' })
-  readonly autocomplete!: 'on' | 'off'
-  @Prop([String, Number])
-  readonly maxlength!: string | number
   @Prop()
   readonly max!: any
   @Prop()
@@ -32,15 +20,6 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
   readonly prefix!: string
   @Prop(String)
   readonly suffix!: string
-  @Prop(Boolean)
-  readonly flat!: boolean
-  @Prop(Boolean)
-  readonly shadow!: boolean
-  @Ref('input')
-  readonly inputRef!: HTMLInputElement
-
-  isComposing = false
-  focused = false
 
   renderIcon(position: 'prefix' | 'suffix') {
     if (!this[position] && !this.$slots[position]) return
@@ -55,7 +34,7 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
     return (
       <input
         class="mz-input__inner"
-        ref="input"
+        ref="field"
         attrs={this.$attrs}
         value={this.value}
         type={this.type}
@@ -87,21 +66,18 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
       class: [
         'mz-input d-inline-flex align-items-center',
         this.mzSize,
+        this.wrapClass,
         {
           'has-prefix': prefix,
           'has-suffix': suffix,
-          'is-focused': this.focused,
-          'is-rounded': this.rounded,
-          'is-disabled': this.disabled,
-          'is-shadow': this.shadow,
-          'is-flat': this.flat || this.shadow
+          'is-rounded': this.rounded
         }
       ],
       directives: [
         { name: 'ripple', value: this.ripple },
         { name: 'elevation', value: this.shadow ? (this.focused ? 8 : 2) : 0 }
       ],
-      on: { click: () => this.inputRef.focus() }
+      on: { click: () => this.fieldRef.focus() }
     }
     return (
       <span {...data}>
@@ -110,45 +86,5 @@ export default class MzInput extends Mixins(MzSize, FormElement) {
         {suffix}
       </span>
     )
-  }
-
-  onCompositionstart(event: CompositionEvent) {
-    this.isComposing = true
-  }
-
-  onCompositionUpdate(event: CompositionEvent) {}
-
-  onCompositionEnd(event: CompositionEvent) {
-    if (this.isComposing) {
-      this.isComposing = false
-      this.onInput(event)
-    }
-  }
-
-  onInput(event: InputEvent | CompositionEvent) {
-    if (this.isComposing) return
-    this.$emit('input', (event.target as HTMLInputElement).value)
-  }
-
-  focus() {
-    this.inputRef && this.inputRef.focus()
-  }
-
-  blur() {
-    this.inputRef && this.inputRef.blur()
-  }
-
-  onFocus(event: InputEvent) {
-    this.focused = true
-    this.$emit('focus', event)
-  }
-
-  onBlur(event: InputEvent) {
-    this.focused = false
-    this.$emit('blur', event)
-  }
-
-  onChange(event: InputEvent) {
-    this.$emit('change', (event.target as HTMLInputElement).value)
   }
 }
