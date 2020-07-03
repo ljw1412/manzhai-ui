@@ -122,7 +122,7 @@ export default {
 
 #### 属性
 
-该组件属性与[Dropdown](component-dropdown#shu-xing)一致还有以下属性:
+该组件属性与[Dropdown](component-dropdown#shu-xing)一致，此外还有以下属性:
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |

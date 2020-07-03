@@ -51,7 +51,11 @@ export default class MzRow extends Vue {
   render(h: CreateElement) {
     return h(
       this.tag,
-      { class: this.rowClasses, style: this.rowStyles },
+      {
+        props: this.tag === 'transition-group' ? this.$attrs : {},
+        class: this.rowClasses,
+        style: this.rowStyles
+      },
       this.$slots.default as VNodeChildren
     )
   }
