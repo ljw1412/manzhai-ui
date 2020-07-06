@@ -51,10 +51,10 @@
 
   &.is-divider {
     .mz-modal__header {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid $color-border-base;
     }
     .mz-modal__footer {
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      border-top: 1px solid $color-border-base;
     }
   }
 
