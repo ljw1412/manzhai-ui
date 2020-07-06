@@ -3,7 +3,6 @@ import MzSize from 'manzhai-ui/src/mixins/MzSize';
 export default class MzSnackbar extends MzSize {
     readonly visible: boolean;
     readonly placement: 'top' | 'top-start' | 'top-end' | 'center' | 'bottom' | 'bottom-start' | 'bottom-end';
-    readonly type: string;
     readonly timeout: number;
     readonly icon: string;
     readonly color: string;
@@ -21,6 +20,7 @@ export default class MzSnackbar extends MzSize {
     get placementList(): string[];
     get transitionName(): "mz-zoom" | "mz-y-zoom";
     get offsetStyles(): Record<string, any>;
+    get presetColorClass(): string | undefined;
     renderMain(): JSX.Element;
     render(h: CreateElement): JSX.Element;
     initZIndex(): void;
