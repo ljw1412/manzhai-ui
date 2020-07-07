@@ -218,6 +218,11 @@
   #page-component-content .mz-document-anchor {
     color: #ffffff;
   }
+  [class^='grid-demo'] {
+    .mz-col {
+      --color-primary: #{$color-white};
+    }
+  }
 }
 
 @media only screen and (max-width: 992px) {
