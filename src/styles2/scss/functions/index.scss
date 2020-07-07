@@ -1,0 +1,3 @@
+@function toSuffix($name) {
+  @return if($name == null, '', '-#{$name}');
+}

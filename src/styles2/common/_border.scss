@@ -1,0 +1,55 @@
+// border base
+@each $placement in $placements-with-null {
+  $suffix: toSuffix($placement);
+  .border#{$suffix} {
+    border#{$suffix}: $border-width solid $border-color !important;
+  }
+}
+
+// border none
+@each $placement in $placements-with-null {
+  .border#{$suffix}-0 {
+    border#{$suffix}: 0 !important;
+  }
+}
+
+// border color
+@each $color, $value in $theme-colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+@each $color, $value in $colors {
+  .border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+// border radius
+.rounded-top {
+  border-top-left-radius: $border-radius !important;
+  border-top-right-radius: $border-radius !important;
+}
+
+.rounded-right {
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
+}
+
+.rounded-bottom {
+  border-bottom-right-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-left {
+  border-top-left-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+@each $name, $radius-size in $radius {
+  $suffix: toSuffix($name);
+  .rounded#{$suffix} {
+    border-radius: $radius-size !important;
+  }
+}

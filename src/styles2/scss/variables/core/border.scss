@@ -1,0 +1,19 @@
+$border-width: 1px !default;
+$border-color: $gray-300 !default;
+
+$border-radius: 2px !default;
+$border-radius-sm: 4px !default;
+$border-radius-md: 6px !default;
+$border-radius-lg: 8px !default;
+$border-radius-max: 999px !default;
+$border-radius-circle: 50%;
+
+$radius: (
+  '0': 0,
+  null: $border-radius,
+  'sm': $border-radius-sm,
+  'md': $border-radius-md,
+  'lg': $border-radius-lg,
+  'pill': $border-radius-max,
+  'circle': $border-radius-circle
+);
