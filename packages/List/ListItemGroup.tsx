@@ -48,7 +48,6 @@ export default class MzListItemGroup extends Vue {
         }
       }
     }
-    console.log(this.$slots.prefix)
 
     return (
       <div class="mz-list-item-group">

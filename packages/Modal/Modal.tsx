@@ -20,6 +20,12 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   readonly radius!: string
   @Prop({ type: String, default: 'mz-zoom' })
   readonly transition!: string
+  @Prop()
+  readonly headerStyle!: any
+  @Prop()
+  readonly bodyStyle!: any
+  @Prop()
+  readonly footerStyle!: any
   @Prop(Boolean)
   readonly outerScroll!: boolean
   @Prop(Boolean)
@@ -117,7 +123,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   renderHeader() {
     if (this.headless) return
     return (
-      <div class="mz-modal__header">
+      <div class="mz-modal__header" style={this.headerStyle}>
         {this.$slots.header || <div class="mz-modal__title">{this.title}</div>}
       </div>
     )
@@ -125,13 +131,19 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
 
   renderBody() {
     return (
-      <div class="mz-modal__body">{this.$slots.default || this.content}</div>
+      <div class="mz-modal__body" style={this.bodyStyle}>
+        {this.$slots.default || this.content}
+      </div>
     )
   }
 
   renderFooter() {
     if (!this.$slots.footer) return
-    return <div class="mz-modal__footer">{this.$slots.footer}</div>
+    return (
+      <div class="mz-modal__footer" style={this.footerStyle}>
+        {this.$slots.footer}
+      </div>
+    )
   }
 
   handleMaskDisabledClick() {
