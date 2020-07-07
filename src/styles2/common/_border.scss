@@ -8,21 +8,25 @@
 
 // border none
 @each $placement in $placements-with-null {
+  $suffix: toSuffix($placement);
   .border#{$suffix}-0 {
     border#{$suffix}: 0 !important;
   }
 }
 
 // border color
-@each $color, $value in $theme-colors {
-  .border-#{$color} {
-    border-color: $value !important;
+@each $placement in $placements-with-null {
+  $infix: toSuffix($placement);
+  @each $color, $value in $theme-colors {
+    .border#{$infix}-#{$color} {
+      border-color: $value !important;
+    }
   }
-}
 
-@each $color, $value in $colors {
-  .border-#{$color} {
-    border-color: $value !important;
+  @each $color, $value in $colors {
+    .border#{$infix}-#{$color} {
+      border-color: $value !important;
+    }
   }
 }
 
