@@ -1,0 +1,37 @@
+@each $name, $utility in $utilities {
+  @if type-of($utility) == 'map' {
+    $values: map-get($utility, values);
+    $range: map-get($utility, range);
+
+    @if (type-of($values) == 'string' or type-of($values) == 'list') {
+      $values: list2Map($values);
+    }
+    // 整数数列转为map并与$values合并
+    $range-map: if($range, rangeMap(nth($range, 1), nth($range, 2)), null);
+    $values: if(
+      $range-map,
+      if($values, map-merge($range-map, $values), $range-map),
+      $values
+    );
+
+    @each $key, $value in $values {
+      $properties: map-get($utility, property);
+      $property-class: map-get($utility, class);
+
+      $property-class-modifier: if(
+        $key,
+        if($property-class == '', '', '-') + $key,
+        ''
+      );
+
+      @if $value != null {
+        .#{$property-class + $property-class-modifier} {
+          @each $property in $properties {
+            #{$property}: $value
+              if($enable-important-utilities, !important, null);
+          }
+        }
+      }
+    }
+  }
+}
