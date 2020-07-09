@@ -1,39 +1,31 @@
-.mz-badge {
-  position: relative;
-  display: inline-flex;
-
-  &__core {
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: center;
-    color: #ffffff;
-    background-color: $color-danger;
-    border-radius: $border-radius-max;
-    transform: translateX(50%) translateY(-50%);
-    box-sizing: border-box;
-  }
-
-  &__content {
-    height: 16px;
-    min-width: 16px;
-    line-height: 16px;
-    font-size: 10px;
-    padding: 0 4px;
-    font-weight: bold;
-  }
-
-  &__dot {
+.mz-badge-core {
+  top: 0;
+  right: 0;
+  transform: translateX(50%) translateY(-50%);
+  box-sizing: border-box;
+  &.is-dot {
+    display: inline-block;
     width: 8px;
     height: 8px;
   }
+}
 
-  &--alone {
-    .mz-badge__core {
-      position: relative;
-      top: initial;
-      right: initial;
-      transform: none;
-    }
+.mz-badge-content {
+  height: 16px;
+  min-width: 16px;
+  line-height: 16px;
+  font-size: 10px;
+  padding: 0 4px;
+  font-weight: bold;
+}
+
+.mz-badge.is-alone {
+  vertical-align: 0.15em;
+  .mz-badge-core {
+    display: inline-block;
+    position: relative;
+    top: initial;
+    right: initial;
+    transform: none;
   }
 }

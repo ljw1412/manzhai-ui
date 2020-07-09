@@ -2,11 +2,11 @@
   &__title {
     font-size: 14px;
     padding: 8px 0;
-    color: $color-text-regular;
+    color: $gray-800;
   }
 
   &__list {
-    background-color: $color-card-background;
+    background-color: $card-bg;
     border-radius: $border-radius-md;
   }
 
@@ -24,7 +24,7 @@
 
   &--border {
     .mz-cell-group__list {
-      border: 1px solid $color-border-base;
+      border: 1px solid $border-color;
     }
   }
 }

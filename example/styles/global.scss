@@ -1,5 +1,5 @@
 html {
-  background-color: $color-page-background;
+  background-color: $body-bg;
 }
 html,
 body,
@@ -20,7 +20,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: $color-text-primary;
+  color: $gray-900;
 }
 
 ::-webkit-scrollbar {
@@ -35,10 +35,10 @@ a {
   }
   // 滚动条上的滚动滑块
   &-thumb {
-    background-color: $color-primary;
+    background-color: $primary;
   }
   &-thumb:active {
-    background-color: $color-primary;
+    background-color: $primary;
     opacity: 0.5;
   }
 }

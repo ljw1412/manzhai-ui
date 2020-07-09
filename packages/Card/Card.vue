@@ -1,6 +1,6 @@
 <template>
   <div v-elevation="outlined ? 0 : elevation"
-    class="mz-card color-transition"
+    class="mz-card"
     :class="classes"
     :style="styles">
     <slot></slot>
@@ -21,7 +21,7 @@ export default class MzCard extends Mixins(BaseAttribute) {
   readonly background!: string
 
   get classes() {
-    return [{ 'mz-card--outlined': this.outlined }]
+    return [{ border: this.outlined }]
   }
 
   get styles() {

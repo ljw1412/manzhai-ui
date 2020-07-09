@@ -32,17 +32,11 @@
   }
 
   &__close {
+    @include clickable;
     position: absolute;
     top: 15px;
     right: 16px;
     z-index: 1;
-    &:hover {
-      opacity: 0.75;
-    }
-
-    &:active {
-      opacity: 0.5;
-    }
   }
 
   &__close + &__header {
@@ -51,10 +45,10 @@
 
   &.is-divider {
     .mz-modal__header {
-      border-bottom: 1px solid $color-border-base;
+      border-bottom: 1px solid $border-color;
     }
     .mz-modal__footer {
-      border-top: 1px solid $color-border-base;
+      border-top: 1px solid $border-color;
     }
   }
 

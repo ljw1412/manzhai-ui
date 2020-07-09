@@ -48,7 +48,7 @@ export default class MzButton extends MixinClass {
       buttonTheme,
       this.mzSize,
       {
-        'is-circle': this.circle,
+        'rounded-circle': this.circle,
         'mz-button--icon': this.icon,
         'mz-button--round': this.round,
         'mz-button--flat': this.flat,
@@ -83,7 +83,12 @@ export default class MzButton extends MixinClass {
 
   renderContent() {
     const data = {
-      class: ['mz-button__content', 'flex-double-center']
+      class: [
+        'mz-button__content',
+        'd-flex',
+        'justify-content-center',
+        'align-items-center'
+      ]
     }
     return <span {...data}>{this.$slots.default || this.value}</span>
   }

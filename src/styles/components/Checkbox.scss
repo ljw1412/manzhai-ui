@@ -3,7 +3,7 @@
   cursor: pointer;
   user-select: none;
   display: inline-block;
-  color: $color-text-primary;
+  color: $gray-900;
   margin-right: 20px;
   transition: $color-transition;
   white-space: nowrap;
@@ -56,7 +56,7 @@
 
   &.indeterminate,
   &.checked {
-    color: $color-primary;
+    color: $primary;
     .mz-checkbox__icon {
       &::before {
         visibility: visible;
@@ -72,7 +72,7 @@
   }
 
   &.checked {
-    color: $color-primary;
+    color: $primary;
     .mz-checkbox__icon::after {
       border-width: 0 1px 1px 0;
       transform: rotate(45deg) scaleY(1);
@@ -82,7 +82,7 @@
   &.disabled {
     cursor: not-allowed;
     &:not(.checked) {
-      color: $color-text-disabled;
+      color: $gray-600;
     }
     &.checked {
       opacity: 0.6;
@@ -90,7 +90,7 @@
   }
 
   &.border {
-    padding: $padding-sm $padding-lg;
+    padding: 6px 10px;
     border: 1px solid currentColor;
     border-radius: $border-radius-md;
     font-size: 0;

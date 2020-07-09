@@ -1,10 +1,10 @@
 <template>
   <label class="mz-checkbox"
     :class="checkboxClasses">
-    <span class="mz-checkbox__icon color-transition"></span>
+    <span class="mz-checkbox__icon"></span>
     <input v-if="trueValue || falseValue"
       type="checkbox"
-      class="mz-checkbox__input mz-hidden-input"
+      class="mz-checkbox__input hidden-node"
       v-model="checked"
       :name="name"
       :disabled="disabled"
@@ -15,14 +15,14 @@
       @change="onCheckboxChange" />
     <input v-else
       type="checkbox"
-      class="mz-checkbox__input mz-hidden-input"
+      class="mz-checkbox__input hidden-node"
       v-model="checked"
       :value="value"
       :name="name"
       :disabled="disabled"
       :tabIndex="tabIndex"
       @change="onCheckboxChange" />
-    <span class="mz-checkbox__label color-transition"
+    <span class="mz-checkbox__label"
       role="checkbox">
       <slot>{{label}}</slot>
     </span>

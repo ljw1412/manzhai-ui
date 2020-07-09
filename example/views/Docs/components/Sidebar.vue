@@ -55,7 +55,7 @@ export default class Sidebar extends Vue {
     }
 
     return (
-      <div id="sidebar">
+      <div id="sidebar" class="flex-shrink-0 px-8 py-10">
         <mz-navigation {...sidebarData}></mz-navigation>
       </div>
     )
@@ -76,10 +76,8 @@ export default class Sidebar extends Vue {
 
 <style lang="scss">
 #sidebar {
-  flex-shrink: 0;
   box-sizing: border-box;
   width: 216px;
-  padding: 10px 8px;
   overflow-y: scroll;
 }
 </style>

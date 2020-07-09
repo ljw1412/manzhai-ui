@@ -13,7 +13,7 @@
 /// @param {Number} $target-size px 值
 /// @param {Number} $context 继承的字体大小
 /// @return {Number} 对应以em单位的值
-@function px2em($target-size, $context: $base-font-size) {
+@function px2em($target-size, $context: $font-size-base) {
   @if not unitless($target-size) {
     $target-size: strip-unit($target-size);
   }

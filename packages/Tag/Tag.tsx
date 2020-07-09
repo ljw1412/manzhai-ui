@@ -44,7 +44,7 @@ export default class MzTag extends MzSize {
   get closeVnode() {
     if (!this.closable) return null
     const data = {
-      class: ['mz-tag__close', 'is-pointer'],
+      class: ['mz-tag__close', 'cursor-pointer'],
       props: { name: 'close-circle-outline' },
       on: {
         click: () => {

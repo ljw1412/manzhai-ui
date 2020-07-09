@@ -18,8 +18,11 @@ function getCount(count: number, overflowCount: number) {
 function renderBadgeContent(h: CreateElement, props: Record<string, any>) {
   const data = {
     class: [
-      'mz-badge__core',
-      { 'mz-badge__content': !props.dot, 'mz-badge__dot': props.dot }
+      'mz-badge-core position-absolute text-center text-white bg-danger rounded-pill',
+      {
+        'mz-badge-content': !props.dot,
+        'is-dot': props.dot
+      }
     ],
     style: {
       marginTop: `${props.offset[0]}px`,
@@ -41,7 +44,11 @@ export default Vue.extend({
     const slot = ctx.slots().default
 
     return (
-      <span class={['mz-badge', { 'mz-badge--alone': !slot }]}>
+      <span
+        class={[
+          'mz-badge position-relative d-inline-flex',
+          { 'is-alone': !slot }
+        ]}>
         {slot}
         {!!props.count && renderBadgeContent(h, props)}
       </span>

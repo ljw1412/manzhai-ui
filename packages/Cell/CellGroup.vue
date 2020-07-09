@@ -2,11 +2,11 @@
   <div class="mz-cell-group"
     :class="groupClasses">
     <div v-if="$slots.title || title"
-      class="mz-cell-group__title color-transition">
+      class="mz-cell-group__title">
       <slot name="title">{{title}}</slot>
     </div>
     <div v-elevation="type === 'card' ? elevation : 0"
-      class="mz-cell-group__list color-transition">
+      class="mz-cell-group__list">
       <slot></slot>
     </div>
   </div>

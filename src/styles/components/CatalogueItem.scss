@@ -1,6 +1,6 @@
 .mz-catalogue-item {
   position: relative;
-  color: $color-text-regular;
+  color: $gray-800;
 
   &__text {
     cursor: pointer;
@@ -10,7 +10,7 @@
     line-height: 20px;
     font-weight: 400;
     &:hover {
-      color: $color-primary;
+      color: $primary;
       opacity: 0.8;
     }
   }
@@ -27,7 +27,7 @@
   }
 
   &--active {
-    color: $color-primary;
+    color: $primary;
     > .mz-catalogue-item__text {
       font-weight: 500;
       font-size: 16px;

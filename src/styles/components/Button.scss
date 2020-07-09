@@ -4,7 +4,7 @@
   white-space: nowrap;
   -webkit-appearance: none;
   cursor: pointer;
-  color: $color-text-primary;
+  color: $gray-900;
   border: none;
   border-radius: $border-radius-md;
   background-color: transparent;
@@ -15,7 +15,7 @@
   transition-duration: 0.3s;
   transition-property: box-shadow, transform, opacity, background-color,
     border-radius, color, border-color, background-color;
-  transition-timing-function: map-get($transition, 'fast-out-slow-in');
+  transition-timing-function: map-get($transition-easing, 'fast-out-slow-in');
   // vertical-align: middle;
   box-sizing: border-box;
 
@@ -53,18 +53,17 @@
     opacity: 0.6;
     @include foreground-disabled;
     &.mz-button--default {
-      background-color: $color-text-disabled;
-      color: $color-text-disabled;
-      border-color: $color-text-disabled;
+      background-color: $text-muted;
+      color: $text-muted;
+      border-color: $text-muted;
       &:not(.mz-button--flat):not(.mz-button--outlined) {
-        color: $color-white;
+        color: $white;
       }
     }
   }
 
-  @each $type, $color in (primary, $color-primary), (success, $color-success),
-    (warning, $color-warning), (danger, $color-danger),
-    (default, $color-text-primary)
+  @each $type, $color in (primary, $primary), (success, $success),
+    (warning, $warning), (danger, $danger), (default, $gray-900)
   {
     &--#{$type} {
       color: $color;

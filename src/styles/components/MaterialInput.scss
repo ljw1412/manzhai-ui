@@ -1,5 +1,5 @@
 .mz-material-input {
-  color: $color-text-primary;
+  color: $gray-900;
 
   &__container {
     position: relative;
@@ -26,13 +26,13 @@
     left: 16px;
     right: initial;
     top: 50%;
-    color: $color-text-placeholder;
+    color: $gray-500;
     transform: translateY(-50%);
     transform-origin: left center;
-    transition: transform 150ms map-get($transition, 'fast-in-fast-out'),
-      top 150ms map-get($transition, 'fast-in-fast-out'),
-      color 150ms map-get($transition, 'fast-in-fast-out'),
-      opacity 150ms map-get($transition, 'fast-in-fast-out');
+    transition: transform 150ms map-get($transition-easing, 'fast-in-fast-out'),
+      top 150ms map-get($transition-easing, 'fast-in-fast-out'),
+      color 150ms map-get($transition-easing, 'fast-in-fast-out'),
+      opacity 150ms map-get($transition-easing, 'fast-in-fast-out');
     opacity: 0.5;
     &--above {
       opacity: 1;
@@ -47,13 +47,13 @@
   &__inner {
     box-sizing: border-box;
     font-size: $font-size-md;
-    color: $color-text-primary;
+    color: $gray-900;
     width: 100%;
     height: 100%;
     padding: 20px 16px 6px;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid $color-border-base;
+    border-bottom: 1px solid $border-color;
     outline: none;
     background: none;
     appearance: none;
@@ -67,8 +67,8 @@
     width: 100%;
     height: 2px;
     transform: scaleX(0);
-    transition: transform 180ms map-get($transition, 'fast-in-fast-out'),
-      opacity 180ms map-get($transition, 'fast-in-fast-out');
+    transition: transform 180ms map-get($transition-easing, 'fast-in-fast-out'),
+      opacity 180ms map-get($transition-easing, 'fast-in-fast-out');
     opacity: 0;
     z-index: 2;
     background-color: currentColor;
@@ -90,7 +90,7 @@
     height: 100%;
     text-align: left;
     pointer-events: none;
-    border-color: $color-border-base;
+    border-color: $border-color;
     &__leading {
       border-radius: 4px 0 0 4px;
       border-left: 1px solid;
@@ -123,19 +123,19 @@
 
   &__helper-line {
     padding: 2px 16px;
-    color: $color-text-secondary;
+    color: $gray-700;
     font-size: 12px;
   }
 
   &--focused {
-    color: $color-primary;
+    color: $primary;
     .mz-material-input__helper-line {
       color: currentColor;
     }
   }
 
   &--error {
-    color: $color-danger !important;
+    color: $danger !important;
     .mz-material-input {
       &__inner,
       &__label,

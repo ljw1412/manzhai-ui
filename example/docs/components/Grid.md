@@ -53,15 +53,15 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 .bg-dark{
-  background-color: var(--color-primary);
+  background-color: $success;
 }
 </style>
 ```
@@ -97,11 +97,11 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 </style>
@@ -146,11 +146,11 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 </style>
@@ -191,7 +191,7 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 </style>
@@ -242,11 +242,11 @@ export default {
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 </style>
@@ -280,11 +280,11 @@ export default {
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 </style>
@@ -298,11 +298,21 @@ export default {
 :::demo 将col的属性值 `span`、`xs`、`sm`、`md`、`lg`、`xl`设为0即可。
 ```html
 <mz-row :gutter="16">
-  <mz-col :xs="0" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-col bg-base">1</div></mz-col>
-  <mz-col :xs="4" :sm="0" :md="8" :lg="3" :xl="10"><div class="grid-col bg-base">2</div></mz-col>
-  <mz-col :xs="4" :sm="6" :md="0" :lg="3" :xl="10"><div class="grid-col bg-base">3</div></mz-col>
-  <mz-col :xs="8" :sm="6" :md="4" :lg="0" :xl="1"><div class="grid-col bg-base">4</div></mz-col>
-  <mz-col :xs="8" :sm="6" :md="4" :lg="3" :xl="0"><div class="grid-col bg-base">5</div></mz-col>
+  <mz-col :xs="0" :sm="6" :md="4" :lg="3" :xl="1">
+    <div class="grid-col bg-base text-white text-center">1</div>
+  </mz-col>
+  <mz-col :xs="4" :sm="0" :md="8" :lg="3" :xl="10">
+    <div class="grid-col bg-base text-white text-center">2</div>
+  </mz-col>
+  <mz-col :xs="4" :sm="6" :md="0" :lg="3" :xl="10">
+    <div class="grid-col bg-base text-white text-center">3</div>
+  </mz-col>
+  <mz-col :xs="8" :sm="6" :md="4" :lg="0" :xl="1">
+    <div class="grid-col bg-base text-white text-center">4</div>
+  </mz-col>
+  <mz-col :xs="8" :sm="6" :md="4" :lg="3" :xl="0">
+    <div class="grid-col bg-base text-white text-center">5</div>
+  </mz-col>
 </mz-row>
 
 <style>
@@ -317,13 +327,14 @@ export default {
 }
 .grid-col{
   min-height: 48px;
+  line-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 </style>

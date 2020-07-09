@@ -1,23 +1,22 @@
 <template>
   <mz-card ref="demoBlock"
-    class="demo-card"
-    :class="{'demo-card--unfold':isDisplayCode}"
+    class="demo-card position-relative rounded-sm pb-0"
+    :class="{'is-unfold':isDisplayCode}"
     outlined>
-    <div class="example">
+    <div class="example p-16 text-gray-700 border-bottom">
       <slot name="example"></slot>
     </div>
     <mz-button v-tooltip.bottom="isDisplayCode ? '折叠代码' : '查看代码'"
-      class="action"
-      radius="0"
+      class="action w-100 rounded-0"
       @click="onCodeIconClick">
-      <mz-icon class="is-pointer"
+      <mz-icon class="cursor-pointer"
         :size="22"
         :name="isDisplayCode?'code-working':'code'"></mz-icon>
     </mz-button>
     <div v-show="isDisplayCode"
-      class="source-code">
+      class="source-code p-16 border-top">
       <div v-if="$slots.description"
-        class="description">
+        class="description px-20 py-10 border rounded-md bg-white mb-10">
         <slot name="description"></slot>
       </div>
       <div class="highlight">
@@ -51,32 +50,9 @@ export default class DemoBlock extends Vue {
 
 <style lang="scss">
 .demo-card {
-  position: relative;
-  padding-bottom: 0;
   background-color: #fafafa;
-  border-radius: $border-radius-md;
-
-  .example {
-    padding: 16px;
-    color: var(--color-text-secondary);
-    border-bottom: 1px solid var(--color-border-base);
-  }
-
-  .action {
-    width: 100%;
-  }
-
-  .source-code {
-    padding: 16px;
-    border-top: 1px solid var(--color-border-base);
-  }
 
   .description {
-    padding: 10px 20px;
-    border: 1px solid var(--color-border-base);
-    border-radius: 5px;
-    background-color: #ffffff;
-    margin-bottom: 10px;
     p {
       margin: 0 !important;
       line-height: 2em !important;
@@ -93,7 +69,7 @@ export default class DemoBlock extends Vue {
 
   .highlight {
     ::selection {
-      background-color: $color-text-placeholder;
+      background-color: $gray-400;
     }
     .hljs,
     .hljs-subst {

@@ -1,6 +1,8 @@
 <template>
-  <mz-layout id="app">
-    <mz-header id="topbar">
+  <mz-layout id="app"
+    class="overflow-hidden h-100">
+    <mz-header id="topbar"
+      class="bg-primary">
       <topbar></topbar>
     </mz-header>
 
@@ -8,9 +10,11 @@
       <router-view></router-view>
     </mz-main>
 
-    <!-- <mz-footer id="copyright">
+    <!-- <mz-footer id="copyright"
+      class="position-relative h-20 lh-20 fs-14 text-center bg-primary">
       <span></span>
       <a href="http://www.beian.miit.gov.cn"
+        style="ml-5"
         target="_blank"></a>
     </mz-footer> -->
   </mz-layout>
@@ -29,30 +33,14 @@ export default class APP extends Vue {}
 </script>
 
 <style lang="scss">
-@import '@example/styles/theme/base.scss';
 #app {
-  height: 100%;
-  overflow: hidden;
   #topbar {
-    background-color: $color-primary;
-    box-shadow: 0 -4px 10px $color-primary;
+    box-shadow: 0 0 10px $primary;
     transition: all 0.3s;
   }
-  #copyright {
-    position: relative;
-    font-size: 14px;
-    height: $copyright-height;
-    line-height: $copyright-height;
-    text-align: center;
-    background-color: var(--color-primary);
-    color: $topbar-navigation-text-color;
-    a {
-      margin-left: 5px;
-      color: $topbar-navigation-text-color;
-      &:hover {
-        color: var(--color-primary-3);
-      }
-    }
+
+  #copyright a {
+    @include state-color($white, $success-400, $success-300);
   }
 }
 </style>

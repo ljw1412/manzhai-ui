@@ -19,9 +19,9 @@
     <div class="icon-grid">
       <div v-for="(item, index) of iconList"
         :key="index"
-        class="icon-grid__cell">
+        class="icon-grid__cell m-5 text-gray-900">
         <div v-tooltip="{content: item, placement: 'bottom',interactive:true}"
-          class="flex-double-center is-pointer"
+          class="d-flex justify-content-center align-items-center cursor-pointer"
           style="height:100%"
           @click="coypCode(item)">
           <mz-icon size="40px"
@@ -60,12 +60,10 @@ export default class DocIconGrid extends Vue {
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   grid-auto-rows: minmax(70px, auto);
   &__cell {
-    margin: 5px;
-    color: var(--color-text-primary);
     &:hover {
       border-radius: 5px;
       box-shadow: 0 1px 5px 0 currentColor;
-      background-color: var(--color-body-background);
+      background-color: $body-bg;
     }
   }
 }

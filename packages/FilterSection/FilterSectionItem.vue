@@ -41,7 +41,10 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   }
 
   get itemClass() {
-    const classes = { 'is-pointer': !this.disabled, 'is-custom': this.custom }
+    const classes = {
+      'cursor-pointer': !this.disabled,
+      'is-custom': this.custom
+    }
     if (!this.custom) {
       Object.assign(classes, {
         'is-outlined': this.isOutlined,

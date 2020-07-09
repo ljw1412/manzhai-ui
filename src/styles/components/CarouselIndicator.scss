@@ -4,10 +4,10 @@
   .mz-carousel-indicator {
     display: inline-block;
     cursor: pointer;
-    background-color: $color-white;
+    background-color: $white;
     transition: 0.3s;
     &--active {
-      background-color: $color-primary;
+      background-color: $primary;
     }
   }
   &--line {

@@ -101,7 +101,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     if (!this.showClose) return
 
     const data = {
-      class: ['mz-drawer__close', 'is-pointer', 'mz-click-effect'],
+      class: ['mz-drawer__close'],
       props: { name: 'close', size: 24 },
       on: {
         click: this.close

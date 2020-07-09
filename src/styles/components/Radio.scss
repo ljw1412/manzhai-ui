@@ -3,7 +3,7 @@
   cursor: pointer;
   user-select: none;
   display: inline-block;
-  color: $color-text-primary;
+  color: $gray-900;
   margin-right: 20px;
   font-size: 0;
 
@@ -43,7 +43,7 @@
   }
 
   &.checked {
-    color: $color-primary;
+    color: $primary;
     .mz-radio__icon::after {
       visibility: visible;
     }
@@ -52,7 +52,7 @@
   &.disabled {
     cursor: not-allowed;
     &:not(.checked) {
-      color: $color-text-disabled;
+      color: $gray-600;
     }
     &.checked {
       opacity: 0.6;

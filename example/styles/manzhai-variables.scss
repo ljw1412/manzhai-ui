@@ -1,1 +1,4 @@
+// 覆盖默认important
+$enable-important-utilities: false;
+
 @import '@/styles/index.scss';

@@ -1,10 +1,10 @@
 <template>
-  <label class="mz-radio-button color-transition"
+  <label class="mz-radio-button"
     v-ripple="!disabled && ripple"
     :class="radioClasses"
     @click="onRadioClick">
     <input type="radio"
-      class="mz-radio-button__input mz-hidden-input"
+      class="mz-radio-button__input hidden-node"
       :name="name"
       :checked="checked"
       :value="value" />

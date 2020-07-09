@@ -62,7 +62,7 @@ $color-snackbar-default: #323232;
   color: #ffffff;
   width: 100%;
   background-color: $color-snackbar-default;
-  box-shadow: 1px 1px 3px $color-border-base;
+  box-shadow: 1px 1px 3px $gray-800;
 
   &.is-vertical &__container {
     flex-direction: column;

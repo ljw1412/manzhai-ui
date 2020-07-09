@@ -27,8 +27,12 @@ export default class MzAnchor extends Vue {
     const data: Record<string, any> = {
       class: [
         'mz-anchor',
-        'is-pointer',
-        { 'mz-anchor--invisible': this.invisible }
+        'position-relative',
+        'd-inline-block',
+        'text-primary',
+        'text-center',
+        'cursor-pointer',
+        { 'invisible-node': this.invisible }
       ],
       attrs: {
         title: this.title,
