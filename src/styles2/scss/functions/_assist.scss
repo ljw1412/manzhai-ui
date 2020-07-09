@@ -4,22 +4,6 @@
   @return if($name == null, '', '-#{$name}');
 }
 
-// 单位移除
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-  @return $number;
-}
-
-// 增加单位
-@function add-unit($number, $unit: null) {
-  @if type-of($number) == 'number' and $number != 0 {
-    @return unquote(($number + $unit));
-  }
-  @return $number;
-}
-
 // 创建一个从$min开始到$max结束的整数列表
 @function range($min, $max) {
   $list: ();
@@ -52,14 +36,4 @@
     $map: map-merge($map, (#{$key}: $key));
   }
   @return $map;
-}
-
-// 加亮颜色
-@function tint-color($color, $level) {
-  @return mix(white, $color, $level * $theme-color-interval);
-}
-
-// 加深颜色
-@function shade-color($color, $level) {
-  @return mix(black, $color, $level * $theme-color-interval);
 }

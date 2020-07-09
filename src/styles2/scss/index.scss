@@ -1,6 +1,3 @@
-@import 'functions';
-@import 'variables';
+@import 'functions/index.scss';
+@import 'variables/index.scss';
 @import 'mixins/index.scss';
-@import 'utilities';
-
-@import 'generate';

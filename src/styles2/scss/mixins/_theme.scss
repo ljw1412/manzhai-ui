@@ -1,0 +1,10 @@
+// Theme use scss variables
+@mixin generateTheme($map: ()) {
+  @each $name, $theme in $map {
+    #{if($name == 'default', ':root', ':root[data-theme=#{$name}]')} {
+      @each $key, $value in $theme {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+}

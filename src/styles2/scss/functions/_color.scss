@@ -1,0 +1,9 @@
+// 加亮颜色
+@function tint-color($color, $level) {
+  @return mix(white, $color, $level * $theme-color-interval);
+}
+
+// 加深颜色
+@function shade-color($color, $level) {
+  @return mix(black, $color, $level * $theme-color-interval);
+}
