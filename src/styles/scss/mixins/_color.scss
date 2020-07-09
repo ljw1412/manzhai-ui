@@ -1,0 +1,9 @@
+@mixin state-color($base: $gray-900, $hover: $gray-700, $active: $gray-600) {
+  color: $base;
+  &:hover {
+    color: $hover;
+  }
+  &:active {
+    color: $active;
+  }
+}

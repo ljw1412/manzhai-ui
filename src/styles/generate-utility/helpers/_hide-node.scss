@@ -9,3 +9,10 @@
   bottom: 0;
   margin: 0;
 }
+
+.invisible-node {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+}

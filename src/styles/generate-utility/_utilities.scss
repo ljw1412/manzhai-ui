@@ -9,6 +9,15 @@ $utilities: map-merge(
       class: align,
       values: baseline top middle bottom text-bottom text-top
     ),
+    'cursor': (
+      property: cursor,
+      class: cursor,
+      values: auto default none context-menu help pointer progress wait cell
+        crosshair text vertical-text alias copy move no-drop not-allowed
+        e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize
+        w-resize ew-resize ns-resize nesw-resize nwse-resize col-resize
+        row-resize all-scroll zoom-in zoom-out grab grabbing
+    ),
     'float': (
       property: float,
       class: float,
@@ -342,15 +351,33 @@ $utilities: map-merge(
           )
         )
     ),
+    'gray-color': (
+      property: color,
+      class: text-gray,
+      values: $grays
+    ),
     'line-height': (
       property: line-height,
       class: lh,
-      range: 12px 24px,
+      range: 12px 36px,
       values: (
         1: 1,
         sm: $line-height-sm,
         base: $line-height-base,
         lg: $line-height-lg
+      )
+    ),
+    'font-size': (
+      property: font-size,
+      class: fs,
+      range: 12px 36px,
+      values: (
+        xs: $font-size-xs,
+        sm: $font-size-sm,
+        md: $font-size-md,
+        lg: $font-size-lg,
+        xl: $font-size-xl,
+        xxl: $font-size-xxl
       )
     ),
     'background-color': (

@@ -1,13 +1,8 @@
-// css variable 样式生成。
-// 一定要在样式覆盖前去生成！否则会出现 --color-primary: var(--color-primary) 的问题
-@import './theme-preset.scss';
-// 使用 css variable 的主题颜色scss变量注入
-@import './scss/core.scss';
-// 样式使用变量
-@import './transition.scss';
-@import './base.scss';
+@import 'scss/index.scss';
+@import 'reset';
+@import 'generate-utility';
+@import 'transitions/index.scss';
 @import './components/index.scss';
-@import './directives/index.scss';
-@import './theme-preset-dark.scss';
-@import './reset.scss';
-@import './common.scss';
+// @import './directives/index.scss';
+
+@import '~animate.css/animate.css';

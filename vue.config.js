@@ -41,7 +41,7 @@ const config = {
           if (relativePath.includes('manzhai-variables.scss')) return ''
           return relativePath.startsWith('packages') ||
             relativePath.startsWith('example')
-            ? "@import '@/styles/scss/core.scss';"
+            ? "@import '@/styles/scss/index.scss';"
             : ''
         }
       }
