@@ -1,0 +1,119 @@
+.mz-button {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  cursor: pointer;
+  color: $color-text-primary;
+  border: none;
+  border-radius: $border-radius-md;
+  background-color: transparent;
+  outline: none;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  transition-duration: 0.3s;
+  transition-property: box-shadow, transform, opacity, background-color,
+    border-radius, color, border-color, background-color;
+  transition-timing-function: map-get($transition, 'fast-out-slow-in');
+  // vertical-align: middle;
+  box-sizing: border-box;
+
+  @include foreground;
+
+  &__content {
+    position: relative;
+    z-index: 50;
+    padding: 0 3px;
+  }
+
+  &--dense &__content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  &--shadow:not(.mz-button--disabled) {
+    @include elevation(2);
+    will-change: box-shadow;
+    &:hover {
+      @include elevation(4);
+    }
+    &:active {
+      @include elevation(8);
+    }
+  }
+
+  &--round {
+    border-radius: $border-radius-max;
+    overflow: hidden;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    @include foreground-disabled;
+    &.mz-button--default {
+      background-color: $color-text-disabled;
+      color: $color-text-disabled;
+      border-color: $color-text-disabled;
+      &:not(.mz-button--flat):not(.mz-button--outlined) {
+        color: $color-white;
+      }
+    }
+  }
+
+  @each $type, $color in (primary, $color-primary), (success, $color-success),
+    (warning, $color-warning), (danger, $color-danger),
+    (default, $color-text-primary)
+  {
+    &--#{$type} {
+      color: $color;
+      @if ($type!= 'default') {
+        background-color: $color;
+        &:not(.mz-button--flat):not(.mz-button--outlined) {
+          color: #ffffff;
+        }
+      }
+      border-color: $color;
+      &.mz-button--flat {
+        border-color: transparent !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  &--outlined {
+    border: 1px solid;
+    background-color: transparent !important;
+  }
+
+  /* prettier-ignore */
+  $size-options: (
+  // size: padding,text-padding ,height, fontsize
+    small: ( 6px,2px, 26px, 12px ),
+    medium: ( 8px,3px, 30px, 12px ),
+    default: ( 8px,5px, 32px, 14px ),
+    large: ( 10px,5px, 36px, 14px )
+  );
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      padding: 0 nth($arr, 1) + 1px;
+      height: nth($arr, 3);
+      line-height: nth($arr, 3);
+      font-size: nth($arr, 4);
+    }
+    &--outlined.mz-size--#{$size} {
+      padding: 0 nth($arr, 1);
+      line-height: nth($arr, 3) - 2px;
+    }
+    &--icon.mz-size--#{$size} {
+      padding: 0;
+      width: nth($arr, 3);
+      vertical-align: middle;
+    }
+
+    &.mz-size--#{$size} &__content {
+      padding: 0 nth($arr, 2);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.mz-cell-group {
+  &__title {
+    font-size: 14px;
+    padding: 8px 0;
+    color: $color-text-regular;
+  }
+
+  &__list {
+    background-color: $color-card-background;
+    border-radius: $border-radius-md;
+  }
+
+  &--card {
+    padding: 0 5px;
+    .mz-cell-group__list {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      max-height: 100%;
+      opacity: 1;
+      overflow: hidden;
+    }
+  }
+
+  &--border {
+    .mz-cell-group__list {
+      border: 1px solid $color-border-base;
+    }
+  }
+}

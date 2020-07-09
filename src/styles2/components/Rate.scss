@@ -1,0 +1,54 @@
+.mz-rate {
+  display: inline-block;
+  line-height: 1;
+  user-select: none;
+  &--readonly > &__stars {
+    cursor: default;
+    .mz-rate__star:hover {
+      transform: none;
+    }
+  }
+
+  &__stars {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 1em;
+    margin-left: 10px;
+    color: $color-text-primary;
+    transition: all 0.3s;
+  }
+
+  &__star {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &--readonly &__decimal,
+  &__star.is-half &__decimal {
+    opacity: 1;
+  }
+
+  &__decimal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+}

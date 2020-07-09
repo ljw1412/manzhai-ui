@@ -1,0 +1,28 @@
+.mz-tab {
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 12px;
+  text-align: center;
+  z-index: 50;
+  color: $color-text-secondary;
+  transition: $color-transition;
+
+  &--grow {
+    flex: 1 0 auto;
+    max-width: none;
+  }
+
+  &--active {
+    color: $color-primary;
+  }
+
+  &--disabled {
+    color: $color-text-disabled;
+  }
+}
+
+.mz-tab-panel {
+  color: $color-text-primary;
+}

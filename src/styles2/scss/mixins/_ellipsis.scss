@@ -1,4 +1,4 @@
-@mixin multi-ellipsis($lines) {
+@mixin multi-text-truncate($lines) {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8,7 +8,7 @@
   -webkit-box-orient: vertical;
 }
 
-@mixin ellipsis {
+@mixin text-truncate {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -1,0 +1,8 @@
+.mz-select {
+  display: inline-block;
+  position: relative;
+
+  .mz-input:not(.is-disabled) {
+    cursor: pointer;
+  }
+}

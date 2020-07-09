@@ -1,0 +1,13 @@
+.mz-anchor {
+  position: relative;
+  display: inline-block;
+  color: $color-primary;
+  min-width: 1em;
+  text-align: center;
+  &--invisible {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

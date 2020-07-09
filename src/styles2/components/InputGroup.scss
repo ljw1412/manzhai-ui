@@ -1,0 +1,24 @@
+.mz-input-group {
+  display: inline-flex;
+  width: 100%;
+
+  > *,
+  .mz-select > .mz-input {
+    border-radius: 0;
+  }
+
+  > :first-child,
+  :first-child.mz-select > .mz-input {
+    border-top-left-radius: $border-radius-md;
+    border-bottom-left-radius: $border-radius-md;
+  }
+
+  > :last-child {
+    border-top-right-radius: $border-radius-md;
+    border-bottom-right-radius: $border-radius-md;
+  }
+
+  > :not(:last-child) {
+    margin-right: -1px;
+  }
+}

@@ -1,0 +1,43 @@
+.mz-radio-button {
+  display: inline-block;
+  padding: 5px 10px;
+  color: $color-text-primary;
+  background-color: $color-page-background;
+  cursor: pointer;
+  text-align: center;
+
+  &__label {
+    position: relative;
+    font-size: $font-size-sm;
+    line-height: $font-size-md;
+    z-index: 1;
+  }
+
+  &.checked {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    &:not(.checked) {
+      color: $color-text-disabled;
+    }
+    &.checked {
+      opacity: 0.6;
+    }
+  }
+
+  &.border {
+    border: 1px solid $color-border-base;
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+    & + & {
+      border-left: none;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.mz-list-item {
+  position: relative;
+  display: flex;
+  padding: 0 $padding-xxxl;
+  color: $color-text-regular;
+
+  &.is-custom {
+    padding: 0;
+  }
+
+  &.is-clickable {
+    cursor: pointer;
+    @include foreground;
+  }
+
+  &__content {
+    flex-grow: 1;
+    position: relative;
+    padding: $padding-xl 0;
+    z-index: 50;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: $font-size-md;
+    color: $color-text-regular;
+  }
+
+  &__text {
+    margin-top: 3px;
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+  }
+
+  &__prefix {
+    margin-right: 10px;
+  }
+  &__suffix {
+    margin-left: 10px;
+  }
+
+  &__prefix,
+  &__suffix {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 1;
+  }
+
+  @each $type, $radius in ('', 100px), ('left-', 100px 0 0 100px),
+    ('right-', 0 100px 100px 0), ('mini-', 5px)
+  {
+    &.is-#{$type}round {
+      overflow: hidden;
+      border-radius: $radius;
+      &::before {
+        border-radius: $radius;
+      }
+    }
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    color: $color-text-placeholder !important;
+    &:not(.is-active) {
+      @include foreground-disabled;
+    }
+    .mz-list-item {
+      &__title,
+      &__text {
+        font-weight: bold;
+        color: $color-text-placeholder;
+      }
+    }
+  }
+
+  &.is-active.is-clickable {
+    @include foreground-active;
+    color: $color-primary;
+    .mz-list-item__title {
+      color: $color-primary;
+    }
+  }
+
+  /* prettier-ignore */
+  $size-options: (
+  // size: padding, content-padding, title-fontsize, text-fontsize
+    small: ( $padding-xl,$padding-sm, $font-size-sm, $font-size-xs ),
+    medium: ( $padding-xxl,$padding-lg, $font-size-sm, $font-size-xs ),
+    default: ( $padding-xxl,$padding-xl, $font-size-md, $font-size-sm ),
+    large: ( $padding-xxxl,$padding-xxl, $font-size-lg, $font-size-md )
+  );
+
+  @each $size, $arr in $size-options {
+    &:not(.is-custom).mz-size--#{$size} {
+      padding: 0 nth($arr, 1);
+      line-height: 1.4;
+      .mz-list-item {
+        &__content {
+          padding: nth($arr, 2) 0;
+        }
+        &__title {
+          font-size: nth($arr, 3);
+        }
+        &__text {
+          font-size: nth($arr, 4);
+        }
+      }
+    }
+  }
+
+  > .mz-card {
+    color: inherit;
+    width: 100%;
+  }
+}

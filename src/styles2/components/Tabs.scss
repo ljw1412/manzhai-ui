@@ -1,0 +1,41 @@
+.mz-tabs {
+  &__nav {
+    position: relative;
+    display: flex;
+    height: 36px;
+    line-height: 36px;
+    &--center,
+    &--left {
+      .mz-tab:last-child {
+        margin-right: auto;
+      }
+    }
+    &--center,
+    &--right {
+      .mz-tabs__active-bar + .mz-tab {
+        margin-left: auto;
+      }
+    }
+
+    &--fill {
+      .mz-tab--active {
+        color: #ffffff;
+      }
+      .mz-tabs__active-bar {
+        height: 100%;
+      }
+    }
+  }
+
+  &__active-bar {
+    position: absolute;
+    height: 2px;
+    background-color: $color-primary;
+    transition: all $primary-transition;
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+  }
+}

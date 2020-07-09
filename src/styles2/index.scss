@@ -1,2 +1,8 @@
 @import 'scss/index.scss';
+@import 'reset';
 @import 'generate-utility/index.scss';
+@import 'transitions/index.scss';
+@import './components/index.scss';
+@import './directives/index.scss';
+
+@import '~animate.css/animate.css';

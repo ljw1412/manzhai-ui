@@ -1,0 +1,38 @@
+.mz-scrollbar {
+  position: relative;
+  overflow: hidden;
+  &__content {
+    box-sizing: border-box;
+  }
+  &--always,
+  &:hover {
+    .mz-bar {
+      opacity: 0.75;
+    }
+  }
+}
+
+.mz-bar {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  &--x {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+  }
+  &--y {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+  &--drag {
+    opacity: 0.75 !important;
+  }
+  &__thumb {
+    background-color: $color-primary;
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}

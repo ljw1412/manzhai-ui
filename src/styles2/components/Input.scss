@@ -1,0 +1,111 @@
+.mz-input {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $color-white;
+  border: 1px solid #cccccc;
+  color: $color-text-primary;
+  border-radius: $border-radius-md;
+  transition-property: border-radius, border-color, padding, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  @include foreground(#999);
+
+  &.is-focused {
+    @include foreground-disabled;
+    border-color: $color-primary;
+  }
+
+  &.is-disabled {
+    @include foreground-active;
+    color: $color-text-disabled !important;
+    cursor: not-allowed;
+    &::before {
+      background-color: currentColor !important;
+    }
+  }
+
+  &.is-rounded {
+    border-radius: $border-radius-max;
+  }
+
+  &.is-flat {
+    border-width: 0px !important;
+    &.is-focused:not(.is-shadow) {
+      border-width: 2px !important;
+      margin-left: -2px;
+    }
+  }
+
+  /* prettier-ignore */
+  $size-options: (
+    // size: padding, height, fontsize
+    small: ( $padding-sm, 26px, 12px ),
+    medium: ( $padding-sm, 30px, 12px ),
+    default: ( $padding-md, 32px, 14px ),
+    large: ( $padding-md, 36px, 14px )
+  );
+  @each $size, $arr in $size-options {
+    &.mz-size--#{$size} {
+      height: nth($arr, 2);
+      line-height: nth($arr, 2);
+
+      .mz-input__inner {
+        padding: 0 nth($arr, 1);
+        font-size: nth($arr, 3);
+      }
+
+      &.is-rounded {
+        .mz-input__inner {
+          padding: 0 nth($arr, 1) + 6px;
+        }
+        &.prefix .mz-input__inner {
+          padding-left: nth($arr, 1);
+        }
+        &.suffix .mz-input__inner {
+          padding-right: nth($arr, 1);
+        }
+      }
+    }
+  }
+
+  &__inner {
+    flex-grow: 1;
+    position: relative;
+    z-index: 5;
+    box-sizing: border-box;
+    font-variant: tabular-nums;
+    font-feature-settings: 'tnum';
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    background: none;
+    appearance: none;
+    caret-color: inherit;
+    transition: inherit;
+    cursor: inherit;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__prefix,
+  &__suffix {
+    display: inline-flex;
+    user-select: none;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__prefix {
+    margin-left: 6px;
+  }
+
+  &__suffix {
+    margin-right: 6px;
+  }
+}

@@ -1,0 +1,5 @@
+@for $z from 0 through 24 {
+  .elevation-#{$z} {
+    @include elevation($z, $enable-important-utilities);
+  }
+}
