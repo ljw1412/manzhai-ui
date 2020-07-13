@@ -9,7 +9,6 @@
 }
 
 @function map-brightness($name, $color) {
-  @debug $name, $color;
   $map: ();
   $i: 1;
   $level: 8;
