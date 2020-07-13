@@ -343,6 +343,7 @@ $utilities: map-merge(
             $theme-colors,
             (
               'body': $body-color,
+              'card': $card-color,
               'muted': $text-muted,
               'black-50': rgba($black, 0.5),
               'white-50': rgba($white, 0.5),
@@ -390,6 +391,7 @@ $utilities: map-merge(
             $theme-colors,
             (
               'body': $body-bg,
+              'card': $card-bg,
               'transparent': transparent
             )
           )
