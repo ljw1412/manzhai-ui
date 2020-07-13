@@ -1,9 +1,9 @@
 <template>
-  <div class="mz-catalogue-item"
-    :class="{ 'mz-catalogue-item--active': active }"
+  <div class="mz-catalogue-item position-relative text-gray-600 my-5 pl-10"
+    :class="{ 'is-active': active }"
     :data-level="level">
     <span ref="text"
-      class="mz-catalogue-item__text"
+      class="mz-catalogue-item__text cursor-pointer text-decoration-none fs-15 lh-20 font-weight-normal"
       @click="scrollToTarget">{{title}}</span>
     <slot></slot>
   </div>

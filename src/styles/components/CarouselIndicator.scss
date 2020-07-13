@@ -1,47 +1,36 @@
 .mz-carousel-indicators {
-  position: absolute;
-  display: flex;
-  .mz-carousel-indicator {
-    display: inline-block;
-    cursor: pointer;
-    background-color: $white;
-    transition: 0.3s;
-    &--active {
-      background-color: $primary;
-    }
-  }
-  &--line {
+  &.is-line {
     .mz-carousel-indicator {
       width: 20px;
       height: 2px;
       margin: 5px;
     }
   }
-  &--full-line {
+  &.is-full-line {
     width: 100%;
     height: 4px;
     .mz-carousel-indicator {
       flex: 1 0 auto;
     }
   }
-  &--top,
-  &--bottom {
+  &.is-top,
+  &.is-bottom {
     left: 50%;
     transform: translateX(-50%);
   }
-  &--left,
-  &--right {
+  &.is-left,
+  &.is-right {
     top: 50%;
     transform: translateY(-50%);
     flex-direction: column;
-    &.mz-carousel-indicators--line {
+    &.is-line {
       .mz-carousel-indicator {
         width: 2px;
         height: 20px;
         margin: 5px;
       }
     }
-    &.mz-carousel-indicators--full-line {
+    &.is-full-line {
       width: 4px;
       height: 100%;
       .mz-carousel-indicator {
@@ -50,7 +39,7 @@
     }
   }
 
-  &--outside {
+  &.is-outside {
     position: static;
     text-align: center;
     .mz-carousel-indicator {
@@ -63,7 +52,7 @@
     }
   }
 
-  &--circle {
+  &.is-circle {
     .mz-carousel-indicator {
       width: 12px;
       height: 12px;
@@ -72,16 +61,23 @@
     }
   }
 
-  &--left {
+  &.is-left {
     left: 0;
   }
-  &--right {
+  &.is-right {
     right: 0;
   }
-  &--top {
+  &.is-top {
     top: 0;
   }
-  &--bottom {
+  &.is-bottom {
     bottom: 0;
+  }
+}
+
+.mz-carousel-indicator {
+  transition: 0.3s;
+  &.is-active {
+    background-color: $primary;
   }
 }

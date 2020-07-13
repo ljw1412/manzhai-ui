@@ -53,7 +53,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     }
 
     const wrapperData = {
-      class: ['mz-drawer-wrapper'],
+      class: ['mz-drawer-wrapper position-fixed overflow-hidden'],
       style: [
         {
           zIndex: this.mZIndex,
@@ -65,7 +65,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
 
     const drawerData = {
       class: [
-        'mz-drawer',
+        'mz-drawer position-absolute d-flex flex-column',
         `is-${this.placement}`,
         { 'is-open': this.visible, 'is-divider': this.divider }
       ],
@@ -101,7 +101,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
     if (!this.showClose) return
 
     const data = {
-      class: ['mz-drawer__close'],
+      class: ['mz-drawer__close position-absolute'],
       props: { name: 'close', size: 24 },
       on: {
         click: this.close
@@ -113,7 +113,9 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
   renderHeader() {
     if (!this.title && !this.$slots.title) return
     return (
-      <header class="mz-drawer__header" style={this.headerStyle}>
+      <header
+        class="mz-drawer__header flex-shrink-0 position-relative"
+        style={this.headerStyle}>
         {this.$slots.title || this.title}
       </header>
     )
@@ -121,7 +123,9 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
 
   renderContent() {
     return (
-      <section class="mz-drawer__content" style={this.contentStyle}>
+      <section
+        class="mz-drawer__content h-100 overflow-auto py-10 px-24"
+        style={this.contentStyle}>
         {this.$slots.default}
       </section>
     )
@@ -130,7 +134,7 @@ export default class MzDrawer extends Mixins(BaseAttribute, MzPopView) {
   renderFooter() {
     if (!this.$slots.footer) return
     return (
-      <footer class="mz-drawer__footer" style={this.footerStyle}>
+      <footer class="mz-drawer__footer py-16 px-24" style={this.footerStyle}>
         {this.$slots.footer}
       </footer>
     )

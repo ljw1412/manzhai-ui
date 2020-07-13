@@ -16,7 +16,7 @@
     <div v-show="isDisplayCode"
       class="source-code p-16 border-top">
       <div v-if="$slots.description"
-        class="description px-20 py-10 border rounded-md bg-white mb-10">
+        class="description px-20 py-10 border rounded-md mb-10">
         <slot name="description"></slot>
       </div>
       <div class="highlight">
@@ -69,12 +69,12 @@ export default class DemoBlock extends Vue {
 
   .highlight {
     ::selection {
-      background-color: $gray-400;
+      background-color: $gray-500;
     }
     .hljs,
     .hljs-subst {
       white-space: pre-wrap;
-      color: #333333;
+      color: $gray-800;
     }
     .html {
       background-color: transparent;

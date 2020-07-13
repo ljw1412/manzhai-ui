@@ -1,43 +1,9 @@
 .mz-filter-section-item {
-  padding: 4px;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-
   &__label {
-    width: 100%;
-    text-align: center;
-    padding: 4px 6px;
     box-sizing: border-box;
-    font-size: $font-size-sm;
-    line-height: $font-size-sm;
-    color: $gray-900;
     background-color: transparent;
     border: 1px solid transparent;
     // transition: $color-transition;
-  }
-
-  &.is-checked {
-    .mz-filter-section-item__label {
-      color: $primary;
-      font-weight: 700;
-    }
-
-    &.is-outlined {
-      .mz-filter-section-item__label {
-        color: $primary;
-        border-color: $primary;
-        background-color: transparent;
-      }
-    }
-
-    &.is-background {
-      .mz-filter-section-item__label {
-        color: $white;
-        border-color: $primary;
-        background-color: $primary;
-      }
-    }
   }
 }
 

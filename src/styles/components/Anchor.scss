@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-:root[data-theme='dark'] {
+@include theme-root(dark) {
   .mz-anchor {
     color: $white;
   }

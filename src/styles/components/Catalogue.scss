@@ -1,13 +1,7 @@
 .mz-catalogue {
-  position: relative;
   box-sizing: border-box;
-  &--fixed {
-    position: fixed;
-  }
-  &--absolute {
-    position: absolute;
-  }
-  &--sidebar {
+
+  &.has-sidebar {
     padding: 10px 0;
     &::before,
     &::after {
@@ -32,30 +26,29 @@
     }
   }
 
-  &__content {
-    position: relative;
-  }
-
   &__sidebar {
-    position: absolute;
     top: 0;
     left: 10px;
-    height: 100%;
     width: 0;
-    padding: 9px 0;
     box-sizing: border-box;
     border: 1px solid $gray-800;
     background-color: $gray-800;
     background-clip: content-box;
     .indicator {
-      position: absolute;
-      color: $primary;
       background-color: currentColor;
       top: 0;
       left: -2px;
       width: 4px;
       z-index: 9;
       transition: all 0.1s linear;
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-catalogue {
+    &__sidebar .indicator {
+      color: $white;
     }
   }
 }

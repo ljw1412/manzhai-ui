@@ -1,7 +1,7 @@
 <template>
   <transition :name="transitionName">
     <div v-show="active"
-      class="mz-carousel-item">
+      class="mz-carousel-item w-100 h-100">
       <slot></slot>
     </div>
   </transition>

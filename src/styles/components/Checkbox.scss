@@ -1,22 +1,12 @@
 .mz-checkbox {
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  color: $gray-900;
-  margin-right: 20px;
   transition: $color-transition;
-  white-space: nowrap;
   font-size: 0;
 
   &__icon {
-    position: relative;
-    display: inline-block;
     width: $font-size-md;
     height: $font-size-md;
     box-sizing: border-box;
     border: 1px solid currentColor;
-    vertical-align: bottom;
     z-index: 1;
     &::before {
       content: ' ';
@@ -38,7 +28,7 @@
       width: 3px;
       transform: scaleY(0);
       border-style: solid;
-      border-color: #ffffff;
+      border-color: $white;
       border-width: 0 1px 0 0;
       transition: transform 0.15s ease-in 0.05s;
       transform-origin: center;
@@ -46,9 +36,6 @@
   }
 
   &__label {
-    position: relative;
-    display: inline-block;
-    margin-left: 5px;
     font-size: $font-size-sm;
     line-height: $font-size-md;
     z-index: 1;
@@ -81,11 +68,9 @@
 
   &.disabled {
     cursor: not-allowed;
+    opacity: 0.6;
     &:not(.checked) {
       color: $gray-600;
-    }
-    &.checked {
-      opacity: 0.6;
     }
   }
 
@@ -96,12 +81,24 @@
     font-size: 0;
   }
 
-  &:not(.disabled):active {
-    opacity: 0.6;
+  &:not(.disabled) {
+    @include clickable;
     transition: opacity 0.2s;
   }
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-checkbox {
+    &.indeterminate,
+    &.checked {
+      color: $white;
+    }
+    &__icon::after {
+      border-color: $primary;
+    }
   }
 }

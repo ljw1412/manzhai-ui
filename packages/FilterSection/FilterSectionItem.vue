@@ -1,8 +1,15 @@
 <template>
-  <div class="mz-filter-section-item"
+  <div class="mz-filter-section-item p-4 user-select-none d-inline-flex align-items-center"
     :class="itemClass"
     @click="onItemClick">
-    <div class="mz-filter-section-item__label"
+    <div class="mz-filter-section-item__label w-100 text-center py-4 px-6 fs-14 lh-14"
+      :class="{
+        'font-weight-bold': checked,
+        'text-gray-900':!checked,
+        'text-primary':checked && !isBackground,
+        'text-white bg-primary':checked && isBackground,
+        'border-primary':checked && (isBackground || isOutlined)
+      }"
       :style="labelStyle">
       <slot :checked="checked">{{label||value}}</slot>
     </div>

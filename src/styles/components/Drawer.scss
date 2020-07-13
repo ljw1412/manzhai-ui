@@ -64,45 +64,27 @@ $directions: left, right, top, bottom;
 }
 
 .mz-drawer-wrapper {
-  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: hidden;
   will-change: transform, opacity;
 }
 
 .mz-drawer {
   pointer-events: initial;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
 
   @each $direction in $directions {
     @include animation($direction);
   }
 
   &__header {
-    flex-shrink: 0;
-    position: relative;
     padding: 16px 24px;
     padding-right: 40px;
   }
 
-  &__content {
-    height: 100%;
-    overflow: auto;
-    padding: 10px 24px;
-  }
-
-  &__footer {
-    padding: 16px 24px;
-  }
-
   &__close {
     @include clickable;
-    position: absolute;
     top: 15px;
     right: 16px;
     z-index: 1;

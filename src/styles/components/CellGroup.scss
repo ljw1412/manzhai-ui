@@ -1,16 +1,5 @@
 .mz-cell-group {
-  &__title {
-    font-size: 14px;
-    padding: 8px 0;
-    color: $gray-800;
-  }
-
-  &__list {
-    background-color: $card-bg;
-    border-radius: $border-radius-md;
-  }
-
-  &--card {
+  &.is-card {
     padding: 0 5px;
     .mz-cell-group__list {
       display: flex;
@@ -22,7 +11,7 @@
     }
   }
 
-  &--border {
+  &.is-border {
     .mz-cell-group__list {
       border: 1px solid $border-color;
     }

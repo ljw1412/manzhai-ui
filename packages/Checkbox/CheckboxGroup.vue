@@ -20,7 +20,9 @@ export default class MzCheckboxGroup extends Vue {
   }
 
   render(h: CreateElement) {
-    return <div class="mz-checkbox-group">{this.$slots.default}</div>
+    return (
+      <div class="mz-checkbox-group d-inline-block">{this.$slots.default}</div>
+    )
   }
 
   @Watch('value', { immediate: true })
