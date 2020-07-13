@@ -1,4 +1,10 @@
 @import 'scss/index.scss';
+// 生成:root上的 css-variables
+@if ($enable-css-variables) {
+  @include generateTheme($root-map);
+}
+// 覆盖scss变量到 css-variables
+@import 'css-variables';
 @import 'transitions/index.scss';
 @import './components/index.scss';
 @import './directives/index.scss';

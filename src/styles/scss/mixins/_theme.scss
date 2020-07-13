@@ -1,10 +1,29 @@
+@mixin theme-root($theme) {
+  #{if($theme,':root[data-theme=#{$theme}]',':root')} {
+    @content;
+  }
+}
+
+@mixin mapToCssVariables($map) {
+  @each $key, $value in $map {
+    --#{$key}: #{$value};
+    // 不同明度的预设颜色
+    @each $preset-name in primary, secondary, success, warning, danger {
+      @if ($preset-name == $key) {
+        @include mapToCssVariables(map-brightness($key, $value));
+      }
+    }
+  }
+}
+
 // Theme use scss variables
 @mixin generateTheme($map: ()) {
-  @each $name, $theme in $map {
-    #{if($name == 'default', ':root', ':root[data-theme=#{$name}]')} {
-      @each $key, $value in $theme {
-        --#{$key}: #{$value};
-      }
+  @each $name, $theme-map in $map {
+    @if ($name == 'default') {
+      $name: null;
+    }
+    @include theme-root($name) {
+      @include mapToCssVariables($theme-map);
     }
   }
 }

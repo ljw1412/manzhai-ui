@@ -5,3 +5,9 @@
   min-width: 1em;
   text-align: center;
 }
+
+:root[data-theme='dark'] {
+  .mz-anchor {
+    color: $white;
+  }
+}
