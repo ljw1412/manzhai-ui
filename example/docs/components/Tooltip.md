@@ -101,9 +101,9 @@
 
 <mz-tooltip content="手动触发" trigger="manual"
   :visible="visible" :hide-on-click="false">
-  <span color="primary">manual</span>
+  <span color="primary" class="ml-5">manual</span>
 </mz-tooltip>
-<mz-switch v-model="visible"></mz-switch>
+<mz-switch v-model="visible" class="align-middle ml-3"></mz-switch>
 
 <script>
 export default {

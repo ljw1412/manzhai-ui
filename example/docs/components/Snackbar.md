@@ -40,7 +40,7 @@ export default {
   content="这是一条测试消息。"
   :timeout="0">
   <template #suffix>
-    <mz-button color="#fff"
+    <mz-button text-color="#fff"
       @click="isShow = false">
         关闭
       </mz-button>
@@ -68,7 +68,7 @@ export default {
   content="这是一条测试消息。"
   :timeout="0">
   <template #suffix>
-    <mz-button color="#fff"
+    <mz-button text-color="#fff"
       width="100%"
       @click="isShow = false">
         关闭
@@ -101,7 +101,7 @@ export default {
   :timeout="0"
   :placement="placement">
   <template #suffix>
-    <mz-button color="#fff"
+    <mz-button text-color="#fff"
       @click="isShow = false">
         关闭
       </mz-button>

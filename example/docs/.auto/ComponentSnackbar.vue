@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-06-12 19:17</div>
+    <div class="update-datetime">文档更新时间：2020-07-14 16:33</div>
     <h2 id="snackbar-xiao-xi-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
 <p>用于页面中展示消息。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -45,7 +45,7 @@ export default {
     content="这是一条测试消息。"
     :timeout="0">
     <template #suffix>
-      <mz-button color="#fff"
+      <mz-button text-color="#fff"
         @click="isShow = false">
           关闭
         </mz-button>
@@ -59,7 +59,7 @@ export default {
   content=&quot;这是一条测试消息。&quot;
   :timeout=&quot;0&quot;&gt;
   &lt;template #suffix&gt;
-    &lt;mz-button color=&quot;#fff&quot;
+    &lt;mz-button text-color=&quot;#fff&quot;
       @click=&quot;isShow = false&quot;&gt;
         关闭
       &lt;/mz-button&gt;
@@ -84,7 +84,7 @@ export default {
     content="这是一条测试消息。"
     :timeout="0">
     <template #suffix>
-      <mz-button color="#fff"
+      <mz-button text-color="#fff"
         width="100%"
         @click="isShow = false">
           关闭
@@ -100,7 +100,7 @@ export default {
   content=&quot;这是一条测试消息。&quot;
   :timeout=&quot;0&quot;&gt;
   &lt;template #suffix&gt;
-    &lt;mz-button color=&quot;#fff&quot;
+    &lt;mz-button text-color=&quot;#fff&quot;
       width=&quot;100%&quot;
       @click=&quot;isShow = false&quot;&gt;
         关闭
@@ -128,7 +128,7 @@ export default {
     :timeout="0"
     :placement="placement">
     <template #suffix>
-      <mz-button color="#fff"
+      <mz-button text-color="#fff"
         @click="isShow = false">
           关闭
         </mz-button>
@@ -150,7 +150,7 @@ export default {
   :timeout=&quot;0&quot;
   :placement=&quot;placement&quot;&gt;
   &lt;template #suffix&gt;
-    &lt;mz-button color=&quot;#fff&quot;
+    &lt;mz-button text-color=&quot;#fff&quot;
       @click=&quot;isShow = false&quot;&gt;
         关闭
       &lt;/mz-button&gt;
