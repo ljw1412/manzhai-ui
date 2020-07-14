@@ -21,6 +21,7 @@ $root-map: (
       )
     ),
   dark: (
+    primary: #1e1e24,
     white: $white,
     gray-100: $gray-900,
     gray-200: $gray-800,
@@ -32,7 +33,7 @@ $root-map: (
     gray-800: $gray-200,
     gray-900: $gray-100,
     black: $black,
-    primary: #1e1e24,
+    border-color: $gray-700,
     body-color: $gray-100,
     body-bg: #16161a,
     card-color: $gray-100,

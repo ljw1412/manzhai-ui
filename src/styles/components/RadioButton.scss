@@ -20,11 +20,9 @@
 
   &.disabled {
     cursor: not-allowed;
+    opacity: 0.6;
     &:not(.checked) {
       color: $gray-600;
-    }
-    &.checked {
-      opacity: 0.6;
     }
   }
 
@@ -38,6 +36,15 @@
     }
     & + & {
       border-left: none;
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-radio-button {
+    &.checked {
+      color: $primary;
+      background-color: $white;
     }
   }
 }

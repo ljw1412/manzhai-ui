@@ -115,3 +115,12 @@
     width: 100%;
   }
 }
+
+@include theme-root(dark) {
+  .mz-list-item {
+    color: $white;
+    &.is-active.is-clickable &__title {
+      color: $white;
+    }
+  }
+}

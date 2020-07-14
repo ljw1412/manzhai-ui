@@ -109,3 +109,15 @@
     margin-right: 6px;
   }
 }
+
+@include theme-root(dark) {
+  .mz-input {
+    background-color: $black;
+    color: $white;
+    border: 1px solid #666666;
+
+    &.is-focused {
+      border-color: $white;
+    }
+  }
+}

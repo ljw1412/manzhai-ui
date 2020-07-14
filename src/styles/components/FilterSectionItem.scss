@@ -4,6 +4,10 @@
   background-color: transparent;
   border: 1px solid transparent;
 
+  &:not(.is-disabled) {
+    @include clickable();
+  }
+
   &.is-disabled {
     color: $gray-500;
     cursor: not-allowed;
@@ -24,7 +28,7 @@
     }
 
     &.is-disabled {
-      opacity: 0.7;
+      opacity: 0.6;
     }
   }
 }

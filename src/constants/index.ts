@@ -1,6 +1,6 @@
 export const COLOR_TYPES = ['primary', 'success', 'warning', 'danger']
 
-const themeColors = [
+export const THEME_COLORS = [
   'primary',
   'secondary',
   'success',
@@ -10,7 +10,7 @@ const themeColors = [
   'dark'
 ]
 
-const colors = [
+export const COMMON_COLORS = [
   'blue',
   'indigo',
   'purple',
@@ -26,16 +26,4 @@ const colors = [
   'gray-dark'
 ]
 
-export const PRESET_COLOR_MAP = {
-  bg: [...themeColors, ...colors, 'body', 'transparent'],
-  text: [
-    ...themeColors,
-    ...colors,
-    'body',
-    'muted',
-    'black-50',
-    'white-50',
-    'reset'
-  ],
-  border: [...themeColors, ...colors]
-}
+export const PRESET_COLORS = [...THEME_COLORS, ...COMMON_COLORS]

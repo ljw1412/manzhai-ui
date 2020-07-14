@@ -1,6 +1,6 @@
 <template>
   <div class="component-scrollbar">
-    <div class="update-datetime">文档更新时间：2020-06-19 11:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-14 14:38</div>
     <h2 id="scrollbar-gun-dong-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#scrollbar-gun-dong-tiao" title="Scrollbar 滚动条" data-level="2" data-href="#scrollbar-gun-dong-tiao">¶</a>Scrollbar 滚动条</h2>
 <p>用HTML实现原生滚动条效果。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -39,6 +39,23 @@
   &lt;/div&gt;
   &lt;p v-for=&quot;i of 10&quot; :key=&quot;i&quot;&gt;段落{{i}}&lt;/p&gt;
 &lt;/mz-scrollbar&gt;
+</code></pre></template></demo-block><h3 id="gun-dong-tiao-yan-se" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#gun-dong-tiao-yan-se" title="滚动条颜色" data-level="3" data-href="#gun-dong-tiao-yan-se">¶</a>滚动条颜色</h3>
+<demo-block>
+        <template #example><scrollbar-demo3 inline-template><div class="scrollbar-demo3">
+  <mz-scrollbar style="height:200px;" bar-color="teal">
+    <div style="white-space: nowrap;">
+      <span v-for="i of 10" :key="i">测试滚动条测试滚动条测试滚动条测试滚动条</span>
+    </div>
+    <p v-for="i of 10" :key="i">段落{{i}}</p>
+  </mz-scrollbar>
+</div></scrollbar-demo3></template>
+        <template #description></template>
+        <template #highlight><pre v-pre><code class="html">&lt;mz-scrollbar style=&quot;height:200px;&quot; bar-color=&quot;teal&quot;&gt;
+  &lt;div style=&quot;white-space: nowrap;&quot;&gt;
+    &lt;span v-for=&quot;i of 10&quot; :key=&quot;i&quot;&gt;测试滚动条测试滚动条测试滚动条测试滚动条&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p v-for=&quot;i of 10&quot; :key=&quot;i&quot;&gt;段落{{i}}&lt;/p&gt;
+&lt;/mz-scrollbar&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="Api" data-level="3" data-href="#api">¶</a>Api</h3>
 <h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -54,10 +71,17 @@
 <tbody>
 <tr>
 <td>bar-size</td>
-<td>条的大小</td>
+<td>滚动条的大小</td>
 <td>String</td>
 <td></td>
 <td>'15px'</td>
+</tr>
+<tr>
+<td>bar-color</td>
+<td>滚动条的颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>always</td>
@@ -81,7 +105,7 @@
 <script>
 export default {
   name: 'ComponentComponentScrollbar',
-  components: { ScrollbarDemo1: {}, ScrollbarDemo2: {} }
+  components: { ScrollbarDemo1: {}, ScrollbarDemo2: {}, ScrollbarDemo3: {} }
 }
 </script>
 <style lang="scss">

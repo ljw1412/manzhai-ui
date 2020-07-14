@@ -3,6 +3,7 @@
     class='mz-bar'
     :class="barClasses">
     <div class="mz-bar__thumb"
+      :class="mColorClass.bg"
       :style="thumbStyles"
       @mousedown="onThumbMousedown"
       @touchstart.stop="onTouchstart"></div>
@@ -12,9 +13,10 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
 import { on, off } from 'manzhai-ui/src/utils/dom'
+import MzColor from 'manzhai-ui/src/mixins/MzColor'
 
 @Component
-export default class MzBar extends Vue {
+export default class MzBar extends MzColor {
   @Prop(Boolean)
   readonly x!: boolean
   @Prop(Boolean)
@@ -48,7 +50,9 @@ export default class MzBar extends Vue {
   }
 
   get thumbStyles() {
-    const styles: Record<string, any> = {}
+    const styles: Record<string, any> = {
+      backgroundColor: this.mColor.bg
+    }
     if (this.x) {
       Object.assign(styles, {
         height: this.barSize,

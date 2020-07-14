@@ -8,3 +8,14 @@
     }
   }
 }
+
+@include theme-root(dark) {
+  .mz-navigation {
+    .router-link-active .mz-list-item.is-clickable {
+      color: $white;
+      .mz-list-item__title {
+        color: $white;
+      }
+    }
+  }
+}

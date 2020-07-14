@@ -69,3 +69,25 @@
     }
   }
 }
+
+@include theme-root(dark) {
+  .mz-pagination {
+    .mz-page-number.active {
+      color: $white;
+    }
+    .mz-page-prev,
+    .mz-page-next,
+    .mz-page-quick-prev,
+    .mz-page-quick-next,
+    .mz-page-number:not(.active) {
+      color: $gray-500;
+    }
+
+    &.is-outlined {
+      .mz-page-number.active {
+        color: $primary;
+        background-color: $white;
+      }
+    }
+  }
+}

@@ -1,20 +1,15 @@
-import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
-import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import { Component, Prop, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
-import { colorInTypes } from 'manzhai-ui/src/utils/theme'
+import { getPresetColorClass } from 'manzhai-ui/src/utils/theme'
+import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import MzColor from 'manzhai-ui/src/mixins/MzColor'
 import FormElement from 'manzhai-ui/src/mixins/FormElement'
 import BaseAttribute from 'manzhai-ui/src/mixins/BaseAttribute'
 
-const MixinClass = Mixins(MzSize, FormElement, BaseAttribute)
+const MixinClass = Mixins(MzSize, MzColor, FormElement, BaseAttribute)
 
 @Component
 export default class MzButton extends MixinClass {
-  @Prop(String)
-  readonly color!: string
-  @Prop(String)
-  readonly textColor!: string
-  @Prop(String)
-  readonly borderColor!: string
   @Prop({ type: [Boolean, Object], default: true })
   readonly ripple!: boolean | object
   @Prop(Boolean)
@@ -36,36 +31,62 @@ export default class MzButton extends MixinClass {
   @Prop(String)
   readonly radius!: string
 
-  get classes() {
-    let buttonTheme = ''
-    if (!this.color) {
-      buttonTheme = 'mz-button--default'
-    } else if (colorInTypes(this.color)) {
-      buttonTheme = `mz-button--${this.color}`
+  get mColorClass(): any {
+    if (this.flat) {
+      return {
+        text: getPresetColorClass(this.textColor || this.color, 'text')
+      }
     }
+    if (this.outlined) {
+      return {
+        text: getPresetColorClass(this.textColor || this.color, 'text'),
+        border: getPresetColorClass(this.borderColor || this.color, 'border')
+      }
+    }
+
+    return {
+      bg: getPresetColorClass(this.color, 'bg'),
+      text: getPresetColorClass(this.textColor, 'text'),
+      border: getPresetColorClass(this.borderColor, 'border')
+    }
+  }
+
+  get mColorStyle(): any {
+    const { bg, text, border } = this.mColorClass
+    return {
+      backgroundColor: bg || this.flat || this.outlined ? null : this.color,
+      color: text || this.flat ? null : this.textColor || this.color,
+      borderColor: border ? null : this.borderColor || this.color
+    }
+  }
+
+  get classes() {
     return [
       'mz-button',
-      buttonTheme,
-      this.mzSize,
       {
+        'text-white': this.color && !this.textColor,
         'rounded-circle': this.circle,
-        'mz-button--icon': this.icon,
-        'mz-button--round': this.round,
-        'mz-button--flat': this.flat,
-        'mz-button--outlined': this.outlined,
-        'mz-button--disabled': this.disabled,
-        'mz-button--dense': this.dense,
-        'mz-button--shadow': this.shadow
-      }
+        'is-primary': this.color === 'primary',
+        'is-icon': this.icon,
+        'is-round': this.round,
+        'is-flat': this.flat,
+        'is-outlined': this.outlined,
+        'is-disabled': this.disabled,
+        'is-dense': this.dense,
+        'is-shadow': this.shadow
+      },
+      Object.values(this.mColorClass),
+      this.mzSize
     ]
   }
 
   get styles() {
     return {
       ...this.baseStyles,
-      color: this.textColor,
-      backgroundColor: this.color,
-      borderColor: this.borderColor || this.textColor,
+      ...this.mColorStyle,
+      // color: this.textColor,
+      // backgroundColor: this.color,
+      // borderColor: this.borderColor || this.textColor,
       borderRadius: this.radius
     }
   }

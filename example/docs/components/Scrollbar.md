@@ -30,11 +30,25 @@
 ```
 :::
 
+### 滚动条颜色
+
+:::demo
+```html
+<mz-scrollbar style="height:200px;" bar-color="teal">
+  <div style="white-space: nowrap;">
+    <span v-for="i of 10" :key="i">测试滚动条测试滚动条测试滚动条测试滚动条</span>
+  </div>
+  <p v-for="i of 10" :key="i">段落{{i}}</p>
+</mz-scrollbar>
+```
+:::
+
 ### Api
 
 #### 属性
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-|bar-size|条的大小|String||'15px'|
+|bar-size|滚动条的大小|String||'15px'|
+|bar-color|滚动条的颜色|String|||
 |always|是否一直显示|Boolean||true|
 |placeholder|滚动条是否有占位|Boolean|||

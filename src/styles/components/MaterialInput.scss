@@ -195,3 +195,9 @@
     }
   }
 }
+
+@include theme-root(dark) {
+  .mz-material-input {
+    color: $white;
+  }
+}

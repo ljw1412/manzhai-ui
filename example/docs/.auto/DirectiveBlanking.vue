@@ -1,6 +1,6 @@
 <template>
   <div class="directive-blanking">
-    <div class="update-datetime">文档更新时间：2020-06-13 14:41</div>
+    <div class="update-datetime">文档更新时间：2020-07-14 16:18</div>
     <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
 <p>根据本地存储条件控制组件是否需要显示的指令。</p>
 <h3 id="shi-yong-chang-jing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>
@@ -14,7 +14,7 @@
     content="这是一条测试消息。"
     :timeout="0">
     <template #suffix>
-      <mz-button color="#fff" @click="close">关闭</mz-button>
+      <mz-button text-color="#fff" @click="close">关闭</mz-button>
     </template>  
   </mz-snackbar>
   <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
@@ -28,7 +28,7 @@
   content=&quot;这是一条测试消息。&quot;
   :timeout=&quot;0&quot;&gt;
   &lt;template #suffix&gt;
-    &lt;mz-button color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
+    &lt;mz-button text-color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
   &lt;/template&gt;  
 &lt;/mz-snackbar&gt;
 &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
@@ -81,7 +81,7 @@ export default {
     content="这是一条测试消息。"
     :timeout="0">
     <template #suffix>
-      <mz-button color="#fff" @click="close">关闭</mz-button>
+      <mz-button text-color="#fff" @click="close">关闭</mz-button>
     </template>  
   </mz-snackbar>
   <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
@@ -98,7 +98,7 @@ export default {
   content=&quot;这是一条测试消息。&quot;
   :timeout=&quot;0&quot;&gt;
   &lt;template #suffix&gt;
-    &lt;mz-button color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
+    &lt;mz-button text-color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
   &lt;/template&gt;  
 &lt;/mz-snackbar&gt;
 &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;

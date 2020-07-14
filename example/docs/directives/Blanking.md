@@ -17,7 +17,7 @@
   content="这是一条测试消息。"
   :timeout="0">
   <template #suffix>
-    <mz-button color="#fff" @click="close">关闭</mz-button>
+    <mz-button text-color="#fff" @click="close">关闭</mz-button>
   </template>  
 </mz-snackbar>
 <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
@@ -74,7 +74,7 @@ export default {
   content="这是一条测试消息。"
   :timeout="0">
   <template #suffix>
-    <mz-button color="#fff" @click="close">关闭</mz-button>
+    <mz-button text-color="#fff" @click="close">关闭</mz-button>
   </template>  
 </mz-snackbar>
 <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
