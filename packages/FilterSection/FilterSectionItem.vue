@@ -1,18 +1,9 @@
 <template>
-  <div class="mz-filter-section-item p-4 user-select-none d-inline-flex align-items-center"
+  <div class="mz-filter-section-item d-inline-block text-center m-4 py-4 px-6 fs-14 lh-14"
     :class="itemClass"
     @click="onItemClick">
-    <div class="mz-filter-section-item__label w-100 text-center py-4 px-6 fs-14 lh-14"
-      :class="{
-        'font-weight-bold': checked,
-        'text-gray-900':!checked,
-        'text-primary':checked && !isBackground,
-        'text-white bg-primary':checked && isBackground,
-        'border-primary':checked && (isBackground || isOutlined)
-      }"
-      :style="labelStyle">
-      <slot :checked="checked">{{label||value}}</slot>
-    </div>
+    <slot :checked="checked"
+      :disabled="disabled">{{label||value}}</slot>
   </div>
 </template>
 
@@ -34,8 +25,6 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
   readonly background!: boolean
   @Prop(Boolean)
   readonly custom!: boolean
-  @Prop()
-  readonly labelStyle!: any
 
   checked = false
 
@@ -56,13 +45,15 @@ export default class MzFilterSectionItem extends Mixins(FormElement) {
       Object.assign(classes, {
         'is-outlined': this.isOutlined,
         'is-background': this.isBackground,
-        'is-checked': this.checked
+        'is-checked': this.checked,
+        'is-disabled': this.disabled
       })
     }
     return classes
   }
 
   onItemClick() {
+    if (this.disabled) return
     this.checked = (this.section && !this.section.multiple) || !this.checked
     this.$emit('change', this.checked)
     if (this.section) {

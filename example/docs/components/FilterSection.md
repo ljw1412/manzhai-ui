@@ -10,14 +10,19 @@
 <mz-filter-section v-model="value" label="产地：">
   <mz-filter-section-item v-for="country of countries"
     :key="country.value"
-    :value="country.value">{{ country.label }}</mz-filter-section-item>
+    :value="country.value">
+    {{ country.label }}
+  </mz-filter-section-item>
+  <mz-filter-section-item disabled value="disabled">
+    禁用
+  </mz-filter-section-item>
 </mz-filter-section>
 
 <script>
 export default {
   data() {
     return {
-      value: 'All',
+      value: 'disabled',
       countries: [
         { label: '全部', value: 'All' },
         { label: '中国', value: 'China' },
@@ -43,13 +48,14 @@ export default {
     :key="type"
     :value="type"
     :label="type"></mz-filter-section-item>
+  <mz-filter-section-item disabled value="disabled" label="禁用"></mz-filter-section-item>
 </mz-filter-section>
 
 <script>
 export default {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
     }
   }
@@ -68,13 +74,16 @@ export default {
     :key="type"
     :value="type"
     :label="type"></mz-filter-section-item>
+  <mz-filter-section-item disabled value="disabled">
+    禁用
+  </mz-filter-section-item>
 </mz-filter-section>
 
 <script>
 export default {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
     }
   }
@@ -284,7 +293,6 @@ export default {
 | --- | --- | --- | --- | --- |
 |value|(必填)选项的值|any|||
 |label|选项显示的标签|String|||
-|label-style|标签的样式|any|||
 |outlined|是否边框模式|Boolean|||
 |custom|是否自定义选中|Boolean|||
 |disabled|是否禁用|Boolean|||

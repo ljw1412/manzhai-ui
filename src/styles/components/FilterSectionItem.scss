@@ -1,9 +1,31 @@
 .mz-filter-section-item {
-  &__label {
-    box-sizing: border-box;
-    background-color: transparent;
-    border: 1px solid transparent;
-    // transition: $color-transition;
+  color: $gray-900;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid transparent;
+
+  &.is-disabled {
+    color: $gray-500;
+    cursor: not-allowed;
+  }
+
+  &.is-checked {
+    color: $primary;
+    font-weight: $font-weight-bold;
+
+    &.is-outlined {
+      border-color: $primary;
+    }
+
+    &.is-background {
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
+    }
+
+    &.is-disabled {
+      opacity: 0.7;
+    }
   }
 }
 
@@ -21,10 +43,42 @@
         line-height: nth($arr, 2);
       }
 
-      .mz-filter-section-item__label {
+      .mz-filter-section-item {
         padding: nth($arr, 1);
         font-size: nth($arr, 2);
         line-height: nth($arr, 2);
+      }
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-filter-section-item {
+    color: $gray-800;
+    &.is-disabled {
+      color: $gray-500;
+      &.is-checked {
+        font-weight: $font-weight-bolder;
+        &.is-outlined {
+          border-color: $gray-500;
+        }
+        &.is-background {
+          color: $primary;
+          border-color: $gray-500;
+          background-color: $gray-500;
+        }
+      }
+    }
+
+    &.is-checked:not(.is-disabled) {
+      color: $white;
+      &.is-outlined {
+        border-color: $white;
+      }
+      &.is-background {
+        color: $primary;
+        border-color: $white;
+        background-color: $white;
       }
     }
   }
