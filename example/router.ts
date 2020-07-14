@@ -23,6 +23,12 @@ export default new Router({
       children: DocsRouter
     },
     {
+      path: '/style',
+      name: 'pageStyle',
+      component: () =>
+        import(/* webpackChunkName: "styles" */ './views/Style/index.vue')
+    },
+    {
       path: '/guide',
       name: 'pageGuide',
       component: Guide

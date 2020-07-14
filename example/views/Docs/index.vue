@@ -63,7 +63,6 @@ export default class PageDocs extends Vue {
 </script>
 
 <style lang="scss">
-@import '@example/styles/theme/base.scss';
 .menu-icon {
   position: fixed;
   top: 15px;

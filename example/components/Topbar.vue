@@ -35,6 +35,7 @@ export default class Topbar extends Vue {
   navigations = [
     { label: '指南', route: { name: 'pageGuide' } },
     { label: '文档', route: { name: 'pageDocs' } },
+    { label: '样式', route: { name: 'pageStyle' } },
     { label: '主题', route: { name: 'pageTheme' } }
   ]
 
