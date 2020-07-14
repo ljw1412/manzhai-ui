@@ -1,0 +1,470 @@
+// Utilities
+
+$utilities: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: map-merge(
+  (
+    'align': (
+      property: vertical-align,
+      class: align,
+      values: baseline top middle bottom text-bottom text-top
+    ),
+    'cursor': (
+      property: cursor,
+      class: cursor,
+      values: auto default none context-menu help pointer progress wait cell
+        crosshair text vertical-text alias copy move no-drop not-allowed
+        e-resize n-resize ne-resize nw-resize s-resize se-resize sw-resize
+        w-resize ew-resize ns-resize nesw-resize nwse-resize col-resize
+        row-resize all-scroll zoom-in zoom-out grab grabbing
+    ),
+    'float': (
+      property: float,
+      class: float,
+      values: left right none
+    ),
+    'overflow': (
+      property: overflow,
+      class: overflow,
+      values: auto hidden
+    ),
+    'display': (
+      property: display,
+      class: d,
+      values: none inline inline-block block table table-row table-cell flex
+        inline-flex
+    ),
+    'position': (
+      property: position,
+      class: position,
+      values: static relative absolute fixed sticky
+    ),
+    'border': (
+      property: border,
+      class: border,
+      values: (
+        null: $border-width solid $border-color,
+        0: 0
+      )
+    ),
+    'border-top': (
+      property: border-top,
+      class: border-top,
+      values: (
+        null: $border-width solid $border-color,
+        0: 0
+      )
+    ),
+    'border-right': (
+      property: border-right,
+      class: border-right,
+      values: (
+        null: $border-width solid $border-color,
+        0: 0
+      )
+    ),
+    'border-bottom': (
+      property: border-bottom,
+      class: border-bottom,
+      values: (
+        null: $border-width solid $border-color,
+        0: 0
+      )
+    ),
+    'border-left': (
+      property: border-left,
+      class: border-left,
+      values: (
+        null: $border-width solid $border-color,
+        0: 0
+      )
+    ),
+    'border-color': (
+      property: border-color,
+      class: border,
+      values: map-merge($theme-colors, $colors)
+    ),
+    'width': (
+      property: width,
+      class: w,
+      values: $sizes
+    ),
+    'max-width': (
+      property: max-width,
+      class: mw,
+      values: (
+        100: 100%
+      )
+    ),
+    'viewport-width': (
+      property: width,
+      class: vw,
+      values: (
+        100: 100vw
+      )
+    ),
+    'min-viewport-width': (
+      property: min-width,
+      class: min-vw,
+      values: (
+        100: 100vw
+      )
+    ),
+    'height': (
+      property: height,
+      class: h,
+      values: $sizes
+    ),
+    'max-height': (
+      property: max-height,
+      class: mh,
+      values: (
+        100: 100%
+      )
+    ),
+    'viewport-height': (
+      property: height,
+      class: vh,
+      values: (
+        100: 100vh
+      )
+    ),
+    'min-viewport-height': (
+      property: min-height,
+      class: min-vh,
+      values: (
+        100: 100vh
+      )
+    ),
+    'flex': (
+      property: flex,
+      class: flex,
+      values: (
+        fill: 1 1 auto
+      )
+    ),
+    'flex-direction': (
+      property: flex-direction,
+      class: flex,
+      values: row column row-reverse column-reverse
+    ),
+    'flex-grow': (
+      property: flex-grow,
+      class: flex,
+      values: (
+        grow-0: 0,
+        grow-1: 1
+      )
+    ),
+    'flex-shrink': (
+      property: flex-shrink,
+      class: flex,
+      values: (
+        shrink-0: 0,
+        shrink-1: 1
+      )
+    ),
+    'flex-wrap': (
+      property: flex-wrap,
+      class: flex,
+      values: wrap nowrap wrap-reverse
+    ),
+    'justify-content': (
+      property: justify-content,
+      class: justify-content,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly
+      )
+    ),
+    'align-items': (
+      property: align-items,
+      class: align-items,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch
+      )
+    ),
+    'align-content': (
+      property: align-content,
+      class: align-content,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        stretch: stretch
+      )
+    ),
+    'align-self': (
+      property: align-self,
+      class: align-self,
+      values: (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch
+      )
+    ),
+    'order': (
+      property: order,
+      class: order,
+      range: 0 20
+    ),
+    'margin': (
+      property: margin,
+      class: m,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-x': (
+      property: margin-right margin-left,
+      class: mx,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-y': (
+      property: margin-top margin-bottom,
+      class: my,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-top': (
+      property: margin-top,
+      class: mt,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-right': (
+      property: margin-right,
+      class: mr,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-bottom': (
+      property: margin-bottom,
+      class: mb,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'margin-left': (
+      property: margin-left,
+      class: ml,
+      range: -32px 32px,
+      values: (
+        auto: auto
+      )
+    ),
+    'padding': (
+      property: padding,
+      class: p,
+      range: 0px 32px
+    ),
+    'padding-x': (
+      property: padding-right padding-left,
+      class: px,
+      range: 0px 32px
+    ),
+    'padding-y': (
+      property: padding-top padding-bottom,
+      class: py,
+      range: 0px 32px
+    ),
+    'padding-top': (
+      property: padding-top,
+      class: pt,
+      range: 0px 32px
+    ),
+    'padding-right': (
+      property: padding-right,
+      class: pr,
+      range: 0px 32px
+    ),
+    'padding-bottom': (
+      property: padding-bottom,
+      class: pb,
+      range: 0px 32px
+    ),
+    'padding-left': (
+      property: padding-left,
+      class: pl,
+      range: 0px 32px
+    ),
+    'font-weight': (
+      property: font-weight,
+      class: font-weight,
+      values: (
+        light: $font-weight-light,
+        lighter: $font-weight-lighter,
+        normal: $font-weight-normal,
+        bold: $font-weight-bold,
+        bolder: $font-weight-bolder
+      )
+    ),
+    'text-transform': (
+      property: text-transform,
+      class: text,
+      values: lowercase uppercase capitalize
+    ),
+    'text-align': (
+      property: text-align,
+      class: text,
+      values: left right center
+    ),
+    'color': (
+      property: color,
+      class: text,
+      values:
+        map-merge(
+          $colors,
+          map-merge(
+            $theme-colors,
+            (
+              'body': $body-color,
+              'card': $card-color,
+              'muted': $text-muted,
+              'black-50': rgba($black, 0.5),
+              'white-50': rgba($white, 0.5),
+              'reset': inherit
+            )
+          )
+        )
+    ),
+    'gray-color': (
+      property: color,
+      class: text-gray,
+      values: $grays
+    ),
+    'line-height': (
+      property: line-height,
+      class: lh,
+      range: 12px 36px,
+      values: (
+        1: 1,
+        sm: $line-height-sm,
+        base: $line-height-base,
+        lg: $line-height-lg
+      )
+    ),
+    'font-size': (
+      property: font-size,
+      class: fs,
+      range: 12px 36px,
+      values: (
+        xs: $font-size-xs,
+        sm: $font-size-sm,
+        md: $font-size-md,
+        lg: $font-size-lg,
+        xl: $font-size-xl,
+        xxl: $font-size-xxl
+      )
+    ),
+    'background-color': (
+      property: background-color,
+      class: bg,
+      values:
+        map-merge(
+          $colors,
+          map-merge(
+            $theme-colors,
+            (
+              'body': $body-bg,
+              'card': $card-bg,
+              'transparent': transparent
+            )
+          )
+        )
+    ),
+    'white-space': (
+      property: white-space,
+      class: text,
+      values: (
+        wrap: normal,
+        nowrap: nowrap
+      )
+    ),
+    'text-decoration': (
+      property: text-decoration,
+      class: text-decoration,
+      values: none underline line-through
+    ),
+    'font-style': (
+      property: font-style,
+      class: font,
+      values: italic normal
+    ),
+    'word-wrap': (
+      property: word-wrap word-break,
+      class: text,
+      values: (
+        break: break-word
+      )
+    ),
+    'user-select': (
+      property: user-select,
+      class: user-select,
+      values: all auto none
+    ),
+    'pointer-events': (
+      property: pointer-events,
+      class: pe,
+      values: none auto
+    ),
+    'rounded': (
+      property: border-radius,
+      class: rounded,
+      values: $border-radius-map
+    ),
+    'rounded-top': (
+      property: border-top-left-radius border-top-right-radius,
+      class: rounded-top,
+      values: $border-radius-map
+    ),
+    'rounded-right': (
+      property: border-top-right-radius border-bottom-right-radius,
+      class: rounded-right,
+      values: $border-radius-map
+    ),
+    'rounded-bottom': (
+      property: border-bottom-right-radius border-bottom-left-radius,
+      class: rounded-bottom,
+      values: $border-radius-map
+    ),
+    'rounded-left': (
+      property: border-bottom-left-radius border-top-left-radius,
+      class: rounded-left,
+      values: $border-radius-map
+    ),
+    'visibility': (
+      property: visibility,
+      class: visibility,
+      values: (
+        visible: visible,
+        invisible: hidden
+      )
+    )
+  ),
+  $utilities
+);

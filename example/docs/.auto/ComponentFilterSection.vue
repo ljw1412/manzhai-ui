@@ -1,6 +1,6 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-06-22 15:48</div>
+    <div class="update-datetime">文档更新时间：2020-07-14 11:45</div>
     <h2 id="filtersection-shai-xuan-xiang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
 <p>用于筛选条件的选择。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -10,7 +10,12 @@
   <mz-filter-section v-model="value" label="产地：">
     <mz-filter-section-item v-for="country of countries"
       :key="country.value"
-      :value="country.value">{{ country.label }}</mz-filter-section-item>
+      :value="country.value">
+      {{ country.label }}
+    </mz-filter-section-item>
+    <mz-filter-section-item disabled value="disabled">
+      禁用
+    </mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo1></template>
         <template #description><p><code>label</code>用来描述选择项的类型标签。</p>
@@ -19,14 +24,19 @@
 &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;产地：&quot;&gt;
   &lt;mz-filter-section-item v-for=&quot;country of countries&quot;
     :key=&quot;country.value&quot;
-    :value=&quot;country.value&quot;&gt;{{ country.label }}&lt;/mz-filter-section-item&gt;
+    :value=&quot;country.value&quot;&gt;
+    {{ country.label }}
+  &lt;/mz-filter-section-item&gt;
+  &lt;mz-filter-section-item disabled value=&quot;disabled&quot;&gt;
+    禁用
+  &lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
 export default {
   data() {
     return {
-      value: 'All',
+      value: 'disabled',
       countries: [
         { label: '全部', value: 'All' },
         { label: '中国', value: 'China' },
@@ -48,6 +58,7 @@ export default {
       :key="type"
       :value="type"
       :label="type"></mz-filter-section-item>
+    <mz-filter-section-item disabled value="disabled" label="禁用"></mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo2></template>
         <template #description><p><code>outlined</code>用来控制是否以边框模式显示选中的效果。</p>
@@ -58,13 +69,14 @@ export default {
     :key=&quot;type&quot;
     :value=&quot;type&quot;
     :label=&quot;type&quot;&gt;&lt;/mz-filter-section-item&gt;
+  &lt;mz-filter-section-item disabled value=&quot;disabled&quot; label=&quot;禁用&quot;&gt;&lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
 export default {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: [&quot;全部&quot;, &quot;爆笑&quot;, &quot;热血&quot;, &quot;冒险&quot;, &quot;科幻&quot;, &quot;魔幻&quot;, &quot;玄幻&quot;, &quot;校园&quot;, &quot;推理&quot;, &quot;萌系&quot;, &quot;穿越&quot;, &quot;后宫&quot;, &quot;都市&quot;, &quot;恋爱&quot;, &quot;武侠&quot;, &quot;格斗&quot;, &quot;战争&quot;, &quot;历史&quot;, &quot;同人&quot;, &quot;竞技&quot;, &quot;励志&quot;, &quot;治愈&quot;, &quot;机甲&quot;, &quot;纯爱&quot;, &quot;美食&quot;, &quot;血腥&quot;, &quot;僵尸&quot;, &quot;恶搞&quot;, &quot;虐心&quot;, &quot;生活&quot;, &quot;动作&quot;, &quot;惊险&quot;, &quot;唯美&quot;, &quot;震撼&quot;, &quot;复仇&quot;, &quot;侦探&quot;, &quot;其它&quot;, &quot;脑洞&quot;, &quot;奇幻&quot;, &quot;宫斗&quot;, &quot;运动&quot;, &quot;青春&quot;, &quot;灵异&quot;, &quot;古风&quot;, &quot;权谋&quot;, &quot;节操&quot;, &quot;明星&quot;, &quot;暗黑&quot;, &quot;社会&quot;, &quot;浪漫&quot;, &quot;栏目&quot;]
     }
   }
@@ -79,6 +91,9 @@ export default {
       :key="type"
       :value="type"
       :label="type"></mz-filter-section-item>
+    <mz-filter-section-item disabled value="disabled">
+      禁用
+    </mz-filter-section-item>
   </mz-filter-section>
 </div></filter-section-demo3></template>
         <template #description><p><code>background</code>用来控制是否以背景模式显示选中的效果。</p>
@@ -89,13 +104,16 @@ export default {
     :key=&quot;type&quot;
     :value=&quot;type&quot;
     :label=&quot;type&quot;&gt;&lt;/mz-filter-section-item&gt;
+  &lt;mz-filter-section-item disabled value=&quot;disabled&quot;&gt;
+    禁用
+  &lt;/mz-filter-section-item&gt;
 &lt;/mz-filter-section&gt;
 
 &lt;script&gt;
 export default {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: [&quot;全部&quot;, &quot;爆笑&quot;, &quot;热血&quot;, &quot;冒险&quot;, &quot;科幻&quot;, &quot;魔幻&quot;, &quot;玄幻&quot;, &quot;校园&quot;, &quot;推理&quot;, &quot;萌系&quot;, &quot;穿越&quot;, &quot;后宫&quot;, &quot;都市&quot;, &quot;恋爱&quot;, &quot;武侠&quot;, &quot;格斗&quot;, &quot;战争&quot;, &quot;历史&quot;, &quot;同人&quot;, &quot;竞技&quot;, &quot;励志&quot;, &quot;治愈&quot;, &quot;机甲&quot;, &quot;纯爱&quot;, &quot;美食&quot;, &quot;血腥&quot;, &quot;僵尸&quot;, &quot;恶搞&quot;, &quot;虐心&quot;, &quot;生活&quot;, &quot;动作&quot;, &quot;惊险&quot;, &quot;唯美&quot;, &quot;震撼&quot;, &quot;复仇&quot;, &quot;侦探&quot;, &quot;其它&quot;, &quot;脑洞&quot;, &quot;奇幻&quot;, &quot;宫斗&quot;, &quot;运动&quot;, &quot;青春&quot;, &quot;灵异&quot;, &quot;古风&quot;, &quot;权谋&quot;, &quot;节操&quot;, &quot;明星&quot;, &quot;暗黑&quot;, &quot;社会&quot;, &quot;浪漫&quot;, &quot;栏目&quot;]
     }
   }
@@ -440,13 +458,6 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>label-style</td>
-<td>标签的样式</td>
-<td>any</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td>outlined</td>
 <td>是否边框模式</td>
 <td>Boolean</td>
@@ -575,7 +586,7 @@ export default {
   components: { FilterSectionDemo1: {
   data() {
     return {
-      value: 'All',
+      value: 'disabled',
       countries: [
         { label: '全部', value: 'All' },
         { label: '中国', value: 'China' },
@@ -589,14 +600,14 @@ export default {
 }, FilterSectionDemo2: {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
     }
   }
 }, FilterSectionDemo3: {
   data() {
     return {
-      value: '全部',
+      value: 'disabled',
       typeList: ["全部", "爆笑", "热血", "冒险", "科幻", "魔幻", "玄幻", "校园", "推理", "萌系", "穿越", "后宫", "都市", "恋爱", "武侠", "格斗", "战争", "历史", "同人", "竞技", "励志", "治愈", "机甲", "纯爱", "美食", "血腥", "僵尸", "恶搞", "虐心", "生活", "动作", "惊险", "唯美", "震撼", "复仇", "侦探", "其它", "脑洞", "奇幻", "宫斗", "运动", "青春", "灵异", "古风", "权谋", "节操", "明星", "暗黑", "社会", "浪漫", "栏目"]
     }
   }

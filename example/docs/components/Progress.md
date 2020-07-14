@@ -6,9 +6,9 @@
 :::demo 
 ```html
 <mz-progress v-model="value"></mz-progress>
-<mz-progress v-model="value" color="var(--color-success)"></mz-progress>
-<mz-progress v-model="value" color="var(--color-warning)"></mz-progress>
-<mz-progress v-model="value" color="var(--color-danger)"></mz-progress>
+<mz-progress v-model="value" color="#43a047"></mz-progress>
+<mz-progress v-model="value" color="#ffc107"></mz-progress>
+<mz-progress v-model="value" color="#ed4014"></mz-progress>
 <mz-progress v-model="value" color="#6200ea"></mz-progress>
 <div style="margin-top: 10px;">
   <mz-button @click="valueStepBy(-10)">-</mz-button>
@@ -44,9 +44,9 @@ export default {
 :::demo `buffer`属性来控制当前缓存进度。
 ```html
 <mz-progress v-model="value" :buffer="buffer"></mz-progress>
-<mz-progress v-model="value" :buffer="buffer" color="var(--color-success)"></mz-progress>
-<mz-progress v-model="value" :buffer="buffer" color="var(--color-warning)"></mz-progress>
-<mz-progress v-model="value" :buffer="buffer" color="var(--color-danger)"></mz-progress>
+<mz-progress v-model="value" :buffer="buffer" color="#43a047"></mz-progress>
+<mz-progress v-model="value" :buffer="buffer" color="#ffc107"></mz-progress>
+<mz-progress v-model="value" :buffer="buffer" color="#ed4014"></mz-progress>
 <mz-progress v-model="value" :buffer="buffer" color="#6200ea"></mz-progress>
 
 <script>
@@ -69,9 +69,9 @@ export default {
 :::demo `indeterminate`属性来控制进度条的不确定状态，默认为 false。
 ```html
 <mz-progress indeterminate></mz-progress>
-<mz-progress indeterminate color="var(--color-success)"></mz-progress>
-<mz-progress indeterminate color="var(--color-warning)"></mz-progress>
-<mz-progress indeterminate color="var(--color-danger)"></mz-progress>
+<mz-progress indeterminate color="#43a047"></mz-progress>
+<mz-progress indeterminate color="#ffc107"></mz-progress>
+<mz-progress indeterminate color="#ed4014"></mz-progress>
 <mz-progress indeterminate color="#6200ea"></mz-progress>
 ```
 :::
@@ -82,9 +82,9 @@ export default {
 :::demo `alternate`属性来控制进度条的不确定状态的动画为交替，默认为 false，且只在`indeterminate`为true时有效。
 ```html
 <mz-progress indeterminate alternate></mz-progress>
-<mz-progress indeterminate alternate color="var(--color-success)"></mz-progress>
-<mz-progress indeterminate alternate color="var(--color-warning)"></mz-progress>
-<mz-progress indeterminate alternate color="var(--color-danger)"></mz-progress>
+<mz-progress indeterminate alternate color="#43a047"></mz-progress>
+<mz-progress indeterminate alternate color="#ffc107"></mz-progress>
+<mz-progress indeterminate alternate color="#ed4014"></mz-progress>
 <mz-progress indeterminate alternate color="#6200ea"></mz-progress>
 ```
 :::
@@ -98,7 +98,7 @@ export default {
 :::demo `round`属性来控制进度条的圆角状态，默认为 false。
 ```html
 <mz-progress v-model="value" :buffer="buffer" round></mz-progress>
-<mz-progress v-model="value" indeterminate round color="var(--color-success)"></mz-progress>
+<mz-progress v-model="value" indeterminate round color="#43a047"></mz-progress>
 
 <script>
 export default {
@@ -123,8 +123,8 @@ export default {
 <mz-progress v-model="value"
   :buffer="buffer"
   color="#6200ea"
-  buffer-color="var(--color-warning)"
-  background-color="var(--color-danger)"></mz-progress>
+  buffer-color="#ffc107"
+  background-color="#ed4014"></mz-progress>
 
 <script>
 export default {
@@ -148,9 +148,9 @@ export default {
 <mz-progress v-model="value" 
   :buffer="buffer" :stroke-width="12" striped-animation></mz-progress>
 <mz-progress v-model="value" 
-  color="var(--color-success)" :stroke-width="12" striped></mz-progress>
+  color="#43a047" :stroke-width="12" striped></mz-progress>
 <mz-progress v-model="value" 
-  color="var(--color-success)" :stroke-width="12" striped-animation></mz-progress>
+  color="#43a047" :stroke-width="12" striped-animation></mz-progress>
 
 <script>
 export default {

@@ -53,7 +53,7 @@ export default class MzTab extends Vue {
     this.vnode = (
       <div
         v-ripple={{ value: this.disabled && this.ripple }}
-        class={['mz-tab', 'color-transition', this.tabClasses]}
+        class={['mz-tab', this.tabClasses]}
         on-click={this.onTabClick}>
         {this.label || this.value}
       </div>

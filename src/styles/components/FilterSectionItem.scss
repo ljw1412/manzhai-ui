@@ -1,42 +1,34 @@
 .mz-filter-section-item {
-  padding: $padding-xs;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
+  color: $gray-900;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid transparent;
 
-  &__label {
-    width: 100%;
-    text-align: center;
-    padding: $padding-xs $padding-sm;
-    box-sizing: border-box;
-    font-size: $font-size-sm;
-    line-height: $font-size-sm;
-    color: $color-text-primary;
-    background-color: transparent;
-    border: 1px solid transparent;
-    // transition: $color-transition;
+  &:not(.is-disabled) {
+    @include clickable();
+  }
+
+  &.is-disabled {
+    color: $gray-500;
+    cursor: not-allowed;
   }
 
   &.is-checked {
-    .mz-filter-section-item__label {
-      color: $color-primary;
-      font-weight: 700;
-    }
+    color: $primary;
+    font-weight: $font-weight-bold;
 
     &.is-outlined {
-      .mz-filter-section-item__label {
-        color: $color-primary;
-        border-color: $color-primary;
-        background-color: transparent;
-      }
+      border-color: $primary;
     }
 
     &.is-background {
-      .mz-filter-section-item__label {
-        color: $color-white;
-        border-color: $color-primary;
-        background-color: $color-primary;
-      }
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
+    }
+
+    &.is-disabled {
+      opacity: 0.6;
     }
   }
 }
@@ -45,8 +37,8 @@
   /* prettier-ignore */
   $size-options: (
     // size: padding, fontsize
-      small: ($padding-base $padding-xs, $font-size-xs ),
-      large: ($padding-xs $padding-sm, $font-size-md )
+      small: (2px 4px, $font-size-xs ),
+      large: (4px 6px, $font-size-md )
     );
   @each $size, $arr in $size-options {
     &.mz-size--#{$size} {
@@ -55,10 +47,42 @@
         line-height: nth($arr, 2);
       }
 
-      .mz-filter-section-item__label {
+      .mz-filter-section-item {
         padding: nth($arr, 1);
         font-size: nth($arr, 2);
         line-height: nth($arr, 2);
+      }
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-filter-section-item {
+    color: $gray-800;
+    &.is-disabled {
+      color: $gray-500;
+      &.is-checked {
+        font-weight: $font-weight-bolder;
+        &.is-outlined {
+          border-color: $gray-500;
+        }
+        &.is-background {
+          color: $primary;
+          border-color: $gray-500;
+          background-color: $gray-500;
+        }
+      }
+    }
+
+    &.is-checked:not(.is-disabled) {
+      color: $white;
+      &.is-outlined {
+        border-color: $white;
+      }
+      &.is-background {
+        color: $primary;
+        border-color: $white;
+        background-color: $white;
       }
     }
   }

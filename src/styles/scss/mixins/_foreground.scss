@@ -1,4 +1,8 @@
-@mixin foreground($color: currentColor) {
+@mixin foreground(
+  $color: currentColor,
+  $hover-opacity: 0.12,
+  $active-opacity: 0.3
+) {
   &::before {
     content: '';
     position: absolute;
@@ -21,9 +25,9 @@
   }
 }
 
-@mixin foreground-active {
+@mixin foreground-active($opacity: 0.3) {
   &::before {
-    opacity: 0.3;
+    opacity: $opacity;
   }
 }
 

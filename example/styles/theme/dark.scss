@@ -9,7 +9,7 @@
   .demo-card {
     .highlight {
       ::selection {
-        background-color: $color-text-secondary;
+        background-color: $gray-700;
       }
 
       .hljs,
@@ -30,7 +30,7 @@
         .mz-main,
         .mz-aside,
         .mz-footer {
-          background-color: $color-white;
+          background-color: $white;
           color: #000;
         }
         .mz-header,

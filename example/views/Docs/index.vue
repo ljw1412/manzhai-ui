@@ -4,6 +4,7 @@
     <sidebar ref="sidebar"></sidebar>
     <div class="menu-icon">
       <mz-button icon
+        class="color-white"
         radius="0"
         @click="$refs.sidebar.visible=true">
         <mz-icon name="menu"

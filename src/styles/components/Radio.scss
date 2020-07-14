@@ -3,7 +3,7 @@
   cursor: pointer;
   user-select: none;
   display: inline-block;
-  color: $color-text-primary;
+  color: $gray-900;
   margin-right: 20px;
   font-size: 0;
 
@@ -43,7 +43,7 @@
   }
 
   &.checked {
-    color: $color-primary;
+    color: $primary;
     .mz-radio__icon::after {
       visibility: visible;
     }
@@ -51,11 +51,9 @@
 
   &.disabled {
     cursor: not-allowed;
+    opacity: 0.6;
     &:not(.checked) {
-      color: $color-text-disabled;
-    }
-    &.checked {
-      opacity: 0.6;
+      color: $gray-600;
     }
   }
 
@@ -72,5 +70,16 @@
 
   &:last-child {
     margin-right: 0;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-radio {
+    &:not(.disabled).checked {
+      color: $white;
+    }
+    &.disabled {
+      color: $gray-600;
+    }
   }
 }

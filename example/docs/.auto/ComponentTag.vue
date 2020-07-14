@@ -1,6 +1,6 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-07-09 18:44</div>
     <h2 id="tag-biao-qian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
 <p>进行标记和分类的小标签。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -8,14 +8,14 @@
 <demo-block>
         <template #example><tag-demo1 inline-template><div class="tag-demo1">
   <mz-tag>标签</mz-tag>
-  <mz-tag color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
-  <mz-tag color="var(--color-warning)" text-color="green">标签</mz-tag>
+  <mz-tag color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+  <mz-tag color="#ffc107" text-color="green">标签</mz-tag>
 </div></tag-demo1></template>
         <template #description><p><code>color</code>控制标签背景颜色,<code>text-color</code>控制标签文本颜色。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tag&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag color=&quot;var(--color-warning)&quot; text-color=&quot;green&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag color=&quot;#ffc107&quot; text-color=&quot;green&quot;&gt;标签&lt;/mz-tag&gt;
 </code></pre></template></demo-block><h3 id="chi-cun" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#chi-cun" title="尺寸" data-level="3" data-href="#chi-cun">¶</a>尺寸</h3>
 <p>4种尺寸大小的标签。</p>
 <demo-block>
@@ -36,20 +36,20 @@
 <demo-block>
         <template #example><tag-demo3 inline-template><div class="tag-demo3">
   <mz-tag outlined>标签</mz-tag>
-  <mz-tag round color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
-  <mz-tag round="left" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
-  <mz-tag round="right" color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
-  <mz-tag text color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
-  <mz-tag outlined round color="var(--color-primary)" text-color="#ffffff">标签</mz-tag>
+  <mz-tag round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+  <mz-tag round="left" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+  <mz-tag round="right" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+  <mz-tag text color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+  <mz-tag outlined round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
 </div></tag-demo3></template>
         <template #description><p><code>outlined</code>、<code>round</code>、<code>text</code>分别表示以边框模式，圆角模式，文字模式显示。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-tag outlined&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag round color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag round=&quot;left&quot; color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag round=&quot;right&quot; color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag text color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag outlined round color=&quot;var(--color-primary)&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag round color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag round=&quot;left&quot; color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag round=&quot;right&quot; color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag text color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag outlined round color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 </code></pre></template></demo-block><h3 id="ke-zeng-shan-de-biao-qian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-zeng-shan-de-biao-qian" title="可增删的标签" data-level="3" data-href="#ke-zeng-shan-de-biao-qian">¶</a>可增删的标签</h3>
 <p>支持动态新增和删除标签</p>
 <demo-block>
@@ -60,7 +60,7 @@
     @close="handleColse(item)">
     {{item.label}}
   </mz-tag>
-  <mz-tag class="is-pointer" @click="list.push({label: '新增'})">+新增</mz-tag>
+  <mz-tag class="cursor-pointer" @click="list.push({label: '新增'})">+新增</mz-tag>
 </div></tag-demo4></template>
         <template #description><p><code>closable</code>属性控制标签能否被删除，点击删除图标返回<code>v-on:close</code>事件。</p>
 </template>
@@ -70,7 +70,7 @@
   @close=&quot;handleColse(item)&quot;&gt;
   {{item.label}}
 &lt;/mz-tag&gt;
-&lt;mz-tag class=&quot;is-pointer&quot; @click=&quot;list.push({label: '新增'})&quot;&gt;+新增&lt;/mz-tag&gt;
+&lt;mz-tag class=&quot;cursor-pointer&quot; @click=&quot;list.push({label: '新增'})&quot;&gt;+新增&lt;/mz-tag&gt;
 
 &lt;script&gt;
 export default {

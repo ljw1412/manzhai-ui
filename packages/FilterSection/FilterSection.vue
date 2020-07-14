@@ -2,11 +2,11 @@
   <mz-row class="mz-filter-section"
     :class="sectionClasses">
     <mz-col v-if="$slots.label || label"
-      class="mz-filter-section__label"
+      class="mz-filter-section__label fs-14 lh-14 text-gray-800"
       :style="{width:labelWidth}">
       <slot name="label">{{label}}</slot>
     </mz-col>
-    <mz-col class="mz-filter-section__content flex-wrap">
+    <mz-col class="mz-filter-section__content flex-wrap mx-n4">
       <slot></slot>
     </mz-col>
   </mz-row>
@@ -46,7 +46,7 @@ export default class MzFilterSection extends Mixins(FormElement, MzSize) {
   @Prop(Boolean)
   readonly outlined!: boolean
   @Prop(Boolean)
-  readonly background!:boolean
+  readonly background!: boolean
   @Prop(Boolean)
   readonly multiple!: boolean
 

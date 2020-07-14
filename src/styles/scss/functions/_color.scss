@@ -1,0 +1,30 @@
+// 加亮颜色
+@function tint-color($color, $level, $debug: false) {
+  @return mix(white, $color, $level * $theme-color-interval);
+}
+
+// 加深颜色
+@function shade-color($color, $level) {
+  @return mix(black, $color, $level * $theme-color-interval);
+}
+
+@function map-brightness($name, $color) {
+  $map: ();
+  $i: 1;
+  $level: 8;
+  $new-color: null;
+  @while ($i < 10) {
+    @if ($i < 5) {
+      $new-color: tint-color($color, $level, true);
+      $level: $level - 2;
+    } @else if ($i > 5) {
+      $new-color: shade-color($color, $level);
+      $level: $level + 2;
+    } @else if ($i == 5) {
+      $new-color: $color;
+    }
+    $map: map-merge($map, (#{$name + '-' + ($i * 100)}: $new-color));
+    $i: $i + 1;
+  }
+  @return $map;
+}

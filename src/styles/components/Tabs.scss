@@ -30,12 +30,26 @@
   &__active-bar {
     position: absolute;
     height: 2px;
-    background-color: $color-primary;
+    background-color: $primary;
     transition: all $primary-transition;
   }
 
   &__content {
     position: relative;
     overflow: hidden;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-tabs {
+    &__active-bar {
+      background-color: $white;
+    }
+    &__nav--fill .mz-tab--active {
+      color: $primary;
+    }
+    .mz-tab--active {
+      color: $white;
+    }
   }
 }

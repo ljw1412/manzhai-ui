@@ -10,6 +10,9 @@ export default class MzModal extends MzModal_base {
     readonly top: string;
     readonly radius: string;
     readonly transition: string;
+    readonly headerStyle: any;
+    readonly bodyStyle: any;
+    readonly footerStyle: any;
     readonly outerScroll: boolean;
     readonly divider: boolean;
     readonly fullscreen: boolean;

@@ -75,7 +75,7 @@ export default class MzSlideGroup extends Vue {
         class: [
           'mz-slide-group__control',
           `mz-slide-group__${item}-button`,
-          'flex-double-center'
+          'd-flex align-items-center justify-content-center'
         ],
         style: { [item]: 0 },
         on: {

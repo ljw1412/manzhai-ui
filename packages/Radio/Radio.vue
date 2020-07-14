@@ -4,15 +4,15 @@
     :class="radioClasses"
     @click="onRadioClick">
     <span v-ripple="!border && !disabled && ripple"
-      class="mz-radio__icon color-transition">
+      class="mz-radio__icon">
       <span style="display:block;"></span>
     </span>
     <input type="radio"
-      class="mz-radio__input mz-hidden-input"
+      class="mz-radio__input hidden-node"
       :name="name"
       :checked="checked"
       :value="value" />
-    <span class="mz-radio__label color-transition"
+    <span class="mz-radio__label"
       role="radio">
       <slot>{{label||value}}</slot>
     </span>

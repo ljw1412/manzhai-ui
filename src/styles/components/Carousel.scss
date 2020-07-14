@@ -1,37 +1,25 @@
-.mz-carousel-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .mz-carousel {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  &--vertical {
+  &.is-vertical {
     .mz-carousel-arrow {
       left: 50%;
-      margin-left: -20px;
-      &--previous {
-        transform: rotate(90deg);
+      &.is-previous {
+        transform: translateX(-50%) rotate(90deg);
         top: 10px;
       }
-      &--next {
-        transform: rotate(-90deg) scaleX(-1);
+      &.is-next {
+        transform: translateX(-50%) rotate(-90deg) scaleX(-1);
         bottom: 10px;
       }
     }
   }
-  &:not(&--vertical) {
+  &:not(.is-vertical) {
     .mz-carousel-arrow {
       top: 50%;
       transform: translateY(-50%);
-      &--previous {
+      &.is-previous {
         left: 10px;
       }
-      &--next {
+      &.is-next {
         right: 10px;
       }
     }
@@ -39,12 +27,9 @@
 }
 
 .mz-carousel-arrow {
-  cursor: pointer;
-  position: absolute;
   width: 40px;
   height: 40px;
   background-color: rgba($color: #000000, $alpha: 0.2);
-  border-radius: 50%;
   transition-duration: 0.5s;
   &::after {
     position: absolute;
@@ -58,7 +43,7 @@
     border-color: transparent #ffffff transparent transparent;
     opacity: 0.75;
   }
-  &--next::after {
+  &.is-next::after {
     transform: scaleX(-1);
     transform-origin: 14px 12px;
   }

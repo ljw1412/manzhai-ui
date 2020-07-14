@@ -38,11 +38,15 @@ const config = {
           const relativePath = relative(rootContext, resourcePath)
           // 避免文档使用manzhai导致scss颜色变量提前被css variable覆盖
           // 出现 --color-primary: var(--color-primary) 的问题
-          if (relativePath.includes('manzhai-variables.scss')) return ''
-          return relativePath.startsWith('packages') ||
-            relativePath.startsWith('example')
-            ? "@import '@/styles/scss/core.scss';"
-            : ''
+          if (relativePath.startsWith('packages')) {
+            return "@import '@/styles/variables.scss';"
+          } else if (
+            relativePath.startsWith('example') &&
+            !relativePath.includes('styles')
+          ) {
+            return "@import '@example/styles/manzhai-variables.scss';"
+          }
+          return ''
         }
       }
     }

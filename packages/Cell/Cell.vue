@@ -1,24 +1,24 @@
 <template>
-  <div class="mz-cell color-transition"
+  <div class="mz-cell position-relative"
     v-ripple="hasSwitch"
-    :class="{'is-pointer': hasSwitch}"
+    :class="{'cursor-pointer': hasSwitch}"
     @click="onCellClick">
-    <div class="mz-cell__core flex-center-space-between">
+    <div class="mz-cell__core d-flex align-items-center justify-content-between py-10 px-20">
       <div class="mz-cell__left">
         <slot>
           <div v-if="$slots.default || title"
-            class="mz-cell__title color-transition">
+            class="mz-cell__title fs-13 text-gray-900">
             <slot name="title">{{title}}</slot>
           </div>
           <div v-if="$slots.desc || desc"
-            class="mz-cell__desc color-transition">
+            class="mz-cell__desc fs-12 text-gray-700">
             <slot name="desc">{{desc}}</slot>
           </div>
         </slot>
       </div>
-      <div class="mz-cell__right"
+      <div class="mz-cell__right flex-shrink-0"
         :class="{
-          'mz-cell__right--switch': hasSwitch
+          'has-switch': hasSwitch
         }">
         <slot name="right">
           <mz-switch v-if="hasSwitch"

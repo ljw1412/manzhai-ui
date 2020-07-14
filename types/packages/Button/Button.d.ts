@@ -18,7 +18,7 @@ export default class MzButton extends MixinClass {
     readonly nativeType: string;
     readonly radius: string;
     get classes(): (string | {
-        'is-circle': boolean;
+        'rounded-circle': boolean;
         'mz-button--icon': boolean;
         'mz-button--round': boolean;
         'mz-button--flat': boolean;

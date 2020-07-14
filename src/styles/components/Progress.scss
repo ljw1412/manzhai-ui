@@ -17,7 +17,7 @@
   &__progress {
     height: inherit;
     transition: inherit;
-    background-color: $color-primary;
+    background-color: $primary;
   }
 
   &__background {
@@ -97,5 +97,27 @@
   }
   100% {
     background-position-x: 0;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-progress {
+    &__background,
+    &__buffer,
+    &__progress {
+      background-color: $white;
+    }
+    &--striped .mz-progress__progress {
+      background-image: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.25) 25%,
+        transparent 0,
+        transparent 50%,
+        rgba(0, 0, 0, 0.25) 0,
+        rgba(0, 0, 0, 0.25) 75%,
+        transparent 0,
+        transparent
+      );
+    }
   }
 }

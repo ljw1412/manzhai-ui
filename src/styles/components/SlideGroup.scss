@@ -21,9 +21,9 @@
     top: 0;
     width: 30px;
     height: 100%;
-    color: $color-text-primary;
+    color: $gray-900;
     &:active {
-      color: $color-text-regular;
+      color: $gray-800;
     }
   }
 }

@@ -59,7 +59,6 @@ export default class MzMaterialInput extends Mixins(MzSize, FormElement) {
   get mzInputClasses() {
     return [
       'mz-material-input',
-      'color-transition',
       {
         'mz-material-input--error': this.error,
         'mz-material-input--outlined': this.outlined,
@@ -113,7 +112,7 @@ export default class MzMaterialInput extends Mixins(MzSize, FormElement) {
       class: [
         `mz-material-input__icon mz-material-input__icon--${type}`,
         {
-          'is-pointer':
+          'cursor-pointer':
             this.$listeners[`${type}-icon-click`] ||
             this.$listeners[`${type}IconClick`]
         }
@@ -184,7 +183,7 @@ export default class MzMaterialInput extends Mixins(MzSize, FormElement) {
 
   renderHelper() {
     return (
-      <div class="mz-material-input__helper-line flex-center-space-between">
+      <div class="mz-material-input__helper-line d-flex align-items-center justify-content-between">
         <div class="mz-material-input__helper-text">
           {this.error ? this.errorMessage : this.hint}
         </div>

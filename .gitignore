@@ -22,3 +22,5 @@ yarn-error.log*
 
 /lib
 
+.sass-cache
+test.css*

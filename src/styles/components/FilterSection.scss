@@ -1,16 +1,6 @@
 .mz-filter-section {
   overflow-x: hidden;
 
-  &__label {
-    font-size: $font-size-sm;
-    line-height: $font-size-sm;
-    color: $color-text-regular;
-  }
-
-  &__content {
-    margin: 0 -4px;
-  }
-
   &--right,
   &--left {
     display: flex;
@@ -18,7 +8,7 @@
       &__label {
         flex-shrink: 0;
         display: flex;
-        padding: 8px 0;
+        padding: 9px 0;
         margin-right: 10px;
       }
 

@@ -39,7 +39,7 @@
 .mz-pagination-jumper {
   margin: 0 5px;
   font-size: 14px;
-  color: $color-text-secondary;
+  color: $gray-700;
   font-weight: normal;
 }
 
@@ -66,6 +66,28 @@
     }
     &[type='number'] {
       -moz-appearance: textfield;
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-pagination {
+    .mz-page-number.active {
+      color: $white;
+    }
+    .mz-page-prev,
+    .mz-page-next,
+    .mz-page-quick-prev,
+    .mz-page-quick-next,
+    .mz-page-number:not(.active) {
+      color: $gray-500;
+    }
+
+    &.is-outlined {
+      .mz-page-number.active {
+        color: $primary;
+        background-color: $white;
+      }
     }
   }
 }

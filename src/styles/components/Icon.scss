@@ -1,9 +1,10 @@
 .mz-icon {
+  display: inline-block;
   width: 1em;
   height: 1em;
   vertical-align: -0.15em;
   transition-duration: 0.3s;
   transition-property: fill, background-color;
-  transition-timing-function: map-get($transition, 'fast-out-slow-in');
+  transition-timing-function: map-get($transition-easing, 'fast-out-slow-in');
   overflow: hidden;
 }

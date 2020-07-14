@@ -1,0 +1,5 @@
+@mixin resizable($direction: both) {
+  overflow: auto;
+  // 可选值 horizontal, vertical, both
+  resize: $direction;
+}

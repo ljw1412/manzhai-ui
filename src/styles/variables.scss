@@ -1,0 +1,7 @@
+// 作为变量单独引用
+// 请不要再这这之后再引入index.scss
+// 避免文档使用manzhai导致scss颜色变量提前被css variable覆盖
+// 出现 --color-primary: var(--color-primary) 的问题
+@import 'scss/index.scss';
+// 覆盖scss变量到 css-variables
+@import 'css-variables';

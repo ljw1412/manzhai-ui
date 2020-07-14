@@ -115,9 +115,13 @@ export default class MzCatalogue extends BaseAttribute {
     const data = {
       class: [
         'mz-catalogue',
+        this.fixed
+          ? 'position-fixed'
+          : this.absolute
+          ? 'position-absolute'
+          : 'position-relative',
         {
-          'mz-catalogue--fixed': this.fixed,
-          'mz-catalogue--sidebar': this.sidebar
+          'has-sidebar': this.sidebar
         }
       ],
       style: {
@@ -140,7 +144,7 @@ export default class MzCatalogue extends BaseAttribute {
           bar-size="0"
           class="mz-catalogue__scroll"
           style={this.scrollStyles}>
-          <div ref="content" class="mz-catalogue__content">
+          <div ref="content" class="mz-catalogue__content position-relative">
             {this.sidebar && this.renderSidebar()}
             {this.manual ? this.$slots.default : this.renderItem(itemList)}
           </div>
@@ -152,14 +156,14 @@ export default class MzCatalogue extends BaseAttribute {
   renderSidebar() {
     return (
       <div
-        class="mz-catalogue__sidebar"
+        class="mz-catalogue__sidebar position-absolute py-9 h-100"
         style={{
           borderColor: this.sidebarColor,
           backgroundColor: this.sidebarColor
         }}>
         {this.activeIndex !== -1 && (
           <div
-            class="indicator"
+            class="indicator position-absolute text-primary"
             style={{
               top: this.indicatorTop + 'px',
               height: this.indicatorHeight + 'px',

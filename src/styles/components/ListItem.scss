@@ -1,8 +1,8 @@
 .mz-list-item {
   position: relative;
   display: flex;
-  padding: 0 $padding-xxxl;
-  color: $color-text-regular;
+  padding: 0 16px;
+  color: $gray-800;
 
   &.is-custom {
     padding: 0;
@@ -16,20 +16,20 @@
   &__content {
     flex-grow: 1;
     position: relative;
-    padding: $padding-xl 0;
+    padding: 12px 0;
     z-index: 50;
   }
 
   &__title {
     font-weight: 500;
     font-size: $font-size-md;
-    color: $color-text-regular;
+    color: $gray-800;
   }
 
   &__text {
     margin-top: 3px;
     font-size: $font-size-sm;
-    color: $color-text-secondary;
+    color: $gray-700;
   }
 
   &__prefix {
@@ -62,7 +62,7 @@
 
   &.is-disabled {
     cursor: not-allowed;
-    color: $color-text-placeholder !important;
+    color: $gray-500 !important;
     &:not(.is-active) {
       @include foreground-disabled;
     }
@@ -70,26 +70,26 @@
       &__title,
       &__text {
         font-weight: bold;
-        color: $color-text-placeholder;
+        color: $gray-500;
       }
     }
   }
 
   &.is-active.is-clickable {
     @include foreground-active;
-    color: $color-primary;
+    color: $primary;
     .mz-list-item__title {
-      color: $color-primary;
+      color: $primary;
     }
   }
 
   /* prettier-ignore */
   $size-options: (
   // size: padding, content-padding, title-fontsize, text-fontsize
-    small: ( $padding-xl,$padding-sm, $font-size-sm, $font-size-xs ),
-    medium: ( $padding-xxl,$padding-lg, $font-size-sm, $font-size-xs ),
-    default: ( $padding-xxl,$padding-xl, $font-size-md, $font-size-sm ),
-    large: ( $padding-xxxl,$padding-xxl, $font-size-lg, $font-size-md )
+    small: ( 12px,6px, $font-size-sm, $font-size-xs ),
+    medium: ( 14px,10px, $font-size-sm, $font-size-xs ),
+    default: ( 14px,12px, $font-size-md, $font-size-sm ),
+    large: ( 16px,14px, $font-size-lg, $font-size-md )
   );
 
   @each $size, $arr in $size-options {
@@ -113,5 +113,14 @@
   > .mz-card {
     color: inherit;
     width: 100%;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-list-item {
+    color: $white;
+    &.is-active.is-clickable &__title {
+      color: $white;
+    }
   }
 }

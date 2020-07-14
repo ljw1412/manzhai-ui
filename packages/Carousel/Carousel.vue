@@ -56,7 +56,8 @@ export default class MzCarousel extends BaseAttribute {
     const props = {
       class: [
         'mz-carousel',
-        { 'mz-carousel--vertical': this.vertical, 'is-hover': this.isHover }
+        'position-relative w-100 h-100 overflow-hidden',
+        { 'is-vertical': this.vertical, 'is-hover': this.isHover }
       ],
       style: [this.baseStyles],
       on: {
@@ -82,7 +83,10 @@ export default class MzCarousel extends BaseAttribute {
     if (this.arrow === 'never') return null
     return ['previous', 'next'].map(item => {
       const data = {
-        class: ['mz-carousel-arrow', `mz-carousel-arrow--${item}`],
+        class: [
+          'mz-carousel-arrow cursor-pointer position-absolute rounded-circle',
+          `is-${item}`
+        ],
         on: {
           click: () => {
             const index = this.index + (item === 'next' ? 1 : -1)
@@ -131,7 +135,7 @@ export default class MzCarousel extends BaseAttribute {
 
   render(h: CreateElement) {
     return (
-      <div class="mz-carousel-wrapper">
+      <div class="mz-carousel-wrapper position-relative w-100 h-100">
         {this.renderCarousel()}
         {this.renderIndicator()}
       </div>

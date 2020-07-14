@@ -36,14 +36,33 @@
 
     &:focus {
       outline: none;
-      border-color: $color-primary;
+      border-color: $primary;
     }
 
     &:disabled {
-      color: $color-text-disabled !important;
+      color: $gray-600 !important;
       border-color: currentColor !important;
-      background-color: #f7f7f7;
+      background-color: $gray-100;
       cursor: not-allowed;
+    }
+  }
+}
+
+@include theme-root(dark) {
+  .mz-textarea {
+    &__inner {
+      background-color: $black;
+      color: $white;
+      border: 1px solid $border-color;
+
+      &:focus {
+        border-color: $white;
+      }
+
+      &:disabled {
+        color: $gray-400 !important;
+        background-color: $gray-100;
+      }
     }
   }
 }

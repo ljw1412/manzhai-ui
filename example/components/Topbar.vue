@@ -1,13 +1,16 @@
 <template>
-  <div class="app-topbar flex-center-space-between">
-    <ul class="app-topbar__navigation">
-      <li id="app-logo">
-        <router-link class="app-topbar__logo"
+  <div class="app-topbar d-flex justify-content-between align-items-center user-select-none px-15 h-100">
+    <ul class="app-topbar-navigation d-flex align-items-center">
+      <li id="app-logo"
+        class="p-0 ml-5 mr-20 lh-1 px-20 fs-24 lh-28">
+        <router-link class="topbar-nav-link"
           :to="{name:'home'}">ManZhai</router-link>
       </li>
       <li v-for="(navigation,index) of navigations"
+        class="px-20 fs-16 flex-grow-0 flex-shrink-1"
         :key="index">
-        <router-link :to="navigation.route">{{navigation.label}}</router-link>
+        <router-link class="topbar-nav-link"
+          :to="navigation.route">{{navigation.label}}</router-link>
       </li>
     </ul>
     <div>
@@ -43,49 +46,7 @@ export default class Topbar extends Vue {
 </script>
 
 <style lang="scss">
-@import '../styles/theme/base.scss';
-#app-logo {
-  padding: 0;
-  margin-left: 5px;
-  margin-right: 20px;
-  line-height: 1;
-}
-
-.app-topbar {
-  user-select: none;
-  padding: 18px 15px;
-  line-height: 28px;
-  height: 28px;
-  &__logo {
-    line-height: 24px;
-    font-size: 24px;
-  }
-
-  &__navigation {
-    display: flex;
-    align-items: center;
-    li {
-      flex: 0 1 auto;
-      font-size: 16px;
-      padding: 0 20px;
-      a {
-        color: $topbar-navigation-text-color;
-        &:hover {
-          color: $topbar-navigation-text-color--hover;
-        }
-        &:active {
-          color: $topbar-navigation-text-color--active;
-        }
-      }
-    }
-    li + li {
-      margin-left: 10px;
-    }
-    &::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-  }
+.topbar-nav-link {
+  @include state-color($white, $success-400, $success-300);
 }
 </style>

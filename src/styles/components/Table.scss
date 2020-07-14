@@ -20,10 +20,10 @@
   }
 
   &-thead > tr > th {
-    color: $color-text-primary;
+    color: $gray-900;
     font-weight: 500;
-    background: $color-thead-background;
-    border-bottom: 1px solid $color-border-base;
+    background: $gray-100;
+    border-bottom: 1px solid $border-color;
     transition: background 0.3s ease, color 0.3s ease;
   }
 
@@ -36,7 +36,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: $color-tr-hover-background;
+        background-color: $primary;
         z-index: 0;
         opacity: 0.15;
       }
@@ -45,18 +45,18 @@
 
   &.is-lined {
     .mz-table-tr:not(:last-child) > .mz-table-td {
-      border-bottom: 1px solid $color-border-base;
+      border-bottom: 1px solid $border-color;
     }
   }
 
   &.is-border {
-    border: 1px solid $color-border-base;
+    border: 1px solid $border-color;
     .mz-table-tr:not(:last-child) > .mz-table-td {
-      border-bottom: 1px solid $color-border-base;
+      border-bottom: 1px solid $border-color;
     }
     .mz-table-td:not(:last-child),
     .mz-table-th:not(:last-child) {
-      border-right: 1px solid $color-border-base;
+      border-right: 1px solid $border-color;
     }
   }
 }

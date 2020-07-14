@@ -1,3 +1,7 @@
+$shadow-umbra-color: rgba(0, 0, 0, 0.2) !default;
+$shadow-penumbra-color: rgba(0, 0, 0, 0.14) !default;
+$shadow-ambient-color: rgba(0, 0, 0, 0.12) !default;
+
 $shadow-umbra: (
   0: 0px 0px 0px 0px $shadow-umbra-color,
   1: 0px 2px 1px -1px $shadow-umbra-color,

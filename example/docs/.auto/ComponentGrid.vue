@@ -1,6 +1,6 @@
 <template>
   <div class="component-grid">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-07-09 17:23</div>
     <h2 id="grid-zha-ge-bu-ju" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#grid-zha-ge-bu-ju" title="Grid 栅格布局" data-level="2" data-href="#grid-zha-ge-bu-ju">¶</a>Grid 栅格布局</h2>
 <p>按照 24 等分的原则进行划分。</p>
 <h3 id="ji-chu-bu-ju" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-bu-ju" title="基础布局" data-level="3" data-href="#ji-chu-bu-ju">¶</a>基础布局</h3>
@@ -85,15 +85,15 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 .bg-dark{
-  background-color: var(--color-primary);
+  background-color: $success;
 }
 &lt;/style&gt;
 </code></pre></template></demo-block><h3 id="lie-de-jian-ge" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#lie-de-jian-ge" title="列的间隔" data-level="3" data-href="#lie-de-jian-ge">¶</a>列的间隔</h3>
@@ -139,11 +139,11 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 &lt;/style&gt;
@@ -202,11 +202,11 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 &lt;/style&gt;
@@ -258,7 +258,7 @@
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 &lt;/style&gt;
@@ -323,11 +323,11 @@ export default {
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 &lt;/style&gt;
@@ -365,11 +365,11 @@ export default {
   min-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 &lt;/style&gt;
@@ -378,21 +378,41 @@ export default {
 <demo-block>
         <template #example><grid-demo7 inline-template><div class="grid-demo7">
   <mz-row :gutter="16">
-    <mz-col :xs="0" :sm="6" :md="4" :lg="3" :xl="1"><div class="grid-col bg-base">1</div></mz-col>
-    <mz-col :xs="4" :sm="0" :md="8" :lg="3" :xl="10"><div class="grid-col bg-base">2</div></mz-col>
-    <mz-col :xs="4" :sm="6" :md="0" :lg="3" :xl="10"><div class="grid-col bg-base">3</div></mz-col>
-    <mz-col :xs="8" :sm="6" :md="4" :lg="0" :xl="1"><div class="grid-col bg-base">4</div></mz-col>
-    <mz-col :xs="8" :sm="6" :md="4" :lg="3" :xl="0"><div class="grid-col bg-base">5</div></mz-col>
+    <mz-col :xs="0" :sm="6" :md="4" :lg="3" :xl="1">
+      <div class="grid-col bg-base text-white text-center">1</div>
+    </mz-col>
+    <mz-col :xs="4" :sm="0" :md="8" :lg="3" :xl="10">
+      <div class="grid-col bg-base text-white text-center">2</div>
+    </mz-col>
+    <mz-col :xs="4" :sm="6" :md="0" :lg="3" :xl="10">
+      <div class="grid-col bg-base text-white text-center">3</div>
+    </mz-col>
+    <mz-col :xs="8" :sm="6" :md="4" :lg="0" :xl="1">
+      <div class="grid-col bg-base text-white text-center">4</div>
+    </mz-col>
+    <mz-col :xs="8" :sm="6" :md="4" :lg="3" :xl="0">
+      <div class="grid-col bg-base text-white text-center">5</div>
+    </mz-col>
   </mz-row>
 </div></grid-demo7></template>
         <template #description><p>将col的属性值 <code>span</code>、<code>xs</code>、<code>sm</code>、<code>md</code>、<code>lg</code>、<code>xl</code>设为0即可。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-row :gutter=&quot;16&quot;&gt;
-  &lt;mz-col :xs=&quot;0&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;3&quot; :xl=&quot;1&quot;&gt;&lt;div class=&quot;grid-col bg-base&quot;&gt;1&lt;/div&gt;&lt;/mz-col&gt;
-  &lt;mz-col :xs=&quot;4&quot; :sm=&quot;0&quot; :md=&quot;8&quot; :lg=&quot;3&quot; :xl=&quot;10&quot;&gt;&lt;div class=&quot;grid-col bg-base&quot;&gt;2&lt;/div&gt;&lt;/mz-col&gt;
-  &lt;mz-col :xs=&quot;4&quot; :sm=&quot;6&quot; :md=&quot;0&quot; :lg=&quot;3&quot; :xl=&quot;10&quot;&gt;&lt;div class=&quot;grid-col bg-base&quot;&gt;3&lt;/div&gt;&lt;/mz-col&gt;
-  &lt;mz-col :xs=&quot;8&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;0&quot; :xl=&quot;1&quot;&gt;&lt;div class=&quot;grid-col bg-base&quot;&gt;4&lt;/div&gt;&lt;/mz-col&gt;
-  &lt;mz-col :xs=&quot;8&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;3&quot; :xl=&quot;0&quot;&gt;&lt;div class=&quot;grid-col bg-base&quot;&gt;5&lt;/div&gt;&lt;/mz-col&gt;
+  &lt;mz-col :xs=&quot;0&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;3&quot; :xl=&quot;1&quot;&gt;
+    &lt;div class=&quot;grid-col bg-base text-white text-center&quot;&gt;1&lt;/div&gt;
+  &lt;/mz-col&gt;
+  &lt;mz-col :xs=&quot;4&quot; :sm=&quot;0&quot; :md=&quot;8&quot; :lg=&quot;3&quot; :xl=&quot;10&quot;&gt;
+    &lt;div class=&quot;grid-col bg-base text-white text-center&quot;&gt;2&lt;/div&gt;
+  &lt;/mz-col&gt;
+  &lt;mz-col :xs=&quot;4&quot; :sm=&quot;6&quot; :md=&quot;0&quot; :lg=&quot;3&quot; :xl=&quot;10&quot;&gt;
+    &lt;div class=&quot;grid-col bg-base text-white text-center&quot;&gt;3&lt;/div&gt;
+  &lt;/mz-col&gt;
+  &lt;mz-col :xs=&quot;8&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;0&quot; :xl=&quot;1&quot;&gt;
+    &lt;div class=&quot;grid-col bg-base text-white text-center&quot;&gt;4&lt;/div&gt;
+  &lt;/mz-col&gt;
+  &lt;mz-col :xs=&quot;8&quot; :sm=&quot;6&quot; :md=&quot;4&quot; :lg=&quot;3&quot; :xl=&quot;0&quot;&gt;
+    &lt;div class=&quot;grid-col bg-base text-white text-center&quot;&gt;5&lt;/div&gt;
+  &lt;/mz-col&gt;
 &lt;/mz-row&gt;
 
 &lt;style&gt;
@@ -407,13 +427,14 @@ export default {
 }
 .grid-col{
   min-height: 48px;
+  line-height: 48px;
 }
 .bg-base{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.8;
 }
 .bg-light{
-  background-color: var(--color-primary);
+  background-color: $success;
   opacity:0.6;
 }
 &lt;/style&gt;
@@ -585,15 +606,15 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   .bg-dark{
-    background-color: var(--color-primary);
+    background-color: $success;
   }
   }
 .grid-demo2{  
@@ -610,11 +631,11 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   }
@@ -632,11 +653,11 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   }
@@ -654,7 +675,7 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   }
@@ -666,11 +687,11 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   }
@@ -688,11 +709,11 @@ export default {
     min-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   }
@@ -708,13 +729,14 @@ export default {
   }
   .grid-col{
     min-height: 48px;
+    line-height: 48px;
   }
   .bg-base{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.8;
   }
   .bg-light{
-    background-color: var(--color-primary);
+    background-color: $success;
     opacity:0.6;
   }
   }

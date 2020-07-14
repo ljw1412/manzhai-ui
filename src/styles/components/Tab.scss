@@ -6,7 +6,7 @@
   padding: 0 12px;
   text-align: center;
   z-index: 50;
-  color: $color-text-secondary;
+  color: $gray-700;
   transition: $color-transition;
 
   &--grow {
@@ -15,14 +15,14 @@
   }
 
   &--active {
-    color: $color-primary;
+    color: $primary;
   }
 
   &--disabled {
-    color: $color-text-disabled;
+    color: $gray-600;
   }
 }
 
 .mz-tab-panel {
-  color: $color-text-primary;
+  color: $gray-900;
 }

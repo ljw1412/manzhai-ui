@@ -1,7 +1,7 @@
 import { VNodeDirective } from 'vue'
 
 function elevation(z: string | number) {
-  return `mz-elevation-${z}`
+  return `elevation-${z}`
 }
 
 function modifyElevation(el: HTMLElement, z: string | number) {

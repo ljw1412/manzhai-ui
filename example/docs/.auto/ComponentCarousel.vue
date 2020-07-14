@@ -1,6 +1,6 @@
 <template>
   <div class="component-carousel">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-07-09 16:50</div>
     <h2 id="carousel-lun-bo" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#carousel-lun-bo" title="Carousel 轮播" data-level="2" data-href="#carousel-lun-bo">¶</a>Carousel 轮播</h2>
 <p>在一个容器内循环播放内容。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -11,19 +11,19 @@
     <mz-col :span="12">
       <div style="text-align: center">水平方向</div>
       <mz-carousel height="400px">
-        <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+        <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+        <mz-carousel-item class="bg-success"></mz-carousel-item>
+        <mz-carousel-item class="bg-warning"></mz-carousel-item>
+        <mz-carousel-item class="bg-danger"></mz-carousel-item>
       </mz-carousel>
     </mz-col>
     <mz-col :span="12">
       <div style="text-align: center">垂直方向</div>
       <mz-carousel vertical height="400px">
-        <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-        <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+        <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+        <mz-carousel-item class="bg-success"></mz-carousel-item>
+        <mz-carousel-item class="bg-warning"></mz-carousel-item>
+        <mz-carousel-item class="bg-danger"></mz-carousel-item>
       </mz-carousel>
     </mz-col>
   </mz-row>
@@ -34,19 +34,19 @@
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;div style=&quot;text-align: center&quot;&gt;水平方向&lt;/div&gt;
     &lt;mz-carousel height=&quot;400px&quot;&gt;
-      &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
     &lt;/mz-carousel&gt;
   &lt;/mz-col&gt;
   &lt;mz-col :span=&quot;12&quot;&gt;
     &lt;div style=&quot;text-align: center&quot;&gt;垂直方向&lt;/div&gt;
     &lt;mz-carousel vertical height=&quot;400px&quot;&gt;
-      &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-      &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+      &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
     &lt;/mz-carousel&gt;
   &lt;/mz-col&gt;
 &lt;/mz-row&gt;
@@ -62,10 +62,10 @@
   </mz-filter-section>
   
   <mz-carousel height="400px" :arrow="arrow">
-    <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+    <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+    <mz-carousel-item class="bg-success"></mz-carousel-item>
+    <mz-carousel-item class="bg-warning"></mz-carousel-item>
+    <mz-carousel-item class="bg-danger"></mz-carousel-item>
   </mz-carousel>
 </div></carousel-demo2></template>
         <template #description><p><code>arrow</code>属性控制箭头显示策略。可选值<code>always</code>,<code>hover</code>,<code>never</code>。默认值<code>always</code>。</p>
@@ -78,10 +78,10 @@
 &lt;/mz-filter-section&gt;
 
 &lt;mz-carousel height=&quot;400px&quot; :arrow=&quot;arrow&quot;&gt;
-  &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
 &lt;/mz-carousel&gt;
 
 
@@ -113,10 +113,10 @@ export default {
   </mz-filter-section>
   
   <mz-carousel height="400px" :indicator="type" :indicator-placement="placement">
-    <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+    <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+    <mz-carousel-item class="bg-success"></mz-carousel-item>
+    <mz-carousel-item class="bg-warning"></mz-carousel-item>
+    <mz-carousel-item class="bg-danger"></mz-carousel-item>
   </mz-carousel>
 </div></carousel-demo3></template>
         <template #description><p><code>indicator</code>属性控制指示器的显示和效果。可选值<code>none</code>,<code>line</code>,<code>full-line</code>,<code>circle</code>。默认值<code>none</code>。</p>
@@ -135,10 +135,10 @@ export default {
 &lt;/mz-filter-section&gt;
 
 &lt;mz-carousel height=&quot;400px&quot; :indicator=&quot;type&quot; :indicator-placement=&quot;placement&quot;&gt;
-  &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
 &lt;/mz-carousel&gt;
 
 
@@ -159,10 +159,10 @@ export default {
 <demo-block>
         <template #example><carousel-demo4 inline-template><div class="carousel-demo4">
   <mz-carousel height="400px">
-    <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+    <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+    <mz-carousel-item class="bg-success"></mz-carousel-item>
+    <mz-carousel-item class="bg-warning"></mz-carousel-item>
+    <mz-carousel-item class="bg-danger"></mz-carousel-item>
     <template #indicator>
       <mz-carousel-indicator active-color="green" inactive-color="yellow" />
     </template>
@@ -171,10 +171,10 @@ export default {
         <template #description><p><code>active-color</code>属性为被选中的颜色，<code>inactive-color</code>属性为未被选中的颜色。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-carousel height=&quot;400px&quot;&gt;
-  &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
   &lt;template #indicator&gt;
     &lt;mz-carousel-indicator active-color=&quot;green&quot; inactive-color=&quot;yellow&quot; /&gt;
   &lt;/template&gt;
@@ -202,7 +202,7 @@ export default {
     <mz-carousel-item v-for="(item, index) of list"
       :key="index"
       :data="item"
-      :style="{'background-color':item.color}">
+      :class="`bg-${item.color}`">
       <div style="text-align:center; font-size:40px; color:#fff; line-height:200px;">{{index+1}}</div>
     </mz-carousel-item>
     <template #indicator="{index}">
@@ -222,7 +222,7 @@ export default {
     <mz-carousel-item v-for="(item, index) of list"
       :key="index"
       :data="item"
-      :style="{'background-color':item.color}">
+      :class="`bg-${item.color}`">
       <div style="text-align:center; font-size:40px; color:#fff; line-height:200px;">{{index+1}}</div>
     </mz-carousel-item>
     <template #indicator="{item, pageIndex, length}">
@@ -240,7 +240,7 @@ export default {
   &lt;mz-carousel-item v-for=&quot;(item, index) of list&quot;
     :key=&quot;index&quot;
     :data=&quot;item&quot;
-    :style=&quot;{'background-color':item.color}&quot;&gt;
+    :class=&quot;`bg-${item.color}`&quot;&gt;
     &lt;div style=&quot;text-align:center; font-size:40px; color:#fff; line-height:200px;&quot;&gt;{{index+1}}&lt;/div&gt;
   &lt;/mz-carousel-item&gt;
   &lt;template #indicator=&quot;{index}&quot;&gt;
@@ -260,7 +260,7 @@ export default {
   &lt;mz-carousel-item v-for=&quot;(item, index) of list&quot;
     :key=&quot;index&quot;
     :data=&quot;item&quot;
-    :style=&quot;{'background-color':item.color}&quot;&gt;
+    :class=&quot;`bg-${item.color}`&quot;&gt;
     &lt;div style=&quot;text-align:center; font-size:40px; color:#fff; line-height:200px;&quot;&gt;{{index+1}}&lt;/div&gt;
   &lt;/mz-carousel-item&gt;
   &lt;template #indicator=&quot;{item, pageIndex, length}&quot;&gt;
@@ -276,10 +276,10 @@ export default {
   data() {
     return {
       list: [
-        {color:'#6200ea',title:'标题1'},
-        {color:'var(--color-success)',title:'标题2'},
-        {color:'var(--color-warning)',title:'标题3'},
-        {color:'var(--color-danger)',title:'标题4'}
+        {color:'indigo',title:'标题1'},
+        {color:'success',title:'标题2'},
+        {color:'warning',title:'标题3'},
+        {color:'danger',title:'标题4'}
       ]
     }
   },
@@ -316,19 +316,19 @@ export default {
 <demo-block>
         <template #example><carousel-demo6 inline-template><div class="carousel-demo6">
   <mz-carousel :autoplay="false" :loop="false" height="400px">
-    <mz-carousel-item style="background-color:#6200ea;"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-success)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-warning)"></mz-carousel-item>
-    <mz-carousel-item style="background-color:var(--color-danger)"></mz-carousel-item>
+    <mz-carousel-item class="bg-indigo"></mz-carousel-item>
+    <mz-carousel-item class="bg-success"></mz-carousel-item>
+    <mz-carousel-item class="bg-warning"></mz-carousel-item>
+    <mz-carousel-item class="bg-danger"></mz-carousel-item>
   </mz-carousel>
 </div></carousel-demo6></template>
         <template #description><p><code>autoplay</code>属性控制轮播组件的自动播放，默认值 true。<code>loop</code>属性控制轮播方式是否循环切换，默认值 true。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-carousel :autoplay=&quot;false&quot; :loop=&quot;false&quot; height=&quot;400px&quot;&gt;
-  &lt;mz-carousel-item style=&quot;background-color:#6200ea;&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-success)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-warning)&quot;&gt;&lt;/mz-carousel-item&gt;
-  &lt;mz-carousel-item style=&quot;background-color:var(--color-danger)&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-indigo&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-success&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-warning&quot;&gt;&lt;/mz-carousel-item&gt;
+  &lt;mz-carousel-item class=&quot;bg-danger&quot;&gt;&lt;/mz-carousel-item&gt;
 &lt;/mz-carousel&gt;
 </code></pre></template></demo-block><h3 id="carousel-api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#carousel-api" title="Carousel API" data-level="3" data-href="#carousel-api">¶</a>Carousel API</h3>
 <h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
@@ -609,10 +609,10 @@ export default {
   data() {
     return {
       list: [
-        {color:'#6200ea',title:'标题1'},
-        {color:'var(--color-success)',title:'标题2'},
-        {color:'var(--color-warning)',title:'标题3'},
-        {color:'var(--color-danger)',title:'标题4'}
+        {color:'indigo',title:'标题1'},
+        {color:'success',title:'标题2'},
+        {color:'warning',title:'标题3'},
+        {color:'danger',title:'标题4'}
       ]
     }
   },

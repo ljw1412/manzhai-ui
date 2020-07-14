@@ -8,7 +8,7 @@
       type="checkbox"
       class="mz-switch__input"
       :name="name" />
-    <div class="mz-switch__core color-transition">
+    <div class="mz-switch__core">
       <div class="mz-switch__thumb">
         <mz-icon v-if="icon"
           :name="icon"
@@ -45,7 +45,7 @@ export default class MzSwitch extends Mixins(MzSize, FormElement) {
 
   get wrapperClasses() {
     const classes = [
-      this.disabled ? 'is-not-allowed' : 'is-pointer',
+      this.disabled ? 'is-not-allowed' : 'cursor-pointer',
       this.mzSize,
       {
         'mz-switch--checked': this.value,

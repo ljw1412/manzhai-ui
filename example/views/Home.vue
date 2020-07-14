@@ -44,12 +44,8 @@ export default class Home extends Vue {
 
 <style lang="scss">
 .container {
-  background: linear-gradient(
-    to bottom,
-    var(--color-primary),
-    var(--color-primary-7)
-  );
-  background-color: $color-primary;
+  @include gradient-y($primary, $primary-400);
+  background-color: $primary;
   transition: all 0.3s;
 }
 

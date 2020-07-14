@@ -12,6 +12,8 @@ import MzBar from './Bar.vue'
 export default class MzScrollbar extends Vue {
   @Prop({ type: String, default: '15px' })
   readonly barSize!: string
+  @Prop(String)
+  readonly barColor!: string
   @Prop({ type: Boolean, default: true })
   readonly always!: boolean
   @Prop(Boolean)
@@ -57,7 +59,7 @@ export default class MzScrollbar extends Vue {
           contentStyles.paddingRight = item.barSize
         }
         const data = {
-          props: { ...item, [item.type]: true },
+          props: { ...item, [item.type]: true, color: this.barColor },
           on: { translate: this.translateTo },
           ref: 'bar' + item.type.toUpperCase()
         }

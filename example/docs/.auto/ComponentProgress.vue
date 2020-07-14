@@ -1,15 +1,15 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-05-23 13:52</div>
+    <div class="update-datetime">文档更新时间：2020-07-09 17:43</div>
     <h2 id="progress-jin-du-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
 <demo-block>
         <template #example><progress-demo1 inline-template><div class="progress-demo1">
   <mz-progress v-model="value"></mz-progress>
-  <mz-progress v-model="value" color="var(--color-success)"></mz-progress>
-  <mz-progress v-model="value" color="var(--color-warning)"></mz-progress>
-  <mz-progress v-model="value" color="var(--color-danger)"></mz-progress>
+  <mz-progress v-model="value" color="#43a047"></mz-progress>
+  <mz-progress v-model="value" color="#ffc107"></mz-progress>
+  <mz-progress v-model="value" color="#ed4014"></mz-progress>
   <mz-progress v-model="value" color="#6200ea"></mz-progress>
   <div style="margin-top: 10px;">
     <mz-button @click="valueStepBy(-10)">-</mz-button>
@@ -19,9 +19,9 @@
 </div></progress-demo1></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; color=&quot;#ffc107&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; color=&quot;#ed4014&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress v-model=&quot;value&quot; color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
 &lt;div style=&quot;margin-top: 10px;&quot;&gt;
   &lt;mz-button @click=&quot;valueStepBy(-10)&quot;&gt;-&lt;/mz-button&gt;
@@ -51,17 +51,17 @@ export default {
 <demo-block>
         <template #example><progress-demo2 inline-template><div class="progress-demo2">
   <mz-progress v-model="value" :buffer="buffer"></mz-progress>
-  <mz-progress v-model="value" :buffer="buffer" color="var(--color-success)"></mz-progress>
-  <mz-progress v-model="value" :buffer="buffer" color="var(--color-warning)"></mz-progress>
-  <mz-progress v-model="value" :buffer="buffer" color="var(--color-danger)"></mz-progress>
+  <mz-progress v-model="value" :buffer="buffer" color="#43a047"></mz-progress>
+  <mz-progress v-model="value" :buffer="buffer" color="#ffc107"></mz-progress>
+  <mz-progress v-model="value" :buffer="buffer" color="#ed4014"></mz-progress>
   <mz-progress v-model="value" :buffer="buffer" color="#6200ea"></mz-progress>
 </div></progress-demo2></template>
         <template #description><p><code>buffer</code>属性来控制当前缓存进度。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;#ffc107&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;#ed4014&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
 
 &lt;script&gt;
@@ -79,46 +79,46 @@ export default {
 <demo-block>
         <template #example><progress-demo3 inline-template><div class="progress-demo3">
   <mz-progress indeterminate></mz-progress>
-  <mz-progress indeterminate color="var(--color-success)"></mz-progress>
-  <mz-progress indeterminate color="var(--color-warning)"></mz-progress>
-  <mz-progress indeterminate color="var(--color-danger)"></mz-progress>
+  <mz-progress indeterminate color="#43a047"></mz-progress>
+  <mz-progress indeterminate color="#ffc107"></mz-progress>
+  <mz-progress indeterminate color="#ed4014"></mz-progress>
   <mz-progress indeterminate color="#6200ea"></mz-progress>
 </div></progress-demo3></template>
         <template #description><p><code>indeterminate</code>属性来控制进度条的不确定状态，默认为 false。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress indeterminate&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate color=&quot;#ffc107&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate color=&quot;#ed4014&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
 </code></pre></template></demo-block><h3 id="bu-que-ding-jin-du-jiao-ti" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#bu-que-ding-jin-du-jiao-ti" title="不确定进度(交替)" data-level="3" data-href="#bu-que-ding-jin-du-jiao-ti">¶</a>不确定进度(交替)</h3>
 <p>可以用来表示来回的等待状态。</p>
 <demo-block>
         <template #example><progress-demo4 inline-template><div class="progress-demo4">
   <mz-progress indeterminate alternate></mz-progress>
-  <mz-progress indeterminate alternate color="var(--color-success)"></mz-progress>
-  <mz-progress indeterminate alternate color="var(--color-warning)"></mz-progress>
-  <mz-progress indeterminate alternate color="var(--color-danger)"></mz-progress>
+  <mz-progress indeterminate alternate color="#43a047"></mz-progress>
+  <mz-progress indeterminate alternate color="#ffc107"></mz-progress>
+  <mz-progress indeterminate alternate color="#ed4014"></mz-progress>
   <mz-progress indeterminate alternate color="#6200ea"></mz-progress>
 </div></progress-demo4></template>
         <template #description><p><code>alternate</code>属性来控制进度条的不确定状态的动画为交替，默认为 false，且只在<code>indeterminate</code>为true时有效。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress indeterminate alternate&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate alternate color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate alternate color=&quot;var(--color-warning)&quot;&gt;&lt;/mz-progress&gt;
-&lt;mz-progress indeterminate alternate color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate alternate color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate alternate color=&quot;#ffc107&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress indeterminate alternate color=&quot;#ed4014&quot;&gt;&lt;/mz-progress&gt;
 &lt;mz-progress indeterminate alternate color=&quot;#6200ea&quot;&gt;&lt;/mz-progress&gt;
 </code></pre></template></demo-block><h3 id="yuan-jiao" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#yuan-jiao" title="圆角" data-level="3" data-href="#yuan-jiao">¶</a>圆角</h3>
 <p>带圆角样式的进度条。</p>
 <demo-block>
         <template #example><progress-demo5 inline-template><div class="progress-demo5">
   <mz-progress v-model="value" :buffer="buffer" round></mz-progress>
-  <mz-progress v-model="value" indeterminate round color="var(--color-success)"></mz-progress>
+  <mz-progress v-model="value" indeterminate round color="#43a047"></mz-progress>
 </div></progress-demo5></template>
         <template #description><p><code>round</code>属性来控制进度条的圆角状态，默认为 false。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; round&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; indeterminate round color=&quot;var(--color-success)&quot;&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; indeterminate round color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
 
 &lt;script&gt;
 export default {
@@ -137,16 +137,16 @@ export default {
   <mz-progress v-model="value"
     :buffer="buffer"
     color="#6200ea"
-    buffer-color="var(--color-warning)"
-    background-color="var(--color-danger)"></mz-progress>
+    buffer-color="#ffc107"
+    background-color="#ed4014"></mz-progress>
 </div></progress-demo6></template>
         <template #description><p><code>color</code>控制主进度的颜色，默认值主题色。<code>buffer-color</code>控制缓存进度的颜色，<code>background-color</code>控制背景的颜色。当<code>buffer-color</code>、<code>background-color</code>值不存在时，会采用主进度的颜色带上0.3透明度。</p>
 </template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot;
   :buffer=&quot;buffer&quot;
   color=&quot;#6200ea&quot;
-  buffer-color=&quot;var(--color-warning)&quot;
-  background-color=&quot;var(--color-danger)&quot;&gt;&lt;/mz-progress&gt;
+  buffer-color=&quot;#ffc107&quot;
+  background-color=&quot;#ed4014&quot;&gt;&lt;/mz-progress&gt;
 
 &lt;script&gt;
 export default {
@@ -166,9 +166,9 @@ export default {
   <mz-progress v-model="value" 
     :buffer="buffer" :stroke-width="12" striped-animation></mz-progress>
   <mz-progress v-model="value" 
-    color="var(--color-success)" :stroke-width="12" striped></mz-progress>
+    color="#43a047" :stroke-width="12" striped></mz-progress>
   <mz-progress v-model="value" 
-    color="var(--color-success)" :stroke-width="12" striped-animation></mz-progress>
+    color="#43a047" :stroke-width="12" striped-animation></mz-progress>
 </div></progress-demo7></template>
         <template #description><p><code>striped</code>属性来控制进度条是否用斑马纹效果，<code>striped-animation</code>属性来控制进度条是否有动画效果的斑马纹。</p>
 </template>
@@ -177,9 +177,9 @@ export default {
 &lt;mz-progress v-model=&quot;value&quot; 
   :buffer=&quot;buffer&quot; :stroke-width=&quot;12&quot; striped-animation&gt;&lt;/mz-progress&gt;
 &lt;mz-progress v-model=&quot;value&quot; 
-  color=&quot;var(--color-success)&quot; :stroke-width=&quot;12&quot; striped&gt;&lt;/mz-progress&gt;
+  color=&quot;#43a047&quot; :stroke-width=&quot;12&quot; striped&gt;&lt;/mz-progress&gt;
 &lt;mz-progress v-model=&quot;value&quot; 
-  color=&quot;var(--color-success)&quot; :stroke-width=&quot;12&quot; striped-animation&gt;&lt;/mz-progress&gt;
+  color=&quot;#43a047&quot; :stroke-width=&quot;12&quot; striped-animation&gt;&lt;/mz-progress&gt;
 
 &lt;script&gt;
 export default {

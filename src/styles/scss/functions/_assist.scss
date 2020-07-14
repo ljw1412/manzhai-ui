@@ -1,0 +1,39 @@
+// 根据传进来的名称转换为后缀`-name`形式显示。
+// 如果 $name 为 null，则为空。
+@function to-suffix($name) {
+  @return if($name == null, '', '-#{$name}');
+}
+
+// 创建一个从$min开始到$max结束的整数列表
+@function range($min, $max) {
+  $list: ();
+  @for $i from $min through $max {
+    $list: append($list, $i);
+  }
+  @return $list;
+}
+
+// 创建一个可能有单位的map
+@function rangeMap($min, $max) {
+  $unit: unit($min);
+  $unit: if($unit== '', null, $unit);
+  $un-min: strip-unit($min);
+  $un-max: strip-unit($max);
+  $range: range($un-min, $un-max);
+
+  $map: ();
+  @each $i in $range {
+    $key: if($i < 0, n + abs($i), $i);
+    $map: map-merge($map, (#{$key}: if($unit, add-unit($i, $unit), $i)));
+  }
+  @return $map;
+}
+
+// 转换key与value一致的map
+@function list2Map($list) {
+  $map: ();
+  @each $key in $list {
+    $map: map-merge($map, (#{$key}: $key));
+  }
+  @return $map;
+}

@@ -20,7 +20,11 @@ export default class MzHeading extends Vue {
     return h(
       this.tag,
       {
-        class: ['mz-heading', `mz-level-${this.level}`],
+        class: [
+          'mz-heading',
+          `mz-heading-${this.level}`,
+          'position-relative text-gray-900'
+        ],
         attrs: { 'data-level': this.level }
       },
       [this.renderAnchor(), this.$slots.default || this.title] as VNodeChildren

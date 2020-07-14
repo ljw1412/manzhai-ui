@@ -23,8 +23,8 @@ export default class MzCarouselIndicator extends Vue {
     return this.mzCarousel.itemList.map((item, index) => {
       const data = {
         class: [
-          'mz-carousel-indicator',
-          { 'mz-carousel-indicator--active': item.active }
+          'mz-carousel-indicator bg-white d-inline-block cursor-pointer',
+          { 'is-active': item.active }
         ],
         style: {
           backgroundColor: item.active ? this.activeColor : this.inactiveColor
@@ -43,8 +43,9 @@ export default class MzCarouselIndicator extends Vue {
     const data = {
       class: [
         'mz-carousel-indicators',
-        `mz-carousel-indicators--${this.type}`,
-        `mz-carousel-indicators--${this.placement}`
+        `is-${this.type}`,
+        `is-${this.placement}`,
+        'position-absolute d-flex'
       ]
     }
     return <div {...data}>{this.indicatorVNodeList}</div>

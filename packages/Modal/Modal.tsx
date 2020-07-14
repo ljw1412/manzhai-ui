@@ -111,7 +111,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
     if (!this.showClose || this.headless) return
 
     const data = {
-      class: ['mz-modal__close', 'is-pointer', 'mz-click-effect'],
+      class: ['mz-modal__close'],
       props: { name: 'close', size: 24 },
       on: {
         click: this.close
