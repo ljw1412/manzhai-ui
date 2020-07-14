@@ -4,5 +4,15 @@
  */
 export declare function changeTheme(name: string): void;
 export declare function getCurrentTheme(): string;
-export declare function getMzColor(color?: string): string | undefined;
-export declare function colorInTypes(color?: string): boolean;
+/**
+ * 是否为预设颜色
+ * @param color 颜色
+ * @param type 类型
+ */
+export declare function isPresetColor(color?: string, type?: 'text' | 'bg' | 'border'): boolean;
+/**
+ * 获得预设颜色样式类
+ * @param color 颜色
+ * @param type 类型
+ */
+export declare function getPresetColorClass(color?: string, type?: 'text' | 'bg' | 'border'): string | null;
