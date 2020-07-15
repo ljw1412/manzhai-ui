@@ -71,7 +71,8 @@ export default class MzPagination extends MzSize {
       circle: this.circle,
       flat: !this.outlined,
       outlined: this.outlined,
-      disabled: this.disabled
+      disabled: this.disabled,
+      ripple: false
     }
   }
 

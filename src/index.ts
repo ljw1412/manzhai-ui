@@ -42,7 +42,7 @@ import {
 import Loading from '../packages/Loading/index'
 import Mask from '../packages/Mask/index'
 import { Masonry, MasonryItem } from '../packages/Masonry/index'
-import Menu from '../packages/Menu/index'
+import { Menu, SubMenu, MenuItem, MenuGroup } from '../packages/Menu/index'
 import Modal from '../packages/Modal/index'
 import Navigation from '../packages/Navigation/index'
 import Pagination from '../packages/Pagination/index'
@@ -111,6 +111,9 @@ const components: VueConstructor[] = [
   Masonry,
   MasonryItem,
   Menu,
+  SubMenu,
+  MenuItem,
+  MenuGroup,
   Modal,
   Navigation,
   Option,
@@ -239,6 +242,9 @@ export default {
   Mask,
   Masonry,
   Menu,
+  SubMenu,
+  MenuItem,
+  MenuGroup,
   Modal,
   MasonryItem,
   Navigation,
