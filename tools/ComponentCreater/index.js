@@ -1,12 +1,19 @@
 const ComponentCreater = require('./ComponentCreater')
 const inquirer = require('inquirer')
 ;(async () => {
-  const { name, nameCN, type } = await inquirer.prompt([
+  const { name, lang, nameCN, type } = await inquirer.prompt([
     {
       type: 'list',
       name: 'type',
       message: '*请输入类型:',
       choices: ['component', 'directive']
+    },
+    {
+      type: 'list',
+      name: 'lang',
+      message: '*文件类型',
+      choices: ['vue', 'tsx'],
+      when: answers => answers.type === 'component'
     },
     {
       name: 'name',
@@ -19,5 +26,5 @@ const inquirer = require('inquirer')
       validate: str => !!str
     }
   ])
-  new ComponentCreater(name, nameCN, type)
+  new ComponentCreater(name, lang, nameCN, type)
 })()

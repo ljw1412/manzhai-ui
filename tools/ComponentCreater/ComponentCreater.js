@@ -19,9 +19,10 @@ const commandSuccessMsg = {
 }
 
 module.exports = class ComponentCreater {
-  constructor(name, nameCN, type) {
+  constructor(name, lang, nameCN, type) {
     this.results = []
     this.name = name
+    this.lang = lang
     this.nameCN = nameCN
     this.type = type
     this.run()
@@ -53,16 +54,20 @@ module.exports = class ComponentCreater {
   async createPackage() {
     const replaceList = [
       { key: /##hyphenatename##/g, value: 'mz-' + utils.hyphenate(this.name) },
-      { key: /##name##/g, value: 'Mz' + this.name }
+      { key: /##name##/g, value: 'Mz' + this.name },
+      {
+        key: /##filename##/g,
+        value: this.lang === 'tsx' ? this.name : `${this.name}.${this.lang}`
+      }
     ]
-    const vueStr = await utils.replaceTemplate('vue', replaceList)
+    const replaceTemplate = async name => {
+      return await utils.replaceTemplate(name, replaceList)
+    }
+    const vueStr = await replaceTemplate(this.lang)
     replaceList[1].value = this.name
-    const packageEntryStr = await utils.replaceTemplate(
-      'packageEntry',
-      replaceList
-    )
+    const packageEntryStr = await replaceTemplate('packageEntry')
     await utils.saveFiles(`../../packages/${this.name}`, [
-      { name: `${this.name}.vue`, content: vueStr },
+      { name: `${this.name}.${this.lang}`, content: vueStr },
       { name: 'index.ts', content: packageEntryStr }
     ])
   }

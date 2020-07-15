@@ -1,4 +1,4 @@
-import Mz##name## from './##name##.vue'
+import Mz##name## from './##filename##'
 import { VueConstructor } from 'vue'
 
 Mz##name##.componentName = 'Mz##name##'
