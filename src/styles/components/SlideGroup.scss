@@ -1,7 +1,7 @@
 .mz-slide-group {
   position: relative;
 
-  &--scrollable {
+  &.is-scrollable {
     padding: 0 30px;
   }
 
@@ -13,6 +13,9 @@
 
   &__content {
     transition: transform $primary-transition 0.15s;
+    &.is-wheel {
+      transition: none;
+    }
   }
 
   &__control {

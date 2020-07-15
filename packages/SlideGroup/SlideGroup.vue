@@ -22,6 +22,7 @@ export default class MzSlideGroup extends Vue {
   content = { width: 0, height: 0 }
   // centerPoint = { x: 0, y: 0 }
   translate = 0
+  isWheel = false
 
   get isOverflow() {
     return this.content.width > this.scrollWrapper.width
@@ -36,15 +37,22 @@ export default class MzSlideGroup extends Vue {
 
     const controls = this.renderControls()
 
-    const classes = [
-      'mz-slide-group',
-      { 'mz-slide-group--scrollable': this.isOverflow }
-    ]
+    const classes = ['mz-slide-group', { 'is-scrollable': this.isOverflow }]
 
     const scrollData = {
       ref: 'scroll',
       class: 'mz-slide-group__scroll',
-      key: 'slideGroupWrapper'
+      key: 'slideGroupWrapper',
+      on: {
+        mousewheel: (e: MouseWheelEvent) => {
+          if (this.isOverflow) {
+            e.preventDefault()
+            this.isWheel = true
+            this.scrollBy(-(e.deltaX || e.deltaY))
+            this.$nextTick(() => (this.isWheel = false))
+          }
+        }
+      }
     }
 
     return (
@@ -58,7 +66,7 @@ export default class MzSlideGroup extends Vue {
   renderContent(translate: number) {
     const contentData = {
       ref: 'content',
-      class: ['mz-slide-group__content'],
+      class: ['mz-slide-group__content', { 'is-wheel': this.isWheel }],
       style: {
         display: this.isOverflow ? 'inline-block' : '',
         transform: `translateX(${translate}px)`
@@ -89,7 +97,7 @@ export default class MzSlideGroup extends Vue {
         <div {...data}>
           <mz-icon
             name={iconMap[item as 'left' | 'right']}
-            size="20px"></mz-icon>
+            size="18px"></mz-icon>
         </div>
       )
     })
@@ -102,30 +110,37 @@ export default class MzSlideGroup extends Vue {
     this.content.width = this.contentRef.scrollWidth
     this.content.height = this.contentRef.scrollHeight
     this.$emit('resize')
+    this.scrollBy(0)
   }
 
-  contentTranslate(delta: number) {
+  scrollBy(delta: number) {
     this.translate = -Math.min(
-      Math.max(-delta, 0),
+      Math.max(-delta - this.translate, 0),
+      this.content.width - this.scrollWrapper.width
+    )
+  }
+
+  scrollTo(x: number) {
+    this.translate = -Math.min(
+      Math.max(-x, 0),
       this.content.width - this.scrollWrapper.width
     )
   }
 
   controlClick(direction: 'left' | 'right') {
     const directionRatio = { left: 1, right: -1 }
-    this.contentTranslate(
-      this.translate +
-        (this.scrollWrapper.width / 2) * directionRatio[direction]
-    )
+    this.scrollBy((this.scrollWrapper.width / 2) * directionRatio[direction])
   }
 
   contentClick(e: MouseEvent) {
     if (!this.isOverflow) return
     const target = e.target as HTMLElement
     if (target) {
+      console.dir(target)
+      console.log(target.offsetLeft, target.clientLeft)
       let translate =
         this.centerPoint.x - target.offsetLeft - target.clientWidth / 2
-      this.contentTranslate(translate)
+      this.scrollTo(translate)
     }
   }
 
