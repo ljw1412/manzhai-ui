@@ -1,5 +1,5 @@
-import { Component, Inject, Prop, Mixins } from 'vue-property-decorator'
-import { CreateElement } from 'vue'
+import { Component, Inject, Prop, Mixins, Watch } from 'vue-property-decorator'
+import { CreateElement, VNodeData } from 'vue'
 import MzSize from 'manzhai-ui/src/mixins/MzSize'
 import MzTsxVue from 'manzhai-ui/src/mixins/MzTsxVue'
 import MzList from './List'
@@ -12,6 +12,8 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
   readonly value!: any
   @Prop()
   readonly item!: any
+  @Prop({ type: String, default: 'li' })
+  readonly tag!: string
   @Prop(String)
   readonly title!: string
   @Prop(String)
@@ -25,12 +27,19 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
 
+  @Prop(Boolean)
+  readonly preventDefault!: boolean
+
+  get active() {
+    return (
+      this.value != undefined &&
+      this.mzList.value != undefined &&
+      this.value === this.mzList.value
+    )
+  }
+
   get state() {
     return {
-      active:
-        this.value != undefined &&
-        this.mzList.value != undefined &&
-        this.value === this.mzList.value,
       disabled: this.disabled || this.mzList.disabled,
       clickable: this.clickable || this.mzList.isClickable || false,
       ripple: this.ripple || this.mzList.ripple
@@ -46,14 +55,14 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
 
   render(h: CreateElement) {
     const { $slots } = this
-    const data = {
+    const data: VNodeData = {
       class: [
         'mz-list-item',
         this.size ? this.mzSize : this.mzList.mzSize,
         this.roundClass,
         {
           'is-clickable': this.state.clickable,
-          'is-active': this.state.active,
+          'is-active': this.active,
           'is-disabled': this.state.disabled
         }
       ],
@@ -63,8 +72,11 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
           name: 'ripple',
           value: !this.state.disabled && (this.ripple || this.state.clickable)
         }
-      ],
-      on: {
+      ]
+    }
+
+    if (!this.preventDefault) {
+      data.on = {
         click: (e: MouseEvent) => {
           if (this.mzList.handleItemClick) {
             this.mzList.handleItemClick(
@@ -82,17 +94,18 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
       }
     }
 
+    const Tag = this.tag
     if ($slots.default) {
       data.class.push('is-custom')
-      return <div {...data}>{$slots.default}</div>
+      return <Tag {...data}>{$slots.default}</Tag>
     }
 
     return (
-      <div {...data}>
+      <Tag {...data}>
         {this.createSlotInWrapper('prefix', { class: 'mz-list-item__prefix' })}
         {this.renderContent()}
         {this.createSlotInWrapper('suffix', { class: 'mz-list-item__suffix' })}
-      </div>
+      </Tag>
     )
   }
 
@@ -108,6 +121,20 @@ export default class MzListItem extends Mixins(MzSize, MzTsxVue) {
         {this.createElementWrapper(text, { class: 'mz-list-item__text' })}
       </div>
     )
+  }
+
+  openGroup(parent: any) {
+    if (this.mzList && parent && parent !== this.mzList) {
+      if (parent.isOpen === false) parent.isOpen = true
+      this.openGroup(parent.$parent)
+    }
+  }
+
+  @Watch('active', { immediate: true })
+  handleActiveChange(active: boolean) {
+    if (this.active) {
+      this.openGroup(this.$parent)
+    }
   }
 
   created() {

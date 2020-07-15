@@ -1,15 +1,13 @@
-import { Component, Vue, Prop, Inject, Ref } from 'vue-property-decorator'
-import { CreateElement } from 'vue'
+import { Component, Prop, Inject, Ref } from 'vue-property-decorator'
+import { CreateElement, VNodeData } from 'vue'
 import MzListItem from './ListItem'
 import MzIcon from '../Icon/index'
+import MzTsxVue from 'manzhai-ui/src/mixins/MzTsxVue'
 
 @Component({
-  components: {
-    MzListItem,
-    MzIcon
-  }
+  components: { MzListItem, MzIcon }
 })
-export default class MzListItemGroup extends Vue {
+export default class MzListItemGroup extends MzTsxVue {
   @Inject({ from: 'mzList', default: null })
   readonly mzList!: any
   @Prop()
@@ -22,8 +20,6 @@ export default class MzListItemGroup extends Vue {
   readonly round!: boolean | 'left' | 'right' | 'mini'
   @Prop([Boolean, Object])
   readonly ripple!: boolean | object
-  @Prop({ type: Boolean, default: true })
-  readonly notAllowSelected!: boolean
   @Prop(Boolean)
   readonly hasActiveStyle!: boolean
   @Ref('children')
@@ -36,13 +32,15 @@ export default class MzListItemGroup extends Vue {
   }
 
   render(h: CreateElement) {
-    const listItemProps = {
+    const itemData: VNodeData = {
       props: {
+        tag: 'div',
         clickable: true,
+        preventDefault: true,
         active: this.hasActiveStyle && this.isOpen,
         ...this.$props
       },
-      on: {
+      nativeOn: {
         click: () => {
           this.isOpen = !this.isOpen
         }
@@ -50,8 +48,8 @@ export default class MzListItemGroup extends Vue {
     }
 
     return (
-      <div class="mz-list-item-group">
-        <mz-list-item {...listItemProps}>
+      <li class="mz-list-item-group">
+        <mz-list-item {...itemData}>
           {this.$slots.prefix && (
             <template slot="prefix">{this.$slots.prefix}</template>
           )}
@@ -62,14 +60,11 @@ export default class MzListItemGroup extends Vue {
             style={{ transform: `rotateZ(${this.arrowRotate})` }}></mz-icon>
         </mz-list-item>
         {this.$slots.default && (
-          <div
-            v-show={this.isOpen}
-            ref="children"
-            class="mz-list-item-group__children">
+          <ul v-show={this.isOpen} ref="children">
             {this.$slots.default}
-          </div>
+          </ul>
         )}
-      </div>
+      </li>
     )
   }
 }

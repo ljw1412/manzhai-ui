@@ -9,10 +9,10 @@ export default class MzListGroup extends Vue {
 
   render(h: CreateElement) {
     return (
-      <div class="mz-list-group">
+      <li class="mz-list-group">
         {this.label && <mz-sub-header>{this.label}</mz-sub-header>}
-        {this.$slots.default}
-      </div>
+        <ul>{this.$slots.default}</ul>
+      </li>
     )
   }
 }

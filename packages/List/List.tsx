@@ -50,19 +50,11 @@ export default class MzList extends Mixins(MzSize, BaseAttribute) {
     }
 
     return (
-      <div {...data}>
-        {this.renderContent()}
+      <ul {...data}>
+        {this.$slots.default}
         {this.renderEmpty()}
-      </div>
+      </ul>
     )
-  }
-
-  renderContent() {
-    const data = {
-      class: ['mz-list__content'],
-      style: { marginBottom: `-${this.gutter}` }
-    }
-    return <div {...data}>{this.$slots.default}</div>
   }
 
   renderEmpty() {

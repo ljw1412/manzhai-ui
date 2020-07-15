@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-06-11 17:17</div>
+    <div class="update-datetime">文档更新时间：2020-07-15 11:51</div>
     <h2 id="list-lie-biao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
 <p>以列的布局展示数据。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -278,11 +278,12 @@ export default {
 <demo-block>
         <template #example><list-demo8 inline-template><div class="list-demo8">
   <mz-card width="300px">
-    <mz-list divider clickable>
+    <mz-list v-model="value" divider clickable>
       <mz-list-item-group title="列表组">
         <mz-list-item v-for="item of list"
           :key="item.value"
           :title="item.title"
+          :value="item.value"
           :item="item"></mz-list-item>
       </mz-list-item-group>
       <mz-list-item-group title="列表组2">
@@ -290,6 +291,7 @@ export default {
           <mz-list-item v-for="item of list"
             :key="item.value"
             :title="item.title"
+            :value="item.value + 3"
             :item="item"></mz-list-item>
         </mz-list-group>
       </mz-list-item-group>
@@ -297,28 +299,33 @@ export default {
         <mz-list-item v-for="item of list"
           :key="item.value"
           :title="item.title"
+          :value="item.value + 6"
           :item="item"></mz-list-item>
         <mz-list-item-group title="多层嵌套+">
           <mz-list-item v-for="item of list"
             :key="item.value"
             :title="item.title"
+            :value="item.value + 9"
             :item="item"></mz-list-item>
         </mz-list-item-group>
       </mz-list-item-group>
       <mz-list-item v-for="item of list"
         :key="item.value"
         :title="item.title"
+        :value="item.value + 12"
         :item="item"></mz-list-item>
     </mz-list>
   </mz-card>
+  <div>{{value}}</div>
 </div></list-demo8></template>
         <template #description></template>
         <template #highlight><pre v-pre><code class="html">&lt;mz-card width=&quot;300px&quot;&gt;
-  &lt;mz-list divider clickable&gt;
+  &lt;mz-list v-model=&quot;value&quot; divider clickable&gt;
     &lt;mz-list-item-group title=&quot;列表组&quot;&gt;
       &lt;mz-list-item v-for=&quot;item of list&quot;
         :key=&quot;item.value&quot;
         :title=&quot;item.title&quot;
+        :value=&quot;item.value&quot;
         :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
     &lt;/mz-list-item-group&gt;
     &lt;mz-list-item-group title=&quot;列表组2&quot;&gt;
@@ -326,6 +333,7 @@ export default {
         &lt;mz-list-item v-for=&quot;item of list&quot;
           :key=&quot;item.value&quot;
           :title=&quot;item.title&quot;
+          :value=&quot;item.value + 3&quot;
           :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
       &lt;/mz-list-group&gt;
     &lt;/mz-list-item-group&gt;
@@ -333,29 +341,35 @@ export default {
       &lt;mz-list-item v-for=&quot;item of list&quot;
         :key=&quot;item.value&quot;
         :title=&quot;item.title&quot;
+        :value=&quot;item.value + 6&quot;
         :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
       &lt;mz-list-item-group title=&quot;多层嵌套+&quot;&gt;
         &lt;mz-list-item v-for=&quot;item of list&quot;
           :key=&quot;item.value&quot;
           :title=&quot;item.title&quot;
+          :value=&quot;item.value + 9&quot;
           :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
       &lt;/mz-list-item-group&gt;
     &lt;/mz-list-item-group&gt;
     &lt;mz-list-item v-for=&quot;item of list&quot;
       :key=&quot;item.value&quot;
       :title=&quot;item.title&quot;
+      :value=&quot;item.value + 12&quot;
       :item=&quot;item&quot;&gt;&lt;/mz-list-item&gt;
   &lt;/mz-list&gt;
 &lt;/mz-card&gt;
+&lt;div&gt;{{value}}&lt;/div&gt;
+
 
 &lt;script&gt;
 export default {
   data() {
     return {
+      value: 10,
       list: [
-        { title: '测试 1', value: '1' },
-        { title: '测试 2', value: '2' },
-        { title: '测试 3', value: '3' }
+        { title: '测试 1', value: 1 },
+        { title: '测试 2', value: 2 },
+        { title: '测试 3', value: 3 }
       ]
     }
   }
@@ -680,10 +694,11 @@ export default {
 }, ListDemo8: {
   data() {
     return {
+      value: 10,
       list: [
-        { title: '测试 1', value: '1' },
-        { title: '测试 2', value: '2' },
-        { title: '测试 3', value: '3' }
+        { title: '测试 1', value: 1 },
+        { title: '测试 2', value: 2 },
+        { title: '测试 3', value: 3 }
       ]
     }
   }

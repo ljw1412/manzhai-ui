@@ -79,5 +79,8 @@ export default class Sidebar extends Vue {
   box-sizing: border-box;
   width: 216px;
   overflow-y: scroll;
+  .mz-list-group + .mz-list-group {
+    margin-top: 60px;
+  }
 }
 </style>

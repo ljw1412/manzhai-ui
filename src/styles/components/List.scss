@@ -1,4 +1,6 @@
 .mz-list {
+  list-style: none;
+
   &.is-divider {
     .mz-list-item:not(:last-child)::after {
       content: '';

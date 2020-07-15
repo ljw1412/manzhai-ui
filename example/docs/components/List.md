@@ -202,11 +202,12 @@ export default {
 :::demo
 ```html
 <mz-card width="300px">
-  <mz-list divider clickable>
+  <mz-list v-model="value" divider clickable>
     <mz-list-item-group title="列表组">
       <mz-list-item v-for="item of list"
         :key="item.value"
         :title="item.title"
+        :value="item.value"
         :item="item"></mz-list-item>
     </mz-list-item-group>
     <mz-list-item-group title="列表组2">
@@ -214,6 +215,7 @@ export default {
         <mz-list-item v-for="item of list"
           :key="item.value"
           :title="item.title"
+          :value="item.value + 3"
           :item="item"></mz-list-item>
       </mz-list-group>
     </mz-list-item-group>
@@ -221,29 +223,35 @@ export default {
       <mz-list-item v-for="item of list"
         :key="item.value"
         :title="item.title"
+        :value="item.value + 6"
         :item="item"></mz-list-item>
       <mz-list-item-group title="多层嵌套+">
         <mz-list-item v-for="item of list"
           :key="item.value"
           :title="item.title"
+          :value="item.value + 9"
           :item="item"></mz-list-item>
       </mz-list-item-group>
     </mz-list-item-group>
     <mz-list-item v-for="item of list"
       :key="item.value"
       :title="item.title"
+      :value="item.value + 12"
       :item="item"></mz-list-item>
   </mz-list>
 </mz-card>
+<div>{{value}}</div>
+
 
 <script>
 export default {
   data() {
     return {
+      value: 10,
       list: [
-        { title: '测试 1', value: '1' },
-        { title: '测试 2', value: '2' },
-        { title: '测试 3', value: '3' }
+        { title: '测试 1', value: 1 },
+        { title: '测试 2', value: 2 },
+        { title: '测试 3', value: 3 }
       ]
     }
   }
