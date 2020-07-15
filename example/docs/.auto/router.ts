@@ -130,6 +130,11 @@ export default [
     component: () => import(/* webpackChunkName: "documents" */ './ComponentMaterialInput.vue')
   },
   {
+    path: 'component-menu',
+    name: 'ComponentMenu',
+    component: () => import(/* webpackChunkName: "documents" */ './ComponentMenu.vue')
+  },
+  {
     path: 'component-modal',
     name: 'ComponentModal',
     component: () => import(/* webpackChunkName: "documents" */ './ComponentModal.vue')

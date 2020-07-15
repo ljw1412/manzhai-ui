@@ -241,6 +241,13 @@
         }
       },
       {
+        "title": "Menu",
+        "text": "导航菜单",
+        "to": {
+          "name": "ComponentMenu"
+        }
+      },
+      {
         "title": "Modal",
         "text": "对话框",
         "to": {
