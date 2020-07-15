@@ -19,14 +19,11 @@
   }
 
   &__control {
-    cursor: pointer;
+    @include clickable();
     position: absolute;
     top: 0;
     width: 30px;
     height: 100%;
     color: $gray-900;
-    &:active {
-      color: $gray-800;
-    }
   }
 }

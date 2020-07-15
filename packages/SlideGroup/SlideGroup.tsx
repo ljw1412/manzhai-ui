@@ -1,4 +1,3 @@
-<script lang="tsx">
 import { Component, Vue, Ref, Watch } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import {
@@ -136,8 +135,7 @@ export default class MzSlideGroup extends Vue {
     if (!this.isOverflow) return
     const target = e.target as HTMLElement
     if (target) {
-      console.dir(target)
-      console.log(target.offsetLeft, target.clientLeft)
+      // TODO: target获取不准确需要从冒泡中获取
       let translate =
         this.centerPoint.x - target.offsetLeft - target.clientWidth / 2
       this.scrollTo(translate)
@@ -159,4 +157,3 @@ export default class MzSlideGroup extends Vue {
     if (!val) this.translate = 0
   }
 }
-</script>

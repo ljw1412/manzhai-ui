@@ -1,6 +1,6 @@
 <template>
   <div class="component-progress">
-    <div class="update-datetime">文档更新时间：2020-07-09 17:43</div>
+    <div class="update-datetime">文档更新时间：2020-07-15 17:14</div>
     <h2 id="progress-jin-du-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#progress-jin-du-tiao" title="Progress 进度条" data-level="2" data-href="#progress-jin-du-tiao">¶</a>Progress 进度条</h2>
 <p>用于展示操作进度。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -112,13 +112,13 @@ export default {
 <p>带圆角样式的进度条。</p>
 <demo-block>
         <template #example><progress-demo5 inline-template><div class="progress-demo5">
-  <mz-progress v-model="value" :buffer="buffer" round></mz-progress>
-  <mz-progress v-model="value" indeterminate round color="#43a047"></mz-progress>
+  <mz-progress v-model="value" :buffer="buffer" rounded></mz-progress>
+  <mz-progress v-model="value" indeterminate rounded color="#43a047"></mz-progress>
 </div></progress-demo5></template>
-        <template #description><p><code>round</code>属性来控制进度条的圆角状态，默认为 false。</p>
+        <template #description><p><code>rounded</code>属性来控制进度条的圆角状态，默认为 false。</p>
 </template>
-        <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; round&gt;&lt;/mz-progress&gt;
-&lt;mz-progress v-model=&quot;value&quot; indeterminate round color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
+        <template #highlight><pre v-pre><code class="html">&lt;mz-progress v-model=&quot;value&quot; :buffer=&quot;buffer&quot; rounded&gt;&lt;/mz-progress&gt;
+&lt;mz-progress v-model=&quot;value&quot; indeterminate rounded color=&quot;#43a047&quot;&gt;&lt;/mz-progress&gt;
 
 &lt;script&gt;
 export default {

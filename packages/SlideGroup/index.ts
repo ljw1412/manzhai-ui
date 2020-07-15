@@ -1,4 +1,4 @@
-import MzSlideGroup from './SlideGroup.vue'
+import MzSlideGroup from './SlideGroup'
 import { VueConstructor } from 'vue'
 
 MzSlideGroup.componentName = 'MzSlideGroup'

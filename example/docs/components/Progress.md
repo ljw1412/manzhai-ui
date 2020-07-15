@@ -95,10 +95,10 @@ export default {
 
 带圆角样式的进度条。
 
-:::demo `round`属性来控制进度条的圆角状态，默认为 false。
+:::demo `rounded`属性来控制进度条的圆角状态，默认为 false。
 ```html
-<mz-progress v-model="value" :buffer="buffer" round></mz-progress>
-<mz-progress v-model="value" indeterminate round color="#43a047"></mz-progress>
+<mz-progress v-model="value" :buffer="buffer" rounded></mz-progress>
+<mz-progress v-model="value" indeterminate rounded color="#43a047"></mz-progress>
 
 <script>
 export default {
