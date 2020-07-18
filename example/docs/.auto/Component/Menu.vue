@@ -1,6 +1,6 @@
 <template>
   <div class="component-menu">
-    <div class="update-datetime">文档更新时间：2020-07-18 14:06</div>
+    <div class="update-datetime">文档更新时间：2020-07-18 14:21</div>
     <h2
       id="menu-dao-hang-cai-dan"
       class="mz-heading mz-document-heading"
@@ -75,6 +75,7 @@
             <mz-menu placement="top">
               <mz-menu-item
                 v-for="i of 10"
+                :key="i"
                 title="测试"
                 prefix="rocket"
               ></mz-menu-item>
@@ -95,7 +96,7 @@
         >><pre
           v-pre
         ><code class="html">&lt;mz-menu placement=&quot;top&quot;&gt;
-  &lt;mz-menu-item v-for=&quot;i of 10&quot; title=&quot;测试&quot; prefix=&quot;rocket&quot;&gt;&lt;/mz-menu-item&gt;
+  &lt;mz-menu-item v-for=&quot;i of 10&quot; :key=&quot;i&quot; title=&quot;测试&quot; prefix=&quot;rocket&quot;&gt;&lt;/mz-menu-item&gt;
   &lt;mz-menu-item title=&quot;禁用&quot; prefix=&quot;rocket&quot; disabled&gt;&lt;/mz-menu-item&gt;
   &lt;mz-menu-item title=&quot;测试&quot; prefix=&quot;rocket&quot; text=&quot;描述文字&quot;&gt;
     &lt;template #title&gt;标题&lt;/template&gt;

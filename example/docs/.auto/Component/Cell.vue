@@ -1,6 +1,6 @@
 <template>
   <div class="component-cell">
-    <div class="update-datetime">文档更新时间：2020-07-18 14:14</div>
+    <div class="update-datetime">文档更新时间：2020-07-18 14:21</div>
     <h2
       id="cell-dan-yuan-ge"
       class="mz-heading mz-document-heading"
