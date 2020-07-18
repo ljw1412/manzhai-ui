@@ -41,7 +41,6 @@
   <mz-cell title="单元格1"
     desc="描述性文字">
   </mz-cell>
-  </mz-cell>
   <mz-cell title="单元格2"
     desc="描述性文字">
   </mz-cell>
