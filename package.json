@@ -28,7 +28,7 @@
     "build:ui": "vue-cli-service build --target lib --dest lib ./src/entry.ts --mode ui && rimraf ./lib/demo.html && npm run tsc && npm run cp:globalDef",
     "report:ui": "vue-cli-service build --target lib --dest lib --report ./src/entry.ts --mode ui",
     "creater": "cd tools/ComponentCreater && node index.js",
-    "build:md": "node tools/MarkdownBuilder/index.js",
+    "build:md": "node tools/DocBuilder/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:common": "vue-cli-service test:unit ./tests/common/**/*.spec.ts"

@@ -49,10 +49,10 @@ async function readFile(filepath) {
  * @param {String} content
  */
 async function saveFile(dir, name, content, mkdir = true, silent = true) {
-  if (mkdir) {
-    await fsp.mkdir(dir, { recursive: true })
-  }
   const filepath = path.join(dir, name)
+  if (mkdir) {
+    await fsp.mkdir(path.dirname(filepath), { recursive: true })
+  }
   await fsp.writeFile(filepath, content)
   if (!silent) console.log(`  写入: ${chalk.blue(path.resolve(filepath))}`)
 }
@@ -63,10 +63,10 @@ async function saveFile(dir, name, content, mkdir = true, silent = true) {
  * @param {Array({name,content})} fileList 文件列表
  */
 async function saveFiles(dir, fileList) {
-  await fsp.mkdir(dir, { recursive: true })
+  // await fsp.mkdir(dir, { recursive: true })
   await Promise.all(
     fileList.map(async ({ name, content }) => {
-      await saveFile(dir, name, content, false, false)
+      await saveFile(dir, name, content, true, false)
     })
   )
 }

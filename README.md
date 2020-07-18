@@ -25,11 +25,6 @@ yarn run build:md
 yarn run build:ui
 ```
 
-### 组件创造者编译
-```
-yarn run build:creater
-```
-
 ### 创建组件
 ```
 yarn run creater
