@@ -45,11 +45,11 @@
     &__active-bar {
       background-color: $white;
     }
-    &__nav--fill .mz-tab--active {
-      color: $primary;
-    }
     .mz-tab--active {
       color: $white;
+    }
+    &__nav--fill .mz-tab--active {
+      color: $primary;
     }
   }
 }

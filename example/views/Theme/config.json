@@ -1,0 +1,202 @@
+{
+  "theme": [
+    [
+      { "name": "$primary" },
+      { "name": "$primary-100" },
+      { "name": "$primary-200" },
+      { "name": "$primary-300" },
+      { "name": "$primary-400" },
+      { "name": "$primary-500" },
+      { "name": "$primary-600" },
+      { "name": "$primary-700" },
+      { "name": "$primary-800" },
+      { "name": "$primary-900" }
+    ],
+    [
+      { "name": "$secondary" },
+      { "name": "$secondary-100" },
+      { "name": "$secondary-200" },
+      { "name": "$secondary-300" },
+      { "name": "$secondary-400" },
+      { "name": "$secondary-500" },
+      { "name": "$secondary-600" },
+      { "name": "$secondary-700" },
+      { "name": "$secondary-800" },
+      { "name": "$secondary-900" }
+    ],
+    [
+      { "name": "$success" },
+      { "name": "$success-100" },
+      { "name": "$success-200" },
+      { "name": "$success-300" },
+      { "name": "$success-400" },
+      { "name": "$success-500" },
+      { "name": "$success-600" },
+      { "name": "$success-700" },
+      { "name": "$success-800" },
+      { "name": "$success-900" }
+    ],
+    [
+      { "name": "$warning" },
+      { "name": "$warning-100" },
+      { "name": "$warning-200" },
+      { "name": "$warning-300" },
+      { "name": "$warning-400" },
+      { "name": "$warning-500" },
+      { "name": "$warning-600" },
+      { "name": "$warning-700" },
+      { "name": "$warning-800" },
+      { "name": "$warning-900" }
+    ],
+    [
+      { "name": "$danger" },
+      { "name": "$danger-100" },
+      { "name": "$danger-200" },
+      { "name": "$danger-300" },
+      { "name": "$danger-400" },
+      { "name": "$danger-500" },
+      { "name": "$danger-600" },
+      { "name": "$danger-700" },
+      { "name": "$danger-800" },
+      { "name": "$danger-900" }
+    ],
+    [{ "name": "$light" }, { "name": "$dark" }]
+  ],
+  "gray": [
+    [
+      { "name": "$white" },
+      { "name": "$gray-100" },
+      { "name": "$gray-200" },
+      { "name": "$gray-300" },
+      { "name": "$gray-400" },
+      { "name": "$gray-500" },
+      { "name": "$gray-600" },
+      { "name": "$gray-700" },
+      { "name": "$gray-800" },
+      { "name": "$gray-900" },
+      { "name": "$black" }
+    ]
+  ],
+  "common": [
+    [
+      { "name": "$blue" },
+      { "name": "$blue-100" },
+      { "name": "$blue-200" },
+      { "name": "$blue-300" },
+      { "name": "$blue-400" },
+      { "name": "$blue-500" },
+      { "name": "$blue-600" },
+      { "name": "$blue-700" },
+      { "name": "$blue-800" },
+      { "name": "$blue-900" }
+    ],
+    [
+      { "name": "$indigo" },
+      { "name": "$indigo-100" },
+      { "name": "$indigo-200" },
+      { "name": "$indigo-300" },
+      { "name": "$indigo-400" },
+      { "name": "$indigo-500" },
+      { "name": "$indigo-600" },
+      { "name": "$indigo-700" },
+      { "name": "$indigo-800" },
+      { "name": "$indigo-900" }
+    ],
+    [
+      { "name": "$purple" },
+      { "name": "$purple-100" },
+      { "name": "$purple-200" },
+      { "name": "$purple-300" },
+      { "name": "$purple-400" },
+      { "name": "$purple-500" },
+      { "name": "$purple-600" },
+      { "name": "$purple-700" },
+      { "name": "$purple-800" },
+      { "name": "$purple-900" }
+    ],
+    [
+      { "name": "$pink" },
+      { "name": "$pink-100" },
+      { "name": "$pink-200" },
+      { "name": "$pink-300" },
+      { "name": "$pink-400" },
+      { "name": "$pink-500" },
+      { "name": "$pink-600" },
+      { "name": "$pink-700" },
+      { "name": "$pink-800" },
+      { "name": "$pink-900" }
+    ],
+    [
+      { "name": "$red" },
+      { "name": "$red-100" },
+      { "name": "$red-200" },
+      { "name": "$red-300" },
+      { "name": "$red-400" },
+      { "name": "$red-500" },
+      { "name": "$red-600" },
+      { "name": "$red-700" },
+      { "name": "$red-800" },
+      { "name": "$red-900" }
+    ],
+    [
+      { "name": "$orange" },
+      { "name": "$orange-100" },
+      { "name": "$orange-200" },
+      { "name": "$orange-300" },
+      { "name": "$orange-400" },
+      { "name": "$orange-500" },
+      { "name": "$orange-600" },
+      { "name": "$orange-700" },
+      { "name": "$orange-800" },
+      { "name": "$orange-900" }
+    ],
+    [
+      { "name": "$yellow" },
+      { "name": "$yellow-100" },
+      { "name": "$yellow-200" },
+      { "name": "$yellow-300" },
+      { "name": "$yellow-400" },
+      { "name": "$yellow-500" },
+      { "name": "$yellow-600" },
+      { "name": "$yellow-700" },
+      { "name": "$yellow-800" },
+      { "name": "$yellow-900" }
+    ],
+    [
+      { "name": "$green" },
+      { "name": "$green-100" },
+      { "name": "$green-200" },
+      { "name": "$green-300" },
+      { "name": "$green-400" },
+      { "name": "$green-500" },
+      { "name": "$green-600" },
+      { "name": "$green-700" },
+      { "name": "$green-800" },
+      { "name": "$green-900" }
+    ],
+    [
+      { "name": "$teal" },
+      { "name": "$teal-100" },
+      { "name": "$teal-200" },
+      { "name": "$teal-300" },
+      { "name": "$teal-400" },
+      { "name": "$teal-500" },
+      { "name": "$teal-600" },
+      { "name": "$teal-700" },
+      { "name": "$teal-800" },
+      { "name": "$teal-900" }
+    ],
+    [
+      { "name": "$cyan" },
+      { "name": "$cyan-100" },
+      { "name": "$cyan-200" },
+      { "name": "$cyan-300" },
+      { "name": "$cyan-400" },
+      { "name": "$cyan-500" },
+      { "name": "$cyan-600" },
+      { "name": "$cyan-700" },
+      { "name": "$cyan-800" },
+      { "name": "$cyan-900" }
+    ]
+  ]
+}
