@@ -88,7 +88,7 @@ module.exports = class DocBuilder {
       })
     )
     console.log('正在更新diff文件')
-    // fs.writeFileSync(diffPath, JSON.stringify(diff, null, 2))
+    fs.writeFileSync(diffPath, JSON.stringify(diff, null, 2))
     utils.logger.success('更新diff文件')
 
     console.log('正在生成路由中……')
