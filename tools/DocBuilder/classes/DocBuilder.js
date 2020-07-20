@@ -40,30 +40,38 @@ module.exports = class DocBuilder {
     this._pattern.forEach(pattern => {
       list.push(...glob.sync(pattern))
     })
-    this._fileList = list.map(path => new MdFile(path, this._diffPath))
-    this._parserList = this._fileList.map(file => new MdParser(file))
+    this._fileList = list.map(path => new MdFile(path))
   }
 
-  generateRouter() {
-    const routerList = this._parserList.map(item => item.docComponent.route)
+  // 解析markdown文件
+  async parseMdFile() {
+    // 加载所有markdown文件信息
+    await Promise.all(this._fileList.map(async mdFile => await mdFile.load()))
+    return this._fileList.map(file => new MdParser(file))
+  }
+
+  // 构造路由文件
+  generateRouter(parserList) {
+    const routerList = parserList.map(item => item.docComponent.route)
     return format(`export default [\n${routerList.join(',\n')}\n]\n`)
   }
 
   async build() {
     const diff = require(diffPath)
-    const modifiedList = this._parserList.filter(parser => parser.file.modified)
+    const parserList = await this.parseMdFile()
+    const modifiedList = parserList.filter(parser => parser.file.modified)
     if (!modifiedList.length) {
       return console.log(chalk.yellow('没有发现被修改文件，生成结束。'))
     }
     await Promise.all(
       modifiedList.map(async ({ file, docComponent }) => {
-        const { type, name, path, mtime } = file
+        const { type, name, path, md5 } = file
         console.log(chalk.yellow('[文档有修改]'), path)
         try {
           const filename = `${type}/${name}.vue`
           const content = format(docComponent.getContent(), 'vue')
           await saveFile(output, filename, content, true, false)
-          diff[path] = mtime
+          diff[path] = md5
         } catch (error) {
           console.error(error)
         }
@@ -75,7 +83,7 @@ module.exports = class DocBuilder {
 
     console.log('正在生成路由中……')
     await utils.saveFiles(output, [
-      { name: 'router.ts', content: this.generateRouter() }
+      { name: 'router.ts', content: this.generateRouter(parserList) }
     ])
     utils.logger.success('生成路由')
 

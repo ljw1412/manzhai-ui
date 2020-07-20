@@ -3,23 +3,23 @@ const { diffPath } = require('../config')
 const utils = require('../../utils')
 
 module.exports = class MdFile {
-  constructor(path, diffPath) {
+  constructor(path) {
     this.path = path
-    this.init()
   }
 
-  init() {
-    this.mtime = fs.statSync(this.path).mtimeMs
+  async load() {
+    this.md5 = await utils.getFileHash(this.path)
     this.name = utils.getName(this.path)
     this.type = utils
       .capitalized(utils.getParentName(this.path))
       .replace(/s$/, '')
-    this.modified = this.isFileChange(this.path, this.mtime)
+    this.modified = this.isFileChange(this.path, this.md5)
+    return this
   }
 
-  isFileChange(fPath, mtime) {
+  isFileChange(fPath, md5) {
     const diff = require(diffPath)
-    return !diff[fPath] || diff[fPath] !== mtime
+    return !diff[fPath] || diff[fPath] !== md5
   }
 
   getContent() {
