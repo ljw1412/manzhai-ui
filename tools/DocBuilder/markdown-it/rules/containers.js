@@ -15,10 +15,14 @@ module.exports = md => {
         }
         const content =
           tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : ''
-        return `<demo-block>
-        <template #example><!--example~${content}~example--></template>
-        <template #description>${description}</template>
-        `
+        return [
+          '<demo-block>',
+          '  <template #example>',
+          `<!--example~${content}~example-->`,
+          '  </template>',
+          '  <template #description>',
+          `    ${description}  </template>`
+        ].join('\n')
       }
       return '</demo-block>'
     }

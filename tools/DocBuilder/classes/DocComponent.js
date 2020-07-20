@@ -1,5 +1,14 @@
+const prettier = require('prettier')
 const moment = require('moment')
 const utils = require('../../utils')
+
+function format(content, parser = 'babel') {
+  return prettier.format(content, {
+    parser,
+    singleQuote: true,
+    semi: false
+  })
+}
 
 module.exports = class DocComponent {
   constructor(file, template, script, style) {
@@ -14,31 +23,35 @@ module.exports = class DocComponent {
   }
 
   initTemplate(template) {
-    this.template = `<template>
-    <div class="${this.hyphenateName}">
-      <div class="update-datetime">文档更新时间：${this.datetime}</div>
-      ${template}
-    </div>
-  </template>`
+    this.template = [
+      '<template>',
+      `  <div class="${this.hyphenateName}">`,
+      `    <div class="update-datetime">文档更新时间：${this.datetime}</div>`,
+      template,
+      '  </div>',
+      '</template>'
+    ].join('\n')
   }
 
   initScript(script) {
-    this.script = `<script>\nexport default {
-      name: '${this.name}',
-      components: {${script}}}\n</script>`
+    script = format(
+      `export default {name: '${this.name}',components: {${script}}}`
+    )
+    this.script = `<script>\n${script}</script>\n`
   }
 
   initStyle(style) {
-    this.style = `<style lang="scss">\n${style}\n</style>`
+    style = format(style, 'scss')
+    this.style = `<style lang="scss">\n${style}</style>`
   }
 
   initRoute() {
-    const filepath = `./${this.file.type}/${this.file.name}.vue`
-
+    const filepath = `./${this.file.name}.vue`
+    const chunkName = utils.hyphenate(this.file.type)
     this.route = `{
       path: '${this.hyphenateName}',
       name: '${this.name}',
-      component: () => import(/* webpackChunkName: "documents" */ '${filepath}')
+      component: () => import(/* webpackChunkName: "${chunkName}" */ '${filepath}')
     }`
   }
 

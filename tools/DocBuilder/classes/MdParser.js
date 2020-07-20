@@ -4,10 +4,11 @@ const InlineComponent = require('./InlineComponent')
 const DocComponent = require('./DocComponent')
 
 // 字符串扁平化
-function pad(source) {
+function pad(source, indent = 2) {
+  space = Array.apply(null, { length: indent + 1 }).join(' ')
   return source
     .split(/\r?\n/)
-    .map(line => (line !== '\n' || line !== '' ? `  ${line}` : ''))
+    .map(line => (line !== '\n' || line !== '' ? `${space}${line}` : ''))
     .join('\n')
 }
 
@@ -27,7 +28,7 @@ module.exports = class MdParser {
     if (!content) return content
     content = content.replace(/<(script|style)[\s\S]+<\/\1>/g, '').trim()
     content = pad(content)
-    return `<div class="${classes}">\n${content}\n</div>`
+    return pad(`<div class="${classes}">\n${content}\n</div>`)
   }
   // 剥离js
   stripScript(content) {
@@ -46,7 +47,10 @@ module.exports = class MdParser {
     example = example.replace('<!--example~', '').replace('~example-->', '')
     name = utils.hyphenate(name)
     const template = this.stripTemplate(example, name)
-    const inlineTemplate = `<${name} inline-template>${template}</${name}>`
+    const inlineTemplate = pad(
+      `<${name} inline-template>\n${template}\n</${name}>`,
+      4
+    )
 
     let script = this.stripScript(example)
     if (script) {
@@ -85,7 +89,7 @@ module.exports = class MdParser {
         doc = doc.replace(demo.origin, demo.template)
       }
     })
-    return doc
+    return pad(doc)
   }
 
   // 构造脚本
@@ -102,16 +106,14 @@ module.exports = class MdParser {
       .filter(key => this.inlineTemplateMap[key].style)
       .map(
         name =>
-          `.${utils.hyphenate(name)}{${pad(
-            this.inlineTemplateMap[name].style
-          )}}`
+          `.${utils.hyphenate(name)}{${this.inlineTemplateMap[name].style}}`
       )
     return `.${utils.hyphenate(this.name)}{\n${styleList.join('\n')}\n}`
   }
 
   // 解析
   parse() {
-    const template = this.injectInlineComponent()
+    const template = pad(this.injectInlineComponent(), 4).trimEnd()
     const script = this.generateScript()
     const style = this.generateStyle()
     this.docComponent = new DocComponent(this.file, template, script, style)

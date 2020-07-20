@@ -9,14 +9,6 @@ const MdParser = require('./MdParser')
 const { diffPath, output } = require('../config')
 const { saveFile } = require('../../utils')
 
-function format(content, parser = 'babel') {
-  return prettier.format(content, {
-    parser,
-    singleQuote: true,
-    semi: false
-  })
-}
-
 module.exports = class DocBuilder {
   constructor(pattern) {
     if (!Array.isArray(pattern) && typeof pattern !== 'string') {
@@ -51,9 +43,27 @@ module.exports = class DocBuilder {
   }
 
   // 构造路由文件
-  generateRouter(parserList) {
-    const routerList = parserList.map(item => item.docComponent.route)
-    return format(`export default [\n${routerList.join(',\n')}\n]\n`)
+  async generateRouter(parserList) {
+    const routerMap = parserList.reduce((map, parser) => {
+      if (!map[parser.file.type]) map[parser.file.type] = []
+      map[parser.file.type].push(parser.docComponent.route)
+      return map
+    }, {})
+
+    for (const type in routerMap) {
+      routerMap[type] = prettier.format(
+        `export default [\n${routerMap[type].join(',\n')}\n]\n`,
+        { parser: 'babel', singleQuote: true, semi: false }
+      )
+    }
+
+    await utils.saveFiles(
+      output,
+      Object.keys(routerMap).map(type => ({
+        name: `${type}/_router.ts`,
+        content: routerMap[type]
+      }))
+    )
   }
 
   async build() {
@@ -69,7 +79,7 @@ module.exports = class DocBuilder {
         console.log(chalk.yellow('[文档有修改]'), path)
         try {
           const filename = `${type}/${name}.vue`
-          const content = format(docComponent.getContent(), 'vue')
+          const content = docComponent.getContent()
           await saveFile(output, filename, content, true, false)
           diff[path] = md5
         } catch (error) {
@@ -78,13 +88,11 @@ module.exports = class DocBuilder {
       })
     )
     console.log('正在更新diff文件')
-    fs.writeFileSync(diffPath, JSON.stringify(diff, null, 2))
+    // fs.writeFileSync(diffPath, JSON.stringify(diff, null, 2))
     utils.logger.success('更新diff文件')
 
     console.log('正在生成路由中……')
-    await utils.saveFiles(output, [
-      { name: 'router.ts', content: this.generateRouter(parserList) }
-    ])
+    await this.generateRouter(parserList)
     utils.logger.success('生成路由')
 
     console.log('生成结束。')

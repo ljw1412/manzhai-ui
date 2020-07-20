@@ -4,6 +4,7 @@ const crypto = require('crypto')
 const path = require('path')
 const glob = require('glob')
 const chalk = require('chalk')
+const prettier = require('prettier')
 
 // 获取文件名
 function getName(filePath) {
