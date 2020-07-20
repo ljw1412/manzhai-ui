@@ -53,7 +53,6 @@ export default class MzNavigation extends Vue {
   }
 
   onItemClick() {
-    console.log('item-click')
     this.$emit('item-click', ...arguments)
   }
 

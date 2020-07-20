@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import DocsRouter from './docs/.auto/router'
+import AutoComponent from './docs/.auto/Component/_router'
+import AutoDirective from './docs/.auto/Directive/_router'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -20,7 +21,7 @@ export default new Router({
       name: 'pageDocs',
       component: () =>
         import(/* webpackChunkName: "documents" */ './views/Docs/index.vue'),
-      children: DocsRouter
+      children: [...AutoComponent, ...AutoDirective]
     },
     {
       path: '/style',
