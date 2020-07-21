@@ -93,9 +93,8 @@ module.exports = class ComponentCreater {
   async createDocument() {
     const { name, nameCN, type, options } = this
     // 新增文档
-    await utils.saveFiles(this.options.dir, [
-      { name: `${name}.md`, content: `## ${name} ${nameCN}` }
-    ])
+    const content = type === 'style' ? `# ${nameCN}` : `## ${name} ${nameCN}`
+    await utils.saveFiles(this.options.dir, [{ name: `${name}.md`, content }])
     // 文档导航栏追加
     const navigatePath = `${optionsDir}/navigate/${type}.json`
     const isExists = utils.isFileExists(navigatePath)
