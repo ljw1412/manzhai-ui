@@ -1,7 +1,10 @@
 <script lang="tsx">
 import { CreateElement } from 'vue'
 import { Component, Vue, Watch } from 'vue-property-decorator'
-import navigate from '../../../options/navigate.json'
+import componentNavigate from '@example/options/navigate/component.json'
+import directiveNavigate from '@example/options/navigate/directive.json'
+
+const navigate = [directiveNavigate, componentNavigate]
 
 @Component
 export default class Sidebar extends Vue {
