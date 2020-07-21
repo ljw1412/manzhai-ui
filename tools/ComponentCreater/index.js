@@ -6,7 +6,7 @@ const inquirer = require('inquirer')
       type: 'list',
       name: 'type',
       message: '*请输入类型:',
-      choices: ['component', 'directive']
+      choices: ['component', 'directive', 'style']
     },
     {
       type: 'list',

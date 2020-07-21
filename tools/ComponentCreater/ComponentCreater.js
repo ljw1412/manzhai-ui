@@ -9,6 +9,11 @@ const typeMap = {
     dir: '../../example/docs/directives',
     name: '指令',
     commands: ['createDocument']
+  },
+  style: {
+    dir: '../../example/docs/styles',
+    name: '样式',
+    commands: ['createDocument']
   }
 }
 const commandSuccessMsg = {
@@ -17,10 +22,10 @@ const commandSuccessMsg = {
   createDocument: '=== 创建文档文件结束 ===\n',
   injectEntry: '=== 入口注入结束 ===\n'
 }
+const optionsDir = '../../example/options'
 
 module.exports = class ComponentCreater {
   constructor(name, lang, nameCN, type) {
-    this.results = []
     this.name = name
     this.lang = lang
     this.nameCN = nameCN
@@ -86,33 +91,33 @@ module.exports = class ComponentCreater {
 
   // 创建文档
   async createDocument() {
+    const { name, nameCN, type, options } = this
     // 新增文档
     await utils.saveFiles(this.options.dir, [
-      { name: `${this.name}.md`, content: `## ${this.name} ${this.nameCN}` }
+      { name: `${name}.md`, content: `## ${name} ${nameCN}` }
     ])
     // 文档导航栏追加
-    const navigateOptions = require('../../example/options/navigate.json')
-    let componentGroup = navigateOptions.find(item => item.type === this.type)
-    if (!componentGroup) {
-      console.log(`[自动新增] navigate.json 中未找到 type:${this.type}。`)
-      componentGroup = { type: this.type, children: [] }
-      navigateOptions.push(componentGroup)
-    }
-    const componentChildren = componentGroup.children
-    componentChildren.push({
-      title: this.name,
-      text: this.nameCN,
-      to: { name: `${utils.capitalized(this.type)}${this.name}` }
+    const navigatePath = `${optionsDir}/navigate/${type}.json`
+    const isExists = utils.isFileExists(navigatePath)
+
+    const componentGroup = isExists
+      ? require(navigatePath)
+      : { group: options.name, type: type, children: [] }
+    if (!Array.isArray(componentGroup.children)) componentGroup.children = []
+    componentGroup.children.push({
+      title: name,
+      text: nameCN,
+      to: { name: `${utils.capitalized(type)}${name}` }
     })
-    componentChildren.sort((a, b) => {
+    componentGroup.children.sort((a, b) => {
       if (a.title > b.title) return 1
       if (a.title < b.title) return -1
       return 0
     })
-    await utils.saveFiles(`../../example/options`, [
+    await utils.saveFiles(optionsDir, [
       {
-        name: 'navigate.json',
-        content: JSON.stringify(navigateOptions, null, 2)
+        name: `navigate/${type}.json`,
+        content: JSON.stringify(componentGroup, null, 2)
       }
     ])
   }

@@ -15,6 +15,11 @@ function getParentName(filePath) {
   return getName(path.dirname(filePath))
 }
 
+// 文件是否存在
+function isFileExists(path) {
+  return fs.existsSync(path)
+}
+
 // 获取文件的 hash
 async function getFileHash(filePath) {
   return new Promise((resolve, reject) => {
@@ -107,6 +112,7 @@ module.exports = {
   getPathRelative: path.relative,
   getName,
   getParentName,
+  isFileExists,
   getFileHash,
   hyphenate,
   capitalized,

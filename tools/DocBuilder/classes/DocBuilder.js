@@ -39,6 +39,10 @@ module.exports = class DocBuilder {
   async parseMdFile() {
     // 加载所有markdown文件信息
     await Promise.all(this._fileList.map(async mdFile => await mdFile.load()))
+    this.modifiedTypeSet = new Set()
+    this._fileList.forEach(file => {
+      if (file.modified) this.modifiedTypeSet.add(file.type)
+    })
     return this._fileList.map(file => new MdParser(file))
   }
 
@@ -59,7 +63,7 @@ module.exports = class DocBuilder {
 
     await utils.saveFiles(
       output,
-      Object.keys(routerMap).map(type => ({
+      Array.from(this.modifiedTypeSet).map(type => ({
         name: `${type}/_router.ts`,
         content: routerMap[type]
       }))
