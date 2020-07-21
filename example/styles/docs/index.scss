@@ -2,7 +2,8 @@
 
 #page-component-content {
   [class^='component-'],
-  [class^='directive-'] {
+  [class^='directive-'],
+  [class^='style-'] {
     position: relative;
     > p a {
       color: #409eff;

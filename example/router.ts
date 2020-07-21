@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AutoComponent from './docs/.auto/Component/_router'
 import AutoDirective from './docs/.auto/Directive/_router'
+import AutoStyle from './docs/.auto/Style/_router'
 import Guide from './views/Guide/index.vue'
 import Theme from './views/Theme/index.vue'
 
@@ -27,7 +28,8 @@ export default new Router({
       path: '/style',
       name: 'pageStyle',
       component: () =>
-        import(/* webpackChunkName: "styles" */ './views/Style/index.vue')
+        import(/* webpackChunkName: "styles" */ './views/Style/index.vue'),
+      children: AutoStyle
     },
     {
       path: '/guide',
