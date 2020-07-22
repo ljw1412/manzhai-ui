@@ -227,20 +227,11 @@
 }
 
 @media only screen and (max-width: 991.98px) {
-  .menu-icon {
-    display: block !important;
-  }
-
   .app-topbar__navigation {
     margin-left: 40px;
     li {
       padding: 0 10px;
     }
-  }
-
-  #sidebar {
-    width: 100% !important;
-    overflow-y: hidden !important;
   }
 
   #page-component {

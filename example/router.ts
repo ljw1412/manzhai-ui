@@ -27,6 +27,7 @@ export default new Router({
     {
       path: '/style',
       name: 'pageStyle',
+      redirect: { name: 'StyleIntroduction' },
       component: () =>
         import(/* webpackChunkName: "styles" */ './views/Style/index.vue'),
       children: AutoStyle

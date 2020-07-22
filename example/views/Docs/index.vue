@@ -1,16 +1,6 @@
 <template>
   <div class="page-component"
     id="page-component">
-    <sidebar ref="sidebar"></sidebar>
-    <div class="menu-icon">
-      <mz-button icon
-        class="color-white"
-        radius="0"
-        @click="$refs.sidebar.visible=true">
-        <mz-icon name="menu"
-          size="20"></mz-icon>
-      </mz-button>
-    </div>
     <mz-catalogue ref="catalogue"
       scroll-smooth
       sidebar
@@ -30,14 +20,9 @@
 
 <script lang="ts">
 import { Component, Vue, Watch, Ref } from 'vue-property-decorator'
-import Sidebar from './components/Sidebar.vue'
 import { MzCatalogue } from '../../../packages/Catalogue'
 
-@Component({
-  components: {
-    Sidebar
-  }
-})
+@Component
 export default class PageDocs extends Vue {
   @Ref('catalogue')
   readonly catalogueRef!: MzCatalogue
@@ -63,17 +48,6 @@ export default class PageDocs extends Vue {
 </script>
 
 <style lang="scss">
-.menu-icon {
-  position: fixed;
-  top: 15px;
-  left: 10px;
-  z-index: 100;
-  display: none;
-  .mz-button {
-    color: $topbar-navigation-text-color;
-  }
-}
-
 #page-component {
   display: flex;
   height: 100%;

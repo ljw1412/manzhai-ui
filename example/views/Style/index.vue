@@ -1,12 +1,9 @@
 <template>
-  <mz-layout class="page-style">
-    <mz-aside>
-      <sidebar :data="navigate"></sidebar>
-    </mz-aside>
-    <mz-main id="page-component-content">
+  <div class="page-style">
+    <div id="page-component-content">
       <router-view></router-view>
-    </mz-main>
-  </mz-layout>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
