@@ -20,6 +20,7 @@ export default new Router({
     {
       path: '/docs',
       name: 'pageDocs',
+      redirect: { name: 'DirectiveBlanking' },
       component: () =>
         import(/* webpackChunkName: "documents" */ './views/Docs/index.vue'),
       children: [...AutoComponent, ...AutoDirective]
