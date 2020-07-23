@@ -1,6 +1,6 @@
 <template>
   <div class="component-list">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="list-lie-biao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#list-lie-biao" title="List 列表" data-level="2" data-href="#list-lie-biao">¶</a>List 列表</h2>
       <p>以列的布局展示数据。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -194,9 +194,9 @@
                   <mz-card height="50px"><span>我是{{item.title}}</span></mz-card>
                 </mz-list-item>
               </mz-list>
-              <div class="demo-font-size-14">当前值：{{value}}</div>
-              <div class="demo-font-size-14">上一次改变(change)：{{changeItem}}</div>
-              <div class="demo-font-size-14">点击对象(item-click)：{{currentItem}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
+              <div class="fs-14">上一次改变(change)：{{changeItem}}</div>
+              <div class="fs-14">点击对象(item-click)：{{currentItem}}</div>
             </div>
           </list-demo6>
         </template>
@@ -213,9 +213,9 @@
           &lt;mz-card height=&quot;50px&quot;&gt;&lt;span&gt;我是{{item.title}}&lt;/span&gt;&lt;/mz-card&gt;
         &lt;/mz-list-item&gt;
       &lt;/mz-list&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;上一次改变(change)：{{changeItem}}&lt;/div&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;点击对象(item-click)：{{currentItem}}&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;上一次改变(change)：{{changeItem}}&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;点击对象(item-click)：{{currentItem}}&lt;/div&gt;
       
       &lt;script&gt;
       export default {

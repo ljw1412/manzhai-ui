@@ -6,7 +6,7 @@
 
 :::demo `label`用来描述选择项的类型标签。
 ```html
-<div class="demo-font-size-14">当前值：{{ value }}</div>
+<div class="fs-14">当前值：{{ value }}</div>
 <mz-filter-section v-model="value" label="产地：">
   <mz-filter-section-item v-for="country of countries"
     :key="country.value"
@@ -42,7 +42,7 @@ export default {
 
 :::demo `outlined`用来控制是否以边框模式显示选中的效果。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
+<div class="fs-14">当前值：{{value}}</div>
 <mz-filter-section v-model="value" label="漫画类型" outlined>
   <mz-filter-section-item v-for="type of typeList"
     :key="type"
@@ -68,7 +68,7 @@ export default {
 
 :::demo `background`用来控制是否以背景模式显示选中的效果。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
+<div class="fs-14">当前值：{{value}}</div>
 <mz-filter-section v-model="value" label="漫画类型" background>
   <mz-filter-section-item v-for="type of typeList"
     :key="type"
@@ -137,7 +137,7 @@ export default {
 
 :::demo `multiple`用来控制是不是多选。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
+<div class="fs-14">当前值：{{value}}</div>
 <mz-filter-section v-model="value" label="类型1：" multiple>
   <mz-filter-section-item v-for="i of 10"
     :key="i"
@@ -160,7 +160,7 @@ export default {
 
 :::demo filterSection的`name`属性是该选项组的中筛选项的唯一标识。
 ```html
-<div class="demo-font-size-14">当前值：{{groupValue}}</div>
+<div class="fs-14">当前值：{{groupValue}}</div>
 <mz-filter-section-group v-model="groupValue">
   <mz-filter-section name="type1"
     label="类型1(name=type1)：">
@@ -191,7 +191,7 @@ export default {
 ### 自定义选中效果
 :::demo filterSectionItem 的`custom`属性如果是true，可以关闭默认的选中效果。通过`slot-scope`可以获得当前选择项的选中状态情况。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
+<div class="fs-14">当前值：{{value}}</div>
 <mz-filter-section v-model="value" label="类型1：" custom>
   <mz-filter-section-item custom
     v-for="i of 10" :key="i" :value="i">

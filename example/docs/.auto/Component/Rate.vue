@@ -1,6 +1,6 @@
 <template>
   <div class="component-rate">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="rate-ping-fen" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#rate-ping-fen" title="Rate 评分" data-level="2" data-href="#rate-ping-fen">¶</a>Rate 评分</h2>
       <p>评分组件。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -8,18 +8,18 @@
         <template #example>
           <rate-demo1 inline-template>
             <div class="rate-demo1">
-              <div class="demo-font-size-14">正常</div>
+              <div class="fs-14">正常</div>
               <mz-rate v-model="value"/>
-              <div class="demo-font-size-14">允许半星</div>
+              <div class="fs-14">允许半星</div>
               <mz-rate v-model="value2" allow-half/>
             </div>
           </rate-demo1>
         </template>
         <template #description>
           <p><code>allow-half</code>控制是否允许半分。如果为 true 满分 10，否则为 5。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;正常&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;正常&lt;/div&gt;
       &lt;mz-rate v-model=&quot;value&quot;/&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;允许半星&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;允许半星&lt;/div&gt;
       &lt;mz-rate v-model=&quot;value2&quot; allow-half/&gt;
       
       &lt;script&gt;

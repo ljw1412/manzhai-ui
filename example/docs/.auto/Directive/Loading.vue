@@ -1,6 +1,6 @@
 <template>
   <div class="directive-loading">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="loading-jia-zai" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#loading-jia-zai" title="Loading 加载" data-level="2" data-href="#loading-jia-zai">¶</a>Loading 加载</h2>
       <p>加载数据时显示动效。</p>
       <p><strong>如果出现样式问题，请使用<a href="component-loading">MzLoading组件</a>。</strong></p>
@@ -62,7 +62,7 @@
         <template #example>
           <loading-demo2 inline-template>
             <div class="loading-demo2">
-              <span class="demo-font-size-14">加载开关：</span>
+              <span class="fs-14">加载开关：</span>
               <mz-switch v-model="loading"></mz-switch>
               
               <div v-loading="loading"
@@ -86,7 +86,7 @@
         </template>
         <template #description>
           <p>以下是所有可以配置的属性，它们的可选值与MzLoading对应属性值一致。唯一区别这些属性值都是<code>String</code>类型。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;加载开关：&lt;/span&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot;&gt;加载开关：&lt;/span&gt;
       &lt;mz-switch v-model=&quot;loading&quot;&gt;&lt;/mz-switch&gt;
       
       &lt;div v-loading=&quot;loading&quot;

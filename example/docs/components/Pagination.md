@@ -77,25 +77,25 @@ export default {
 ### 自定义布局
 :::demo 通过`layout`可以自由设定分页组件的布局。可选值`prev`,`next`,`sizes`,`pager`,`jumper`,`total`,`|`。
 ```html
-<span class="demo-font-size-14">带总数</span>
+<span class="fs-14">带总数</span>
 <mz-pagination 
   v-model="index" 
   :layout="['total', 'prev', 'pager', 'next']"
   :page-size="10" 
   :total="100"></mz-pagination>
-<span class="demo-font-size-14">自选每页显示条数</span>
+<span class="fs-14">自选每页显示条数</span>
 <mz-pagination 
   v-model="index2" 
   :layout="['sizes','prev', 'pager', 'next']"
   :page-size.sync="pageSize2"
   :total="100"></mz-pagination>
-<span class="demo-font-size-14">跳转到指定页数</span>
+<span class="fs-14">跳转到指定页数</span>
 <mz-pagination 
   v-model="index3" 
   :layout="['prev', 'pager', 'next', 'jumper']"
   :page-size="10" 
   :total="100"></mz-pagination>
-<span class="demo-font-size-14">全部功能</span>
+<span class="fs-14">全部功能</span>
 <mz-pagination 
   v-model="index4" 
   :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"

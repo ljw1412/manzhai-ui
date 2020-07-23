@@ -1,6 +1,6 @@
 <template>
   <div class="component-drawer">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="drawer-chou-ti" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#drawer-chou-ti" title="Drawer 抽屉" data-level="2" data-href="#drawer-chou-ti">¶</a>Drawer 抽屉</h2>
       <p>屏幕边缘滑出的浮层面板。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -57,7 +57,7 @@
         <template #example>
           <drawer-demo2 inline-template>
             <div class="drawer-demo2">
-              <span class="demo-font-size-14">显示的插槽：</span>
+              <span class="fs-14">显示的插槽：</span>
               <mz-checkbox-group v-model="displayList"
                 class="d-inline-block"
                 style="margin:0 10px;">
@@ -84,7 +84,7 @@
         </template>
         <template #description>
           <p>布局插槽主要有三个，分别为<code>title</code>、<code>默认</code>、<code>footer</code>。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;显示的插槽：&lt;/span&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot;&gt;显示的插槽：&lt;/span&gt;
       &lt;mz-checkbox-group v-model=&quot;displayList&quot;
         class=&quot;d-inline-block&quot;
         style=&quot;margin:0 10px;&quot;&gt;

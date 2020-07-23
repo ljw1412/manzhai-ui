@@ -36,7 +36,7 @@ export default {
 
 :::demo 
 ```html
-<span class="demo-font-size-14" style="margin-right: 10px;">width:</span>
+<span class="fs-14" style="margin-right: 10px;">width:</span>
 <mz-button-group>
   <mz-button outlined
     @click="percent.width -= 10">-</mz-button>
@@ -45,7 +45,7 @@ export default {
   <mz-button outlined
     @click="percent.width += 10">+</mz-button>
 </mz-button-group>
-<span class="demo-font-size-14" style="margin:0 10px;">height:</span>
+<span class="fs-14" style="margin:0 10px;">height:</span>
 <mz-button-group>
   <mz-button outlined
     @click="percent.height -= 10">-</mz-button>

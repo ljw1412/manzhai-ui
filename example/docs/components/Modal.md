@@ -227,7 +227,7 @@ export default {
 ### 更多动画
 :::demo `transition`属性控制对话框的过渡动画。默认`mz-zoom`。
 ```html
-<span class="demo-font-size-14">动画：</span>
+<span class="fs-14">动画：</span>
 <mz-radio-group v-model="transition"
   class="d-inline-block"
   style="margin:0 10px;">

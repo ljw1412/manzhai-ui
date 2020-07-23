@@ -5,9 +5,9 @@
 ### 基础用法
 ::: demo `visible/v-model`控制组件的显隐，如果不绑定，将一直显示。消息条默认显示5秒。
 ```html
-<div class="demo-font-size-14">一直显示：</div>
+<div class="fs-14">一直显示：</div>
 <mz-snackbar content="这是一条测试消息。" />
-<div class="demo-font-size-14">自动消失：</div>
+<div class="fs-14">自动消失：</div>
 <mz-snackbar v-model="isShow" content="这是一条测试消息。" />
 <mz-button @click="isShow = true">显示</mz-button>
 

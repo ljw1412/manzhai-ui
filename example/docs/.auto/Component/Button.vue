@@ -1,6 +1,6 @@
 <template>
   <div class="component-button">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="button-an-niu" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#button-an-niu" title="Button 按钮" data-level="2" data-href="#button-an-niu">¶</a>Button 按钮</h2>
       <p>实现常用的按钮功能。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -9,7 +9,7 @@
         <template #example>
           <button-demo1 inline-template>
             <div class="button-demo1">
-              <span class="demo-font-size-14">状态控制: </span>
+              <span class="fs-14">状态控制: </span>
               <mz-checkbox-group v-model="checkedList">
                 <mz-checkbox v-for="option of options" 
                   :value="option" :key="option">{{option}}</mz-checkbox>
@@ -41,7 +41,7 @@
         </template>
         <template #description>
           <p>使用<code>color</code>、<code>outlined</code>、<code>flat</code>、<code>round</code>、<code>circle</code>、<code>icon</code>属性来定义 Button 的样式。你可以通过<code>disabled</code>属性来修改按钮的禁用状态。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;状态控制: &lt;/span&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot;&gt;状态控制: &lt;/span&gt;
       &lt;mz-checkbox-group v-model=&quot;checkedList&quot;&gt;
         &lt;mz-checkbox v-for=&quot;option of options&quot; 
           :value=&quot;option&quot; :key=&quot;option&quot;&gt;{{option}}&lt;/mz-checkbox&gt;

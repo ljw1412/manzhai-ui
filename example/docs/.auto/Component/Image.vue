@@ -1,6 +1,6 @@
 <template>
   <div class="component-image">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="image-tu-pian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#image-tu-pian" title="Image 图片" data-level="2" data-href="#image-tu-pian">¶</a>Image 图片</h2>
       <p>显示图片或背景的容器。</p>
       <h3 id="ji-ben-yu-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-ben-yu-fa" title="基本语法" data-level="3" data-href="#ji-ben-yu-fa">¶</a>基本语法</h3>
@@ -111,7 +111,7 @@
         <template #example>
           <image-demo3 inline-template>
             <div class="image-demo3">
-              <p class="demo-font-size-14">不做处理：</p>
+              <p class="fs-14">不做处理：</p>
               <div>
                 <mz-image src="about:blank"
                   width="100px"
@@ -124,7 +124,7 @@
                 </mz-image>
               </div>
               
-              <p class="demo-font-size-14">加载错误图片：</p>
+              <p class="fs-14">加载错误图片：</p>
               <div>
                 <mz-image src="about:blank"
                   :error-src="require('@example/static/image-error.jpg')"
@@ -137,7 +137,7 @@
                   height='100px'></mz-image>
               </div>
               
-              <p class="demo-font-size-14">加载错误插槽：</p>
+              <p class="fs-14">加载错误插槽：</p>
               <div>
                 <mz-image src="about:blank"
                   width="100px"
@@ -155,7 +155,7 @@
           </image-demo3>
         </template>
         <template #description>
-            </template><template #highlight><pre v-pre><code class="html">&lt;p class=&quot;demo-font-size-14&quot;&gt;不做处理：&lt;/p&gt;
+            </template><template #highlight><pre v-pre><code class="html">&lt;p class=&quot;fs-14&quot;&gt;不做处理：&lt;/p&gt;
       &lt;div&gt;
         &lt;mz-image src=&quot;about:blank&quot;
           width=&quot;100px&quot;
@@ -168,7 +168,7 @@
         &lt;/mz-image&gt;
       &lt;/div&gt;
       
-      &lt;p class=&quot;demo-font-size-14&quot;&gt;加载错误图片：&lt;/p&gt;
+      &lt;p class=&quot;fs-14&quot;&gt;加载错误图片：&lt;/p&gt;
       &lt;div&gt;
         &lt;mz-image src=&quot;about:blank&quot;
           :error-src=&quot;require('@example/static/image-error.jpg')&quot;
@@ -181,7 +181,7 @@
           height='100px'&gt;&lt;/mz-image&gt;
       &lt;/div&gt;
       
-      &lt;p class=&quot;demo-font-size-14&quot;&gt;加载错误插槽：&lt;/p&gt;
+      &lt;p class=&quot;fs-14&quot;&gt;加载错误插槽：&lt;/p&gt;
       &lt;div&gt;
         &lt;mz-image src=&quot;about:blank&quot;
           width=&quot;100px&quot;

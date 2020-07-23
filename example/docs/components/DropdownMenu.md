@@ -87,8 +87,8 @@ export default {
   @action="action" @select="select">
   <mz-button color="primary">下拉菜单</mz-button>
 </mz-dropdown-menu>
-<div class="demo-font-size-14">有效行为(action)：{{actionItem}}</div>
-<div class="demo-font-size-14">点击选择(select)：{{selectItem}}</div>
+<div class="fs-14">有效行为(action)：{{actionItem}}</div>
+<div class="fs-14">点击选择(select)：{{selectItem}}</div>
 
 <script>
 export default {

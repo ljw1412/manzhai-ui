@@ -1,6 +1,6 @@
 <template>
   <div class="component-textarea">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="textarea-duo-xing-shu-ru-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#textarea-duo-xing-shu-ru-kuang" title="Textarea 多行输入框" data-level="2" data-href="#textarea-duo-xing-shu-ru-kuang">¶</a>Textarea 多行输入框</h2>
       <p>能够输入多行文本内容的输入框。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -29,18 +29,18 @@
         <template #example>
           <textarea-demo2 inline-template>
             <div class="textarea-demo2">
-              <p class="demo-font-size-14">shadow</p>
+              <p class="fs-14">shadow</p>
               <mz-textarea v-model="value" shadow placeholder="请输入"></mz-textarea>
-              <p class="demo-font-size-14">flat</p>
+              <p class="fs-14">flat</p>
               <mz-textarea v-model="value2" flat placeholder="请输入"></mz-textarea>
             </div>
           </textarea-demo2>
         </template>
         <template #description>
           <p><code>flat</code>属性控制是否使用扁平效果。<code>shadow</code>属性控制是否使用阴影显示。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;p class=&quot;demo-font-size-14&quot;&gt;shadow&lt;/p&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;p class=&quot;fs-14&quot;&gt;shadow&lt;/p&gt;
       &lt;mz-textarea v-model=&quot;value&quot; shadow placeholder=&quot;请输入&quot;&gt;&lt;/mz-textarea&gt;
-      &lt;p class=&quot;demo-font-size-14&quot;&gt;flat&lt;/p&gt;
+      &lt;p class=&quot;fs-14&quot;&gt;flat&lt;/p&gt;
       &lt;mz-textarea v-model=&quot;value2&quot; flat placeholder=&quot;请输入&quot;&gt;&lt;/mz-textarea&gt;
       
       &lt;script&gt;

@@ -61,7 +61,7 @@
 ```html
 <div>
   固定与偏移: <mz-switch v-model="fixed" /> 
-  <span class="demo-font-size-14">{{fixed ? '固定' : '非固定'}}</span>
+  <span class="fs-14">{{fixed ? '固定' : '非固定'}}</span>
   <mz-row :gutter="10">
     <mz-col :sm="6">
       <mz-input v-model="offset.top" label="上" />

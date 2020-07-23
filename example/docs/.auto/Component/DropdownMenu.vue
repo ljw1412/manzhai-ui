@@ -1,6 +1,6 @@
 <template>
   <div class="component-dropdown-menu">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="dropdownmenu-xia-la-cai-dan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#dropdownmenu-xia-la-cai-dan" title="DropdownMenu 下拉菜单" data-level="2" data-href="#dropdownmenu-xia-la-cai-dan">¶</a>DropdownMenu 下拉菜单</h2>
       <p>可做一些操作的下拉框。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -112,8 +112,8 @@
                 @action="action" @select="select">
                 <mz-button color="primary">下拉菜单</mz-button>
               </mz-dropdown-menu>
-              <div class="demo-font-size-14">有效行为(action)：{{actionItem}}</div>
-              <div class="demo-font-size-14">点击选择(select)：{{selectItem}}</div>
+              <div class="fs-14">有效行为(action)：{{actionItem}}</div>
+              <div class="fs-14">点击选择(select)：{{selectItem}}</div>
             </div>
           </dropdown-menu-demo4>
         </template>
@@ -123,8 +123,8 @@
         @action=&quot;action&quot; @select=&quot;select&quot;&gt;
         &lt;mz-button color=&quot;primary&quot;&gt;下拉菜单&lt;/mz-button&gt;
       &lt;/mz-dropdown-menu&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;有效行为(action)：{{actionItem}}&lt;/div&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;点击选择(select)：{{selectItem}}&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;有效行为(action)：{{actionItem}}&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;点击选择(select)：{{selectItem}}&lt;/div&gt;
       
       &lt;script&gt;
       export default {

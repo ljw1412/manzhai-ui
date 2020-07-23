@@ -1,6 +1,6 @@
 <template>
   <div class="component-heading">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="heading-biao-ti" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#heading-biao-ti" title="Heading 标题" data-level="2" data-href="#heading-biao-ti">¶</a>Heading 标题</h2>
       <p>有着不同级别的标题。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -68,8 +68,9 @@
             <div class="heading-demo3">
               <mz-row>
                 <mz-col :span="12" 
-                  id="demo-heading-scroll-container" 
-                  style="height: 300px; overflow-y: auto;">
+                  id="demo-heading-scroll-container"
+                  class="height-300 px-32"
+                  style="overflow-y: auto;">
                   <mz-heading id="heading-c-1" :level="1" anchor="heading-anchor">Heading 1</mz-heading>
                   <br />
                   <mz-heading id="heading-c-2" :level="2" anchor="heading-anchor">Heading 2</mz-heading>
@@ -103,8 +104,9 @@
           <p>当<code>anchor</code>属性值为 string 类型，那么它将作为锚点的 class，此时可将catalogue的<code>target</code>属性值设置为与锚点 class一致时，目录就只会寻找带有指定class的锚点。</p>
         </template><template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
         &lt;mz-col :span=&quot;12&quot; 
-          id=&quot;demo-heading-scroll-container&quot; 
-          style=&quot;height: 300px; overflow-y: auto;&quot;&gt;
+          id=&quot;demo-heading-scroll-container&quot;
+          class=&quot;height-300 px-32&quot;
+          style=&quot;overflow-y: auto;&quot;&gt;
           &lt;mz-heading id=&quot;heading-c-1&quot; :level=&quot;1&quot; anchor=&quot;heading-anchor&quot;&gt;Heading 1&lt;/mz-heading&gt;
           &lt;br /&gt;
           &lt;mz-heading id=&quot;heading-c-2&quot; :level=&quot;2&quot; anchor=&quot;heading-anchor&quot;&gt;Heading 2&lt;/mz-heading&gt;
@@ -138,8 +140,9 @@
             <div class="heading-demo4">
               <mz-row>
                 <mz-col :span="12" 
-                  id="demo-heading-scroll-container-2" 
-                  style="height: 300px; overflow-y: auto;">
+                  id="demo-heading-scroll-container-2"
+                  class="height-300 px-32"
+                  style="overflow-y: auto;">
                   <mz-heading id="heading-d-1" :level="1" anchor="heading-anchor-2" title="标题1">Heading 1</mz-heading>
                   <br />
                   <mz-heading id="heading-d-2" :level="2" anchor="heading-anchor-2">Heading 2</mz-heading>
@@ -160,8 +163,9 @@
           <p>heading的<code>title</code>属性在锚点上优先级高于默认插槽。但是heading的文字显示默认插槽优先级高于<code>title</code>属性。因此可以实现目录标题与真实标题不一致的效果。</p>
         </template><template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
         &lt;mz-col :span=&quot;12&quot; 
-          id=&quot;demo-heading-scroll-container-2&quot; 
-          style=&quot;height: 300px; overflow-y: auto;&quot;&gt;
+          id=&quot;demo-heading-scroll-container-2&quot;
+          class=&quot;height-300 px-32&quot;
+          style=&quot;overflow-y: auto;&quot;&gt;
           &lt;mz-heading id=&quot;heading-d-1&quot; :level=&quot;1&quot; anchor=&quot;heading-anchor-2&quot; title=&quot;标题1&quot;&gt;Heading 1&lt;/mz-heading&gt;
           &lt;br /&gt;
           &lt;mz-heading id=&quot;heading-d-2&quot; :level=&quot;2&quot; anchor=&quot;heading-anchor-2&quot;&gt;Heading 2&lt;/mz-heading&gt;
@@ -183,8 +187,9 @@
             <div class="heading-demo5">
               <mz-row>
                 <mz-col :span="12" 
-                  id="demo-heading-scroll-container-3" 
-                  style="height: 300px; overflow-y: auto;">
+                  id="demo-heading-scroll-container-3"
+                  class="height-300"
+                  style="overflow-y: auto;">
                   <mz-heading id="heading-e-1" :level="1"
                     anchor="heading-anchor-3" invisible-anchor>Heading 1</mz-heading>
                   <br />
@@ -215,8 +220,9 @@
           <p><code>invisible-anchor</code>属性来控制锚点的可见性。</p>
         </template><template #highlight><pre v-pre><code class="html">&lt;mz-row&gt;
         &lt;mz-col :span=&quot;12&quot; 
-          id=&quot;demo-heading-scroll-container-3&quot; 
-          style=&quot;height: 300px; overflow-y: auto;&quot;&gt;
+          id=&quot;demo-heading-scroll-container-3&quot;
+          class=&quot;height-300&quot;
+          style=&quot;overflow-y: auto;&quot;&gt;
           &lt;mz-heading id=&quot;heading-e-1&quot; :level=&quot;1&quot;
             anchor=&quot;heading-anchor-3&quot; invisible-anchor&gt;Heading 1&lt;/mz-heading&gt;
           &lt;br /&gt;

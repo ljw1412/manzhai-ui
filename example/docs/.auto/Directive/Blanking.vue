@@ -1,6 +1,6 @@
 <template>
   <div class="directive-blanking">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="blanking-xuan-ze-xing-xian-shi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#blanking-xuan-ze-xing-xian-shi" title="Blanking 选择性显示" data-level="2" data-href="#blanking-xuan-ze-xing-xian-shi">¶</a>Blanking 选择性显示</h2>
       <p>根据本地存储条件控制组件是否需要显示的指令。</p>
       <h3 id="shi-yong-chang-jing" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#shi-yong-chang-jing" title="使用场景" data-level="3" data-href="#shi-yong-chang-jing">¶</a>使用场景</h3>
@@ -19,7 +19,7 @@
                   <mz-button text-color="#fff" @click="close">关闭</mz-button>
                 </template>  
               </mz-snackbar>
-              <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
+              <p class="fs-14">当前隐藏状态: {{state}}</p>
               <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
               <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
             </div>
@@ -35,7 +35,7 @@
           &lt;mz-button text-color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
         &lt;/template&gt;  
       &lt;/mz-snackbar&gt;
-      &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
+      &lt;p class=&quot;fs-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
       &lt;mz-button color=&quot;success&quot; @click=&quot;flush(false)&quot;&gt;刷新页面&lt;/mz-button&gt;
       &lt;mz-button color=&quot;danger&quot; @click=&quot;flush(true)&quot;&gt;重置状态&lt;/mz-button&gt;
       
@@ -90,7 +90,7 @@
                   <mz-button text-color="#fff" @click="close">关闭</mz-button>
                 </template>  
               </mz-snackbar>
-              <p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
+              <p class="fs-14">当前隐藏状态: {{state}}</p>
               <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
               <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
             </div>
@@ -109,7 +109,7 @@
           &lt;mz-button text-color=&quot;#fff&quot; @click=&quot;close&quot;&gt;关闭&lt;/mz-button&gt;
         &lt;/template&gt;  
       &lt;/mz-snackbar&gt;
-      &lt;p class=&quot;demo-font-size-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
+      &lt;p class=&quot;fs-14&quot;&gt;当前隐藏状态: {{state}}&lt;/p&gt;
       &lt;mz-button color=&quot;success&quot; @click=&quot;flush(false)&quot;&gt;刷新页面&lt;/mz-button&gt;
       &lt;mz-button color=&quot;danger&quot; @click=&quot;flush(true)&quot;&gt;重置状态&lt;/mz-button&gt;
       

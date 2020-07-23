@@ -1,6 +1,6 @@
 <template>
   <div class="component-filter-section">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="filtersection-shai-xuan-xiang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#filtersection-shai-xuan-xiang" title="FilterSection 筛选项" data-level="2" data-href="#filtersection-shai-xuan-xiang">¶</a>FilterSection 筛选项</h2>
       <p>用于筛选条件的选择。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -8,7 +8,7 @@
         <template #example>
           <filter-section-demo1 inline-template>
             <div class="filter-section-demo1">
-              <div class="demo-font-size-14">当前值：{{ value }}</div>
+              <div class="fs-14">当前值：{{ value }}</div>
               <mz-filter-section v-model="value" label="产地：">
                 <mz-filter-section-item v-for="country of countries"
                   :key="country.value"
@@ -24,7 +24,7 @@
         </template>
         <template #description>
           <p><code>label</code>用来描述选择项的类型标签。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{ value }}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{ value }}&lt;/div&gt;
       &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;产地：&quot;&gt;
         &lt;mz-filter-section-item v-for=&quot;country of countries&quot;
           :key=&quot;country.value&quot;
@@ -58,7 +58,7 @@
         <template #example>
           <filter-section-demo2 inline-template>
             <div class="filter-section-demo2">
-              <div class="demo-font-size-14">当前值：{{value}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
               <mz-filter-section v-model="value" label="漫画类型" outlined>
                 <mz-filter-section-item v-for="type of typeList"
                   :key="type"
@@ -71,7 +71,7 @@
         </template>
         <template #description>
           <p><code>outlined</code>用来控制是否以边框模式显示选中的效果。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
       &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;漫画类型&quot; outlined&gt;
         &lt;mz-filter-section-item v-for=&quot;type of typeList&quot;
           :key=&quot;type&quot;
@@ -95,7 +95,7 @@
         <template #example>
           <filter-section-demo3 inline-template>
             <div class="filter-section-demo3">
-              <div class="demo-font-size-14">当前值：{{value}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
               <mz-filter-section v-model="value" label="漫画类型" background>
                 <mz-filter-section-item v-for="type of typeList"
                   :key="type"
@@ -110,7 +110,7 @@
         </template>
         <template #description>
           <p><code>background</code>用来控制是否以背景模式显示选中的效果。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
       &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;漫画类型&quot; background&gt;
         &lt;mz-filter-section-item v-for=&quot;type of typeList&quot;
           :key=&quot;type&quot;
@@ -191,7 +191,7 @@
         <template #example>
           <filter-section-demo5 inline-template>
             <div class="filter-section-demo5">
-              <div class="demo-font-size-14">当前值：{{value}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
               <mz-filter-section v-model="value" label="类型1：" multiple>
                 <mz-filter-section-item v-for="i of 10"
                   :key="i"
@@ -202,7 +202,7 @@
         </template>
         <template #description>
           <p><code>multiple</code>用来控制是不是多选。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
       &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;类型1：&quot; multiple&gt;
         &lt;mz-filter-section-item v-for=&quot;i of 10&quot;
           :key=&quot;i&quot;
@@ -222,7 +222,7 @@
         <template #example>
           <filter-section-demo6 inline-template>
             <div class="filter-section-demo6">
-              <div class="demo-font-size-14">当前值：{{groupValue}}</div>
+              <div class="fs-14">当前值：{{groupValue}}</div>
               <mz-filter-section-group v-model="groupValue">
                 <mz-filter-section name="type1"
                   label="类型1(name=type1)：">
@@ -243,7 +243,7 @@
         </template>
         <template #description>
           <p>filterSection的<code>name</code>属性是该选项组的中筛选项的唯一标识。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{groupValue}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{groupValue}}&lt;/div&gt;
       &lt;mz-filter-section-group v-model=&quot;groupValue&quot;&gt;
         &lt;mz-filter-section name=&quot;type1&quot;
           label=&quot;类型1(name=type1)：&quot;&gt;
@@ -272,7 +272,7 @@
         <template #example>
           <filter-section-demo7 inline-template>
             <div class="filter-section-demo7">
-              <div class="demo-font-size-14">当前值：{{value}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
               <mz-filter-section v-model="value" label="类型1：" custom>
                 <mz-filter-section-item custom
                   v-for="i of 10" :key="i" :value="i">
@@ -285,7 +285,7 @@
         </template>
         <template #description>
           <p>filterSectionItem 的<code>custom</code>属性如果是true，可以关闭默认的选中效果。通过<code>slot-scope</code>可以获得当前选择项的选中状态情况。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
       &lt;mz-filter-section v-model=&quot;value&quot; label=&quot;类型1：&quot; custom&gt;
         &lt;mz-filter-section-item custom
           v-for=&quot;i of 10&quot; :key=&quot;i&quot; :value=&quot;i&quot;&gt;

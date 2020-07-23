@@ -20,7 +20,7 @@
     <mz-button text-color="#fff" @click="close">关闭</mz-button>
   </template>  
 </mz-snackbar>
-<p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
+<p class="fs-14">当前隐藏状态: {{state}}</p>
 <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
 <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
 
@@ -77,7 +77,7 @@ export default {
     <mz-button text-color="#fff" @click="close">关闭</mz-button>
   </template>  
 </mz-snackbar>
-<p class="demo-font-size-14">当前隐藏状态: {{state}}</p>
+<p class="fs-14">当前隐藏状态: {{state}}</p>
 <mz-button color="success" @click="flush(false)">刷新页面</mz-button>
 <mz-button color="danger" @click="flush(true)">重置状态</mz-button>
 

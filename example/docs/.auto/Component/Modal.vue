@@ -1,6 +1,6 @@
 <template>
   <div class="component-modal">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="modal-dui-hua-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#modal-dui-hua-kuang" title="Modal 对话框" data-level="2" data-href="#modal-dui-hua-kuang">¶</a>Modal 对话框</h2>
       <p>模态对话框，悬浮于页面，引导用户进行相关操作。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -331,7 +331,7 @@
         <template #example>
           <modal-demo7 inline-template>
             <div class="modal-demo7">
-              <span class="demo-font-size-14">动画：</span>
+              <span class="fs-14">动画：</span>
               <mz-radio-group v-model="transition"
                 class="d-inline-block"
                 style="margin:0 10px;">
@@ -355,7 +355,7 @@
         </template>
         <template #description>
           <p><code>transition</code>属性控制对话框的过渡动画。默认<code>mz-zoom</code>。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;动画：&lt;/span&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot;&gt;动画：&lt;/span&gt;
       &lt;mz-radio-group v-model=&quot;transition&quot;
         class=&quot;d-inline-block&quot;
         style=&quot;margin:0 10px;&quot;&gt;

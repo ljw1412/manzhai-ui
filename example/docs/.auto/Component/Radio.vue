@@ -1,6 +1,6 @@
 <template>
   <div class="component-radio">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="radio-xuan-ze-kuang" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#radio-xuan-ze-kuang" title="Radio 选择框" data-level="2" data-href="#radio-xuan-ze-kuang">¶</a>Radio 选择框</h2>
       <p>在一组选项中进行单选。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -8,7 +8,7 @@
         <template #example>
           <radio-demo1 inline-template>
             <div class="radio-demo1">
-              <div class="demo-font-size-14">当前值：{{value}}</div>
+              <div class="fs-14">当前值：{{value}}</div>
               <mz-radio v-model="value"
                 value="1">选项1</mz-radio>
               <mz-radio v-model="value"
@@ -20,7 +20,7 @@
         </template>
         <template #description>
           <p><code>inputValue</code>/<code>v-model</code>为当前选中值。<code>disabled</code>来控制能否选中。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;当前值：{{value}}&lt;/div&gt;
       &lt;mz-radio v-model=&quot;value&quot;
         value=&quot;1&quot;&gt;选项1&lt;/mz-radio&gt;
       &lt;mz-radio v-model=&quot;value&quot;

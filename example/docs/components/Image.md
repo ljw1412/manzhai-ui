@@ -88,7 +88,7 @@ export default {
 
 :::demo 
 ```html
-<p class="demo-font-size-14">不做处理：</p>
+<p class="fs-14">不做处理：</p>
 <div>
   <mz-image src="about:blank"
     width="100px"
@@ -101,7 +101,7 @@ export default {
   </mz-image>
 </div>
 
-<p class="demo-font-size-14">加载错误图片：</p>
+<p class="fs-14">加载错误图片：</p>
 <div>
   <mz-image src="about:blank"
     :error-src="require('@example/static/image-error.jpg')"
@@ -114,7 +114,7 @@ export default {
     height='100px'></mz-image>
 </div>
 
-<p class="demo-font-size-14">加载错误插槽：</p>
+<p class="fs-14">加载错误插槽：</p>
 <div>
   <mz-image src="about:blank"
     width="100px"

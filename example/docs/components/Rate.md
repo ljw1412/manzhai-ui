@@ -6,9 +6,9 @@
 
 :::demo `allow-half`控制是否允许半分。如果为 true 满分 10，否则为 5。
 ```html
-<div class="demo-font-size-14">正常</div>
+<div class="fs-14">正常</div>
 <mz-rate v-model="value"/>
-<div class="demo-font-size-14">允许半星</div>
+<div class="fs-14">允许半星</div>
 <mz-rate v-model="value2" allow-half/>
 
 <script>

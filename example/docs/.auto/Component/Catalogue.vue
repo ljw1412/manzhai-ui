@@ -1,6 +1,6 @@
 <template>
   <div class="component-catalogue">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="catalogue-mu-lu" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#catalogue-mu-lu" title="Catalogue 目录" data-level="2" data-href="#catalogue-mu-lu">¶</a>Catalogue 目录</h2>
       <p>用于列出页面目录。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -102,7 +102,7 @@
             <div class="catalogue-demo3">
               <div>
                 固定与偏移: <mz-switch v-model="fixed" /> 
-                <span class="demo-font-size-14">{{fixed ? '固定' : '非固定'}}</span>
+                <span class="fs-14">{{fixed ? '固定' : '非固定'}}</span>
                 <mz-row :gutter="10">
                   <mz-col :sm="6">
                     <mz-input v-model="offset.top" label="上" />
@@ -132,7 +132,7 @@
           <p><code>fixed</code>属性控制是否固定。<code>offset</code>控制固定的偏移。</p>
         </template><template #highlight><pre v-pre><code class="html">&lt;div&gt;
         固定与偏移: &lt;mz-switch v-model=&quot;fixed&quot; /&gt; 
-        &lt;span class=&quot;demo-font-size-14&quot;&gt;{{fixed ? '固定' : '非固定'}}&lt;/span&gt;
+        &lt;span class=&quot;fs-14&quot;&gt;{{fixed ? '固定' : '非固定'}}&lt;/span&gt;
         &lt;mz-row :gutter=&quot;10&quot;&gt;
           &lt;mz-col :sm=&quot;6&quot;&gt;
             &lt;mz-input v-model=&quot;offset.top&quot; label=&quot;上&quot; /&gt;

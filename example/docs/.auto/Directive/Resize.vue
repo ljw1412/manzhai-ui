@@ -1,6 +1,6 @@
 <template>
   <div class="directive-resize">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="resize-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#resize-da-xiao-bian-hua" title="Resize 大小变化" data-level="2" data-href="#resize-da-xiao-bian-hua">¶</a>Resize 大小变化</h2>
       <p>当界面大小发生变化时，调用指定的函数。</p>
       <h3 id="jian-tingwindow-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jian-tingwindow-da-xiao-bian-hua" title="监听Window大小变化" data-level="3" data-href="#jian-tingwindow-da-xiao-bian-hua">¶</a>监听Window大小变化</h3>
@@ -40,7 +40,7 @@
         <template #example>
           <resize-demo2 inline-template>
             <div class="resize-demo2">
-              <span class="demo-font-size-14" style="margin-right: 10px;">width:</span>
+              <span class="fs-14" style="margin-right: 10px;">width:</span>
               <mz-button-group>
                 <mz-button outlined
                   @click="percent.width -= 10">-</mz-button>
@@ -49,7 +49,7 @@
                 <mz-button outlined
                   @click="percent.width += 10">+</mz-button>
               </mz-button-group>
-              <span class="demo-font-size-14" style="margin:0 10px;">height:</span>
+              <span class="fs-14" style="margin:0 10px;">height:</span>
               <mz-button-group>
                 <mz-button outlined
                   @click="percent.height -= 10">-</mz-button>
@@ -73,7 +73,7 @@
           </resize-demo2>
         </template>
         <template #description>
-            </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot; style=&quot;margin-right: 10px;&quot;&gt;width:&lt;/span&gt;
+            </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot; style=&quot;margin-right: 10px;&quot;&gt;width:&lt;/span&gt;
       &lt;mz-button-group&gt;
         &lt;mz-button outlined
           @click=&quot;percent.width -= 10&quot;&gt;-&lt;/mz-button&gt;
@@ -82,7 +82,7 @@
         &lt;mz-button outlined
           @click=&quot;percent.width += 10&quot;&gt;+&lt;/mz-button&gt;
       &lt;/mz-button-group&gt;
-      &lt;span class=&quot;demo-font-size-14&quot; style=&quot;margin:0 10px;&quot;&gt;height:&lt;/span&gt;
+      &lt;span class=&quot;fs-14&quot; style=&quot;margin:0 10px;&quot;&gt;height:&lt;/span&gt;
       &lt;mz-button-group&gt;
         &lt;mz-button outlined
           @click=&quot;percent.height -= 10&quot;&gt;-&lt;/mz-button&gt;

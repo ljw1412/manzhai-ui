@@ -1,6 +1,6 @@
 <template>
   <div class="component-pagination">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="pagination-fen-ye" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#pagination-fen-ye" title="Pagination 分页" data-level="2" data-href="#pagination-fen-ye">¶</a>Pagination 分页</h2>
       <p>以分页的形式，展示大量的数据。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -107,25 +107,25 @@
         <template #example>
           <pagination-demo4 inline-template>
             <div class="pagination-demo4">
-              <span class="demo-font-size-14">带总数</span>
+              <span class="fs-14">带总数</span>
               <mz-pagination 
                 v-model="index" 
                 :layout="['total', 'prev', 'pager', 'next']"
                 :page-size="10" 
                 :total="100"></mz-pagination>
-              <span class="demo-font-size-14">自选每页显示条数</span>
+              <span class="fs-14">自选每页显示条数</span>
               <mz-pagination 
                 v-model="index2" 
                 :layout="['sizes','prev', 'pager', 'next']"
                 :page-size.sync="pageSize2"
                 :total="100"></mz-pagination>
-              <span class="demo-font-size-14">跳转到指定页数</span>
+              <span class="fs-14">跳转到指定页数</span>
               <mz-pagination 
                 v-model="index3" 
                 :layout="['prev', 'pager', 'next', 'jumper']"
                 :page-size="10" 
                 :total="100"></mz-pagination>
-              <span class="demo-font-size-14">全部功能</span>
+              <span class="fs-14">全部功能</span>
               <mz-pagination 
                 v-model="index4" 
                 :layout="['total', 'sizes', 'prev', 'pager', 'next', 'jumper']"
@@ -136,25 +136,25 @@
         </template>
         <template #description>
           <p>通过<code>layout</code>可以自由设定分页组件的布局。可选值<code>prev</code>,<code>next</code>,<code>sizes</code>,<code>pager</code>,<code>jumper</code>,<code>total</code>,<code>|</code>。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;demo-font-size-14&quot;&gt;带总数&lt;/span&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot;&gt;带总数&lt;/span&gt;
       &lt;mz-pagination 
         v-model=&quot;index&quot; 
         :layout=&quot;['total', 'prev', 'pager', 'next']&quot;
         :page-size=&quot;10&quot; 
         :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
-      &lt;span class=&quot;demo-font-size-14&quot;&gt;自选每页显示条数&lt;/span&gt;
+      &lt;span class=&quot;fs-14&quot;&gt;自选每页显示条数&lt;/span&gt;
       &lt;mz-pagination 
         v-model=&quot;index2&quot; 
         :layout=&quot;['sizes','prev', 'pager', 'next']&quot;
         :page-size.sync=&quot;pageSize2&quot;
         :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
-      &lt;span class=&quot;demo-font-size-14&quot;&gt;跳转到指定页数&lt;/span&gt;
+      &lt;span class=&quot;fs-14&quot;&gt;跳转到指定页数&lt;/span&gt;
       &lt;mz-pagination 
         v-model=&quot;index3&quot; 
         :layout=&quot;['prev', 'pager', 'next', 'jumper']&quot;
         :page-size=&quot;10&quot; 
         :total=&quot;100&quot;&gt;&lt;/mz-pagination&gt;
-      &lt;span class=&quot;demo-font-size-14&quot;&gt;全部功能&lt;/span&gt;
+      &lt;span class=&quot;fs-14&quot;&gt;全部功能&lt;/span&gt;
       &lt;mz-pagination 
         v-model=&quot;index4&quot; 
         :layout=&quot;['total', 'sizes', 'prev', 'pager', 'next', 'jumper']&quot;

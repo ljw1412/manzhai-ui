@@ -118,9 +118,9 @@
     <mz-card height="50px"><span>我是{{item.title}}</span></mz-card>
   </mz-list-item>
 </mz-list>
-<div class="demo-font-size-14">当前值：{{value}}</div>
-<div class="demo-font-size-14">上一次改变(change)：{{changeItem}}</div>
-<div class="demo-font-size-14">点击对象(item-click)：{{currentItem}}</div>
+<div class="fs-14">当前值：{{value}}</div>
+<div class="fs-14">上一次改变(change)：{{changeItem}}</div>
+<div class="fs-14">点击对象(item-click)：{{currentItem}}</div>
 
 <script>
 export default {

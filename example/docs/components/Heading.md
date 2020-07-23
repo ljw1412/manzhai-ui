@@ -46,8 +46,9 @@
 ```html
 <mz-row>
   <mz-col :span="12" 
-    id="demo-heading-scroll-container" 
-    style="height: 300px; overflow-y: auto;">
+    id="demo-heading-scroll-container"
+    class="height-300 px-32"
+    style="overflow-y: auto;">
     <mz-heading id="heading-c-1" :level="1" anchor="heading-anchor">Heading 1</mz-heading>
     <br />
     <mz-heading id="heading-c-2" :level="2" anchor="heading-anchor">Heading 2</mz-heading>
@@ -83,8 +84,9 @@
 ```html
 <mz-row>
   <mz-col :span="12" 
-    id="demo-heading-scroll-container-2" 
-    style="height: 300px; overflow-y: auto;">
+    id="demo-heading-scroll-container-2"
+    class="height-300 px-32"
+    style="overflow-y: auto;">
     <mz-heading id="heading-d-1" :level="1" anchor="heading-anchor-2" title="标题1">Heading 1</mz-heading>
     <br />
     <mz-heading id="heading-d-2" :level="2" anchor="heading-anchor-2">Heading 2</mz-heading>
@@ -109,8 +111,9 @@
 ```html
 <mz-row>
   <mz-col :span="12" 
-    id="demo-heading-scroll-container-3" 
-    style="height: 300px; overflow-y: auto;">
+    id="demo-heading-scroll-container-3"
+    class="height-300"
+    style="overflow-y: auto;">
     <mz-heading id="heading-e-1" :level="1"
       anchor="heading-anchor-3" invisible-anchor>Heading 1</mz-heading>
     <br />

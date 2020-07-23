@@ -1,6 +1,6 @@
 <template>
   <div class="directive-tooltip">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="tooltip-ti-shi-wen-zi" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tooltip-ti-shi-wen-zi" title="Tooltip 提示文字" data-level="2" data-href="#tooltip-ti-shi-wen-zi">¶</a>Tooltip 提示文字</h2>
       <p>简单的提示文字处理，如果要进行自定义请使用组件<a href="component-tooltip">Tooltip</a></p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -31,18 +31,18 @@
                 </mz-col>
                 <mz-col style="width: calc(100% - 80px);">
                   <div class="option">
-                    <span class="demo-font-size-14">内容：</span>
+                    <span class="fs-14">内容：</span>
                     <mz-input v-model="options.content" style="margin-right: 20px;"></mz-input>
                   </div>
                   <div class="option">
-                    <span class="demo-font-size-14">主题：</span>
+                    <span class="fs-14">主题：</span>
                     <mz-select v-model="options.theme" style="margin-right: 20px;">
                       <mz-option value="" label="默认"></mz-option>
                       <mz-option v-for="theme of themes" :value="theme" :key="theme"></mz-option>
                     </mz-select>
                   </div>
                   <div class="option">
-                  <span class="demo-font-size-14">位置：</span>
+                  <span class="fs-14">位置：</span>
                     <mz-select v-model="options.placement" style="margin-right: 20px;">
                       <mz-option v-for="placement of placements" :value="placement" :key="placement"></mz-option>
                     </mz-select>
@@ -64,18 +64,18 @@
         &lt;/mz-col&gt;
         &lt;mz-col style=&quot;width: calc(100% - 80px);&quot;&gt;
           &lt;div class=&quot;option&quot;&gt;
-            &lt;span class=&quot;demo-font-size-14&quot;&gt;内容：&lt;/span&gt;
+            &lt;span class=&quot;fs-14&quot;&gt;内容：&lt;/span&gt;
             &lt;mz-input v-model=&quot;options.content&quot; style=&quot;margin-right: 20px;&quot;&gt;&lt;/mz-input&gt;
           &lt;/div&gt;
           &lt;div class=&quot;option&quot;&gt;
-            &lt;span class=&quot;demo-font-size-14&quot;&gt;主题：&lt;/span&gt;
+            &lt;span class=&quot;fs-14&quot;&gt;主题：&lt;/span&gt;
             &lt;mz-select v-model=&quot;options.theme&quot; style=&quot;margin-right: 20px;&quot;&gt;
               &lt;mz-option value=&quot;&quot; label=&quot;默认&quot;&gt;&lt;/mz-option&gt;
               &lt;mz-option v-for=&quot;theme of themes&quot; :value=&quot;theme&quot; :key=&quot;theme&quot;&gt;&lt;/mz-option&gt;
             &lt;/mz-select&gt;
           &lt;/div&gt;
           &lt;div class=&quot;option&quot;&gt;
-          &lt;span class=&quot;demo-font-size-14&quot;&gt;位置：&lt;/span&gt;
+          &lt;span class=&quot;fs-14&quot;&gt;位置：&lt;/span&gt;
             &lt;mz-select v-model=&quot;options.placement&quot; style=&quot;margin-right: 20px;&quot;&gt;
               &lt;mz-option v-for=&quot;placement of placements&quot; :value=&quot;placement&quot; :key=&quot;placement&quot;&gt;&lt;/mz-option&gt;
             &lt;/mz-select&gt;

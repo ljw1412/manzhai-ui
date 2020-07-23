@@ -48,7 +48,7 @@ export default {
 ### 参数配置
 :::demo 以下是所有可以配置的属性，它们的可选值与MzLoading对应属性值一致。唯一区别这些属性值都是`String`类型。
 ```html
-<span class="demo-font-size-14">加载开关：</span>
+<span class="fs-14">加载开关：</span>
 <mz-switch v-model="loading"></mz-switch>
 
 <div v-loading="loading"

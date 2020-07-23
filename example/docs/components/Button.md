@@ -9,7 +9,7 @@
 :::demo 使用`color`、`outlined`、`flat`、`round`、`circle`、`icon`属性来定义 Button 的样式。你可以通过`disabled`属性来修改按钮的禁用状态。
 
 ```html
-<span class="demo-font-size-14">状态控制: </span>
+<span class="fs-14">状态控制: </span>
 <mz-checkbox-group v-model="checkedList">
   <mz-checkbox v-for="option of options" 
     :value="option" :key="option">{{option}}</mz-checkbox>

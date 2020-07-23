@@ -22,9 +22,9 @@ export default {
 ### 不同样式
 :::demo `flat`属性控制是否使用扁平效果。`shadow`属性控制是否使用阴影显示。
 ```html
-<p class="demo-font-size-14">shadow</p>
+<p class="fs-14">shadow</p>
 <mz-textarea v-model="value" shadow placeholder="请输入"></mz-textarea>
-<p class="demo-font-size-14">flat</p>
+<p class="fs-14">flat</p>
 <mz-textarea v-model="value2" flat placeholder="请输入"></mz-textarea>
 
 <script>

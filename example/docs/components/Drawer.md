@@ -39,7 +39,7 @@ export default {
 
 :::demo 布局插槽主要有三个，分别为`title`、`默认`、`footer`。
 ```html
-<span class="demo-font-size-14">显示的插槽：</span>
+<span class="fs-14">显示的插槽：</span>
 <mz-checkbox-group v-model="displayList"
   class="d-inline-block"
   style="margin:0 10px;">

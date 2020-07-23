@@ -1,6 +1,6 @@
 <template>
   <div class="component-snackbar">
-    <div class="update-datetime">文档更新时间：2020-07-20 18:45</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
       <h2 id="snackbar-xiao-xi-tiao" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#snackbar-xiao-xi-tiao" title="Snackbar 消息条" data-level="2" data-href="#snackbar-xiao-xi-tiao">¶</a>Snackbar 消息条</h2>
       <p>用于页面中展示消息。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -8,9 +8,9 @@
         <template #example>
           <snackbar-demo1 inline-template>
             <div class="snackbar-demo1">
-              <div class="demo-font-size-14">一直显示：</div>
+              <div class="fs-14">一直显示：</div>
               <mz-snackbar content="这是一条测试消息。" />
-              <div class="demo-font-size-14">自动消失：</div>
+              <div class="fs-14">自动消失：</div>
               <mz-snackbar v-model="isShow" content="这是一条测试消息。" />
               <mz-button @click="isShow = true">显示</mz-button>
             </div>
@@ -18,9 +18,9 @@
         </template>
         <template #description>
           <p><code>visible/v-model</code>控制组件的显隐，如果不绑定，将一直显示。消息条默认显示5秒。</p>
-        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;demo-font-size-14&quot;&gt;一直显示：&lt;/div&gt;
+        </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;fs-14&quot;&gt;一直显示：&lt;/div&gt;
       &lt;mz-snackbar content=&quot;这是一条测试消息。&quot; /&gt;
-      &lt;div class=&quot;demo-font-size-14&quot;&gt;自动消失：&lt;/div&gt;
+      &lt;div class=&quot;fs-14&quot;&gt;自动消失：&lt;/div&gt;
       &lt;mz-snackbar v-model=&quot;isShow&quot; content=&quot;这是一条测试消息。&quot; /&gt;
       &lt;mz-button @click=&quot;isShow = true&quot;&gt;显示&lt;/mz-button&gt;
       

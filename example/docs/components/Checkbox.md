@@ -11,12 +11,12 @@
 ```html
 <div>
   <mz-checkbox v-model="value2">选择项</mz-checkbox>
-  <span class="demo-font-size-14">当前值：{{value2}}</span>
+  <span class="fs-14">当前值：{{value2}}</span>
 
   <mz-checkbox v-model="value"
     trueValue="开"
     falseValue="关">选择项</mz-checkbox>
-  <span class="demo-font-size-14">当前值：{{value}}</span>
+  <span class="fs-14">当前值：{{value}}</span>
 </div>
 
 <script>
@@ -66,7 +66,7 @@ export default{
 
 ```html
 <div>
-  <div class="demo-font-size-14">当前值：{{value}}</div>
+  <div class="fs-14">当前值：{{value}}</div>
   <mz-checkbox-group v-model="value">
     <mz-checkbox value="A">选择项A</mz-checkbox>
     <mz-checkbox value="B">选择项B</mz-checkbox>
@@ -96,7 +96,7 @@ export default{
 
 ```html
 <div>
-  <div class="demo-font-size-14">当前值：{{value}}</div>
+  <div class="fs-14">当前值：{{value}}</div>
   <mz-checkbox v-model="isAll"
     :indeterminate="indeterminate"
     @change="onCheckAll">全选</mz-checkbox>

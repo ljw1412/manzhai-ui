@@ -25,18 +25,18 @@
   </mz-col>
   <mz-col style="width: calc(100% - 80px);">
     <div class="option">
-      <span class="demo-font-size-14">内容：</span>
+      <span class="fs-14">内容：</span>
       <mz-input v-model="options.content" style="margin-right: 20px;"></mz-input>
     </div>
     <div class="option">
-      <span class="demo-font-size-14">主题：</span>
+      <span class="fs-14">主题：</span>
       <mz-select v-model="options.theme" style="margin-right: 20px;">
         <mz-option value="" label="默认"></mz-option>
         <mz-option v-for="theme of themes" :value="theme" :key="theme"></mz-option>
       </mz-select>
     </div>
     <div class="option">
-    <span class="demo-font-size-14">位置：</span>
+    <span class="fs-14">位置：</span>
       <mz-select v-model="options.placement" style="margin-right: 20px;">
         <mz-option v-for="placement of placements" :value="placement" :key="placement"></mz-option>
       </mz-select>

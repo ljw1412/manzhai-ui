@@ -6,7 +6,7 @@
 
 :::demo `inputValue`/`v-model`为当前选中值。`disabled`来控制能否选中。
 ```html
-<div class="demo-font-size-14">当前值：{{value}}</div>
+<div class="fs-14">当前值：{{value}}</div>
 <mz-radio v-model="value"
   value="1">选项1</mz-radio>
 <mz-radio v-model="value"
