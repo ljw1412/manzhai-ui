@@ -1,6 +1,6 @@
 <template>
-  <div class="page-component"
-    id="page-component">
+  <div id="page-component"
+    class="page-component h-100">
     <mz-catalogue ref="catalogue"
       scroll-smooth
       sidebar
@@ -48,17 +48,17 @@ export default class PageDocs extends Vue {
 </script>
 
 <style lang="scss">
-#page-component {
-  display: flex;
-  height: 100%;
+#page-component-content {
+  padding-right: 230px;
+  transition: padding-right 0.3s;
+}
+
+@include only-screen-mw-992 {
+  #page-component > .mz-catalogue {
+    display: none;
+  }
   #page-component-content {
-    position: relative;
-    flex-grow: 1;
-    padding: 40px 30px;
-    padding-right: 230px;
-    overflow-y: scroll;
-    overflow-x: auto;
-    transition: padding-right 0.3s;
+    padding-right: 30px;
   }
 }
 </style>

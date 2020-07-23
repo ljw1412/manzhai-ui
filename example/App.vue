@@ -64,7 +64,7 @@ export default class APP extends Vue {
 
   #sidebar {
     box-sizing: border-box;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
 
   #copyright a {

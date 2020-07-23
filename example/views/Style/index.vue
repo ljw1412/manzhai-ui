@@ -1,6 +1,7 @@
 <template>
-  <div class="page-style">
-    <div id="page-component-content">
+  <div id="page-style"
+    class="page-style h-100">
+    <div id="page-style-content">
       <router-view></router-view>
     </div>
   </div>

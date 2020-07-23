@@ -35,7 +35,6 @@ export default class MzNavigation extends Vue {
   readonly navigation!: HTMLDivElement
 
   slide(value?: string) {
-    console.log(value)
     if (this.autoScroll && (this.autoScrollOnChange || value === 'init')) {
       setTimeout(() => {
         const active = this.navigation.querySelector('.router-link-active')

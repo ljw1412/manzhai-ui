@@ -1,5 +1,6 @@
 <template>
-  <div class="page-theme">
+  <div id="page-theme"
+    class="page-theme">
     <div class="mt-20 mx-auto"
       style="width:1200px">
       <mz-heading :level="1"

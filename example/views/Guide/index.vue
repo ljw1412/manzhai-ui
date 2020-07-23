@@ -1,5 +1,6 @@
 <template>
-  <div class="page-guide">
+  <div id="page-guide"
+    class="page-guide">
   </div>
 </template>
 
@@ -7,9 +8,8 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class PageGuide extends Vue {
-}
+export default class PageGuide extends Vue {}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>

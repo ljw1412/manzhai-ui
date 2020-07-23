@@ -1,0 +1,130 @@
+#page-style-content,
+#page-component-content {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 40px 30px;
+  overflow-y: scroll;
+  overflow-x: auto;
+
+  [class^='component-'],
+  [class^='directive-'],
+  [class^='style-'] {
+    position: relative;
+    > p a {
+      color: #409eff;
+    }
+
+    > h1 {
+      font-size: 32px;
+    }
+
+    > h2 {
+      font-size: 28px;
+    }
+
+    > h3 {
+      font-size: 24px;
+      margin: 55px 0 20px;
+    }
+    > h4 {
+      font-size: 20px;
+      margin: 20px 0 12px;
+    }
+  }
+
+  .update-datetime {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 14px;
+    color: $gray-800;
+    z-index: 1;
+    transition: opacity 0.2s;
+  }
+
+  p {
+    font-size: 14px;
+    color: $gray-800;
+    line-height: 1.5em;
+    margin: 1em 0;
+  }
+
+  table:not(.mz-table) {
+    width: 100%;
+    border-spacing: 0;
+    tr {
+      th,
+      td {
+        text-align: left;
+        padding: 16px 10px;
+        border-bottom: 1px solid $border-color;
+      }
+      th {
+        font-size: 13px;
+        color: $gray-700;
+      }
+      td {
+        color: $gray-900;
+        font-size: 14px;
+      }
+    }
+
+    a {
+      color: #409eff;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  $height: $i * 100;
+  .height-#{$height} {
+    height: $height * 1px;
+  }
+}
+
+.mz-document-heading {
+  position: relative;
+  font-weight: 400;
+  color: $gray-900;
+  &:hover .mz-document-anchor {
+    opacity: 1;
+  }
+}
+
+.mz-document-anchor {
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  color: $primary;
+}
+
+.mz-document-ul {
+  list-style: initial;
+  margin-left: 10px;
+  li {
+    color: $gray-900;
+    margin: 8px 0 10px 10px;
+  }
+}
+
+@include theme-root(dark) {
+  .mz-document-anchor {
+    color: #ffffff;
+  }
+}
+
+@include only-screen-mw-992 {
+  .app-topbar-navigation {
+    li:not(#app-logo) {
+      padding: 0 10px;
+    }
+  }
+
+  #page-style-content,
+  #page-component-content {
+    .update-datetime {
+      position: relative;
+    }
+  }
+}

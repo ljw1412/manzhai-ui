@@ -1,0 +1,107 @@
+.component-anchor {
+  .anchor-demo2 {
+    padding: 10px 0;
+  }
+}
+
+.component-button {
+  [class^='button-demo'] {
+    .mz-button {
+      margin: 8px 10px 8px 0;
+    }
+    .mz-button-group .mz-button {
+      margin: initial;
+    }
+
+    .mz-button-group {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.component-card {
+  [class^='card-demo'] {
+    .mz-button + .mz-button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.component-checkbox {
+  .checkbox-demo1 {
+    > div > span {
+      margin-right: 50px;
+    }
+  }
+}
+
+.component-switch {
+  .mz-switch + .mz-switch {
+    margin-left: 20px;
+  }
+}
+
+.component-progress {
+  .mz-progress + .mz-progress {
+    margin-top: 20px;
+  }
+}
+.directive-tooltip,
+.component-tag {
+  .mz-tag {
+    margin-right: 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.component-badge {
+  .mz-badge + .mz-badge {
+    margin-left: 20px;
+  }
+}
+
+.component-input {
+  .mz-input + .mz-input {
+    margin-top: 10px;
+  }
+}
+.component-select {
+  .mz-select {
+    width: 200px;
+  }
+}
+
+.component-radio {
+  .mz-radio-group {
+    margin-bottom: 10px;
+  }
+}
+
+.component-layout {
+  .layout-type {
+    text-align: center;
+    .mz-header,
+    .mz-main,
+    .mz-aside,
+    .mz-footer {
+      background-color: $blue;
+      color: #ffffff;
+    }
+    .mz-header,
+    .mz-footer {
+      opacity: 0.7;
+      line-height: 64px;
+    }
+    .mz-aside {
+      opacity: 0.8;
+      line-height: 160px;
+    }
+    .mz-main {
+      opacity: 0.9;
+      line-height: 160px;
+    }
+  }
+}

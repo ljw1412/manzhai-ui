@@ -2,7 +2,7 @@ const slugify = require('transliteration').slugify
 
 module.exports = {
   anchor: {
-    level: 2,
+    level: 1,
     slugify,
     permalink: true,
     permalinkBefore: true,
