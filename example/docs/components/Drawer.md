@@ -125,9 +125,9 @@ export default {
 |placement|弹出的位置|String|'top' / 'right' / 'bottom' / 'left'||
 |width|宽度|String||'512px'|
 |height|高度，仅placement为'top','bottom'时有效。|String||'512px'|
-|headerStyle|抽屉头部样式|any|||
-|contentStyle|抽屉内容样式|any|||
-|footerStyle|抽屉底部样式|any|||
+|header-style|抽屉头部样式|any|||
+|content-style|抽屉内容样式|any|||
+|footer-style|抽屉底部样式|any|||
 |elevation|阴影深度|Number||15|
 |zIndex|层级|Number|||
 |radius|抽屉的圆角大小，与css写法一致|String|||

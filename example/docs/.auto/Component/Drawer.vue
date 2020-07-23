@@ -1,6 +1,6 @@
 <template>
   <div class="component-drawer">
-    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 14:22</div>
       <h2 id="drawer-chou-ti" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#drawer-chou-ti" title="Drawer 抽屉" data-level="2" data-href="#drawer-chou-ti">¶</a>Drawer 抽屉</h2>
       <p>屏幕边缘滑出的浮层面板。</p>
       <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -220,21 +220,21 @@
       <td>'512px'</td>
       </tr>
       <tr>
-      <td>headerStyle</td>
+      <td>header-style</td>
       <td>抽屉头部样式</td>
       <td>any</td>
       <td></td>
       <td></td>
       </tr>
       <tr>
-      <td>contentStyle</td>
+      <td>content-style</td>
       <td>抽屉内容样式</td>
       <td>any</td>
       <td></td>
       <td></td>
       </tr>
       <tr>
-      <td>footerStyle</td>
+      <td>footer-style</td>
       <td>抽屉底部样式</td>
       <td>any</td>
       <td></td>

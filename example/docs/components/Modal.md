@@ -338,7 +338,7 @@ export default {
 |radius|对话框的圆角大小|String|||
 |transition|对话框的显隐动画名称|String||'mz-zoom'|
 |header-style|头部样式|String/Object|||
-|body-style|内容样式|String/Object|||
+|content-style|内容样式|String/Object|||
 |footer-style|底部样式|String/Object|||
 |outer-scroll|是否外滚动|Boolean|||
 |divider|是否有分割线|Boolean|||

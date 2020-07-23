@@ -23,7 +23,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
   @Prop()
   readonly headerStyle!: any
   @Prop()
-  readonly bodyStyle!: any
+  readonly contentStyle!: any
   @Prop()
   readonly footerStyle!: any
   @Prop(Boolean)
@@ -131,7 +131,7 @@ export default class MzModal extends Mixins(BaseAttribute, MzPopView) {
 
   renderBody() {
     return (
-      <div class="mz-modal__body" style={this.bodyStyle}>
+      <div class="mz-modal__body" style={this.contentStyle}>
         {this.$slots.default || this.content}
       </div>
     )
