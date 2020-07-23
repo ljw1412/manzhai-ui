@@ -3,16 +3,22 @@
     class="overflow-hidden h-100">
     <mz-header id="topbar"
       class="bg-primary">
-      <topbar></topbar>
+      <topbar @menu-toggle="visibleMiniMenu = true"></topbar>
     </mz-header>
 
     <mz-layout>
       <mz-aside id="sidebar"
-        v-show="pageType && navigate.length">
+        class="hide-md"
+        v-show="!hideSidebar">
         <sidebar :data="navigate"></sidebar>
       </mz-aside>
 
-      <mz-main id="content">
+      <sidebar-drawer v-model="visibleMiniMenu"
+        :hide-sidebar-navigation="hideSidebar"
+        :data="navigate"></sidebar-drawer>
+
+      <mz-main id="content"
+        class="w-100">
         <router-view></router-view>
       </mz-main>
     </mz-layout>
@@ -32,16 +38,20 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
 import { Route } from 'vue-router'
 import Topbar from './components/Topbar.vue'
 import Sidebar from './components/Sidebar.vue'
+import SidebarDrawer from './components/SidebarDrawer.vue'
 import navigateMap from '@example/options/sidebar-navigate'
 
-@Component({
-  components: { Sidebar, Topbar }
-})
+@Component({ components: { Sidebar, SidebarDrawer, Topbar } })
 export default class APP extends Vue {
   pageType = ''
+  visibleMiniMenu = false
 
   get navigate() {
     return navigateMap[this.pageType] || []
+  }
+
+  get hideSidebar() {
+    return !this.pageType || !this.navigate.length
   }
 
   @Watch('$route', { immediate: true })

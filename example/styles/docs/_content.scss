@@ -115,6 +115,14 @@
 }
 
 @include only-screen-mw-992 {
+  .hide-md {
+    display: none;
+  }
+
+  .show-md {
+    display: block;
+  }
+
   .app-topbar-navigation {
     li:not(#app-logo) {
       padding: 0 10px;

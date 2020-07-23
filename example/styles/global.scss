@@ -25,24 +25,33 @@ a {
   color: $gray-900;
 }
 
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-  background-color: rgba(0, 0, 0, 0.08);
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.12);
-  }
-  &-corner {
-    background-color: transparent;
-  }
-  // 滚动条上的滚动滑块
-  &-thumb {
-    background-color: $primary;
-  }
-  &-thumb:active {
-    background-color: $primary;
-    opacity: 0.5;
-  }
-}
+// ::-webkit-scrollbar {
+//   width: 12px;
+//   height: 12px;
+//   background-color: rgba(0, 0, 0, 0.08);
+//   &:hover {
+//     background-color: rgba(0, 0, 0, 0.12);
+//   }
+//   &-corner {
+//     background-color: transparent;
+//   }
+//   // 滚动条上的滚动滑块
+//   &-thumb {
+//     background-color: $primary;
+//   }
+//   &-thumb:active {
+//     background-color: $primary;
+//     opacity: 0.5;
+//   }
+// }
+
+// @include theme-root(dark) {
+//   ::-webkit-scrollbar {
+//     background-color: rgba(255, 255, 255, 0.08);
+//     &-thumb {
+//       background-color: rgba(255, 255, 255, 0.75);
+//     }
+//   }
+// }
 
 @import './docs/index.scss';

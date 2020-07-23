@@ -36,24 +36,28 @@ export default {
 
 :::demo 
 ```html
-<span class="fs-14" style="margin-right: 10px;">width:</span>
-<mz-button-group>
-  <mz-button outlined
-    @click="percent.width -= 10">-</mz-button>
-  <mz-button outlined
-    @click="percent.width = 100">{{percent.width}}%</mz-button>
-  <mz-button outlined
-    @click="percent.width += 10">+</mz-button>
-</mz-button-group>
-<span class="fs-14" style="margin:0 10px;">height:</span>
-<mz-button-group>
-  <mz-button outlined
-    @click="percent.height -= 10">-</mz-button>
-  <mz-button outlined
-    @click="percent.height = 100">{{percent.height}}%</mz-button>
-  <mz-button outlined
-    @click="percent.height += 10">+</mz-button>
-</mz-button-group>
+<div class="mb-10">
+  <span class="fs-14 mr-10 d-inline-block" style="width: 50px;">width:</span>
+  <mz-button-group>
+    <mz-button outlined
+      @click="percent.width -= 10">-</mz-button>
+    <mz-button outlined
+      @click="percent.width = 100">{{percent.width}}%</mz-button>
+    <mz-button outlined
+      @click="percent.width += 10">+</mz-button>
+  </mz-button-group>
+</div>
+<div>
+  <span class="fs-14 mr-10 d-inline-block" style="width: 50px;">height:</span>
+  <mz-button-group>
+    <mz-button outlined
+      @click="percent.height -= 10">-</mz-button>
+    <mz-button outlined
+      @click="percent.height = 100">{{percent.height}}%</mz-button>
+    <mz-button outlined
+      @click="percent.height += 10">+</mz-button>
+  </mz-button-group>
+</div>
 
 <div style="height: 300px; margin-top: 20px;">
   <div v-el-resize="resize"

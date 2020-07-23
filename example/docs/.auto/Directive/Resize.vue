@@ -1,6 +1,6 @@
 <template>
   <div class="directive-resize">
-    <div class="update-datetime">文档更新时间：2020-07-23 11:32</div>
+    <div class="update-datetime">文档更新时间：2020-07-23 13:51</div>
       <h2 id="resize-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#resize-da-xiao-bian-hua" title="Resize 大小变化" data-level="2" data-href="#resize-da-xiao-bian-hua">¶</a>Resize 大小变化</h2>
       <p>当界面大小发生变化时，调用指定的函数。</p>
       <h3 id="jian-tingwindow-da-xiao-bian-hua" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#jian-tingwindow-da-xiao-bian-hua" title="监听Window大小变化" data-level="3" data-href="#jian-tingwindow-da-xiao-bian-hua">¶</a>监听Window大小变化</h3>
@@ -40,24 +40,28 @@
         <template #example>
           <resize-demo2 inline-template>
             <div class="resize-demo2">
-              <span class="fs-14" style="margin-right: 10px;">width:</span>
-              <mz-button-group>
-                <mz-button outlined
-                  @click="percent.width -= 10">-</mz-button>
-                <mz-button outlined
-                  @click="percent.width = 100">{{percent.width}}%</mz-button>
-                <mz-button outlined
-                  @click="percent.width += 10">+</mz-button>
-              </mz-button-group>
-              <span class="fs-14" style="margin:0 10px;">height:</span>
-              <mz-button-group>
-                <mz-button outlined
-                  @click="percent.height -= 10">-</mz-button>
-                <mz-button outlined
-                  @click="percent.height = 100">{{percent.height}}%</mz-button>
-                <mz-button outlined
-                  @click="percent.height += 10">+</mz-button>
-              </mz-button-group>
+              <div class="mb-10">
+                <span class="fs-14 mr-10 d-inline-block" style="width: 50px;">width:</span>
+                <mz-button-group>
+                  <mz-button outlined
+                    @click="percent.width -= 10">-</mz-button>
+                  <mz-button outlined
+                    @click="percent.width = 100">{{percent.width}}%</mz-button>
+                  <mz-button outlined
+                    @click="percent.width += 10">+</mz-button>
+                </mz-button-group>
+              </div>
+              <div>
+                <span class="fs-14 mr-10 d-inline-block" style="width: 50px;">height:</span>
+                <mz-button-group>
+                  <mz-button outlined
+                    @click="percent.height -= 10">-</mz-button>
+                  <mz-button outlined
+                    @click="percent.height = 100">{{percent.height}}%</mz-button>
+                  <mz-button outlined
+                    @click="percent.height += 10">+</mz-button>
+                </mz-button-group>
+              </div>
               
               <div style="height: 300px; margin-top: 20px;">
                 <div v-el-resize="resize"
@@ -73,24 +77,28 @@
           </resize-demo2>
         </template>
         <template #description>
-            </template><template #highlight><pre v-pre><code class="html">&lt;span class=&quot;fs-14&quot; style=&quot;margin-right: 10px;&quot;&gt;width:&lt;/span&gt;
-      &lt;mz-button-group&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.width -= 10&quot;&gt;-&lt;/mz-button&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.width = 100&quot;&gt;{{percent.width}}%&lt;/mz-button&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.width += 10&quot;&gt;+&lt;/mz-button&gt;
-      &lt;/mz-button-group&gt;
-      &lt;span class=&quot;fs-14&quot; style=&quot;margin:0 10px;&quot;&gt;height:&lt;/span&gt;
-      &lt;mz-button-group&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.height -= 10&quot;&gt;-&lt;/mz-button&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.height = 100&quot;&gt;{{percent.height}}%&lt;/mz-button&gt;
-        &lt;mz-button outlined
-          @click=&quot;percent.height += 10&quot;&gt;+&lt;/mz-button&gt;
-      &lt;/mz-button-group&gt;
+            </template><template #highlight><pre v-pre><code class="html">&lt;div class=&quot;mb-10&quot;&gt;
+        &lt;span class=&quot;fs-14 mr-10 d-inline-block&quot; style=&quot;width: 50px;&quot;&gt;width:&lt;/span&gt;
+        &lt;mz-button-group&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.width -= 10&quot;&gt;-&lt;/mz-button&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.width = 100&quot;&gt;{{percent.width}}%&lt;/mz-button&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.width += 10&quot;&gt;+&lt;/mz-button&gt;
+        &lt;/mz-button-group&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;span class=&quot;fs-14 mr-10 d-inline-block&quot; style=&quot;width: 50px;&quot;&gt;height:&lt;/span&gt;
+        &lt;mz-button-group&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.height -= 10&quot;&gt;-&lt;/mz-button&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.height = 100&quot;&gt;{{percent.height}}%&lt;/mz-button&gt;
+          &lt;mz-button outlined
+            @click=&quot;percent.height += 10&quot;&gt;+&lt;/mz-button&gt;
+        &lt;/mz-button-group&gt;
+      &lt;/div&gt;
       
       &lt;div style=&quot;height: 300px; margin-top: 20px;&quot;&gt;
         &lt;div v-el-resize=&quot;resize&quot;
