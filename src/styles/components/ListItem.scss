@@ -3,6 +3,8 @@
   display: flex;
   padding: 0 16px;
   color: $gray-800;
+  // 修复手机端列表元素选中渲染异常
+  transform: translateZ(0);
 
   &.is-custom {
     padding: 0;

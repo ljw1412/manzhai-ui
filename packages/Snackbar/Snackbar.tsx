@@ -1,12 +1,12 @@
-import { Component, Prop, Model, Watch } from 'vue-property-decorator'
+import { Component, Prop, Model, Watch, Mixins } from 'vue-property-decorator'
 import { CreateElement, VNodeData } from 'vue'
 import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import MzColor from 'manzhai-ui/src/mixins/MzColor'
 import PopupManager from 'manzhai-ui/src/utils/popup-manager'
 import MzIcon from 'manzhai-ui/packages/Icon/Icon.vue'
-import { COLOR_TYPES } from 'manzhai-ui/src/constants'
 
 @Component({ components: { MzIcon } })
-export default class MzSnackbar extends MzSize {
+export default class MzSnackbar extends Mixins(MzSize, MzColor) {
   @Model('visible:change', { type: Boolean, default: true })
   readonly visible!: boolean
   /* prettier-ignore */
@@ -17,11 +17,7 @@ export default class MzSnackbar extends MzSize {
   @Prop(String)
   readonly icon!: string
   @Prop(String)
-  readonly color!: string
-  @Prop(String)
   readonly content!: string
-  @Prop(String)
-  readonly textColor!: string
   @Prop(Boolean)
   readonly fixed!: boolean
   @Prop(Boolean)
@@ -60,24 +56,18 @@ export default class MzSnackbar extends MzSize {
     return styles
   }
 
-  get presetColorClass() {
-    if (COLOR_TYPES.includes(this.color)) {
-      return `mz-${this.color}`
-    }
-  }
-
   renderMain() {
     const data: VNodeData = {
       class: [
         'mz-snackbar',
         this.mzSize,
-        this.presetColorClass,
+        Object.values(this.mColorClass),
         { 'is-vertical': this.vertical }
       ],
       style: {
         borderRadius: this.radius,
-        backgroundColor: this.color,
-        color: this.textColor
+        backgroundColor: this.mColor.bg,
+        color: this.mColor.text
       },
       attrs: {
         'data-background': this.color,
