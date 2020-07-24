@@ -31,6 +31,8 @@ export default class MzNavigation extends Vue {
   readonly autoScrollOnChange!: boolean
   @Prop({ type: String, default: 'smooth' })
   readonly scrollBehavior!: ScrollBehavior
+  @Prop({ type: String, default: '5px' })
+  readonly gutter!: string
   @Ref('navigation')
   readonly navigation!: HTMLDivElement
 
@@ -64,7 +66,7 @@ export default class MzNavigation extends Vue {
     const listData = {
       props: {
         clickable: true,
-        gutter: '5px'
+        gutter: this.gutter
       },
       on: {
         change: this.onChange,

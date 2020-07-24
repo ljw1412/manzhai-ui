@@ -73,7 +73,7 @@ export default class DemoBlock extends Vue {
     }
     .hljs,
     .hljs-subst {
-      white-space: pre-wrap;
+      // white-space: pre-wrap;
       color: $gray-800;
     }
     .html {

@@ -1,14 +1,21 @@
 <template>
   <mz-drawer v-model="mVisible"
+    v-resize="handleResize"
+    divider
     placement="left"
     width="220px"
     class="sidebar-drawer"
-    title="菜单"
-    v-resize="handleResize">
-    <sidebar class="mb-20"
-      :data="topbarNavigate"
-      @item-click="mVisible = false"></sidebar>
+    :content-style="{padding: 0}">
+    <template #title>
+      <div class="pb-16">ManZhai</div>
+      <sidebar class="page-navigation"
+        gutter="0"
+        :data="topbarNavigate"
+        @item-click="mVisible = false"></sidebar>
+    </template>
+
     <sidebar v-show="!hideSidebarNavigation"
+      class="sub-navigation"
       ref="sidebar"
       :data="data"
       @item-click="mVisible = false"></sidebar>
@@ -59,4 +66,21 @@ export default class SidebarDrawer extends Vue {
 </script>
 
 <style lang="scss">
+.sidebar-drawer {
+  .page-navigation {
+    margin-left: -16px;
+    margin-right: -32px;
+    > ul {
+      display: flex;
+      flex-wrap: wrap;
+      > a {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  }
+  .sub-navigation {
+    padding: 0 16px;
+  }
+}
 </style>

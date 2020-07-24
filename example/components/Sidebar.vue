@@ -1,11 +1,12 @@
 <template>
   <mz-navigation ref="sidebar"
     class="sidebar-navigation"
-    :data="data"
     auto-scroll
     round="mini"
     scroll-behavior="auto"
+    :gutter="gutter"
     :auto-scroll-on-change="false"
+    :data="data"
     v-on="$listeners"></mz-navigation>
 </template>
 
@@ -17,6 +18,8 @@ import MzNavigation from '@packages/Navigation'
 export default class Sidebar extends Vue {
   @Prop({ type: [Array, Object], default: () => [] })
   readonly data!: any[] | object
+  @Prop({ type: String, default: '5px' })
+  readonly gutter!: string
   @Ref('sidebar')
   readonly sidebarRef!: MzNavigation
 
