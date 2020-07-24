@@ -89,7 +89,7 @@ module.exports = class MdParser {
         doc = doc.replace(demo.origin, demo.template)
       }
     })
-    return pad(doc)
+    return doc
   }
 
   // 构造脚本
@@ -113,7 +113,7 @@ module.exports = class MdParser {
 
   // 解析
   parse() {
-    const template = pad(this.injectInlineComponent(), 4).trimEnd()
+    const template = this.injectInlineComponent().trimEnd()
     const script = this.generateScript()
     const style = this.generateStyle()
     this.docComponent = new DocComponent(this.file, template, script, style)

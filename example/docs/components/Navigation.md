@@ -103,6 +103,7 @@ export default {
 |data|导航数据|[NavigationItem](#navigationitem)/NavigationItem[]|||
 |round|是否为圆角|Boolean|||
 | ripple | 点击涟漪效果 | Boolean / Object | | true |
+| gutter |导航元素的间隔距离|String|||
 |auto-scroll|是否启动自动滑动|Boolean|||
 |auto-scroll-on-change|是否在改变时自动滑动(auto-scroll为true时有效)|Boolean||true|
 |scroll-behavior|滑动的行为|String|'smooth'/'auto'|'smooth'|
