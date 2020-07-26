@@ -24,6 +24,7 @@ export default class MzPagination extends MzSize {
         flat: boolean;
         outlined: boolean;
         disabled: boolean;
+        ripple: boolean;
     };
     handlePageChange(num: number): void;
     renderPager(): JSX.Element;

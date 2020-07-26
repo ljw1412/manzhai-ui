@@ -1,2 +1,2 @@
-import MzSlideGroup from './SlideGroup.vue';
+import MzSlideGroup from './SlideGroup';
 export default MzSlideGroup;

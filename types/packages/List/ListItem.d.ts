@@ -7,14 +7,16 @@ export default class MzListItem extends MzListItem_base {
     readonly mzList: MzList;
     readonly value: any;
     readonly item: any;
+    readonly tag: string;
     readonly title: string;
     readonly text: string;
     readonly disabled: boolean;
     readonly clickable: boolean;
     readonly round: boolean | 'left' | 'right' | 'mini';
     readonly ripple: boolean | object;
+    readonly preventDefault: boolean;
+    get active(): boolean;
     get state(): {
-        active: boolean;
         disabled: boolean;
         clickable: boolean;
         ripple: boolean | object;
@@ -24,6 +26,8 @@ export default class MzListItem extends MzListItem_base {
     };
     render(h: CreateElement): JSX.Element;
     renderContent(): JSX.Element;
+    openGroup(parent: any): void;
+    handleActiveChange(active: boolean): void;
     created(): void;
     beforeDestroy(): void;
 }

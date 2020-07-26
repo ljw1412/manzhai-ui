@@ -15,7 +15,6 @@ export default class MzList extends MzList_base {
     get isEmpty(): boolean;
     get isClickable(): boolean;
     render(h: CreateElement): JSX.Element;
-    renderContent(): JSX.Element;
     renderEmpty(): import("vue").VNode[] | JSX.Element | undefined;
     setValue(value: any, item: any): void;
     handleItemClick(value: any, item: any, disabled: boolean): void;

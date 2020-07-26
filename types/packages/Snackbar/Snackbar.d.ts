@@ -1,13 +1,13 @@
 import { CreateElement } from 'vue';
 import MzSize from 'manzhai-ui/src/mixins/MzSize';
-export default class MzSnackbar extends MzSize {
+import MzColor from 'manzhai-ui/src/mixins/MzColor';
+declare const MzSnackbar_base: import("vue-class-component/lib/declarations").VueClass<MzSize & MzColor>;
+export default class MzSnackbar extends MzSnackbar_base {
     readonly visible: boolean;
     readonly placement: 'top' | 'top-start' | 'top-end' | 'center' | 'bottom' | 'bottom-start' | 'bottom-end';
     readonly timeout: number;
     readonly icon: string;
-    readonly color: string;
     readonly content: string;
-    readonly textColor: string;
     readonly fixed: boolean;
     readonly absolute: boolean;
     readonly vertical: boolean;
@@ -20,7 +20,6 @@ export default class MzSnackbar extends MzSize {
     get placementList(): string[];
     get transitionName(): "mz-zoom" | "mz-y-zoom";
     get offsetStyles(): Record<string, any>;
-    get presetColorClass(): string | undefined;
     renderMain(): JSX.Element;
     render(h: CreateElement): JSX.Element;
     initZIndex(): void;
@@ -28,3 +27,4 @@ export default class MzSnackbar extends MzSize {
     handleVisibleChange(visible: boolean): void;
     destroyed(): void;
 }
+export {};
