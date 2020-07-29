@@ -42,7 +42,7 @@
   "example/docs/directives/Resize.md": "9fd65ed8df57eec6cc54dc977cac5007",
   "example/docs/directives/Ripple.md": "85f006327a270cd129658a6b2a94f75d",
   "example/docs/directives/Tooltip.md": "36aa05ab863e072c5d34cf80e476481e",
-  "example/docs/styles/Introduction.md": "ac81de88fe298aa9b515d6a54db2269a",
+  "example/docs/styles/Introduction.md": "732ca619ce94571630122ea84b280e98",
   "example/docs/components/Button.md": "bae9668ca92e46e1a5deba4c7c9e9b2e",
   "example/docs/components/Catalogue.md": "db177b5bcc6822d92945e98752f8cb96",
   "example/docs/components/Carousel.md": "2f5cb165041869d5832b7098142c7f37",
@@ -50,5 +50,6 @@
   "example/docs/components/FilterSection.md": "5ced270c3d7331cdb39efa54949a3dcc",
   "example/docs/components/List.md": "44ec5b196b3e4685bfd94187d8f61239",
   "example/docs/components/Modal.md": "f761d59dedf8e27d2670cde62a073760",
-  "example/docs/components/Tooltip.md": "3f1bf297798249196d2681eaf8524b59"
+  "example/docs/components/Tooltip.md": "3f1bf297798249196d2681eaf8524b59",
+  "example/docs/guide/Guide.md": "a50a4dcf516dfef6fd5f6709d5b2daf1"
 }

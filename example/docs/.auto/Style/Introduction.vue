@@ -1,16 +1,16 @@
 <template>
   <div class="style-introduction">
-    <div class="update-datetime">文档更新时间：2020-07-24 12:14</div>
+    <div class="update-datetime">文档更新时间：2020-07-29 15:03</div>
 <h1 id="jian-jie" class="mz-heading mz-document-heading" data-level="1"><a class="mz-document-anchor" href="#jian-jie" title="简介" data-level="1" data-href="#jian-jie">¶</a>简介</h1>
+<div class="mt-8 mb-16">Manzhai-ui预设了一套类名语义化的CSS。</div>
     <introduction-demo1 inline-template>
       <div class="introduction-demo1">
-        <mz-snackbar color="warning" text-color="#333">
+        <mz-snackbar class="mb-24" color="warning" text-color="#333">
           <div>"响应式"、"移动设备优先"将在未来版本或者项目重构的时候纳入设计中。</div>
           <div>因为`manzhai-ui`最初设计的时候限定只在pc端使用。</div>
         </mz-snackbar>
       </div>
-    </introduction-demo1><p style="font-size:24px">Manzhai-ui预设了一套类名语义化的CSS。</p>
-<h2 id="yin-ru-fang-fa" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#yin-ru-fang-fa" title="引入方法" data-level="2" data-href="#yin-ru-fang-fa">¶</a>引入方法</h2>
+    </introduction-demo1><h2 id="yin-ru-fang-fa" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#yin-ru-fang-fa" title="引入方法" data-level="2" data-href="#yin-ru-fang-fa">¶</a>引入方法</h2>
 <h3 id="mo-ren-yin-ru" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#mo-ren-yin-ru" title="默认引入" data-level="3" data-href="#mo-ren-yin-ru">¶</a>默认引入</h3>
 <pre><code class="language-js">// 在项目的入口文件
 // 其中包含了组件样式和预设的语义化样式

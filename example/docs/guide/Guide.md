@@ -21,6 +21,8 @@ yarn add @ljw1412/ionicons-sprite
 ```js
 import Vue from 'vue'
 import manzhaiUI from 'manzhai-ui'
+// 引入样式
+import 'manzhai-ui/lib/manzhai-ui.css';
 
 Vue.use(manzhaiUI)
 ```

@@ -1,15 +1,15 @@
 # 简介
 
+<div class="mt-8 mb-16">Manzhai-ui预设了一套类名语义化的CSS。</div>
+
 :::vue
 ```html
-<mz-snackbar color="warning" text-color="#333">
+<mz-snackbar class="mb-24" color="warning" text-color="#333">
   <div>"响应式"、"移动设备优先"将在未来版本或者项目重构的时候纳入设计中。</div>
   <div>因为`manzhai-ui`最初设计的时候限定只在pc端使用。</div>
 </mz-snackbar>
 ```
 :::
-
-<p style="font-size:24px">Manzhai-ui预设了一套类名语义化的CSS。</p>
 
 ## 引入方法
 
