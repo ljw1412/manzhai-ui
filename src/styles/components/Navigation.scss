@@ -1,10 +1,26 @@
 .mz-navigation {
+  width: 100%;
   overflow: hidden;
+  transition: width 0.3s $primary-transition;
   .router-link-active .mz-list-item.is-clickable {
     @include foreground-active;
     color: $primary;
     .mz-list-item__title {
       color: $primary;
+    }
+  }
+
+  &.is-collapsed {
+    width: 80px;
+    .mz-list-item {
+      height: 46px;
+      &__prefix {
+        margin-left: 16px;
+      }
+      &__content,
+      &__suffix {
+        display: none;
+      }
     }
   }
 }

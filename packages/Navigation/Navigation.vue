@@ -33,6 +33,8 @@ export default class MzNavigation extends Vue {
   readonly scrollBehavior!: ScrollBehavior
   @Prop({ type: String, default: '5px' })
   readonly gutter!: string
+  @Prop(Boolean)
+  readonly collapsed!: boolean
   @Ref('navigation')
   readonly navigation!: HTMLDivElement
 
@@ -77,7 +79,9 @@ export default class MzNavigation extends Vue {
     const navItems = this.renderItem(data as NavigationItem[])
 
     return (
-      <div ref="navigation" class="mz-navigation">
+      <div
+        ref="navigation"
+        class={['mz-navigation', { 'is-collapsed': this.collapsed }]}>
         <mz-list {...listData}>{navItems}</mz-list>
       </div>
     )
@@ -114,6 +118,14 @@ export default class MzNavigation extends Vue {
           </mz-list-item-group>
         )
       }
+
+      baseProps.directives = [
+        {
+          name: 'tooltip',
+          value: this.collapsed ? item.title : '',
+          modifiers: { right: true, arrow: true }
+        }
+      ]
 
       // 都没有的为普通列表元素
       const itemNode = (

@@ -1,6 +1,6 @@
 <template>
   <div class="component-navigation">
-    <div class="update-datetime">文档更新时间：2020-07-24 12:03</div>
+    <div class="update-datetime">文档更新时间：2020-07-30 15:24</div>
 <h2 id="dao-hang-cai-dan" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#dao-hang-cai-dan" title="导航菜单" data-level="2" data-href="#dao-hang-cai-dan">¶</a>导航菜单</h2>
 <p>有站点导航功能的菜单。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -94,6 +94,66 @@ export default {
               ]
             }
           ]
+        }
+      ]
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></template></demo-block><h3 id="zhe-die-cai-dan" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#zhe-die-cai-dan" title="折叠菜单" data-level="3" data-href="#zhe-die-cai-dan">¶</a>折叠菜单</h3>
+<demo-block>
+  <template #example>
+    <navigation-demo2 inline-template>
+      <div class="navigation-demo2">
+        <mz-button type="primary" @click="collapsed = !collapsed">
+          <mz-icon :name="collapsed ? 'ellipsis-vertical' : 'list-outline'"></mz-icon>
+        </mz-button>
+        
+        <div style="width:300px">
+          <mz-navigation :data="data"
+            :collapsed="collapsed"></mz-navigation>
+        </div>
+      </div>
+    </navigation-demo2>
+  </template>
+  <template #description>
+      </template><template #highlight><pre v-pre><code class="html">&lt;mz-button type=&quot;primary&quot; @click=&quot;collapsed = !collapsed&quot;&gt;
+  &lt;mz-icon :name=&quot;collapsed ? 'ellipsis-vertical' : 'list-outline'&quot;&gt;&lt;/mz-icon&gt;
+&lt;/mz-button&gt;
+
+&lt;div style=&quot;width:300px&quot;&gt;
+  &lt;mz-navigation :data=&quot;data&quot;
+    :collapsed=&quot;collapsed&quot;&gt;&lt;/mz-navigation&gt;
+&lt;/div&gt;
+
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      collapsed: false,
+      data: [
+        {
+          icon: 'pricetags-outline',
+          title: '组1-1',
+          value: '1',
+          children: [
+            {
+              title: '组1-1-子菜单',
+              value: 'subnav1',
+              children: [
+                {
+                  title: '组1-1-子菜单-子菜单',
+                  value: 'subnav2'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          icon: 'pricetag-outline',
+          title: '组1-2',
+          value: '2'
         }
       ]
     }
@@ -311,6 +371,37 @@ export default {
                   ]
                 }
               ]
+            }
+          ]
+        }
+      }
+    },
+    NavigationDemo2: {
+      data() {
+        return {
+          collapsed: false,
+          data: [
+            {
+              icon: 'pricetags-outline',
+              title: '组1-1',
+              value: '1',
+              children: [
+                {
+                  title: '组1-1-子菜单',
+                  value: 'subnav1',
+                  children: [
+                    {
+                      title: '组1-1-子菜单-子菜单',
+                      value: 'subnav2'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              icon: 'pricetag-outline',
+              title: '组1-2',
+              value: '2'
             }
           ]
         }

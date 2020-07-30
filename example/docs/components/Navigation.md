@@ -95,6 +95,55 @@ export default {
 :::
 
 
+### 折叠菜单
+:::demo 
+```html
+<mz-button type="primary" @click="collapsed = !collapsed">
+  <mz-icon :name="collapsed ? 'ellipsis-vertical' : 'list-outline'"></mz-icon>
+</mz-button>
+
+<div style="width:300px">
+  <mz-navigation :data="data"
+    :collapsed="collapsed"></mz-navigation>
+</div>
+
+
+<script>
+export default {
+  data() {
+    return {
+      collapsed: false,
+      data: [
+        {
+          icon: 'pricetags-outline',
+          title: '组1-1',
+          value: '1',
+          children: [
+            {
+              title: '组1-1-子菜单',
+              value: 'subnav1',
+              children: [
+                {
+                  title: '组1-1-子菜单-子菜单',
+                  value: 'subnav2'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          icon: 'pricetag-outline',
+          title: '标签1',
+          value: '2'
+        }
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
 ### API
 
 #### 属性
