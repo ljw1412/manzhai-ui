@@ -1,6 +1,6 @@
 <template>
   <div class="component-tag">
-    <div class="update-datetime">文档更新时间：2020-07-24 12:03</div>
+    <div class="update-datetime">文档更新时间：2020-07-30 09:38</div>
 <h2 id="tag-biao-qian" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tag-biao-qian" title="Tag 标签" data-level="2" data-href="#tag-biao-qian">¶</a>Tag 标签</h2>
 <p>进行标记和分类的小标签。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -49,8 +49,8 @@
         <mz-tag round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
         <mz-tag round="left" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
         <mz-tag round="right" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
-        <mz-tag text color="#3f51b5" text-color="#ffffff">标签</mz-tag>
-        <mz-tag outlined round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+        <mz-tag text color="#3f51b5">标签</mz-tag>
+        <mz-tag outlined round color="#3f51b5">标签</mz-tag>
       </div>
     </tag-demo3>
   </template>
@@ -60,8 +60,8 @@
 &lt;mz-tag round color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag round=&quot;left&quot; color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
 &lt;mz-tag round=&quot;right&quot; color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag text color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
-&lt;mz-tag outlined round color=&quot;#3f51b5&quot; text-color=&quot;#ffffff&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag text color=&quot;#3f51b5&quot;&gt;标签&lt;/mz-tag&gt;
+&lt;mz-tag outlined round color=&quot;#3f51b5&quot;&gt;标签&lt;/mz-tag&gt;
 </code></pre></template></demo-block><h3 id="ke-zeng-shan-de-biao-qian" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ke-zeng-shan-de-biao-qian" title="可增删的标签" data-level="3" data-href="#ke-zeng-shan-de-biao-qian">¶</a>可增删的标签</h3>
 <p>支持动态新增和删除标签</p>
 <demo-block>
@@ -158,8 +158,15 @@ export default {
 <td></td>
 </tr>
 <tr>
-<td>textColor</td>
+<td>text-color</td>
 <td>文本颜色</td>
+<td>String</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>border-color</td>
+<td>边框颜色，在outlined/text下默认使用color的值</td>
 <td>String</td>
 <td></td>
 <td></td>

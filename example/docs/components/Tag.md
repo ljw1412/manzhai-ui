@@ -38,8 +38,8 @@
 <mz-tag round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
 <mz-tag round="left" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
 <mz-tag round="right" color="#3f51b5" text-color="#ffffff">标签</mz-tag>
-<mz-tag text color="#3f51b5" text-color="#ffffff">标签</mz-tag>
-<mz-tag outlined round color="#3f51b5" text-color="#ffffff">标签</mz-tag>
+<mz-tag text color="#3f51b5">标签</mz-tag>
+<mz-tag outlined round color="#3f51b5">标签</mz-tag>
 ```
 :::
 
@@ -104,7 +104,8 @@ export default {
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
 |color|背景颜色|String|||
-|textColor|文本颜色|String|||
+|text-color|文本颜色|String|||
+|border-color|边框颜色，在outlined/text下默认使用color的值|String|||
 |closable|是否可以关闭|Boolean|||
 |outlined|是否为空心|Boolean|||
 |round|是否为圆角|Boolean/String|true / 'left' / 'right'||

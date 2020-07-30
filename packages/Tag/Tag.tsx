@@ -1,14 +1,11 @@
-import { Component, Prop } from 'vue-property-decorator'
+import { Component, Prop, Mixins } from 'vue-property-decorator'
 import { CreateElement } from 'vue'
 import MzIcon from '../Icon/Icon.vue'
 import MzSize from 'manzhai-ui/src/mixins/MzSize'
+import MzColor from 'manzhai-ui/src/mixins/MzColor'
 
 @Component({ components: { MzIcon } })
-export default class MzTag extends MzSize {
-  @Prop(String)
-  readonly color!: string
-  @Prop(String)
-  readonly textColor!: string
+export default class MzTag extends Mixins(MzSize, MzColor) {
   @Prop(Boolean)
   readonly closable!: boolean
   @Prop(Boolean)
@@ -22,6 +19,7 @@ export default class MzTag extends MzSize {
     return [
       'mz-tag',
       this.mzSize,
+      Object.values(this.mColorClass),
       {
         'mz-tag--closable': this.closable,
         'mz-tag--outlined': this.outlined,
@@ -33,18 +31,10 @@ export default class MzTag extends MzSize {
     ]
   }
 
-  get styles() {
-    return {
-      borderColor: this.color,
-      backgroundColor: this.outlined || this.text ? '' : this.color,
-      color: this.outlined || this.text ? this.color : this.textColor
-    }
-  }
-
   get closeVnode() {
     if (!this.closable) return null
     const data = {
-      class: ['mz-tag__close', 'cursor-pointer'],
+      class: ['mz-tag__close'],
       props: { name: 'close-circle-outline' },
       on: {
         click: () => {
@@ -59,7 +49,13 @@ export default class MzTag extends MzSize {
   render(h: CreateElement) {
     const data = {
       class: this.classes,
-      style: [this.styles],
+      style: {
+        borderColor: this.mColor.border || this.mColor.bg,
+        backgroundColor: this.outlined || this.text ? '' : this.mColor.bg,
+        color:
+          this.mColor.text ||
+          (this.outlined || this.text ? this.mColor.bg : undefined)
+      },
       on: {
         click: (event: MouseEvent) => this.$emit('click', event)
       }
