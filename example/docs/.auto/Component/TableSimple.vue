@@ -1,6 +1,6 @@
 <template>
   <div class="component-table-simple">
-    <div class="update-datetime">文档更新时间：2020-07-24 12:03</div>
+    <div class="update-datetime">文档更新时间：2020-07-30 10:01</div>
 <h2 id="tablesimple-biao-ge-jian-yi-ban" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tablesimple-biao-ge-jian-yi-ban" title="TableSimple 表格(简易版)" data-level="2" data-href="#tablesimple-biao-ge-jian-yi-ban">¶</a>TableSimple 表格(简易版)</h2>
 <p>快速构建简单的表格。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
@@ -208,6 +208,51 @@ export default {
   }
 }
 &lt;/script&gt;
+</code></pre></template></demo-block><h3 id="dan-yuan-yang-shi" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#dan-yuan-yang-shi" title="单元样式" data-level="3" data-href="#dan-yuan-yang-shi">¶</a>单元样式</h3>
+<demo-block>
+  <template #example>
+    <table-simple-demo8 inline-template>
+      <div class="table-simple-demo8">
+        <mz-table-simple :data="data" header>
+          <template #th="{item}">{{item.value}}</template>
+          <template #td="{item}">{{item.value}}</template>
+        </mz-table-simple>
+      </div>
+    </table-simple-demo8>
+  </template>
+  <template #description>
+    <p>当数据格式为对象时，可以使用<code>_style</code>,<code>_class</code>属性进行单独的样式控制。</p>
+  </template><template #highlight><pre v-pre><code class="html">&lt;mz-table-simple :data=&quot;data&quot; header&gt;
+  &lt;template #th=&quot;{item}&quot;&gt;{{item.value}}&lt;/template&gt;
+  &lt;template #td=&quot;{item}&quot;&gt;{{item.value}}&lt;/template&gt;
+&lt;/mz-table-simple&gt;
+
+&lt;script&gt;
+export default {
+  data() {
+    return {
+      data:[
+        [
+          { value: '年份', _class: 'w-50' },
+          { value: '天干地支'}
+        ],
+        [
+          { value: '2018', _class: 'border'},
+          { value: '庚申', _class: { 'text-left': true }}
+        ],
+        [
+          { value: '2019', _class: 'text-yellow'},
+          { value: '己亥'}
+        ],
+        [
+          { value: '2020', _style: { 'color': 'red' }},
+          { value: '庚子', _style: 'text-align: right;'}
+        ]
+      ]
+    }
+  }
+}
+&lt;/script&gt;
 </code></pre></template></demo-block><h3 id="api" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#api" title="API" data-level="3" data-href="#api">¶</a>API</h3>
 <h4 id="shu-xing" class="mz-heading mz-document-heading" data-level="4"><a class="mz-document-anchor" href="#shu-xing" title="属性" data-level="4" data-href="#shu-xing">¶</a>属性</h4>
 <table>
@@ -224,7 +269,7 @@ export default {
 <tr>
 <td>data</td>
 <td>表格数据</td>
-<td>[(Object|String)[]]</td>
+<td>(Object|String)[][]</td>
 <td></td>
 <td>[]</td>
 </tr>
@@ -365,6 +410,24 @@ export default {
             [null, '丁', '戊'],
             ['丙', null, '戊'],
             ['丙', '丁', null]
+          ]
+        }
+      }
+    },
+    TableSimpleDemo8: {
+      data() {
+        return {
+          data: [
+            [{ value: '年份', _class: 'w-50' }, { value: '天干地支' }],
+            [
+              { value: '2018', _class: 'border' },
+              { value: '庚申', _class: { 'text-left': true } }
+            ],
+            [{ value: '2019', _class: 'text-yellow' }, { value: '己亥' }],
+            [
+              { value: '2020', _style: { color: 'red' } },
+              { value: '庚子', _style: 'text-align: right;' }
+            ]
           ]
         }
       }

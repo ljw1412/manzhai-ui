@@ -23,10 +23,50 @@ export default class MzTableSimple extends Vue {
     return Math.max.apply(null, lengthList)
   }
 
+  get tableData() {
+    return this.data.map(list => {
+      const newList = []
+      if (Array.isArray(list)) {
+        let count = 1
+        for (let i = this.maxLength - 1; i >= 0; i--) {
+          const item = list[i]
+          let style = {}
+          let clazz = {}
+          if (item === null) {
+            if (i === 0) {
+              newList.unshift({
+                span: count,
+                data: undefined,
+                style,
+                clazz: 'empty-cell'
+              })
+              count = 1
+            }
+            count++
+          } else if (this.autoComplete || item) {
+            if (typeof item === 'object') {
+              item._style && (style = item._style)
+              item._class && (clazz = item._class)
+            }
+            newList.unshift({ span: count, data: item, style, clazz })
+            count = 1
+          }
+        }
+      }
+      return newList
+    })
+  }
+
+  get headerData() {
+    return this.header ? this.tableData.slice(0, 1) : null
+  }
+
+  get bodyData() {
+    return this.header ? this.tableData.slice(1) : this.tableData
+  }
+
   render(h: CreateElement) {
-    const data = this.getTableData()
-    const headerData = this.header ? data.slice(0, 1) : null
-    const bodyData = this.header ? data.slice(1) : data
+    const { headerData, bodyData } = this
 
     return (
       <table
@@ -61,9 +101,13 @@ export default class MzTableSimple extends Vue {
     return (
       <tr class="mz-table-tr">
         {trData.map(item => {
+          const { data, span, style, clazz } = item
           return (
-            <Tag class={`mz-table-${Tag}`} colspan={item.span}>
-              <span>{this.getItem(item.data, Tag, trData)}</span>
+            <Tag
+              class={[`mz-table-${Tag}`, clazz]}
+              colspan={span}
+              style={style}>
+              <span>{this.getItem(data, Tag, trData)}</span>
             </Tag>
           )
         })}
@@ -76,28 +120,5 @@ export default class MzTableSimple extends Vue {
       item = this.$scopedSlots[Tag]!({ item, row })
     }
     return item
-  }
-
-  getTableData() {
-    return this.data.map(list => {
-      const newList = []
-      if (Array.isArray(list)) {
-        let count = 1
-        for (let i = this.maxLength - 1; i >= 0; i--) {
-          const item = list[i]
-          if (item === null) {
-            if (i === 0) {
-              newList.unshift({ span: count, data: undefined })
-              count = 1
-            }
-            count++
-          } else if (this.autoComplete || item) {
-            newList.unshift({ span: count, data: item })
-            count = 1
-          }
-        }
-      }
-      return newList
-    })
   }
 }

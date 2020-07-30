@@ -176,13 +176,51 @@ export default {
 ```
 :::
 
+### 单元样式
+
+:::demo 当数据格式为对象时，可以使用`_style`,`_class`属性进行单独的样式控制。
+```html
+<mz-table-simple :data="data" header>
+  <template #th="{item}">{{item.value}}</template>
+  <template #td="{item}">{{item.value}}</template>
+</mz-table-simple>
+
+<script>
+export default {
+  data() {
+    return {
+      data:[
+        [
+          { value: '年份', _class: 'w-50' },
+          { value: '天干地支'}
+        ],
+        [
+          { value: '2018', _class: 'border'},
+          { value: '庚申', _class: { 'text-left': true }}
+        ],
+        [
+          { value: '2019', _class: 'text-yellow'},
+          { value: '己亥'}
+        ],
+        [
+          { value: '2020', _style: { 'color': 'red' }},
+          { value: '庚子', _style: 'text-align: right;'}
+        ]
+      ]
+    }
+  }
+}
+</script>
+```
+:::
+
 ### API
 
 #### 属性
 
 | 参数 | 说明 | 类型 | 可选值 |默认值|
 | --- | --- | --- | --- | --- |
-|data|表格数据|[(Object\|String)[]]||[]|
+|data|表格数据|(Object\|String)[][]||[]|
 |header|是否有表头，如果为`true`,data[0]的数据将会作为表头|Boolean|||
 |hover|表格行是否悬浮效果|Boolean|||
 |border|表格是否显示边框|Boolean|||
