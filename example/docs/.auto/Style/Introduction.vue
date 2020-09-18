@@ -1,6 +1,6 @@
 <template>
   <div class="style-introduction">
-    <div class="update-datetime">文档更新时间：2020-07-29 15:03</div>
+    <div class="update-datetime">文档更新时间：2020-09-17 21:40</div>
 <h1 id="jian-jie" class="mz-heading mz-document-heading" data-level="1"><a class="mz-document-anchor" href="#jian-jie" title="简介" data-level="1" data-href="#jian-jie">¶</a>简介</h1>
 <div class="mt-8 mb-16">Manzhai-ui预设了一套类名语义化的CSS。</div>
     <introduction-demo1 inline-template>

@@ -1,6 +1,6 @@
 <template>
   <div class="component-table-simple">
-    <div class="update-datetime">文档更新时间：2020-07-30 10:01</div>
+    <div class="update-datetime">文档更新时间：2020-09-17 21:40</div>
 <h2 id="tablesimple-biao-ge-jian-yi-ban" class="mz-heading mz-document-heading" data-level="2"><a class="mz-document-anchor" href="#tablesimple-biao-ge-jian-yi-ban" title="TableSimple 表格(简易版)" data-level="2" data-href="#tablesimple-biao-ge-jian-yi-ban">¶</a>TableSimple 表格(简易版)</h2>
 <p>快速构建简单的表格。</p>
 <h3 id="ji-chu-yong-fa" class="mz-heading mz-document-heading" data-level="3"><a class="mz-document-anchor" href="#ji-chu-yong-fa" title="基础用法" data-level="3" data-href="#ji-chu-yong-fa">¶</a>基础用法</h3>
