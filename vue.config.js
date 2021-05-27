@@ -8,7 +8,7 @@ const config = {
     index: { entry: 'example/main.ts', template: 'example/index.html' }
   },
   outputDir: 'docs',
-  publicPath: process.env.NODE_ENV === 'production' ? '/manzhai-ui/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '' : '/',
   productionSourceMap: false,
   devServer: {
     port: 10086
