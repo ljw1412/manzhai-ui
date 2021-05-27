@@ -234,6 +234,13 @@
       }
     },
     {
+      "title": "Result",
+      "text": "结果",
+      "to": {
+        "name": "ComponentResult"
+      }
+    },
+    {
       "title": "Scrollbar",
       "text": "滚动条",
       "to": {

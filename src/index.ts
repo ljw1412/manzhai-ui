@@ -49,6 +49,7 @@ import Pagination from '../packages/Pagination/index'
 import { Progress, ProgressCircle } from '../packages/Progress/index'
 import { Radio, RadioButton, RadioGroup } from '../packages/Radio/index'
 import Rate from '../packages/Rate/index'
+import Result from '../packages/Result/index'
 import Row from '../packages/Row/index'
 import { Select, Option } from '../packages/Select/index'
 import SubHeader from '../packages/SubHeader/index'
@@ -124,6 +125,7 @@ const components: VueConstructor[] = [
   RadioButton,
   RadioGroup,
   Rate,
+  Result,
   Row,
   Select,
   SubHeader,
@@ -256,6 +258,7 @@ export default {
   RadioButton,
   RadioGroup,
   Rate,
+  Result,
   Row,
   Select,
   SubHeader,

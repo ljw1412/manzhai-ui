@@ -177,6 +177,11 @@ export default [
     component: () => import(/* webpackChunkName: "component" */ './Rate.vue')
   },
   {
+    path: 'component-result',
+    name: 'ComponentResult',
+    component: () => import(/* webpackChunkName: "component" */ './Result.vue')
+  },
+  {
     path: 'component-scrollbar',
     name: 'ComponentScrollbar',
     component: () =>
