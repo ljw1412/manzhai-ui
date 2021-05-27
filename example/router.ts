@@ -11,6 +11,7 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
+  base: process.env.NODE_ENV === 'production' ? '/manzhai-ui/' : '/',
   routes: [
     {
       path: '/',
