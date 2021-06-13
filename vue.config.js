@@ -7,6 +7,7 @@ const config = {
   pages: {
     index: { entry: 'example/main.ts', template: 'example/index.html' }
   },
+  outputDir: 'docs',
   publicPath: '/',
   productionSourceMap: false,
   devServer: {
