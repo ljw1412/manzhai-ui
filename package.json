@@ -47,7 +47,7 @@
     "vue-property-decorator": "^8.3.0"
   },
   "devDependencies": {
-    "@ljw1412/ionicons-sprite": "^1.0.0",
+    "@ljw1412/ionicons-sprite": "^1.0.1",
     "@types/chai": "^4.2.8",
     "@types/color": "^3.0.1",
     "@types/highlight.js": "^9.12.3",

@@ -952,10 +952,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@ljw1412/ionicons-sprite@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.nlark.com/@ljw1412/ionicons-sprite/download/@ljw1412/ionicons-sprite-1.0.0.tgz#73fe8069849389f3777a797ed471ac266dd38dce"
-  integrity sha1-c/6AaYSTifN3enl+1HGsJm3Tjc4=
+"@ljw1412/ionicons-sprite@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ljw1412/ionicons-sprite/-/ionicons-sprite-1.0.1.tgz#fea6e42fbb58e4f84377979f5d84bd08385485d9"
+  integrity sha512-6vrzKc0F3v2+3YtufCQVDtVIMECZgGJqd6g/NSJ6zSRSVzSx/SNxKtF2Q97Hs//Bld/m6wCVbLennXup4+SR+g==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
